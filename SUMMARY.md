@@ -55,11 +55,12 @@
   * [Final chapter: we brengen alles samen](18_IsAs/2_Polymorfisme_Interfaces.md)
 * Conclusie
   *[En nu](ennu.md)
-* Appendix Zie Scherper 
-  * [Klassen herbruiken](B_appendix/namespaces.md)
-  * [Struct en record](B_appendix/struct.md)
-  * [Operator overloading](B_appendix/8_operatoroverloading.md)
-  * [Expression bodied members](B_appendix/6_exprbody.md)
-  * [Werken met git (in opbouw)](B_appendix/git.md)
-  * [Spelen met strings](10_advancedklassen/strings.md)
+
+## Appendix 
+* [Klassen herbruiken](B_appendix/namespaces.md)
+* [Struct en record](B_appendix/struct.md)
+* [Operator overloading](B_appendix/8_operatoroverloading.md)
+* [Expression bodied members](B_appendix/6_exprbody.md)
+* [Werken met git (in opbouw)](B_appendix/git.md)
+* [Spelen met strings](10_advancedklassen/strings.md)
 

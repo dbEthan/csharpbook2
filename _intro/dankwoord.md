@@ -1,5 +1,3 @@
-
-
 Aardig wat mensen, grotendeels studenten van 1EA (Professionele Bachelor Elektronica ICT van de AP Hogeschool, academiejaar 2019-2020) hebben me met deze cursus geholpen. Hen allemaal afzonderlijk bedanken zou me een extra pagina kosten, toch wil ik graag volgende mensen uitdrukkelijk in de bloemetjes zetten voor hun inbreng: Ruben Simons,  Ailko Claeys, Kevin  Van Driel en Lennert Van Riel . Zonder hen zou dit boek veel meer fouten bevatten en niet de opbouw hebben die hij nu heeft. Indien er toch nog foutjes instaan komt dat uiteraard volledig door mezelf! Een speciale dank ook aan Maarten Wachters die de originele pixel-art van me maakte waar ik vervolgens enkele varianten op heb gemaakt!
 
 Ook een bos bloemen voor Olga Coutrin en Walter Van Hoof om de ondankbare taak op zich te nemen mijn vele dt-fouten eruit te halen op nog geen week voor de deadline. Bedankt!

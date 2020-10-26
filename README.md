@@ -3,22 +3,12 @@
 
 Dit boek wordt gebruikt als handboek binnen de opleidingen professionele bachelor Elektronica-ICT en Toegepaste Informatica van de AP Hogeschool.
 
-Concreet is dit het handboek voor de eerste 2 semesters omtrent 'leren programmeren met C\#':
+Concreet is dit het handboek  voor het tweede semester omtrent 'leren programmeren met C\#':
 
 * Zie Scherp: Programming Principles, eerste semester
 * Zie Scherper: Object Oriented Programming, tweede semester
 
-# Boek verkrijgen
 
-Deze cursus wordt ook aangeboden voor de "buitenwereld". Deze online cursus zal ten allen tijde beschikbaar blijven onder het Creatieve Commons 4.0 principe (zie onderaan). Wil je de auteur sponsoren dan kan dit door het eerste deel (Zie Scherp) via 1 van volgende versies aan te schaffen (De gepubliceerde versies zijn identiek aan deze cursus)
-
-* [Amazon.de](https://www.amazon.de/dp/B08HGNS5SF) : fullcolor **paperback versie**, in groter formaat om aantekeningen bij de tekst te plaatsen. Ook kindle versie beschikbaar.
-* [Kobo](https://www.kobo.com/be/nl/ebook/zie-scherp): **ebook versie** voor op je e-reader (gratis op kobo plus)
-* [Leanpub](http://leanpub.com/ziescherp/): hoge-kwaliteits **pdf** 
-
-![](./assets/boek.png)
-
-Deel 2 (Zie Scherper) verschijnt, hopelijk, begin 2021.
 
 # Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)
 

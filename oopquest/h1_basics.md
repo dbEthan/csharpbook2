@@ -1,4 +1,3 @@
-SOON
 <!---
 1. Basis klassen monster, schat en helden met nodige properties
 2. Random monster generator

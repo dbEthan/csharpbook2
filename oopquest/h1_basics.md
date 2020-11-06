@@ -10,7 +10,7 @@
 9. spelmanager
 10. klaarmaken voor de toekomst ?--->
 
-# Introductie 
+## OopQuest Fase 1
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
@@ -35,7 +35,7 @@ De opzet van OopQuest is als volgt:
 * wanneer de speler sterft begint het spel opnieuw, maar worden er enkele eigenschappen vanuit het 'vorige leven' doorgegeven
 
 
-# Fase 1: 
+### Laten we de zoektocht beginnen
 
 OopQuest zou niets zijn zonder nodige basis-klassen. We duiden daarom in de originele opzet alle zelfstandige naamwoorden (*substantieven*) aan, deze zijn potentiele kandidaten om in klassen te gieten:
 
@@ -57,7 +57,7 @@ class Schat {}
 class Spel {}
 ```
 
-## Held klasse
+### Held klasse
 
 We gaan nog niet alle klassen volledig uitwerken. De ``Held`` klasse gaan we als eerste aanpakken. Een ``Held`` wordt gedefinieerd door volgende eigenschappen:
 * Naam (bv Crusher McCrusher)
@@ -115,6 +115,7 @@ public void ToonInfo()
     Console.WriteLine($"Gezondheid={Gezondheid}%, Sterkte={Sterkte}");
 }
 ```
+### Held klasse testen
 
 We zullen eens testen of deze Held-klasse al werkt. We schrijven in de ``main``:
 

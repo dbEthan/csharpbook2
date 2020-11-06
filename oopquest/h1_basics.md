@@ -1,3 +1,6 @@
+
+## OopQuest Fase 1
+
 <!---
 1. Basis klassen monster, schat en helden met nodige properties
 2. Random monster generator
@@ -10,7 +13,6 @@
 9. spelmanager
 10. klaarmaken voor de toekomst ?--->
 
-## OopQuest Fase 1
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}

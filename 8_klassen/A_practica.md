@@ -114,7 +114,7 @@ Zorg ervoor dat je met behulp van full properties deze 3 velden kan uitlezen en 
 
 ## Figuren
 
-Maak een eenvoudige klasse ``Rechthoek`` aan die een lengte en breedte als private datafields heeft. Deze kunnen enkel via full properties ingesteld worden en nooit onder 1 gaan.
+Maak een eenvoudige klasse ``Rechthoek`` aan die een lengte en breedte als private instantievariabelen heeft. Deze kunnen enkel via full properties ingesteld worden en nooit onder 1 gaan.
 
 Maak ook een klasse ``Driehoek`` die een basis en hoogte als fields heeft.
 
@@ -126,18 +126,18 @@ Toon de werking van het project aan door een aantal instanties van ``Driehoek`` 
 
 ### Sportspeler
 
-Kies je favoriete sport of game. Maak een klasse aan die een speler uit deze sport kan voorstellen. Verzin een 4-tal private datavelden die deze spelers hebben, alsook 2 methoden die de speler moet kunnen uitvoeren. 
+Kies je favoriete sport of game. Maak een klasse aan die een speler uit deze sport kan voorstellen. Verzin een 4-tal private instantievariabelen die deze spelers hebben, alsook 2 methoden die de speler moet kunnen uitvoeren. 
 
-Voorzie een methode ``StelIn`` die je toelaat om de private datafields in te stellen:
+Voorzie een methode ``StelIn`` die je toelaat om de private instantievariabele in te stellen:
 
-Voorzie ook minstens 1 ``naam`` (``string``) dataveld.
+Voorzie ook minstens 1 ``naam`` (``string``) instantievariabele.
 
 Voorzie per data field ook telkens een full property. Waar nodig zorg je er voor dat er geen illegale waarden kunnen ingesteld worden (bv mutsnummer bij waterpolo gaat maar van 1 tot 13).
 
 Bijvoorbeeld:
 
 * klasse ``Waterpolospeler``
-* datavelden:
+* instantievariabelen:
   * ``spelerNaam``(``string``)
   * ``mutsnummer`` (``int``)
   * ``isDoelman`` (``bool``)
@@ -152,7 +152,7 @@ De methode ``StelIn`` zou dan zou kunnen aangeroepen worden:
 speler1.StelIn("Tim", 5, false, true, "tweedeklas");
 ```
 
-Wanneer de methoden worden aangeroepen zal er een tekst (mbv Console.WriteLine in de methode) op het scherm verschijnen die bv zegt ``Ik (Jos) gooi de bal``. Waarbij de naam van de speler in kwestie uit het Naam dataveld wordt gebruikt om mee getoond te worden.
+Wanneer de methoden worden aangeroepen zal er een tekst (mbv Console.WriteLine in de methode) op het scherm verschijnen die bv zegt ``Ik (Jos) gooi de bal``. Waarbij de naam van de speler in kwestie uit het Naam instantievariabele wordt gebruikt om mee getoond te worden.
 
 Maak vervolgens een console-applicatie aan waarin je de werking van de klasse aantoont. Maar in de applicatie een aantal speler-objecten aan, vervolgens stel je hun properties in. Vervolgens roep je enkele methoden van de spelers aan en toon je via (Console.WriteLine) ook de properties van de individuele spelerobjecten.
 
@@ -165,7 +165,7 @@ Toon maw aan dat je:
 {% hint style='tip' %}
 ### enums
 
-Kan je in voorgaand voorbeeld het dataveld ``reeks`` vervangen door een dataveld reeks dat een enum als datatype heeft?
+Kan je in voorgaand voorbeeld de instantievariabele ``reeks`` vervangen door een instantievariabele reeks dat een enum als datatype heeft?
 {% endhint %}
 
 

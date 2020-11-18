@@ -1,16 +1,21 @@
 ## Properties
 
-In dit hoofdstuk bespreken we eerst waarom properties nodig zijn. Vervolgens bespreken we de 2 soorten properties die er bestaan:
+We zagen zonet dat instantievariabele nooit ``public`` mogen zijn om te voorkomen dat de buitenwereld onze objecten 'vult' met slechte zaken. Het voorbeeld waarbij we vervolgens een methode ``VeranderLeefijd`` gebruikten om op gecontroleerde manier toch aan de interne staat van objecten te komen is één oplossing, maar een nogal oldschool oplossing. 
 
-1. Full properties
-2. Auto properties
+Deze manier van werken - methoden gebruiken om instantievariabelen aan te passen of uit te lezen- is wat voorbijegestreefd binnen C#. Onze programmeertaal heeft namelijk het concept **properties** (*eigenschappen*) in het leven geroepen die toelaten op een veel eenvoudigere manier aan de interne staat van objecten te komen.
 
-
-### In een wereld zonder properties 
+{% hint style='tip' %}
 Properties (*eigenschappen*) zijn de C# manier om objecten hun interne staat in en uit te lezen.
 Ze zorgen voor een gecontroleerde toegang tot de interne structuur van je objecten.
+{% endhint %}
 
-Stel dat we volgende klasse hebben:
+
+### Star Wars en de nood aan properties 
+
+In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de mysterieuze klasse van de Sith Lords. Deze lords lopen met een geheim rond: ze hebben een zogenaamde Sithnaam, een naam die ze enkel mogen bekend maken aan andere Sith Lords, maar niet anders. Voorts heeft een Sith Lord ook een hoeveelheid energie (*The Force*) waarmee hij kattekwaad kan uithangen. Deze energie mag natuurlijk nooit onder nul gezet worden.
+
+
+We kunnen voorgaande als volgt schrijven:
 ```java
 class SithLord
 {
@@ -19,7 +24,6 @@ class SithLord
 }
 ```
 
-Een ``SithLord`` heeft steeds een verborgen Sith Name en ook een hoeveelheid energie die hij nodig heeft om te strijden.
 **Het is uit den boze dat we eenvoudige data fields (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
 ```java
@@ -29,17 +33,27 @@ Console.WriteLine(Palpatine.sithName); //DIT ZAL DUS NIET WERKEN, daar sithName 
 
 We willen echter wel van buiten uit het energy-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energy-level op -1000 instellen? Terwijl energy nooit onder 0 mag gaan.
 
-**Properties** lossen dit probleem op*
+### 2 soorten properties
+**Properties** lossen dit probleem dus op*
+
+Er zijn 2 soorten properties in C#:
+*  **Full Properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
+* **Auto properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle/impact
+
+
+We behandelen eerst full properties, daar auto properties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij auto properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
 
 
 ### Full properties
 
-Een **full property** ziet er als volgt uit:
+Properties herken je aan de ``get`` en ``set`` keywords in een klasse. Een property is een beschrijving van wat er moet gebeuren indien je informatie uit (``get``) een object wilt halen of informatie net in (``set``) een object wilt plaatsen.
+
+In volgende voorbeeld maken we een property, genaamd ``Energy`` aan. Deze doet niets anders dan rechtstreeks toegang tot de instantievariabele ``energy`` te geven:
+
 ```java
 class SithLord
 {
     private int energy;
-    private string sithName;
 
     public int Energy
     {
@@ -55,7 +69,7 @@ class SithLord
 }
 ```
 
-Dankzij deze code kunnen we nu elders dit doen:
+Dankzij deze code kunnen we nu buiten het object de property ``Energy`` gebruiken als volgt:
 
 ```java
 SithLord Vader= new SithLord();
@@ -63,21 +77,86 @@ Vader.Energy= 20; //set
 Console.WriteLine($"Vaders energy is {Vader.Energy}"); //get
 ```
 
-Vergelijk dit met de vorige alinea waar we dit met Get en Set methoden moesten doen. Deze property syntax is veel eenvoudiger.
+Laten we eens inzoomen op de full property code:
+
+<!---{line-numbers:true}--->
+```java
+public int Energy
+{
+    get
+    {
+        return energy;
+    }
+    set
+    {
+        energy=value;
+    }
+}
+```
+
+![Visuele voorstelling van de property](../assets/6_klassen/propdia.png)
 
 
-We zullen de property nu stuk per stuk analyseren:
-* ``public int Energy``: een property is altijd ``public``. Vervolgens zeggen we wat voor type de property moet zijn en geven we het een naam. Indien je de property gaat gebruiken om een intern dataveld naar buiten beschikbaar te stellen, dan is het een goede gewoonte om dezelfde naam als dat veld te nemen maar nu met een hoofdletter. (dus ``Energy`` i.p.v. ``energy``).
-* { }: Vervolgens volgen 2 accolades waarbinnen we de werking van de property beschrijven.
-* ``get {}``: indien je wenst dat de property data **naar buiten** moet sturen, dan schrijven we de get-code. Binnen de accolades van de get schrijven we wat er naar buiten moet gestuurd worden. In dit geval ``return energy`` maar dit mag even goed bijvoorbeeld ``return 4`` of een hele reeks berekeningen zijn. Het element dat je returnt in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).
-    * We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte: ``Console.WriteLine(Palpatine.Energy);``
-* set{}: in het set-gedeelte schrijven we de code die we moeten hanteren indien men van buitenuit een waarde aan de property wenst te geven om zo een interne variabele aan te passen. De waarde die we van buitenuit krijgen (als een parameter zeg maar) zal **altijd** in een lokale variabele ``value`` worden bewaard. Deze zal van het type van de property zijn. Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy=value`` 
-    * We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``Palpatine.Energy=50``.
+#### Full property:  identifier en datatype
+De eerste lijn van een ful property beschrijft de naam (identifier) en datatype van de property: ``public int Energy``
+
+**Een property is altijd ``public``** daar dit de essentie van een property net is "de buitenwereld gecontroleerde toegang tot de interne staat van een object geven.
+
+Vervolgens zeggen we wat voor **datatype** de property moet zijn en geven we het een naam die moet voldoen aan de identifier regels van weleer. Voor de buitenwereld zal een property zich gedragen als een gewone variabele, met de naam ``Energy`` van het type ``int``.
+
+
+Indien je de property gaat gebruiken om een instantievariabele naar buiten beschikbaar te stellen, dan is het een goede gewoonte om dezelfde naam als dat veld te nemen maar nu met een hoofdletter. (dus ``Energy`` i.p.v. ``energy``).
+
+#### Full property: get gedeelte
+
+Indien je wenst dat de property data **naar buiten** moet sturen, dan schrijven we de get-code. Binnen de accolades van de ``get`` schrijven we wat er naar buiten moet gestuurd worden.
+
+```java
+get
+{
+    return energy;
+}
+```
+
+Dit werkt dus identiek aan een methode met een returntype, ``int`` in dit geval.**Het element dat je return't in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
+
+{% hint style='tip' %}
+We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop dieper op in, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
+{% endhint %}
+
+We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen =Palpatine.Energy;``.
+
+#### Full property: set gedeelte
+
+In het set-gedeelte schrijven we de code die we moeten hanteren indien men van buitenuit een waarde aan de property wenst te geven om zo een instantievariabele aan te passen. 
+
+De waarde die we van buitenuit krijgen (als een parameter zeg maar) zal **altijd** in een lokale variabele ``value`` worden bewaard binnenin de get-code. Deze zal van het type van de property zijn. 
+
+Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy=value;`` . Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in volgende deel zullen uitleggen.
+
+We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``Palpatine.Energy=50``.
+
+{% hint style='warning' %}
+Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele. Dit mag dus ook:
+
+```java
+class Auto
+{
+    private int benzinePeil;
+
+    public int FuelLevel
+    {
+        get { return benzinePeil; }
+        set { benzinePeil = value; }
+    }
+}
+```
+{% endhint %}
 
 {% hint style='tip' %}
 **Snel properties schrijven**
 
-Visual Studio heeft een ingebouwde shortcut om snel een full property, inclusief een bijhorende private dataveld, te schrijven. **Typ ``propfull`` gevolgd door twee tabs!**
+Visual Studio heeft een ingebouwde snippet om snel een full property, inclusief een bijhorende private instantievariabele, te schrijven. **Typ ``propfull`` gevolgd door twee tabs**
 {% endhint %}
 
 
@@ -86,32 +165,42 @@ De full property ``Energy`` heeft nog steeds het probleem dat we negatieve waard
 
 **Properties hebben echter de mogelijkheid om op te treden als wachters van en naar de interne staat van objecten.**
 
-We kunnen in de ``set`` code extra controles inbouwen. Als volgt:
+We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en , indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
 
 ```java
-   public int Energy
+public int Energy
+{
+    get
     {
-        get
-        {
-            return energy;
-        }
-        set
-        {
-            if(value>=0)
-                energy=value;
-        }
+        return energy;
     }
+    set
+    {
+        if(value>=0)
+            energy=value;
+    }
+}
 ```
-Enkel indien de toegewezen waarde groter of gelijk is aan 0 zal deze ook effectief aan ``energy`` toegewezen worden.
+
 Volgende lijn zal dus geen effect hebben:
 `` Palpatine.Energy=-1;``
 
-We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen.
+We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
 ### Property variaties
-We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property te schrijven. 
+We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property te schrijven. Dit laat ons toe om een aantal variaties te schrijven:
+* Write-only property: heeft geen ``get``.
+* Read-only property: heeft geen  ``set``.
+* Read-only property met private ``set`` (het omgekeerde , een private ``get``, zal je zelden tegenkomen).
+* Read-only property die data transformeert: **deze ga je véél kunnen gebruiken**.
+
 
 #### Write-only property
+
+![](../assets/6_klassen/writeonlyprop.png)
+
+
+
 ```java
    public int Energy
     {
@@ -125,6 +214,9 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitlezen.
 
 #### Read-only property
+
+![](../assets/6_klassen/readonlyprop.png)
+
 ```java
    public int Energy
     {
@@ -134,19 +226,20 @@ We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitleze
         }
     }
 ```
-We kunnen dus enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
+We kunnen  enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
 
 
-{% hint style='tip' %}
+{% hint style='warning' %}
 **Opgelet: het ``readonly`` keyword heeft andere doelen en wordt NIET gebruikt in C# om een readonly property te maken**
 {% endhint %}
 
 
 
-
-
 #### Read-only property met private set
-Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private datafields worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
+
+![](../assets/6_klassen/readonlypriv.png)
+
+Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
 
 ```java
    public int Energy
@@ -165,7 +258,17 @@ Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only w
 
 Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(Palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``Palpatine.Energy=65``; ongeacht of deze geldig is of niet.
 
-**Nu goed opletten**: indien we in het object de property willen gebruiken dan moeten we deze dus ook effectief aanroepen, anders omzeilen we hem als we rechtstreeks ``energy`` instellen.
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+
+Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
+
+
+**Nu even goed opletten**: indien we IN het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden.
 
 Kijk zelf naar volgende **slechte** code:
 ```java
@@ -194,9 +297,9 @@ class SithLord
 }
 ```
 
-De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energy terug te verlagen. Door echter ``energy=-1`` te schrijven geven we dus -1 rechtstreeks aan ``energy``. Nochtans is dit een illegale waarden.
+De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energy terug te verlagen. Door echter ``energy=-1;`` te schrijven geven we dus -1 rechtstreeks aan ``energy``. Nochtans is dit een illegale waarde volgens de set-code van de property.
 
-We moeten dus in de methode ook expliciet via de property gaan en dus schrijven:
+**We moeten dus in de methode ook expliciet via de property gaan** om bugs te voorkomen en dus gaan we in ``ResetLord``schrijven naar de property ``Energy``  én niet rechtstreeks naar de instantievariabele ``energy``:
 
 ```java
 public void ResetLord()
@@ -204,16 +307,22 @@ public void ResetLord()
     Energy=-1; // Energy i.p.v. energy
 }
 ```
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
 
-{% hint style='tip' %}
-> **Het is een goede gewoonte om zo vaak mogelijk via de properties je interne variabele aan te passen en niet rechtstreeks het dataveld zelf.**
+{% hint style='warning' %}
+**Het is dus een goede gewoonte om zo vaak mogelijk via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.**
 {% endhint %}
 
 
 #### Read-only properties die transformeren
-Je bent uiteraard niet verplicht om voor iedere interne variabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren.
+![](../assets/6_klassen/proptrans.png)
 
-Stel dat we volgende klasse hebben
+Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt.
+
+Stel dat we volgende klasse hebben:
 ```java
 class Persoon
 {
@@ -221,7 +330,7 @@ class Persoon
     private string achternaam;
 }
 ```
-We willen echter ook soms de volledige naam op het scherm tonen ("Voornaam + Achternaam"). Via een read-only property kan dit supereenvoudig:
+We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaaù``. Via een read-only property die transformeert kan dit:
 ```java
 class Persoon
 {
@@ -229,7 +338,10 @@ class Persoon
     private string achternaam;
     public string FullName
     {
-        get{ return $"{voornaam} {achternaam}";}
+        get
+        { 
+            return $"{voornaam} {achternaam}";
+        }
     }
     public string Email
     {
@@ -241,7 +353,7 @@ class Persoon
 }
 ```
 
-Of nog eentje:
+Of nog eentje waarin zelfs geen achterliggende instantievariabele bestaat:
 ```java
 class Aarde
 {
@@ -266,51 +378,56 @@ class Persoon
     {
         get
         {
-            if(age>120) return false;
+            if(age>120) 
+                return false;
             return true;
         }
     }
 }
 ```
 
-Vaak gebruiken we dit soort read-only properties om data te transformeren. Stel bijvoorbeeld dat we volgende klasse hebben:
+Vaak gebruiken we dit soort read-only properties om data te transformeren. Hoe minder code een klasse bevat hoe beter. Indien je de leeftijd van een persoon *in maanden* in de klasse bijhoudt, dan is het onnodig om dat ook te doen voor de *leeftijd in jaren*. We kunnen dan beter die informatie genereren gebaseerd op de data die we hebben:
 ```java
 class Persoon
 {
-    private int age; //in jaren
+    private int leeftijd; //in maanden
 
-    public int  LeeftijdInMaanden
+    public double LeeftijdInJaren
     {
         get
         {
-            return age*12;
+            return leeftijd / 12.0;
         }
     }
 }
 ```
 
 ## Auto properties
-Automatische eigenschappen (autoproperties) in C# staan toe om eigenschappen (properties) die enkel een waarde uit een private variabele lezen en schrijven verkort voor te stellen.
+Automatische eigenschappen (**autoproperties** , soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
 
-Zo kan je eenvoudige de klasse Person herschrijven met behulp van autoproperties. De originele klasse:
+Heel vaak wil je heel eenvoudige variabelen aan de buitenwereld van je klasse beschikbaar stellen. Omdat je instantievariabelen echter niet ``public`` mag maken, moeten we dus properties gebruiken die niets anders doen dan als doorgeefluik fungeren. Autoproperties doen dit voor ons: het zijn vereenvoudige full properties waarbij de achterliggende instantievariabele onzichtbaar voor ons is.
+
+Zo kan je eenvoudige de volgende klasse ``Persoon`` herschrijven met behulp van autoproperties. 
+
+De originele klasse mét full properties:
 
 ```java
 public class Person
     {
  
-        private string _firstName;
-        private string _lastName;
-        private int _age;
+        private string firstName;
+        private string lastName;
+        private int age;
  
         public string FirstName
         {
             get
             {
-                return _firstName;
+                return firstName;
             }
             set
             {
-                _firstName = value;
+                firstName = value;
             }
         }
  
@@ -318,11 +435,11 @@ public class Person
         {
             get
             {
-                return _lastName;
+                return lastName;
             }
             set
             {
-                _lastName = value;
+                lastName = value;
             }
         }
  
@@ -330,16 +447,18 @@ public class Person
         {
             get
             {
-                return _age;
+                return age;
             }
             set
             {
-                _age = value;
+                age = value;
             }
         }
     }
 ```
-De herschreven klasse met autoproperties (autoprops):
+
+De herschreven klasse met autoproperties (autoprops) wordt: 
+
 ```java
 public class Person
     {
@@ -351,57 +470,69 @@ public class Person
     }
 ```
 
-Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk eenvoudiger om te lezen en te typen. 
+Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk eenvoudiger om te lezen en te typen. De private instantievariabelen zijn niét meer aanwezig. C# gaat dit voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
 
-### Beginwaarde van autoprops
+{% hint style='tip' %}
+Vaak zal je klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoprops vervangen door full props.
 
-Je mag autoproperties beginwaarden geven door de waarde achter de property te geven, als volgt:
+Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schrijvendraaier en kies "Convert to full property"
+
+![](../assets/6_klassen/transformprop.png)
+{% endhint %}
+
+### Beginwaarden van autoprops
+
+Je mag autoproperties beginwaarden geven door de waarde achter de property te schrijven, als volgt:
 
 ```java
 public int Age {get;set;} = 45;
 ```
 
+Al je objecten zullen nu als beginleeftijd 45 hebben (*arme objecten*).
+
+{% hint style='warning' %}
 ### Altijd auto-properties? 
-Merk op dat je dit enkel kan doen indien er geen extra logica in de property aanwezig is.
+Merk op dat je dit enkel kan doen indien er geen extra logica in de property aanwezig moet zijn.
+
 Stel dat je bij de setter van age wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
 
 ```java
 set
 {
     if( value > 0)
-        _age = value;
+        age = value;
 }
 ```
 **Voorgaande property kan dus *NIET* herschreven worden met een automatic property.**
+{% endhint %}
 
 ### Alleen-lezen eigenschap
-Je kan automatic properties ook gebruiken om bijvoorbeeld een read-only property te definiëren. Als volgt:
+Je kan autoproperties ook gebruiken om bijvoorbeeld een read-only property te definiëren. Als volgt:
 
-Originele klasse:
+Originele property:
 ```java
 public string FirstName
 {
     get
     {
-        return _firstName;
+        return firstName;
     }
 }
 ```
+
 Met autoprops:
 ```java
 public string FirstName { get; private set; }
 ```
 
+En uiteraard kunnen we dan de instantievariabele ``firstName`` uit de code verwijderen.
+
 En andere manier die ook kan is als volgt:
 ```java
 public string FirstName { get; }
 ```
-De enige manier om FirstName een waarde te geven is via de constructor van de klasse. Alle andere manieren zal een error genereren. [Meer info.](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-6#read-only-auto-properties)
 
 {% hint style='tip' %}
-**Opgelet: je hebt ook read-only properties die full property zijn. Lees zeker ook de tekst hierboven in ver band met de get-omvormers.**
-{% endhint %}
-
 
 ### Snel autoproperties typen in Visual Studio:
 Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabtoets indrukt dan verschijnt al de nodige code voor een automatic property. Je hoeft dan enkel nog volgende zaken in orde te brengen:
@@ -410,9 +541,8 @@ Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabt
 * De naam van de property (identifier) 
 * De toegankelijkheid van get/set (public, private, protected)
 
-Via ``propg`` krijg je aan autoproperty met private setter.
-
-
+Via ``propg`` krijg je trouwwens een autoproperty met private setter.
+{% endhint %}
 
 
 <!---NOBOOKSTART--->
@@ -423,11 +553,11 @@ Via ``propg`` krijg je aan autoproperty met private setter.
 ![](../assets/care.png)
 **Methode of property?**
 
-Een veel gestelde vraag bij beginnende OO-ontwikkelaars is: "Moet dit in een property of in een methode gestoken worden?"
+Een veel gestelde vraag bij beginnende OOP-ontwikkelaars is: "Moet dit in een property of in een methode geplaatst worden?"
 
-De regel is eenvoudig:
-* Betreft het een actie, iets dat het object moet doen (tekst tonen, iets berekenen, etc) dan plaats je het in een **methode**
-* Betreft het een eigenschap die een bepaalde waarde heeft, dan gebruik je een **property**
+De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
+* Betreft het een actie of gedrag, iets dat het object moet doen (tekst tonen, iets berekenen of aanpassen, etc) dan plaats je het in een **methode**. 
+* Betreft het een eigenschap die een bepaalde waarde heeft, dan gebruik je een **property**.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

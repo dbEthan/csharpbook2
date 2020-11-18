@@ -292,7 +292,7 @@ Kortom, hoe minder de buitenwereld moet weten om met een object te werken, hoe b
 
 ### Objecten in de woorden van Steve Jobs
 
-Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een interview, way back, gaf hij volgende uitleg <!---[^jobs](https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/)--->:
+Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een interview, way back, gaf hij volgende uitleg  <!---[^jobs](https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/)--->:
 
 <!---[^jobs]: https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/--->
 > Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.

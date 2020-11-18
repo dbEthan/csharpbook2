@@ -2,6 +2,7 @@
 
 In C# kunnen we geen objecten aanmaken voor we een klasse hebben gedefinieerd dat de algemene eigenschappen (properties) en gedrag (methoden) beschrijft.
 
+
 ### Klasse maken
 
 Een klasse heeft minimaal de volgende vorm:
@@ -88,13 +89,14 @@ Het grote verschil dat deze objecten  zullen hebben is dat ze dus vaak veel comp
 ![](../assets/care.png)
 het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, maar ik denk dat ik toch beter een paar keer met een speer naar een mammoet werp om echt te voelen wat OOP is. 
 
-Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere datatypes** dan diegene die ik in het vorige boek heb geleegd? Ok?
+Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere datatypes** dan diegene die ik in het vorige boek heb leren? Ok?
 
-Ok!
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
+
+**Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
 
 
 

@@ -148,7 +148,7 @@ Console.WriteLine(a.Naam);
 We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``a`` naar het zelfde object in de heap verwijzen. Het originele "abba"-object zijn we kwijt en zal verdwijnen (zie Garbage collector verderop).
 
 {% hint style='warning' %}
-De meeste klassen zullen met value type properties en datavelden werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
+De meeste klassen zullen met value type properties en instantievariabelen werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
 {% endhint %}
 
 ### Methoden en reference parameters

@@ -1,6 +1,6 @@
 # Meetlat constructor
 
-Vul de ``Meetlat`` klasse uit het vorige hoofdstuk aan met een constructor. De constructor laat toe om de lengte in meter als parameter mee te geven. De ``LengteInMeter`` write-only property vervang je door een private datafield ``double lengteInMeter``.
+Vul de ``Meetlat`` klasse uit het vorige hoofdstuk aan met een constructor. De constructor laat toe om de lengte in meter als parameter mee te geven. De ``LengteInMeter`` write-only property vervang je door een private instantievariabele ``double lengteInMeter``.
 
 ``lengteInMeter`` stel je nu in via de parameter die je in de constructor meekrijgt.
 

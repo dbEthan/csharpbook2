@@ -255,8 +255,11 @@ Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's e
 * Ieder verkeerslicht behoort tot de klasse VerkeersLicht
 * Fietsers tot de klasse Fietser.
 
-<!---[^jan]:--->Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)
+<!---[^jan]:Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)--->
 
+<!---NOBOOKSTART--->
+Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)
+<!---NOBOOKEND--->
 
 ### Definitie klasse en object
 

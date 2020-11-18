@@ -167,7 +167,7 @@ DateTime geboorteDochter = new DateTime(2009,6,17);
 
 TimeSpan verschil = vandaag - geboorteDochter;
 
-WriteLine($"{verschil.TotalDays} dagen sinds de geboorte van je dochter.");
+Console.WriteLine($"{verschil.TotalDays} dagen sinds de geboorte van je dochter.");
 ```
 
 

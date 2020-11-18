@@ -119,7 +119,7 @@ Ik ben verliefd op Anneke
 ```
 
 {% hint style='tip' %}
-Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verliefd zijn op Anneke. Dit is niet het smurfendorp met maar 1 meisje! Dit gaan we verderop oplossen met properties. Stay tuned!
+Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verliefd zijn op Anneke. Dit is niet het smurfendorp met maar 1 meisje! Dit gaan we verderop oplossen. Stay tuned!
 {% endhint %}
 
 #### Instantievariabelen
@@ -241,3 +241,45 @@ Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variab
 {% endhint %}
 <!---NOBOOKEND--->
 
+#### Andere lieven
+
+We kunnen nu het probleem oplossen dat al onze mensen verliefd zijn op Anneke. Volgende code toont dit:
+
+```java
+class Mens
+{
+    private string lief="niemand";
+
+    public VeranderLief(string nieuwLief)
+    {
+        lief= nieuwLief;
+    }
+    public void Praat()
+    {
+        Console.WriteLine("Ik ben een mens!");
+        VertelGeheim();
+    }
+
+    private void VertelGeheim()
+    {
+        Console.WriteLine($"Ik ben verliefd op {lief}");
+    }
+}
+```
+
+Nu kunnen we dus Temptation Island - de OOP editie beginnen:
+
+```java
+Mens giorgio = new Mens();
+Mens monica = new Mens();
+giorgio.Praat();
+monica.Praat();
+
+monica.VeranderLief("phoebe");
+giorgio.Praat();
+monica.Praat();
+
+giorgio.VeranderLief("camilla");
+giorgio.Praat();
+monica.Praat();
+```

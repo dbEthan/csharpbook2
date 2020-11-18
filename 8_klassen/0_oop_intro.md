@@ -249,13 +249,13 @@ Een elementair aspect binnen OOP is het verschil beheersen tussen een klasse en 
 
 Wanneer we meerdere objecten gebruiken van dezelfde soort dan kunnen we zeggen dat deze objecten allemaal deel uitmaken van een zelfde klasse. **Het OOP paradigma houdt ook in dat we de echte wereld gaan proberen te modeleren in code**. OOP laat namelijk toe om onze code zo te structureren zoals we dat ook in het echte leven doen. Alles (objecten) om ons heen behoord tot bepaalde verzamelingen (klassen) die deze groepen beschrijven. 
 
-Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen[^jan]. Het is een erg hectisch geheel, toch kan je alles dat je daar zit in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
+Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar zit in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
 * Alle mensen hebben gemeenschappelijke eigenschappen (binnen deze beperkte context van een kruispunt): ze bewegen of staan stil (gedrag), ze hebben een bepaalde kleur van jas (eigenschap). 
 * Alle auto's behoren tot een klasse Auto. Ze hebben gemeenschappelijke zaken zoals: ze hebben een bepaald bouwjaar (eigenschap), ze werken op een bepaalde vorm van energie (eigenschap) en ze staan stil of bewegen (gedrag).
 * Ieder verkeerslicht behoort tot de klasse VerkeersLicht
 * Fietsers tot de klasse Fietser.
 
-[^jan]:Volgend voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)
+<!---[^jan]:--->Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)
 
 ### Definitie klasse en object
 

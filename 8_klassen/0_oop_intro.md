@@ -22,7 +22,7 @@ Dus hebben we nu eigenlijk een object met properties en methoden. Zo zit een obj
  Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructureerde code zullen bevatten (loops, methoden en beslissingsstructuren), maar die onze code (hopelijk) een pak overzichtelijker en minder complex gaan maken. Dankzij OOP gaan we onze code meer modulair, leesbaarder en onderhoudsvriendelijker maken.
 
 ### C# en OOP
-Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaal om "een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden" te worden (Bron:[Wikipedia](https://nl.wikipedia.org/wiki/C%E2%99%AF)). C# is van de grond af opgebouwd met het OOP programmeerparadigma in het achterhoofd. 
+Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaal om "een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden" te worden (Bron:Wikipedia). C# is van de grond af opgebouwd met het OOP programmeerparadigma in het achterhoofd. 
 
 Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van:
 ![](../assets/0_intro/csclass.png)
@@ -257,51 +257,66 @@ Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's e
 
 <!---[^jan]:--->Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)
 
+
 ### Definitie klasse en object
+
+Volgende 2 definities druk je best af op een grote poster die je boven je bed hangt:
 
 * **Een klasse** is een beschrijving en verzameling van dingen (objecten) met soortgelijke eigenschappen
 * Een individueel **object** is een **instantie** van een klasse
 
 {% hint style='tip' %}
 Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan met alle soortgelijke eigenschappen van ieder huis is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse.
-
 {% endhint %}
 
+De klasse beschrijft het algemene **gedrag** van de individuele objecten. Dit gedrag wordt meestal bepaald door de interne staat van ieder object op zichzelf, de zogenaamde **eigenschappen**. Nemen we het voorbeeld van de klasse Auto: de huidige snelheid van een individueel auto-object is mogelijks gebaseerd op het merk (eigenschap) van die auto, alsook welke energiebron (eigenschap) die auto heeft. V
 
-{% hint style='tip' %}
-Nog een andere invalshoek:
+oorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de interne staat van ieder object, leven de objecten natuurlijk in een bepaalde context, zoals een druk kruispunt. Andere objecten in dat kruispunt kunnen invloed hebben op wat een auto-object doet. Met andere worden: we kunnen 'van buiten uit' vaak ook het gedrag en de interne staat van een object aanpassen. We hebben dit reeds zien gebeuren in het Pong-voorbeeld: de interne staat van ieder individueel balletjes-object is z'n positie alsook z'n richtingsvector. De buitenwereld, in dit geval onze ``Main`` methode kon echter de objecten manipuleren:
+* Het gedrag van een balletje konden we aanpassen met behulp van de ``Update`` en ``TekenOpScherm`` methode
+* De interne staat via de eigenschappen die zichtbaar zijn aan de buitenwereld (dankzij het ``public`` keyword) 
 
-Een andere invalshoek is de zogenaamde "dungeons" in veel online games. De makers van het spel hebben iedere dungeon in een klasse beschreven. Wanneer een groep avonturiers nu in zo'n grot gaat dan wordt voor die groep een aparte instantie (*instance*) van die grot gemaakt, gebasseerd op de klasse. Ze doen dit zodat iedere groep spelers mekaar niet voor de voeten loopt in 1 grot.
-{% endhint %}
 
-{% hint style='tip' %}
 
-{% hint style='tip' %}
 
 ## Black-box principe
 Een belangrijk concept bij OOP is het **Black-box** principe waarbij we de afzonderlijke objecten en hun werking als kleine zwarte dozen gaan beschouwen. 
 
 Neem het voorbeeld van de auto: deze is in de echte wereld ontwikkeld volgens het blackbox-principe. De werking van de auto kennen tot in het kleinste detail is niet nodig om met een auto te kunnen rijden. De auto biedt een aantal zaken aan de buitenwereld aan (het stuur, pedalen, het dashboard), wat we de **interface** noemen, die je kan gebruiken om de interne staat van de auto uit te lezen of te manipuleren. Stel je voor dat je moest weten hoe een auto volledig werkte voor je ermee op de baan kon...
 
-Binnen OOP wordt dit blackbox-concept **encapsulatie** genoemd. Het doel van OOP is andere programmeurs (en jezelf) zoveel mogelijk af te schermen van de interne werking van je code. Vergelijk het met de methoden uit het vorige boek: "if it works, it works" en dan hoef je niet in de code van de methode te gaan zien wat er juist gebeurt telkens je de methode wil gebruiken
-{% endhint %}
+Binnen OOP wordt dit blackbox-concept **encapsulatie** genoemd. Het doel van OOP is andere programmeurs (en jezelf) zoveel mogelijk af te schermen van de interne werking van je klasse code. Vergelijk het met de methoden uit het vorige boek: "if it works, it works" en dan hoef je niet in de code van de methode te gaan zien wat er juist gebeurt telkens je de methode wil gebruiken.
+
+Kortom, hoe minder de buitenwereld moet weten om met een object te werken, hoe beter. Beeld je in dat je 10 lijnen code nodig had om een random getal te genereren. Niemand zou de klasse ``Random`` nog gebruiken. Dankzij de ontwikkelaar van deze klasse hoeven we maar 2 zaken te kunnen:
+* Een Random-object aanmaken: ``Random ranGen=new Random()``
+* De Next methode aanroepen om een getal uit het object te krijgen. Hoe het dat doet boeit ons niet: ``int getal= ranGen.Next()``.
+
 
 ### Objecten in de woorden van Steve Jobs
 
-Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een interview, way back, gaf hij volgende uitstekende uitleg[bron](https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/):
+Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een interview, way back, gaf hij volgende uitleg <!---[^jobs](https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/)--->:
 
-
-> **Jeff Goodell**: Would you explain, in simple terms, exactly what object-oriented software is?
-
-> **Steve Jobs**: Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.
-
+<!---[^jobs]: https://fossbytes.com/steve-jobs-tells-the-best-definition-of-object-oriented-programming/--->
+> Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.
+>
 > Here’s an example: If I’m your laundry object, you can give me your dirty clothes and send me a message that says, “Can you get my clothes laundered, please.” I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, “Here are your clean clothes.”
-
+>
 > You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can’t even hail a taxi. You can’t pay for one, you don’t have dollars in your pocket. Yet, I knew how to do all of that. And you didn’t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction. That’s what objects are. They encapsulate complexity, and the interfaces to that complexity are high level.
 
-En omdat het vloeken in de kerk is om Steve Jobs in een C# boek aan het woord te laten, hier wat Microsoft-oprichter Bill Gates over OOP te zeggen had:
+### Objecten in de woorden van Bill Gates
+En, omdat het vloeken in de kerk is om Steve Jobs in een C# boek aan het woord te laten, hier wat Microsoft-oprichter Bill Gates over OOP te zeggen had:
 
-![Bill Gates](../assets/6_klassen/gates.jpg)
+> Another trick in software is to avoid rewriting the software by using a piece that’s already been written, so called component approach which the latest term for this in the most advanced form is what’s called Object Oriented Programming.
 
-[Bron](https://www.azquotes.com/quote/1470407)
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+Dat is lang geleden! Ik zie dat je gereedsschapkist al aardig gevuld is van het vorige boek. Zoals je misschien al gemerkt hebt aan deze sectie, zullen we in dit boek ook geregeld minder "praktische" en eerder "filosofische" zaken tegenkomen. Maar wees gerust, je zal toch een grotere gereedsschapkist nodig hebben. Maar net zoals een voorman niet alleen moet kunnen metsen en timmeren, maar ook stabiliteitsplannen begrijpen, zal ook jij moeten begrijpen wat de grotere ideeën achter bepaalde concepten zijn.
+
+Zet nu je helm maar op, want in de volgende sectie gaan we wel degelijk onze handen lekker vuil maken!
+
+<!---{/aside}--->
+<!---NOBOOKSTART--->
 {% endhint %}
+<!---NOBOOKEND--->

@@ -1,19 +1,24 @@
 ## OOP in C#
 
-In C# kunnen we geen objecten aanmaken voor we een klasse hebben gedefinieerd dat de algemene eigenschappen (properties) en werking (methoden) beschrijft.
+In C# kunnen we geen objecten aanmaken voor we een klasse hebben gedefinieerd dat de algemene eigenschappen (properties) en gedrag (methoden) beschrijft.
 
 ### Klasse maken
 
-Een klasse heeft de volgende vorm:
+Een klasse heeft minimaal de volgende vorm:
 
 ```java
-[optionele access modifier] class className
+class ClassName
 {
 
 }
 ```
 
-Volgende code beschrijft de klasse auto in C#
+{% hint style='warning' %}
+De naam die je een klasse geeft moet voldoen aan de identifier regels uit het eerste boek. Het is echter een goede gewoonte om **klassenamen altijd met een hoofdletter te laten beginnen**.
+{% endhint %}
+
+
+Volgende code beschrijft de klasse ``Auto`` in C#
 
 ```java
 class Auto
@@ -24,49 +29,72 @@ class Auto
 
 Binnen het codeblock dat bij deze klasse hoort zullen we verderop dan de werking via properties en methoden beschrijven.
 
-De optionele access modifier komen we later op terug.
+### Klassen in Visual Studio toevoegen
 
-#### Klassen in Visual Studio
+Je kan "eender waar" een klasse aanmaken in een project, maar het is een goede gewoonte om per klasse **een apart bestand** te gebruiken. Dit kan op 2 manieren.
 
-Je kan "eender waar" een klasse aanmaken, maar het is een goede gewoonte om per klasse een apart bestand te gebruiken:
-
-* In de solution explorer, rechterklik op je project
-* Kies Add
-* Kies Class..
+Manier 1:
+* In de Solution Explorer, rechterklik op je project
+* Kies "Add"
+* Kies "Class.."
 * Geef een goede naam voor je klasse
 
+Manier 2:
+* Klik in de menubalk bovenaan op "Project"
+* Kies "Add class..."
 
-
-
-{% hint style='tip' %}
-**De naam van je klasse moet voldoen aan de identifier regels die ook gelden voor het aanmaken van variabelen!**
-{% endhint %}
-
-
-![Klasse toevoegen in VS](../assets/6_klassen/klassadd.png)
+![Manier 2 is de snelste](../assets/6_klassen/addclass.png)
 
 ### Objecten aanmaken
 
-Je kan nu objecten aanmaken van de klasse die je hebt gedefinieerd.
-Je doet dit door eerst een variabele te definiëren en vervolgens een object te **instantiëren** met behulp van het ``new`` keyword:
+Je kan nu objecten aanmaken van de klasse die je hebt gedefinieerd. Dit kan op alle plaatsen in je code waar je in het verleden ook al variabelen kon declaren, bijvoorbeeld in een methode of je ``Main``-methode.
+
+Je doet dit door eerst een variabele te definiëren en vervolgens een object te **instantiëren** met behulp van het ``new`` keyword. De variabele heeft als datatype ``Auto``:
 
 ```java
 Auto mijnEerste = new Auto();
 Auto mijnAndereAuto = new Auto();
 ```
 
-We hebben nu **twee objecten aangemaakt van het type Auto**.
+We hebben nu **twee objecten aangemaakt van het type Auto** die we verderop zouden kunnen gebruiken.
 
 Let goed op dat je dus op de juiste plekken dit alles doet (bekijk de onderstaande screenshot):
 
 * Klassen maak je aan als aparte files in je project
 * Objecten creëer je in je code op de plekken dat je deze nodig hebt, bijvoorbeeld in je ``Main`` methode bij een Console-applicatie
 
-![](../assets/6_klassen/allessamen.png)
+![](../assets/6_klassen/opbouw.png)
 
+### Klassen zijn eigenlijk nieuwe datatypes
 
+In het vorige boek leerden we dat er allerlei datatypes bestaan. We maakten vervolgens variabelen aan van een bepaald datatype zodat deze variabele als inhoud enkel zaken kon bevatten van dat ene datatype. 
 
+Zo leerden we toen volgende datatypes:
+* **Valuetypes** zoals ``int``, ``char`` en ``bool``
+* Het **``enum``** keyword liet ons toe om een nieuw datatype te maken dat maar een eindig aantal mogelijke waarden (values) kon hebben. Intern bewaarden variabelen van zo'n enum-datatype hun waarde als een ``int``
+* **Arrays** waren het laatste soort datatypes. We ontdekten dat we arrays konden maken van eender wel datatype (valuetypes en enums) dat we tot dan kenden.
+
+**Wel nu, klassen zijn niet meer dan een nieuw soort datatype**. Kortom: telkens je een klasse aanmaakt, kunnen we in dat project variabelen aanmaken met dat datatype. We noemen variabelen die een klasse als datatype hebben **objecten**.
+
+Het grote verschil dat deze objecten  zullen hebben is dat ze dus vaak veel complexer zijn dan de eerdere datatypes die we kennen:
+* Ze zullen meestal meerdere "waarden" kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben)
+* Ze zullen methoden hebben die we kunnen aanroepen om de variabele "voor ons te laten werken"
+
+<!---NOBOOKSTART--->
 {% hint style='tip' %}
-Je hebt dus in het verleden ook al objecten aangemaakt. Telkens je met Random werkt deed je dit al. Dit wil zeggen dat er dus in .NET ergens reeds een voorgeprogrammeerde klasse ``Random`` bestaat met de interne werking.
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/care.png)
+het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, maar ik denk dat ik toch beter een paar keer met een speer naar een mammoet werp om echt te voelen wat OOP is. 
+
+Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere datatypes** dan diegene die ik in het vorige boek heb geleegd? Ok?
+
+Ok!
+<!---{/aside}--->
+<!---NOBOOKSTART--->
 {% endhint %}
+<!---NOBOOKEND--->
+
+
 

@@ -1,6 +1,6 @@
 ## Static
 
-Je hebt het keyword ``static`` al een paar keer zien staan voor methoden het vorige semester. En dit semester werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden te plaatsen. Wat is het nu?
+Je hebt het keyword ``static`` al een paar keer zien staan voor methoden in het vorige boek. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden te plaatsen. Wat is het nu?
 
 Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse.
 

@@ -42,7 +42,7 @@ Van zodra je echter beslist om zelf een of meerdere constructors te schrijven za
 
 De default constructor is een constructor die geen extra parameters aanvaardt. Een constructor bestaat ALTIJD uit volgende vorm:
 
-* Dit semester is iedere constructor altijd ``public``
+* (In dit boek is) iedere constructor altijd ``public``
 * Heeft geen returntype, ook niet ``void``.
 * Heeft als naam de naam van de klasse zelf.
 

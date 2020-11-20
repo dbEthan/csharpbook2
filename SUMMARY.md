@@ -20,6 +20,7 @@
   * [Stack en Heap](9_meminoop/6_memorymanagement.md)
   * [Objecten en methoden](9_meminoop/6b_objectenenmethoden.md)
   * [Null en NullReferenceException](9_meminoop/nullreference.md)
+  * [Namespaces](9_meminoop/namespaces.md)
   * [OOPQuest Fase 2](oopquest/h2_basics.md)
 * H3: Gevorderde klasseconcepten
   * [Default Constructors](10_advancedklassen/1_constructors.md)

@@ -8,7 +8,7 @@ Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we a
 ```java
 Student FrankVermeulen = new Student();
 
-private int leeftijd= 35;
+int leeftijd= 35;
 ```
 
  De ``new`` operator doet 2 dingen:

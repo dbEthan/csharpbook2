@@ -1,15 +1,23 @@
 ## Object references en null
 
-Zoals nu duidelijk is bevatten variabelen steeds een referentie naar een object. Maar wat als we dit schrijven:
+Zoals nu duidelijk is bevatten variabelen steeds een referentie naar een object. Maar wat als we dit schrijven??
 
 ```java
 Student stud1;
-stud1.Naam= "Test";
+stud1.Naam = "Marc Jansens";
 ```
 
 Dit zal een fout geven. ``stud1`` bevat namelijk nog geen referentie. Maar wat dan wel?
 
 Deze variabele bevat de waarde **``null``** . Net zoals bij value types die een default waarde hebben (bv. 0 bij een ``int`` ) als je er geen geeft, zo bevatten reference type variabelen altijd ``null``. 
+
+``null`` is een waarde die je dus kan toekenen aan eender welk reference type (om aan te geven dat er nog geen referentie naar een effectief object in de variabele staat) en waar je dus ook op kan testen. 
+
+Van zodra je een referentie naar een object (een bestaand of eentje dat je net emet ``new`` hebt aangemaakt) aan een reference type variabele toewijst (met de ``=`` operator) zal de ``null`` waarde uiteraard overschreven worden.
+
+{% hint style='tip' %}
+Merk op dat de GC enkel op de heap werkt. Indien er in de stack dus een variabele de waarde ``null`` heeft zal de GC deze nooit verwijderen!
+{% endhint %}
 
 ### NullReferenceException
 
@@ -28,7 +36,7 @@ Dit zal resulteren in volgende foutboodschap:
 ![NullReferenceException error in VS](../assets/6_klassen/nullref.png)
 
 {% hint style='tip' %}
-We moeten in dit voorbeeld expliciet ``=null`` plaatsen daar Visual Studio slim genoeg is om je te waarschuwen voor eenvoudige potentiele NullReference fouten en je code anders niet zal compileren.
+We moeten in dit voorbeeld expliciet ``= null`` plaatsen daar Visual Studio slim genoeg is om je te waarschuwen voor eenvoudige potentiële NullReference fouten en je code anders niet zal compileren.
 {% endhint %}
 
 ### NullReferenceException voorkomen

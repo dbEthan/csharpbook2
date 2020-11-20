@@ -1,31 +1,33 @@
 # Geheugenmanagement in C#
 
-Tot nog toe lagen we er niet van wakker wat er achter de schermen van een C# programma gebeurde. We duiken nu dieper in wat er juist gebeurt wanneer we variabelen aanmaken.
+In het vorige boekdeel deden we reeds uit de doeken dat variabelen op 2 manieren in het geheugen kunnen leven:
 
-## Stack en heap : twee soorten geheugens
+* **Value types**: waren variabele wiens waarde rechtstreeks op de geheugenplek stond waar de variabele naar verwees. Dit gold voor alle bestaande, ingebakken datatypes zoals ``int``, ``bool``, ``char`` etc.
+* **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waarde effectieve waarde van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde
 
-Wanneer een C# applicatie wordt uitgevoerd krijgt het twee soorten geheugen toegewezen dat het 'naar hartelust' kan gebruiken:
+**Ook objecten zijn reference types.** Alhoewel het vorige boek liet uitschijnen dat vooral value type variabelen veelvuldig in programma's voorkwamen, zal je nu ontdekken dat reference types véél meer voorkomen, simpelweg omdat quasi alles in OOP **objecten** zijn (en dus ook arrays van objecten).
+
+Om goed te begrijpen waarom reference types zo belangrijk zijn, zullen we nu eerst eens inzoomen op hoe het geheugen van een C# applicatie werkt. 
+
+## Stack en heap -
+
+In het vorige boek toonden we hoe alle variabelen in één grote "wolk geheugen" zitten, ongeacht of ze nu value types of reference types zijn. Dat klopt niet helemaal. Eigenlijk zijn er **2 soorten geheugens** die een C# applicatie tot z'n beschikking heeft.
+
+ Wanneer een C# applicatie wordt uitgevoerd krijgt het twee soorten geheugen toegewezen dat het 'naar hartelust' kan gebruiken, namelijk:
 
 1. Het kleine, maar snelle **stack** geheugen
 2. Het grote, maar tragere **heap** geheugen
 
 Afhankelijk van het soort variabele wordt ofwel de stack, ofwel de heap gebruikt. **Het is uitermate belangrijk dat je weet in welk geheugen de variabele zal bewaard worden!** 
 
-Er zijn twee soorten variabelen:
-
-1. Value types
-2. Reference types
-
-Afhankelijk van het type variabele zal deze ofwel in de heap oftewel in de stack bewaard worden. 
-
-Als je volgende tabel begrijpt dan beheers je geheugenmanagement in C#:
+Volgende tabel vat samen welke type in welk geheugen wordt bewaard:
 
 |         | Value types           | Reference types  |
 | ------------- |-------------| -----|
 |Inhoud van de variabele    | De eigenlijke data | Een referentie naar de eigenlijke data |
 |Locatie      |  **Stack**      |   **Heap**  |
 | Beginwaarde | ``0``,``0.0``, ``""``,``false``, etc.      |    ``null`` |
-| Effect van = operator | Kopieert de actuele waarde     |   Kopieert het adres naar de actuele waarde |
+| Effect van de ``=`` operator | Kopieert de actuele waarde     |   Kopieert het adres naar de actuele waarde |
 
 ![Stack en heap](../assets/5_arrays/gc1.png)
 
@@ -109,6 +111,27 @@ Wat gebeurt er hier?
 2. Een variabele ``stud`` wordt in de **stack** aangemaakt.
 3. De geheugenlocatie uit de eerste stap wordt vervolgens in ``stud`` opgeslagen in de stack.
 
+Laten we eens inzoomen op voorgaande door de code even in 2 delen op te splitsen:
+
+```java
+Student stud;
+stud = new Student();
+```
+
+Het geheugen na lijn 1 ziet er zo uit:
+![](../assets/6_klassen/memzoom1.png)
+
+Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
+
+![](../assets/6_klassen/memzoom2.png)
+
+Vervolgens wordt de toekenning toegepast en wordt het geheugenadres van het object in de variabele ``stud`` geplaatst:
+
+![](../assets/6_klassen/memzoom3.png)
+
+{% hint style='warning' %}
+We gaan nogal licht over het ``new``-keyword. Maar zoals je merkt is dit een ongelooflijk belangrijk mechanisme in de wereld van de objecten. Het brengt letterlijk objecten tot leven (in de heap) en zal als resultaat laten weten op welke plek in het geheugen het object staat.
+{% endhint %}
 
 #### Bij arrays
 

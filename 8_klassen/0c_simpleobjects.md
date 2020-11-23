@@ -1,3 +1,4 @@
+<!---{sample: true}--->
 ### De anatomie van een klasse
 
 We zullen nu enkele basisconcepten van klassen en objecten toelichten aan de hand van praktische voorbeelden.
@@ -296,3 +297,4 @@ deelnemer1.Praat();
 deelnemer2.Praat();
 ```
 
+<!---{sample: false}--->

@@ -187,6 +187,7 @@ Volgende lijn zal dus geen effect hebben:
 
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
+<!---{sample: true}--->
 ### Property variaties
 We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property te schrijven. Dit laat ons toe om een aantal variaties te schrijven:
 * Write-only property: heeft geen ``get``.
@@ -564,3 +565,4 @@ De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{sample: false}--->

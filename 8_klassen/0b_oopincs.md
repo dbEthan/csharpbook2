@@ -1,3 +1,4 @@
+<!---{sample: true}--->
 ## OOP in C#
 
 In C# kunnen we geen objecten aanmaken voor we een klasse hebben gedefinieerd dat de algemene eigenschappen (properties) en gedrag (methoden) beschrijft.
@@ -100,3 +101,4 @@ Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere dataty
 
 
 
+<!---{sample: false}--->

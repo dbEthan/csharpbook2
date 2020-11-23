@@ -1,3 +1,4 @@
+<!---{sample: true}--->
 # Object Oriented Programming
 
 <!---NOBOOKSTART--->
@@ -322,3 +323,4 @@ Zet nu je helm maar op, want in de volgende sectie gaan we wel degelijk onze han
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
+<!---{sample: false}--->

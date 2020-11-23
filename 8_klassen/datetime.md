@@ -1,3 +1,4 @@
+<!---{sample: true}--->
 ## OOP in de praktijk : DateTime
 
 <!---NOBOOKSTART--->
@@ -172,5 +173,4 @@ TimeSpan verschil = vandaag - geboorteDochter;
 Console.WriteLine($"{verschil.TotalDays} dagen sinds de geboorte van je dochter.");
 ```
 
-
-
+<!---{sample: false}--->

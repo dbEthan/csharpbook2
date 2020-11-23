@@ -9,7 +9,7 @@ In het vorige boekdeel deden we reeds uit de doeken dat variabelen op 2 manieren
 
 Om goed te begrijpen waarom reference types zo belangrijk zijn, zullen we nu eerst eens inzoomen op hoe het geheugen van een C# applicatie werkt. 
 
-## Stack en heap -
+## Stack en heap
 
 In het vorige boek toonden we hoe alle variabelen in één grote "wolk geheugen" zitten, ongeacht of ze nu value types of reference types zijn. Dat klopt niet helemaal. Eigenlijk zijn er **2 soorten geheugens** die een C# applicatie tot z'n beschikking heeft.
 

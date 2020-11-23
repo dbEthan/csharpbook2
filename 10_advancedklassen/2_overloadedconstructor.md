@@ -125,7 +125,7 @@ class Student
 <!---NOBOOKEND--->
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
-![](../assets/care.png)
+![](../assets/attention.png)
 Maar welke constructors moet ik nu eigenlijk allemaal voorzien? 
 
 Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is minimaal nodig om ervoor te zorgen dat alle variabele die essentieel zijn in je klasse een beginwaarde hebben.
@@ -189,6 +189,77 @@ Breuk eenBreuk =new Breuk(21,8);
 {% endhint %}
 <!---NOBOOKEND--->
 
+
+<!---NOBOOKSTART--->
+{% hint style='tip' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/care.png)
+We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonderbeweest, en één overloaded=
+
+```java
+class Balletje
+{
+    public Balletje()
+    {
+        BalX = 5;
+        BalY = 5;
+        VX = 1;
+        VY = 1;
+    }
+
+    public Balletje(int startPosX, int startPosY, int startVX, int startVY)
+    {
+        BalX = startPosX;
+        BalY = startPosY;
+        VX= startVX;
+        VY = startVY;
+    }
+
+    public int BalX { get; set; }
+    public int BalY { get; set; }
+    public int VX { get; set; }
+    public int VY { get; set; }
+
+
+    public void Update()
+    {
+
+        if (BalX + VX >= Console.WindowWidth || BalX + VX < 0)
+        {
+            VX = -VY;
+        }
+
+
+        BalX = BalX + VX;
+
+        if (BalY + VY >= Console.WindowHeight || BalY + VY < 0)
+        {
+            VY = -VY;
+        }
+
+        BalY = BalY + VY;
+    }
+
+    public void TekenOpScherm()
+    {
+        Console.SetCursorPosition(BalX, BalY);
+        Console.Write("O");      
+    }
+}
+```
+
+We kunnen nu op 2 manieren balletjes aanmaken:
+```text
+Balletje bal1 = new Balletje();
+Balletje bal2 = new Balletje(10,8,-2,1);
+```
+
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
 
 <!---NOBOOKSTART--->
 # Kennisclip

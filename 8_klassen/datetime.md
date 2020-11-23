@@ -129,6 +129,8 @@ Dat is een Friday
 
 Sommige methoden zijn ``static`` dat wil zeggen dat je ze enkel rechtstreeks op de klasse kunt aanroepen. Vaak zijn deze methoden hulpmethoden waar de individuele objecten niets aan hebben. We hebben dit reeds gebruikt, zonder het te weten, bij de ``Math`` en ``Console``-klassen. 
 
+We behandelen ``static`` uitgebreid verderop in het boek.
+
 
 #### De tijd uit een string inlezen
 

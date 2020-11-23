@@ -160,6 +160,10 @@ class Student
 Bovenstaande voorbeeld moet je wel in de constructor doen.
 {% endhint %}
 
+
+
+
+
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)

@@ -1,19 +1,26 @@
 ## Static
 
-Je hebt het keyword ``static`` al een paar keer zien staan voor methoden in het vorige boek. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden te plaatsen. Wat is het nu?
+Je hebt het keyword ``static`` al een paar keer zien staan in de methodesignaturen in het vorige boek. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden te plaatsen. Wat is het nu?
 
-Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse.
+Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**
 
-``static`` kan op 2 manieren gebruikt worden:
+``static`` kan op verschillende plaatsen in een klasse gebruikt worden:
 
-1. Bij *variabelen* om een gedeelde variabele aan te maken, over de objecten heen.
-2. Bij *methoden* om zogenaamde methoden-bibliotheken of hulpmethoden aan te maken.
+1. Bij *variabelen* om een gedeelde variabele aan te maken, over de objecten heen. We spreken dan niet meer over een instantievariabele maar over een *static field*.
+2. Bij *methoden* om zogenaamde methoden-bibliotheken of hulpmethoden aan te maken (denk maar aan ``DateTime.IsLeap()``) en spreken dan over een *static method*.
+3. Bij de klasse zelf om te voorkomen dat er objecten van de klasse aangemaakt kunnen worden (bijvoorbeeld de ``Console`` en ``Math`` klasse). Je raadt het nooit, maar dit noemt dan een *static class*.
+4. Bij *properties*. We hebben al met 1 *static property* gewerkt namelijk de readonly property ``Now`` van de ``DateTime`` klasse (``DateTime.Now``).
 
-### Variabelen en het static keyword
+{% hint style='tip' %}
+Ook een constructor kan ``static`` gemaakt worden, maar dat gaan we in dit boek niet bespreken. Samengevat kan je een *static constructor* gebruiken indien je een soort *oer-constructor* wilt hebben die eenmalige wordt aangeroepen wanneer het allereerste object van een klasse wordt aangemaakt. Wanneer een tweede (of derde, etc.) instantie wordt aangemaakt zal de *static constructor* niet meer aangeroepen worden.
+{% endhint %}
 
-Zonder het keyword heeft ieder object z'n eigen variabelen en aanpassingen binnen het object aan die variabelen heeft geen invloed op andere objecten. We tonen eerst de werking zoals we gewend zijn en vervolgens hoe ``static`` werkt.
 
-#### Variabelen ZONDER static
+### static fields
+
+Zonder het keyword ``static`` heeft ieder object z'n eigen instantievariabelen.  Aanpassingen binnen het object aan die variabelen heeft geen invloed op andere objecten van hetzelfde type. We tonen eerst de werking zoals we gewend zijn en vervolgens hoe ``static`` werkt.
+
+#### Zonder static fields
 
 Gegeven volgende klasse:
 
@@ -56,13 +63,13 @@ Dan zien we volgende uitvoer:
 2
 ```
 
-Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunne mekaars interne (zowel publieke als private) staat niet veranderen.
+Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars interne (zowel publieke als private) staat niet rechtstreeks veranderen.
 
-#### Variabelen MET static
+#### En nu mét static fields
 
-We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd=1;``.
+Laten we eens kijken wat er gebeurt indien we instantievariabele ``static`` maken. 
 
-We krijgen dan:
+We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd=1;``. We krijgen dan:
 
 ```java
 class Mens
@@ -80,7 +87,7 @@ class Mens
 }
 ```
 
-**We hebben nu gezegd dat ALLE objecten de variabele leeftijd delen. Er wordt van deze variabele dus maar een "instantie" in het geheugen gemaakt.**
+**We hebben nu gezegd dat ALLE objecten de variabele ``leeftijd`` *delen*. Er wordt van deze variabele dus maar een "instantie" in het geheugen gemaakt.**
 
 Voeren we nu terug volgende code uit:
 
@@ -104,10 +111,16 @@ Dan wordt de uitvoer:
 4
 ```
 
-Static laat je dus toe om informatie over de objecten heen te delen. **Gebruik static niet te pas en te onpas: vaak druist het in tegen de concepten van OO en wordt het vooral misbruikt**
-Ga je dit vaak nodig hebben? Niet zo vaak. Het volgende concept wel.
+We zien dat de ``leeftijd`` dus niet meer per object individueel wordt bewaard, maar dat het één globale variabele als het ware is geworden.
+``static`` laat je dus toe om informatie over de objecten heen te delen. 
 
-### Methoden met static
+{% hint style='warning' %}
+Gebruik static niet te pas en te onpas: vaak druist het in tegen de concepten van OO en wordt het vooral misbruikt
+{% endhint %}
+
+Ga je dit static variabelen, ook wel static fields genoemd, vaak nodig hebben? Niet zo vaak. Het volgende concept wel.
+
+### static methoden
 
 Heb je er al bij stil gestaan waarom je dit kan doen:
 
@@ -122,14 +135,28 @@ Math myMath= new Math(); //dit mag niet!
 myMath.Pow(3,2)
 ```
 
-De reden dat je de math-bibliotheken kan aanroepen rechtsreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefineerd staan.
+De reden dat je de ``Math``-bibliotheek kan aanroepen rechtsreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefineerd staan.
+
+{% hint style='tip' %}
+De klasse is op de koop toe ook zelf ``static`` gemaakt. Zo kan er zeker geen twijfel bestaan: deze klasse kan niét in een object gegoten worden.
+
+De klasse zal er dus zo ongeveer uitzien:
+
+```java
+static class Math
+{
+    public static double Pow(int getal, int macht)
+    {
+        //etc.
+```
+{% endhint %}
 
 #### Voorbeeld van static methoden
 
 Stel dat we enkele veelgebruikte methoden willen groeperen en deze gebruiken zonder telkens een object te moeten aanmaken dan doen we dit als volgt:
 
 ```java
-class EpicLibray
+static class EpicLibray
 {
     static public void ToonInfo()
     {
@@ -170,21 +197,39 @@ class Fiets
 	public static void VerminderFiets()
 	{
 		aantalFietsen--;
+        Console.WriteLine($"STATIC: Er zijn {aantalFietsen} fietsen");
 	}
 }
 ```
 
-Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen:
+Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt. We kunnen echter nog steeds instantie, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
 
+Laten we de uitvoer van volgende code eens bekijken:
 ```java
+Fiets Merckx = new Fiets();
+Fiets Steels = new Fiets();
+Fiets Evenepoel = new Fiets();
 Fiets.VerminderFiets();
+Fiets Aert = new Fiets();
+Fiets.VerminderFiets();
+```
+
+Dit zal volgende uitvoer geven:
+
+```text
+Er zijn nu 1 gemaakt  
+Er zijn nu 2 gemaakt
+Er zijn nu 3 gemaakt
+STATIC:Er zijn 2 fietsen
+Er zijn nu 3 gemaakt
+STATIC:Er zijn 2 fietsen
 ```
 
 ### Static vs non-static
 
-Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere  ``static` methoden en variabelen kunnen aanspreken. Dat is logisch: een static methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten aanpassen?
+Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere ``static` methoden en variabelen kunnen aanspreken. Dat is logisch: een static methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten benaderen?
 
-Volgende code zal dus een error geven:
+Volgende code zal dus een fout geven:
 
 ```java
 class Mens
@@ -199,7 +244,16 @@ class Mens
 
 De error die verschijnt **An object reference is required for the non-static field, method, or property 'Program.Fiets.gewicht'** zal bij de lijn ``gewicht--`` staan.
 
-Een eenvoudige regel is te onthouden dat van zodra je in een static omgeving (meestal een methode) bent je niet meer naar de niet-static delen van je code zal geraken.
+
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+
+Een eenvoudige regel is te onthouden dat van zodra je in een ``static`` omgeving (meestal een methode of property) bent je niet meer naar de niet-static delen van je code zal geraken.
+
 
 ### Static en main
 
@@ -218,158 +272,88 @@ public class Program
 Zoals je ziet is de ``Main`` methode als ``static`` gedefinieerd. Willen we dus vanuit deze methode andere methoden aanroepen dan moeten deze als ``static`` aangeduid zijn.
 
 Uiteraard kan je wel niet-static zaken gebruiken en daarom kan je dus gewone objecten etc. in je static methoden aanmaken.
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
+
 
 ### Een use-case met static
 
-Beeld je in dat je (weer) een pong-variant moet maken waarbij meerdere balletjes over het scherm moeten botsen. Je wilt echter niet dat de balletjes zelf allemaal apart moeten weten wat de grenzen van het scherm zijn. Mogelijk wil bijvoorbeeld dat je code ook werkt als het speelveld kleiner is dan het eigenlijke Console-scherm.
+Beeld je in dat je (weer) een pong-variant moet maken waarbij meerdere balletjes over het scherm moeten botsen. Je wilt echter niet dat de balletjes zelf allemaal apart moeten weten wat de grenzen van het scherm zijn. Mogelijk wil je bijvoorbeeld dat je code ook werkt als het speelveld kleiner is dan het eigenlijke Console-scherm.
 
 We gaan dit oplossen met een static property waarin we de grenzen voor alle balletjes bijhouden. Onze basis-klasse wordt dan al vast:
 
 ```java
-class Mover
+class Balletje
 {
-    static public int Width { get; set; }
-    static public int Height { get; set; }
+    static public int Breedte { get; set; }
+    static public int Hoogte { get; set; }
 
-    public void Update()
+```
+
+In ons hoofdprogramma (``Main``) kunnen we nu de grenzen voor alle balletjes vastleggen:
+
+```java
+Balletje.Hoogte = Console.WindowHeight;
+Balletje.Breedte = Console.WindowWidth;
+```
+
+Maar even goed maken we de grenzen voor alle balletjes gebaseerd op zelf gekozen waarden:
+
+```java
+Balletje.Hoogte = 20;
+Balletje.Breedte = 10;
+
+```
+
+De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm. We passen de ``Update``-methode aan rekening houdend met deze nieuwe kennis:
+
+```java
+
+public void Update()
+{
+    if (BalX + VX >= Balletje.Breedte || BalX + VX < 0)
     {
-        //Soon
+        VX = -VY;
     }
 
-    public void Draw()
+
+    BalX = BalX + VX;
+
+    if (BalY + VY >= Balletje.Hoogte || BalY + VY < 0)
     {
-        //Soon
+        VY = -VY;
     }
+
+    BalY = BalY + VY;
+}
+
 }
 ```
 
-Elders kunnen we nu dit doen:
-
-```java
-Mover.Height = Console.WindowHeight;
-Mover.Width = Console.WindowWidth;
-
-Mover m1 = new Mover();
-Mover m2= new Mover();
-```
-
-Maar dat hoeft dus niet, even goed maken we de grenzen voor alle balletjes kleiner:
-
-```java
-Mover.Height = 20;
-Mover.Width = 10;
-
-Mover m1 = new Mover();
-Mover m2= new Mover();
-```
-
-De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm.
-De klasse ``Mover`` bereiden we nu uit naar de standaard "beweeg" en "teken jezelf" code:
-
-```java
-class Mover
-{
-    public Mover(int xi, int yi, int dxi, int dyi)
-    {
-        x = xi;
-        y = yi;
-        dx = dxi;
-        dy = dyi;
-    }
-
-    static public int Width { get; set; }
-    static public int Height { get; set; }
-
-    private int dx=1;
-    private int dy=0;
-    private int x=0;
-    private int y=0;
-
-    public void Update()
-    {
-        x += dx;
-        if(x>=Mover.Width|| x<0)  //hier gebruiken we de static Width
-        {
-            dx *= -1;
-            x += dx;
-        }
-
-        y += dy;
-        if (y >= Mover.Height || y<0)
-        {
-            dy *= -1;
-            y += dy;
-        }
-    }
-
-    public void Draw()
-    {
-        Console.SetCursorPosition(x, y);
-        Console.Write("O");
-    }
-}
-```
-
-En nu kunnen we vlot balletjes laten rondbewegen op het scherm:
+En nu kunnen we vlot balletjes laten rondbewegen op bijvoorbeeld een klein deeltje maar van het scherm:
 
 ```java
 static void Main(string[] args)
 {
     Console.CursorVisible = false; //handig dit hoor
-    Mover.Height = Console.WindowHeight;
-    Mover.Width = Console.WindowWidth;
+    Balletje.Hoogte = 15;
+    Balletje.Breedte = 15;
 
-    Mover m1 = new Mover(1,1,1,1);
-    Mover m2 = new Mover(6,7,-2,1);
+    Balletje m1 = new Balletje(1,1,1,1);
+    Balletje m2 = new Balletje(2,2,-2,1);
     
     while (true)
     {
         m1.Update();
-        m1.Draw();
+        m1.TekenOpScherm();
 
         m2.Update();
-        m2.Draw();
-
-      
+        m2.TekenOpScherm();
+  
         System.Threading.Thread.Sleep(50);
         Console.Clear();
-    }
-}
-```
-
-Stel dat we nu elke seconden het speelveld met 1 willen vergroten, dan hoeven we hiervoor enkel een extra variabele ``int count=0`` voor de loop te zetten en dan in de loop het volgende te doen:
-
-```java
- if(count%20==0) //iedere seconde (daar we telkens 50ms slapen (1seconde =1000 ms => 1000ms/50ms == 20))
-{
-    Mover.Width++;
-    Mover.Height++;
-}
-```
-
-#### Maximum grootte
-
-Als je voorgaande code zou runnen zal je zien dat je redelijk snel een error krijgt. Dit komt omdat de hoogte en breedte van een Console maar tot bepaalde waardes kunnen verhogen. 
-
-We kunnen dit opvangen door in de klasse ``Mover`` volgende twee autoproperties:
-
-```java
-    static public int Width { get; set; }
-    static public int Height { get; set; }
-```
-
-Te vervangen door fullproperties die controleren of er niet over de grenzen wordt gegaan mbv ``Console.LargestWindowWidth`` en ``Console.LargestWindowHeight``. Voor ``Width`krijgen we dan:
-
-```java
-private static int width;
-
-public static int Width
-{
-    get { return width; }
-    set
-    {
-        if (value > 0 && value <  Console.LargestWindowWidth)
-            width = value;
     }
 }
 ```

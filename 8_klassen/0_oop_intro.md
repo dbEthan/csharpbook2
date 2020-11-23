@@ -52,7 +52,7 @@ int vy = 1;
 while (true)
 {
     //Xvector van richting veranderen aan de randen
-    if (balx + vx >= Console.WindowWidth || balx - Math.Abs(vx) < 0)
+    if (balx + vx >= Console.WindowWidth || balx+vx < 0)
     {
         vx = -vx;
     }
@@ -60,7 +60,7 @@ while (true)
     balx = balx + vx;
 
     //Yvector van richting veranderen aan de randen
-    if (baly + vy >= Console.WindowHeight || baly - Math.Abs(vy) < 0)
+    if (baly + vy >= Console.WindowHeight || baly+vy < 0)
     {
         vy = -vy;
     }
@@ -97,11 +97,11 @@ int vy2 = -1;
 while (true)
 {
     //Xvector van richting veranderen aan de randen
-    if (balx + vx >= Console.WindowWidth || balx - Math.Abs(vx) < 0)
+    if (balx + vx >= Console.WindowWidth || balx+vx < 0)
     {
         vx = -vx;
     }
-    if (bal2x + vx2 >= Console.WindowWidth || bal2x - Math.Abs(vx2) < 0)
+    if (bal2x + vx2 >= Console.WindowWidth || bal2x +vx2 < 0)
     {
         vx2 = -vx2;
     }
@@ -134,7 +134,7 @@ class Balletje
     public void Update()
     {
         //Xvector van richting veranderen aan de randen
-        if (BalX + VX >= Console.WindowWidth || BalX - Math.Abs(VX) < 0)
+        if (BalX + VX >= Console.WindowWidth || BalX + VX < 0)
         {
             VX = -VY;
         }
@@ -143,7 +143,7 @@ class Balletje
         BalX = BalX + VX;
 
         //Yvector van richting veranderen aan de randen
-        if (BalY + VY >= Console.WindowHeight || BalY - Math.Abs(VY) < 0)
+        if (BalY + VY >= Console.WindowHeight || BalY + VY < 0)
         {
             VY = -VY;
         }

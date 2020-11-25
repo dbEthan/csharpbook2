@@ -92,12 +92,38 @@ het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, 
 
 Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere datatypes** dan diegene die ik in het vorige boek heb leren? Ok?
 
+**Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
+
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
 
-**Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
+#### Klasse Studenten of Student?
+
+Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wat de klassen en wat de objecten in hun opgave juist zijn.
+
+Het is altijd belangrijk te begrijpen dat een klasse weliswaar beschrijft hoe alle objecten van dat type werken, maar op zich gaat die beschrijving steeds over 1 object uit de verzameling.
+
+Say what now?!
+
+Als je een klasse ``Student`` hebt, dan zal deze eigenschappen hebben zoals ``Punten``, ``Naam`` en ``DatumVanInschrijven``. 
+
+Als je een klasse ``Studenten`` daarentegen hebt, dan is dit vermoedelijk een klasse die beschrijft hoe een groep studenten moet werken ine je applicatie. Mogelijk zal je dan properties hebben zoals ``KlasNaam``, ``AantalAfwezigen``, etc. Kortom, eigenschappen over de groep, niet over 1 student.
+
+#### Level of Level1
+
+Een andere veelgemaakte fout is klassen hebben die eigenlijk exact 1 object maar kunnen voorstellen. Stel je voor dat je een spel maakt waarin verschillende levels zijn. Een logische keuze zou dan zijn om een klasse ``Level`` te maken (niét ``Levels``) die properties zoals ``MoeilijkheidsGraad``, ``HeeftGeheimeGrotten``, ``AantalVijanden``, etc.
+
+Vervolgens kunnen we dan instanties maken, 1 object stel 1 level in het spel voor. De speler kan dan van level naar level gaan en de code start dan telkens de ``BeginLevel`` methode:
+
+```java
+Level level1=new Level();
+
+level1.BeginLevel();
+```
+
+Wat dus niet mag zijn klassen met namen zoals ``Level1``,``Level2``, etc. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code zouden kunnen noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
 
 
 

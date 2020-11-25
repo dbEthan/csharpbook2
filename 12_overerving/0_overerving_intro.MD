@@ -82,6 +82,37 @@ bPaard.KanHinnikken=false;
 aDier.KanHinnikken=false; //!!! zal niet werken!
 ```
 
+<!---NOBOOKSTART--->
+{% hint style='tip' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/gotopolice.png)
+Ik heb weinig te doen. Dus nu begint de auteur mij al in te schakelen voor alternatieve uitleg. Ach ja, zolang ik brood op de plank leg zal m'n partner niet klagen!
+
+Als we de "kennis" die in dit en het vorige boek zouden moeten programmeren, dan zou overerving ons ook kunnen helpen. Je kan dit boek onmogelijk begrijpen zonder de kennis van boek 1, Zie Scherp. Dus eigenlijk is dit boek een specialisatie van boek 1: de kennis van van boek 1 zit hierin vervat, maar wordt uitgebreid/gespecialiseerd met deze van boek 2.
+
+We zouden dus kunnen schrijven:
+
+```java
+class KennisZieScherp
+{
+
+}
+
+class KennisZieScherper: KennisZieScherp
+{
+
+}
+```
+
+Man, man, soms denk ik dat de auteur van beide boeken high wordt van z'n eigen code, wat een surreëel gezwam.
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
+
+
 ### Multiple inheritance
 
 In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen.

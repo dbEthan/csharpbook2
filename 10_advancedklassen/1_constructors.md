@@ -12,7 +12,7 @@ Uiteraard is dit niet alles. In dit hoofdstuk bekijken we:
 * ``static``: een speciaal concept waar je in het begin wat last mee zal hebben :)
 * Object initializer syntax: een recente C# aanvulling die het werken met constructors wat eenvoudiger maakt
 
-## Constructorss
+## Constructors
 
 ### Werking new operator
 Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we aan met behulp van de ``new`` operator zoals we al gezien hebben:

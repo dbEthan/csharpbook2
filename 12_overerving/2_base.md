@@ -1,5 +1,5 @@
 ## Base keyword
-Het **base** keyword laat ons toe om bij een overriden methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen.
+Het **``base``** keyword laat ons toe om bij  ``override`` van een methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen. Dit kan handig zijn wanneer je in je child-klasse de bestaande implementatie wenst uit te bereiden.
 
 Stel dat we volgende 2 klassen hebben:
 ```java
@@ -22,8 +22,9 @@ class Frituur:Restaurant
 }
 ```
 
-Het poetsen van een Frituur is duurder (1000 basis + 500 voor ontsmetting) dan een gewoon restaurant. Als we echter later beslissen dat de basisprijs (in Restaurant) moet veranderen dan moet je ook in alle child-klassen doen.
-Base lost dit voor ons. De Frituur-klasse herschrijven we naar:
+Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) dan een gewoon ``Restaurant``. Als we echter later beslissen dat de basisprijs (in Restaurant) moet veranderen dan moet je ook in alle child-klassen doen, wat natuurlijk geen goede programmeerstijl is.
+
+``base`` lost dit voor ons. De Frituur-klasse herschrijven we naar:
 
 ```java
 class Frituur:Restaurant
@@ -36,3 +37,58 @@ class Frituur:Restaurant
  
 }
 ```
+
+Het ``base`` keyword laat ons toe om in onze code expliciet een methode of property van de parent-klasse aan te roepen. Ook al overschrijven we de implementatie van ``PoetsAlles`` toch kan de originele versie van de parent-klasse nog steeds gebruikt worden.
+
+{% hint style='tip' %}
+We hebben een soortgelijke werking ook reeds gezien bij de constructors van overgeërfde klassen
+{% endhint %}
+
+Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan de start van de methode, soms op het einde, soms halverwege. Alles hangt er van af wat je juist nodig hebt.
+
+<!---NOBOOKSTART--->
+{% hint style='tip' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/care.png)
+Ik denk dat ik een extra voorbeeldje nodig ga hebben.
+
+Laten we eens kijken. Beeld je in dat je volgende basisklasse hebt:
+
+```java
+class Oermens
+{
+      public virtual int VoorzieVoedsel()
+      {
+      Random r = new Random();
+      return r.Next(1, 10); //kg
+      }
+}
+```
+
+Wanneer 1 van mijn dorpsgenoten voedsel zoekt (door te jagen) zal hij of zij ergens tussen de 1 en 9 kilogram kunnen verzamelen per keer.
+
+De moderne mens, die overerft van de oermens, is natuurlijk al iets beter in het maken van voedsel en kan dagelijks standaard 100kg voedsel maken. 
+
+Echter, er bestaan ook hipster die houden van de klassieke manier van voedsel verzamelen. Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden:
+
+```java
+class ModerneMens: Oermens
+{
+      private bool IsHipster;
+
+      public override int VoorzieVoedsel()
+      {
+      if (IsHipster)
+            return base.VoorzieVoedsel() + 20;
+      else
+            return 100;
+      }
+}
+```
+
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->

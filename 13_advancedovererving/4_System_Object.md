@@ -192,8 +192,8 @@ Algoritmes bespreken om zelf een hash te genereren ligt niet in de scope van dit
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
 # Ik ben nog niet helemaal mee
-Niet getreurd, je bent niet de enige. Overerving,``System.Object``, ``Equals``,...het is allemaal een hoop nieuwe kennis om te verwerken. 
-Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what we did there?)
+Niet getreurd, je bent niet de enige. Overerving,``System.Object``, ``Equals``,...het is allemaal een hoop nieuwe kennis om te verwerken. En ik vermoed dat je nu niet bepaald overweldigd bent van de nieuwe kennis. Vermoedelijk heb je nu zoiets van? "Ok..wow?! Wat krijg ik nu juist extra wetende dat al mijn klassen overerven van een oer-klasse? 4 methoden en wat beloofde compatibiliteit met andere .NET bibliotheken? Call me ...unimpressed".
+Begrijpelijke reactie. Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what we did there?) waarin polymorfisme onze sterspeler zal worden en zal toelaten erg krachtige code te schrijven. Polymorfisme wordt onze doelpuntenmaker, maar ``System.Object`` zal steeds de perfecte voorzet  geven!
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

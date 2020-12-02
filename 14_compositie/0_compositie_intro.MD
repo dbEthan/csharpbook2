@@ -1,17 +1,25 @@
 # Compositie en aggregatie
 
-
-{blurb, class: tip}
+{% hint style='tip' %}
 Dit hoofdstuk is kort maar krachtig. We gaan niets nieuws uitleggen, maar eerder zaken benoemen die je waarschijnlijk al toepaste zonder te weten dat er daar ook een naam voor was.
-{/blurb}
+{% endhint %}
 
-We spreken over compositie (**composition**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type motor dat je gebruikt in een object van het type auto. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaald of het gaat om aggregatie of compositie:
+
+We spreken over compositie (**composition**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type Motor dat je gebruikt in een object van het type Auto. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaalt of het gaat om aggregatie of compositie:
 
 * **Compositie**: Het interne object heeft geen bestaansreden zonder het moederobject. Denk bijvoorbeeld aan een kamer in een huis. Als het huis verdwijnt, verdwijnt ook de kamer.
 * **Aggregatie**: Beide objecten kunnen onafhankelijk van elkaar bestaan. Denk hierbij aan de motor in een auto. Wanneer de auto vernietigd wordt kan de motor gered worden en elders gebruikt worden. Een ander voorbeeld zijn de harde schijven in een computer.
 
 Het lijdende voorwerp zal steeds het object zijn dat binnen het onderwerp zal geplaatst worden (*motor* in auto, *schijf* in computer).
 
+
+## Heeft een-relatie
+
+Overerving konden we detecteren door de "is een"-relatie. Als twee klassen in een "is een"-relatie zaten , was er sprake van overerving. Compositie daarentegen detecteren we met behulp van de "heeft een"-relatie.
+
+Een klassieke fout is overerving gebruiken wanneer je de boek<>pagina relatie wilt aanduiden. Een boek is géén pagina, ook niet omgekeerd. Een boek HEEFT een pagina (of meerdere).
+
+Je hoort ook ogenblikkelijk of het om een "heeft één" of "heeft meerdere"-relatie gaat. In het tweede geval, heeft meerdere, wil dit zeggen dat het moederobject **een array van het interne object** in zich heeft. Wederom het voorbeeld van het boek: een boek heeft meerdere pagina's. Dus in de klasse ``Boek`` zullen we vermoedelijk een object van het type ``Pagina[]`` of ``List<Pagina>`` tegenkomen.
 
 ## UML aanduiding
 
@@ -20,26 +28,18 @@ Compositie duiden we aan met een lijn die begint met een volle ruit aan de kant 
 ![Iedereen kan herleid worden tot armen, benen en een hoofd](../assets/6_klassen/compuml.png)
 [bron](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
 
-Optioneel duidt een getal aan iedere kant van de lijn de verhouding aan. Bijvoorbeeld:
+Aggregatie duiden we op exact dezelfde manier aan, maar de ruiten zijn niet gevuld. Optioneel duidt een getal aan iedere kant van de lijn de verhouding aan (zowel bij aggregatie als compositie), zodat we kunnen aangeven hoeveel (of geen) objecten het moederobject kan hebben:
 
-![Een complexer compositie voorbeeld](../assets/6_klassen/multipplecompuml.png)
-[bron](http://www.jot.fm/issues/issue_2004_11/column5/)
+![Een computer heeft minstens 1 processor nodig, maar kan er tot 8 hebben. Ieder element kan echter ook op zichzelf bestaan.](../assets/6_klassen/multipplecompuml.png)
 
+Uiteraard zijn ook combinaties mogelijk. Stel je voor dat je een applicatie moet ontwerpen waarin je een reeks huizen moet bouwen, waarbij er in de slaapkamer steeds een computer moet gezet worden:
+
+![](../assets/6_klassen/compagg.png)
+
+
+{% hint style='tip' %}
 Herinner je: Overerving duiden we aan met een pijl die wijst naar de parent-klasse
-
-
-
-
-Aggregatie duiden we op exact dezelfde manier aan, maar de ruiten zijn niet gevuld. 
-
-
-![Een complexer compositie voorbeeld](../assets/6_klassen/multipplecompuml.png)
-[bron](http://www.jot.fm/issues/issue_2004_11/column5/)
-
-{blurb, class: tip}
-Bekijk zeker eens een complexer UML-diagramma zoals bijvoorbeeld van schaken [hier](https://stackoverflow.com/questions/17631125/trying-to-convert-diagram-of-a-chess-game-to-java-code-abstract)
-{/blurb}
-
+{% endhint %}
 
 ## Compositie en aggregatie in de praktijk
 
@@ -123,9 +123,11 @@ myPC.CDisk= myDisk;
 
 Op deze manier hebben we nog steeds een referentie naar ``myDisk`` en zal de GC dit object dus niet verwijderen wanneer , om welke reden ook, ``myPC`` wordt opgekuist.
 
-{blurb, class: tip}
+
+{% hint style='tip' %}
 Kortom, niets nieuws onder de zon. Alle manieren die ja al kende om met bestaande types objecten aan te maken gelden nog steeds. Compositie deed je al de hele tijd wanneer je bijvoorbeeld zei "een student heeft een leeftijd" en dan een variabele ``int age`` aanmaakte. Het grote verschil is echter dat objecten moeten geïnstantieerd worden , wat niet moest met value-types. 
-{/blurb}
+{% endhint %}
+
 
 ## Compositie en aggregatie objecten gebruiken
 
@@ -144,13 +146,15 @@ class PC
 }
 ```
 
-{blurb, class: warning}
+
+{% hint style='warning' %}
 ### NullReference is een klassieke fout
 
 Een veelvoorkomende fout bij compositie en aggregatie van objecten is dat je een intern object aanspreekt dat nooit werd geïnstantieerd. Je krijgt dan een ``NullReferenceException``.
 
 Het is dus zeker bij compositie en aggregatie een goede gewoonte om zoveel mogelijk te controleren op ``null`` telkens je het object gaat gebruiken.  
-{/blurb}
+{% endhint %}
+
 
 ## "Heeft meerdere"- relatie
 

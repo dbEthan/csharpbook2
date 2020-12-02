@@ -49,8 +49,9 @@
   * [System.Object](13_advancedovererving/4_System_Object.md)
   * [Abstract](13_advancedovererving/5_abstract.md)
 <!---  * [OOPQuest Fase 7](oopquest/h7_basics.md)--->
-* H8: Compositie
+* H8: Compositie en this
   * [Compositie](14_compositie/0_compositie_intro.MD)
+  * [this keyword](14_compositie/this.md)
 <!---  * [OOPQuest Fase 8](oopquest/h8_basics.md)--->
 * H9: Polymorfisme
   * [Polymorfisme](15_polymorfisme/11_polymo_intro.MD)

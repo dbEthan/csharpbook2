@@ -24,8 +24,8 @@ Je hoort ook ogenblikkelijk of het om een "heeft één" of "heeft meerdere"-rela
 
 Compositie duiden we aan met een lijn die begint met een volle ruit aan de kant van de klasse die de objecten in zich heeft:
 
-![Iedereen kan herleid worden tot armen, benen en een hoofd](../assets/6_klassen/compuml.png)
-[bron](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
+![Een huis heeft een slaapkamer en heeft een badkamer](../assets/6_klassen/compuml.png)
+
 
 Aggregatie duiden we op exact dezelfde manier aan, maar de ruiten zijn niet gevuld. Optioneel duidt een getal aan iedere kant van de lijn de verhouding aan (zowel bij aggregatie als compositie), zodat we kunnen aangeven hoeveel (of geen) objecten het moederobject kan hebben:
 
@@ -272,17 +272,5 @@ donor = null //donor wordt begraven
 ```
 
 {% hint style='warning' %}
-
-{% endhint %}
-
-<!---NOBOOKSTART--->
-{% hint style='warning' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/attention.png)
 Let er wel op dat je niet overal compositie begin toe te passen alsof je de Dokter Frankenstein van C# bent. Hoe meer compositie (of aggregatie) je toepast in een klasse, hoe specifieker die soms wordt, en daardoor mogelijk minder herbruikbaar. Het is om die reden dat we verderop interfaces gaan ontdekken om ervoor te zorgen dat 2 of meerdere klassen minder "op/in elkaar gelijmd" zitten ten gevolge van bijvoorbeeld een nogal hechte compositie.
-<!---{/aside}--->
-<!---NOBOOKSTART--->
 {% endhint %}
-<!---NOBOOKEND--->

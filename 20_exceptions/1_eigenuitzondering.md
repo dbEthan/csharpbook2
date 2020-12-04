@@ -1,14 +1,16 @@
 ## Zelf exceptions opwerpen
 
-Je kan ook in je eigen code uitzonderingen  opwerpen, zodat deze elders opgevangen worden. Je kan hierbij zelf exceptions maken (zie volgende sectie) of gewoon gebruik maken van een bestaande Exception-klasse.
+We zijn ondertussen al gewend aan het opvangen van uitzonderingen met behulp van ``try`` en ``catch``. De uitzonderingen die we opvangen zijn steeds objecten van het type ``Exception`` of van een afgeleide klasse. Denk maar aan de ``NullReferenceException`` klasse die werd overgeërfd van ``Exception``.
 
-Een voorbeeld:
+Je kan echter ook in je eigen code **(al dan niet zelfgemaakte) uitzonderingen**  opwerpen, zodat deze elders opgevangen worden. Je kan hierbij zelf exceptions maken (zie volgende sectie) of gewoon gebruik maken van een bestaande Exception-klasse.
+
+Een voorbeeld van een bestaand ``Exception`` type gebruiken:
 
 ```java
 static int DoeIets(int getal)
 {
     if (getal == 0)
-        throw new DivideByZeroException("Getal equals 0.You shouldn't do that!");
+        throw new DivideByZeroException("Tried dividing by 0.You shouldn't do that!");
     else
         return 100 / getal;
 }
@@ -29,16 +31,19 @@ static void Main(string[] args)
 
 De uitvoer zal zijn:
 
-![Het is geen goede gewoonte om je foutboodschappen uit meerdere talen te laten bestaan](../assets/20_exceptions/eigenex.png)
+```text
+Tried dividing by 0. You shouldn't do that.
+```
 
-De lijn ``throw new DivideByZeroException("Getal equals 0.You shouldn't do that!");`` zorgt er dus voor dat we een eigen foutboodschap 'verpakken'
+
+De lijn ``throw new DivideByZeroException("Tried dividing by 0.You shouldn't do that!");`` zorgt er dus voor dat we een eigen foutboodschap 'verpakken'
 
 ### Een eigen exception ontwerpen
 
-Je kan ook eigen klassen afleiden van Exception zodat je eigen uitzonderingen kan maken en gooien in je programma. Je maakt hiervoor gewoon een nieuwe klasse aan die je laat overerven van de Exception-klasse. Een voorbeeld:
+Je kan ook eigen klassen overerven van ``Exception`` zodat je eigen uitzonderingen kan maken. Je maakt hiervoor gewoon een nieuwe klasse aan die je laat overerven van de Exception-klasse. Een voorbeeld:
 
 ```java
-class MyException: Exception
+class Timception: Exception
 {
     public override string ToString()
     {
@@ -60,7 +65,7 @@ static void Main(string[] args)
         TimsMethod();
     }
  
-    catch (MyException e)
+    catch (Timception e)
     {
        Console.WriteLine(e.ToString());
     }     
@@ -69,9 +74,8 @@ static public void TimsMethod()
 {
     //do stuff
     //when suddenly: an exception! 
-    MyException exp = new MyException();
+    Timception exp = new Timception();
     throw exp;
 }
 ```
 
-![Onze eigen exception in actie!](../assets/20_exceptions/myex.png)

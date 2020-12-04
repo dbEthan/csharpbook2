@@ -1,4 +1,4 @@
-# Exception handling
+## Exception handling
 
 Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een bekentenis te maken... Ben je er klaar voor?! Hier komt ie. Luister goed, maar zeg het niet door: we hebben al de hele tijd informatie voor je achter gehouden! Ja, sorry, het was sterker dan onszelf. Maar we deden het voor jou. Het was de enige manier om ervoor te zorgen dat je leerde programmeren zonder constant bugs in je code achter te laten. Dus ja, hopelijk neem je het ons niet kwalijk?! Het wordt tijd om **exception handling** er bij te halen! Een essentiële programmeertechniek die ervoor zorgt dat je programma minder snel zal crashen indien er zich **uitzonderingen** tijdens de uitvoer voordoen. 
 
@@ -6,7 +6,7 @@ Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een beke
 Wat een dramatische start zeg. Waar was dat voor nodig?! De reden is eenvoudig: met exception handling kan je code schrijven die al jouw slecht geschreven als het ware verstopt met een zacht dekentje, waardoor het voor de eindgebruiker zal lijken dat jouw programma vlekkeloos werkt. Niets is echter waar, het dekentje verstopt een smeltkroes van stinkende, gure, code die om de haverklap faalt en meer bugs bevat dan Windows Millennium. Kortom, lees verder: maar besef dat exception handling een tweesnijdend zwaar is.
 {% endhint %}
 
-## Waarom exception handling?
+### Waarom exception handling?
 
 Veel fouten in je code zijn het gevolg van:
 
@@ -39,7 +39,7 @@ double resultaat= 100/noemer;
 Console.WriteLine($"100/{noemer} is gelijk aan {resultaat}");
 ```
 
-## Try en Catch
+### Try en Catch
 
 Het mechanisme om exceptions af te handelen in C# bestaat uit 2 delen:
 

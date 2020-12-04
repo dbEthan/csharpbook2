@@ -1,4 +1,4 @@
-## Waar exception handling in code plaatsen?
+### Waar exception handling in code plaatsen?
 
 De plaats in je code waar je je exceptions zal opvangen, heeft invloed op de totale werking van je code. 
 

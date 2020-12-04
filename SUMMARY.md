@@ -16,11 +16,13 @@
   * [Properties](8_klassen/2_properties.md)
   * [DateTime: leren werken met objecten](8_klassen/datetime.md)
 <!---  * [OOPQuest Fase 1](oopquest/h1_basics.md)--->
-* H2: Geheugenmanagement 
+* H2: Geheugenmanagement, uitzonderingen en namespaces
   * [Stack en Heap](9_meminoop/6_memorymanagement.md)
   * [Objecten en methoden](9_meminoop/6b_objectenenmethoden.md)
   * [Null en NullReferenceException](9_meminoop/nullreference.md)
   * [Namespaces](9_meminoop/namespaces.md)
+  * [Werken met exceptions](20_exceptions/0_exceptionhandling.md)
+  * [Waar exceptions plaatsen](20_exceptions/waarplaatsen.md)
 <!---  * [OOPQuest Fase 2](oopquest/h2_basics.md)--->
 * H3: Gevorderde klasseconcepten
   * [Default Constructors](10_advancedklassen/1_constructors.md)
@@ -40,26 +42,22 @@
   * [Virtual en override](12_overerving/1_virtual_override.md)
   * [Base keyword](12_overerving/2_base.md)
 <!---  * [OOPQuest Fase 5](oopquest/h4_basics.md)--->
-* H6: Exception handling
-  * [Werken met exceptions](20_exceptions/0_exceptionhandling.md)
-  * [Waar exceptions plaatsen](20_exceptions/waarplaatsen.md)
-  * [Zelf uitzonderingen maken](20_exceptions/1_eigenuitzondering.md)
-<!---  * [OOPQuest Fase 6](oopquest/h6_basics.md)--->
-* H7: Gevorderde overervingsconcepten
+* H6: Gevorderde overervingsconcepten
   * [System.Object](13_advancedovererving/4_System_Object.md)
   * [Abstract](13_advancedovererving/5_abstract.md)
+  * [Zelf uitzonderingen maken](20_exceptions/1_eigenuitzondering.md)
 <!---  * [OOPQuest Fase 7](oopquest/h7_basics.md)--->
-* H8: Compositie en this
+* H7: Compositie en this
   * [Compositie](14_compositie/0_compositie_intro.MD)
   * [this keyword](14_compositie/this.md)
 <!---  * [OOPQuest Fase 8](oopquest/h8_basics.md)--->
-* H9: Polymorfisme
+* H8: Polymorfisme
   * [Polymorfisme](15_polymorfisme/11_polymo_intro.MD)
   * [Polymorfisme in de praktijk](15_polymorfisme/polypraktijd.md)
   * [Is en As keywords](18_IsAs/1_IsAs.md)
   * [Objecten vergelijken: alles komt samen](18_IsAs/6_equals.md)
 <!---  * [OOPQuest Fase 9](oopquest/h9_basics.md)--->
-* H10: Interfaces
+* H9: Interfaces
   * [Interface intro](16_interfaces/1_Interface_intro.MD)
   * [Interfaces voorbeeld met president](16_interfaces/presidentinterfaces.md)
   * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)

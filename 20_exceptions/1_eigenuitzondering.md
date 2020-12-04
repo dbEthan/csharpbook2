@@ -73,7 +73,7 @@ static void Main(string[] args)
 static public void TimsMethod()
 {
     //do stuff
-    //when suddenly: an exception! 
+    //when suddenly: a wild exception appears
     Timception exp = new Timception();
     throw exp;
 }

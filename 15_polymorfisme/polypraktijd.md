@@ -1,51 +1,53 @@
-## Polymorfisme in de praktijk: Presidenten
+## Polymorfisme in de praktijk
 
-{% hint style='tip' %}
-![Gezocht: wie weet waar deze still vandaan komt? We hebben geen flauw benul. We zien Robert Redford en Bush Senior, uit een film ofzo?](../assets/9_interfaces/president.jpg)
-{% endhint %}
+Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer" <!---[^voetnoot]--->
 
-Beeld je in dat je een klasse President hebt met een methode "RunTheCountry" (voorbeeld van [StackOverflow](https://stackoverflow.com/questions/1031273/what-is-polymorphism-what-is-it-for-and-how-is-it-used) ). De President heeft toegang tot tal van adviseurs die hem kunnen helpen (inzake miltair, binnenlands beleid, economie). Zonder de voordelen van polymorfisme zou de klasse President er zo kunnen uitzien, **slechte manier**:
+<!---[^voetnoot]Dit voorbeeld is gebaseerd op een oplossing op Stackoverflow: https://stackoverflow.com/questions/1031273 ). --->
+<!---NOBOOKSTART--->
+Gebaseerd op volgende voorbeeld [StackOverflow](https://stackoverflow.com/questions/1031273 )).
+<!---NOBOOKEND--->
+
+De EersteMinister heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zake en economie). Zonder de voordelen van polymorfisme zou de klasse EersteMinister er zo kunnen uitzien (**slechte manier**!):
 
 ```java
-public class President
+public class EersteMinister
 {
-    MilitaryMinister Petraeus= new MilitaryMinister();
-    ForeignSecretary Condi = new ForeignSecretary();
-    HealthOfficial MrX = new HealthOfficial();
+    MinisterVanMilieu Jansens= new MinisterVanMilieu();
+    MinisterBZ Ganzeweel = new MinisterBZ();
+    MinisterVanEconomie VanCent = new MinisterVanEconomie();
 
-    public void RunTheCountry()
+    public void Regeer()
     {
-        // people walk into the Presidents office and he tells them what to do
-        // depending on who they are.
+        // ministers stappen binnen en zeggen wat er moet gebeuren
 
-        // Fallujah Advice - Mr Prez tells his military exactly what to do.
-        Petraeus.IncreaseTroopNumbers();
-        Petraeus.ImproveSecurity();
-        Petraeus.PayContractors();
+        // Jansens: Problematiek aangaande bos dat gekapt wordt
+        Jansens.VerhoogBosSubsidies();
+        Jansens.OpenOnderzoek();
+        Jansens.ContacteerGreenpeace();
 
-        // Condi diplomacy advice - Prez tells Condi how to negotiate
+        // Ganzeweel advies omtrent rel aan grens met Nederland
 
-        Condi.StallNegotiations();
-        Condi.LowBallFigure();
-        Condi.FireDemocraticallyElectedIraqiLeaderBecauseIDontLikeHim();
+        Ganzeweel.VervangAmbassadeur();
+        Ganzeweel.RoepTroepenmachtTerug();
+        Ganzeweel.VerhoogRisicoZoneAanGrens();
 
-        // Health care mr X
+        // Van Cent geeft advies omtrent nakende beurscrash
 
-        MrX.IncreasePremiums();
-        MrX.AddPreexistingConditions();
+        VanCent.InjecteerGeldInMarkt();
+        VanCent.VerlaagWerkloosheidsPremi();
     }
 }
 ```
 
-De MilitaryMinister zou er zo kunnen uitzien:
+De ``MinisterVanMilieu`` zou er zo kunnen uitzien:
 ```java
-class MilitaryMinister
+class MinisterVanMilieu
 {
-  public void IncreaseTroopNumbers()
+  public void VerhoogBosSubsidies()
   {
     //..
   }
-  public void ImproveSecurity()
+  public void OpenOnderzoek()
   {
     //..
   }
@@ -53,84 +55,94 @@ class MilitaryMinister
 }
 ```
 
-De HealthOfficial-klasse heeft dan weer heel andere publieke methoden. En die Foreignminister ook weer totaal andere.
+De ``MinisterVanEconomie``-klasse heeft dan weer heel andere publieke methoden. En de ``MinisterBZ`` ook weer totaal andere.
 
-Je merkt dat de President (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Uiteraard is dat onmogelijk (een fictief voorbeeld: stel je Trump voor...Denk je echt dat die zo veel weet?) . Bovenstaande code is dus zeer slecht. Telkens er zaken binnen een specifiek landsonderdeel wijzigen moet dit ook in de klasse President aangepast worden. 
+Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het encapsulatie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. 
 
-Dankzij polymorfisme kunnen we dit alles veel mooier oplossen:
+**Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
 
-1. We verplichten alle adviseurs dat ze overerven van de abstracte klasse ``Advisor`` die maar 1 abstracte methode heeft ``Advise``:
+1. We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
 
 ```java
-abstract class Advisor
+abstract class Minister
 {
-  abstract public void Advise();
+  abstract public void Adviseer();
 }
 
-class MilitaryMinister:Advisor
+class MinisterVanMilieu:Minister
 {
-  public override void Advise()
+  public override void Adviseer()
   {
-       increaseTroopNumbers();
-       improveSecurity();
-       payContractors();
+       VerhoogBosSubsidies();
+       OpenOnderzoek();
+       ContacteerGreenpeace();
   }
-  private void increaseTroopNumbers(){ ... }
-  private void improveSecurity(){ ... }
-  private void payContractors(){ ... }
+  private void VerhoogBosSubsidies(){ ... }
+  private void OpenOnderzoek(){ ... }
+  private void ContacteerGreenpeace(){ ... }
   }
 }
 
-class ForeignSecretary:Advisor
+class MinisterBZ:Minister
 {
   //...
 }
-class HealthOfficial:Advisor
+class MinisterVanEconomie:Minister
 {
   //...
 }
 ```
 
-2° Het leven van de President wordt plots véél makkelijker:
+2° Het leven van de EersteMinister wordt plots véél makkelijker. Hij kan gewoon de ``Adviseer`` methode aanroepen van iedere minister:
 
 ```java
-public class MisterPresident
+public class EersteMinister
 {
-    public void RunTheCountry()
+    Minister Jansens = new MinisterVanMilieu();
+    Minister Ganzeweel = new MinisterBZ();
+    Minister VanCent= new MinisterVanEconomie();
+    
+    public void Regeer()
     {
-        Advisor Petraeus = new MilitaryAdvisor();
-        Advisor Condi = new ForeignSecretary();
-        Advisor mrX= new HealthOfficial();
-        Petraeus.Advise(); // # Petraeus says send 100,000 troops to Fallujah
-        Condi.Advise(); // # she says negotiate trade deal with Iran
-        mrX.Advise(); // # they say we need to spend $50 billion on ObamaCare
+
+        Jansens.Adviseer(); 
+        Ganzeweel.Adviseer(); 
+        VanCent.Adviseer();
     }
 }
 ```
 
-3° En we kunnen hem nog helpen door met een array of ``List<Advisor>`` te werken zodat hij ook niet steeds de "namen" van z'n adviseurs moet kennen:
+3° En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen:
 
 ```java
-public class MisterPresident
+public class EersteMinister
 {
-    public void RunTheCountry()
-    {   
-        List<Advisor> allMinisters= new List<Advisor>();
-        allMinisters.Add(new MilitaryAdvisor());
-        allMinisters.Add(new ForeignSecretary());
-        allMinisters.Add(new HealthOfficial());
+   List<Minister> alleMinisters= new List<Minister>();
+    public EersteMinister()
+    {
+        alleMinisters.Add(new MinisterVanMilieu());
+        alleMinisters.Add(new MinisterBZ());
+        alleMinisters.Add(new MinisterVanEconomie());
+    }
 
-        //Ask advise from each:
-        foreach (Advisor minister in allMinisters)
+    public void Regeer()
+    {  
+        foreach (Minister minister in alleMinisters)
         {
-            minister.Advise();
+            minister.Adviseer();
         }
     }
 }
 ```
 
-En wie zei dat het presidentsschap moeilijk was?!
+En wie zei dat het regeren moeilijk was?!
 
+{% hint style='tip' %}
+Merk op dat dit voorbeeld ook goed gebruik maakt van **composotie**.
+{% endhint %}
+
+
+<!---NOBOOKSTART--->
 {% hint style='tip' %}
 ## Nog voorbeelden van polymorfisme nodig?
 
@@ -138,6 +150,8 @@ Volgende tekst heeft een leuke insteek om polymorfisme uit te leggen... aan de h
 
 Volgende voorbeeld is iets praktischer: [Arena with a mage in C# .NET (inheritance and polymorphism)](https://www.ict.social/csharp/oop/arena-with-mage-in-csharp-net-inheritance-and-polymorphism)
 {% endhint %}
+
+<!---NOBOOKEND--->
 
 <!---NOBOOKSTART--->
 # Kennisclip

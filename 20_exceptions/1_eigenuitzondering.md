@@ -53,16 +53,16 @@ class Timception: Exception
 }
 ```
 
-Om deze exception nu zelf op te werpen gebruiken we het keyword **``throw``**. 
+Om deze exception nu zelf op te werpen gebruiken we het keyword **``throw``** gevolgd door een object van het type uitzondering dat je wenst op te werpen. 
 
-In volgende voorbeeld gooien we onze eigen exception op een bepaald punt in de code op en vangen deze dan op (de reden van de exception moet je zelf verzinnen, het is maar een onnozel voorbeeld):
+In volgende voorbeeld gooien we onze eigen exception op een bepaald punt in de code op en vangen deze dan op:
 
 ```java
 static void Main(string[] args)
 {
     try
     {
-        TimsMethod();
+        TimsMethode();
     }
  
     catch (Timception e)
@@ -70,9 +70,10 @@ static void Main(string[] args)
        Console.WriteLine(e.ToString());
     }     
 }
-static public void TimsMethod()
+static public void TimsMethode()
 {
     //do stuff
+    //...
     //when suddenly: a wild exception appears
     Timception exp = new Timception();
     throw exp;

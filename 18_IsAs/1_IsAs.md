@@ -26,23 +26,23 @@ Een Persoon **is géén** Voertuig.
 
 Stel dat we enkele variabelen hebben als volgt:
 ```java
-Auto myAuto= new Auto();
+Auto mijnAuto= new Auto();
 Persoon rambo= new Persoon();
 ```
 
 We kunnen nu de objecten met ``is`` bevragen of ze van een bepaalde type zijn:
 ```java
-if(myAuto is Voertuig)
+if(mijnAuto is Voertuig)
 {
-    Console.WriteLine("The first object is a Voertuig");
+    Console.WriteLine("mijnAuto is een Voertuig");
 }
 if(rambo is Voertuig)
 {
-    Console.WriteLine("The second object is a Voertuig");
+    Console.WriteLine("rambo is een Voertuig");
 }
 ```
 
-De uitvoer zal worden:``The first object is a Voertuig``.
+De uitvoer zal worden:``mijnAuto is een Voertuig``. 
 
 Met polymorfisme wordt dit voorbeeld echter interessanter. Wat als we een hoop objecten in een lijst van voertuigen plaatsen en nu enkel met de auto's iets willen doen, dan kan dat:
 
@@ -51,6 +51,7 @@ List<Voertuig> alleMiddelen = new List<Voertuig>();
 alleMiddelen.Add(new Voertuig());
 alleMiddelen.Add(new Auto());
 alleMiddelen.Add(new Voertuig());
+
 foreach (var middel in alleMiddelen)
 {
     if(middel is Auto)

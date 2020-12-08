@@ -55,7 +55,7 @@
   * [Polymorfisme](15_polymorfisme/11_polymo_intro.MD)
   * [Polymorfisme in de praktijk](15_polymorfisme/polypraktijd.md)
   * [Is en As keywords](18_IsAs/1_IsAs.md)
-  * [Objecten vergelijken: alles komt samen](18_IsAs/6_equals.md)
+  * [is, as en Polymorfisme: een krachtige bende](18_IsAs/6_equals.md)
 <!---  * [OOPQuest Fase 9](oopquest/h9_basics.md)--->
 * H9: Interfaces
   * [Interface intro](16_interfaces/1_Interface_intro.MD)

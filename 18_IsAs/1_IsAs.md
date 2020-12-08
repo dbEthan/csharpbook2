@@ -68,11 +68,11 @@ Student fritz= new Student();
 Mens jos = (Mens)fritz;
 ```
 
- Het probleem bij casting is dat dit niet altijd lukt. Indien de conversie niet mogelijk is zal een uitzondering gegenereerd worden en je programma zal  crashen als  je niet aan exception handling doet.
+Het probleem bij casting is dat dit niet altijd lukt. Indien de conversie niet mogelijk is zal een uitzondering gegenereerd worden en je programma zal  crashen als  je niet aan exception handling doet.
 
- Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit object te converteren. Als het niet lukt, zet het dan op ``null`` in plaats van een Exception te werpen."**
+Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit object te converteren. Als het niet lukt, zet het dan op ``null`` in plaats van een Exception te werpen."**
  
- De code van daarnet herschrijven we dan naar:
+De code van daarnet herschrijven we dan naar:
 
  ```java
 Student fritz= new Student();

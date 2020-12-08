@@ -159,18 +159,11 @@ Stel dat we vinden dat een student gelijk is aan een andere student indien z'n V
 ```java
 //In de Student class
 public override bool Equals(Object o)
-{
-     
-     if(GetType() != o.GetType()) 
-         return false;
-     else
-     {
-         Student temp= (Student)o; //Zie opmerking na code!
-         if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
-            return true;
-     }
-     return false;
-
+{  
+    Student temp= (Student)o; //Zie opmerking na code!
+    if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
+        return true;
+    return false;
 }
 ```
 

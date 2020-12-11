@@ -1,7 +1,6 @@
 ﻿# Interfaces
 
-
-## In de echter wereld
+## In de echte wereld
 De naam interface kan je letterlijk vertalen als "tussen vlakken". Een interface is de verbinding tussen 2 systemen, van welke vorm ook. In de echter wereld gebruik je constant interfaces. Telkens je met de auto rijdt gebruik je een interface: namelijk een handvol handelingen om de auto te laten rijden (pedalen, stuur, etc.). Bijna alle auto's hanteren deze zelfde interface. Van zodra je de interface kent en begrijpt kan je die overal gebruiken, zonder dat je moet weten wat er in het systeem intern juist gebeurt (als ik de gaspedaal induw boeit het niet of ik op gas of elektrisch rijd, zolang de auto maar voortbeweegt). 
 
 Aan de achterkant van je computer (en ook in de pc zelf) zijn tal van hardware-interfaces. Afgesproken manieren om 2 systemen met elkaar te laten communiceren. Zo heb je de USB-aansluiting die toelaat dat een extern systeem met een usb-aansluiting met de computer kan communiceren. Maar ook de HDMI, audio, en andere aansluitingen hanteren interfaces. Zouden er rond deze zaken geen wereldwijde interfaces zijn afgesproken, dan zou je mogelijk telkens op een andere manier je externe harde schijf aan een computer moeten hangen.
@@ -59,6 +58,11 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen wil het
 * Je kan nieuwe types (bv ``enum``, ``struct``) in een interface declareren.
 * Een interface kan niet overerven van een klasse, wel van een andere interface.
 
+## Interface UML notatie
+
+Een "lolly" op een klein geeft aan dat deze een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
+
+![Interface uml notatie](../assets/9_interfaces/uml.png)
 
 ## Interfaces en klassen
 
@@ -84,6 +88,11 @@ class Zorro: ISuperHeld
 ```
 Zolang de klasse Zorro niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
 
+Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is een interface als het ware een blad papier dat je bovenop je klasse kunt houden. Op het blad staan de methoden en properties beschreven die de interface moet hebben. Als je het blad mooi bovenop een klasse plaatst die de interface beloofd te doen, dan zouden de gaten in het blad mooi bovenop de respectievelijke methoden en properties van de klasse passen.
+![Het UML "lolly'tje" kan je als een haakje beschouwen waaraan de interface benegeld](../assets/9_interfaces/intzorro.png)
+![Vervolgens kunnen we de interface met het haakje aan de klasse hangen](../assets/9_interfaces/intzorro2.png)
+
+
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
 <!---NOBOOKEND--->
@@ -104,11 +113,7 @@ Merk wel op dat de interface NIET de implementatie bevat van wat een superheld j
 {% endhint %}
 <!---NOBOOKEND--->
 
-## Interface UML notatie
 
-Een "lolly" op een klein geeft aan dat deze een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
-
-![Interface uml notatie](../assets/9_interfaces/uml.png)
 
 ## Is keyword met interfaces
 

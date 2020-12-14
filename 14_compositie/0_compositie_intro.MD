@@ -73,6 +73,7 @@ De instantie van een geaggregeerd object kan op verschillende manieren en is afh
 Compositie is, net zoals overerving, een onderdeel van het OOP paradigma. Er is geen exacte oplossingstrategie om compositie toe te passen: deze zal afhankelijk zijn van je specifieke probleem (en oplossing). Staar je dus niet blind op deze voorbeelden, het is maar een greep uit de vele manieren waarmee je compositie kunt gebruiken.
 {% endhint %}
 
+
 ### Manier 1: Rechtstreeks de instantievariabele instellen
 
 Wanneer we wensen dat iedere nieuwe PC ogenblikkelijk een interne harde schijf heeft dan kunnen we dit doen door ogenblikkelijk de instantievariabele een object te geven: 
@@ -83,6 +84,18 @@ class PC
     private HardeSchijf cHardeSchijf=new HardeSchijf();
 }
 ```
+
+{% hint style='tip' %}
+Het moge duidelijk zijn: composities en referenties horen samen. Wanneer we van voorgaande klasse een object aanmaken als volgt:
+
+```java
+PC mijnSuperPC = new PC();
+```
+
+Dan is het nuttig om eens te kijken hoe dit er in het geheugen zal uitzien:
+![](../assets/6_klassen/pccomp.png)
+Zoals je ziet is het belangrijk te beseffen dat bij compositie én aggregatie het "inner" object op zichzelf in de heap ergens zal gezet worden en dus niet "in" het parent-object komt. 
+{% endhint %}
 
 
 

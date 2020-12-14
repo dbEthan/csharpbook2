@@ -13,7 +13,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Auto properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
 
-### Hoofdstuk 2 - Geheugenmanagement
+### Hoofdstuk 2 - Geheugenmanagement, uitzonderingen en namespaces
 
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bf7ea9bc-7469-446b-b226-ab5e008085a8)
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=49247267-d9db-411a-8de6-ab5e0084792a)
@@ -40,31 +40,29 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d549422d-eb27-4dd5-8154-ab7c00ba0728)
 * [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2cb2acdb-d5f9-4ff4-aa9d-abb1008f7b70)
 
-### Hoofdstuk 6 - Exception handling
-Soon
 
-### Hoofdstuk 7 - Gevorderde overervingsconcepten
+### Hoofdstuk 6 - Gevorderde overervingsconcepten
 * [Abstracte klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6f513b8-e299-4118-986d-ab7c00e47861)
 * [System.Object en ToString](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00cad992-7714-4051-a992-ab7d0093864b)
 * [Equals - objecten vergelijken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c18b27c9-ad5a-444b-9695-ab7d00c2c3d9)
 * [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
 * [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)
 
-### Hoofdstuk 8 - Compositie
+### Hoofdstuk 7 - Compositie en this
 * [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=799210db-6683-49f1-afba-ab9d00cf6792)
 * [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=26d08209-4de8-40b5-b5cc-ab9d00d33aa5)
 * [Compositie in praktijk demo met kaartspel deel 1](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9c2280d-7b1d-4a83-8851-ab9d00e13cca)
 * [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=235d6b90-d246-4529-a911-ab9d00db6f56)
 * [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81e976c8-d865-4cfa-9851-abad0107f367)
 
-### Hoofdstuk 9 - Polymorfisme
+### Hoofdstuk 8 - Polymorfisme
 * [Polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6bc13cf3-83d0-449d-9d8f-ab7d00c5a021)
 * [Polymorfisme in de praktijk met presidenten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=06305096-bee1-466a-9b70-aba700860b64)
 * [Polymorfisme in praktijk "demo met kaartspel deel 2"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1009330-272d-4978-a078-aba2012ab2b8)
 * [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aba3bca4-ed3a-4067-a611-ab7d00cc2178)
 * [Samenvatting objecten vergelijken met equals: polymorfisme in actie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b705422d-db2d-420a-bcda-aba700fd9336)
 
-### Hoofdstuk 10 - Interfaces
+### Hoofdstuk 9 - Interfaces
 
 * [Interfaces](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6c32cd08-980c-4fe1-9be8-aba40101be31)
 * [Interfaces in de praktijk met presidenten, deel 2](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1df92edd-ba85-42f4-bdd0-abac0149cc10)

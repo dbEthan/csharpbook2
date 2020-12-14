@@ -10,7 +10,7 @@ Aan de achterkant van je computer (en ook in de pc zelf) zijn tal van hardware-i
 Voor je dolenthousiast wordt, denkende dat je eindelijke grafische applicaties (GUI oftewel Graphical User Interface ) gaat maken, moet ik je helaas teleurstellen. Dit hoofdstuk behandelt het programmeer-concept *interfaces* wat eigenlijk niets te maken heeft met User interfaces. U weze gewaarschuwd.
 {% endhint %}
 
-Dit concept van interfaces uit de echte wereld heeft dus ook een OOP variant. Namelijk de interface tussen 2 (of meer) klassen. Door te beloven dat een klasse aan een bepaalde interface voldoet kunnen alle klassen die deze interface "kennen" met elkaar praten. Een interface in OOP is een beschrijving van publieke methoden en properties die de klasse beloofd te hebben. Net zoals je een fotocamera kunt kopen die de hdmi en usb-interface heeft, zo ook kan je nu een klasse maken die zegt interface , we zeggen maar wat, ``ISecure`` en ``IStreamable`` te hebben.
+Dit concept van interfaces uit de echte wereld heeft dus ook een OOP variant. Namelijk de interface tussen 2 (of meer) klassen. Door te beloven dat een klasse aan een bepaalde interface voldoet kunnen alle klassen die deze interface "kennen" met elkaar praten. Een interface in OOP is een beschrijving van publieke methoden en properties die de klasse beloofd te hebben. Net zoals je een fotocamera kunt kopen die de HDMI en USB-interface heeft, zo ook kan je nu een klasse maken die zegt interface , we zeggen maar wat, ``ISecure`` en ``IStreamable`` te hebben.
 
 {% hint style='tip' %}
 Interfaces zijn als het ware stempels die we op een klasse kunnen plakken om zo te zeggen "deze klasse gebruikt interface xyz". Gebruikers van de klasse hoeven dan niet de hele klasse uit te spitten en weten dat alle klassen met interface xyz dezelfde publieke properties en methoden hebben. 
@@ -55,7 +55,7 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen wil het
 * Je kan geen  instantievariabelen declareren in een interface (dat hoort bij de implementatie)
 * Je kan geen constructors declareren
 * Je kan geen access modifiers specificeren (``public``, ``protected``, etc): alles is public
-* Je kan nieuwe types (bv ``enum``, ``struct``) in een interface declareren.
+* Je kan nieuwe types (bv ``enum``) in een interface declareren.
 * Een interface kan niet overerven van een klasse, wel van een andere interface.
 
 ## Interface UML notatie
@@ -117,7 +117,7 @@ Merk wel op dat de interface NIET de implementatie bevat van wat een superheld j
 
 ## Is keyword met interfaces
 
-We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface heeft. Dit laat ons toe om code te schrijven die weer een beetje polyvalenter wordt. 
+We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface heeft. Dit laat ons toe om code te schrijven die weer een beetje meer polyvalent wordt. 
 
 Stel dat we volgende klassen hebben waarbij de ``Book`` klasse de ``IDeletable`` interface implementeert:
 
@@ -132,9 +132,9 @@ class Person { ... };
 We kunnen nu met ``is`` objecten bevragen of ze de interface in kwestie hebben:
 ```java
 Person tim= new Person();
-Book gameofthrones = new Book();
+Book gameOfThrones = new Book();
 
-if(gameofthrones is IDeletable)
+if(gameOfThrones is IDeletable)
 {
     Console.WriteLine("I can delete game of thrones");
 }
@@ -267,7 +267,7 @@ Eerst maken we de nodige writers:
         }
 ```
 
-Vervolgens maken we een klasse die effectief die writer gebruikt. De "truuk" zit hem er nu in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. 
+Vervolgens maken we een klasse die effectief die writer gebruikt. De truc zit hem er nu in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. 
 Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. In volgende voorbeeld stellen we dit in via de constructor, maar je zou ook van ``datadoel`` een property kunnen maken:
 
 ```java
@@ -295,7 +295,7 @@ Vanaf nu kan je logbook-objecten aanmaken die naar verschillende plekken schrijv
             naarInternet.Schrijf();
 ```
 
-Voor de geïnteresseerden, dit concept is een eerste stap naar *Dependency Injection*, een erg krachtig concept dat je nog veel zal tegenkomen in je verdere programmeercarriere, maar wat we niet in dit boek gaan behandelen.
+Voor de geïnteresseerden, dit concept is een eerste stap naar *Dependency Injection*, een erg krachtig concept dat je nog veel zal tegenkomen in je verdere programmeercarrière, maar wat we niet in dit boek gaan behandelen.
 {% endhint %}
 
 <!---NOBOOKSTART--->

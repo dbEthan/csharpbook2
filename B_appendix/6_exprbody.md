@@ -49,9 +49,9 @@ Origineel:
 class Student
 {
     private int age;
-    public Student(int inage)
+    public Student(int inAge)
     {
-        age = inage;
+        age = inAge;
     }
 }
 ```
@@ -61,12 +61,12 @@ Met EBM:
 class Student
 {
     private int age;
-    public Student(int inage) =>  age = inage;
+    public Student(int inAge) =>  age = inAge;
 }
 ```
 
 ### Full Properties met EBM
-Properties worden een een soort blend tussen full en autoproperties.
+Properties worden een een soort mengeling tussen full en autoproperties.
 Originele full property:
 ```java
 private int name;
@@ -94,7 +94,7 @@ public int Name
 }
 ```
 ### Read-only properties met EBM
-Bij read-only properies hoeft het ``get`` keyword zelfs niet meer getypt te worden bij EBM.
+Bij read-only properties hoeft het ``get`` keyword zelfs niet meer getypt te worden bij EBM.
 
 Origineel:
 

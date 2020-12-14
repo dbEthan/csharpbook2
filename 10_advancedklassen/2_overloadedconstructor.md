@@ -145,7 +145,7 @@ class  Breuk
 }
 ```
 
-De methode zal een onaarde "DivideByZeroException" opleveren als ik de methode zou aanroepen nog voor de ``noemer`` een waarde heeft gekregen:
+De methode zal een "DivideByZeroException" opleveren als ik de methode zou aanroepen nog voor de ``noemer`` een waarde heeft gekregen:
 
 ```java
 Breuk eenBreuk =new Breuk();
@@ -196,7 +196,7 @@ Breuk eenBreuk =new Breuk(21,8);
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonderbeweest, en één overloaded=
+We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded=
 
 ```java
 class Balletje

@@ -131,7 +131,7 @@ Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verlie
 
 Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde. We weten echter dat objecten ook een interne staat hebben die per object individueel is. Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd). Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
 
-Stel je voor dat we onze mensen een leeftijd willen geven. Ieder object zal zelf in een instantievariabele bijhouden hoeveel jaren dit object al leeft (het vertellen van gehimen laten we even achterwege):
+Stel je voor dat we onze mensen een leeftijd willen geven. Ieder object zal zelf in een instantievariabele bijhouden hoeveel jaren dit object al leeft (het vertellen van geheimen laten we even achterwege):
 
 ```java
 class Mens
@@ -215,7 +215,7 @@ Mens Bono = new Mens();
 
 Elvis.VerjaardagVieren();
 Elvis.VerjaardagVieren();
-Evlis.VerjaardagVieren();
+Elvis.VerjaardagVieren();
 Bono.VerjaardagVieren();
 ```
 
@@ -229,7 +229,7 @@ Als je deze code zou uitvoeren zal je zien dat de leeftijd van Elvis verhoogt en
 ![](../assets/care.png)
 "Ja maar, nu pas je toch de leeftijd van buitenuit aan, ook al gaf je aan dat dit niet de bedoeling was want dan zou je Adil ogenblikkelijk 99 jaar kunnen maken."
 
-Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabeles waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.leeftijd= -12000;``
+Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.leeftijd= -12000;``
 
 Dit kan nefaste gevolgen hebben voor de klasse.
 
@@ -240,7 +240,7 @@ class Mens
 {
     private int leeftijd = 1;
 
-    public void VeranderLeefijd(int nieuweLeeftijd)
+    public void VeranderLeeftijd(int nieuweLeeftijd)
     {
         if(nieuweLeeftijd>=0)
             leeftijd= nieuweLeeftijd;

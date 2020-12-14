@@ -27,7 +27,7 @@ Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type int) die via een
 * ``Som``: geeft de som van beide getallen terug
 * ``Verschil``: geeft het verschil van beide getallen terug
 * ``Product``: geeft het product van beide getallen terug
-* ``Quotient``: geeft de deling van beide getallen terug. Toon "Error" indien je zou moeten delen door 0.
+* ``Quotiënt``: geeft de deling van beide getallen terug. Toon "Error" indien je zou moeten delen door 0.
 
 Toon in je main aan dat je code werkt.
 
@@ -42,7 +42,7 @@ Volgende code zou bijvoorbeeld onderstaande output moeten geven:
     Console.WriteLine("Som = " + paar1.Som());
     Console.WriteLine("Verschil = " + paar1.Verschil());
     Console.WriteLine("Product = " + paar1.Product());
-    Console.WriteLine("Quotient = " + paar1.Quotient());
+    Console.WriteLine("Quotiënt = " + paar1.Quotiënt());
 ```
 
 Output:
@@ -53,7 +53,7 @@ Paar: 12, 34
 Som = 46
 Verschil = -22
 Product = 408
-Quotient = 0,352941176470588
+Quotiënt = 0,352941176470588
 ```
 
 ## Studentklasse

@@ -88,7 +88,7 @@ Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoo
 
 ### Meerdere catchblokken
 
-`Exception` is een klasse van het .NET framework. Er zijn van deze basis-klasse meerdere Exception-klassen afgeleid die een specifieke uitzondering behelsen. Enkele veelvoorkomende zijn:
+`Exception` is een klasse van het .NET framework. Er zijn van deze basis-klasse meerdere Exception-klassen afgeleid die een specifieke uitzondering behelzen. Enkele veelvoorkomende zijn:
 
 | Klasse   |  Omschrijving  |
 |----|----|
@@ -107,7 +107,7 @@ catch (Exception e)
 
 Hiermee vangen we dus **alle** Exceptions op, daar alle Exceptions van de klasse `Exception` afgeleid zijn en dus ook zelf een `Exception` zijn (=polymorfisme eigenschap, wat we verderop in dit boek zullen ontdekken).
 
-We kunnen nu echter ook specifieke exceptions opvangen. De truk is om de meest algemene exception onderaan te zetten en naar boven toe steeds specifieker te worden. We maken een soort fallthrough mechanisme (wat we ook in een ``switch`` al hebben gezien). 
+We kunnen nu echter ook specifieke exceptions opvangen. De truc is om de meest algemene exception onderaan te zetten en naar boven toe steeds specifieker te worden. We maken een soort fallthrough mechanisme (wat we ook in een ``switch`` al hebben gezien). 
 
 Stel bijvoorbeeld dat we weten dat de `FormatException` kan voorkomen en we willen daar iets mee doen. Volgende code toont hoe dit kan:
 

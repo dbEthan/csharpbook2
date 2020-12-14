@@ -5,20 +5,20 @@ In het vorige boekdeel bespraken we reeds de ``while``, ``do while`` en `` for``
 Wanneer je geen indexering nodig hebt, maar toch snel over alle elementen in een array wenst te gaan, dan is het **foreach** statement een zeer nuttig is.
 Een ``foreach`` loop zal ieder element in de array één voor één in een tijdelijke variabele plaatsen (de **iteration variable**) zodat binnenin de loop met dit ene element kan gewerkt worden. Het voordeel hierbij is dat je geen teller/index nodig hebt en dat loop zelf de lengte van de array zal bepalen: *je code wordt net iets leesbaarder* voor leken als we dit bijvoorbeeld vergelijken met hoe een ``for`` loop geschreven is.
 
-Volgende code toont de werking waarbij we een array van `doubles` hebben en alle elementen ervan op het scherm willen tonen:
+Volgende code toont de werking waarbij we een ``double``-array hebben en alle elementen ervan op het scherm willen tonen:
 
 ```java
-double[] killdeathRates= {1.2, 0.89, 3.15, 0.1};
+double[] killDeathRates= {1.2, 0.89, 3.15, 0.1};
 
-foreach (double kdrate in killdeathRates)
+foreach (double singleKD in killDeathRates)
 {
-   Console.WriteLine($"Kill/Death rate is {kdrate}");
+   Console.WriteLine($"Kill/Death rate is {singleKD}");
 }
 ```
 
-Het belangrijkste nieuwe concept is de *iteration variable* die we definiëren als ``kdrate``. Deze moet uiteraard van het type zijn van de individuele elementen in de array. Vervolgens schrijven we het nieuwe keyword  ``in`` gevolgd door de array waar we over wensen te itereren. 
+Het belangrijkste nieuwe concept is de *iteration variable* die we definiëren als ``singleKD``. Deze moet uiteraard van het type zijn van de individuele elementen in de array. Vervolgens schrijven we het nieuwe keyword  ``in`` gevolgd door de array waar we over wensen te itereren. 
 
-De eerste keer dat we in de loop gaan zal het element ``killdeathRates[0]`` aan ``kdrate`` toegewezen worden voor gebruik in de loop-body, vervolgens wordt ``killdeathRates[1]`` toegewezen, enz. De output zal dan zijn:
+De eerste keer dat we in de loop gaan zal het element ``killDeathRates[0]`` aan ``singleKD`` toegewezen worden voor gebruik in de loop-body, vervolgens wordt ``killDeathRates[1]`` toegewezen, enz. De output zal dan zijn:
 
 ```text
 Kill/Death rate is 1.2
@@ -92,9 +92,9 @@ Wanneer je de Visual Studio code snippet voor ``foreach`` gebruikt ``foreach [ta
 De foreach die we zonet gebruikten kan dus herschreven worden naar:
 
 ```java
-foreach (var kdrate in killdeathRates)
+foreach (var singleKD in killDeathRates)
 {
-   Console.WriteLine($"Kill/Death rate is {kdrate}");
+   Console.WriteLine($"Kill/Death rate is {singleKD}");
 }
 ```
 

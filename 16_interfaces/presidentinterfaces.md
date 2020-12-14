@@ -2,7 +2,7 @@
 
 In het hoofdstuk Polymorfisme bespraken we een voorbeeld van een klasse ``EersteMinister`` die enkele ``Minister``-klassen gebruikte om hem of haar te helpen.
 
-Een nadeel van die voorgaande aanpak is dat al onze Ministers maar 1 "job" kunnen hebben: ze erven allemaal over van ``Minister`` en kunnen nergens anders van overerven (geen multiple inheritance is toegestaan in C#). Je wordt uiteraard niet geboren als Minister, en het zou dus handig zijn dat ook andere mensen Minister kunnen worden, zonder dat ze hun expertise moeten wegdoen. 
+Een nadeel van die voorgaande aanpak is dat al onze Ministers maar 1 "job" kunnen hebben: ze erven allemaal over van ``Minister`` en kunnen nergens anders van overerven (geen *multiple inheritance* is toegestaan in C#). Je wordt uiteraard niet geboren als Minister, en het zou dus handig zijn dat ook andere mensen Minister kunnen worden, zonder dat ze hun expertise moeten wegdoen. 
 
 Via interfaces kunnen we dit oplossen. Een ``Minister`` gaan we dan eerder als een "bij-job" beschouwen en niet de hoofdreden van een klasse.
 

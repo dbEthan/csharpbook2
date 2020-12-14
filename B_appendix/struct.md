@@ -1,7 +1,3 @@
-## Structs
-
-TODO
-
 ## Records
 
 Sinds C# 9.0 (verschenen eind 2020) is het ook mogelijk om zogenaamde ``record``-klassen te maken. Erg vaak schrijf je klassen die niet meer moeten doen dan wat data eenmalig wegschrijven dat je dan vervolgens via readonly getters kunt uitlezen, zoals:
@@ -36,7 +32,7 @@ public record Student
 Het ``init`` keyword geeft aan dat deze autoproperty eenmalig kunnen **ge-set** worden bij het aanmaken van het record via de object initializer syntax:
 
 ```java
-Student eenNieweStudent = new Student 
+Student eenNieuweStudent = new Student 
             {   Naam="Tim", 
                 Leeftijd= 18,   
                 IsIngeschreven = false

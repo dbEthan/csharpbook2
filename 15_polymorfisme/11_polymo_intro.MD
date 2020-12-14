@@ -1,6 +1,6 @@
 # Polymorfisme
 
-**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox of encapsulatie principe en overerving, is polymorfisme de derde grote peiler van object geörienteerd programmeren. 
+**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox of encapsulatie principe en overerving, is polymorfisme de derde grote peiler van object georiënteerd programmeren. 
 
 
 De latijnse naam polymorfisme bestaat uit 2 delen: *poly* en *morfisme*, letterlijk dus "meerdere vormen". En geloof het of niet, deze naam dekt de lading ongelooflijk goed. 
@@ -10,7 +10,7 @@ Polymorfisme laat ons toe dat objecten kunnen behandeld worden als objecten van 
 
 ## De "is een"-relatie in actie
 
-Dankzij overering kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we al child-objecten als één geheel zouden kunnen beschouwen. Beeld je in dat je een gigantische klasse-hërarchie hebt gemaakt, maar finaal wil je wel dat bijvoorbeeld alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem.
+Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we al child-objecten als één geheel zouden kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat bijvoorbeeld alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem.
 
 Stel dat we een een aantal Dier-gerelateerde klassen hebben die allemaal op hun eigen manier een geluid voortbrengen:
 ```java
@@ -33,7 +33,7 @@ class Varken: Dier
 {
   public override string MaakGeluid()
   { 
-      return "Oinoink";
+      return "Oinkoink";
   }
 }
 ```
@@ -42,7 +42,7 @@ Dankzij polymorfisme kunnen we nu elders objecten van Paard en Varken in een ``D
 ```java
 Dier someAnimal = new Varken();
 Dier anotherAnimal = new Paard();
-Console.WriteLine(someAnimal.MaakGeluid()); //Oinoink
+Console.WriteLine(someAnimal.MaakGeluid()); //Oinkoink
 Console.WriteLine(anotherAnimal.MaakGeluid()); //Hinnikhinnik
 ```
 

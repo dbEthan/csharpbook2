@@ -1,6 +1,6 @@
 ## List collectie
 
-Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Het is een soort array on steroids zeg maar. Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een pak eenvoudiger maakt.
+Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Het is een soort array on *steroids* zeg maar. Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een pak eenvoudiger maakt.
 
 {% hint style='tip' %}
 De Generieke ``List<>`` klasse bevindt zich in de ``System.Collections.Generic`` namespace. Je dient deze namespace dus als ``using`` bovenaan toe te voegen wil je deze klasse kunnen gebruiken.

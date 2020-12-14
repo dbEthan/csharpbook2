@@ -10,7 +10,7 @@
 
 Doe die zwembroek maar weer aan! We gaan nog eens zwemmen. 
 
-Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de klasse-ijsberg besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overering* en arrays van objecten staan ons nog allemaal te wachten. 
+Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar een tipje van de klasse-ijsberg besproken. Vreemde dingen zoals *constructors*, *static methoden*, *overerving* en arrays van objecten staan ons nog allemaal te wachten. 
 
 Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met bijvoorbeeld de ``Random`` klasse, maar ook al met wat speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek die je kan gebruiken ZONDER dat je er objecten van moet aanmaken (het keyword ``static`` is daar de oorzaak van).
 
@@ -59,7 +59,7 @@ DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); //jaar, maand, dag
 
 Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:
 
-![Ieder kubusje stelt een methode voor. Iedere engelse sleutel een property](../assets/6_klassen/datemethods.png)
+![Iedere kubus stelt een methode voor. Iedere engelse sleutel een property](../assets/6_klassen/datemethods.png)
 
 
 #### Add-methoden
@@ -74,7 +74,7 @@ Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige method
 * ``AddYears``
 
 {% hint style='tip' %}
-Een tick is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden.  Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
+Een *tick* is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden.  Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
 {% endhint %}
 
 Deze methoden kan je gebruiken om een bepaalde aantal dagen, uren, minuten op te tellen bij de huidige tijd en datum van een object.

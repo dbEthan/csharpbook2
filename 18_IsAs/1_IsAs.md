@@ -6,7 +6,7 @@ Het ``is`` keyword is een operator die je kan gebruiken om te weten te komen of:
 * Een object van een bepaalde datatype is
 * Een object een bepaalde interface bevat (zie volgende hoofdstuk)
 
-De ``is`` operator heeft twee operanten nodig en geeft een bool terug als resultaat. De linkse operator moet een variabele zijn, de rechtse een datatype. Bijvoorbeeld:
+De ``is`` operator heeft twee operanden nodig en geeft een bool terug als resultaat. De linkse operator moet een variabele zijn, de rechtse een datatype. Bijvoorbeeld:
 
 ```java
 if( mijnStudent is Student)

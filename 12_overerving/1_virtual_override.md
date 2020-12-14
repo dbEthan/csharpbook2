@@ -99,7 +99,7 @@ Indien je iets ``override`` moet de signatuur van je methode (of property) uiter
 Ook properties kan je virtual ``instellen`` en ``override``'n. 
 
 {% hint style='tip' %}
-De autocompletion indien je ``override`` typet in Visual Studio gebruikt Expression Body Member syntax (herkenbaar aan de `` =>``) om properties te overriden. Deze syntax behandelen we kort in de appendix van dit boek. 
+De autocompletion indien je ``override`` intypt in Visual Studio gebruikt Expression Body Member syntax (herkenbaar aan de `` =>``) om properties te overriden. Deze syntax behandelen we kort in de appendix van dit boek. 
 
 **Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
 {% endhint %}

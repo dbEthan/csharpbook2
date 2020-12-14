@@ -9,10 +9,10 @@ Dankzij **object initializer syntax** kan je ook parameters aan variabelen meege
 **Object initializer syntax laat je toe om tijdens (eigenlijk direct er na) creatie van een object, bepaalde properties beginwaarden te geven.**
 
 {% hint style='warning' %}
-Object intializer syntax is een eerste glimps in het feit waarom properties zo belangrijk zijn in C#. Je kan object initialezer syntax enkel gebruiken om via properties je object extra beginwaarden te geven.
+Object initializer syntax is een eerste glimp in het feit waarom properties zo belangrijk zijn in C#. Je kan object initializer syntax enkel gebruiken om via properties je object extra beginwaarden te geven.
 {% endhint %}
 
-Stel dat we volgende klasse hebben waarin we enkele autoproperties gebruiken (merk op dat dit evengoed full properties mochten zijn. Voor ojbect initializer syntax maakt dat niet uit, het ziet toch enkel maar het ``public`` gedeelte van de klasse):
+Stel dat we volgende klasse hebben waarin we enkele autoproperties gebruiken (merk op dat dit evengoed full properties mochten zijn. Voor object initializer syntax maakt dat niet uit, het ziet toch enkel maar het ``public`` gedeelte van de klasse):
 
 ```java
 class TemperatuurMeting
@@ -33,7 +33,7 @@ TemperatuurMeting eenMeting = new TemperatuurMeting() { Temperatuur= 3.4, IsGeco
 Object initializer syntax bestaat er dus uit dat je een object aanmaakt met de **default constructor** en dat je dan tussen accolades een lijst van properties en hun beginwaarden kunt geven.
 
 {% hint style='warning' %}
-Object intializer werkt enkel indien het object een default constructor heeft!
+Object initializer werkt enkel indien het object een default constructor heeft!
 
 Bovenstaande code mag ook iets korter nog:
 

@@ -1,6 +1,6 @@
 # Overerving
 
-Programmeurs zijn luie wezens. Ieder concept dat hen toelaat minder code te schrijven zullen ze dan ook omarmen. Dubbele code wil nameljk ook zeggen dat er dubbel zoveel plekken zijn waar bugs kunnen optreden én die aangepast moeten worden wanneer de specificaties veranderen.
+Programmeurs zijn luie wezens. Ieder concept dat hen toelaat minder code te schrijven zullen ze dan ook omarmen. Dubbele code wil namelijk ook zeggen dat er dubbel zoveel plekken zijn waar bugs kunnen optreden én die aangepast moeten worden wanneer de specificaties veranderen.
 
 Indien 2 of meer klassen een aantal gelijkaardige stukken code hebben is er mogelijk een verband tussen die twee klassen. Denk maar aan de klassen ``Monster`` en ``Held`` in je avonturenspel. Beide delen bepaalde properties en methoden die identiek, of bijna identiek zijn qua implementatie.
 
@@ -220,7 +220,7 @@ class ChildClass:DoNotInheritMe
 }
 ```
 
-zal dit resulteren in een foutoodschap, namelijk ``Cannot derive from sealed type 'DoNotInheritMe'``.
+zal dit resulteren in een foutboodschap, namelijk ``Cannot derive from sealed type 'DoNotInheritMe'``.
 
 <!---NOBOOKSTART--->
 # Kennisclip

@@ -30,10 +30,10 @@ static void Main(string[] args)
     ToonMetingInKleur(m2, ConsoleColor.Gray);
 }
 
-static void ToonMetingInKleur (Meting inmeting, ConsoleColor kleur)
+static void ToonMetingInKleur (Meting inMeting, ConsoleColor kleur)
 {
     Console.ForegroundColor = kleur;
-    Console.WriteLine($"Temperatuur {inmeting.Temperatuur}°C werd opgemeten door {inmeting.OpgemetenDoor}");
+    Console.WriteLine($"Temperatuur {inMeting.Temperatuur}°C werd opgemeten door {inMeting.OpgemetenDoor}");
     Console.ResetColor();
 }
 ```
@@ -43,11 +43,11 @@ static void ToonMetingInKleur (Meting inmeting, ConsoleColor kleur)
 Je kan dus ook methoden schrijven die meegegeven objecten aanpassen daar we deze **by reference** doorsturen. Een voorbeeld:
 
 ```java
-static void ToonMetingEnVerhoog(Meting inmeting)
+static void ToonMetingEnVerhoog(Meting inMeting)
 {
-    ToonMetingInKleur(inmeting, ConsoleColor.Green);
+    ToonMetingInKleur(inMeting, ConsoleColor.Green);
 
-    inmeting.Temperatuur++;
+    inMeting.Temperatuur++;
 }
 ```
 
@@ -66,9 +66,9 @@ Dan zullen we zien dat de temperatuur in ``m1`` effectief met 1 werd verhoogd.
 Dit gedrag zouden we NIET zien bij volgende methode daar ``int`` **by value** wordt doorgegeven:
 
 ```java
-static void VerhoogGetal(int inmeting)
+static void VerhoogGetal(int inMeting)
 {
-    inmeting++;
+    inMeting++;
 }
 ```
 

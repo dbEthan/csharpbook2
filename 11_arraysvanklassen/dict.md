@@ -4,7 +4,7 @@ Naast de generieke ``List`` collectie, zijn er nog enkele andere nuttige generie
 
 In een **dictionary** wordt ieder element voorgesteld door een sleutel (**key** of index) en de waarde (**value**) van het element. 
 
-De sleutel moet een unieke waarde zijn zodat het element kan opgevraagd worden uit de dictionary aan de hand van deze sleutel zonder dat er dupplicaten zijn.
+De sleutel moet een unieke waarde zijn zodat het element kan opgevraagd worden uit de dictionary aan de hand van deze sleutel zonder dat er duplicaten zijn.
 
 
 Bij de declaratie van de ``Dictionary`` dien je op te geven wat het datatype van de key zal zijn , alsook het type van de waarde (value). 
@@ -18,14 +18,14 @@ Geen enkel woord komt dubbel voor in een woordenboek (als het meerdere definitie
 In het volgende voorbeeld maken we een ``Dictionary`` van klanten aan. Iedere klant heeft een unieke ID (de key, die we als ``int`` gebruiken) alsook een naam (die niet noodzakelijk uniek is en de waarde voorstelt):
 
 ```java
-Dictionary<int, string> customers = new Dictionary<int, string>();
-customers.Add(123, "Tim Dams");
-customers.Add(6463, "James Bond");
-customers.Add(666, "The beast");
-customers.Add(700, "James Bond");
+Dictionary<int, string> klanten = new Dictionary<int, string>();
+klanten.Add(123, "Tim Dams");
+klanten.Add(6463, "James Bond");
+klanten.Add(666, "The beast");
+klanten.Add(700, "James Bond");
 ``` 
 
-Bij de declaratie van ``customers`` plaatsen we dus tussen de ``< >`` twee datatypes: het eerste duidt het datatype van de key aan, het tweede dat van de values.
+Bij de declaratie van ``klanten`` plaatsen we dus tussen de ``< >`` twee datatypes: het eerste duidt het datatype van de key aan, het tweede dat van de values.
 
 {% hint style='tip' %}
 Merk op dat je niet verplicht bent om een int als key te gebruiken, dit mag eender wat zijn, zelfs een klasse.
@@ -40,7 +40,7 @@ Dictionary<Student,PuntenLijst> schoolAdministratie;
 We kunnen nu met behulp van bijvoorbeeld een ``foreach``-loop alle elementen tonen. Hier kunnen we de key met de ``.Key``-property uitlezen en het achterliggende object of waarde met ``.Value``. ``Value`` en ``Key`` hebben daarbij ieder het type dat we hebben gedefinieerd toen we het ``Dictionary``-object aanmaakten, in het volgende geval is de ``Key`` dus van het type ``int`` en ``Value`` van het type ``string``:
 
 ```java
-foreach (var item in customers)
+foreach (var item in klanten)
 {
     Console.WriteLine(item.Key+ "\t:"+item.Value);
 }
@@ -49,7 +49,7 @@ foreach (var item in customers)
 We kunnen echter ook een specifiek element opvragen aan de hand van de key. Stel dat we de waarde (naam) van de klant met key (id) gelijk aan 123 willen tonen:
 
 ```java
-Console.WriteLine(customers[123]);
+Console.WriteLine(klanten[123]);
 ```
 
 De key werkt dus net als de index bij gewone arrays, alleen heeft de key nu geen relatie meer met de positie van het element in de collectie.

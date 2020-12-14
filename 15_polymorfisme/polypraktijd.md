@@ -34,7 +34,7 @@ public class EersteMinister
         // Van Cent geeft advies omtrent nakende beurscrash
 
         VanCent.InjecteerGeldInMarkt();
-        VanCent.VerlaagWerkloosheidsPremi();
+        VanCent.VerlaagWerkloosheidsPremie();
     }
 }
 ```
@@ -138,7 +138,7 @@ public class EersteMinister
 En wie zei dat het regeren moeilijk was?!
 
 {% hint style='tip' %}
-Merk op dat dit voorbeeld ook goed gebruik maakt van **composotie**.
+Merk op dat dit voorbeeld ook goed gebruik maakt van **compositie**.
 {% endhint %}
 
 

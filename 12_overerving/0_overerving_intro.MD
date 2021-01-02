@@ -6,7 +6,7 @@ Indien 2 of meer klassen een aantal gelijkaardige stukken code hebben is er moge
 
 Wat we hier zien is het concept **overerving**. Beide klassen hebben duidelijk een soort gemeenschappelijke "voorouder". Net zoals in de natuur waar apen en mensen afstammen van een gemeenschappelijke voorouder, kan je dit concept ook in OO hebben. 
 
-De zogenaamde "child-klasse" is de klasse die overerft van een "parent-klasse". Deze child-klasse zal een specialisatie zijn: het zal meer kunnen dan z'n parent. Ook in de natuur zien we dit: de home sapiens sapiens (wij!) is evolutionair gezien een verbetering tegenover de homo erectus (kleinere hersenen) , die op zijn beurt een verbetering is van zijn voorouder, de homo habilis (kon nog niet op 2 ledematen rondwandelen).
+De zogenaamde "child-klasse" is de klasse die overerft van een "parent-klasse". Deze child-klasse zal een specialisatie zijn: het zal meer kunnen dan z'n parent. Ook in de natuur zien we dit: de homo sapiens sapiens (wij!) is evolutionair gezien een verbetering tegenover de homo erectus (kleinere hersenen) , die op zijn beurt een verbetering is van zijn voorouder, de homo habilis (kon nog niet op 2 ledematen rondwandelen).
 
 Kijken we terug naar ``Monster`` en ``Held`` dan is het duidelijk dat een gemeenschappelijke parent-klasse misschien wel de klasse ``Karakter`` is.
 

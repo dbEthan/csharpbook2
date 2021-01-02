@@ -130,6 +130,7 @@ for (int i = 1; i < splitted.Length; i++)
 
 In dit voorbeeld gaan we er vanuit dat de eerste lijn in het bestand een "header" bevat, die we dus moeten overslaan. Daarom starten we de loop vanaf lijn 1.
 
+<!---NOBOOKSTART--->
 ##  WebClient
 
 We hebben maar een héél klein stukje van ``WebClient`` bekeken. Deze hoort niet bij de leerstof, maar is toch voor de geïnteresseerden en zeer nuttige klasse. Kijk bijvoorbeeld eens naar volgende [voorbeelden](https://www.dotnetperls.com/webclient).
@@ -248,3 +249,4 @@ for (int i = 0; i < lines.Length; i++)
 ###  CSVHelper 
 
 De opensource bibliotheek ``csvhelper`` is een nuttige toevoeging om vorige zaken een deel te automatiseren. Je kan deze eenvoudig als een ``nuget`` installeren. Alle uitleg en werking vind je op de website: [https://joshclose.github.io/CsvHelper/](https://joshclose.github.io/CsvHelper/).
+<!---NOBOOKEND--->

@@ -1,6 +1,6 @@
 ## Exception handling
 
-Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een bekentenis te maken... Ben je er klaar voor?! Hier komt ie. Luister goed, maar zeg het niet door: we hebben al de hele tijd informatie voor je achter gehouden! Ja, sorry, het was sterker dan onszelf. Maar we deden het voor jou. Het was de enige manier om ervoor te zorgen dat je leerde programmeren zonder constant bugs in je code achter te laten. Dus ja, hopelijk neem je het ons niet kwalijk?! Het wordt tijd om **exception handling** er bij te halen! Een essentiële programmeertechniek die ervoor zorgt dat je programma minder snel zal crashen indien er zich **uitzonderingen** tijdens de uitvoer voordoen. 
+Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een bekentenis te maken... Ben je er klaar voor?! Hier komt ie. Luister goed, maar zeg het niet door: we hebben al de hele tijd informatie voor je achter gehouden! Ja, sorry, het was sterker dan mezelf. Maar we deden het voor jou. Het was de enige manier om ervoor te zorgen dat je leerde programmeren zonder constant bugs in je code achter te laten. Dus ja, hopelijk neem je het ons niet kwalijk?! Het wordt tijd om **exception handling** er bij te halen! Een essentiële programmeertechniek die ervoor zorgt dat je programma minder snel zal crashen indien er zich **uitzonderingen** tijdens de uitvoer voordoen. 
 
 {% hint style='tip' %}
 Wat een dramatische start zeg. Waar was dat voor nodig?! De reden is eenvoudig: met exception handling kan je code schrijven die al jouw slecht geschreven als het ware verstopt met een zacht dekentje, waardoor het voor de eindgebruiker zal lijken dat jouw programma vlekkeloos werkt. Niets is echter waar, het dekentje verstopt een smeltkroes van stinkende, gure, code die om de haverklap faalt en meer bugs bevat dan Windows Millennium. Kortom, lees verder: maar besef dat exception handling een tweesnijdend zwaar is.
@@ -14,21 +14,11 @@ Veel fouten in je code zijn het gevolg van:
 * Foute invoer door de gebruiker (bijvoorbeeld de gebruiker voert een letter in terwijl het programma aan getal verwacht).
 * Programmeerfouten (bijvoorbeeld de programmeur gebruikt een object dat nog niet met de new operator werd geïnitialiseerd, of een deling door nul in een complexe berekening).
 
-Voorgaande zaken zijn niet zozeer fouten dan wel uitzonderingen (*exceptions*). Ze doen zich zelden voor, maar hebben wel een invloed op de correcte uitvoer van je programma. Je programma zal met deze uitzonderingen rekening moeten houden wil je een gebruiksvriendelijk programma hebben. Veel uitzonderingen gebeuren buiten de wil van het programma om, maar kunnen wel gebeuren (wifi weg, foute invoer, etc.)  Door deze uitzonderingen af te handelen (*exception handling*) in je code kunnen we ons programma alternatieve opdrachten geven bij het optreden van een uitzondering.
-
-
-![Een joekel van een foutboodschap die je gebruiker huilend zal wegjagen](../assets/20_exceptions/exceptcode.png)
-
-{% hint style='tip' %}
-Indien je aan het debuggen bent en je krijgt een exception dan zal deze anders getoond worden, maar het gaat wel degelijk om dezelfde fout:
-
-![In VS is de foutboodschap iets leesbaarder](../assets/20_exceptions/excepinvs.png)
-{% endhint %}
-
-### Code zonder exception handling
+Voorgaande zaken zijn niet zozeer fouten dan wel uitzonderingen (**exceptions**). Ze doen zich zelden voor, maar hebben wel een invloed op de correcte uitvoer van je programma. Je programma zal met deze uitzonderingen rekening moeten houden wil je een gebruiksvriendelijk programma hebben. Veel uitzonderingen gebeuren buiten de wil van het programma om, maar kunnen wel gebeuren (wifi weg, foute invoer, etc.).  Door deze uitzonderingen af te handelen (*exception handling*) in je code kunnen we ons programma alternatieve opdrachten geven bij het optreden van een uitzondering.
 
 Je zal zelf al geregeld exceptions zijn tegengekomen in je console programma's. Wanneer je je programma gewoon uitvoert en er verschijnt plots een hele hoop tekst (met onder andere het woord "Exception" in) gevolgd door het prompt afsluiten ervan, dan heb je dus een exception gegenereerd die je niet hebt afgehandeld.
 
+![Een joekel van een foutboodschap die je gebruiker huilend zal wegjagen](../assets/20_exceptions/exceptcode.png)
 
 Je moet zelfs niet veel moeite doen om uitzonderingen te genereren. Denk maar aan volgende voorbeeld waarbij je een exception kan genereren door een 0 in te geven, of iets anders dan een getal.
 
@@ -39,7 +29,7 @@ double resultaat= 100/noemer;
 Console.WriteLine($"100/{noemer} is gelijk aan {resultaat}");
 ```
 
-### Try en Catch
+### Exception handling met try en catch
 
 Het mechanisme om exceptions af te handelen in C# bestaat uit 2 delen:
 
@@ -61,7 +51,7 @@ catch ()
 
 ### Een try catch voorbeeld
 
-In volgend stukje code kunnen uitzonderingen optreden zoal we zonet zagen:
+In volgend stukje code kunnen uitzonderingen optreden zoals we zonet zagen:
 
 ```java
 string input = Console.ReadLine();
@@ -84,7 +74,11 @@ catch ()
 }
 ```
 
-Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoond worden. Vervolgens gaat het programma verder met de code die mogelijk na het catch-blok staat.
+Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoond worden. Vervolgens gaat het programma verder met de code die mogelijk na het ``catch``-blok staat.
+
+{% hint style='tip' %}
+Merk op dat voorgaande code eleganter kan opgelost worden met ``TryParse`` wat we in het appendix van het vorige boek hebben uitgelegd.
+{% endhint %}
 
 ### Meerdere catchblokken
 
@@ -93,9 +87,9 @@ Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoo
 | Klasse   |  Omschrijving  |
 |----|----|
 |`Exception`|	Basisklasse|
-|`SystemException`|	Klasse voor uitzonderingen die niet al te belangrijk zijn en die mogelijk verholpen kunnen worden. (afgeleid van Exception)|
-|`IndexOutOfRangeException`|	De index is te groot of te klein voor de benadering van een array (afgeleid van SystemException)|
-|`NullReferenceException`|	Benadering van een niet-geïnitialiseerd object (afgeleid van SystemException)|
+|`SystemException`|	Klasse voor uitzonderingen die niet al te belangrijk zijn en die mogelijk verholpen kunnen worden.|
+|`IndexOutOfRangeException`|	De index is te groot of te klein voor de benadering van een array|
+|`NullReferenceException`|	Benadering van een niet-geïnitialiseerd object |
 
 Je kan in het catch blok aangeven welke soort exceptions je wil vangen in dat blok. Als je bijvoorbeeld alle Exceptions wil opvangen schrijf je:
 
@@ -126,23 +120,21 @@ catch (Exception e)
 }
 ```
 
-Indien een FormatException optreedt dan zal het eerste catch-blok uitgevoerd worden, anders het tweede. Het tweede blok zal niet uitgevoerd worden indien een FormatException optreedt.
+Indien een ``FormatException`` optreedt dan zal het eerste catch-blok uitgevoerd worden, in alle andere gevallen het tweede. Het tweede blok zal niet uitgevoerd worden indien een ``FormatException`` optreedt.
 
 ### Welke exceptions worden gegooid?
 
-De online .NET documentatie is de manier om te weten te komen welke exceptions een methode mogelijk kan gooien. Gaan we bijvoorbeeld naar de constructor-pagina van de StreamWrite klasse ([hier](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter.-ctor?view=netframework-4.8#System_IO_StreamWriter__ctor_System_String_System_Boolean_System_Text_Encoding_System_Int32_) dan zien we daar een hoofstuk Exception waar klaar en duidelijk wordt beschreven wanneer welke Exception wordt gegooid.
+De online .NET documentatie is de manier om te weten te komen welke exceptions een methode mogelijk kan gooien. Gaan we bijvoorbeeld naar de documentatie op MSDN van de ``int32.Parse`` methode dan zien we daar een sectie "Exceptions" waar klaar en duidelijk wordt beschreven wanneer welke exception wanneer wordt opgeworpen.
 
-![Documentatie](../assets/20_exceptions/msdn.png)
+![Bron: https://docs.microsoft.com/en-us/dotnet/api/system.int32.parse](../assets/20_exceptions/msdn.png)
 
 ### Werken met de exception parameter
 
 De Exceptions die worden opgegooid door een methode zijn objecten van de Exception-klasse. Deze klasse bevat standaard een aantal interessante zaken, die je kan oproepen in je code.
 
-Bovenaan de declaratie van het catch-blok geef je aan hoe het exception object in het blok zal heten. In de vorige voorbeelden was dit altijd `e` (standaardnaam)
+Bovenaan de declaratie van het ``catch``-blok geef je aan hoe het exception object in het blok zal heten. In de vorige voorbeelden was dit altijd `e` (standaardnaam)
 
-![IntelliSense to the rescue](../assets/20_exceptions/eexc.png)
-
-Omdat alle exception van Exception afgeleid zijn bevatten ze allemaal minstens:
+Alle ``Exception``-objecten bevatten volgende informatie:
 
 | Element	|Omschrijving|
 |----|----|
@@ -152,7 +144,7 @@ Omdat alle exception van Exception afgeleid zijn bevatten ze allemaal minstens:
 |`ToString()`	|Geeft het type van de exception, Message en StackTrace terug als string.|
 
 
-We kunnen via deze parameter meer informatie uit de opgeworpen uitzondering uitlezen en bijvoorbeeld aan de gebruiker tonen.
+We kunnen via deze parameter meer informatie uit de opgeworpen uitzondering uitlezen en bijvoorbeeld aan de gebruiker tonen:
 
 ```java
 catch (Exception e)

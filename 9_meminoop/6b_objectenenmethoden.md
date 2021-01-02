@@ -1,7 +1,8 @@
 ## Objecten en methoden
+
 ### Objecten als actuele parameters
 
-Klassen zijn "gewoon" nieuwe types. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden.
+Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden.
 Het enige verschil is dat we objecten **by reference** meegeven aan een methode. Aanpassingen aan het object in de methode zal dus betekenen dat je het originele object aanpast dat aan de methode werd meegegeven. Hier moet je dus zeker rekening mee houden.
 
 Een voorbeeld. Stel dat we volgende klasse hebben waarin we metingen willen opslaan, alsook wie de meting heeft gedaan:
@@ -33,7 +34,7 @@ static void Main(string[] args)
 static void ToonMetingInKleur (Meting inMeting, ConsoleColor kleur)
 {
     Console.ForegroundColor = kleur;
-    Console.WriteLine($"Temperatuur {inMeting.Temperatuur}°C werd opgemeten door {inMeting.OpgemetenDoor}");
+    Console.WriteLine($"{inMeting.Temperatuur}°C gemeten door: {inMeting.OpgemetenDoor}");
     Console.ResetColor();
 }
 ```
@@ -72,25 +73,6 @@ static void VerhoogGetal(int inMeting)
 }
 ```
 
-### Delen van objecten als parameter
-
-Stel dat we volgende methode hebben
-
-```java
-static double Gemiddelde(double getal1, double getal2)
-{
-    return (getal1 + getal2) / 2;
-}
-```
-
-Je mag deze methode dus ook oproepen als volgt (we gebruiken de ``Meting`` objecten ``m1`` en ``m2`` uit vorige paragraaf):
-
-```java
-double result= Gemiddelde(m1.Temperatuur, m2.Temperatuur);
-```
-
-Het type van de property ``Temperatuur`` is ``int`` en mag je dus als parameter aan deze methoden meegeven.
-
 ### Objecten als resultaat
 
 Weer hetzelfde verhaal: ook klassen mogen het resultaat van een methoden zijn.
@@ -112,17 +94,6 @@ Deze methode kan je dan als volgt gebruiken:
 ```java
 Meting m3 = GenereerRandomMeting();
 ```
-
-Merk op dat het dus kan zijn dat een methode ``null`` teruggeeft. Het kan dus zeker geen kwaad om steeds in je code te controleren of je effectief iets hebt terug gekregen:
-
-```java
-Meting m3 = GenereerRandomMeting();
-if(m3 != null)
-{
-    ToonMetingInKleur(m3, ConsoleColor.Red);
-}
-```
-
 <!---NOBOOKSTART--->
 ### Kennisclip
 ![](../assets/infoclip.png)

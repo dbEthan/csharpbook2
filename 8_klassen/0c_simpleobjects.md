@@ -21,8 +21,8 @@ class Mens
 
 We zien twee nieuwe aspecten:
 
-* Het keyword **``static``** mag je **niet** voor een methode signatuur zetten (later ontdekken we wanneer dat soms wel moet) 
-* Voor de methode plaatsen we ``public`` : dit is een access modifier die aangeeft dat de buitenwereld deze methode op het object kan aanroepen.
+* Het keyword **``static``** mag je **niet** voor een methode signatuur zetten (later ontdekken we wanneer dat soms wel moet) .
+* Voor de methode plaatsen we ``public`` : dit is een *access modifier* die aangeeft dat de buitenwereld deze methode op het object kan aanroepen.
 
 Je kan nu elders objecten aanmaken en ieder object z'n methode ``Praat`` aanroepen:
 
@@ -83,9 +83,9 @@ class Mens
 
 Waarom zou je bepaalde zaken ``private`` maken? 
 
-De code binnenin een klasse kan overal aan. Stel dat je dus een erg complexe publieke methode hebt, en je wil deze opsplitsen in meerdere delen, dan ga je die andere delen ``private`` maken. Dit voorkomt dat programmeurs die je klasse later gebruiken, stukken code aanroepen die helemaal niet bedoelt is om rechtstreeks aan te roepen.
+De code binnenin een klasse kan overal aan binnen de klasse zelf. Stel dat je dus een erg complexe publieke methode hebt, en je wil deze opsplitsen in meerdere delen, dan ga je die andere delen ``private`` maken. Dit voorkomt dat programmeurs die je klasse later gebruiken, stukken code aanroepen die helemaal niet bedoeld zijn om rechtstreeks aan te roepen.
 
-Volgende voorbeeld toont hoe je binnenin een klasse andere zaken van de klasse kunt aanroepen: we roepen in de methode ``Praat`` de methode ``VertelGeheim`` aan.
+Volgende voorbeeld toont hoe je binnenin een klasse andere zaken van de klasse kunt aanroepen: we roepen in de methode ``Praat`` de methode ``VertelGeheim`` aan (die ``private`` is voor de buitenwereld, maar niet voor de code binnen de ``Praat``-methode)
 
 
 ```java
@@ -120,7 +120,7 @@ Ik ben verliefd op Anneke
 ```
 
 {% hint style='tip' %}
-Met behulp van de **dot-operator** (``.``) kunnen we aan alle informatie die ons object aanbiedt aan de buitenwereld. Ook dit zagen we reeds toen we een ``Random``object hadden: we konden maar een handvol zaken aanroepen op zo'n object, waaronder de ``Next`` methode.
+Met behulp van de **dot-operator** (``.``) kunnen we aan alle informatie die ons object aanbiedt aan de buitenwereld. Ook dit zagen we reeds toen we een ``Random``-object hadden: we konden maar een handvol zaken aanroepen op zo'n object, waaronder de ``Next`` methode.
 {% endhint %}
 
 
@@ -129,9 +129,9 @@ Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verlie
 
 #### Instantievariabelen
 
-Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde. We weten echter dat objecten ook een interne staat hebben die per object individueel is. Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd). Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
+Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde. We weten echter dat objecten ook een interne staat hebben die per object individueel is (we zagen dit reeds toen we balletjes over het scherm lieten botsen: ieder balletje onthield z'n eigen richtingsvector en positie). Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd) oplossen. Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
 
-Stel je voor dat we onze mensen een leeftijd willen geven. Ieder object zal zelf in een instantievariabele bijhouden hoeveel jaren dit object al leeft (het vertellen van geheimen laten we even achterwege):
+Stel je voor dat we onze mensen een leeftijd willen geven. Ieder object zal zelf in een instantievariabele bijhouden hoeveel jaren dit object al leeft (het vertellen van geheimen zullen we verderop behandelen):
 
 ```java
 class Mens
@@ -148,8 +148,8 @@ class Mens
 ```
 
 Enkele belangrijke concepten:
-* De instantievariabele ``leeftijd`` zetten we private: we willen niet dat de buitenwereld de leeftijd van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw leeftijd is nu 99! Ha.", waarop Adil vloekend verandert in een oud mannetje.
-* We geven de variabele een beginwaarde ``12``. Alle objecten zullen dus 12 jaar oud zijn.
+* De instantievariabele ``leeftijd`` zetten we private: we willen niet dat de buitenwereld de leeftijd van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw leeftijd is nu 99! Ha.". Waarop Adil vloekend verandert in een oud mannetje.
+* We geven de variabele een beginwaarde ``12``. Alle objecten zullen dus 12 jaar oud zijn wanneer we deze met ``new`` aanmaken.
 * We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``leeftijd`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou de leeftijd van het object dat je aanroept mee op het scherm versschijnen.
 
 {% hint style='warning' %}
@@ -169,7 +169,7 @@ Dit zijn geen officiële regels, maar afspraken die veel programmeurs onderling 
 ![](../assets/gotopolice.png)
 Wat?! Ik ben hier niet voor jou? Omdat je geen ``goto`` hebt gebruikt?! Flink hoor. Maar daarvoor ben ik hier niet.
 
-Ik zag je wel denken "Als ik nu die instantievariabele ook eens ``public`` maak."
+Ik zag je wel denken: "Als ik nu die instantievariabele ook eens ``public`` maak."
 
 Niet doen. Simpel! **Instantievariabele mogen NOOIT ``public`` gezet worden.** De C# standaard laat dit weliswaar toe, maar dit is één van de slechtste programmeerdingen die je kan doen. 
 
@@ -203,7 +203,7 @@ class Mens
 
 }
 ```
-Zoals al gezegd: * **Ieder object zal z'n eigen leeftijd hebben.**
+Zoals al gezegd: **Ieder object zal z'n eigen leeftijd hebben.**
 
 Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen interne staat die kan aangepast worden individueel van de andere objecten van hetzelfde type.
 
@@ -247,7 +247,7 @@ class Mens
     }
 ```
 
-Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variabele kan geven. **Objecten zijn verantwoordelijk voor zichzelf** en moeten zichzelf dus ook behouden dat de buitenwereld niets met hen doet dat hun eigen werking om zeep helpt.
+Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variabele kan geven. **Objecten zijn verantwoordelijk voor zichzelf** en moeten zichzelf dus ook beschermen zodat de buitenwereld niets met hen doet dat hun eigen werking om zeep helpt.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
@@ -275,7 +275,10 @@ class Mens
 
     private void VertelGeheim()
     {
-        Console.WriteLine($"Ik ben verliefd op {lief}");
+        if( lief != "niemand")
+            Console.WriteLine($"Ik ben verliefd op {lief}");
+        else
+            Console.WriteLine("Ik ben op niemand verliefd.");
     }
 }
 ```

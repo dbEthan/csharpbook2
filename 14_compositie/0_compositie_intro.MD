@@ -4,6 +4,7 @@
 Dit hoofdstuk is kort maar krachtig. We gaan niets nieuws uitleggen, maar eerder zaken benoemen die je waarschijnlijk al toepaste zonder te weten dat er daar ook een naam voor was.
 {% endhint %}
 
+## Wat zijn compositie en aggregatie?
 We spreken over compositie (**composition**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type Motor dat je gebruikt in een object van het type Auto. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaalt of het gaat om aggregatie of compositie:
 
 * **Compositie**: Het interne object heeft geen bestaansreden zonder het moederobject. Denk bijvoorbeeld aan een kamer in een huis. Als het huis verdwijnt, verdwijnt ook de kamer.
@@ -12,7 +13,7 @@ We spreken over compositie (**composition**) en aggregatie (**aggregation**) wan
 Het lijdende voorwerp zal steeds het object zijn dat binnen het onderwerp zal geplaatst worden (*motor* in auto, *schijf* in computer).
 
 
-## Heeft een-relatie
+### Heeft een-relatie
 
 Overerving konden we detecteren door de "is een"-relatie. Als twee klassen in een "is een"-relatie zaten , was er sprake van overerving. Compositie daarentegen detecteren we met behulp van de "heeft een"-relatie.
 
@@ -20,7 +21,7 @@ Een klassieke fout is overerving gebruiken wanneer je de boek<>pagina relatie wi
 
 Je hoort ook ogenblikkelijk of het om een "heeft één" of "heeft meerdere"-relatie gaat. In het tweede geval, heeft meerdere, wil dit zeggen dat het moederobject **een array van het interne object** in zich heeft. Wederom het voorbeeld van het boek: een boek heeft meerdere pagina's. Dus in de klasse ``Boek`` zullen we vermoedelijk een object van het type ``Pagina[]`` of ``List<Pagina>`` tegenkomen.
 
-## UML aanduiding
+### UML aanduiding
 
 Compositie duiden we aan met een lijn die begint met een volle ruit aan de kant van de klasse die de objecten in zich heeft:
 
@@ -181,7 +182,7 @@ Kortom, niets nieuws onder de zon. Alle manieren die ja al kende om met bestaand
 {% endhint %}
 
 
-## Compositie en aggregatie objecten gebruiken
+### Compositie en aggregatie objecten gebruiken
 
 Stel je voor dat de klasse ``HardeSchijf`` ook een autoproperty ``MaxCapacity`` heeft. De klasse ``PC`` kan dankzij compositie dus nu ook die property gebruiken, zoals volgende voorbeeld toont:
 

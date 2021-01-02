@@ -315,7 +315,7 @@ public void Update()
 {
     if (BalX + VX >= Balletje.Breedte || BalX + VX < 0)
     {
-        VX = -VY;
+        VX = -VX;
     }
 
 

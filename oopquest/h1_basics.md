@@ -21,7 +21,7 @@
 <!--- {float:right, width:50%} --->
 ![](../assets/oopquesttitel.png)
 
-Doorheen dit boek zullen we aan het einde van ieder hoofdstuk een stuk werken aan **OopQuest** een vereenvoudigde versie van HeroQuest, een spel dat ik vroeger erg graag speelde. Voor de gamers die dit boek lezen (vermoedelijk 90% van de lezers dus): we zullen een *turn-based rogue-like topdown dungeon crawler* maken, maar met een hoek af.
+Doorheen dit boek zullen we aan het einde van ieder hoofdstuk een stuk werken aan **OopQuest** een vereenvoudigde versie van HeroQuest, een spel dat ik vroeger erg graag speelde. Voor de gamers die dit boek lezen (vermoedelijk 90% van de lezers dus): we zullen een *turn-based rogue-like topdown dungeon crawler* maken, maar met een hoek af (en niet zo spannend).
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -30,16 +30,16 @@ Doorheen dit boek zullen we aan het einde van ieder hoofdstuk een stuk werken aa
 
 
 De opzet van OopQuest is als volgt:
-* de kiest uit 1 van 4 helden
-* de speler bewegen hun held rond op een random gegenereerde kaart
-* de speler bestrijdt monsters en worden sterker naarmate er meer monsters gedood worden
-* de speler kan schatten verzamelen en moet proberen zo lang mogelijk te overleven
-* wanneer de speler sterft begint het spel opnieuw, maar worden er enkele eigenschappen vanuit het 'vorige leven' doorgegeven
+* de speler kiest uit 1 van 4 helden.
+* de speler beweegt de held rond op een random gegenereerde kaart.
+* de speler bestrijdt monsters en wordt sterker naarmate er meer monsters gedood worden.
+* de speler kan schatten verzamelen en moet proberen zo lang mogelijk te overleven.
+* wanneer de speler sterft begint het spel opnieuw, maar worden er enkele eigenschappen vanuit het 'vorige leven' doorgegeven.
 
 
 ### Laten we de zoektocht beginnen
 
-OopQuest zou niets zijn zonder nodige basis-klassen. We duiden daarom in de originele opzet alle zelfstandige naamwoorden (*substantieven*) aan, deze zijn potentiele kandidaten om in klassen te gieten:
+OopQuest zou niets zijn zonder nodige basis-klassen. We duiden daarom in de originele opzet alle zelfstandige naamwoorden (*substantieven*) aan, deze zijn potentiële kandidaten om in klassen te gieten:
 
 * de **speler** kiest uit 1 van 4 **helden**
 * de speler beweegt de held rond op een random gegenereerde **kaart**
@@ -62,10 +62,10 @@ class Spel {}
 ### Held klasse
 
 We gaan nog niet alle klassen volledig uitwerken. De ``Held`` klasse gaan we als eerste aanpakken. Een ``Held`` wordt gedefinieerd door volgende eigenschappen:
-* Naam (bv Crusher McCrusher)
-* Type (bv Paladijn, Barbaar, etc)
-* Gezondheidspercentage (0 is dood, 100 is kerngezond)
-* Sterkte bij de start (een positief getal)
+* Naam (bv "Crusher McCrusher").
+* Type (bv ``Paladijn``, ``Barbaar``, etc).
+* Gezondheidspercentage (0 is dood, 100 is kerngezond).
+* Sterkte bij de start (een positief getal).
 
 Laten we dit in een klasse gieten met de nodige autoproperties:
 
@@ -90,8 +90,12 @@ We herbekijken de klasse nog eens en kijken welke properties beter omgezet worde
 private int gezondheid;
 public int Gezondheid
 {
-    get { return gezondheid; }
-    set { 
+    get 
+    { 
+        return gezondheid; 
+    }
+    set 
+    { 
         if(value>=0 && value<=100)
             gezondheid = value; 
     }   
@@ -100,8 +104,12 @@ public int Gezondheid
 private int sterkte;
 public int Sterkte
 {
-    get { return sterkte; }
-    set {
+    get 
+    { 
+        return sterkte; 
+        }
+    set 
+    {
         if(value>=0)
             sterkte = value; 
     }
@@ -117,6 +125,7 @@ public void ToonInfo()
     Console.WriteLine($"Gezondheid={Gezondheid}%, Sterkte={Sterkte}");
 }
 ```
+
 ### Held klasse testen
 
 We zullen eens testen of deze Held-klasse al werkt. We schrijven in de ``main``:

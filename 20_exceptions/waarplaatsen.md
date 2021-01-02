@@ -2,27 +2,31 @@
 
 De plaats in je code waar je je exceptions zal opvangen, heeft invloed op de totale werking van je code. 
 
-Stel dat je volgende stukje code hebt waarin je een methode hebt die een lijst van strings zal beschouwen als urls die moeten gedownload worden.   Indien er echter fouten in de string staan dan zal er een uitzondering optreden bij lijn 16 (de tweede url ("http:\\www.humo.be") bevat even een bewuste fout (verkeerde slashes)):
+Stel dat je volgende stukje code hebt waarin je een methode hebt die een lijst van strings zal beschouwen als urls die moeten gedownload worden.   Indien er echter fouten in de string staan dan zal er een uitzondering optreden bij lijn 16. De tweede url ("http:\\\\www.humo.be") bevat namelijk een bewuste fout: de schuine strepen staan in de verkeerde richting.
+
+{% hint style='tip' %}
+Als sneak preview tonen we ook ineens hoe arrays van objecten werken.
+{% endhint %}
 
 ```java
 static void Main(string[] args)
 {
     string[] urllist= new string[3];
-    urllist[0] = "http://www.ap.be";
+    urllist[0] = "http://www.ziescherp.be";
     urllist[1] = "http:\\www.humo.be";
     urllist[2] = "timdams.com";
     DownloadAllUris(urllist);
 }
  
-static public void DownloadAllUris(string[] urlstodownload)
+static public void DownloadAllUris(string[] urls)
 {
     System.Net.WebClient webClient = new System.Net.WebClient();
  
-    foreach (string url in urlstodownload)
+    for(int i=0; i < urls.Length;i++)
     {
-        Uri uril= new Uri(url);
-        string result = webClient.DownloadString(uril);
-        Console.WriteLine(url+ &quot; gedownload!&quot;);
+        Uri uri= new Uri(urls[i]);
+        string result = webClient.DownloadString(uri);
+        Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
     }
 }
 ```
@@ -50,7 +54,7 @@ Zal resulteren in:
 
 <!---{line-numbers:false}--->
 ```text
-http://www.ap.be gedownload!
+http://www.ziescherp.be gedownload!
 Ongeldige URI: kan de Authority/Host niet parsen.
 ```
 
@@ -58,16 +62,16 @@ Met andere woorden, zolang de urls geldig zijn zal de download lukken. Bij de ee
 
 ### Rond afzonderlijke elementen in de loop
 
-Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. Wat plaatsen dan de try catch niet rond de methode ``DownloadAllUris`` , maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
+Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. We plaatsen dan de try catch niet rond de methode ``DownloadAllUris`` , maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
 
 ```java
-foreach (string url in urlstodownload)
+ for(int i=0; i < urls.Length;i++)
 {
     try
     {
-        Uri uril = new Uri(url);
-        string result = webClient.DownloadString(uril);
-        Console.WriteLine(url + &quot; gedownload!&quot;);
+        Uri uri = new Uri(urls[i]);
+        string result = webClient.DownloadString(uri);
+        Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
     }
     catch (Exception ex)
     {
@@ -81,9 +85,29 @@ Dit zal resulteren in:
 
 <!---{line-numbers:false}--->
 ```text
-http://www.ap.be gedownload!
+http://www.ziescherp.be gedownload!
 Ongeldige URI: kan de Authority/Host niet parsen.
 Ongeldige URI: de indeling van de URI kan niet worden bepaald.
 ```
 
 Met andere woorden, indien een bepaalde url niet geldig is dan zal deze overgeslagen worden en gaat de methode verder naar de volgende. Op deze manier kunnen we alsnog alle urls trachten te downloaden.
+
+### finaly 
+Soms zal je na een try-catch-blok ook nog een ``finally`` blok zien staan. Dit blok laat je toe om code uit te voeren die ALTIJD moet uitgevoerd worden, ongeacht of er een exception is opgetreden of niet. Je kan dit gebruiken om bijvoorbeeld er zeker van te zijn dat het bestand dat je wou uitlezen terug afgesloten wordt.
+
+```java
+try
+{
+    Uri uri = new Uri(urls[i]);
+    string result = webClient.DownloadString(uri);
+    Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+finally
+{
+    //Plaats hier zaken die sowieso moeten gebeuren. 
+}
+```

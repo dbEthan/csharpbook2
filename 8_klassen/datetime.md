@@ -14,7 +14,7 @@ Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar 
 
 Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met bijvoorbeeld de ``Random`` klasse, maar ook al met wat speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek die je kan gebruiken ZONDER dat je er objecten van moet aanmaken (het keyword ``static`` is daar de oorzaak van).
 
-Nog zo'n handige, ingebouwde, klasse is de ``DateTime`` klasse, die, je raadt het nooit, toelaat om de tijd en/of datum in een variabele te gebruiken.
+Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse, die, je raadt het nooit, toelaat om de tijd en/of datum in een variabele te gebruiken.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -39,6 +39,10 @@ DateTime currentTime = DateTime.Now;
 Console.WriteLine(currentTime);
 ```
 
+{% hint style='tip' %}
+``DateTime.Now`` is een zogenaamde **static property** wat verderop in het boek zal uitgelegd worden. 
+{% endhint %}
+
 #### Met constructor
 
 De constructor van een klasse laat toe om bij het maken van een nieuw object, beginwaarden voor bepaalde instantievariabelen of properties mee te geven. De ``DateTime`` klasse heeft meerdere constructor gedefiniëerd zodat je bijvoorbeeld een object kan aanmaken dat bij de start reeds de geboortedatum van de auteur bevat:
@@ -46,20 +50,20 @@ De constructor van een klasse laat toe om bij het maken van een nieuw object, be
 
 
 ```java
-DateTime verjaardag = new DateTime(1982, 3, 18); //jaar, maand, dag
+DateTime verjaardag = new DateTime(1981, 3, 18); //jaar, maand, dag
 ```
 
 Ook is er een constructor om startdatum én -tijd mee te geven bij de objectcreatie:
 
 ```java
-DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); //jaar, maand, dag, uur, minuten, seconden
+//Volgorde: jaar, maand, dag, uur, minuten, seconden
+DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); 
 ```
-
 ### DateTime methoden
 
 Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:
 
-![Iedere kubus stelt een methode voor. Iedere engelse sleutel een property](../assets/6_klassen/datemethods.png)
+![Iedere kubus stelt een methode voor. Iedere engelse sleutel een property.](../assets/6_klassen/datemethods.png)
 
 
 #### Add-methoden
@@ -85,6 +89,7 @@ In volgende voorbeeld wil ik ontdekken op welke datum de wittebroodsweken van m'
 
 ```java
 DateTime eindeWitteBroodsweken= trouwMoment.AddDays(35);
+Console.WriteLine(eindeWitteBroodsweken)
 ```
 
 ### DateTime properties
@@ -115,7 +120,7 @@ Enkele nuttige properties van ``DateTime`` zijn:
 Een voorbeeld:
 
 ```java
-Console.WriteLine($"Je wittebroodsweken eindigen in maand nummer: {eindeWitteBroodsweken.Month}");
+Console.WriteLine($"Einde wittebroodsweken in maand nr: {eindeWitteBroodsweken.Month}");
 Console.WriteLine($"Dat is een {eindeWitteBroodsweken.DayOfWeek}");
 ```
 
@@ -146,7 +151,7 @@ Console.WriteLine(dt);
 Indien je nu dit programma'tje zou uitvoeren en als gebruiker "8/11/2016" zou intypen, dan zal deze datum geparsed worden en in het object ``dt`` komen.
 
 {% hint style='tip' %}
-Zoals je ziet roepen we ``Parse`` aan op ``DateTime`` en dus niet op een specifiek object. Dat was ook zo reeds bijvoorbeeld bij ``int.Parse`` dat dus doet vermoeden dat zelfs het ``int`` datatype eigenlijk een klasse is!
+Zoals je ziet roepen we ``Parse`` aan op ``DateTime`` en dus niet op een specifiek object. Dat was ook zo reeds bijvoorbeeld bij ``int.Parse`` wat dus doet vermoeden dat zelfs het ``int`` datatype eigenlijk een klasse is!
 {% endhint %}
 
 #### IsLeapYear
@@ -162,7 +167,7 @@ if(isSchrikkel)
 
 ### TimeSpan 
 
-Je kan DateTime objecten ook bij elkaar optellen en aftrekken. Het resultaat van deze bewerking geeft echter niet een DateTime object terug, **maar een ``TimeSpan`` object**. Dit is een object dat aangeeft hoe groot het verschil is tussen de 2 DateTime objecten:
+Je kan DateTime objecten ook bij elkaar optellen en aftrekken. Het resultaat van deze bewerking geeft echter niet een DateTime object terug, **maar een ``TimeSpan`` object**. Dit is nieuwe object van het type ``TypeSpan`` (wat dus een andere klasse is) dat aangeeft hoe groot het verschil is tussen de 2 DateTime objecten kunnen we als volgt gebruiken=
 
 ```java
 DateTime vandaag = DateTime.Today;

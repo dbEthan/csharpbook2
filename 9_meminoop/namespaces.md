@@ -1,6 +1,6 @@
 
 ## Namespace en using
-Je zal het keyword al vele malen bovenaan je code hebben zien staan ``namespace`` met vlak erboven meestal nog 1 vreemd zinnetje met ``using``.
+Als tussendoortje wil ik nu even de keywords ``using`` en  ``namespace`` met je bespreken. Je zal het keyword ``namespace`` al vele malen bovenaan je code hebben zien staan met vlak erboven meestal nog 1 vreemd zinnetje met het keyword ``using``.
 
 ```java
 using System;
@@ -40,7 +40,7 @@ De politie uw vriend! Inderdaad. De auteur van dit boek heeft klachten gekregen 
 
 Als u ons  tegenkomt en vraagt "Waar is de Kerkstraat." Dan zullen wij u meer informatie moeten vragen. Zonder er bij te zeggen in welke gemeente u die straat zoekt, is de kans bestaande dat we u naar de verkeerde Kerkstraat sturen (er zijn er namelijk best veel in België en Nederland).
 
-Wel, namespaces zijn exact dat. Een soort stadsnaam (of postcode) die essentiëel is bij een straatnaam om zonder verwarring een straat te kunnen identificeren.
+Wel, namespaces zijn exact dat. Een soort stadsnaam (of postcode) die essentiëel is bij een straatnaam om zonder verwarring een straat te kunnen identificeren, in dit geval dus de klassenaam.
 
 Nog een fijne dag!
 <!---{/aside}--->
@@ -50,9 +50,9 @@ Nog een fijne dag!
 
 ### Using in je code
 
-Mogelijk heb je nu al een vermoeden waarom er ``using System;`` bovenaan je projecten staat. Deze lijn is verrassend eenvoudig: deze zegt letterlijk: "Beste C#, als je een klasse zoekt en je vindt ze niet in dit project: kijk dan zeker in de System-bibliotheek. 
+Mogelijk heb je nu al een vermoeden waarom er ``using System;`` bovenaan je projecten staat. Deze lijn is verrassend eenvoudig en zegt letterlijk: *"Beste C#, als je een klasse zoekt en je vindt ze niet in dit project: kijk dan zeker in de System-bibliotheek."*
 
-Deze bibliotheek van klassen staat, je raadt het nooit, in de ``System`` namespace. Alle basisklassen die we al hebben leren gebruiken zoals ``Math``, ``Console`` en ``Random`` staan in deze namespace. 
+Alle basisklassen die we al hebben leren gebruiken zoals ``Math``, ``Console`` en ``Random`` staan in deze ``System``-namespace. 
 
 Indien je de lijn ``using System;`` zou weghalen dan zou je de volledige naam van ```Console`` moeten schrijven:
 
@@ -60,15 +60,17 @@ Indien je de lijn ``using System;`` zou weghalen dan zou je de volledige naam va
 System.Console.WriteLine("Dit is wel veel meer typwerk");
 ```
 {% hint style='tip' %}
+
 ### Ontbrekende namespaces terugvinden
 Het gebeurt soms dat je een klasse gebruikt en je weet zeker dat ze in jouw project aanwezig is. Visual Studio kan je helpen de namespace van deze klasse te zoeken moest je daar te lui voor zijn.
 
-Je doet dit door de naam van de klasse te schrijven (op de plek dat je deze nodig hebt) en dan op het lampje dat links in de rand verschijnt te klikken. Indien de klasse gekend is door VS zal je nu de optie krijgen om automatisch
-* oftewel  ``using``, met de juiste namespace, bovenaan je huidige codebestand te plaatsen
-* oftewel  de volledige naam van de klasse uit te schrijven (dus inclusief de namespace)
+Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nodig hebt) en dan op het lampje dat links in de rand verschijnt te klikken. Indien de klasse gekend is door VS zal je nu de optie krijgen om automatisch:
+* oftewel  ``using``, met de juiste namespace, bovenaan je huidige codebestand te plaatsen.
+* oftewel  de volledige naam van de klasse uit te schrijven (dus inclusief de namespace).
 
 ![Handig toch](../assets/6_klassen/usinghelp.png)
 
+De optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 
 {% endhint %}
 
 <!---NOBOOKSTART--->

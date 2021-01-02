@@ -62,12 +62,12 @@ We hebben nu **twee objecten aangemaakt van het type Auto** die we verderop zoud
 
 Let goed op dat je dus op de juiste plekken dit alles doet (bekijk de onderstaande screenshot):
 
-* Klassen maak je aan als aparte files in je project
-* Objecten creëer je in je code op de plekken dat je deze nodig hebt, bijvoorbeeld in je ``Main`` methode bij een Console-applicatie
+* Klassen maak je aan als aparte files in je project.
+* Objecten creëer je in je code op de plekken dat je deze nodig hebt, bijvoorbeeld in je ``Main`` methode bij een Console-applicatie.
 
-![](../assets/6_klassen/opbouw.png)
+![Ieder klasse in een apart bestand: maak hier een goede gewoonte van. Het zal je VS project overzichtelijker houden.](../assets/6_klassen/opbouw.png)
 
-### Klassen zijn eigenlijk nieuwe datatypes
+### Klassen zijn gewoon nieuwe datatypes
 
 In het vorige boek leerden we dat er allerlei datatypes bestaan. We maakten vervolgens variabelen aan van een bepaald datatype zodat deze variabele als inhoud enkel zaken kon bevatten van dat ene datatype. 
 
@@ -76,11 +76,11 @@ Zo leerden we toen volgende datatypes:
 * Het **``enum``** keyword liet ons toe om een nieuw datatype te maken dat maar een eindig aantal mogelijke waarden (values) kon hebben. Intern bewaarden variabelen van zo'n enum-datatype hun waarde als een ``int``
 * **Arrays** waren het laatste soort datatypes. We ontdekten dat we arrays konden maken van eender wel datatype (valuetypes en enums) dat we tot dan kenden.
 
-**Wel nu, klassen zijn niet meer dan een nieuw soort datatype**. Kortom: telkens je een klasse aanmaakt, kunnen we in dat project variabelen aanmaken met dat datatype. We noemen variabelen die een klasse als datatype hebben **objecten**.
+**Wel nu, klassen zijn niet meer dan een nieuw soort datatypes**. Kortom: telkens je een klasse aanmaakt, kunnen we in dat project variabelen en arrays aanmaken met dat datatype. We noemen variabelen die een klasse als datatype hebben **objecten**.
 
-Het grote verschil dat deze objecten  zullen hebben is dat ze dus vaak veel complexer zijn dan de eerdere datatypes die we kennen:
-* Ze zullen meestal meerdere "waarden" kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben)
-* Ze zullen methoden hebben die we kunnen aanroepen om de variabele "voor ons te laten werken"
+Het grote verschil dat deze objecten zullen hebben is dat ze dus vaak veel complexer zijn dan de eerdere datatypes die we kennen:
+* Ze zullen meerdere "waarden" tegelijk kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben).
+* Ze zullen methoden hebben die we kunnen aanroepen om de variabele "voor ons te laten werken".
 
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
@@ -88,9 +88,9 @@ Het grote verschil dat deze objecten  zullen hebben is dat ze dus vaak veel comp
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, maar ik denk dat ik toch beter een paar keer met een speer naar een mammoet werp om echt te voelen wat OOP is. 
+Het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, maar ik denk dat ik toch beter een paar keer met een speer naar een mammoet werp om echt te voelen wat OOP is. 
 
-Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere datatypes** dan diegene die ik in het vorige boek heb leren? Ok?
+Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datatypes"** dan diegene die ik in het vorige boek heb leren? Ok?
 
 **Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
 
@@ -99,7 +99,13 @@ Ik onthoud nu alvast **klassen zijn gewoon een nieuwe vorm van complexere dataty
 {% endhint %}
 <!---NOBOOKEND--->
 
-#### Klasse Studenten of Student?
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+#### Klasse "Studenten" of "Student"?
 
 Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wat de klassen en wat de objecten in hun opgave juist zijn.
 
@@ -109,13 +115,13 @@ Say what now?!
 
 Als je een klasse ``Student`` hebt, dan zal deze eigenschappen hebben zoals ``Punten``, ``Naam`` en ``DatumVanInschrijven``. 
 
-Als je een klasse ``Studenten`` daarentegen hebt, dan is dit vermoedelijk een klasse die beschrijft hoe een groep studenten moet werken ine je applicatie. Mogelijk zal je dan properties hebben zoals ``KlasNaam``, ``AantalAfwezigen``, etc. Kortom, eigenschappen over de groep, niet over 1 student.
+Als je een klasse ``Studenten`` daarentegen hebt, dan is dit vermoedelijk een klasse die beschrijft hoe een groep studenten moet werken in je applicatie. Mogelijk zal je dan properties hebben zoals ``KlasNaam``, ``AantalAfwezigen``, etc. Kortom, eigenschappen over de groep, niet over 1 student.
 
-#### Level of Level1
+#### "Level" of "Level1"?
 
-Een andere veelgemaakte fout is klassen hebben die eigenlijk exact 1 object maar kunnen voorstellen. Stel je voor dat je een spel maakt waarin verschillende levels zijn. Een logische keuze zou dan zijn om een klasse ``Level`` te maken (niét ``Levels``) die properties zoals ``MoeilijkheidsGraad``, ``HeeftGeheimeGrotten``, ``AantalVijanden``, etc.
+Een andere veelgemaakte fout is klassen hebben die eigenlijk exact 1 object maar kunnen voorstellen. Stel je voor dat je een spel maakt waarin verschillende levels zijn. Een logische keuze zou dan zijn om een klasse ``Level`` te maken (niét ``Levels``) die properties  heeft zoals ``MoeilijkheidsGraad``, ``HeeftGeheimeGrotten``, ``AantalVijanden``, etc.
 
-Vervolgens kunnen we dan instanties maken, 1 object stel 1 level in het spel voor. De speler kan dan van level naar level gaan en de code start dan telkens de ``BeginLevel`` methode:
+Vervolgens kunnen we dan instanties maken: 1 object stel 1 level in het spel voor. De speler kan dan van level naar level gaan en de code start dan bijvoorbeeld telkens de ``BeginLevel`` methode:
 
 ```java
 Level level1=new Level();
@@ -123,8 +129,12 @@ Level level1=new Level();
 level1.BeginLevel();
 ```
 
-Wat dus niet mag zijn klassen met namen zoals ``Level1``,``Level2``, etc. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code zouden kunnen noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
+Wat dus niet mag zijn **klassen** met namen zoals ``Level1``, ``Level2``, etc. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code zouden kunnen noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
+Objecten met namen zoals ``Level1`` en ``Level2`` zijn wél dus toegestaan, daar ze dan vermoedelijk allemaal van het type ``Level`` zijn. Maar opgelet: als je variabelen hebt die een genummerd zijn (bv ``bal1``, ``bal2``, etc.) dan is de kans groot dat je vervolgens een array van objecten nodig hebt! 
 
-
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
 
 <!---{sample: false}--->

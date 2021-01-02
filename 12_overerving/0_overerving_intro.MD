@@ -23,7 +23,7 @@ Overerving (**inheritance**) laat ons toe om klassen te specialiseren vanuit een
 De child-klasse kan alles wat de parent-klasse kan, maar de nieuwe klasse kan nu ook extra specialisatie code krijgen.
 
 
-## Is-een relatie
+### Is-een relatie
 
 Wanneer twee klassen met behulp van een "x is een y"-relatie kunnen beschreven worden dan weet je dat overerving mogelijk.
 

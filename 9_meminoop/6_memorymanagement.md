@@ -4,7 +4,7 @@
 
 In het vorige boekdeel deden we reeds uit de doeken dat variabelen op 2 manieren in het geheugen kunnen leven:
 
-* **Value types**: waren variabele wiens waarde rechtstreeks op de geheugenplek stond waar de variabele naar verwees. Dit gold voor alle bestaande, ingebakken datatypes zoals ``int``, ``bool``, ``char`` etc.
+* **Value types**: waren variabelen wiens waarde rechtstreeks op de geheugenplek stonden waar de variabele naar verwees. Dit gold voor alle bestaande, ingebakken datatypes zoals ``int``, ``bool``, ``char`` etc. alsook voor ``enum`` types.
 * **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waarde effectieve waarde van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde
 
 **Ook objecten zijn reference types.** Alhoewel het vorige boek liet uitschijnen dat vooral value type variabelen veelvuldig in programma's voorkwamen, zal je nu ontdekken dat reference types véél meer voorkomen, simpelweg omdat quasi alles in OOP **objecten** zijn (en dus ook arrays van objecten).
@@ -17,10 +17,10 @@ In het vorige boek toonden we hoe alle variabelen in één grote "wolk geheugen"
 
  Wanneer een C# applicatie wordt uitgevoerd krijgt het twee soorten geheugen toegewezen dat het 'naar hartelust' kan gebruiken, namelijk:
 
-1. Het kleine, maar snelle **stack** geheugen
-2. Het grote, maar tragere **heap** geheugen
+1. Het kleine, maar snelle **stack** geheugen.
+2. Het grote, maar tragere **heap** geheugen.
 
-Afhankelijk van het soort variabele wordt ofwel de stack, ofwel de heap gebruikt. **Het is uitermate belangrijk dat je weet in welk geheugen de variabele zal bewaard worden!** 
+Afhankelijk van het soort variabele wordt ofwel de stack, ofwel de heap gebruikt. **Het is uitermate belangrijk dat je weet in welk geheugen de variabele zal bewaard worden!** Je hebt hier geen controle over, maar het beïnvloed wel de manier waarop je code zal werken.
 
 Volgende tabel vat samen welke type in welk geheugen wordt bewaard:
 
@@ -37,7 +37,7 @@ Volgende tabel vat samen welke type in welk geheugen wordt bewaard:
 
 Waarom plaatsen we niet alles in de stack? De reden hiervoor is dat bij het compileren van je applicatie er reeds zal berekend worden hoeveel geheugen de stack zal nodig hebben. Wanneer je programma dus later wordt uitgevoerd weet het OS perfect hoeveel geheugen het minstens moet reserveren bij het besturingssysteem.
 
-Er is echter een probleem: de compiler kan niet alles perfect berekenen of voorspellen. Een variabele van het type ``int`` is perfect geweten hoe groot die zal zijn (32 bit). Maar wat met een string die je aan de gebruiker vraagt? Of wat met een array waarvan we pas tijdens de uitvoer de lengte gaan berekenen gebaseerd op *runtime* informatie. 
+Er is echter een probleem: de compiler kan niet alles perfect berekenen of voorspellen. Een variabele van het type ``int`` is perfect geweten hoe groot die zal zijn (32 bit). Maar wat met een string die je aan de gebruiker vraagt? Of wat met een array waarvan we pas tijdens de uitvoer de lengte gaan berekenen gebaseerd op *runtime* informatie?
 
 Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid stackgeheugen voor een array te reserveren als we niet weten hoe groot die zal worden. Beeld je in dat alle applicaties op je computer *voor alle zekerheid* een halve gigabyte aan geheugen zouden vragen: "just in case". Je computer zou enkele terrabyte aan geheugen nodig hebben. Het is dus veel realistischer om enkel het geheugen te reserveren waar de compiler 100% zeker van is dat deze zal nodig zijn.
 
@@ -54,12 +54,12 @@ Dit zijn alle gekende, 'eenvoudige' datatypes die we totnogtoe gezien hebben, in
 * ``char``
 * ``float``, ``double``, ``decimal``
 * ``bool``
-* structs (zie appendix)
+* structs (niet besproken in dit boek)
 * enums (zie het vorige boek)
 
 ### = operator bij value types
 
-Wanneer we een value-type willen kopiëren dan kopiëren de actuele waarde:
+Wanneer we een value-type willen kopiëren gebruiken we de =-operator die de waarde van de rechtse operand zal uitlezen en zal kopiëren naar de linkse operand:
 
 ```java
 int getal = 3;
@@ -68,10 +68,10 @@ int anderGetal = getal;
 
 Vanaf nu zal ``anderGetal`` de waarde ``3`` hebben. Als we nu één van beide variabelen aanpassen dan zal dit **geen** effect hebben op de andere variabelen.
 
-We zien hetzelfde effect wanneer we een methode maken die een parameter van het value type aanvaardt - we geven een kopie van de variabele mee:
+We zien hetzelfde effect wanneer we een methode maken die een parameter van het value type aanvaardt: we geven een kopie van de variabele mee:
 
 ```java
-void DoeIets(int a)
+void VerhoogParameter(int a)
 {
     a++;
     Console.WriteLine($"In methode {a}");
@@ -79,7 +79,7 @@ void DoeIets(int a)
 
 //Elders:
 int getal= 5;
-DoeIets(getal);
+VerhoogParameter(getal);
 Console.WriteLine($"Na methode {getal}");
 ```
 
@@ -93,18 +93,18 @@ Na methode 5
 
 ### Reference types
 
-**Reference** types worden in de heap bewaard. De *effectieve waarde* wordt in de heap bewaard, en in de stack zal enkel een **referentie** of **pointer** naar de data in de heap bewaard worden. Een referentie (of pointer) is niet meer dan het geheugenadres naar waar verwezen wordt (bv. ``0xA3B3163``)  Concreet zijn dit alle zaken die vaak redelijk groot zullen zijn of waarvan op voorhand niet kan voorspeld worden hoe groot ze *at runtime* zullen zijn:
-* objecten, interfaces en delegates
-* arrays
+**Reference** types worden in de heap bewaard. De *effectieve waarde* wordt in de heap bewaard, en in de stack zal enkel een **referentie** of **pointer** naar de data in de heap bewaard worden. Een referentie (of pointer) is niet meer dan het geheugenadres naar waar verwezen wordt (bv. ``0xA3B3163``)  Concreet zijn dit alle zaken die vaak redelijk groot zullen zijn of waarvan op voorhand niet kan voorspeld worden hoe groot ze *at runtime* zullen zijn, namelijk:
+* objecten, interfaces en delegates (die laatste behandelen we niet in dit boek).
+* arrays.
 
 ### = operator bij reference types
-Wanneer we de = operator gebruiken bij een reference type dan kopiëren we de referentie naar de waarde, niet de waarde zelf.
+Wanneer we de = operator gebruiken bij een reference type dan kopiëren we de referentie naar de waarde van de rechtse operand, niet de waarde zelf.
 
 #### Bij objecten
 
 We zien dit gedrag bij alle reference types, zoals objecten:
 ```java
-Student stud= new Student();
+Student stud = new Student();
 ```
 
 Wat gebeurt er hier?
@@ -173,14 +173,14 @@ Console.WriteLine(a.Naam);
 We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``a`` naar het zelfde object in de heap verwijzen. Het originele "abba"-object zijn we kwijt en zal verdwijnen (zie Garbage collector verderop).
 
 {% hint style='warning' %}
-De meeste klassen zullen met value type properties en instantievariabelen werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
+De meeste klassen zullen met value type-properties en instantievariabelen werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
 {% endhint %}
 
 ### Methoden en reference parameters
 
 Ook bij methoden geven we de dus de referentie naar de waarde mee. In de methode kunnen we dus zaken aanpassen van de parameter en dan passen we eigenlijk de originele variabele aan:
 ```java
-void DoeIets(int[] a)
+void VerhoogEersteElementInArray(int[] a)
 {
    a[0]++;
    Console.WriteLine($"In methode {a[0]}");
@@ -188,7 +188,7 @@ void DoeIets(int[] a)
 
 //Elders:
 int[] getallen= {5,3,2};
-DoeIets(getallen);
+VerhoogEersteElementInArray(getallen);
 Console.WriteLine($"Na methode {getallen[0]}");
 ```
 
@@ -203,7 +203,7 @@ Na methode 6
 {% endhint %}
 
 ```java
-void DoeIets(int a)
+void VerhoogParameter(int a)
 {
     a++;
     Console.WriteLine($"In methode {a}");
@@ -211,7 +211,7 @@ void DoeIets(int a)
 
 //Elders:
 int[] getallen= {5,3,2};
-DoeIets(getallen[0]); //<= VALUE TYPE!
+VerhoogParameter(getallen[0]); //<= VALUE TYPE!
 Console.WriteLine($"Na methode {getallen[0]}");
 ```
 
@@ -222,9 +222,9 @@ In methode 6
 Na methode 5
 ```
 
-### De Garbage Collector (GC)
-Een essentieel onderdeel van .NET is de zogenaamde GC, de Garbage Collector. Dit is een geautomatiseerd onderdeel van ieder C# programma dat ervoor zorgt dat we geen geheugen nodeloos gereserveerd houden.
-De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat waar geen references naar verwijzen. Indien er geen references naar wijzen zal dit stuk data verwijderd worden.
+### De Garbage Collector 
+Een essentiëel onderdeel van .NET is de zogenaamde GC, de **Garbage Collector**. Dit is een geautomatiseerd onderdeel van ieder C# programma dat ervoor zorgt dat we geen geheugen nodeloos gereserveerd houden.
+De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat waar geen referenties naar verwijzen. Indien er geen referenties naar wijzen zal dit stuk data verwijderd worden.
 
 ![Data in de heap waar geen referenties naar wijzen zullen ten gepaste tijde verwijderd worden](../assets/5_arrays/gc2.png)
 

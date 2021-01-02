@@ -1,4 +1,4 @@
-##  Voorbeeld: EersteMinister en interfaces
+##  Interfaces in de praktijk
 
 In het hoofdstuk Polymorfisme bespraken we een voorbeeld van een klasse ``EersteMinister`` die enkele ``Minister``-klassen gebruikte om hem of haar te helpen.
 

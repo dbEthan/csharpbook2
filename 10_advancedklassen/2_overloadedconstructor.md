@@ -1,4 +1,4 @@
-## Overloaded constructors
+### Overloaded constructors
 
 Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen bijvoorbeeld de leeftijd meegeven die het object moet hebben bij het aanmaken.
 
@@ -17,7 +17,7 @@ class Student
 {
     public Student(int startgeboorteJaar)
     {
-        geboorteJaar = startgeboorteJaar
+        geboorteJaar = startgeboorteJaar;
     }
 
     private int geboorteJaar;
@@ -27,8 +27,9 @@ class Student
 
 Dat was eenvoudig, hé?
 
-**Maar** denk eraan, je hebt een overloaded constructor geschreven en dus heeft C# gezegd *"ok, je schrijft zelf constructor, trek je plan. Maar de default zal je ook zal moeten schrijven!"*
-Je kan nu enkel je objecten nog via de overloaded constructor aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je die constructor, de default constructor, nog hebben dan zal je die dus ook moeten schrijven, bijvoorbeeld:
+**Maar** denk eraan, je hebt een overloaded constructor geschreven en dus heeft C# gezegd: *"Ok, je schrijft zelf constructors? Trek je plan nu maar. De default zal je ook nu zelf moeten schrijven."*
+
+Je kan nu enkel je objecten nog via de overloaded constructor aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je die constructor, de default constructor, nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
 
 
 ```java
@@ -36,7 +37,7 @@ class Student
 {
     public Student(int startgeboorteJaar) //overloaded
     {
-        geboorteJaar= startgeboorteJaar;
+        geboorteJaar = startgeboorteJaar;
     }
     
     public Student() //default
@@ -63,7 +64,7 @@ Voorgaande wil ik nog eenmaal herhalen. Herinner je m'n voorbeeld van die aannem
 <!---NOBOOKEND--->
 
 
-### Meerdere overloaded constructors
+#### Meerdere overloaded constructors
 Wil je meerdere overloaded constructors dan mag dat ook. Je wilt misschien een constructor die de leeftijd vraagt alsook een ``bool`` om mee te geven of het om een werkstudent gaat:
 
 ```java
@@ -92,9 +93,9 @@ class Student
 ```
 
 {% hint style='tip' %}
-Merk op dat je ook properties mag gebruiken in je constructor. Zo kan je ogenblikkelijk de typische controles in een ``set`` in gebruik nemen:
+Merk op dat je ook properties mag aanroepen in je constructor. Zo kan je ogenblikkelijk de typische controles in een ``set`` in gebruik nemen.
 
-Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een geboortejaar heeft dat in de 19e eeuw ligt (<1900). Wanneer dit gebeurt moet het geboortejaar altijd gewoon op 1900 gezet worden, ongeacht het effectieve geboortejaar van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de constructor aan zodat deze via de property werkt én niet rechtstreeks met de instantievariabele:
+Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een geboortejaar heeft onder 1950. Wanneer dit gebeurt moet het geboortejaar altijd gewoon op 1950 gezet worden, ongeacht het effectieve geboortejaar van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de constructor aan zodat deze via de property werkt én niet rechtstreeks met de instantievariabele:
 ```java
 class Student
 {
@@ -109,8 +110,8 @@ class Student
         get { return geboorteJaar; }
         set
         {
-            if (value < 1900)
-                geboorteJaar = 1900;
+            if (value < 1950)
+                geboorteJaar = 1950;
             else 
                 geboorteJaar = value;
         }
@@ -145,14 +146,14 @@ class  Breuk
 }
 ```
 
-De methode zal een "DivideByZeroException" opleveren als ik de methode zou aanroepen nog voor de ``noemer`` een waarde heeft gekregen:
+De methode zal een ``DivideByZeroException`` opleveren als ik de methode zou aanroepen nog voor de ``noemer`` een waarde heeft gekregen:
 
 ```java
-Breuk eenBreuk =new Breuk();
-eenBreuk.PrintAlsDouble();
+Breuk eenBreuk = new Breuk();
+eenBreuk.PrintAlsDouble();  //BAM!Een exception! 
 ```
 
-Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken:
+Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken (en kunnen geen breuk-objecten met de default constructor aangemaakt worden):
 
 ```java
 class  Breuk
@@ -164,7 +165,7 @@ class  Breuk
     {
         teller=tellerIn;
         if(noemerIn == 0)
-            noemer =1 ; //of werp Exception op. Zie verder in boek
+            noemer = 1 ; //of werp Exception op zoals eerder uitgelegd.
         else
             noemer=noemerIn;
     }
@@ -196,7 +197,7 @@ Breuk eenBreuk =new Breuk(21,8);
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded=
+We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded constructor:
 
 ```java
 class Balletje
@@ -213,7 +214,7 @@ class Balletje
     {
         BalX = startPosX;
         BalY = startPosY;
-        VX= startVX;
+        VX = startVX;
         VY = startVY;
     }
 
@@ -228,7 +229,7 @@ class Balletje
 
         if (BalX + VX >= Console.WindowWidth || BalX + VX < 0)
         {
-            VX = -VY;
+            VX = -VX;
         }
 
 

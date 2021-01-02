@@ -1,4 +1,4 @@
-## Dictionary<TKey,TValue> collectie
+## Dictionary collecties
 
 Naast de generieke ``List`` collectie, zijn er nog enkele andere nuttige generieke 'collectie-klassen' die je geregeld in je projecten kan gebruiken. We lichten enkel hier de ``Dictionary`` toe, maar bekijk zeker ook eens de werking van de ``Queue`` en ``Stack``-collecties.
 

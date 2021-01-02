@@ -1,4 +1,4 @@
-## Zelf exceptions opwerpen
+## Eigen exceptions maken
 
 We zijn ondertussen al gewend aan het opvangen van uitzonderingen met behulp van ``try`` en ``catch``. De uitzonderingen die we opvangen zijn steeds objecten van het type ``Exception`` of van een afgeleide klasse. Denk maar aan de ``NullReferenceException`` klasse die werd overgeërfd van ``Exception``.
 

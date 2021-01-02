@@ -3,14 +3,14 @@
 Nu we weten wat er allemaal achter de schermen gebeurt met onze objecten, wordt het tijd om wat meer geavanceerde concepten te bekijken. 
 
 We hebben al ontdekt dat een klasse kan bestaan uit:
-* Instantievariabelen: variabelen die de interne staan van het individuele object voorstellen
-* Methoden: om objecten voor ons te laten werken (gedrag)
-* Properties: om op een gecontroleerde manier toegang tot de interne staat van de objecten te verkrijgen
+* **Instantievariabelen**: variabelen die de interne staan van het individuele object voorstellen.
+* **Methoden**: om objecten voor ons te laten werken (gedrag).
+* **Properties**: om op een gecontroleerde manier toegang tot de interne staat van de objecten te verkrijgen.
 
 Uiteraard is dit niet alles. In dit hoofdstuk bekijken we:
-* Constructor: een gecontroleerde manier om de beginstaat van een object in te stellen
-* ``static``: een speciaal concept waar je in het begin wat last mee zal hebben :)
-* Object initializer syntax: een recente C# aanvulling die het werken met constructors wat eenvoudiger maakt
+* **Constructor**: een gecontroleerde manier om de beginstaat van een object in te stellen.
+* **``static``**: een speciaal concept waar je in het begin wat last mee zal hebben...
+* **Object initializer syntax**: een recente C# aanvulling die het werken met constructors wat eenvoudiger maakt.
 
 ## Constructors
 
@@ -19,14 +19,14 @@ Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we a
 
 ```java
 Student FrankVermeulen = new Student();
-
 int leeftijd= 35;
 ```
 
- De ``new`` operator doet 2 dingen:
+ De ``new`` operator doet 3 dingen:
 
-* Het maakt een object aan in het heap geheugen
-* Het roept de **constructor** van het object aan voor eventuele extra initialisatie
+* Het maakt een object aan in het heap geheugen.
+* Het roept de **constructor** van het object aan voor eventuele extra initialisatie.
+* Het geeft een referentie naar het object in het heap geheugen terug.
 
 Via de constructor van een klasse kunnen we extra code meegeven die moet uitgevoerd worden **telkens een nieuw object van dit type wordt aangemaakt**.
 
@@ -68,7 +68,7 @@ Een lege default constructor voor je klasse krijg je standaard wanneer je een ni
 <!---NOBOOKEND--->
 
 
-## Default constructors
+### Default constructors
 
 De default constructor is een constructor die geen extra parameters aanvaardt. Een constructor bestaat ALTIJD uit volgende vorm:
 
@@ -82,12 +82,12 @@ Stel dat we een klasse ``Student`` hebben:
 ```java
 class Student
 {
-    private int geboorteJaar;
+    private int uurVanInschrijven;
 }
 
 ```
 
-We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond (zodat we bijvoorbeeld kunnen weten welke student eerder was ingeschreven)
+We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond (zodat we bijvoorbeeld kunnen weten welke student eerder was ingeschreven).
 
 Eerst schrijven de default constructor, deze ziet er als volgt uit:
 
@@ -104,7 +104,7 @@ class Student
 
 ```
 
-Zoals verteld moet de constructor de naam van de klasse hebben, public zijn en geen returntype definiëren.
+Zoals verteld moet de constructor de naam van de klasse hebben, ``public`` zijn en geen returntype definiëren.
 
 Vervolgens voegen we de code toe die we nodig hebben:
 

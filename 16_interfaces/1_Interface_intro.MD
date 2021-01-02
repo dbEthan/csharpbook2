@@ -1,11 +1,13 @@
 ﻿# Interfaces
 
-## In de echte wereld
+## Wat zijn interfaces?
+
+### Interfaces in de echte wereld
 De naam interface kan je letterlijk vertalen als "tussen vlakken". Een interface is de verbinding tussen 2 systemen, van welke vorm ook. In de echter wereld gebruik je constant interfaces. Telkens je met de auto rijdt gebruik je een interface: namelijk een handvol handelingen om de auto te laten rijden (pedalen, stuur, etc.). Bijna alle auto's hanteren deze zelfde interface. Van zodra je de interface kent en begrijpt kan je die overal gebruiken, zonder dat je moet weten wat er in het systeem intern juist gebeurt (als ik de gaspedaal induw boeit het niet of ik op gas of elektrisch rijd, zolang de auto maar voortbeweegt). 
 
 Aan de achterkant van je computer (en ook in de pc zelf) zijn tal van hardware-interfaces. Afgesproken manieren om 2 systemen met elkaar te laten communiceren. Zo heb je de USB-aansluiting die toelaat dat een extern systeem met een usb-aansluiting met de computer kan communiceren. Maar ook de HDMI, audio, en andere aansluitingen hanteren interfaces. Zouden er rond deze zaken geen wereldwijde interfaces zijn afgesproken, dan zou je mogelijk telkens op een andere manier je externe harde schijf aan een computer moeten hangen.
 
-## Interfaces in OOP
+### Interfaces in OOP
 {% hint style='warning' %}
 Voor je dolenthousiast wordt, denkende dat je eindelijke grafische applicaties (GUI oftewel Graphical User Interface ) gaat maken, moet ik je helaas teleurstellen. Dit hoofdstuk behandelt het programmeer-concept *interfaces* wat eigenlijk niets te maken heeft met User interfaces. U weze gewaarschuwd.
 {% endhint %}
@@ -20,7 +22,7 @@ Interfaces zijn als het ware stempels die we op een klasse kunnen plakken om zo 
 Een interface is niet meer dan een belofte: het zegt enkel welke publieke methoden en properties de klassen bezit. Het zegt echter niets over de effectieve code/implementatie van deze methoden en properties.
 {% endhint %}
 
-## Interfaces in C#
+### Interfaces in C#
 
 Een interface is dus eigenlijk als het ware een klein stukje papier waar je op zet "om aan deze interface te voldoen moet je zeker volgende methoden en properties hebben". Kortom, in een interface-bestand niet heel veel. Het is letterlijk de "Dit apparaat is USB 3.0 compatibel"-sticker.
 
@@ -58,7 +60,7 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen wil het
 * Je kan nieuwe types (bv ``enum``) in een interface declareren.
 * Een interface kan niet overerven van een klasse, wel van een andere interface.
 
-## Interface UML notatie
+### Interface UML notatie
 
 Een "lolly" op een klein geeft aan dat deze een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
 
@@ -115,7 +117,7 @@ Merk wel op dat de interface NIET de implementatie bevat van wat een superheld j
 
 
 
-## Is keyword met interfaces
+## Het is keyword met interfaces
 
 We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface heeft. Dit laat ons toe om code te schrijven die weer een beetje meer polyvalent wordt. 
 

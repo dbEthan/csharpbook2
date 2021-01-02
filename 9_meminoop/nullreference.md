@@ -1,19 +1,19 @@
-## Object references en null
+## Object referenties en null
 
-Zoals nu duidelijk is bevatten variabelen steeds een referentie naar een object. Maar wat als we dit schrijven??
+Zoals nu duidelijk is bevatten variabelen steeds een referentie naar een object. Maar wat als we dit schrijven:
 
 ```java
 Student stud1;
 stud1.Naam = "Marc Jansens";
 ```
 
-Dit zal een fout geven. ``stud1`` bevat namelijk nog geen referentie. Maar wat dan wel?
+Dit zal een fout geven. Het object ``stud1`` bevat namelijk nog geen referentie. Maar wat dan wel?
 
 Deze variabele bevat de waarde **``null``** . Net zoals bij value types die een default waarde hebben (bv. 0 bij een ``int`` ) als je er geen geeft, zo bevatten reference type variabelen altijd ``null``. 
 
 ``null`` is een waarde die je dus kan toekenen aan eender welk reference type (om aan te geven dat er nog geen referentie naar een effectief object in de variabele staat) en waar je dus ook op kan testen. 
 
-Van zodra je een referentie naar een object (een bestaand of eentje dat je net emet ``new`` hebt aangemaakt) aan een reference type variabele toewijst (met de ``=`` operator) zal de ``null`` waarde uiteraard overschreven worden.
+Van zodra je een referentie naar een object (een bestaand of eentje dat je net met ``new`` hebt aangemaakt) aan een reference type variabele toewijst (met de ``=`` operator) zal de ``null`` waarde uiteraard overschreven worden.
 
 {% hint style='tip' %}
 Merk op dat de GC enkel op de heap werkt. Indien er in de stack dus een variabele de waarde ``null`` heeft zal de GC deze nooit verwijderen!
@@ -21,7 +21,7 @@ Merk op dat de GC enkel op de heap werkt. Indien er in de stack dus een variabel
 
 ### NullReferenceException
 
-Een veel voorkomende foutboodschap tijdens de uitvoer van je applicatie is de zogenaamde ``NullReferenceException`` . Deze zal optreden wanneer je code een object probeert te benaderen wiens waarde ``null`` is.
+Een veel voorkomende foutboodschap tijdens de uitvoer van je applicatie is de zogenaamde ``NullReferenceException``. Deze zal optreden wanneer je code een object probeert te benaderen wiens waarde ``null`` is (een onbestaande object met andere woorden).
 
 Laten we dit eens simuleren:
 
@@ -69,7 +69,7 @@ Op die manier voorkom je ``NullReferenceException``. Het is uiteraard omslachtig
 Console.WriteLine(stud1?.Name)
 ```
 
-Het vraagteken direct na het object geeft aan: *"de code na dit vraagteken enkel uitvoeren indien het object voor het vraagteken niét null is".*
+Het vraagteken direct na het object geeft aan: *"Gelieve de code na dit vraagteken enkel uit te voeren indien het object voor het vraagteken niét null is".*
 
 Bovenstaande code zal dus gewoon een lege lijn op scherm plaatsen indien ``stud1`` effectief ``null`` is, anders komt de naam op het scherm.
 
@@ -78,7 +78,7 @@ Bovenstaande code zal dus gewoon een lege lijn op scherm plaatsen indien ``stud1
 Uiteraard mag je dus ook expliciet soms ``null`` teruggeven als resultaat van een methode. Stel dat je een methode hebt die in een array een bepaald object moet zoeken. Wat moet de methode teruggeven als deze niet gevonden wordt? Inderdaad, we geven dan ``null`` terug.
 
 Volgende methode zoekt in een array van studenten naar een student met een specifieke naam en geeft deze terug als resultaat. Enkel als de hele array werd doorlopen en er geen match is wordt er ``null`` teruggegeven 
-(de werking van arrays van objecten worden later besproken): 
+(de werking van arrays van objecten wordt later besproken): 
 
 ```java
 static Student ZoekStudent(Student[] array, string naam)

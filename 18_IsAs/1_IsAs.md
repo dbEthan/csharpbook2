@@ -1,7 +1,7 @@
-## Is en As
+## ``is`` en ``as``
 Dankzij polymorfisme kunnen we dus child en parent-objecten door elkaar gebruiken. De keywords ``is`` en ``as`` gaan ons helpen om door het bos van objecten het bos nog te zien. 
 
-### Is keyword
+### Het ``is`` keyword
 Het ``is`` keyword is een operator die je kan gebruiken om te weten te komen of:
 * Een object van een bepaalde datatype is
 * Een object een bepaalde interface bevat (zie volgende hoofdstuk)
@@ -12,7 +12,7 @@ De ``is`` operator heeft twee operanden nodig en geeft een bool terug als result
 if( mijnStudent is Student)
 ```
 
-#### Is voorbeeld 1
+#### ``is`` voorbeeld 1
 Stel dat we volgende drie klassen hebben:
 ```java
 class Voertuig {}
@@ -61,7 +61,7 @@ foreach (var middel in alleMiddelen)
 }
 ```
 
-### As keyword met voorbeeld
+### ``as`` keyword met voorbeeld
 Wanneer we objecten van het ene naar het andere type willen omzetten dan doen we dit vaak met behulp van casting:
 ```java
 Student fritz= new Student();

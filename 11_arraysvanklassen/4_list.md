@@ -1,14 +1,16 @@
 ## List collectie
 
-Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Het is een soort array on *steroids* zeg maar. Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een pak eenvoudiger maakt.
+Tijd voor andere bekentenis: arrays zijn fijn, maar nogal omslachtig qua gebruik...Er zit echter in .NET een soort *array on steroids* datatype, de **List*collectie.
+
+Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Een ``List`` heeft alle eigenschappen die we al kennen van arrays, maar ze zijn wel krachtiger.  Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een vereenvoudigt maakt.
 
 {% hint style='tip' %}
-De Generieke ``List<>`` klasse bevindt zich in de ``System.Collections.Generic`` namespace. Je dient deze namespace dus als ``using`` bovenaan toe te voegen wil je deze klasse kunnen gebruiken.
+De generieke ``List<>`` klasse bevindt zich in de ``System.Collections.Generic`` namespace. Je dient deze namespace dus als ``using`` bovenaan toe te voegen wil je deze klasse kunnen gebruiken.
 {% endhint %}
 
 ### List aanmaken
 
-De klasse ``List<>`` is een zogenaamde generieke klasse (wat we later zullen behalen). Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
+De klasse ``List<>`` is een zogenaamde generieke klasse (meer hierover in de appendix). Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
 
 * ``List<int> alleGetallen= new List<int>();``
 * ``List<bool> binaryList = new List<bool>();``
@@ -17,6 +19,10 @@ De klasse ``List<>`` is een zogenaamde generieke klasse (wat we later zullen beh
 
 Zoals je ziet hoeven we bij het aanmaken van een ``List`` geen begingrootte mee te geven, wat we wel bij arrays moeten doen. Dit is één van de voordelen van ``List``: ze groeien mee.
 
+{% hint style='tip' %}
+In dit boek behandelen we het concept generieke klassen niet (zie appendix). Generieke klassen oftewel **generic classes** zijn een handig concept om je klassen nog multifunctioneler te maken doordat we zullen toelaten dat bepaalde datatypes niet hardcoded in onze klasse moet gezet worden. ``List<>`` is zo'n eerste voorbeeld, maar er zijn er tal van anderen én je kan ook zelf dergelijke klassen schrijven. Bekijk zeker de appendix indien je dit interesseert!
+{% endhint %}
+
 ### Elementen toevoegen
 
 Via de ``Add()``-methode kan je elementen toevoegen aan de lijst. Je dient als parameter aan de methode mee te geven wat je aan de lijst wenst toe te voegen. **Deze parameter moet uiteraard van het type zijn dat de ``List`` verwacht.** 
@@ -24,7 +30,7 @@ Via de ``Add()``-methode kan je elementen toevoegen aan de lijst. Je dient als p
 In volgende voorbeeld maken we een List aan die objecten van het type string mag bevatten en vervolgens plaatsen we er twee elementen in.
 
 ```java
-List<String> mijnPersonages = new List<String>();
+List<string> mijnPersonages = new List<string>();
 mijnPersonages.Add("Reinhardt");
 mijnPersonages.Add("Mercy");
 ``` 
@@ -60,7 +66,7 @@ List<Pokemon> pokedex =new List<Pokemon>()
 
 ### Elementen indexeren
 
-**Het leuke van een List is dat je deze ook kan gebruiken als een gewone array**, waarbij je m.b.v. de indexer elementen individueel kan aanroepen. Stel bijvoorbeeld dat we een lijst hebben met minstens 4 strings in. Volgende code toont hoe we de string op positie 3 kunnen uitlezen en hoe we die op positie 2 overschrijven, net zoals we reeds kenden van arrays:
+**Het leuke van een ``List`` is dat je deze ook kan gebruiken als een gewone array**, waarbij je m.b.v. de indexer elementen individueel kan aanroepen. Stel bijvoorbeeld dat we een lijst hebben met minstens 4 strings in. Volgende code toont hoe we de string op positie 3 kunnen uitlezen en hoe we die op positie 2 overschrijven, net zoals we reeds kenden van arrays:
 
 ```java
 Console.WriteLine(mijnPersonages[3]);
@@ -80,8 +86,8 @@ for(int i = 0 ; i < mijnPersonages.Count; i++)
 
 Interessante methoden en properties voorts zijn:
 
-* ``Clear()`` :methode die de volledige lijst leegmaakt en de lengte (``Count``) terug op 0 zet.
-* ``Insert()``: methode om een element op een specifieke plaats in lijst toe te voegen, bijvoorbeeld:
+* ``Clear()``: methode die de volledige lijst leegmaakt en de lengte (``Count``) terug op 0 zet.
+* ``Insert()``: methode om een element op een specifieke plaats in lijst in te voegen, bijvoorbeeld:
 ```java
 mijnPersonages.Insert(1,"Orise");
 ```
@@ -89,9 +95,13 @@ Dit voegt de ``string`` toe op de tweede plek en schuift de rest naar achter.
 * ``IndexOf()``: geeft de index terug van het element item in de rij. Indien deze niet in de lijst aanwezig is dan wordt -1 teruggegeven.
 * ``RemoveAt()``: verwijdert een element op de index die je als parameter meegeeft.
 
+{% hint style='warning' %}
+Lte op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt.
+{% endhint %}
+
 ### Foreach loops
 
-Je kan met een eenvoudige ``for`` of while-loop over een lijst itereren, maar het gebruik van een foreach-loop is toch handiger.
+Je kan met een eenvoudige ``for`` of ``while``-loop over een lijst itereren, maar het gebruik van een foreach-loop is toch handiger.
 
 Dit is dan ook de meestgebruikte operatie om eenvoudig en snel een bepaald stuk code toe te passen op ieder element van de lijst. Stel je voor dat we een lijst ``OverwatchKarakters`` hebben waarin objecten van het type ``Karakter`` in zitten. Als we van ieder karakter in de lijst de naam op het scherm willen tonen dan kan dan als volgt:
 

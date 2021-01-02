@@ -14,16 +14,16 @@ Een array van objecten aanmaken doe je als volgt:
 Student[] mijnKlas = new Student[20];
 ```
 
-De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe array wordt teruggegeven, waar ooit 20 studenten-objecten in kunnen komen. **Maar: er staan dus nog géén objecten in deze array. Alle elementen in deze array zijn nu nog ``null``.**
+De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe array wordt teruggegeven, waar ooit 20 studenten-objecten in kunnen komen. **Maar: er staan nog géén objecten in deze array. Alle elementen in deze array zijn nu nog ``null``.**
 
-![De referentie naar een , nu nog, lege array is aangemaakt](../assets/6_klassen/beginarraysit.png)
+![De referentie naar een , nu nog, lege array is aangemaakt.](../assets/6_klassen/beginarraysit.png)
 
 
 
 {% hint style='tip' %}
 Je zou kunnen zeggen dat we enkel nog maar de parkeerlijnen hebben aangemaakt.
 
-![Een parking, klaar om gevuld te worden](../assets/6_klassen/legearray.png)
+![Een parking, klaar om gevuld te worden.](../assets/6_klassen/legearray.png)
 {% endhint %}
 
 
@@ -34,27 +34,43 @@ mijnKlas[0]= new Student();
 mijnKlas[2]= new Student();
 ```
 
-![De referentie naar een , nu nog, lege array is aangemaakt](../assets/6_klassen/beginarraysit2.png)
+![](../assets/6_klassen/beginarraysit2.png)
 
 
-Uiteraard kan dit ook in een loop indien relevant voor de opgave.
+Uiteraard kan dit ook in een loop indien relevant voor de opgave. Volgende voorbeeld vult een reeds aangemaakte array met evenveel objecten als de arrays groot is: 
 
+```java
+for(int i = 0; i < mijnKlas.Length; i++)
+{
+    mijnKlas[i] = new Student();
+}
+```
+
+{% hint style='tip' %}
 Probeer je objecten te benaderen die nog niet bestaan dan zal je uiteraard een ``NullReferenceException`` krijgen.
-
+{% endhint %}
 
 
 ### Individueel object benaderen
 
-Van zodra een object in de array staat kan je deze vanuit de array aanspreken d.m.v. de index :
+Van zodra een object in de array staat kan je deze vanuit de array aanspreken d.m.v. de index en de *dot*-operator om de de juiste methode of property op het object aan te roepen:
 
 ```java
 mijnKlas[3].Name= "Vincent Lagasse";
 ```
 
+Uiteraard mag je ook altijd de referentie naar een individueel object in de array kopiëren. Denk er aan dat we de hele tijd met referenties werken en de GC dus niet tussenbeide zal komen zolang er minstens 1 referentie naar het object is. Indien de student op plek 4 in de array aan de start een leeftijd van 20 had, dan zal deze op het einde van volgende code als leeftijd 22 hebben, daar we op hetzelfde objecten de leeftijd verhogen in zowel lijn 2 als 3:
 
+```java
+Student tijdelijkeStudent = mijnKlas[3];
+mijnKlas[3].Leeftijd++;
+tijdelijkeStudent.Leeftijd++;
+```
 ### Array initializer syntax
 
-Je kan ook een variant op de object initializer syntax gebruiken waarbij de objecten reeds van bij de start in de array worden aangemaakt. Als extra'tje zorgt dit er ook voor dat we geen lengte moeten meegeven, de compiler zal deze zelf bepalen. Volgende voorbeeld maakt een nieuwe array aan die bestaat uit 2 nieuwe studenten, alsook 1 bestaande (``jos``):
+Je kan ook een variant op de object initializer syntax gebruiken waarbij de objecten reeds van bij de start in de array worden aangemaakt. Als extra'tje zorgt dit er ook voor dat we geen lengte moeten meegeven, de compiler zal deze zelf bepalen. 
+
+Volgende voorbeeld maakt een nieuwe array aan die bestaat uit 2 nieuwe studenten, alsook 1 bestaande (``jos``):
 
 ```java
 Student jos = new Student();
@@ -78,7 +94,7 @@ Het kan niet genoeg benadrukt worden dat een goede kennis van de heap, stack en 
 ![](../assets/6_klassen/objeeindsit.png)
 
 Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op gegeven moment schrijven ``jos == null`` daar het object nog steeds bestaat via de array.
-We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de arrays of via ``jos``:
+We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de array of via ``jos``:
 
 ```java
 jos.Naam= "Joske Vermeulen";
@@ -101,16 +117,16 @@ Merk op dat het eerste vraagteken controleert of de array zelf niet ``null`` is.
 
 ### Object arrays als parameters en return
 
-Ook arrays mag je als parameters en returntype gebruiken in methoden. De werking hiervan is identiek aan die van value-types zoals volgende voorbeeld toont: 
+Ook arrays mag je als parameters en returntype gebruiken in methoden. De werking hiervan is identiek aan die van value-types zoals volgende voorbeeld toont. Eerst maken we een methode die als resultaat een referentie naar een lege array van 10 studenten teruggeeft.
 
 ```java
 static Student[] CreateEmptyStudentArray()
 {
     return new Student[10]();
 }
+```
+Vervolgens kunnen we deze dan aanroepen en het resultaat (de referentie naar de lege array) toewijzen aan een nieuwe variabele (van hetzelfde datatype, namelijk ``Student[]``):
 
-
-// Aanroep:
-
+```java
 Student[] resultaat = CreateEmptyStudentArray();
 ```

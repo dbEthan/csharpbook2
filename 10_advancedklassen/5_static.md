@@ -1,12 +1,12 @@
 ## Static
 
-Je hebt het keyword ``static`` al een paar keer zien staan in de methodesignaturen in het vorige boek. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden te plaatsen. Wat is het nu?
+Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 
-Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**
+Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**.
 
 ``static`` kan op verschillende plaatsen in een klasse gebruikt worden:
 
-1. Bij *variabelen* om een gedeelde variabele aan te maken, over de objecten heen. We spreken dan niet meer over een instantievariabele maar over een *static field*.
+1. Bij *instantievariabelen* om een gedeelde variabele aan te maken, over de objecten heen. We spreken dan niet meer over een instantievariabele maar over een *static field*.
 2. Bij *methoden* om zogenaamde methoden-bibliotheken of hulpmethoden aan te maken (denk maar aan ``DateTime.IsLeap()``) en spreken dan over een *static method*.
 3. Bij de klasse zelf om te voorkomen dat er objecten van de klasse aangemaakt kunnen worden (bijvoorbeeld de ``Console`` en ``Math`` klasse). Je raadt het nooit, maar dit noemt dan een *static class*.
 4. Bij *properties*. We hebben al met 1 *static property* gewerkt namelijk de readonly property ``Now`` van de ``DateTime`` klasse (``DateTime.Now``).
@@ -65,9 +65,9 @@ Dan zien we volgende uitvoer:
 
 Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars interne (zowel publieke als private) staat niet rechtstreeks veranderen.
 
-#### En nu mét static fields
+#### En nu, mét static fields
 
-Laten we eens kijken wat er gebeurt indien we instantievariabele ``static`` maken. 
+Laten we eens kijken wat er gebeurt indien we een instantievariabele ``static`` maken. 
 
 We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd=1;``. We krijgen dan:
 
@@ -87,7 +87,7 @@ class Mens
 }
 ```
 
-**We hebben nu gezegd dat ALLE objecten de variabele ``leeftijd`` *delen*. Er wordt van deze variabele dus maar een "instantie" in het geheugen gemaakt.**
+**We hebben er nu voor gezorgd dat ALLE objecten de variabele ``leeftijd`` *delen*. Er wordt van deze variabele dus maar één "instantie" in het geheugen aangemaakt.**
 
 Voeren we nu terug volgende code uit:
 
@@ -115,10 +115,10 @@ We zien dat de ``leeftijd`` dus niet meer per object individueel wordt bewaard, 
 ``static`` laat je dus toe om informatie over de objecten heen te delen. 
 
 {% hint style='warning' %}
-Gebruik static niet te pas en te onpas: vaak druist het in tegen de concepten van OO en wordt het vooral misbruikt
+Gebruik static niet te pas en te onpas: vaak druist het in tegen de concepten van OO en wordt het vooral misbruikt.
 {% endhint %}
 
-Ga je dit static variabelen, ook wel static fields genoemd, vaak nodig hebben? Niet zo vaak. Het volgende concept wel.
+Ga je dit soort ``static`` variabelen, ook wel static fields genoemd, vaak nodig hebben? Niet zo vaak. Het volgende concept wel.
 
 ### static methoden
 
@@ -135,7 +135,7 @@ Math myMath= new Math(); //dit mag niet!
 myMath.Pow(3,2)
 ```
 
-De reden dat je de ``Math``-bibliotheek kan aanroepen rechtsreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefineerd staan.
+De reden dat je de ``Math``-bibliotheek kan aanroepen rechtstreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefineerd staan.
 
 {% hint style='tip' %}
 De klasse is op de koop toe ook zelf ``static`` gemaakt. Zo kan er zeker geen twijfel bestaan: deze klasse kan niét in een object gegoten worden.
@@ -191,7 +191,7 @@ class Fiets
     public Fiets()
     {
         aantalFietsen++;
-		Console.WriteLine($"Er zijn nu {aantalFietsen} gemaakt");
+        Console.WriteLine($"Er zijn nu {aantalFietsen} gemaakt");
     }
 	
 	public static void VerminderFiets()
@@ -202,7 +202,7 @@ class Fiets
 }
 ```
 
-Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt. We kunnen echter nog steeds instantie, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
+Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt. We kunnen echter nog steeds instanties, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
 
 Laten we de uitvoer van volgende code eens bekijken:
 ```java
@@ -227,19 +227,20 @@ STATIC:Er zijn 2 fietsen
 
 ### Static vs non-static
 
-Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere ``static` methoden en variabelen kunnen aanspreken. Dat is logisch: een static methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten benaderen?
+Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere ``static` methoden en variabelen kunnen aanspreken. Dat is logisch: een ``static`` methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten benaderen? Het omgekeerde kan nog wel natuurlijk.
 
 Volgende code zal dus een fout geven:
 
 ```java
 class Mens
 {
-	private int gewicht=50;
+	private int gewicht = 50;
 	
 	private static void VerminderGewicht()
 	{
 		gewicht--;
 	}
+}
 ```
 
 De error die verschijnt **An object reference is required for the non-static field, method, or property 'Program.Fiets.gewicht'** zal bij de lijn ``gewicht--`` staan.
@@ -257,15 +258,15 @@ Een eenvoudige regel is te onthouden dat van zodra je in een ``static`` omgeving
 
 ### Static en main
 
-Dit verklaart ook waarom je bij console applicaties in Program.cs steeds alle methoden ``static`` moet maken. Een console-applicatie is als volgt beschreven wanneer je het aanmaakt:
+Dit verklaart ook waarom je bij console applicaties in Program.cs steeds alle methoden ``static`` moet maken. Een console-applicatie is als volgt beschreven wanneer je deze aanmaakt:
 
 ```java
 public class Program
 {
-		public static void Main()
-		{
+    public static void Main()
+    {
 
-	    }
+    }
 }
 ```
 
@@ -278,7 +279,7 @@ Uiteraard kan je wel niet-static zaken gebruiken en daarom kan je dus gewone obj
 <!---NOBOOKEND--->
 
 
-### Een use-case met static
+### static in de praktijk
 
 Beeld je in dat je (weer) een pong-variant moet maken waarbij meerdere balletjes over het scherm moeten botsen. Je wilt echter niet dat de balletjes zelf allemaal apart moeten weten wat de grenzen van het scherm zijn. Mogelijk wil je bijvoorbeeld dat je code ook werkt als het speelveld kleiner is dan het eigenlijke Console-scherm.
 

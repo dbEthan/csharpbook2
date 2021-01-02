@@ -117,7 +117,7 @@ Merk wel op dat de interface NIET de implementatie bevat van wat een superheld j
 
 
 
-## Het is keyword met interfaces
+## Het ``is`` keyword met interfaces
 
 We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface heeft. Dit laat ons toe om code te schrijven die weer een beetje meer polyvalent wordt. 
 

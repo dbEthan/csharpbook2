@@ -1,4 +1,4 @@
-## Base keyword
+## Het ``base`` keyword
 Het **``base``** keyword laat ons toe om bij  ``override`` van een methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen. Dit kan handig zijn wanneer je in je child-klasse de bestaande implementatie wenst uit te bereiden.
 
 Stel dat we volgende 2 klassen hebben:

@@ -71,6 +71,8 @@
 * [Record](B_appendix/struct.md)
 * [Operator overloading](B_appendix/8_operatoroverloading.md)
 * [Expression bodied members](B_appendix/6_exprbody.md)
+* [Generics](B_appendix/generics.md)
+* [Queue en Stack collecties](B_appendix/gencol.md)
 * [Werken met git (in opbouw)](B_appendix/git.md)
 * [Spelen met strings](10_advancedklassen/strings.md)
 

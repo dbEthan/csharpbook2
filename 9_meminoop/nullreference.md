@@ -41,7 +41,7 @@ We moeten in dit voorbeeld expliciet ``= null`` plaatsen daar Visual Studio slim
 
 ### NullReferenceException voorkomen
 
-Objecten die niet bestaan zullen altijd ``null`` weergeven. Uiteraard kan je niet altijd al je code uitvlooien waar je misschien ``=new SomeObject();`` bent vergeten.
+Objecten die niet bestaan zullen altijd ``null`` weergeven. Uiteraard kan je niet altijd al je code uitvlooien waar je misschien ``= new SomeObject();`` bent vergeten.
 
 Voorts kan het ook soms by design zijn dat een object voorlopig ``null`` is.
 

@@ -13,15 +13,15 @@ class Kassa
 Je maakt even later twee kassa's aan met de nodige informatie:
 
 ```java
-Kassa benedenKassa = new Kassa(){Totaal= 50, Bouwjaar= 1981};
-Kassa bovenKassa = new Kassa(){Totaal= 40, Bouwjaar= 2000};
+Kassa benedenKassa = new Kassa(){Totaal = 50, Bouwjaar = 1981};
+Kassa bovenKassa = new Kassa(){Totaal = 40, Bouwjaar = 2000};
 ```
 
 Even later wordt besloten dat beide kassa's moeten samengevoegd worden tot een gloednieuwe kassa voor beide verdiepingen samen. Bedoeling is dat het totale geld in beide kassa's opgeteld in de nieuwe kassa moet gezet worden. Het bouwjaar van de nieuwe kassa moet het bouwjaar van de oudste van de 2 originele kassa's zijn:
 Je zou willen schrijven:
 
 ```java
-Kassa nieuw= benedenKassa + bovenKassa;
+Kassa nieuw = benedenKassa + bovenKassa;
 ```
 
 Uiteraard heeft C# geen flauw benul hoe de **+ operator** moet toegepast worden op objecten van klassen die je zelf geschreven hebt.
@@ -63,8 +63,8 @@ In het voorbeeld dat we maken willen we dus het volgende:
 ```java
 public static Kassa operator+ (Kassa a, Kassa b)
 {
-    Kassa resultaat= new Kassa();
-    resultaat.Totaal= a.Totaal+b.Totaal;
+    Kassa resultaat = new Kassa();
+    resultaat.Totaal = a.Totaal+b.Totaal;
     if(a.Bouwjaar< b.Bouwjaar)
     {
         resultaat.Bouwjaar = a.Bouwjaar;

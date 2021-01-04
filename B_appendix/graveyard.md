@@ -70,7 +70,7 @@ Voeg 2 constructors toe:
 
 Voorts:
 
-1. Voeg een ``+ operator`` toe die het mogelijk maakt om 2 breuken bij elkaar op te tellen. Wanneer de + operatie is toegepast wordt ook automatisch de Vereenvoudig-methode aangeroepen (zie verder) voor het resultaat wordt teruggegeven. Belangrijk: je dient aan operator overloading te doen. We willen dus dat je bijvoorbeeld kan schrijven ``Breuk breuksom= breuk1 + breuk2;``
+1. Voeg een ``+ operator`` toe die het mogelijk maakt om 2 breuken bij elkaar op te tellen. Wanneer de + operatie is toegepast wordt ook automatisch de Vereenvoudig-methode aangeroepen (zie verder) voor het resultaat wordt teruggegeven. Belangrijk: je dient aan operator overloading te doen. We willen dus dat je bijvoorbeeld kan schrijven ``Breuk breuksom = breuk1 + breuk2;``
 2. Voeg voorts een ``* operator`` toe die breuken vermenigvuldigen mogelijk maakt (ook hier wordt het resultaat vereenvoudigd teruggegeven).
 3. Voeg een methode ``AlsString`` toe die de breuk als string teruggeeft, waarbij de breuklijn als slash wordt voorgesteld.
 

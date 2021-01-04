@@ -88,7 +88,7 @@ Het object zal voor ons de "berekening" hiervan doen en vervolgens een **nieuw D
 In volgende voorbeeld wil ik ontdekken op welke datum de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag)
 
 ```java
-DateTime eindeWitteBroodsweken= trouwMoment.AddDays(35);
+DateTime eindeWitteBroodsweken = trouwMoment.AddDays(35);
 Console.WriteLine(eindeWitteBroodsweken)
 ```
 
@@ -159,15 +159,15 @@ Zoals je ziet roepen we ``Parse`` aan op ``DateTime`` en dus niet op een specifi
 Deze nuttige methode geeft een ``bool`` terug om aan te geven of het meegegeven object een schrikkeljaar is of niet:
 
 ```java
-DateTime vandaag= DateTime.Now;
-bool isSchrikkel= DateTime.IsLeapYear(vandaag.Year);
+DateTime vandaag = DateTime.Now;
+bool isSchrikkel = DateTime.IsLeapYear(vandaag.Year);
 if(isSchrikkel)
     Console.WriteLine("Dit jaar is een schrikkeljaar");
 ```
 
 ### TimeSpan 
 
-Je kan DateTime objecten ook bij elkaar optellen en aftrekken. Het resultaat van deze bewerking geeft echter niet een DateTime object terug, **maar een ``TimeSpan`` object**. Dit is nieuwe object van het type ``TypeSpan`` (wat dus een andere klasse is) dat aangeeft hoe groot het verschil is tussen de 2 DateTime objecten kunnen we als volgt gebruiken=
+Je kan DateTime objecten ook bij elkaar optellen en aftrekken. Het resultaat van deze bewerking geeft echter niet een DateTime object terug, **maar een ``TimeSpan`` object**. Dit is nieuwe object van het type ``TypeSpan`` (wat dus een andere klasse is) dat aangeeft hoe groot het verschil is tussen de 2 DateTime objecten kunnen we als volgt gebruiken:
 
 ```java
 DateTime vandaag = DateTime.Today;

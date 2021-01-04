@@ -12,7 +12,7 @@ De EersteMinister heeft toegang tot tal van ministers die hem kunnen helpen (inz
 ```java
 public class EersteMinister
 {
-    MinisterVanMilieu Jansens= new MinisterVanMilieu();
+    MinisterVanMilieu Jansens = new MinisterVanMilieu();
     MinisterBZ Ganzeweel = new MinisterBZ();
     MinisterVanEconomie VanCent = new MinisterVanEconomie();
 
@@ -117,7 +117,7 @@ public class EersteMinister
 ```java
 public class EersteMinister
 {
-   List<Minister> alleMinisters= new List<Minister>();
+   List<Minister> alleMinisters = new List<Minister>();
     public EersteMinister()
     {
         alleMinisters.Add(new MinisterVanMilieu());

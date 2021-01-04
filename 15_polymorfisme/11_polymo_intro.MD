@@ -64,7 +64,7 @@ Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-typ
 Dit wil dus ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
 
 ```java
-System.Object mijnObject= new Varken();
+System.Object mijnObject = new Varken();
 ```
 
 Alhoewel dus ``mijnObject`` effectief een ``Varken`` is, kunnen we enkel aan dat gedeelte dat in de klasse ``System.Object`` staat beschreven, zijnde de klassieke 4 methoden (``ToString``, ``Equals`` etc.). Als we het varken toch geluid willen laten maken, dan zal dat niet werken!

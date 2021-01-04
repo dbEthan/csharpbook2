@@ -19,7 +19,7 @@ Objecten die je aanmaakt komen niet zomaar tot leven. Nieuwe objecten maken we a
 
 ```java
 Student FrankVermeulen = new Student();
-int leeftijd= 35;
+int leeftijd = 35;
 ```
 
  De ``new`` operator doet 3 dingen:
@@ -113,7 +113,7 @@ class Student
 {
     public Student()
     {
-        uurVanInschrijven= DateTime.Now.Hour;
+        uurVanInschrijven = DateTime.Now.Hour;
     }
 
     private int uurVanInschrijven;
@@ -149,8 +149,8 @@ class Student
     public Student()
     {
         uurVanInschrijven = DateTime.Now.Hour;
-        if(uurVanInschrijven==3)
-            uurVanInschrijven-=2;
+        if(uurVanInschrijven == 3)
+            uurVanInschrijven -= 2;
     }
 
     private int uurVanInschrijven;

@@ -52,7 +52,7 @@ class Rapport
 Gebruik/test:
 
 ```java
-Rapport tim =new Rapport();
+Rapport tim = new Rapport();
 tim.Percentage = 78;
 tim.PrintGraad();
 ```
@@ -71,7 +71,7 @@ class Nummers
 
     public double Quotient()
     {
-        if(Getal2==0)
+        if(Getal2 == 0)
         {
             Console.WriteLine("Error");
             return 0;

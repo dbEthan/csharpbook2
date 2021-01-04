@@ -6,8 +6,8 @@ Dankzij polymorfisme hebben we nu met de ``is``en ``as`` keywords handige hulpmi
 //In de Student class
 public override bool Equals(Object o)
 {  
-    Student temp= (Student)o; 
-    if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
+    Student temp = (Student)o; 
+    if(Leeftijd == temp.Leeftijd && Voornaam == temp.Voornaam)
         return true;
     return false;
 }
@@ -21,8 +21,8 @@ public override bool Equals(Object o)
 {  
     if(o is Student)
     { 
-        Student temp= o as Student; 
-        if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
+        Student temp = o as Student; 
+        if(Leeftijd == temp.Leeftijd && Voornaam == temp.Voornaam)
             return true;
     }
     return false;
@@ -35,9 +35,9 @@ Of we kunnen ook het volgende doen:
 public override bool Equals(Object o)
 {  
     Student temp = o as Student; 
-    if(o !=null)
+    if(o != null)
     { 
-        if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
+        if(Leeftijd == temp.Leeftijd && Voornaam == temp.Voornaam)
             return true;
     }
     return false;

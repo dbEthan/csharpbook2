@@ -5,10 +5,10 @@ Stel dat we volgende 2 klassen hebben:
 ```java
 class Restaurant
 {
-     protected int kosten=0;
+     protected int kosten = 0;
      public virtual void PoetsAlles()
      {
-           kosten+=1000;
+           kosten += 1000;
      }
 }
 
@@ -16,7 +16,7 @@ class Frituur:Restaurant
 {
      public override void PoetsAlles()
      {
-           kosten+= (1000 + 500);
+           kosten += (1000 + 500);
      }
  
 }
@@ -32,7 +32,7 @@ class Frituur:Restaurant
      public override void PoetsAlles()
      {
            base.PoetsAlles(); //eerste basiskost wordt opgeteld
-           kosten+=500;  //kosten eigen aan frituur worden bijgeteld.
+           kosten += 500;  //kosten eigen aan frituur worden bijgeteld.
      }
  
 }

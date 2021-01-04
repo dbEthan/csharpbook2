@@ -78,8 +78,8 @@ class Raket:Vliegtuig
 
 De uitvoer van volgende code zal nu anders zijn:
 ```java
-Vliegtuig f1= new Vliegtuig();
-Raket spaceX1= new Raket();
+Vliegtuig f1 = new Vliegtuig();
+Raket spaceX1 = new Raket();
 f1.Vlieg();
 spaceX1.Vlieg();
 ```

@@ -41,7 +41,7 @@ centraDB.Add("frankrijk", new VaccinatieCentrum());
 Volgende code toont bijvoorbeeld hoe je een vaccin nu aan het centrum met key frankrijk verkrijgt
 
 ```java
-Vaccin vac= centraDB["frankrijk"].GeefVaccin();
+Vaccin vac = centraDB["frankrijk"].GeefVaccin();
 ```
 
 ## Uitvoeren

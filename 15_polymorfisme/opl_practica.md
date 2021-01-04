@@ -5,10 +5,10 @@ In main
 ```java
 //dieren staan ergens in List<Dier> diertjes
 //gebruiker gaf bij invoer f in als keuze:
-if(userinput=="f")
+if(userinput == "f")
 {
     Console.WriteLine("Welk dier?")
-    string dierkeuze=Console.ReadLine();
+    string dierkeuze = Console.ReadLine();
 
     switch(dierkeuze)
     {
@@ -65,7 +65,7 @@ public override bool Equals(object obj)
 
     Pokemon tevgl = obj as Pokemon;
 
-    if(Naam==tevgl.Naam && Level == tevgl.Level)
+    if(Naam == tevgl.Naam && Level == tevgl.Level)
     {
         if (HP_Base == tevgl.HP_Base && Attack_Base == tevgl.Attack_Base && ... )
             return true;

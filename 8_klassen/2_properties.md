@@ -27,7 +27,7 @@ class SithLord
 **Het is uit den boze dat we eenvoudige data fields (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
 ```java
-SithLord Palpatine= new SithLord();
+SithLord Palpatine = new SithLord();
 Console.WriteLine(Palpatine.sithName); //dit zal niet werken!
 ```
 
@@ -62,7 +62,7 @@ class SithLord
         }
         set
         {
-            energy=value;
+            energy = value;
         }
     }
 }
@@ -71,8 +71,8 @@ class SithLord
 Dankzij deze code kunnen we nu buiten het object de property ``Energy`` gebruiken als volgt:
 
 ```java
-SithLord Vader= new SithLord();
-Vader.Energy= 20; //set
+SithLord Vader = new SithLord();
+Vader.Energy = 20; //set
 Console.WriteLine($"Vaders energy is {Vader.Energy}"); //get
 ```
 
@@ -88,7 +88,7 @@ public int Energy
     }
     set
     {
-        energy=value;
+        energy = value;
     }
 }
 ```
@@ -135,9 +135,9 @@ De waarde die we van buitenuit krijgen (als een parameter zeg maar) zal altijd i
 Deze ``value`` parameter is een essentiëel onderdeel van de ``set`` syntax en kan je niet hernoemen. 
 {% endhint %}
 
-Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy=value;`` . Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in volgende deel zullen uitleggen.
+Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy = value;`` . Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in volgende deel zullen uitleggen.
 
-We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``Palpatine.Energy=50;``.
+We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``Palpatine.Energy = 50;``.
 
 {% hint style='warning' %}
 Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele. Dit mag dus ook:
@@ -179,14 +179,14 @@ public int Energy
     }
     set
     {
-        if(value>=0)
-            energy=value;
+        if(value >= 0)
+            energy = value;
     }
 }
 ```
 
 Volgende lijn zal dus geen effect hebben:
-`` Palpatine.Energy=-1;``
+`` Palpatine.Energy = -1;``
 
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
@@ -211,8 +211,8 @@ Dit soort properties zijn handig indien je informatie naar een object wenst te s
     {
         set
         {
-            if(value>=0)
-                energy=value;
+            if(value >= 0)
+                energy = value;
         }
     }
 ```
@@ -255,13 +255,13 @@ Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only w
         }
         private set
         {
-            if(value>=0)
-                energy=value;
+            if(value >= 0)
+                energy = value;
         }
     }
 ```
 
-Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(Palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``Palpatine.Energy=65``; ongeacht of deze geldig is of niet.
+Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(Palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``Palpatine.Energy = 65``; ongeacht of deze geldig is of niet.
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
@@ -284,7 +284,7 @@ class SithLord
 
     public void ResetLord()
     {
-        energy=-1;
+        energy = -1;
     }
 
     public int Energy
@@ -295,21 +295,21 @@ class SithLord
         }
         private set
         {
-            if(value>=0)
-                energy=value;
+            if(value >= 0)
+                energy = value;
         }
     }
 }
 ```
 
-De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energy terug te verlagen. Door echter ``energy=-1;`` te schrijven geven we dus -1 rechtstreeks aan ``energy``. Nochtans is dit een illegale waarde volgens de set-code van de property.
+De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energy terug te verlagen. Door echter ``energy = -1;`` te schrijven geven we dus -1 rechtstreeks aan ``energy``. Nochtans is dit een illegale waarde volgens de set-code van de property.
 
 **We moeten dus in de methode ook expliciet via de property gaan** om bugs te voorkomen en dus gaan we in ``ResetLord``schrijven naar de property ``Energy``  én niet rechtstreeks naar de instantievariabele ``energy``:
 
 ```java
 public void ResetLord()
 {
-    Energy=-1; // Energy i.p.v. energy
+    Energy = -1; // Energy i.p.v. energy
 }
 ```
 <!---{/aside}--->

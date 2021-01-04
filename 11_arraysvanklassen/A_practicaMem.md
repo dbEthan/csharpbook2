@@ -76,7 +76,7 @@ class Student
 {% hint style='tip' %}
 Je kan aan de gebruiker enkel strings als input vragen. Om dus zijn ingevoerde klas om te zetten naar een enum gebruik je ofwel:
 a) een switch of if-else structuur die naargelang de invoer een andere enumwaarde toekent aan een enumvariabele
-b) (PRO) je gebruikt ``Enum.Parse()`` (vb : ``Klassen mijnKlas= (Klassen)Enum.Parse(typeof(Klassen), "EA2");``)
+b) (PRO) je gebruikt ``Enum.Parse()`` (vb : ``Klassen mijnKlas = (Klassen)Enum.Parse(typeof(Klassen), "EA2");``)
 {% endhint %}
 
 # Bookmark Manager

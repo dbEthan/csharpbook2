@@ -25,7 +25,7 @@ class Medic : Soldier
 Indien je vervolgens een object aanmaakt van het type ``Medic``:
 
 ```java
-Medic RexGregor= new Medic();
+Medic RexGregor = new Medic();
 ```
 
 Dan zal zien we de volgorde van constructor-aanroep op het scherm:
@@ -139,7 +139,7 @@ Huis peperKoekenHuis = new Huis(true, 1);
 De volgorde waarin alles gebeurt in voorgaande voorbeeld is belangrijk om te begrijpen. Er wordt een hele machine in gang gezet wanneer we volgende korte stukje code schrijven:
 
 ```java
-Huis eenEigenHuis=new Huis(true,5);
+Huis eenEigenHuis = new Huis(true,5);
 ```
 
 1. De overloaded constructor van ``Huis`` wordt opgeroepen.

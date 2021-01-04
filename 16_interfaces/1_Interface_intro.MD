@@ -133,7 +133,7 @@ class Person { ... };
 
 We kunnen nu met ``is`` objecten bevragen of ze de interface in kwestie hebben:
 ```java
-Person tim= new Person();
+Person tim = new Person();
 Book gameOfThrones = new Book();
 
 if(gameOfThrones is IDeletable)

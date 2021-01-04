@@ -11,7 +11,7 @@ Als sneak preview tonen we ook ineens hoe arrays van objecten werken.
 ```java
 static void Main(string[] args)
 {
-    string[] urllist= new string[3];
+    string[] urllist = new string[3];
     urllist[0] = "http://www.ziescherp.be";
     urllist[1] = "http:\\www.humo.be";
     urllist[2] = "timdams.com";
@@ -22,9 +22,9 @@ static public void DownloadAllUris(string[] urls)
 {
     System.Net.WebClient webClient = new System.Net.WebClient();
  
-    for(int i=0; i < urls.Length;i++)
+    for(int i = 0; i < urls.Length;i++)
     {
-        Uri uri= new Uri(urls[i]);
+        Uri uri = new Uri(urls[i]);
         string result = webClient.DownloadString(uri);
         Console.WriteLine($"{uri} gedownload. Dit is het resultaat {result}");
     }
@@ -65,7 +65,7 @@ Met andere woorden, zolang de urls geldig zijn zal de download lukken. Bij de ee
 Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. We plaatsen dan de try catch niet rond de methode ``DownloadAllUris`` , maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
 
 ```java
- for(int i=0; i < urls.Length;i++)
+ for(int i = 0; i < urls.Length;i++)
 {
     try
     {

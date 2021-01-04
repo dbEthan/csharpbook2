@@ -24,8 +24,8 @@ Je moet zelfs niet veel moeite doen om uitzonderingen te genereren. Denk maar aa
 
 ```csharp
 Console.WriteLine("Geef een getal aub");
-int noemer= Convert.ToInt32(Console.ReadLine());
-double resultaat= 100/noemer;
+int noemer = Convert.ToInt32(Console.ReadLine());
+double resultaat = 100/noemer;
 Console.WriteLine($"100/{noemer} is gelijk aan {resultaat}");
 ```
 

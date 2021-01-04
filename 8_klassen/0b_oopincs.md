@@ -124,7 +124,7 @@ Een andere veelgemaakte fout is klassen hebben die eigenlijk exact 1 object maar
 Vervolgens kunnen we dan instanties maken: 1 object stel 1 level in het spel voor. De speler kan dan van level naar level gaan en de code start dan bijvoorbeeld telkens de ``BeginLevel`` methode:
 
 ```java
-Level level1=new Level();
+Level level1 = new Level();
 
 level1.BeginLevel();
 ```

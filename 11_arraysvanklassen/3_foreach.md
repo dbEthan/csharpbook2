@@ -8,7 +8,7 @@ Een ``foreach`` loop zal ieder element in de array één voor één in een tijde
 Volgende code toont de werking waarbij we een ``double``-array hebben en alle elementen ervan op het scherm willen tonen:
 
 ```java
-double[] killDeathRates= {1.2, 0.89, 3.15, 0.1};
+double[] killDeathRates = {1.2, 0.89, 3.15, 0.1};
 
 foreach (double singleKD in killDeathRates)
 {
@@ -54,7 +54,7 @@ Dit mag dus niét:
 ```java
 foreach(Student eenStudent in deKlas)
 {
-   eenStudent= new Student();
+   eenStudent = new Student();
 }
 ```
 
@@ -73,9 +73,9 @@ foreach(Student eenStudent in deKlas)
 C# heeft een **``var``** keyword. Je mag dit keyword gebruiken ter vervanging van het datatype (bv ``int``) op voorwaarde dat de compiler kan achterhalen wat het type (*implicit type*) moet zijn aan de hand van de expressie rechts van de toekenningsoperator.
 
 ```java
-var getal= 5; //var zal int zijn
-var myArray= new double[20]; //var zal double[] zijn
-var tekst= "Hi there handsome"; //var zal string zijn
+var getal = 5; //var zal int zijn
+var myArray = new double[20]; //var zal double[] zijn
+var tekst = "Hi there handsome"; //var zal string zijn
 ```
 
 {% hint style='warning' %}

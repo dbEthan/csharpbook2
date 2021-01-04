@@ -25,7 +25,7 @@ class Meting
 We kunnen deze properties beginwaarden geven via volgende initializer syntax:
 
 ```java
-Meting meting = new Meting() { Temperatuur= 3.4, IsGeconfirmeerd=true};
+Meting meting = new Meting() { Temperatuur = 3.4, IsGeconfirmeerd = true};
 ```
 
 Object initializer syntax bestaat er dus uit dat je een object aanmaakt met de **default constructor** en dat je dan tussen accolades een lijst van properties en hun beginwaarden kunt geven. Object initializer werkt enkel indien het object een default constructor heeft (je hoeft deze niet expliciet te maken indien je klasse geen andere constructors heeft zoals in een eerder hoofdstuk al besproken).
@@ -34,7 +34,7 @@ Object initializer syntax bestaat er dus uit dat je een object aanmaakt met de *
 Bovenstaande code mag ook iets korter nog:
 
 ```java
-Meting meting = new Meting { Temperatuur= 3.4, IsGeconfirmeerd=true};
+Meting meting = new Meting { Temperatuur = 3.4, IsGeconfirmeerd = true};
 ```
 
 Zie je het verschil? De ronde haakjes van de default constructor mag je dus achterwege laten.

@@ -229,7 +229,7 @@ Als je deze code zou uitvoeren zal je zien dat de leeftijd van Elvis verhoogt en
 ![](../assets/care.png)
 "Ja maar, nu pas je toch de leeftijd van buitenuit aan, ook al gaf je aan dat dit niet de bedoeling was want dan zou je Adil ogenblikkelijk 99 jaar kunnen maken."
 
-Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.leeftijd= -12000;``
+Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.leeftijd = -12000;``
 
 Dit kan nefaste gevolgen hebben voor de klasse.
 
@@ -242,8 +242,8 @@ class Mens
 
     public void VeranderLeeftijd(int nieuweLeeftijd)
     {
-        if(nieuweLeeftijd>=0)
-            leeftijd= nieuweLeeftijd;
+        if(nieuweLeeftijd >= 0)
+            leeftijd = nieuweLeeftijd;
     }
 ```
 
@@ -261,7 +261,7 @@ We kunnen nu het probleem oplossen dat al onze mensen verliefd zijn op Anneke. V
 ```java
 class Mens
 {
-    private string lief="niemand";
+    private string lief = "niemand";
 
     public VeranderLief(string nieuwLief)
     {

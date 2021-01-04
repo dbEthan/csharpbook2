@@ -26,8 +26,8 @@ Een Persoon **is géén** Voertuig.
 
 Stel dat we enkele variabelen hebben als volgt:
 ```java
-Auto mijnAuto= new Auto();
-Persoon rambo= new Persoon();
+Auto mijnAuto = new Auto();
+Persoon rambo = new Persoon();
 ```
 
 We kunnen nu de objecten met ``is`` bevragen of ze van een bepaalde type zijn:
@@ -64,7 +64,7 @@ foreach (var middel in alleMiddelen)
 ### ``as`` keyword met voorbeeld
 Wanneer we objecten van het ene naar het andere type willen omzetten dan doen we dit vaak met behulp van casting:
 ```java
-Student fritz= new Student();
+Student fritz = new Student();
 Mens jos = (Mens)fritz;
 ```
 
@@ -75,17 +75,17 @@ Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit 
 De code van daarnet herschrijven we dan naar:
 
  ```java
-Student fritz= new Student();
-Mens jos =fritz as Mens;
+Student fritz = new Student();
+Mens jos = fritz as Mens;
 ```
 
 Indien nu de casting niet lukt (omdat ``Student`` misschien geen childklasse van ``Mens`` blijkt te zijn) dan zal ``jos`` de waarde ``null`` hebben gekregen.
 
 We kunnen dan vervolgens bijvoorbeeld schrijven:
  ```java
-Student fritz= new Student();
-Mens jos =fritz as Mens;
-if(jos!=null)
+Student fritz = new Student();
+Mens jos = fritz as Mens;
+if(jos != null)
 {
     //Doe Mens-zaken   
 }

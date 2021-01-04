@@ -70,12 +70,12 @@ We maken een array van mensen aan waarin we van iedere type een vertegenwoordige
 ```java
 Mens[] mensjes = new Mens[4];
 
-mensjes[0]= new Leraar();
-mensjes[1]= new Politieker();
-mensjes[2]= new Student();
-mensjes[3]= new Advocaat();
+mensjes[0] = new Leraar();
+mensjes[1] = new Politieker();
+mensjes[2] = new Student();
+mensjes[3] = new Advocaat();
 
-for(int i =0; i < mensjes.Length; i++)
+for(int i = 0; i < mensjes.Length; i++)
 {
     //NOW WHAT?
 }
@@ -87,7 +87,7 @@ for(int i =0; i < mensjes.Length; i++)
 De eerste oplossing is door gebruik te maken van het ``is`` keyword.
 We zullen de array doorlopen en steeds aan het huidige object vragen of dit object de ``IVloeker`` interface bezit, als volgt:
 ```java
-for(int i =0; i<mensjes.Length; i++)
+for(int i = 0; i<mensjes.Length; i++)
 {
     if(mensjes[i] is IVloeker)
     {
@@ -104,7 +104,7 @@ Vervolgens kunnen we binnen deze if het huidige object tijdelijk omzetten (caste
 ```java
 if(mensjes[i] is IVloeker)
 {
-    IVloeker tijdelijk= (IVloeker)mensjes[i];
+    IVloeker tijdelijk = (IVloeker)mensjes[i];
     tijdelijk.Vloek();
 }
 ```
@@ -113,10 +113,10 @@ if(mensjes[i] is IVloeker)
 
 Het ``as`` keyword kan ook een toffe oplossing geven. Hierbij zullen we het object proberen omzetten via ``as`` naar een ``IVloeker``. Als dit lukt (het object is verschillend van ``null``) dan kunnen we het object laten vloeken:
 ```java
-for(int i =0; i<mensjes.Length; i++)
+for(int i = 0; i<mensjes.Length; i++)
 {
     IVloeker tijdelijk = mensjes[i] as IVloeker;
-    if(tijdelijk !=null)
+    if(tijdelijk != null)
     {
         tijdelijk.Vloek();
     }

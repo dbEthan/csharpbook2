@@ -12,7 +12,7 @@ De generieke ``List<>`` klasse bevindt zich in de ``System.Collections.Generic``
 
 De klasse ``List<>`` is een zogenaamde generieke klasse (meer hierover in de appendix). Tussen de ``< >``tekens plaatsen we het datatype dat de lijst zal moeten gaan bevatten. Bijvoorbeeld:
 
-* ``List<int> alleGetallen= new List<int>();``
+* ``List<int> alleGetallen = new List<int>();``
 * ``List<bool> binaryList = new List<bool>();``
 * ``List<Pokemon> pokeDex = new List<Pokemon>();``
 * ``List<string[]> listOfStringarrays = new List<string[]>();``
@@ -38,13 +38,13 @@ mijnPersonages.Add("Mercy");
 Ook objecten kan je dus toevoegen:
 
 ```java
-List<Pokemon> pokedex =new List<Pokemon>();
+List<Pokemon> pokedex = new List<Pokemon>();
 pokedex.Add(new Pokemon());
 ```
 
 Via object syntax initializer kan dit zelfs nog sneller:
 ```java
-List<Pokemon> pokedex =new List<Pokemon>()
+List<Pokemon> pokedex = new List<Pokemon>()
     {
         new Pokemon(),
         new Pokemon()
@@ -55,10 +55,10 @@ List<Pokemon> pokedex =new List<Pokemon>()
 Je kan ook een stap verder gaan en ook binnenin deze initializer syntax dezelfde soort initialize syntax gebruiken om de objecten individueel aan te maken:
 
 ```java
-List<Pokemon> pokedex =new List<Pokemon>()
+List<Pokemon> pokedex = new List<Pokemon>()
     {
-        new Pokemon() {Naam= "Pikachu", HP_Base= 5},
-        new Pokemon() {Naam= "Bulbasaur", HP_Base= 15}
+        new Pokemon() {Naam = "Pikachu", HP_Base = 5},
+        new Pokemon() {Naam = "Bulbasaur", HP_Base = 15}
     };
 ```
 

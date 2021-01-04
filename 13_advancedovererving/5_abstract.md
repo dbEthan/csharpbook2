@@ -41,9 +41,9 @@ class Wolf: Dier
  //..
 }
 ```
-En dan zal dit wel werken: ``Wolf wolfje= new Wolf();``
+En dan zal dit wel werken: ``Wolf wolfje = new Wolf();``
 
-En als we polymorfisme gebruiken (wat we later zullen zien) dan mag dit ook: ``Dier paardje= new Paard();`` 
+En als we polymorfisme gebruiken (wat we later zullen zien) dan mag dit ook: ``Dier paardje = new Paard();`` 
 
 {% hint style='tip' %}
 In het begin lijkt ``abstract`` een beperkende factor: je kan minder dan ervoor. Maar het heeft dus één heel duidelijke functie: je kan een parent-klasse maken waarin de gedeelde functionaliteit van je child-klassen in zit, zonder dat je deze parent-klasse op zich kunt gebruiken. 

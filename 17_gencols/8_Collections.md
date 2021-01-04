@@ -44,8 +44,8 @@ Volgende 2 code-voorbeelden tonen dit.
 In het niet-generieke geval zal deze code compileren maar **tijdens de uitvoer** zal de laatste lijn een fout (Exception) geven:
 
 ```java
-ArrayList nietGeneriekeList=new ArrayList();
-string naam= "Tim";
+ArrayList nietGeneriekeList = new ArrayList();
+string naam = "Tim";
 nietGeneriekeList.Add(naam);
 int leeftijd = (int)nietGeneriekeList[0];
 ```
@@ -53,8 +53,8 @@ int leeftijd = (int)nietGeneriekeList[0];
 Bij een generieke collection zal er bij soortgelijk code een compiler-error optreden (gedrag dat meestal wenselijk is) en de code zal dus niet gecompileerd kunnen worden:
 
 ```java
-List<string> generiekeList=new List<string>();
-string naam= "Tim";
+List<string> generiekeList = new List<string>();
+string naam = "Tim";
 generiekeList.Add(naam);
 int leeftijd = (int)nietGeneriekeList[0]; // compilererror: cannot convert type string to in
 ```
@@ -173,8 +173,9 @@ De key kan zelfs een string zijn en de waarde een ander type. In het volgende vo
 
 ```java
 Dictionary<string, Student> studentenLijst = new Dictionary<string, Student>();
-Student stud= new Student();
-stud.Naam= "Tim";stud.Leeftijd=24;
+Student stud = new Student();
+stud.Naam = "Tim";
+stud.Leeftijd = 24;
 studentenLijst.Add("AB12",stud);
 Console.WriteLine(studentenLijst["AB12"].Leeftijd);
 studentenLijst.Remove("AB12");

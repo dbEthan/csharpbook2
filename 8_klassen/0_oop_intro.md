@@ -343,8 +343,8 @@ Neem het voorbeeld van de auto: deze is in de echte wereld ontwikkeld volgens he
 Binnen OOP wordt dit blackbox-concept **encapsulatie** genoemd. Het doel van OOP is andere programmeurs (en jezelf) zoveel mogelijk af te schermen van de interne werking van je klasse code. Vergelijk het met de methoden uit het vorige boek: "if it works, it works" en dan hoef je niet in de code van de methode te gaan zien wat er juist gebeurt telkens je de methode wil gebruiken.
 
 Kortom, hoe minder de buitenwereld moet weten om met een object te werken, hoe beter. Beeld je in dat je 10 lijnen code nodig had om een random getal te genereren. Niemand zou de klasse ``Random`` nog gebruiken. Dankzij de ontwikkelaar van deze klasse hoeven we maar 2 zaken te kunnen:
-* Een Random-object aanmaken: ``Random ranGen=new Random();``
-* De Next methode aanroepen om een getal uit het object te krijgen: ``int getal= ranGen.Next();``. Wat er nu juist in die ``.Next`` gebeurt boeit ons niet. It just works! Met dank aan het encapsuleren en de kracht van OOP.
+* Een Random-object aanmaken: ``Random ranGen = new Random();``
+* De Next methode aanroepen om een getal uit het object te krijgen: ``int getal = ranGen.Next();``. Wat er nu juist in die ``.Next`` gebeurt boeit ons niet. It just works! Met dank aan het encapsuleren en de kracht van OOP.
 
 
 ### Objecten in de woorden van Steve Jobs

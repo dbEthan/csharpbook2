@@ -168,7 +168,7 @@ class ProRekening : SpaarRekening
 {
     public override double BerekenRente()
     {
-        int aantal1000 =(int)Saldo / 1000;
+        int aantal1000 = (int)Saldo / 1000;
         return base.BerekenRente() + aantal1000*10;
     }
 }
@@ -203,7 +203,7 @@ class Vierkant: Rechthoek
 {
     public Vierkant(int b, int h)
     {
-        if (b!=h)
+        if (b != h)
         {
             b = h;
         }

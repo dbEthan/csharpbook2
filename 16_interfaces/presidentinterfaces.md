@@ -59,7 +59,7 @@ public class MisterEersteMinister
     public void Regeer()
     {
     
-        List<IMinister> alleMinisters= new List<IMinister>();
+        List<IMinister> alleMinisters = new List<IMinister>();
         alleMinisters.Add(new MicrosoftCEO);
         
         foreach (IMinister minister in alleMinisters)

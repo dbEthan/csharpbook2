@@ -82,7 +82,7 @@ Wanneer we wensen dat iedere nieuwe PC ogenblikkelijk een interne harde schijf h
 ```java
 class PC
 {
-    private HardeSchijf cHardeSchijf=new HardeSchijf();
+    private HardeSchijf cHardeSchijf = new HardeSchijf();
 }
 ```
 
@@ -160,7 +160,7 @@ class PC
       }
       set
       {
-        cHardeSchijf= value;
+        cHardeSchijf = value;
       }
     }
     private HardeSchijf cHardeSchijf;
@@ -170,8 +170,8 @@ class PC
 
 Vervolgens kunnen we nu van buitenuit het object benaderen en er , als het ware, een nieuwe harde schijf in steken. 
 ```java
-HardeSchijf myHardeSchijf= new HardeSchijf();
-myPC.CHardeSchijf= myHardeSchijf;
+HardeSchijf myHardeSchijf = new HardeSchijf();
+myPC.CHardeSchijf = myHardeSchijf;
 ```
 
 Op deze manier hebben we nog steeds een referentie naar ``myHardeSchijf`` en zal de GC dit object dus niet verwijderen wanneer , om welke reden ook, ``myPC`` wordt opgekuist.
@@ -189,7 +189,7 @@ Stel je voor dat de klasse ``HardeSchijf`` ook een autoproperty ``MaxCapacity`` 
 ```java
 class PC
 {
-    private HardeSchijf cHardeSchijf=new HardeSchijf();
+    private HardeSchijf cHardeSchijf = new HardeSchijf();
 
     public void ToonComputerInfo()
     {
@@ -231,7 +231,7 @@ class Page{}
 
 class Boek
 {
-   private Page[] allPages= new Page[100];
+   private Page[] allPages = new Page[100];
 }
 ```
 
@@ -242,15 +242,15 @@ class Book
 {
    public void InsertPage(Page toAdd, int Position)
    {
-       allPages[Position]= toAdd;
+       allPages[Position] = toAdd;
    }
 
-   private Page[] allPages= new Page[100];
+   private Page[] allPages = new Page[100];
 }
 
 //Elders
-Book myBook= new Book();
-Page myThirdPage= new Page();
+Book myBook = new Book();
+Page myThirdPage = new Page();
 myBook.InsertPage(myThirdPage, 2);
 ```
 

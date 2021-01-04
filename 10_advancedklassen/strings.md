@@ -8,8 +8,8 @@ Door een ``@`` (verbatim character) voor een string te plaatsen zeggen we concre
 
 Dit wordt vaak gebruikt om een filepath iets leesbaarder te maken.
 
-* Zonder verbatim: ``string path= "c:\\Temp\\myfile.txt";``
-* Met verbatim: ``string path= @"c:\Temp\myfile.txt";``
+* Zonder verbatim: ``string path = "c:\\Temp\\myfile.txt";``
+* Met verbatim: ``string path = @"c:\Temp\myfile.txt";``
 
 ### Splitsen en samenvoegen
 
@@ -18,10 +18,10 @@ Dit wordt vaak gebruikt om een filepath iets leesbaarder te maken.
 Aan het einde van dit hoofdstuk willen we een csv-bestand (comma separated value) splitsen. De ``Split`` methode laat toe een string te splitsen op een bepaald teken. Het resultaat is steeds een **array van strings**.
 
 ```java
-string data= "12,13,20";
-string[] gesplitst= data.Split(',');
+string data = "12,13,20";
+string[] gesplitst = data.Split(',');
 
-for(int i=0; i<gesplitst.Length;i++)
+for(int i = 0; i<gesplitst.Length;i++)
 {
     Console.WriteLine(gesplitst[i]);
 }
@@ -231,18 +231,18 @@ We herschrijven dan het parsen naar:
 
 ```java
 string[] lines = File.ReadAllLines(@"c:\soccerstars.csv");
-Speler[] spelers= new Speler[lines.Length];
+Speler[] spelers = new Speler[lines.Length];
 
 for (int i = 0; i < lines.Length; i++)
 {
     string[] splitted = lines[i].Split(';');
 
-    Speler temp=new Speler();
-    temp.Voornaam= splitted[1];
-    temp.Achternaam= splitted[0];
-    temp.GebJaar= splitted[2]:
+    Speler temp = new Speler();
+    temp.Voornaam = splitted[1];
+    temp.Achternaam = splitted[0];
+    temp.GebJaar = splitted[2]:
 
-    spelers[i]= temp;
+    spelers[i] = temp;
 }
 ```
 

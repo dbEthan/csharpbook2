@@ -7,9 +7,9 @@ public class Student
 {
     public Student(string naam, int leeftijd, bool isIngeschreven)
     {
-        Naam=naam;
-        Leeftijd= leeftijd;
-        IsIngeschreven= isIngeschreven;
+        Naam = naam;
+        Leeftijd = leeftijd;
+        IsIngeschreven = isIngeschreven;
     }
 
     public string Naam {get;}
@@ -33,8 +33,8 @@ Het ``init`` keyword geeft aan dat deze autoproperty eenmalig kunnen **ge-set** 
 
 ```java
 Student eenNieuweStudent = new Student 
-            {   Naam="Tim", 
-                Leeftijd= 18,   
+            {   Naam = "Tim", 
+                Leeftijd = 18,   
                 IsIngeschreven = false
             };
 ```

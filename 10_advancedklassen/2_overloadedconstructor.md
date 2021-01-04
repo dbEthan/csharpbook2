@@ -5,7 +5,7 @@ Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen b
 Met andere woorden, stel dat we dit willen schrijven:
 
 ```java
-Student jos= new Student(19);
+Student jos = new Student(19);
 ```
 
 Als we dit met voorgaande klasse uitvoeren , die enkel een default constructor heeft, zal de code een fout geven. C# vindt geen constructor die een ``int`` als actuele parameter aanvaardt.
@@ -77,13 +77,13 @@ class Student
     
     public Student(int startgeboorteJaar, bool werkstart) //overloaded
     {
-        geboorteJaar= startgeboorteJaar;
-        isWerkStudent= werkstart;
+        geboorteJaar = startgeboorteJaar;
+        isWerkStudent = werkstart;
     }
 
     public Student() //default
     {
-        geboorteJaar= DateTime.Now.Year-18;
+        geboorteJaar = DateTime.Now.Year-18;
     }
 
     private int geboorteJaar;
@@ -163,11 +163,11 @@ class  Breuk
 
     public Breuk(int tellerIn, int noemerIn)
     {
-        teller=tellerIn;
+        teller = tellerIn;
         if(noemerIn == 0)
             noemer = 1 ; //of werp Exception op zoals eerder uitgelegd.
         else
-            noemer=noemerIn;
+            noemer = noemerIn;
     }
 
     public void PrintAlsDouble()
@@ -178,12 +178,12 @@ class  Breuk
 ```
 Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:
 ```java
-Breuk eenBreuk =new Breuk();
+Breuk eenBreuk = new Breuk();
 ```
 
 Maar ben ik verplicht deze als volgt aan te maken:
 ```java
-Breuk eenBreuk =new Breuk(21,8);
+Breuk eenBreuk = new Breuk(21,8);
 ```
 <!---{/aside}--->
 <!---NOBOOKSTART--->

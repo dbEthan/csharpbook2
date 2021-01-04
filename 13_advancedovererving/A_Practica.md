@@ -28,7 +28,7 @@ Zorg ervoor dat er géén dubbele code in HiddenBookmark staat (tip: ``base()``)
 Test door volgende code in een eenvoudig programma uit te voeren:
 
 ```java
-HiddenBookmark hbm=new HiddenBookmark();
+HiddenBookmark hbm = new HiddenBookmark();
 //extra props invullen
 Bookmark bm = new Bookmark();
 //extra props invullen

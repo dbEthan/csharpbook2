@@ -57,7 +57,7 @@ Deze methoden zijn redelijk nutteloos in het begin. Enkel door ze zelf te ``over
 Stel dat je een klasse Student hebt gemaakt in je project. Je kan dan op een object van deze klasse de GetType() -methode aanroepen om te weten wat het type van dit object is:
 
 ```java
-Student stud1= new Student();
+Student stud1 = new Student();
 Console.WriteLine(stud1.GetType());
 ```
 
@@ -66,7 +66,7 @@ Dit zal als uitvoer de namespace gevolgd door het type van het object op het sch
 Wil je enkel het type zonder namespace dan is het nuttig te beseffen dat ``GetType()`` eigenlijk een object teruggeeft van het type ``Type`` met meerdere eigenschappen, waaronder ``Name``. Volgende code zal dus enkel ``Student`` op het scherm tonen:
 
 ```java
-Student stud1= new Student();
+Student stud1 = new Student();
 Console.WriteLine(stud1.GetType().Name);
 ```
 
@@ -160,8 +160,8 @@ Stel dat we vinden dat een student gelijk is aan een andere student indien z'n V
 //In de Student class
 public override bool Equals(Object o)
 {  
-    Student temp= (Student)o; //Zie opmerking na code!
-    if(Leeftijd== temp.Leeftijd && Voornaam== temp.Voornaam)
+    Student temp = (Student)o; //Zie opmerking na code!
+    if(Leeftijd == temp.Leeftijd && Voornaam == temp.Voornaam)
         return true;
     return false;
 }

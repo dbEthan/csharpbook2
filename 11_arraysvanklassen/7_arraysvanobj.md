@@ -30,8 +30,8 @@ Je zou kunnen zeggen dat we enkel nog maar de parkeerlijnen hebben aangemaakt.
 Willen we nu elementen in deze array plaatsen dan moeten dit ook expliciet doen en moeten we dus objecten aanmaken en hun referentie in de array bewaren:
 
 ```java
-mijnKlas[0]= new Student();
-mijnKlas[2]= new Student();
+mijnKlas[0] = new Student();
+mijnKlas[2] = new Student();
 ```
 
 ![](../assets/6_klassen/beginarraysit2.png)
@@ -56,7 +56,7 @@ Probeer je objecten te benaderen die nog niet bestaan dan zal je uiteraard een `
 Van zodra een object in de array staat kan je deze vanuit de array aanspreken d.m.v. de index en de *dot*-operator om de de juiste methode of property op het object aan te roepen:
 
 ```java
-mijnKlas[3].Name= "Vincent Lagasse";
+mijnKlas[3].Name = "Vincent Lagasse";
 ```
 
 Uiteraard mag je ook altijd de referentie naar een individueel object in de array kopiëren. Denk er aan dat we de hele tijd met referenties werken en de GC dus niet tussenbeide zal komen zolang er minstens 1 referentie naar het object is. Indien de student op plek 4 in de array aan de start een leeftijd van 20 had, dan zal deze op het einde van volgende code als leeftijd 22 hebben, daar we op hetzelfde objecten de leeftijd verhogen in zowel lijn 2 als 3:
@@ -97,7 +97,7 @@ Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op geg
 We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de array of via ``jos``:
 
 ```java
-jos.Naam= "Joske Vermeulen";
+jos.Naam = "Joske Vermeulen";
 mijnKlas[2].Naam = "Franske Vermeulen"; //we overschrijven "Joske Vermeulen"
 ```
 
@@ -110,7 +110,7 @@ mijnKlas[2].Naam = "Franske Vermeulen"; //we overschrijven "Joske Vermeulen"
 Ook hier kan je met ``?`` een null-check schrijven:
 
 ```java
-mijnKlas?[3]?.Name= "Romeo Montague ";
+mijnKlas?[3]?.Name = "Romeo Montague ";
 ```
 
 Merk op dat het eerste vraagteken controleert of de array zelf niet ``null`` is. Het tweede vraagteken, na de index, is om te controleren of het element op die index niet ``null`` is.

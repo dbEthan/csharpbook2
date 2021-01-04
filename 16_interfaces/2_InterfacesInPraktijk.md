@@ -24,9 +24,9 @@ class Land
 We plaatsen 3 landen in een array:
 ```java
 Land[] eurolanden = new Land[3];
-eurolanden[0]= new Land() {Naam="België", Oppervlakte= 5, Inwoners=2000};
-eurolanden[1]= new Land() {Naam="Frankrijk", Oppervlakte= 7, Inwoners=2500};
-eurolanden[2]= new Land() {Naam="Nederland", Oppervlakte= 6, Inwoners=1800};
+eurolanden[0] = new Land() {Naam = "België", Oppervlakte = 5, Inwoners = 2000};
+eurolanden[1] = new Land() {Naam = "Frankrijk", Oppervlakte = 7, Inwoners = 2500};
+eurolanden[2] = new Land() {Naam = "Nederland", Oppervlakte = 6, Inwoners = 1800};
 ```
 Wanneer we nu zouden proberen de landen te sorteren:
 ```java

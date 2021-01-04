@@ -27,7 +27,7 @@ Gegeven volgende klasse:
 ```java
 class Mens
 {
-    private int leeftijd=1;
+    private int leeftijd = 1;
     public void Jarig()
     {
         leeftijd++;
@@ -43,8 +43,8 @@ class Mens
 Als we dit doen:
 
 ```java
-Mens m1= new Mens();
-Mens m2= new Mens();
+Mens m1 = new Mens();
+Mens m2 = new Mens();
 
 m1.Jarig();
 m1.Jarig();
@@ -69,12 +69,12 @@ Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars inte
 
 Laten we eens kijken wat er gebeurt indien we een instantievariabele ``static`` maken. 
 
-We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd=1;``. We krijgen dan:
+We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd = 1;``. We krijgen dan:
 
 ```java
 class Mens
 {
-    private static int leeftijd=1;
+    private static int leeftijd = 1;
     public void Jarig()
     {
         leeftijd++;
@@ -92,8 +92,8 @@ class Mens
 Voeren we nu terug volgende code uit:
 
 ```java
-Mens m1= new Mens();
-Mens m2= new Mens();
+Mens m1 = new Mens();
+Mens m2 = new Mens();
 
 m1.Jarig();
 m1.Jarig();
@@ -131,7 +131,7 @@ Math.Pow(3,2);
 Zonder dat we objecten moeten aanmaken in de trend van:
 
 ```java
-Math myMath= new Math(); //dit mag niet!
+Math myMath = new Math(); //dit mag niet!
 myMath.Pow(3,2)
 ```
 
@@ -175,7 +175,7 @@ We kunnen deze methoden nu als volgt aanroepen:
 ```java
 EpicLibrary.ToonInfo();
 
-int opgeteld= EpicLibrary.TelOp(3,5);
+int opgeteld = EpicLibrary.TelOp(3,5);
 ```
 
 Mooi toch.

@@ -34,7 +34,7 @@ Of we zouden zelfs een extra klasse kunnen aanmaken genaamd Student
 public class Student
 {
     public string Naam;
-    public Student(string n){Naam= n;} //Constructor
+    public Student(string n){Naam = n;} //Constructor
     public override string  ToString()
     {
         return Naam;
@@ -44,7 +44,7 @@ public class Student
 En dan als volgt een nieuwe meting met daarin een student aanmaken. Let goed op de constructor-aanroep van zowel Meting als Student!
 
 ```java
-Meting<Student> m3= new Meting<Student>(new Student("Tim Dams"));
+Meting<Student> m3 = new Meting<Student>(new Student("Tim Dams"));
 Console.WriteLine(m3);
 ```
 De uitvoer van dit programma zou dan zijn:

@@ -78,7 +78,7 @@ void VerhoogParameter(int a)
 }
 
 //Elders:
-int getal= 5;
+int getal = 5;
 VerhoogParameter(getal);
 Console.WriteLine($"Na methode {getal}");
 ```
@@ -140,8 +140,8 @@ We gaan nogal licht over het ``new``-keyword. Maar zoals je merkt is dit een ong
 Zoals we in het vorige boek hebben gezien zien we het zelfde gedrag bij arrays:
 
 ```java
-int[] nummers= {4,5,10};
-int[] andereNummers= nummers;
+int[] nummers = {4,5,10};
+int[] andereNummers = nummers;
 ```
 
 In dit voorbeeld zal ``andereNummers`` nu dus ook verwijzen naar de array in de heap waar de actuele waarden staan.
@@ -149,7 +149,7 @@ In dit voorbeeld zal ``andereNummers`` nu dus ook verwijzen naar de array in de 
 Als we dus volgende code uitvoeren dan ontdekken we dat beide variabele naar dezelfde array verwijzen:
 
 ```java
-andereNummers[0]=999;
+andereNummers[0] = 999;
 Console.WriteLine(andereNummers[0]);
 Console.WriteLine(nummers[0]);
 ```
@@ -164,9 +164,9 @@ We zullen dus als output krijgen:
 Hetzelfde gedrag zien we bij objecten:
 
 ```java
-Student a= new Student("Abba");
-Student b= new Student("Queen");
-a=b;
+Student a = new Student("Abba");
+Student b = new Student("Queen");
+a = b;
 Console.WriteLine(a.Naam);
 ```
 
@@ -187,7 +187,7 @@ void VerhoogEersteElementInArray(int[] a)
 }
 
 //Elders:
-int[] getallen= {5,3,2};
+int[] getallen = {5,3,2};
 VerhoogEersteElementInArray(getallen);
 Console.WriteLine($"Na methode {getallen[0]}");
 ```
@@ -210,7 +210,7 @@ void VerhoogParameter(int a)
 }
 
 //Elders:
-int[] getallen= {5,3,2};
+int[] getallen = {5,3,2};
 VerhoogParameter(getallen[0]); //<= VALUE TYPE!
 Console.WriteLine($"Na methode {getallen[0]}");
 ```
@@ -231,9 +231,9 @@ De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat 
 In dit voorbeeld zien we dit in actie:
 
 ```java
-int[] array1= {1,2,3};
-int[] array2= {3,4,5};
-array2=array1;
+int[] array1 = {1,2,3};
+int[] array2 = {3,4,5};
+array2 = array1;
 ```
 
 Vanaf de laatste lijn zal er geen referentie meer naar ``{3,4,5}`` zijn in de heap, daar we deze hebben overschreven met een referentie naar ``{1,2,3}``. De GC zal dus deze data verwijderen.
@@ -241,10 +241,10 @@ Vanaf de laatste lijn zal er geen referentie meer naar ``{3,4,5}`` zijn in de he
 Wil je dat niet dan zal je dus minstens 1 variabele moeten hebben die naar de data verwijst. Volgend voorbeeld toont dit:
 
 ```java
-int[] array1= {1,2,3};
-int[] array2= {3,4,5};
-int[] bewaarArray= array2;
-array2=array;
+int[] array1 = {1,2,3};
+int[] array2 = {3,4,5};
+int[] bewaarArray = array2;
+array2 = array;
 ```
 De variabele ``bewaarArray`` houdt dus een referentie naar ``{3,4,5}`` bij en we kunnen dus later via deze variabele alsnog aan de originele data.
 

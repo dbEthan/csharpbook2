@@ -39,7 +39,7 @@ Iedere groene klasse heeft:
 
 Test of je enclave werkt door volgende code in je main te steken:
 ```java
-List<Gebouw> enclave=new List<Gebouw>();
+List<Gebouw> enclave = new List<Gebouw>();
 enclave.Add(new Hospitaal("Sint Vincentius",4, 5));
 enclave.Add(new Woonst("Tims shack",1, 1));
 enclave.Add(new Generator("batteryshed 1",1, 2));

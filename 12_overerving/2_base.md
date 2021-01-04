@@ -1,5 +1,5 @@
 ## Het ``base`` keyword
-Het **``base``** keyword laat ons toe om bij  ``override`` van een methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen. Dit kan handig zijn wanneer je in je child-klasse de bestaande implementatie wenst uit te bereiden.
+Het **``base``** keyword laat ons toe om bij  ``override`` van een methode of property in de child-klasse toch te verplichten om de parent-implementatie toe te passen. Dit kan handig zijn wanneer je in je child-klasse de bestaande implementatie wenst uit te breiden.
 
 Stel dat we volgende 2 klassen hebben:
 ```java
@@ -22,9 +22,9 @@ class Frituur:Restaurant
 }
 ```
 
-Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) dan een gewoon ``Restaurant``. Als we echter later beslissen dat de basisprijs (in Restaurant) moet veranderen dan moet je ook in alle child-klassen doen, wat natuurlijk geen goede programmeerstijl is.
+Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) dan een gewoon ``Restaurant``. Als we echter later beslissen dat de basisprijs (in ``Restaurant``) moet veranderen dan moet je ook in alle child-klassen doen, wat natuurlijk geen goede programmeerstijl is.
 
-``base`` lost dit voor ons. De Frituur-klasse herschrijven we naar:
+``base`` lost dit voor ons. De ``Frituur``-klasse herschrijven we naar:
 
 ```java
 class Frituur:Restaurant
@@ -41,7 +41,7 @@ class Frituur:Restaurant
 Het ``base`` keyword laat ons toe om in onze code expliciet een methode of property van de parent-klasse aan te roepen. Ook al overschrijven we de implementatie van ``PoetsAlles`` toch kan de originele versie van de parent-klasse nog steeds gebruikt worden.
 
 {% hint style='tip' %}
-We hebben een soortgelijke werking ook reeds gezien bij de constructors van overgeërfde klassen
+We hebben een soortgelijke werking ook reeds gezien bij de constructors van overgeërfde klassen.
 {% endhint %}
 
 Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan de start van de methode, soms op het einde, soms halverwege. Alles hangt er van af wat je juist nodig hebt.
@@ -51,8 +51,8 @@ Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan 
 <!---NOBOOKEND--->
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
-![](../assets/care.png)
-Ik denk dat ik een extra voorbeeldje nodig ga hebben.
+![](../assets/7_overerving/meinher.png)
+"Ik denk dat ik een extra voorbeeldje nodig ga hebben."
 
 Laten we eens kijken. Beeld je in dat je volgende basisklasse hebt:
 
@@ -61,8 +61,7 @@ class Oermens
 {
       public virtual int VoorzieVoedsel()
       {
-      Random r = new Random();
-      return r.Next(1, 10); //kg
+      
       }
 }
 ```
@@ -80,13 +79,56 @@ class ModerneMens: Oermens
 
       public override int VoorzieVoedsel()
       {
-      if (IsHipster)
-            return base.VoorzieVoedsel() + 20;
-      else
-            return 100;
+            if (IsHipster)
+                  return base.VoorzieVoedsel() + 20;
+            else
+                  return 100;
       }
 }
 ```
+
+### Properties overriden
+Properties en methoden zijn van hetzelfde pak een laken. Het is dan ook niet meer dan logisch dat ook properties ``virtual`` kunnen zijn.
+
+
+
+Stel dat je volgende klasse hebt:
+
+```java
+class Auto
+{
+   virtual public int Fuel { get; set; }
+}
+```
+
+We maken nu een meer luxueuze auto die een lichtje heeft (als property genaamd ``HeeftVolleTank``) dat aangaat wanneer de benzine-tank vol genoeg is, dit kan via ``override``.
+
+
+```java
+class LuxeAuto : Auto
+{
+   public bool HeeftVolleTank { get; set; }
+
+   public override int Fuel
+   {
+      get { return base.Fuel; }
+      set
+      {
+            if (value > 100)
+            {
+               HeeftVolleTank = true;
+            }
+            base.Fuel = value;
+      }
+   }
+}
+```
+
+{% hint style='tip' %}
+Indien je ``override`` intypt in Visual Studio en met autocompletion vervolledig dan zal je zien dat VS zogenaamde Expression Body Member syntax (herkenbaar aan de `` =>``) gebruikt om properties te overriden. Deze syntax behandelen we kort in de appendix van dit boek. 
+
+**Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
+{% endhint %}
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

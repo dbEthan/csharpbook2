@@ -20,16 +20,16 @@ Deze introductie doet uitschijnen dat overerving enkel z'n nut heeft om *dubbele
 ## Wat is overerving
 Overerving (**inheritance**) laat ons toe om klassen te specialiseren vanuit een reeds bestaande parent- of basisklasse. Wanneer we een klasse van een andere klasse overerven dan zeggen we dat deze nieuwe klasse een child-klasse of sub-klasse is van de bestaande parent-klasse of super-klasse.
 
-De child-klasse kan alles wat de parent-klasse kan, maar de nieuwe klasse kan nu ook extra specialisatie code krijgen.
+De child-klasse kan alles wat de parent-klasse kan, maar de nieuwe klasse kan nu ook extra specialisatie-code krijgen. Dit is exact hetzelfde in de echte wereld waarin de evolutie van soorten ervoor zorgt dat een bepaalde soort, dankzij evolutie,  steeds meer specialisaties bijkrijgt tegenover z'n voorgangers.
 
 
 ### Is-een relatie
 
 Wanneer twee klassen met behulp van een "x is een y"-relatie kunnen beschreven worden dan weet je dat overerving mogelijk.
 
-* Een paard **is een** dier (paard = child-klasse, dier= parent-klasse)
-* Een tulp **is een** plant
-* Zowel een een dier als een plant zijn levende wezens
+* Een paard **is een** dier (paard = child-klasse, dier= parent-klasse).
+* Een tulp **is een** plant.
+* Zowel een een dier als een plant zijn levende wezens.
 
 {% hint style='warning' %}
 Opgelet: wanneer we "x **heeft een** y" zeggen gaat het **niet** over overerving, maar over compositie wat we in een later hoofdstuk zullen bekijken. 
@@ -39,7 +39,7 @@ Opgelet: wanneer we "x **heeft een** y" zeggen gaat het **niet** over overerving
 {% hint style='warning' %}
 Het is niet omdat 2 klassen delen gelijkaardige (of dezelfde) code hebben dat hier dus automatisch overerving van toepassing is. Enkel indien er een realistische "is een"-relatie bestaat kan overerving toegepast worden.
 
-Uiteraard is de kans wel groot dat er "een oplossing" voor je dubbele code is, zelfs wanneer er geen "is een"-relatie bestaat. Meestal beland je dan bij generics of compositie (zie verder) als oplossing van je probleem.
+Uiteraard is de kans wel groot dat er "een oplossing" voor je dubbele code is, zelfs wanneer er geen "is een"-relatie bestaat. Meestal beland je dan bij generics (zie appendix) of compositie (zie verder) als mogelijke oplossing van je probleem.
 {% endhint %}
 
 ### Overerving beschrijven
@@ -49,12 +49,12 @@ In UML-notatie duiden we een overervings-relatie aan met een pijl van van de chi
 
 En als we het voorbeeld van de mens en z'n voorgangers nemen dan zou een vereenvoudigd UML-schema er als volgt uitzien:
 
-![](../assets/7_overerving/homo.png)
+![Oververing van onze soort.](../assets/7_overerving/homo.png)
 
 
 ## Overerving in C#
 
-Overving in C# duid je aan met behulp van het dubbele punt(:) bij de klassedefinitie, als volgt
+Overving in C# duid je aan met behulp van het dubbele punt(:) bij de klassedefinitie, als volgt:
 
 ```java
 class Paard : Dier
@@ -71,7 +71,7 @@ class Dier
 }
 ```
 
-Objecten van het type ``Dier`` kunnen enkel de ``Eet``-methode aanroepen. Objecten van het type ``Paard`` kunnen de ``Eet``-methode aanroepen én ze hebben ook een property ``KanHinnikken``:
+We zeggen dus dat ``Paard`` overerft van de klasse ``Dier``. Het paard is dus een specialisatie van dier. Objecten van het type ``Dier`` kunnen enkel de ``Eet``-methode aanroepen. Objecten van het type ``Paard`` kunnen de ``Eet``-methode aanroepen én ze hebben ook een property ``KanHinnikken``. Een paard kan dus alles wat een dier kan en wat het zelf kan. Een dier kan enkel wat het zelf kan:
 
 ```java
 Dier aDier = new Dier();
@@ -88,9 +88,9 @@ aDier.KanHinnikken = false; //!!! zal niet werken!
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/gotopolice.png)
-Ik heb weinig te doen. Dus nu begint de auteur mij al in te schakelen voor alternatieve uitleg. Ach ja, zolang ik brood op de plank leg zal m'n partner niet klagen!
+Ik heb weinig te doen. Dus nu begint de auteur mij al in te schakelen voor alternatieve uitleg. Ach ja, zolang ik voor brood op de plank zorg zal m'n partner niet klagen!
 
-Als we de "kennis" die in dit en het vorige boek zouden moeten programmeren, dan zou overerving ons ook kunnen helpen. Je kan dit boek onmogelijk begrijpen zonder de kennis van boek 1, Zie Scherp. Dus eigenlijk is dit boek een specialisatie van boek 1: de kennis van van boek 1 zit hierin vervat, maar wordt uitgebreid/gespecialiseerd met deze van boek 2.
+Als we de "kennis" die in dit en het vorige boek zouden moeten programmeren, dan zou overerving ons ook kunnen helpen. Je kan dit boek onmogelijk begrijpen zonder de kennis van boek 1, Zie Scherp. Dus **eigenlijk is dit boek een specialisatie van boek 1**: de kennis van van boek 1 zit hierin vervat, maar wordt uitgebreid/gespecialiseerd met deze van boek 2.
 
 We zouden dus kunnen schrijven:
 
@@ -106,20 +106,16 @@ class KennisZieScherper: KennisZieScherp
 }
 ```
 
-Man, man, soms denk ik dat de auteur van beide boeken high wordt van z'n eigen code, wat een surreëel gezwam.
+Man, man, soms denk ik dat de auteur van beide boeken high wordt van z'n eigen code, wat een gezwam.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
 
 
-### Multiple inheritance
-
-In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen.
-
 ### Transitief
 
-Overerving in C# is transitief, dit wil zeggen dat de child-klasse ALLES overerft van de parent-klasse: methoden, properties, etc.
+**Overerving in C# is transitief, dit wil zeggen dat de child-klasse ALLES overerft van de parent-klasse: methoden, properties, etc.**
 
 Dit kleine, korte zinnetje herbergt aardig wat kracht. Dankzij overerving kunnen we onze klasse dus erg proper (en kort) houden indien er een "is een" relatie bestaat. Er zijn echter ook enkele kanttekeningen aangaande overerving die we in de komende secties uit te doeken zullen doen. 
 
@@ -139,7 +135,7 @@ Beeld je in dat je volgende klassediagramma hebt vastgelegd:
 ![](../assets/7_overerving/klasgebouwen.png)
 
 De objecten in het geheugen zullen er dan als volgt uitzien:
-![We zien duidelijk dat een Appartement-object dus bestaat uit 2 delen: het Gebouw en de specialisatie Appartement](../assets/7_overerving/gebouwobjecten.png)
+![We zien duidelijk dat een Appartement-object dus bestaat uit 2 delen: het Gebouw en de specialisatie Appartement.](../assets/7_overerving/gebouwobjecten.png)
 
 Indien we nu 2 objecten aanmaken
 ```java
@@ -150,7 +146,7 @@ En vervolgens kijken we hoe dit er in het geheugen uitziet:
 
 ![](../assets/7_overerving/overervinggeheugen.png)
 
-Ook hier zien we duidelijk dat dus een ``Villa`` object alle "code" in zich heeft die zowel in de klasse ``Villa`` staat (de specialisatie) alsook die waarvan wordt overgeërfd, ``Huis``. Bijgevolg heeft ``groteVilla`` dus ook de "code" van ``Gebouw`` bestaat in de villa dankzij de transitiviteits-eigenschap van overerving. 
+Ook hier zien we duidelijk dat dus een ``Villa`` object alle "code" in zich heeft die zowel in de klasse ``Villa`` staat (de specialisatie) alsook die waarvan wordt overgeërfd, ``Huis``. Bijgevolg heeft ``groteVilla`` dus ook de "code" van ``Gebouw`` "in zich" dankzij de transitiviteits-eigenschap van overerving. 
 
 Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de variabele of methode origineel toe hoort. Als er dus in de klasse ``Huis`` een variabele ``private bool heeftDeurbel`` was, dan zal de code in de klasse ``Villa`` daar niet aan geraken:
 
@@ -164,7 +160,8 @@ Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de
 <!---NOBOOKEND--->
 
 
-### Protected
+
+### ``protected``
 
 Ook al is overerving transitief, hou er rekening mee dat private variabelen en methoden van de parent-klasse NIET rechtstreeks aanroepbaar zijn in de child-klasse. Private geeft aan dat het element enkel in de klasse zichtbaar is:
 
@@ -183,7 +180,7 @@ class Dier
 }
 ```
 
-Je kan dit oplossen door de **``protected``** access modifier ipv ``private`` te gebruiken. Met ``protected`` geef je aan dat het element enkel zichtbaar is binnen de klasse **en** binnen child-klassen:
+Je kan dit oplossen door de **``protected``** access modifier ipv ``private`` te gebruiken. Met ``protected`` geef je aan dat het element enkel zichtbaar is binnen de klasse **én** binnen child-klassen:
 
 ```java
 class Paard: Dier
@@ -199,8 +196,11 @@ class Dier
    protected int leeftijd;
 }
 ```
+### Multiple inheritance
 
-### Sealed
+In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen. Het is in C# dus niet mogelijk om een klasse ``Mens`` te maken die tegelijkertijd overerft van de klasse ``Aap`` en van de klasse ``Tekening``(om maar iets te zeggen). 
+
+### ``sealed``
 
 Soms wil je niet dat van een klasse nog nieuwe klassen kunnen overgeërfd worden. Je lost dit op door het keyword ``sealed`` voor de klasse te zetten:
 

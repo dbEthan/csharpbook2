@@ -1,15 +1,15 @@
 ## Virtual en Override
 Het is fijn dat onze child-klasse alles kan dat onze parent-klasse doet. Maar soms is dat beperkend:
-* Mogelijk wil je een bestaande methode van de parent-klasse uitbreiden/aanvullen met extra functionaliteit
-* Soms wil je gewoon de volledige implementatie van een methode of property herschrijven in je child-klasse
+* Mogelijk wil je een bestaande methode van de parent-klasse uitbreiden/aanvullen met extra functionaliteit.
+* Soms wil je gewoon de volledige implementatie van een methode of property herschrijven in je child-klasse.
 
-De keywords ``virtual`` en ``override`` gaan je hiermee kunnen helpen.
+**De keywords ``virtual`` en ``override`` gaan je hiermee kunnen helpen.**
 
 ### De werking van child-klassen aanpassen
 
 Om te voorkomen dat child-klassen zomaar eender welke methode of property van de parent-klasse kunnen aanpassen gaan we de hulp van het ``virtual`` keyword inroepen. Standaard is het geen goede gewoonte om de bestaande werking van een klasse in de child-klasse aan te passen: beeld je in dat je een essentieel stuk code aanpast waardoor je hele klasse plots niet meer werkt!
 
-Soms willen we echter kunnen aangeven dat de implementatie (code) van een property of methode in een parent-klasse door child-klassen mag aangepast worden. Dit geven we aan met het  **virtual** keyword. En we zeggen hiermee aan zij die willen overerven van deze klasse: "de werking van deze methode of property (waar ``virtual`` voor staat) mag je in je child-klasse uitbreiden of aanpassen."
+Soms willen we echter kunnen aangeven dat de implementatie (code) van een property of methode in een parent-klasse door child-klassen mag aangepast worden. Dit geven we aan met het  **virtual** keyword. En we zeggen hiermee aan zij die willen overerven van deze klasse: *"de werking van deze methode of property (waar ``virtual`` voor staat) mag je in je child-klasse uitbreiden of aanpassen."*
 
 Vervolgens dient de child-klasse het keyword ``override`` te gebruiken om expliciet aan te geven dat er een methode of property komt wiens werking die van de parent-klasse zal wijzigen.
 
@@ -19,7 +19,7 @@ Enkel indien een element met ``virtual`` werd aangeduid, kan je deze dus met ``o
 
 ### Een voorbeeld met vliegende objecten
 
-Stel je voor dat je een applicatie hebt met 2 klassen, ``Vliegtuig`` en ``Raket``. Een raket is een vliegtuig, maar kan veel hoger vliegen dan een vliegtuig:
+Stel je voor dat je een applicatie hebt met 2 klassen, ``Vliegtuig`` en ``Raket``. Een raket is een vliegtuig, maar kan veel hoger vliegen dan een vliegtuig. Omdat we weten dat potentiële childklassen op een andere manier zullen willen vliegen, zullen we de methode ``Vlieg`` ``virtual`` zetten:
 
 ```java
 class Vliegtuig
@@ -59,10 +59,10 @@ Het vliegtuig vliegt rustig door de wolken.
 Enkel ``public`` methoden (en properties) kan je ``virtual`` instellen!
 {% endhint %}
 
-Momenteel doet het ``virtual`` keywords niets. Het is enkel een signaal aan mede-programmeurs: "hey, als je wilt mag je de werking van deze methode aanpassen als je van deze klasse overerft."
+Momenteel doet het ``virtual`` keyword niets. Het is enkel een signaal aan mede-programmeurs: *"hey, als je wilt mag je de werking van deze methode aanpassen als je van deze klasse overerft."*
 
 Een raket is een vliegtuig, toch vliegt het anders. We willen dus de methode ``Vlieg`` anders uitvoeren voor een raket. Daar hebben we **override** voor nodig. Door override voor een methode in de child-klasse te plaatsen zeggen we "gebruik deze implementatie en niet die van de parent klasse."
-**Je kan enkel overriden indien de respectievelijke methode of property in de parent-klasse als virtual werd aangeduid**
+**Je kan enkel overriden indien de respectievelijke methode of property in de parent-klasse als virtual werd aangeduid.**
 
 ```java
 class Raket:Vliegtuig
@@ -94,47 +94,13 @@ Indien je iets ``override`` moet de signatuur van je methode (of property) uiter
 {% endhint %}
 
 
-### Properties overriden
 
-Ook properties kan je virtual ``instellen`` en ``override``'n. 
+
 
 {% hint style='tip' %}
-De autocompletion indien je ``override`` intypt in Visual Studio gebruikt Expression Body Member syntax (herkenbaar aan de `` =>``) om properties te overriden. Deze syntax behandelen we kort in de appendix van dit boek. 
-
-**Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
+Ook properties kan je ``virtual`` instellen en ``override``'n. We gaan dit verderop tonen nadat we het ``base`` keyword uit de doeken hebben gedaan.
 {% endhint %}
 
-Stel dat je volgende klasse hebt:
-
-```java
-    class Auto
-    {
-        virtual public int Fuel { get; set; }
-    }
-```
-
-We maken nu een meer luxueuze auto die een lichtje heeft dat aangaat wanneer de benzine-tank vol genoeg is, dit kan via ``override``.
-
-
-```java
-class LuxeAuto : Auto
-{
-   public bool HeeftVolleTank { get; set; }
-
-   public override int Fuel
-   {
-      get { return base.Fuel; }
-      set
-      {
-            if (value > 100)
-            {
-               HeeftVolleTank = true;
-            }
-            base.Fuel = value;
-      }
-   }
-}
-```
 
 <!---NOBOOKSTART--->
 # Kennisclip

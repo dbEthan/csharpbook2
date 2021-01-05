@@ -1,21 +1,21 @@
-## Abstract
+## Abstracte klassen
 
 Aan de start van dit boek beschreven we volgende 2 duidelijke definities:
-* **Een klasse** is een beschrijving en verzameling van dingen (objecten) met soortgelijke eigenschappen
-* Een individueel **object** is een **instantie** van een klasse
+* Een **klasse** is een beschrijving en verzameling van dingen (objecten) met soortgelijke eigenschappen.
+* Een individueel **object** is een **instantie** van een klasse.
 
-Niemand die zich hier vragen bij stelde? Als ik in het echte leven zeg:"Geef mij eens de beschrijving van een meubel." Wat voor soort meubel zie je voor je bij het lezen van deze zin? Een tafel? Een kast? Een zetel? Een bed? 
+Niemand die zich hier vragen bij stelde? Als ik in het echte leven zeg: "Geef mij eens de beschrijving van een meubel." Wat voor soort meubel zie je voor je bij het lezen van deze zin? Een tafel? Een kast? Een zetel? Een bed? 
 
-En wat zie je voor je als ik vraag om een "geometrische figuur" in te beelden. Een cirkel? Een rechthoek? Een kubus? Een buckyball? Kortom, er zijn in het leven ook soms eerder abstracte verzamelingen dingen die niet op zich in objecten kunnen gegoten worden zonder meer informatie. Toch is het concept "geometrische figuur" een belangrijk concept: we weten dat alle geometrische figuren een gemeenschappelijke definitie hebben, namelijk (met dank aan Encyclo.nl) "Twee- of meerdimensionale grafische elementen waarvan de vorm wiskundig te berkenen valt." En dus is er ook een bestaansreden voor een klaase ``GeometrischeFiguur``. Objecten van deze, abstracte, klasse maken daarentegen lijkt ons uit ten boze.
+En wat zie je voor je als ik vraag om een "geometrische figuur" in te beelden. Een cirkel? Een rechthoek? Een kubus? Een buckyball? Kortom, er zijn in het leven ook soms eerder abstracte verzamelingen dingen die niet op zich in objecten kunnen gegoten worden zonder meer informatie. Toch is het concept "geometrische figuur" een belangrijk concept: we weten dat alle geometrische figuren een gemeenschappelijke definitie hebben, namelijk (met dank aan Encyclo.nl) dat het *twee- of meerdimensionale grafische elementen zijn waarvan de vorm wiskundig te berkenen valt.* **En dus is er ook een bestaansreden voor een klasse ``GeometrischeFiguur``. Objecten van deze, abstracte, klasse maken daarentegen lijkt ons uit ten boze.**
 
 Het is dit concept, **abstracte klasse** dat we in dit hoofdstuk uit te doeken gaan doen. Het laat ons toe klassen te definiëren die niet niet kunnen geïnstantieerd worden, maar die dus wel dienst kunnen doen als parentklasse voor andere klassen.
 
 
-### Abstracte klassen
+### Abstracte klassen in C#
 
 Laten we voorgaande eens praktisch binnen C# bekijken. Soms maken we dus een parent-klasse waar op zich geen instanties van kunnen gemaakt worden: denk aan de parent-klasse ``Dier``. Subklassen van Dier kunnen ``Paard``, ``Wolf``, etc zijn. Van ``Paard`` en ``Wolf`` is het logisch dat je instanties kan maken (echte paardjes en wolfjes) maar van 'een dier'? Hoe zou dat er uit zien.
 
-Met behulp van het **``abstract``** kunnen we aangeven dat een klasse abstract is: je kan overerven van deze klasse, maar je kan er geen instanties van aanmaken.
+Met behulp van het keyword **``abstract``** kunnen we aangeven dat een klasse abstract is: **je kan overerven van deze klasse, maar je kan er geen instanties van aanmaken.**
 
 We plaatsen ``abstract`` voor de klasse definitie om dit aan te duiden.
 
@@ -23,7 +23,7 @@ Een voorbeeld:
 ```java
 abstract class Dier
 {
-  public int Name {get;set;}
+    public int Name {get;set;}
 }
 ```
 
@@ -33,12 +33,12 @@ Maar, we mogen dus wel klassen overerven van deze klasse en instanties van deze 
 ```java
 class Paard: Dier
 {
-//...
+    //...
 }
 
 class Wolf: Dier
 {
- //..
+    //..
 }
 ```
 En dan zal dit wel werken: ``Wolf wolfje = new Wolf();``
@@ -50,7 +50,7 @@ In het begin lijkt ``abstract`` een beperkende factor: je kan minder dan ervoor.
 {% endhint %}
 
 ### Abstracte methoden
-Het is logisch dat we mogelijk ook bepaalde zaken in de abstracte klasse als ``abstract`` kunnen aanduiden. Beeld je in dat je een methode "MaakGeluid" hebt in je klasse Dier. Wat voor een geluid maakt 'een dier'? We kunnen dus ook geen implementatie (code) geven in de abstracte parent klasse. 
+Het is logisch dat we mogelijk ook bepaalde zaken in de abstracte klasse als ``abstract`` kunnen aanduiden. Beeld je in dat je een methode ``MaakGeluid`` hebt in je klasse ``Dier``. Wat voor een geluid maakt 'een dier'? We kunnen dus ook geen implementatie (code) geven in de abstracte parent klasse, maar willen wel zeker ervoor zorgen dat alle child-klassen van ``Dier`` geluid kunnen maken, op wat voor manier dan ook.
 
 Via abstracte methoden geven we dit aan: we hoeven enkel de methode signature te geven, met ervoor ``abstract``:
 ```java
@@ -60,12 +60,12 @@ abstract class  Dier
 }
 ```
 
+Door het keyword ``abstract`` **zijn child-klassen verplicht deze abstracte methoden te overriden!** 
+
 {% hint style='tip' %}
-Merk op dat er geen accolades na de signature komen.
+Merk op dat er geen codeblock-accolades na de signature van abstracte methodes komt.
 {% endhint %}
 
-
-Child-klassen **zijn verplicht deze abstracte methoden te overriden**.
 
 De Paard-klasse wordt dan:
 ```java
@@ -93,7 +93,7 @@ Het zou heel vreemd zijn om objecten in het leven te kunnen roepen die letterlij
 
 ### Abstracte properties
 
-Properties kunnen ``virtual`` gemaakt, en dus ook ``abstract``. Net zoals bij abstract methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. Volgende voorbeeld toont hoe dit werkt:
+Properties kunnen ``virtual`` gemaakt, en dus ook ``abstract``. Net zoals bij abstracte methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. Volgende voorbeeld toont hoe dit werkt:
 
 ```java
     abstract class Dier
@@ -104,7 +104,9 @@ Properties kunnen ``virtual`` gemaakt, en dus ook ``abstract``. Net zoals bij ab
     class Olifant : Dier
     {
         public override int MaxLeeftijd {
-            get { return 100; }
+            get { 
+                return 100; 
+                }
         }
     }
 ```

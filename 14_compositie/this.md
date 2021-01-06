@@ -1,8 +1,8 @@
 ## Het ``this`` keyword
 
-Je zult in je zoektocht naar online antwoorden mogelijk al een paar keer het ``this`` keyword zijn tegengekomen. Dit keyword kan je aanroepen in een object om de referentie van het object terug te krijgen. Met andere woorden: het laat toe dat een object "zichzelf" kan aanroepen. Dat klinkt vreemd, maar heeft 2 duidelijke gebruiken:
-* Het laat toe dat een object zichzelf kan meegeven als actuele parameter aan een methode
-* Het laat toe instantievariabelen en properties aan te roepen van het object die mogelijk dezelfde naam hebben als een lokale variabele
+Je zult in je zoektocht naar online antwoorden mogelijk al een paar keer het ``this`` keyword zijn tegengekomen. **Dit keyword kan je aanroepen in een object om de referentie van het object terug te krijgen.** Met andere woorden: het laat toe dat een object "zichzelf" kan aanroepen. Dat klinkt vreemd, maar heeft 2 duidelijke gebruiken:
+* Het laat toe dat een object zichzelf kan meegeven als actuele parameter aan een methode.
+* Het laat toe instantievariabelen en properties aan te roepen van het object die mogelijk dezelfde naam hebben als een lokale variabele.
 
 
 ### Aanroepen van instantievariabelen met zelfde naam
@@ -13,7 +13,7 @@ Wanneer je ``this`` gebruikt binnen een klasse, dan zal je zien dat bij het schr
 
 Enerzijds ben je vrij om altijd ``this`` te gebruiken wanneer je eender wat van de klasse zelf wilt bereiken. Vooral in oudere code-voorbeelden zal je dat nog vaak zien gebeuren.
 
-Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteerd met een lokale element. Volgende voorbeeld toont waarom dit belangrijk kan zijn:
+Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteert met een lokale variabele dat dezelfde naam heeft. Volgende voorbeeld toont waarom dit belangrijk kan zijn:
 
 ![](../assets/7_overerving/thisinst.png)
 
@@ -48,4 +48,9 @@ class Werknemer
 }
 ```
 
-Op deze manier geeft het object waarop je ``VraagPromotie`` op aanroept zichzelf mee als actuele parameter aan ``Management.PromoveerWerknemer()``.
+Op deze manier geeft het object waarop je ``VraagPromotie`` op aanroept zichzelf mee als actuele parameter aan ``Management.PromoveerWerknemer()``. Dit laat dus toe dat een werknemer zelf om promotie kan vragen:
+
+```java
+Werknemer francis = new Werknemer();
+francis.VraagPromotie();
+```

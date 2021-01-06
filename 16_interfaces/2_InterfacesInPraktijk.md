@@ -1,6 +1,6 @@
 ## Bestaande interfaces in .NET
 
-De bestaande .NET klassen gebruiken vaak interfaces om bepaalde zaken uit te voeren. Zo heeft .NET tal van interfaces gedefiniëerd (bv. ``IEnumerable``, ``IDisposable``, ``IList``, ``IQueryable`` etc.) waar je zelfgemaakte klassen mogelijk aan moeten voldoen indien ze bepaalde bestaande methoden wensen te gebruiken. Een typisch voorbeeld is het gebruik van de ``Array.Sort`` methode. Hier wordt het echte nut van interfaces erg duidelijk: de ontwikkelaars van .NET kunnen niet voorspellen hoe andere ontwikkelaars hun bibliothekeken gaan gebruiken. Via interfaces geven ze als het ware krijtlijnen en vanaf dan moeten de ontwikkelaars zelf maar bepalen hoe hun nieuwe klassen zullen samenwerken met die van .NET
+De bestaande .NET klassen gebruiken vaak interfaces om bepaalde zaken uit te voeren. Zo heeft .NET tal van interfaces gedefiniëerd (bv. ``IEnumerable``, ``IDisposable``, ``IList``, ``IQueryable`` etc.) waar je zelfgemaakte klassen mogelijk aan moeten voldoen indien ze bepaalde bestaande methoden wensen te gebruiken. Een typisch voorbeeld is het gebruik van de ``Array.Sort`` methode. Hier wordt het echte nut van interfaces erg duidelijk: de ontwikkelaars van .NET kunnen niet voorspellen hoe andere ontwikkelaars hun bibliotheken gaan gebruiken. Via interfaces geven ze als het ware krijtlijnen en vanaf dan moeten de ontwikkelaars zelf maar bepalen hoe hun nieuwe klassen zullen samenwerken met die van .NET.
 
 
 ### Sorteren met Array.Sort en de IComparable interface
@@ -18,7 +18,7 @@ class Land
 {
     public string Naam {get;set;}
     public int Oppervlakte {get;set;}
-    public int Inwoners{get;set;}
+    public int Inwoners {get;set;}
 }
 ```
 We plaatsen 3 landen in een array:
@@ -55,9 +55,9 @@ Daarbij moet de methode een ``int`` teruggeven als volgt:
 
 | Waarde        | Betekenis           |
 |:------------- |:-------------|
-| Getal kleiner dan 0      | Huidig object komt **voor** het ``obj`` dat als parameter werd meegegeven |
-|  0      | Huidig object komt op **dezelfde** positie als  ``obj``  werd meegegeven |
-| Getal groter dan 0      | Huidig object komt **na** het ``obj`` dat als parameter werd meegegeven |
+| Getal kleiner dan 0      | Huidig object komt **voor** het ``obj`` dat als parameter werd meegegeven. |
+|  0      | Huidig object komt op **dezelfde** positie als  ``obj``  werd meegegeven. |
+| Getal groter dan 0      | Huidig object komt **na** het ``obj`` dat als parameter werd meegegeven. |
 
 De ``Array.Sort`` methode zal werken tegen deze ``IComparable`` interface om juist te kunnen sorteren. Het verwacht dat de klasse in kwestie een ``int`` teruggeeft volgens de afspraken van de tabel hierboven. 
 
@@ -87,7 +87,11 @@ class Land: IComparable
 }
 ```
 
-Nu zal de Sort werken! ``Array.Sort(eurolanden);`` . De ``Sort`` methode kan nu ieder object bevragen via de ``CompareTo`` methode en zo volgens een eigen sorteeralgoritme de landen in de juiste volgorde plaatsen. 
+Nu zal de ``Sort`` werken:
+```java
+Array.Sort(eurolanden);
+```
+De ``Sort()``-methode kan nu ieder object bevragen via de ``CompareTo()``-methode en zo volgens een eigen sorteeralgoritme de landen in de juiste volgorde plaatsen. 
 
 Stel dat vervolgens nog beter willen sorteren: *we willen dat landen met een gelijke oppervlakte, op hun aantal inwoners gesorteerd worden*:
 ```java

@@ -1,13 +1,17 @@
 ## Polymorfisme in de praktijk
 
-Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer" <!---[^voetnoot]--->
+Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer"
+<!---[^stack]--->.
 
-<!---[^voetnoot]Dit voorbeeld is gebaseerd op een oplossing op Stackoverflow: https://stackoverflow.com/questions/1031273 ). --->
+
 <!---NOBOOKSTART--->
-Gebaseerd op volgende voorbeeld [StackOverflow](https://stackoverflow.com/questions/1031273 )).
+(Dit voorbeeld is gebaseerd op een [StackOverflow](https://stackoverflow.com/questions/1031273 ) post).
 <!---NOBOOKEND--->
 
-De EersteMinister heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zake en economie). Zonder de voordelen van polymorfisme zou de klasse EersteMinister er zo kunnen uitzien (**slechte manier**!):
+De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zake en economie). Zonder de voordelen van polymorfisme zou de klasse ``EersteMinister`` er zo kunnen uitzien (**slechte manier**!):
+
+<!---[^stack]Dit voorbeeld is gebaseerd op een oplossing op StackOverflow: https://stackoverflow.com/questions/1031273 ).--->
+
 
 ```java
 public class EersteMinister
@@ -61,7 +65,7 @@ Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wa
 
 **Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
 
-1. We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
+**Ten eerste:** We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
 
 ```java
 abstract class Minister
@@ -93,7 +97,7 @@ class MinisterVanEconomie:Minister
 }
 ```
 
-2° Het leven van de EersteMinister wordt plots véél makkelijker. Hij kan gewoon de ``Adviseer`` methode aanroepen van iedere minister:
+**Ten tweede:**  Het leven van de EersteMinister wordt plots véél makkelijker. Hij kan gewoon de ``Adviseer`` methode aanroepen van iedere minister:
 
 ```java
 public class EersteMinister
@@ -112,7 +116,7 @@ public class EersteMinister
 }
 ```
 
-3° En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen:
+**En ten derde:** En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen:
 
 ```java
 public class EersteMinister

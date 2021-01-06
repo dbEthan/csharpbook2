@@ -1,10 +1,10 @@
-## ``is`` en ``as``
+## De ``is`` en ``as`` keywords
 Dankzij polymorfisme kunnen we dus child en parent-objecten door elkaar gebruiken. De keywords ``is`` en ``as`` gaan ons helpen om door het bos van objecten het bos nog te zien. 
 
 ### Het ``is`` keyword
 Het ``is`` keyword is een operator die je kan gebruiken om te weten te komen of:
-* Een object van een bepaalde datatype is
-* Een object een bepaalde interface bevat (zie volgende hoofdstuk)
+* Een object van een bepaalde datatype is.
+* Een object een bepaalde interface bevat (zie volgende hoofdstuk).
 
 De ``is`` operator heeft twee operanden nodig en geeft een bool terug als resultaat. De linkse operator moet een variabele zijn, de rechtse een datatype. Bijvoorbeeld:
 
@@ -56,13 +56,14 @@ foreach (var middel in alleMiddelen)
 {
     if(middel is Auto)
     {
-        //Doe iets met middel
+        //Doe iets met het huidige voertuig
     }
 }
 ```
 
 ### ``as`` keyword met voorbeeld
 Wanneer we objecten van het ene naar het andere type willen omzetten dan doen we dit vaak met behulp van casting:
+
 ```java
 Student fritz = new Student();
 Mens jos = (Mens)fritz;
@@ -91,21 +92,12 @@ if(jos != null)
 }
 ```
 
-<!---NOBOOKSTART--->
 {% hint style='warning' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/Autoe.png)
-
 De ``is`` en ``as`` keywords laten toe om meer dynamische code te schrijven. Mogelijk weet je niet op voorhand wat voor datatype je code zal moeten verwerken en wordt polymorfisme je oplossing. Maar dan? Dan komen ``is`` en ``as`` to the rescue!
 
-Je , dank zij polymorfisme, gevuld lijst van objecten van allerhande typen wordt nu beheersbaarder. Je kan nu , met ``is`` een element bevragen of hij van een bepaald type is. Vervolgens kan je met ``as`` het element even 'omzetten' naar z'n effectieve type (en dus meer doen dan wat hij kan in de vermomming van z'n eigen basistype).
-
-<!---{/aside}--->
-<!---NOBOOKSTART--->
+Je , dankzij polymorfisme, gevulde lijst van objecten van allerhande typen wordt nu beheersbaarder. Je kan nu met ``is`` een element bevragen of het van een bepaald type is. Vervolgens kan je met ``as`` het element even 'omzetten' naar z'n effectieve type (en dus meer doen dan wat hij kan in de vermomming van z'n eigen basistype).
 {% endhint %}
-<!---NOBOOKEND--->
+
 
 <!---NOBOOKSTART--->
 # Kennisclip

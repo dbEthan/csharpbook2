@@ -5,14 +5,14 @@
 
 De latijnse naam polymorfisme bestaat uit 2 delen: *poly* en *morfisme*, letterlijk dus "meerdere vormen". En geloof het of niet, deze naam dekt de lading ongelooflijk goed. 
 
-Polymorfisme laat ons toe dat objecten kunnen behandeld worden als objecten van de klasse waar ze van overerving. Dit klinkt logisch, maar zoals je zo meteen zal zien zal je hierdoor erg krachtige code kunnen schrijven. Anderzijds zorgt polymorfisme er ook voor dat het ``virtual`` en ``override`` concept bij methoden en properties ook effectief werkt. Het is echter vooral de eerste eigenschap waar we in dit hoofdstuk dieper op in zullen gaan.
+Polymorfisme laat ons toe dat objecten kunnen behandeld worden als objecten van de klasse waar ze van overerven. Dit klinkt logisch, maar zoals je zo meteen zal zien zal je hierdoor erg krachtige code kunnen schrijven. Anderzijds zorgt polymorfisme er ook voor dat het ``virtual`` en ``override`` concept bij methoden en properties ook effectief werkt. Het is echter vooral de eerste eigenschap waar we in dit hoofdstuk dieper op in zullen gaan.
 
 
 ## De "is een"-relatie in actie
 
-Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we al child-objecten als één geheel zouden kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat bijvoorbeeld alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem.
+Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we alle child-objecten als allemaal als hetzelfde type, dat van hun parent, kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat bijvoorbeeld alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem. 
 
-Stel dat we een een aantal Dier-gerelateerde klassen hebben die allemaal op hun eigen manier een geluid voortbrengen:
+Stel dat we een een aantal van ``Dier`` afgeleide klassen hebben die allemaal op hun eigen manier een geluid voortbrengen:
 ```java
 abstract class  Dier
 {
@@ -48,7 +48,7 @@ Console.WriteLine(anotherAnimal.MaakGeluid()); //Hinnikhinnik
 
 Alhoewel er een volledig ``Varken`` en ``Paard`` object in de heap wordt aangemaakt (en blijft bestaan), zullen variabelen van het type ``Dier`` enkel die dingen kunnen aanroepen die in de klasse ``Dier`` gekent zijn. Dankzij ``override`` zorgen we er echter voor dat ``MaakGeluid`` wel die code uitvoert die specifiek bij het child-type hoort:
 
-![Het gearceerde deel is dus niet bereikbaar voor de 2 variabelen in de stack](../assets/7_overerving/varkenpaard.png)
+![Het gearceerde deel is dus niet bereikbaar voor de 2 variabelen in de stack daar deze van het type ``Dier`` zijn.](../assets/7_overerving/varkenpaard.png)
 
 
 {% hint style='warning' %}

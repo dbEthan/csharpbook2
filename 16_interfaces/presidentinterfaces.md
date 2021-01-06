@@ -14,7 +14,7 @@ interface IMinister
 }
 ```
 
-Vanaf nu kan eender *wie* die deze interface implementeert de ``EersteMinister`` advies geven. Hoera! En daarnaast kan die klasse echter ook nog tal van andere zaken doen. Beeld je bijvoorbeeld een CEO van een bedrijf in die ook minister bij de EersteMinister wilt zijn. De bestaande klasse is bijvoorbeeld:
+Vanaf nu kan eender *wie* die deze interface implementeert de ``EersteMinister`` advies geven. Hoera! En daarnaast kan die klasse echter ook nog tal van andere zaken doen. Beeld je in dat een CEO van een bedrijf ook minister bij de EersteMinister wilt zijn, zoals deze:
 
 ```java
 class MicrosoftCEO: CEO
@@ -29,7 +29,9 @@ class MicrosoftCEO: CEO
     }
 }
 ```
-Nu we de interface ``IMinister`` hebben kunnen we deze klasse aanvullen met deze interface zonder dat de bestaande werken van de klasse moet aangepast worden:
+
+Nu we de interface ``IMinister`` hebben kunnen we deze klasse aanvullen met deze interface zonder dat de bestaande werking van de klasse moet aangepast worden:
+
 ```java
 class MicrosoftCEO: CEO, IMinister
 {
@@ -94,6 +96,8 @@ class MinisterVanMilieu:IMinister
     }
 }
 ```
+
+En bij deze hebben we, dankzij interfaces, compositie en polymorfisme, ervoor gezorgd dat eender wie ``Minister`` kan worden zondat dat hij of zij daarvoor z'n bestaande beroep moet teniet doen. OOP laat ons echt toe de realiteit zo dicht mogelijk te benaderen!
 
 <!---NOBOOKSTART--->
 # Kennisclip

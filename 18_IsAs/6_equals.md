@@ -1,6 +1,6 @@
 ## Is, as en polymorfisme: een krachtige bende
 
-Dankzij polymorfisme hebben we nu met de ``is``en ``as`` keywords handige hulpmiddelen om meer "generieke" methoden te schrijven. Herinner je je nog de ``Equals`` methode die we schreven om 2 studenten te vergelijken toen we leerden dat alle klassen van ``System.Object`` overerfden? Laten we deze code er nog eens bijnemen en verbeteren:
+Dankzij polymorfisme hebben we nu met de ``is`` en ``as`` keywords handige hulpmiddelen om meer "generieke" methoden te schrijven. Herinner je je nog de ``Equals`` methode die we schreven om 2 studenten te vergelijken toen we leerden dat alle klassen van ``System.Object`` overerfden? Laten we deze code er nog eens bijnemen en verbeteren:
 
 ```java
 //In de Student class
@@ -53,7 +53,7 @@ Beide zijn geldige oplossingen.
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
 
-Let's be honest. Als je aan dit punt en geen flauw benul hebt waarom je in godsnaam je hier iets van moet aantrekken, wel dan wordt het dringend tijd om dit boek van voor naar achter, links naar rechts en onder tot boven terug door te nemen ;).
+Let's be honest. Als je aan dit punt en geen flauw benul hebt waarom je in godsnaam je hier iets van moet aantrekken, wel dan wordt het dringend tijd om dit boek van voor naar achter, links naar rechts en onder tot boven terug door te nemen én vervolgens te gaan fietsen...ik bedoel programmeren.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}

@@ -6,7 +6,7 @@ Bekijk zeker de "Fuifsimulator" onderaan bij de videoclips. Deze wordt niet in d
 {% endhint %}
 <!---NOBOOKEND--->
 
-De eigenschappen van polymorfisme en interfaces combineren kan zeer krachtige tot zeer krachtige code resulteren wanneer we dan ook nog eens de``is`` en ``as`` keywords gebruiken zoals we ook al even toonden in de vorige sectie. Als afsluiter van deze lange reis in OOP-land zullen we daarom een voorbeeld tonen waarin de verschillende OOP-concepten samenkomen om, je raadt het nooit, vloekende mensen op het scherm te tonen.
+De eigenschappen van polymorfisme en interfaces combineren kan tot zeer krachtige code resulteren.  Wanneer we dan ook nog eens de ``is`` en ``as`` keywords gebruiken zoals we ook al even toonden in de vorige sectie is het hek helemaal van de dam. Als afsluiter van deze lange reis in OOP-land zullen we daarom een voorbeeld tonen waarin de verschillende OOP-concepten samenkomen om, je raadt het nooit, vloekende mensen op het scherm te tonen.
 
 
 ### Vloekende mensen: Opstart
@@ -99,7 +99,7 @@ for(int i = 0; i<mensjes.Length; i++)
     }
 }
 ```
-Vervolgens kunnen we binnen deze if het huidige object tijdelijk omzetten (casten) naar een ``IVloeker`` object en laten vloeken:
+Vervolgens kunnen we binnen deze ``if`` het huidige object tijdelijk omzetten (casten) naar een ``IVloeker`` object en laten vloeken:
 
 ```java
 if(mensjes[i] is IVloeker)
@@ -111,7 +111,7 @@ if(mensjes[i] is IVloeker)
 
 ### Oplossing 2: ``as`` to the rescue
 
-Het ``as`` keyword kan ook een toffe oplossing geven. Hierbij zullen we het object proberen omzetten via ``as`` naar een ``IVloeker``. Als dit lukt (het object is verschillend van ``null``) dan kunnen we het object laten vloeken:
+Het ``as`` keyword kan ook een toffe oplossing geven. Hierbij zullen we het object proberen om te zetten via ``as`` naar een ``IVloeker``. Als dit lukt (het object is verschillend van ``null``) dan kunnen we het object laten vloeken:
 ```java
 for(int i = 0; i<mensjes.Length; i++)
 {
@@ -134,7 +134,7 @@ for(int i = 0; i<mensjes.Length; i++)
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
 
-Hopelijk hebben voorgaande voorbeelden je een beetje hebben kunnen doen proeven van de kracht van interfaces. Gedaan met ons druk te maken wat er allemaal in een klasse gebeurt. Werk gewoon 'tegen' de interfaces van een klasse en we krijgen de ultieme black-box relevatie (see what I did there? )!
+Hopelijk hebben voorgaande voorbeelden je een beetje hebben kunnen doen proeven van de kracht van interfaces. Gedaan met ons druk te maken wat er allemaal in een klasse gebeurt. Werk gewoon 'tegen' de interfaces van een klasse en we krijgen de ultieme black-box revelatie (see what I did there? )!
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

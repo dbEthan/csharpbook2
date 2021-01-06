@@ -7,12 +7,14 @@ De naam interface kan je letterlijk vertalen als "tussen vlakken". Een interface
 
 Aan de achterkant van je computer (en ook in de pc zelf) zijn tal van hardware-interfaces. Afgesproken manieren om 2 systemen met elkaar te laten communiceren. Zo heb je de USB-aansluiting die toelaat dat een extern systeem met een usb-aansluiting met de computer kan communiceren. Maar ook de HDMI, audio, en andere aansluitingen hanteren interfaces. Zouden er rond deze zaken geen wereldwijde interfaces zijn afgesproken, dan zou je mogelijk telkens op een andere manier je externe harde schijf aan een computer moeten hangen.
 
-### Interfaces in OOP
 {% hint style='warning' %}
 Voor je dolenthousiast wordt, denkende dat je eindelijke grafische applicaties (GUI oftewel Graphical User Interface ) gaat maken, moet ik je helaas teleurstellen. Dit hoofdstuk behandelt het programmeer-concept *interfaces* wat eigenlijk niets te maken heeft met User interfaces. U weze gewaarschuwd.
 {% endhint %}
 
-Dit concept van interfaces uit de echte wereld heeft dus ook een OOP variant. Namelijk de interface tussen 2 (of meer) klassen. Door te beloven dat een klasse aan een bepaalde interface voldoet kunnen alle klassen die deze interface "kennen" met elkaar praten. Een interface in OOP is een beschrijving van publieke methoden en properties die de klasse beloofd te hebben. Net zoals je een fotocamera kunt kopen die de HDMI en USB-interface heeft, zo ook kan je nu een klasse maken die zegt interface , we zeggen maar wat, ``ISecure`` en ``IStreamable`` te hebben.
+
+### Interfaces in OOP
+
+Dit concept van interfaces uit de echte wereld heeft dus ook een OOP variant. Namelijk de interface tussen 2 (of meer) klassen. Door te beloven dat een klasse aan een bepaalde interface voldoet kunnen alle klassen die deze interface "kennen" met elkaar praten. **Een interface in OOP is een beschrijving van publieke methoden en properties die de klasse beloofd te hebben.** Net zoals je een fotocamera kunt kopen die de HDMI en USB-interface heeft, zo ook kan je nu een klasse maken die zegt interface , bijvoorbeeld de interfaces ``ISecure`` en ``IStreamable`` te hebben.
 
 {% hint style='tip' %}
 Interfaces zijn als het ware stempels die we op een klasse kunnen plakken om zo te zeggen "deze klasse gebruikt interface xyz". Gebruikers van de klasse hoeven dan niet de hele klasse uit te spitten en weten dat alle klassen met interface xyz dezelfde publieke properties en methoden hebben. 
@@ -27,7 +29,8 @@ Een interface is niet meer dan een belofte: het zegt enkel welke publieke method
 Een interface is dus eigenlijk als het ware een klein stukje papier waar je op zet "om aan deze interface te voldoen moet je zeker volgende methoden en properties hebben". Kortom, in een interface-bestand niet heel veel. Het is letterlijk de "Dit apparaat is USB 3.0 compatibel"-sticker.
 
 
-Volgende code toont hoe we een interface definiëren in C#. Volgende interface kunnen we gebruiken om in een spel waarin sommige klassen superhelden zijn:
+Volgende code toont hoe we een interface definiëren in C#. Volgende interface kunnen we gebruiken in een spel waarin sommige van de klassen ook aan de Superhelden-interface voldoen:
+
 ```java
 interface ISuperHeld
 {
@@ -36,7 +39,8 @@ interface ISuperHeld
     int Power{get;set;}
 }
 ```
-Enkele opmerkingen hierbij zijn op z'n plaats
+Enkele opmerkingen hierbij zijn op z'n plaats:
+
 * Het woord ``class`` wordt niet gebruikt, in de plaats daarvan gebruiken we ``interface``.
 *  Het is een goede gewoonte om interfaces met een I te laten starten in hun naamgeving.
 *  Methoden en properties gaan niet vooraf van ``public``: interfaces zijn van nature al publiek, dus alle methoden en properties van de interface zijn dat bijgevolg ook.
@@ -51,24 +55,24 @@ Het is in de klassen dat we nu vervolgens verplicht zijn deze methode en propert
 
 
 
-### Interface regels
+#### Interface regels
 
 Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen wil het kunnen zeggen dat het een bepaalde interface heeft. Standaarden impliceert dat er duidelijke afspraken nodig zijn. Bij C# interfaces zijn er enkele belangrijke regels:
-* Je kan geen  instantievariabelen declareren in een interface (dat hoort bij de implementatie)
-* Je kan geen constructors declareren
-* Je kan geen access modifiers specificeren (``public``, ``protected``, etc): alles is public
+* Je kan geen  instantievariabelen declareren in een interface (dat hoort bij de implementatie).
+* Je kan geen constructors declareren.
+* Je kan geen access modifiers specificeren (``public``, ``protected``, etc): alles is ``public``.
 * Je kan nieuwe types (bv ``enum``) in een interface declareren.
 * Een interface kan niet overerven van een klasse, wel van een andere interface.
 
-### Interface UML notatie
+#### Interface UML notatie
 
-Een "lolly" op een klein geeft aan dat deze een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
+Een "lolly" op een klasse geeft aan dat deze klasse een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
 
 ![Interface uml notatie](../assets/9_interfaces/uml.png)
 
 ## Interfaces en klassen
 
-We kunnen nu aan klassen de stempel ``ISuperHeld`` geven zodat programmeurs weten dat die klasse geagarandeert de methoden ``SchietLasers``, ``VerlaagKracht`` en de property ``Power`` zal hebben.
+We kunnen nu aan klassen de stempel ``ISuperHeld`` geven zodat programmeurs weten dat die klasse gegarandeerd de methoden ``SchietLasers``, ``VerlaagKracht`` en de property ``Power`` zal hebben.
 
 Volgende code toont dit:
 ```java
@@ -88,10 +92,10 @@ class Zorro: ISuperHeld
     int Power{get;set;} //interface ISuperHeld
 }
 ```
-Zolang de klasse Zorro niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
+Zolang de klasse ``Zorro`` niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
 
 Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is een interface als het ware een blad papier dat je bovenop je klasse kunt houden. Op het blad staan de methoden en properties beschreven die de interface moet hebben. Als je het blad mooi bovenop een klasse plaatst die de interface beloofd te doen, dan zouden de gaten in het blad mooi bovenop de respectievelijke methoden en properties van de klasse passen.
-![Het UML "lolly'tje" kan je als een haakje beschouwen waaraan de interface benegeld](../assets/9_interfaces/intzorro.png)
+![Het UML "lolly'tje" kan je als een haakje beschouwen waaraan de interface bengelt.](../assets/9_interfaces/intzorro.png)
 ![Vervolgens kunnen we de interface met het haakje aan de klasse hangen](../assets/9_interfaces/intzorro2.png)
 
 
@@ -160,15 +164,7 @@ foreach(var persoon in WerkNemers)
 }
 ```
 
-## Polymorfisme
 
-Een object aanmaken van een interface is natuurlijk onmogelijk. Je object zou flinterdun zijn zonder inhoud. Maar, dankzij polymorfisme kunnen we wel variabelen aanmaken van een interfacetype die een referentie hebben naar een object dat die interface heeft:
-
-```java
-IManager deBaas = new Werknemer();
-```
-
-Op dat moment kunnen we via ``deBaas`` aan het gedeelde van het ``Werknemer`` object dat in de ``IManager`` interface beschreven staat. Krachtig toch! Verderop in dit hoofdstuk gaan we hier dieper op in.
 
 ## Meerder interfaces
 Een nadeel van overerving is dat een klasse maar van 1 klasse kan overerven. Een klasse mag echter wel meerdere interfaces met zich meedragen:
@@ -207,16 +203,24 @@ And if not, niet erg. Samengevat zegt SOLID dat we een bepaalde hoeveelheid abst
 
 Met interfaces kunnen we volgens de SOLID principes programmeren: het boeit ons niet meer wat er in de klasse zit, we kunnen gewoon aan de interfaces van een klasse zien wat hij kan doen. Handig toch! 
 
-Ok, als de helft van bovenstaande zinnen je wat filosofisch overkwamen, don't worry maar geloof ons: als je tegen interfaces kan programmeren i.p.v. klasse dan zal je code vaak een pak beter worden in de long run.
+Ok, als de helft van bovenstaande zinnen je wat filosofisch overkwamen, don't worry, maar geloof ons: als je tegen interfaces in plaats van klassen kan programmeren dan zal je code vaak een pak beter worden in de long run.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
 
-{% hint style='tip' %}
+## Polymorfisme en interfaces
 
-### Toch nog voorbeeld?
+Een object aanmaken van een interface is natuurlijk onmogelijk. Je object zou flinterdun zijn zonder inhoud. Maar, dankzij polymorfisme kunnen we wel variabelen aanmaken van een interfacetype die een referentie hebben naar een object dat die interface heeft:
+
+```java
+IManager deBaas = new Werknemer();
+```
+
+Op dat moment kunnen we via ``deBaas`` aan het gedeelde van het ``Werknemer`` object dat in de ``IManager`` interface beschreven staat. Krachtig toch! 
+
+### Interfaces en polymorfisme in de praktijk
 
 Beeld je in dat je een complexe klasse ``DiskWriter`` hebt die je programma gebruikt om data van en naar de harde schijf te schrijven. De klasse implementeert een interface ``IData`` die twee methoden heeft (``ReadData()`` en ``WriteData``).
 
@@ -227,78 +231,84 @@ Mooi toch!
 
 Volgende code toont dit.
 
-Eerst maken we de nodige writers:
+Dit is de interface die we gaan beschrijven:
 
 ```java
-        interface IData
-        {
-            void ReadData();
-            void WriteData();
-        }
+interface IData
+{
+    void ReadData();
+    void WriteData();
+}
 ```
+
+Vervolgens maken we enkele writers die deze interface gebruiken:
 
 ```java
-       class DiskWriter : IData
-        {
-            public void ReadData()
-            {
-               //Lees van harde schijf
-            }
+class DiskWriter : IData
+{
+    public void ReadData()
+    {
+        //Lees van harde schijf
+    }
 
-            public void WriteData()
-            {
-                //Schrijf naar harde schijf
-            }
+    public void WriteData()
+    {
+        //Schrijf naar harde schijf
+    }
 
-            //Allerlei andere zaken
-        }
+    //Allerlei andere zaken
+}
+
+class InternetWriter: IData
+{
+    public void ReadData()
+    {
+        //Lees van internet
+    }
+
+    public void WriteData()
+    {
+        //Schrijf naar internet
+    }
+}
 ```
 
-```java
-        class InternetWriter: IData
-        {
-            public void ReadData()
-            {
-                //Lees van internet
-            }
+Nu maken we een klasse die effectief die writer gebruikt. De truc zit hem er in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. Beter zelfs: de klasse weet het niet, en hoeft dat ook niet te weten.
 
-            public void WriteData()
-            {
-                //Schrijf naar internet
-            }
-        }
-```
-
-Vervolgens maken we een klasse die effectief die writer gebruikt. De truc zit hem er nu in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. 
 Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. In volgende voorbeeld stellen we dit in via de constructor, maar je zou ook van ``datadoel`` een property kunnen maken:
 
 ```java
-        class Logbook
-        {
-            private IData datadoel;
-            public Logbook(IData doel)
-            { datadoel = doel; }
+class Logbook
+{
+    private IData datadoel;
+    public Logbook(IData doel)
+    { 
+        datadoel = doel; 
+    }
 
-            public void Schrijf()
-            {
-                datadoel.WriteData();
-            }
+    public void Schrijf()
+    {
+        datadoel.WriteData();
+    }
 
-            //etc.
-        }
+    //etc.
+}
 ```
-Vanaf nu kan je logbook-objecten aanmaken die naar verschillende plekken schrijven/lezen zonder dat je IN  ``logbook`` moet weten naar waar dat gebeurt:
+
+Vanaf nu kan je ``Logbook``-objecten aanmaken die naar verschillende plekken schrijven/lezen zonder dat je IN  ``logbook`` moet weten naar waar dat gebeurt:
 
 ```java
-            Logbook naarlokalefile = new Logbook(new DiskWriter());
-            naarlokalefile.Schrijf();
+    Logbook naarlokalefile = new Logbook(new DiskWriter());
+    naarlokalefile.Schrijf();
 
-            Logbook naarInternet = new Logbook(new InternetWriter());
-            naarInternet.Schrijf();
+    Logbook naarInternet = new Logbook(new InternetWriter());
+    naarInternet.Schrijf();
 ```
 
+{% hint style='tip' %}
 Voor de geïnteresseerden, dit concept is een eerste stap naar *Dependency Injection*, een erg krachtig concept dat je nog veel zal tegenkomen in je verdere programmeercarrière, maar wat we niet in dit boek gaan behandelen.
 {% endhint %}
+
 
 <!---NOBOOKSTART--->
 # Kennisclip

@@ -95,7 +95,9 @@ class Zorro: ISuperHeld
 Zolang de klasse ``Zorro`` niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
 
 Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is een interface als het ware een blad papier dat je bovenop je klasse kunt houden. Op het blad staan de methoden en properties beschreven die de interface moet hebben. Als je het blad mooi bovenop een klasse plaatst die de interface beloofd te doen, dan zouden de gaten in het blad mooi bovenop de respectievelijke methoden en properties van de klasse passen.
+
 ![Het UML "lolly'tje" kan je als een haakje beschouwen waaraan de interface bengelt.](../assets/9_interfaces/intzorro.png)
+
 ![Vervolgens kunnen we de interface met het haakje aan de klasse hangen](../assets/9_interfaces/intzorro2.png)
 
 

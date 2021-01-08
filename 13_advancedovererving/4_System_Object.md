@@ -72,6 +72,7 @@ Console.WriteLine(stud1.GetType().Name);
 
 {% hint style='tip' %}
 Je kan in de .NET documentatie altijd opzoeken waar een klasse van overerft. De ``Type`` klasse bijvoorbeeld erft, je raadt het nooit, finaal ook van ``System.Object`` over. Eerst erft ``Type`` over van de ``MemberInfo`` klasse, die op zijn beurt overerft van de oer-klasse.
+
 ![](../assets/7_overerving/typeclass.png)
 
 {% endhint %}

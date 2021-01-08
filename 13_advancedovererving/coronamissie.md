@@ -23,6 +23,7 @@ De klasse heeft géén default constructor. Enkel een overloaded constructor die
 
 
 Maak de klassen van het volgende schema:
+
 ![Klassenschema enclave](../assets/7_overerving/corklassen.png)
 
 Iedere groene klasse heeft:

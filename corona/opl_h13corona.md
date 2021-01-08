@@ -1,4 +1,5 @@
 # Code met uitleg
+
 ![](../assets/infoclip.png)
 
 [De oplossing wordt hier stap voor stap besproken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)

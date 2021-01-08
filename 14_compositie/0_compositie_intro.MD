@@ -105,6 +105,7 @@ PC mijnSuperPC = new PC();
 ```
 
 Dan zien we volgende "beeld":
+
 ![](../assets/6_klassen/pccomp.png)
 
 Compositie wil dus niet zeggen dat je in het geheugen grote *monolitische* stukken  gaat hebben die het samengestelde object voorstellen. Neen, we blijven, dankzij de kracht van referenties, de boel apart houden. Zoals je ziet is het belangrijk te beseffen dat bij compositie én aggregatie het *inner* object op zichzelf in de heap ergens zal gezet worden en dus niet *in* het parent-object komt. Alles dat we dus al wisten in verband met het doorgeven van referenties, de GC, etc. blijft dus nog steeds gelden. Of zoals het hoofdstuk al begon: eigenlijk niets nieuws onder de zon! 

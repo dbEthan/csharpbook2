@@ -82,6 +82,7 @@ class Paard: Dier
 (en idem voor de wolf-klasse uiteraard)
 
 Dit is dus niet hetzelfde als ``virtual`` waar een ``override`` MAG. Bij ``abstract`` MOET je ``override``. We komen dan ook bij het hart van het abstracte klasse concept: ze laten ons toe om, als het ware, klasen te maken waar nog gaten in zitten qua implementatie. Een soort klasse-template die de child-klassen nog verder moeten inkleuren.
+
 ![](../assets/7_overerving/abstracttemplate.png)
 
 {% hint style='warning' %}

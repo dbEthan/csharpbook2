@@ -132,9 +132,11 @@ Alhoewel overerving transitief is, wil dat niet zeggen dat ``private`` variabele
 Tijd om eens te kijken hoe voorgaande er uitziet in de heap en de stack, met een onderwerp dat op m'n lijf geschreven is: een applicatie om aan gebouwbeheer te doen.
 
 Beeld je in dat je volgende klassediagramma hebt vastgelegd:
+
 ![](../assets/7_overerving/klasgebouwen.png)
 
 De objecten in het geheugen zullen er dan als volgt uitzien:
+
 ![We zien duidelijk dat een Appartement-object dus bestaat uit 2 delen: het Gebouw en de specialisatie Appartement.](../assets/7_overerving/gebouwobjecten.png)
 
 Indien we nu 2 objecten aanmaken

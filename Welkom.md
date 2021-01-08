@@ -1,6 +1,7 @@
 # Zie scherper
 
 Een sexy, coole intro moet hier ooit verschijnen. We schrijven die echter pas wanneer al de overige content ook in kannen en kruiken is...wat het nog niet is. Nog even geduld dus!
+
 ![Logo ikke](./assets/me.png)
 
 

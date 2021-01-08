@@ -121,6 +121,7 @@ stud = new Student();
 ```
 
 Het geheugen na lijn 1 ziet er zo uit:
+
 ![](../assets/6_klassen/memzoom1.png)
 
 Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:

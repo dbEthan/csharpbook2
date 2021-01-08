@@ -105,6 +105,7 @@ Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datat
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
+
 #### Klasse "Studenten" of "Student"?
 
 Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wat de klassen en wat de objecten in hun opgave juist zijn.

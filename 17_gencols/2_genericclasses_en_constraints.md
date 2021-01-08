@@ -48,6 +48,7 @@ Meting<Student> m3 = new Meting<Student>(new Student("Tim Dams"));
 Console.WriteLine(m3);
 ```
 De uitvoer van dit programma zou dan zijn:
+
 ![](../assets/10_generics/generics1.png)
 
 # Meerdere types in generics
@@ -76,6 +77,7 @@ Het gebruik ervan:
 DataBewaarder<int, string> d1 = new DataBewaarder<int, string>(4, "Ok");
 ```
 Met als uitvoer:
+
 ![](../assets/10_generics/generics2.png)
 
 

@@ -202,6 +202,7 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 #### Write-only property
 
 Dit soort properties zijn handig indien je informatie naar een object wenst te sturen dat niet mag of moet uitgelezen kunnen worden. Het meest typische voorbeeld is een property ``Pincode`` van een klasse ``BankRekening``. 
+
 ![](../assets/6_klassen/writeonlyprop.png)
 
 
@@ -219,7 +220,8 @@ Dit soort properties zijn handig indien je informatie naar een object wenst te s
 We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitlezen.
 
 #### Read-only property
-Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden. 
+Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden.
+
 ![](../assets/6_klassen/readonlyprop.png)
 
 ```java
@@ -323,6 +325,7 @@ public void ResetLord()
 
 
 #### Read-only properties die transformeren
+
 ![](../assets/6_klassen/proptrans.png)
 
 Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt.

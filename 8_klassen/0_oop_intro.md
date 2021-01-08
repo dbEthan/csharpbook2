@@ -266,6 +266,7 @@ Dit is de volledige code om 2 balletjes te hebben. Hoe mooi is dat?!
 
 {% hint style='tip' %}
 Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudigerén krachtiger dan wanneer we voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diep zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurig in de balletjes zit):
+
 ```java
 Random r = new Random();
 Balletje[] honderBalletjes = new Balletje[100];

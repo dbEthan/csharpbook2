@@ -255,9 +255,6 @@ De error die verschijnt **An object reference is required for the non-static fie
 
 Een eenvoudige regel is te onthouden dat van zodra je in een ``static`` omgeving (meestal een methode of property) bent je niet meer naar de niet-static delen van je code zal geraken.
 
-
-### Static en main
-
 Dit verklaart ook waarom je bij console applicaties in Program.cs steeds alle methoden ``static`` moet maken. Een console-applicatie is als volgt beschreven wanneer je deze aanmaakt:
 
 ```java
@@ -358,6 +355,58 @@ static void Main(string[] args)
     }
 }
 ```
+
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+Je zal ``static`` minder vaak nodig hebben dan non-static zaken. Alhoewel: wanneer je werkt met een klasse waarin je een ``Random``-number generator gebruikt, dan is het een goede gewoonte deze generator ``static`` te maken zodat alle objecten deze ene generator gebruiken. Anders bestaat de kans dat je objecten dezelfde random getallen zullen aanmaken wanneer ze toevallig op quasi hetzelfde moment werden geïnstantieerd of methoden in aanroept.
+
+Test maar eens wat er gebeurt als je volgende klasse hebt:
+```java
+class Dobbelsteen
+{
+    static void Werp()
+    {
+        Random gen = new Random();
+        Console.WriteLine(gen.Next(1,7));
+    }
+}
+```
+
+Wanneer je nu dezelfde dobbelsteen 10 maal rolt is de kans groot dat je geregeld dezelfde getallen gooit:
+
+```java
+Dobbelsteen testDobbel = new Dobbelsteen();
+for(int i = 0 ; i < 10; i++)
+{
+    testDobbel.Werp();
+}
+```
+
+De reden? Een nieuw aangemaakt ``Random``-object gebruikt de tijd waarop het wordt aangemaakt als een zogenaamde *seed*. Een seed zorgt ervoor dat je dezelfde reeks getallen kan genereren wanneer de seed dezelfde is (een concept dat nuttig is cryptografie waarbij de seed dan de geheime sleutel tussen zender en ontvanger is en zij dus met een gedeelde sleutel dezelfde willekeurige reeks getallen kunnen maken). Uiteraard willen we dat niet bij een dobbelsteen. Het is niet omdat een dobbelsteen snel na elkaar wordt geworpen (of aangemaakt) dat die dobbelsteen dan regelmatig dezelfde getallen na elkaar gooit.
+
+**We lossen dit op door de generator ``static`` te maken zodat er maar één generator bestaat die alle dobbelstenen en hun methoden delen.** Dit is erg eenvoudig opgelost: je verhuist je generator naar buiten de methode en plaatst er ``static`` voor:
+
+```java
+class Dobbelsteen
+{
+    static Random gen = new Random();
+    static void Werp()
+    {
+        
+        Console.WriteLine(gen.Next(1,7));
+    }
+}
+```
+
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
+
 
 <!---NOBOOKSTART--->
 # Kennisclip

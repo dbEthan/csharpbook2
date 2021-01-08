@@ -8,7 +8,7 @@ Concreet is dit het handboek  voor het tweede semester omtrent 'leren programmer
 * Zie Scherp: Programming Principles, eerste semester
 * Zie Scherper: Object Oriented Programming, tweede semester
 
-
+Beide boeken zijn ook besechikbaar in andere formaten via [ziescherp.be](ziescherp.Be)
 
 # Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)
 

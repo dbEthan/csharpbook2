@@ -64,7 +64,8 @@
   * [Final chapter: we brengen alles samen](18_IsAs/2_Polymorfisme_Interfaces.md)
 <!---  * [OOPQuest Finale Fase](oopquest/h10_basics.md)--->
 * Conclusie
-  * [En nu](ennu.md)
+  * [Het zit er op](BookOnly/conclusie.md)
+  * [En nu?](ennu.md)
 
 ## Appendix 
 * [Klassen herbruiken](B_appendix/namespaces.md)

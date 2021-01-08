@@ -247,7 +247,7 @@ class GameManager
 Wat ogenblikkelijk opvalt zijn:
 
 * De 3 publieke methoden ``DescribeLocation``,``VerwerkActie`` en ``ToonActies``
-* Een private field ``currentLocation`` die een referentie bijhoudt naar de huidige locatie van de speler
+* Een instantievariabele ``currentLocation`` die een referentie bijhoudt naar de huidige locatie van de speler
 * 3 lijsten met daarin de objecten die de speler heeft (``playerInventory``), alle objecten in het spel (``Objects``) en alle locaties in het spel (``GameLocation``)
 * Een ``InitGame()`` methode waarin we alle gameobjecten, exits en locaties zullen aanmaken bij aanvang van het spel
 * Een bool ``Exit`` zodat de externe gameloop weet wanneer het spel gedaan is

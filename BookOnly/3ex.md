@@ -1,57 +1,26 @@
+
 ## Oefeningen
 
-### Prijzen met foreach
+### Meetlat constructor
 
-Maak een array die tot 20 prijzen (double) kan bewaren. Vraag aan de gebruiker om 20 prijzen in te voeren en bewaar deze in de array. Doorloop vervolgens m.b.v. een foreach-lus de volledige array en toon enkel de elementen op het scherm wiens prijs hoger of gelijk is aan €5.00. Toon op het einde van het programma het gemiddelde van alle prijzen (dus inclusief de lagere prijzen).
+Vul de ``Meetlat`` klasse uit het vorige hoofdstuk aan met een constructor. De constructor laat toe om de lengte in meter als parameter mee te geven. De ``LengteInMeter`` write-only property vervang je door een instantievariabele ``double lengteInMeter``.
 
-### Speelkaarten
+``lengteInMeter`` stel je nu in via de parameter die je in de constructor meekrijgt.
 
-Maak een klasse ``Speelkaart`` die je kan gebruiken om een klassieke kaart met getal en "kleur" voor te stellen. 
+### Digitale kluis
 
-* Een kaart heeft 2 eigenschappen, een getal van 1 tot en met 13 (boer=11, koningin= 12, heer= 13):
-* Een kleur, de zogenaamde suite. Deze stel je voor via een enumtype en kan als waarden Schoppen, Harten, Klaveren of Ruiten zijn.
+Maak een klasse ``DigitaleKluis`` die we gaan gebruiken om een kluis voor te stellen.
 
+De klasse heeft volgende elementen:
 
-Schrijf nu 2 loops die de 52 kaarten van een standaard pak in een ``List<SpeelKaart>`` lijst plaatst.
-
-Maak nu een applicatie die telkens een willekeurige kaart uit de deck trekt en deze aan de gebruiker toont. De kaart wordt na het tonen dus uit de lijst verwijderd. Door met een willekeurig getal te werken hoef je dus je deck niet te schudden.
-
-### Bookmark Manager
-
-Maak een "bookmark manager". Deze tool zal in de console aan de gebruiker 5 favoriete sites vragen: naam en url. Vervolgens zal de tool alle sites in een lijst tonen met een nummer voor. De gebruiker kan dan de nummer intypen en de tool zal automatisch de site in de browser openen. 
-
-Je opdracht:
-
-1. Maak een array waarin je 5 bookmark objecten kan plaatsen. 
-2. Vul de applicatie aan zodat de gebruiker: een bestaand bookmark kan verwijderen en een bestaand bookmark kan aanpassen
-
-Enkele zaken die je nodig hebt:
-
-**BookMark klasse:**
-```java
-class BookMark
-{
-
-    public string Naam { get; set; }
-    public string URL { get; set; }
-    public void OpenSite()
-    {
-        Process.Start(@"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", URL);  //Voeg bovenaan using System.Diagnostics; toe
-        
-    }
-}
-```
-
-{blurb, class: tip}
-Opmerking: je mag gerust een andere browser hier zetten (bv ``iexplore.exe``). Zorg ervoor dat je het volledige path naar het uitvoerbaar bestand meegeeft. 
-{/blurb}
+* Een fullproperty ``Code`` met private set. De get van deze property zal altijd -666 teruggeven, tenzij ``CanShowcode`` op ``true`` staat, in dit geval zal de effectieve code worden terug gegeven die in het private field staat. 
+* De effectieve toegang tot de kluis wordt bewaard in de achterliggende instantievariabele die bij deze full property hoort. 
+* Een overloaded constructor die als parameter een geheel getal toelaat. Dit getal zal worden toegewezen aan ``Code``.
+* Een full property ``CanShowCode`` die kan ingesteld worden op ``true`` or ``false``, om aan te geven of de code van buitenuit kan gezien worden.
+* Een read-only property ``CodeLevel`` van type ``int``. Deze property zal het level van de code teruggeven. Het level is eenvoudigweg de code gedeeld door 1000 als geheel getal (dus indien de code 500 is zal 0 worden teruggegeven, indien de code 2000 is wordt 2 teruggegeven, etc.) 
+* Een methode ``TryCode`` die een geheel getal als parameter aanvaardt. De methode geeft een ``true`` terug indien de code correct was, anders ``false``. Deze methode kan gebruikt worden om extern een code te testen , indien deze overeenkomt met de bewaarde code dan zal gemeld worden dat de code geldig is en wordt ook getoond hoeveel keer de gebruiker geprobeerd heeft. Indien de gebruiker -666 meegaf dan meldt de methode dat de gebruiker een *cheater* is . Indien de gebruiker een foute code meegaf dan meldt de methode dat dit een foute code was en wordt het aantal pogingen met 1 verhoogd.  
+* Een private variabele ``aantalpogingen`` om bij te houden hoe vaak de gebruiker geprobeerd heeft de code te vinden.
+* Een ``static`` methode waar je een kluis-object aan kan geven. De methode zal alle mogelijke codes brute forcen (met een loop) door telkens de ``TryCode`` methode van de meegegeven kluis aan te roepen, tot dat de juiste code wordt gevonden. Wanneer de code werd gevonden zal het aantal pogingen getoond worden.
 
 
-Voorbeeld van hoe de bookmark klasse zal werken:
-
-```java
-BookMark u = new BookMark();
-u.Naam = "Windows";
-u.URL = "www.google.be";
-u.OpenSite();
-```
+Maak enkele Digitale Kluis objecten aan in je ``main`` en test of je bovenstaande klasse correct is geïmplementeerd.

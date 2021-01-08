@@ -1,38 +1,67 @@
 ## Oefeningen
 
-### Ziekenhuis
+### Prijzen met foreach
 
-#### Deel 1 
-Maak een basisklasse ``Patient`` die een programma kan gebruiken om de doktersrekening te berekenen.
-Een patiënt heeft:
+Maak een array die tot 20 prijzen (``double``) kan bewaren. Vraag aan de gebruiker om 20 prijzen in te voeren en bewaar deze in de array. Doorloop vervolgens m.b.v. een ``foreach``-lus de volledige array en toon enkel de elementen op het scherm wiens prijs hoger of gelijk is aan €5.00. Toon op het einde van het programma het gemiddelde van alle prijzen (dus inclusief de lagere prijzen).
 
-* een naam
-* het aantal uur dat hij in het ziekenhuis heeft gelegen
+### Speelkaarten
 
-Een ``virtual`` methode ``BerekenKost`` zal de totaalkost berekenen. Deze bestaat uit 50euro+  20euro per uur dat de patiënt in het ziekenhuis lag.
+Maak een klasse ``Speelkaart`` die je kan gebruiken om een klassieke speelkaart met getal en "kleur" voor te stellen. 
 
-Maak een methode ``ToonInfo`` die steeds de naam van de patiënt toont gevolgd door het aantal uur en z'n kosten.
+* Een kaart heeft 2 eigenschappen, een getal van 1 tot en met 13 (boer=11, koningin= 12, heer= 13).
+* Een kleur, de zogenaamde suite. Deze stel je voor via een enumtype en kan als waarden Schoppen, Harten, Klaveren of Ruiten zijn.
 
-#### Deel 2
-Maak een specialisatieklasse ``VerzekerdePatient``. Deze klasse heeft alles dat een gewone ``Patient`` heeft, echter de berekening van de kosten zal steeds gevolgd worden door een 10% reductie.
 
-Toon de werking aan van deze klasse.
+Schrijf nu 2 loops die de 52 kaarten van een standaard pak in een ``List<SpeelKaart>`` lijst plaatst.
 
-### HiddenBookmark
+Maak een applicatie die telkens een willekeurige kaart uit de *stapel* trekt en deze aan de gebruiker toont. De kaart wordt na het tonen ook uit de lijst verwijderd. Door met een willekeurig getal te werken hoef je dus je deck niet te schudden.
 
- Voeg een ``HiddenBookmark`` klasse toe aan je bestaande Bookmark Manager applicatie van vorige hoofdstuk.
+### Bookmark Manager
 
- De ``HiddenBookmark`` is een ``Bookmark`` klasse die de browser in Incognito-modus zal opstarten bij het openen van de bookmark. Dit kan je bewerkstelligen door ``-incognito`` achter ``chrome.exe`` te plaatsen. Maak de ``OpenSite`` methode ``virtual``  in ``BookMark`` om vervolgens via ``override`` in ``HiddenBookmark`` dit op te lossen.
+Maak een "bookmark manager". Deze tool zal in de console aan de gebruiker 5 favoriete sites vragen: ``naam`` en ``url``. Vervolgens zal de tool alle sites in een lijst tonen met een nummer voor. De gebruiker kan dan de nummer intypen en de tool zal automatisch de site in een vereenvoudigde versie op het scherm tonen. 
 
- Test wat er gebeurt als je al je bookmarks vervangt door ``HiddenBookmarks``.
+Je opdracht:
 
-Afhankelijk van de browser die je wilt aanroepen moet je de incognito parameter iets anders doorgeven:
-**Let op de spatie na "-private ", deze moet er staan anders plak je je url aan de parameter:**
+1. Maak een array of ``List`` waarin je 5 bookmark objecten kan plaatsen. 
+2. Vul de applicatie aan zodat de gebruiker: een bestaand bookmark kan verwijderen en een bestaand bookmark kan aanpassen
 
+Enkele zaken die je nodig hebt:
+
+**BookMark klasse:**
 ```java
-Process.Start("iexplore.exe", "-private " + url);
-Process.Start("chrome.exe", "-incognito " + url);
-Process.Start("firefox.exe", "-private-window " + url);
-Process.Start("iexplore.exe", "-private " + url);
+class BookMark
+{
+
+    public string Naam { get; set; }
+    public string URL { get; set; }
+    public void ToonSite()
+    {
+        WebClient wc = new WebClient();
+        string result = wc.DownloadString(URL);
+        Console.WriteLine(GetPlainTextFromHtml(result));
+    }
+    //Bron: https://www.mercator.eu/mercator/std/info_aruba/reporting-hoe-gegevens-afdrukken-met-html-tags.html
+    private string GetPlainTextFromHtml(string htmlString)
+    {
+        string htmlTagPattern = "<.*?>";
+        var regexCss = new Regex("(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+        htmlString = regexCss.Replace(htmlString, string.Empty);
+        htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
+        htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
+        htmlString = htmlString.Replace("&nbsp;", " ");
+        return htmlString;
+    }
+}
 ```
 
+
+Voorbeeld van hoe de ``Bookmark`` klasse zal werken:
+
+```java
+BookMark u = new BookMark();
+u.Naam = "Google";
+u.URL = "https://www.google.be";
+u.ToonSite();
+```
+
+Kan je je eigen "console browser" maken?

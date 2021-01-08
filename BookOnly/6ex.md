@@ -1,37 +1,38 @@
 ## Oefeningen
 
-### Book
+### Boek
 #### Deel 1
-Maak een klasse ``Book``  en gebruik auto-properties voor de velden:
+Maak een klasse ``Boek``  en gebruik auto-properties voor de velden:
 
-* ISBN (int)
-* Title (string)
-* Author (string)
+* ISBN (``int``)
+* Title (``string``)
+* Auteur (``string``)
  
-Maak voorts een full property voor Price (double)
+Maak voorts een full property voor ``Prijs`` (``double``)
 
-Maak een child-klasse die van Book overerft genaamd ‘TextBook. Een textbook heeft één extra property:
+Maak een child-klasse die van ``Boek`` overerft genaamd ``TextBoek``. Een ``TextBoek`` heeft één extra property:
 
-* GradeLevel (int)
+* ``GradeLevel`` (``int``)
 
-Maak een child-klasse die van Book overerft genaamd ‘CoffeeTableBook’. Deze klasse heeft geen extra velden.
+Maak een child-klasse die van ``Boek`` overerft genaamd ``KoffietafelBoek``. Deze klasse heeft geen extra velden.
 
-Voorts kunnen boeken "opgeteld" worden om als omnibus uitgebracht te worden. De titel wordt dan "Omnibus van [X]". waarbij X de Authors bevat, gescheiden met een komma. De prijs van een Omnibus is steeds de som van beide boeken gedeeld door 2. **Schrijf een ``static`` methode ``TelOp`` die twee ``Book`` objecten als parameter aanvaardt en als returntype een nieuw ``Book`` teruggeeft.** 
+Voorts kunnen boeken "opgeteld" worden om als omnibus uitgebracht te worden. De titel wordt dan "Omnibus van X". waarbij X de Auteurs bevat, gescheiden met een komma. De prijs van een Omnibus is steeds de som van beide boeken gedeeld door 2. **Schrijf een ``static`` methode ``TelOp`` die twee ``Boek`` objecten als parameter aanvaardt en als returntype een nieuw ``Boek`` teruggeeft.** 
 
-In beide child-klassen, override de Price-setter zodat:
-a)	Bij Textbook de prijs enkel tussen 20 en 80 kan liggen
-b)	Bij CoffeeTableBooks de prijs enkel tussen 35 en 100 kan liggen
+In beide child-klassen, override de ``Prijs``-setter zodat:
+a)	Bij ``TextBoek`` de prijs enkel tussen 20 en 80 kan liggen
+b)	Bij ``KoffietafelBoek`` de prijs enkel tussen 35 en 100 kan liggen
 
-#### Deel 2
+{% hint style='tip' %}
+Bekijk gerust de appendix indien je wilt weten hoe je de ``+`` operator kunt overriden om boeken op te tellen.
+{% endhint %}
 
-* Zorg ervoor dat boeken de ToString overriden zodat je boekobjecten eenvoudig via Console.WriteLine(myBoek) hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Price"  (bv The Shining - Stephen King (05848152) _ 50)
-* (PRO) Zorg ervoor dat de equals methode werkt op alle boeken. Boeken zijn gelijk indien ze hetzelfde ISBN nummer hebben.
+* Zorg ervoor dat boeken de ``ToString`` overriden zodat je boekobjecten eenvoudig via ``Console.WriteLine(myBoek)`` hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Prijs"  (bv The Shining - Stephen King (05848152) _ 50)
 
-**Toon de werking aan van je 3 klassen:**
-Maak boeken aan van de 3 klassen, toon dat de prijs niet altijd zomaar ingesteld kan worden en (PRO) toon aan dat je Equals –methode werkt (ook wanneer je bijvoorbeeld een Book en TextBook wil vergelijken).
+
+Maak boeken aan van de 3 klassen, toon dat de prijs niet altijd zomaar ingesteld kan worden.
 
 ### Money, money, money
-Maak enkele klassen die een bank kan gebruiken.
+Maak enkele klassen die een bank kan gebruiken (of hergebruik je ``BankManager`` code uit hoofdstuk 1)
 
 1. Abstracte klasse ``Rekening``: deze bevat een methode ``VoegGeldToe``  en ``HaalGeldAf``. Het saldo van de rekening wordt in een private variabele bijgehouden (en via de voorgaande methoden aangepast) die enkel via een read-only property kan uitgelezen worden. Voorts is er een abstracte methode ``BerekenRente`` de rente als double teruggeeft.
 2. Een klasse ``BankRekening`` die een Rekening is. De rente van een BankRekening is 5% wanneer het saldo hoger is dan 100 euro, zoniet is deze 0%. 
@@ -40,16 +41,34 @@ Maak enkele klassen die een bank kan gebruiken.
 
 Schrijf deze klassen en toon de werking ervan in je main.
 
+## Bookmark extra
+
+Implementeer de ToString() methode in zowel de ``Bookmark`` als de ``HiddenBookmark`` klasse. Bij bookmark moet de output bestaan uit de titel van de site, gevolgd door de url tussen haakjes, bv:
+
+```text
+Google (www.google.com)
+```
+
+Bij ``HiddenBookmark`` wordt er achteraan nog "---HIDDEN---" gezet:
+
+<!---{line-numbers:false}--->
+```text
+Google (www.google.com)  ---HIDDEN---
+```
+
+Zorg ervoor dat er géén dubbele code in HiddenBookmark staat (tip: ``base()``).
+
+
 ### Geometric figures
 
 Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak autoproperties voor van ``Hoogte`` en ``Breedte``. De ``Oppervlakte`` is een read-only property want deze wordt berekend gebaseerd op de hoogte en breedte. Deze berekening gebeurt in de methode ``BerekenOppervlakte``: deze roep je met andere woorden aan in de getter van ``Oppervlakte`` en dat resultaat geeft de getter terug 
 
 {blurb, class: warning}
-Let er dus op dat ``Oppervlakte`` enkel een getter heeft. Een Setter schrijven zou vreemde bugs geven: wat als de gebruiker de Oppervlakte van de figuur zo aanpast, maar wel andere hoogte en breedte heeft ingesteld? Je zou dan een foute oppervlakte krijgen daar die niet berekend wordt.
+Let er dus op dat ``Oppervlakte`` enkel een getter heeft. Een setter schrijven zou vreemde bugs geven: wat als de gebruiker de oppervlakte van de figuur zo aanpast, maar wel een andere hoogte en breedte heeft ingesteld? Je zou dan een foute oppervlakte krijgen daar die niet berekend wordt.
 {/blurb}
 
 
-Voorzie een abstracte methode ``BerekenOppervlakte`` die een int teruggeeft.
+Voorzie een abstracte methode ``BerekenOppervlakte`` die een ``int`` teruggeeft.
 
 Maak 3 klassen:
 

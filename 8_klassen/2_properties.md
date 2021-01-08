@@ -24,7 +24,7 @@ class SithLord
 }
 ```
 
-**Het is uit den boze dat we eenvoudige data fields (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
+**Het is uit den boze dat we eenvoudige instantievariabelen (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
 ```java
 SithLord Palpatine = new SithLord();

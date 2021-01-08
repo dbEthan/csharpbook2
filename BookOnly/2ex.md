@@ -1,24 +1,25 @@
 ## Oefeningen
 
-### Meetlat constructor
+### Meetlat
 
-Vul de ``Meetlat`` klasse uit het vorige hoofdstuk aan met een constructor. De constructor laat toe om de lengte in meter als parameter mee te geven. De ``LengteInMeter`` write-only property vervang je door een private datafield ``double lengteInMeter``.
+Maak een klasse ``Meetlat``. Via een write-only property ``BeginLengte`` kan de gebruiker de lengte van een voorwerp instellen (in meter). Via een reeks read-only properties (die transformeren) kan de gebruiker deze lengte in verschillende eenheden uitlezen namelijk:
 
-``lengteInMeter`` stel je nu in via de parameter die je in de constructor meekrijgt.
+* ``LengteInM``
+* ``LengteInCm``
+* ``LengteInKm``
+* ``LengteInVoet`` (1m= 3.2808ft)
 
-### Digitale kluis
+Voorbeeld gebruik van klasse:
 
-Maak een klasse ``DigitaleKluis`` die we gaan gebruiken om een kluis voor te stellen.
+```java
+Meetlat mijnLat = new Meetlat();
+mijnLat.BeginLengte = 2;
+Console.WriteLine($"{mijnLat.LengteInM} meter is {mijnLat.LengteInVoet} voet.");
+```
 
-De klasse heeft volgende elementen:
+### Bankmanager 2
 
-* Een fullproperty ``Code`` met private set. De get van deze property zal altijd -666 teruggeven, tenzij ``CanShowcode`` op ``true`` staat, in dit geval zal de effectieve code worden terug gegeven die in het private field staat. 
-  * De effectieve toegang tot de klusi wordt bewaard in het achterliggende private field dat bij deze full property hoort. 
-* Een overloaded constructor die als parameter een geheel getal toelaat. Dit getal zal worden toegewezen aan ``Code``
-* Een full property ``CanShowCode`` die kan ingesteld worden op true or false, om aan te geven of de code van buitenuit kan gezien worden.
-* Een read-only property ``CodeLevel`` van type int. Deze property zal het level van de code teruggeven. Het level is eenvoudigweg de code gedeeld door 1000 als geheel getal (dus indien de code 500 is zal 0 worden teruggegeven, indien de code 2000 is wordt 2 teruggegeven, etc.) 
-
-* Een methode ``TryCode`` die een geheel getal als parameter aanvaardt. De methode geeft een true terug indien de code correct was, anders false. Deze methode kan gebruikt worden om extern een code te testen , indien deze overeenkomt met de bewaarde code dan zal gemeld worden dat de code geldig is en wordt ook getoond hoeveel keer de gebruiker geprobeerd heeft. Indien de gebruiker -666 meegaf dan meldt de methode dat de gebruiker een cheater is . Indien de gebruiker een foute code meegaf dan meldt de methode dat dit een foute code was en wordt het aantal pogingen met 1 verhoogd.  
-* Een private variabele ``aantalpogingen`` om bij te houden hoe vaak de gebruiker geprobeerd heeft de code te vinden.
-
-Maak enkele Digitale Kluis objecten aan in je main en test of je bovenstaande klasse correct is geïmplementeerd.
+Breidt de bankmanager oefening uit het vorige hoofdstuk uit met volgende functionaliteiten:
+* Voorzie Exception Handling op alle plaatsen waar potentiële problemen kunnen opdoeken.
+* Voorzie in je programma een methode ``SimuleerOverdracht``. Je kan aan deze methode 2 ``Rekening`` objecten meegeven. Vervolgens zal de methode 5x een willekeurig bedrag van de ene naar de andere rekening sturen, hierbij wisselen de rekeningen om de beurt wie verzender en wie ontvanger is. Wanneer de methode klaar is wordt er niets teruggestuurd.
+* Maak een methode ``CreeerTienerRekening`` in je programma. Deze methode geeft een nieuwe rekening terug waar de balans reeds op 50 staat. De methode aanvaardt 1 parameter: de naam van de klant, dat vervolgens in het nieuwe object wordt ingesteld. 

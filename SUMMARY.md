@@ -2,9 +2,7 @@
 
 * [Welkom](Welkom.md)
 * [Papieren versie nodig?](boek.md)
-* Inleiding
-  * [Benodigdheden](_intro/benodigdheden.md)
-  * [Dankwoord](_intro/dankwoord.md)
+* [Benodigdheden](_intro/benodigdheden.md)
 * [Oplijsting videos](allvideos.md)
 
 ## Zie Scherper (Semester 2)

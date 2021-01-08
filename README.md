@@ -1,4 +1,5 @@
-# Zie scherp
+# Zie scherper
+
 # Over dit boek
 
 Dit boek wordt gebruikt als handboek binnen de opleidingen professionele bachelor Elektronica-ICT en Toegepaste Informatica van de AP Hogeschool.
@@ -6,9 +7,11 @@ Dit boek wordt gebruikt als handboek binnen de opleidingen professionele bachelo
 Concreet is dit het handboek  voor het tweede semester omtrent 'leren programmeren met C\#':
 
 * Zie Scherp: Programming Principles, eerste semester
-* Zie Scherper: Object Oriented Programming, tweede semester
+* Zie Scherper:(dit boek) Object Oriented Programming, tweede semester
 
-Beide boeken zijn ook besechikbaar in andere formaten via [ziescherp.be](ziescherp.Be)
+Beide boeken zijn ook beschikbaar in andere formaten (pdf, paperback, epub, kindle, etc) via [ziescherp.be](ziescherp.Be)
+![](assets/boek.png)
+
 
 # Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)
 

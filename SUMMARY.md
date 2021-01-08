@@ -1,6 +1,5 @@
 # Summary
 
-* [Papieren versie nodig?](boek.md)
 * [Benodigdheden](_intro/benodigdheden.md)
 * [Oplijsting videos](allvideos.md)
 

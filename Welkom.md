@@ -1,4 +1,4 @@
-{sample: true}
+
 # Welkom
 Welkom in deel 2 van de prestigieuze reeks die je op een gezellige manier de wondere wereld van C# wil doen ontdekken. Daar waar het vorige deel (*Zie Scherp*) geen programmeervoorkennis vereiste wordt er uiteraard in dit deel verwacht dat je reeds de basis van C# in de vingers hebt. Er zijn tal van prachtige boeken, sites en video's te vinden hieromtrent, maar uiteraard kan ik het niet laten om m'n eigen deel 1 te promoten, daar dit deel de rechtstreeks opvolger is. 
 
@@ -25,13 +25,13 @@ Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis  **Visua
 Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatten, aarzel dan niet om me te contacteren. Normaal gezien zijn alle tekst en afbeeldingen de mijne, tenzij ik anders vermeld. Uiteraard maak ik soms fouten, als je dus een niet geattribueerde tekst of afbeelding ontdekt, aarzel dan niet om me te contacteren. 
 
 
-{pagebreak}
+
 
 ## Dankwoord
 
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!
 
-{sample: false}
+
 
 
 # Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)

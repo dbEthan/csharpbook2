@@ -10,6 +10,7 @@ Concreet is dit het handboek  voor het tweede semester omtrent 'leren programmer
 * Zie Scherper:(dit boek) Object Oriented Programming, tweede semester
 
 Beide boeken zijn ook beschikbaar in andere formaten (pdf, paperback, epub, kindle, etc) via [ziescherp.be](ziescherp.Be)
+
 ![](assets/boek.png)
 
 

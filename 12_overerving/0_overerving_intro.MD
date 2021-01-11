@@ -198,6 +198,7 @@ class Dier
    protected int leeftijd;
 }
 ```
+
 ### Multiple inheritance
 
 In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen. Het is in C# dus niet mogelijk om een klasse ``Mens`` te maken die tegelijkertijd overerft van de klasse ``Aap`` en van de klasse ``Tekening``(om maar iets te zeggen). 

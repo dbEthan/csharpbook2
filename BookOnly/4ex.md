@@ -25,7 +25,8 @@ Je opdracht:
 1. Maak een array of ``List`` waarin je 5 bookmark objecten kan plaatsen. 
 2. Vul de applicatie aan zodat de gebruiker: een bestaand bookmark kan verwijderen en een bestaand bookmark kan aanpassen
 
-Enkele zaken die je nodig hebt:
+Enkele zaken die je nodig hebt :
+
 
 **BookMark klasse:**
 ```java
@@ -40,11 +41,13 @@ class BookMark
         string result = wc.DownloadString(URL);
         Console.WriteLine(GetPlainTextFromHtml(result));
     }
-    //Bron: https://www.mercator.eu/mercator/std/info_aruba/reporting-hoe-gegevens-afdrukken-met-html-tags.html
+    
     private string GetPlainTextFromHtml(string htmlString)
     {
         string htmlTagPattern = "<.*?>";
-        var regexCss = new Regex("(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)", RegexOptions.Singleline | RegexOptions.IgnoreCase);
+        string regPattern = "(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)";
+        var regexCss = 
+            new Regex( regPattern, RegexOptions.Singleline | RegexOptions.IgnoreCase);
         htmlString = regexCss.Replace(htmlString, string.Empty);
         htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
         htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
@@ -53,6 +56,7 @@ class BookMark
     }
 }
 ```
+([bron van de ``GetPlanTextFromHtml()`` methode](https://www.mercator.eu/mercator/std/info_aruba/reporting-hoe-gegevens-afdrukken-met-html-tags.html))
 
 
 Voorbeeld van hoe de ``Bookmark`` klasse zal werken:

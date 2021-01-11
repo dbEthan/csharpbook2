@@ -66,6 +66,7 @@ Student tijdelijkeStudent = mijnKlas[3];
 mijnKlas[3].Leeftijd++;
 tijdelijkeStudent.Leeftijd++;
 ```
+
 ### Array initializer syntax
 
 Je kan ook een variant op de object initializer syntax gebruiken waarbij de objecten reeds van bij de start in de array worden aangemaakt. Als extra'tje zorgt dit er ook voor dat we geen lengte moeten meegeven, de compiler zal deze zelf bepalen. 

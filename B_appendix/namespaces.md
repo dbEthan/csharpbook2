@@ -1,4 +1,5 @@
 ## Klassen herbruiken over projecten heen
+
 ### Namespaces
 De namespace van een klasse is een eenvoudige manier om ervoor te zorgen dat verschillende ontwikkelaars hun klassen dezelfde naam kunnen geven, zonder dat er conflicten optreden wanneer deze samen in hetzelfde project worden gebruikt.
 

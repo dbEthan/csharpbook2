@@ -19,7 +19,7 @@ Maak een specialisatieklasse ``VerzekerdePatient``. Deze klasse heeft alles dat 
 
 Toon de werking aan van deze klasse.
 
-# HiddenBookmark
+### HiddenBookmark
 
 Voeg een ``HiddenBookmark`` klasse toe aan je bestaande Bookmark Manager applicatie van vorige hoofdstuk.
 
@@ -27,6 +27,6 @@ De ``HiddenBookmark`` is een ``Bookmark`` klasse die de ``ShowSite`` methode ove
 
 Test wat er gebeurt als je al je bookmarks vervangt door ``HiddenBookmarks``.
 
-# Pong Advanced
+### Pong Advanced
 
 Kan je het ``Pong`` spel uitwerken uit dit boek, waarbij er echter verschillende soorten ``Balletje`` klassen zijn die allemaal van ``Balletje`` overerven? Maak de methoden ``Update`` en ``TekenOpScherm`` virtueel zodat je allerlei verschillende balletjes kunt verzinnen (grotere, andere kleur, ander soort update (denk maar aan teleportatie, versnellen en vertragen, etc.))

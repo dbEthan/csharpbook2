@@ -106,7 +106,7 @@ Merk twee zaken op:
 
  Nu komen we tot het hart van deze methoden. Aangezien ze alle 4 ``virtual`` zijn, kunnen we de werking ervan naar onze hand zetten in onze eigen klassen. Aardig wat .NET bibliotheken rekenen er namelijk op dat je deze methoden op de juiste manier hebt aangepast, zodat ook jouw nieuwe klassen perfect kunnen samenwerken met deze bibliotheken. Een eerste voorbeeld hiervan toonden we net: de ``Console.WriteLine`` methode gebruikt van iedere parameter dat je er aan meegeeft de ``ToString``-methode om de parameter op het scherm als ``string`` te tonen.
  
- #### ``ToString()`` overriden
+ ####  De ``ToString()`` methode overriden
 
  Het zou natuurlijk fijner zijn dat de ``ToString()-``methode van onze student nuttigere info teruggeeft, zoals bijvoorbeeld de ``Voornaam`` die we als autoprop in de klassen hebben geplaatst, gevolgd door de ``Leeftijd`` (ook een autoprop). 
  
@@ -132,7 +132,7 @@ Merk twee zaken op:
  {% endhint %}
  
  
- ### ``Equals()``
+ ### De ``Equals()`` methode
 
  Ook deze methode kan je dus overriden om twee objecten met elkaar te vergelijken:
 

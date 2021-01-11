@@ -93,6 +93,7 @@ public int Name
     set => name = value;
 }
 ```
+
 ### Read-only properties met EBM
 Bij read-only properties hoeft het ``get`` keyword zelfs niet meer getypt te worden bij EBM.
 

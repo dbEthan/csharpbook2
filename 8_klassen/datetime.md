@@ -59,6 +59,7 @@ Ook is er een constructor om startdatum én -tijd mee te geven bij de objectcrea
 //Volgorde: jaar, maand, dag, uur, minuten, seconden
 DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 ); 
 ```
+
 ### DateTime methoden
 
 Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:

@@ -1,7 +1,7 @@
 ## Oefeningen
 
 ### Boek
-#### Deel 1
+
 Maak een klasse ``Boek``  en gebruik auto-properties voor de velden:
 
 * ISBN (``int``)
@@ -41,7 +41,7 @@ Maak enkele klassen die een bank kan gebruiken (of hergebruik je ``BankManager``
 
 Schrijf deze klassen en toon de werking ervan in je main.
 
-## Bookmark extra
+### Bookmark extra
 
 Implementeer de ToString() methode in zowel de ``Bookmark`` als de ``HiddenBookmark`` klasse. Bij bookmark moet de output bestaan uit de titel van de site, gevolgd door de url tussen haakjes, bv:
 

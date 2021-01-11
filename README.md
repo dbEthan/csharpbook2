@@ -31,7 +31,7 @@ Wil je toch een andere versie dan deze online versie dan kan dat via volgende ka
 
  <!---NOBOOKEND--->
 
- ### Benodigdheden
+### Benodigdheden
 
 Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis  **Visual Studio 2019 Community** editie die je kan downloaden op [visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)
 

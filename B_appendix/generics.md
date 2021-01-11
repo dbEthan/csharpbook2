@@ -20,7 +20,7 @@ public static void ToonArray(string[] array)
     }
 }
 ```
-Dankzij generics kunnen we nu het deel dat **generiek** moet zijn aanduiden (in dit geval met ``T``) en onze methode eenmalig definiëren. We gebruiken hierbij de ``< >`` aanduiding die aan de compiler verteld "dit stuk is een generiek type``:
+Dankzij generics kunnen we nu het deel dat **generiek** moet zijn aanduiden (in dit geval met ``T``) en onze methode eenmalig definiëren. We gebruiken hierbij de ``< >`` aanduiding die aan de compiler verteld *"dit stuk is een generiek type"*:
 
 ```java
 public static void ToonArray<T>(T[] array)
@@ -75,7 +75,7 @@ plaats3.Z = "onder het hotel";
 
 
 ### Een complexere generieke klassen
-Voorgaan voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorbeeld volgende klasse maken die we kunnen gebruiken met eender welk type om de meetwaarde van een meting in op te slaan/ Merk op hoe we op verschillende plaatsen in de klasse ``T`` gebruiken:
+Voorgaand voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorbeeld volgende klasse maken die we kunnen gebruiken met eender welk type om de meetwaarde van een meting in op te slaan. Merk op hoe we op verschillende plaatsen in de klasse ``T`` gebruiken:
 
 ```java
 public class Meting<T>
@@ -134,7 +134,7 @@ DataBewaarder<int, string> d1 = new DataBewaarder<int, string>(4, "Ok");
 
 
 ### Constraints
-We willen vaak voorkomen dat bepaalde types wel of niet gebruikt kunnen worden in je zelfgemaakte generieke klasse. Stel bijvoorbeeld dat je een klasse schrijft waarbij je de ``CompareTo()`` methode wenst te gebruiken. Dit gaat enkel indien het type in kwestie de ``IComparable`` interface implementeert. We kunnen als **constraint** (*beperking*) dan opgeven dat de volgende klasse enkel kan gebruikt worden door klassen die ook effectief die interface implementeren (en dus de ``CompareTo()``-methoden hebben). We doen dit in de klasse-definitie met het nieuwe ``where`` keyword. We zeggen dus letterlijk (*"waar T overerft van IComparable"*):
+We willen vaak voorkomen dat bepaalde types wel of niet gebruikt kunnen worden in je zelfgemaakte generieke klasse. Stel bijvoorbeeld dat je een klasse schrijft waarbij je de ``CompareTo()`` methode wenst te gebruiken. Dit gaat enkel indien het type in kwestie de ``IComparable`` interface implementeert. We kunnen als **constraint** (*beperking*) dan opgeven dat de volgende klasse enkel kan gebruikt worden door klassen die ook effectief die interface implementeren (en dus de ``CompareTo()``-methoden hebben). We doen dit in de klasse-definitie met het nieuwe ``where`` keyword. We zeggen dus letterlijk: *"waar T overerft van IComparable"*:
 
 ```csharp
 public class Wijziging<T> where T : IComparable

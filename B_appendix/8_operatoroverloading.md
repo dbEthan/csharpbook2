@@ -48,7 +48,7 @@ class Kassa
 Laten we deze syntax even bekijken:
 
 * Operator overloading methoden zijn altijd ``static``.
-* Het returntype is idealiter het type van de klasse zelf (logisch: twee kassa's optellen geeft een nieuwe kassa)
+* Het returntype is idealiter het type van de klasse zelf (logisch: twee kassa's optellen geeft een nieuwe kassa).
 * ``operator+`` geeft aan welke operator je wenst te overloaden. Zie verderop met een link naar alle operators die je kan overloaden.
 * Indien je een operator hebt met twee operanden (zoals de +) dan vereist de methode ook twee parameters, van het type van de klasse zelf: dit zijn de twee elementen (operanden) die je wenst op te tellen via de operator.
 

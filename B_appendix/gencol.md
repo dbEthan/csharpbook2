@@ -1,6 +1,6 @@
 ## Queue en Stack collectie
 
-In het boek bespraken we de ``List``-collectie al. Dit was niet meer dan een geavanceerde array. Elementen worden achteraan toegevoegd en via de index kan je bijhouden waar welk element juist staat. Er zijn echter nog enkele andere generieke collectie-klassen in C# die je mogelijk wel handig zult vinden. We bespreken daarom hier kort de ``Queue`` en ``Stack`` ` collectie-klassen. 
+In dit boek bespraken we de ``List``-collectie al. Dit was niet meer dan een geavanceerde array. Elementen worden achteraan toegevoegd en via de index kan je bijhouden waar welk element juist staat. Er zijn echter nog enkele andere generieke collectie-klassen in C# die je mogelijk wel handig zult vinden. We bespreken daarom hier kort de ``Queue`` en ``Stack`` ` collectie-klassen. 
 
 
 ### ``Queue<>`` collectie

@@ -56,9 +56,7 @@ Als we deze methode als volgt aanroepen:
 ```java
 Meting m1 = new Meting();
 m1.Temperatuur = 26; m1.OpgemetenDoor = "Elon Musk";
-
 ToonMetingEnVerhoog(m1);
-
 Console.WriteLine(m1.Temperatuur);
 ```
 

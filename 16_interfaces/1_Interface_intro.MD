@@ -168,7 +168,7 @@ foreach(var persoon in WerkNemers)
 
 
 
-## Meerder interfaces
+### Meerder interfaces
 Een nadeel van overerving is dat een klasse maar van 1 klasse kan overerven. Een klasse mag echter wel meerdere interfaces met zich meedragen:
 ```java
 interface ISuperHeld{...}

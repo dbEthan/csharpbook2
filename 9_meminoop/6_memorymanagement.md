@@ -26,10 +26,10 @@ Volgende tabel vat samen welke type in welk geheugen wordt bewaard:
 
 |         | Value types           | Reference types  |
 | ------------- |-------------| -----|
-|Inhoud van de variabele    | De eigenlijke data | Een referentie naar de eigenlijke data |
+|Inhoud van de variabele    |  Eigenlijke data | Referentie naar de eigenlijke data |
 |Locatie      |  **Stack**      |   **Heap**  |
 | Beginwaarde | ``0``,``0.0``, ``""``,``false``, etc.      |    ``null`` |
-| Effect van de ``=`` operator | Kopieert de actuele waarde     |   Kopieert het adres naar de actuele waarde |
+| Effect ``=`` operator | Kopieert actuele waarde     |   Kopieert adres naar actuele waarde |
 
 ![Stack en heap](../assets/5_arrays/gc1.png)
 
@@ -68,16 +68,19 @@ int anderGetal = getal;
 
 Vanaf nu zal ``anderGetal`` de waarde ``3`` hebben. Als we nu één van beide variabelen aanpassen dan zal dit **geen** effect hebben op de andere variabelen.
 
-We zien hetzelfde effect wanneer we een methode maken die een parameter van het value type aanvaardt: we geven een kopie van de variabele mee:
-
+We zien hetzelfde effect wanneer we een methode maken die een parameter van het value type aanvaardt: 
 ```java
 void VerhoogParameter(int a)
 {
     a++;
     Console.WriteLine($"In methode {a}");
 }
+```
 
-//Elders:
+
+
+Bij de aanroep geven we een kopie van de variabele mee:
+```java
 int getal = 5;
 VerhoogParameter(getal);
 Console.WriteLine($"Na methode {getal}");
@@ -122,14 +125,19 @@ stud = new Student();
 
 Het geheugen na lijn 1 ziet er zo uit:
 
+<!--- {width:60%} --->
 ![](../assets/6_klassen/memzoom1.png)
 
 Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
 
+
+<!--- {width:60%} --->
 ![](../assets/6_klassen/memzoom2.png)
 
 Vervolgens wordt de toekenning toegepast en wordt het geheugenadres van het object in de variabele ``stud`` geplaatst:
 
+
+<!--- {width:60%} --->
 ![](../assets/6_klassen/memzoom3.png)
 
 {% hint style='warning' %}
@@ -227,6 +235,8 @@ Na methode 5
 Een essentiëel onderdeel van .NET is de zogenaamde GC, de **Garbage Collector**. Dit is een geautomatiseerd onderdeel van ieder C# programma dat ervoor zorgt dat we geen geheugen nodeloos gereserveerd houden.
 De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat waar geen referenties naar verwijzen. Indien er geen referenties naar wijzen zal dit stuk data verwijderd worden.
 
+
+<!--- {width:60%} --->
 ![Data in de heap waar geen referenties naar wijzen zullen ten gepaste tijde verwijderd worden](../assets/5_arrays/gc2.png)
 
 In dit voorbeeld zien we dit in actie:

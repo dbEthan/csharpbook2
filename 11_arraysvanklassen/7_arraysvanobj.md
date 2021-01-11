@@ -21,9 +21,7 @@ De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe arra
 
 
 {% hint style='tip' %}
-Je zou kunnen zeggen dat we enkel nog maar de parkeerlijnen hebben aangemaakt.
-
-![Een parking, klaar om gevuld te worden.](../assets/6_klassen/legearray.png)
+Je zou kunnen zeggen dat we enkel nog maar de parkeerlijnen in een parking hebben aangemaakt. De objecten, de auto's, komen later wanneer nodig.
 {% endhint %}
 
 

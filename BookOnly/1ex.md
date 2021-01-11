@@ -1,9 +1,9 @@
 ## Oefeningen
 
+{% hint style='tip' %}
+We sluiten ieder hoofdstuk af met een  selectie oefeningen. In de mate van het mogelijk zijn ze gerangschikt van eenvoudig tot iets pittiger. Bekijk zeker **ziescherp.be** waar je een gigantische hoeveelheid extra oefeningen zal terugvinden.
+{% endhint %}
 
-{blurb, class: tip}
-We sluiten ieder hoofdstuk af met een  selectie oefeningen. In de mate van het mogelijk zijn ze gerangschikt van eenvoudig tot iets pittiger. Bekijk zeker [timdams.com/ziescherp](https://timdams.com/ziescherp) waar je een gigantiche hoeveelheid extra oefeningen zal terugvinden..
-{/blurb}
 
 ### RapportModule
 
@@ -23,6 +23,13 @@ Resultaat mijnpunten = new Resultaat();
 mijnpunten.Percentage = 65;
 mijnpunten.PrintGraad();
 ```
+
+### Bibliotheek
+
+Boeken in een bibliotheek mogen maximum 14 dagen uitgeleend worden. Schrijf een console-applicatie om de volgende gegevens te tonen door middel van een klasse ``BibBoek``:
+* de naam van de ontlener, die werd ingelezen (autoproperty).
+* de datum van vandaag (autoproperty met private set).
+* de datum dat het boek ten laatste terug moet ingeleverd worden (readonly property).
 
 ### Nummers
 
@@ -60,12 +67,7 @@ Product = 408
 Quotient = 0,352941176470588
 ```
 
-### Bibliotheek
 
-Boeken in een bibliotheek mogen maximum 14 dagen uitgeleend worden. Schrijf een console-applicatie om de volgende gegevens te tonen door middel van een klasse ``BibBoek``:
-* de naam van de ontlener, die werd ingelezen (autoproperty).
-* de datum van vandaag (autoproperty met private set).
-* de datum dat het boek ten laatste terug moet ingeleverd worden (readonly property).
 
 ### BankManager
 

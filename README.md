@@ -27,9 +27,7 @@ Wil je toch een andere versie dan deze online versie dan kan dat via volgende ka
 * Amazon.de (Weldra: Lente 2021) : fullcolor paperback versie, in groter formaat om aantekeningen bij de tekst te plaatsen. Ook kindle versie beschikbaar.
 * Kobo en bol.com (Weldra: Lente 2021) : ebook versie voor op je e-reader (gratis op kobo plus).
 * [Leanpub](http://leanpub.com/ziescherper/): hoge-kwaliteits pdf. 
-
-
- <!---NOBOOKEND--->
+<!---NOBOOKEND--->
 
 ### Benodigdheden
 
@@ -44,7 +42,7 @@ Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatte
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!
 
 
-
+<!---NOBOOKSTART--->
 ### Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)
 
 ![Licenicon](/assets/ccicon.png)![Licenicon](/assets/ccat.png)![Licenicon](/assets/ccnc.png)

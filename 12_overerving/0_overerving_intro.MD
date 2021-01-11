@@ -122,17 +122,13 @@ Dit kleine, korte zinnetje herbergt aardig wat kracht. Dankzij overerving kunnen
 Alhoewel overerving transitief is, wil dat niet zeggen dat ``private`` variabelen plots zichtbaar zijn in de child-klasse. De child-klasse erft ALLES over, ook de ``private`` instantievariabelen, maar C# houdt zich wel aan de regels en zal voorkomen dat de child-code aan de parent instantievariabelen kan.
 
 
-<!---NOBOOKSTART--->
-{% hint style='warning' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/attention.png)
+### Overerving en het geheugen
 
-Tijd om eens te kijken hoe voorgaande er uitziet in de heap en de stack, met een onderwerp dat op m'n lijf geschreven is: een applicatie om aan gebouwbeheer te doen.
+Tijd om eens te kijken hoe voorgaande er uitziet in de heap en de stack, met een voorbeeld: een applicatie om aan gebouwbeheer te doen.
 
 Beeld je in dat je volgende klassediagramma hebt vastgelegd:
 
+<!--- {width:60%} --->
 ![](../assets/7_overerving/klasgebouwen.png)
 
 De objecten in het geheugen zullen er dan als volgt uitzien:
@@ -146,21 +142,15 @@ Villa groteVilla = new Villa();
 ```
 En vervolgens kijken we hoe dit er in het geheugen uitziet:
 
+<!--- {width:60%} --->
 ![](../assets/7_overerving/overervinggeheugen.png)
 
 Ook hier zien we duidelijk dat dus een ``Villa`` object alle "code" in zich heeft die zowel in de klasse ``Villa`` staat (de specialisatie) alsook die waarvan wordt overgeërfd, ``Huis``. Bijgevolg heeft ``groteVilla`` dus ook de "code" van ``Gebouw`` "in zich" dankzij de transitiviteits-eigenschap van overerving. 
 
 Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de variabele of methode origineel toe hoort. Als er dus in de klasse ``Huis`` een variabele ``private bool heeftDeurbel`` was, dan zal de code in de klasse ``Villa`` daar niet aan geraken:
 
-
+<!--- {width:60%} --->
 ![](../assets/7_overerving/privscope.png)
-
-
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->
-
 
 
 ### ``protected``

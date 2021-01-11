@@ -69,14 +69,7 @@ Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige method
 
 #### Add-methoden
 
-* ``AddDays``
-* ``AddHours``
-* ``AddMilliseconds``
-* ``AddMinutes``
-* ``AddMonths``
-* ``AddSeconds``
-* ``AddTicks``
-* ``AddYears``
+De ingebouwe methoden beginnen allemaal met ``Add``, gevolgd door wat er moet bijgevoegd worden: ``AddDays``, ``AddHours``, ``AddMilliseconds``, ``AddMinutes``, ``AddMonths``, ``AddSeconds``, ``AddTicks``, ``AddYears``.
 
 {% hint style='tip' %}
 Een *tick* is 100 nanoseconden, oftewel 1 tien miljoenste van een seconden.  Dat lijkt een erg klein getal (wat het voor ons ook is) maar voor computers is dit het soort tijdsintervals waar ze mee werken.
@@ -97,31 +90,15 @@ Console.WriteLine(eindeWitteBroodsweken)
 
 Dit hoofdstuk heeft al aardig wat woorden verspild aan properties, en uiteraard heeft ook de ``DateTime`` klasse een hele hoop interessante properties die toelaten om de interne staat van een ``DateTime`` object te bewerken of uit te lezen.
 
-Enkele nuttige properties van ``DateTime`` zijn:
-* ``Date``
-* ``Day``
-* ``DayOfWeek``
-* ``DayOfYear``
-* ``Hour``
-* ``Millisecond``
-* ``Minute``
-* ``Month``
-* ``Second``
-* ``Ticks``
-* ``TimeOfDay``
-* ``Today``
-* ``UtcNow``
-* ``Year``
+Enkele nuttige properties van ``DateTime`` zijn: ``Date``, ``Day``, ``DayOfWeek``, ``DayOfYear``, ``Hour``, ``Millisecond``, ``Minute``, ``Month``, ``Second``, ``Ticks``, ``TimeOfDay``, ``Today``, ``UtcNow``, ``Year``.
 
-
-#### Properties gebruiken
 
 **Alle properties van DateTime zijn read-only** en hebben dus  een private setter die we niet kunnen gebruiken.
 
 Een voorbeeld:
 
 ```java
-Console.WriteLine($"Einde wittebroodsweken in maand nr: {eindeWitteBroodsweken.Month}");
+Console.WriteLine($"Einde in maand nr: {eindeWitteBroodsweken.Month}");
 Console.WriteLine($"Dat is een {eindeWitteBroodsweken.DayOfWeek}");
 ```
 

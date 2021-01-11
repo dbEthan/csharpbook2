@@ -203,6 +203,7 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 
 Dit soort properties zijn handig indien je informatie naar een object wenst te sturen dat niet mag of moet uitgelezen kunnen worden. Het meest typische voorbeeld is een property ``Pincode`` van een klasse ``BankRekening``. 
 
+<!--- {width:60%} --->
 ![](../assets/6_klassen/writeonlyprop.png)
 
 
@@ -222,6 +223,7 @@ We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitleze
 #### Read-only property
 Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden.
 
+<!--- {width:60%} --->
 ![](../assets/6_klassen/readonlyprop.png)
 
 ```java
@@ -244,6 +246,7 @@ We kunnen  enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
 
 #### Read-only property met private set
 
+<!--- {width:60%} --->
 ![](../assets/6_klassen/readonlypriv.png)
 
 Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
@@ -265,6 +268,13 @@ Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only w
 
 Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(Palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``Palpatine.Energy = 65``; ongeacht of deze geldig is of niet.
 
+{% hint style='warning' %}
+Het is een goede gewoonte om zo vaak mogelijk via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.
+{% endhint %}
+
+<!---{pagebreak} --->
+
+
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
 <!---NOBOOKEND--->
@@ -275,20 +285,16 @@ Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: `
 Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
 
 
-**Nu even goed opletten**: indien we IN het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden.
-
-Kijk zelf naar volgende **slechte** code:
+**Nu even goed opletten**: indien we IN het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden. Kijk zelf naar volgende **slechte** codevoorbeeld:
 ```java
 class SithLord
 {
     private int energy;
     private string sithName;
-
     public void ResetLord()
     {
         energy = -1;
     }
-
     public int Energy
     {
         get
@@ -297,8 +303,7 @@ class SithLord
         }
         private set
         {
-            if(value >= 0)
-                energy = value;
+            if(value >= 0) energy = value;
         }
     }
 }
@@ -319,13 +324,13 @@ public void ResetLord()
 {% endhint %}
 <!---NOBOOKEND--->
 
-{% hint style='warning' %}
-**Het is dus een goede gewoonte om zo vaak mogelijk via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.**
-{% endhint %}
+<!---{pagebreak} --->
+
 
 
 #### Read-only properties die transformeren
 
+<!--- {width:60%} --->
 ![](../assets/6_klassen/proptrans.png)
 
 Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt.
@@ -411,7 +416,7 @@ class Persoon
 }
 ```
 
-## Auto properties
+### Auto properties
 Automatische eigenschappen (**autoproperties** , soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
 
 Heel vaak wil je heel eenvoudige variabelen aan de buitenwereld van je klasse beschikbaar stellen. Omdat je instantievariabelen echter niet ``public`` mag maken, moeten we dus properties gebruiken die niets anders doen dan als doorgeefluik fungeren. Autoproperties doen dit voor ons: het zijn vereenvoudige full properties waarbij de achterliggende instantievariabele onzichtbaar voor ons is.

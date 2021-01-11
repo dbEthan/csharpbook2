@@ -121,6 +121,8 @@ class Student
 
 {% endhint %}
 
+<!---{pagebreak} --->
+
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
 <!---NOBOOKEND--->
@@ -138,7 +140,6 @@ class  Breuk
 {
     private int noemer;
     private int teller;
-
     public void PrintAlsDouble()
     {
         Console.WriteLine((double)teller/noemer);
@@ -160,7 +161,6 @@ class  Breuk
 {
     private int noemer;
     private int teller;
-
     public Breuk(int tellerIn, int noemerIn)
     {
         teller = tellerIn;
@@ -169,7 +169,6 @@ class  Breuk
         else
             noemer = noemerIn;
     }
-
     public void PrintAlsDouble()
     {
         Console.WriteLine((double)teller/noemer);
@@ -190,13 +189,10 @@ Breuk eenBreuk = new Breuk(21,8);
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{pagebreak} --->
 
-<!---NOBOOKSTART--->
-{% hint style='tip' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/care.png)
+
+### Pong met constructors
 We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded constructor:
 
 ```java
@@ -252,15 +248,11 @@ class Balletje
 ```
 
 We kunnen nu op 2 manieren balletjes aanmaken:
-```text
+```java
 Balletje bal1 = new Balletje();
 Balletje bal2 = new Balletje(10,8,-2,1);
 ```
 
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->
 
 <!---NOBOOKSTART--->
 # Kennisclip

@@ -254,6 +254,8 @@ Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variab
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{pagebreak} --->
+
 #### Andere lieven
 
 We kunnen nu het probleem oplossen dat al onze mensen verliefd zijn op Anneke. Volgende code toont dit:

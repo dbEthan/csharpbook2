@@ -32,7 +32,8 @@ Console.WriteLine(stud1.Name);
 ```
 
 Dit zal resulteren in volgende foutboodschap:
- 
+
+<!--- {width:60%} --->
 ![NullReferenceException error in VS](../assets/6_klassen/nullref.png)
 
 {% hint style='tip' %}

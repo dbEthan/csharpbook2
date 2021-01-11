@@ -11,14 +11,12 @@ class Restaurant
            kosten += 1000;
      }
 }
-
 class Frituur:Restaurant
 {
      public override void PoetsAlles()
      {
            kosten += (1000 + 500);
-     }
- 
+     } 
 }
 ```
 
@@ -34,7 +32,6 @@ class Frituur:Restaurant
            base.PoetsAlles(); //eerste basiskost wordt opgeteld
            kosten += 500;  //kosten eigen aan frituur worden bijgeteld.
      }
- 
 }
 ```
 
@@ -51,8 +48,8 @@ Je kan zelf beslissen waar in je code je ``base`` aanroept. Soms doe je dat aan 
 <!---NOBOOKEND--->
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
-![](../assets/7_overerving/meinher.png)
-"Ik denk dat ik een extra voorbeeldje nodig ga hebben."
+![](../assets/care.png)
+**"Ik denk dat ik een extra voorbeeldje nodig ga hebben."**
 
 Laten we eens kijken. Beeld je in dat je volgende basisklasse hebt:
 
@@ -86,6 +83,10 @@ class ModerneMens: Oermens
       }
 }
 ```
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
 
 ### Properties overriden
 Properties en methoden zijn van hetzelfde pak een laken. Het is dan ook niet meer dan logisch dat ook properties ``virtual`` kunnen zijn.
@@ -130,7 +131,3 @@ Indien je ``override`` intypt in Visual Studio en met autocompletion vervolledig
 **Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
 {% endhint %}
 
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->

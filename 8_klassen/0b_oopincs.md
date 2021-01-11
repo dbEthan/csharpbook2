@@ -99,6 +99,8 @@ Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datat
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{pagebreak} --->
+
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
 <!---NOBOOKEND--->
@@ -139,3 +141,5 @@ Objecten met namen zoals ``Level1`` en ``Level2`` zijn wél dus toegestaan, daar
 <!---NOBOOKEND--->
 
 <!---{sample: false}--->
+
+<!---{pagebreak} --->

@@ -68,6 +68,8 @@ Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nod
 * oftewel  ``using``, met de juiste namespace, bovenaan je huidige codebestand te plaatsen.
 * oftewel  de volledige naam van de klasse uit te schrijven (dus inclusief de namespace).
 
+
+<!--- {width:80%} --->
 ![Handig toch](../assets/6_klassen/usinghelp.png)
 
 De optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 

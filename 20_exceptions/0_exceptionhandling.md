@@ -18,7 +18,7 @@ Voorgaande zaken zijn niet zozeer fouten dan wel uitzonderingen (**exceptions**)
 
 Je zal zelf al geregeld exceptions zijn tegengekomen in je console programma's. Wanneer je je programma gewoon uitvoert en er verschijnt plots een hele hoop tekst (met onder andere het woord "Exception" in) gevolgd door het prompt afsluiten ervan, dan heb je dus een exception gegenereerd die je niet hebt afgehandeld.
 
-![Een joekel van een foutboodschap die je gebruiker huilend zal wegjagen](../assets/20_exceptions/exceptcode.png)
+![Een joekel van een foutboodschap die je gebruiker huilend zal wegjagen.](../assets/20_exceptions/exceptcode.png)
 
 Je moet zelfs niet veel moeite doen om uitzonderingen te genereren. Denk maar aan volgende voorbeeld waarbij je een exception kan genereren door een 0 in te geven, of iets anders dan een getal.
 
@@ -126,6 +126,8 @@ Indien een ``FormatException`` optreedt dan zal het eerste catch-blok uitgevoerd
 
 De online .NET documentatie is de manier om te weten te komen welke exceptions een methode mogelijk kan gooien. Gaan we bijvoorbeeld naar de documentatie op MSDN van de ``int32.Parse`` methode dan zien we daar een sectie "Exceptions" waar klaar en duidelijk wordt beschreven wanneer welke exception wanneer wordt opgeworpen.
 
+
+<!--- {width:60%} --->
 ![Bron: https://docs.microsoft.com/en-us/dotnet/api/system.int32.parse](../assets/20_exceptions/msdn.png)
 
 ### Werken met de exception parameter

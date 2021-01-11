@@ -1,10 +1,11 @@
 # Compositie en aggregatie 
 
+## Objecten in objecten
 {% hint style='tip' %}
 Dit hoofdstuk is kort maar krachtig. We gaan niets nieuws uitleggen, maar eerder zaken benoemen die je waarschijnlijk al toepaste zonder te weten dat er daar ook een naam voor was.
 {% endhint %}
 
-## Wat zijn compositie en aggregatie?
+
 We spreken over compositie (**composition**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type ``Motor`` dat je gebruikt in een object van het type ``Auto``. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaalt of het gaat om aggregatie of compositie:
 
 * **Compositie**: Het interne object heeft geen bestaansreden zonder het moederobject. Denk bijvoorbeeld aan een kamer in een huis. Als het huis verdwijnt, verdwijnt ook de kamer.
@@ -133,16 +134,9 @@ class PC
             cHardeSchijf = new HardeSchijf();
         else 
             cHardeSchijf == null; 
-
     } 
-
 }
 ```
-
-{% hint style='tip' %}
-
-{% endhint %}
-
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
 <!---NOBOOKEND--->
@@ -160,6 +154,7 @@ Het is een goede OOP oefening om af en toe in je omgeving eens rond te kijken, e
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{pagebreak} --->
 
 
 ### Manier 3: Properties

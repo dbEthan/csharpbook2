@@ -1,4 +1,4 @@
-# En nu? Ken ik nu alles van C#/.NET
+## En nu? Ken ik nu alles van C#/.NET ?
 
 Helaas niet. Maar je hebt wel een erg goede basis gelegd. Vanaf dit punt kan je tal van richtingen uitgaan, afhankelijk van je interesses:
 * **Geavanceerde C# concepten**: je zou je verder kunnen verdiepen in "de taal C#". Denk maar aan leren werken met **``async``** en **events**. Maar ook het wonderlijke **Linq** is iets dat je in bijna alle .NET geledingen zal kunnen gebruiken.

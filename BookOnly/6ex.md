@@ -22,14 +22,14 @@ In beide child-klassen, override de ``Prijs``-setter zodat:
 a)	Bij ``TextBoek`` de prijs enkel tussen 20 en 80 kan liggen
 b)	Bij ``KoffietafelBoek`` de prijs enkel tussen 35 en 100 kan liggen
 
-{% hint style='tip' %}
-Bekijk gerust de appendix indien je wilt weten hoe je de ``+`` operator kunt overriden om boeken op te tellen.
-{% endhint %}
-
-* Zorg ervoor dat boeken de ``ToString`` overriden zodat je boekobjecten eenvoudig via ``Console.WriteLine(myBoek)`` hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Prijs"  (bv The Shining - Stephen King (05848152) _ 50)
+Zorg ervoor dat boeken de ``ToString`` overriden zodat je boekobjecten eenvoudig via ``Console.WriteLine(myBoek)`` hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Prijs"  (bv The Shining - Stephen King (05848152) _ 50)
 
 
 Maak boeken aan van de 3 klassen, toon dat de prijs niet altijd zomaar ingesteld kan worden.
+
+{% hint style='tip' %}
+Bekijk gerust de appendix indien je wilt weten hoe je de ``+`` operator kunt overriden om boeken op te tellen.
+{% endhint %}
 
 ### Money, money, money
 Maak enkele klassen die een bank kan gebruiken (of hergebruik je ``BankManager`` code uit hoofdstuk 1)
@@ -45,6 +45,7 @@ Schrijf deze klassen en toon de werking ervan in je main.
 
 Implementeer de ToString() methode in zowel de ``Bookmark`` als de ``HiddenBookmark`` klasse. Bij bookmark moet de output bestaan uit de titel van de site, gevolgd door de url tussen haakjes, bv:
 
+<!---{line-numbers:false}--->
 ```text
 Google (www.google.com)
 ```
@@ -63,10 +64,9 @@ Zorg ervoor dat er géén dubbele code in HiddenBookmark staat (tip: ``base()``)
 
 Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak autoproperties voor van ``Hoogte`` en ``Breedte``. De ``Oppervlakte`` is een read-only property want deze wordt berekend gebaseerd op de hoogte en breedte. Deze berekening gebeurt in de methode ``BerekenOppervlakte``: deze roep je met andere woorden aan in de getter van ``Oppervlakte`` en dat resultaat geeft de getter terug 
 
-{blurb, class: warning}
+{% hint style='warning' %}
 Let er dus op dat ``Oppervlakte`` enkel een getter heeft. Een setter schrijven zou vreemde bugs geven: wat als de gebruiker de oppervlakte van de figuur zo aanpast, maar wel een andere hoogte en breedte heeft ingesteld? Je zou dan een foute oppervlakte krijgen daar die niet berekend wordt.
-{/blurb}
-
+{% endhint %}
 
 Voorzie een abstracte methode ``BerekenOppervlakte`` die een ``int`` teruggeeft.
 

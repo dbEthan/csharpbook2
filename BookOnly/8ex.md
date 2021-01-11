@@ -1,6 +1,5 @@
 ## Oefeningen
 
-
 ### Een eigen huis
 
 #### Basis

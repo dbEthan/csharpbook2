@@ -134,12 +134,8 @@ Vanaf nu kan ik een huis als volgt bouwen:
 Huis peperKoekenHuis = new Huis(true, 1);
 ```
 
-<!---NOBOOKSTART--->
-{% hint style='warning' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/attention.png)
+{% hint style='tip' %}
+
 De volgorde waarin alles gebeurt in voorgaande voorbeeld is belangrijk om te begrijpen. Er wordt een hele machine in gang gezet wanneer we volgende korte stukje code schrijven:
 
 ```java
@@ -154,7 +150,7 @@ Huis eenEigenHuis = new Huis(true,5);
 6. Nu wordt de code van de``Huis`` constructor uitgevoerd: ``heeftTuintje`` krijgt de waarde ``true``.
 
 ![](../assets/7_overerving/constflow.png)
-
+{% endhint %}
 
 
 <!---{/aside}--->

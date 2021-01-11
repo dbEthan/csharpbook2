@@ -8,6 +8,8 @@ Maak 4 klassen:
 * ``Auto``
 * ``Plant``
 
+We maken een programma'tje om de fictieve ecologische voetafdruk van bepaalde objecten te berekenen
+
 Maak een interface ``ICarbonFootPrint`` die 
 * 1 methode ``BerekenFootprint`` heeft die een int teruggeeft en geen parameters nodig heeft
 * 1 methode ``VerlaagFootprint`` die niets teruggeeft en geen parameters nodig heeft

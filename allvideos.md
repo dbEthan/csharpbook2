@@ -31,16 +31,17 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 ### Hoofdstuk 4 - Arrays en klassen
 
-* [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8ba39f71-889e-4e48-9f3b-ab750087d034)
+* [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9beea541-07b2-4854-b6c0-acb000c553f9)
 * [De foreach loop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e268b0f3-5226-4279-a69c-ab7500892031)
 * [List<> klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ac1bfe58-b55b-4e7e-98f3-ab7a009085bc)
 * [Werken met Dictionary<>](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=43e5eb65-6b40-4539-892e-ab9f0093b774)
 
 ### Hoofdstuk 5 - Overerving
-* [Overerving overzicht](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c8b828c5-87c0-4339-a61c-ab7c00aef24d)
-* [Constructors bij overerving](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a83a530e-11ff-47eb-b4cf-ab7c00b75401)
-* [Virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d549422d-eb27-4dd5-8154-ab7c00ba0728)
-* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2cb2acdb-d5f9-4ff4-aa9d-abb1008f7b70)
+* [Overerving overzicht](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=32d7827b-53b1-482a-b52f-acb000cf868d)
+* [Constructors bij overerving](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d5df664-3e85-4bee-95ef-acb000d34540)
+* [virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=95e49300-7818-4dfe-be2e-acb000d6add1)
+* [base keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e2d99cbf-1c11-42fa-96c2-acb000d96cac)
+<!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2cb2acdb-d5f9-4ff4-aa9d-abb1008f7b70)--->
 
 
 ### Hoofdstuk 6 - Gevorderde overervingsconcepten
@@ -53,15 +54,13 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 ### Hoofdstuk 7 - Compositie en this
 * [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=799210db-6683-49f1-afba-ab9d00cf6792)
 * [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=26d08209-4de8-40b5-b5cc-ab9d00d33aa5)
-* [Compositie in praktijk demo met kaartspel deel 1](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9c2280d-7b1d-4a83-8851-ab9d00e13cca)
 * [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=235d6b90-d246-4529-a911-ab9d00db6f56)
 * [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81e976c8-d865-4cfa-9851-abad0107f367)
 
 ### Hoofdstuk 8 - Polymorfisme
-* [Polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6bc13cf3-83d0-449d-9d8f-ab7d00c5a021)
+* [Polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f159648-9bc0-4169-91b0-acb000c86dea)
 * [Polymorfisme in de praktijk met presidenten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=06305096-bee1-466a-9b70-aba700860b64)
-* [Polymorfisme in praktijk "demo met kaartspel deel 2"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1009330-272d-4978-a078-aba2012ab2b8)
-* [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aba3bca4-ed3a-4067-a611-ab7d00cc2178)
+* [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8b1974ff-7c0a-4da8-9bd5-acb000cb742c)
 * [Samenvatting objecten vergelijken met equals: polymorfisme in actie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b705422d-db2d-420a-bcda-aba700fd9336)
 
 ### Hoofdstuk 9 - Interfaces
@@ -81,3 +80,6 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Hoe in gitkraken een bestaand project naar een nieuwe github repo pushen en vervolgens tonen hoe dit ook in VS dan kan gebeuren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e78069-e1fe-4e08-801b-ab5d00b05f46) 
 
 * [Bespreking "corona training"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ca8a4561-20f1-429b-9787-ab8400fca88c)
+
+* [Compositie in praktijk demo met kaartspel deel 1](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9c2280d-7b1d-4a83-8851-ab9d00e13cca)
+* [Polymorfisme in praktijk "demo met kaartspel deel 2"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1009330-272d-4978-a078-aba2012ab2b8)

@@ -101,9 +101,22 @@ foreach (var singleKD in killDeathRates)
 
 Merk op dat dit hoegenaamd geen invloed heeft op je applicatie. Wanneer je code gaat compileren die het keyword ``var`` bevatten dan zal de compiler eerst alle *vars* vervangen door het juiste type, én dan pas beginnen compileren.
 
+### Foreach met List
+
+Je kan met een eenvoudige ``for`` of ``while``-loop over een ``List`` itereren, maar het gebruik van een foreach-loop is toch handiger.
+
+Dit is dan ook de meestgebruikte operatie om eenvoudig en snel een bepaald stuk code toe te passen op ieder element van de lijst. Stel je voor dat we een lijst ``OverwatchKarakters`` hebben waarin objecten van het type ``Karakter`` in zitten. Als we van ieder karakter in de lijst de naam op het scherm willen tonen dan kan dan als volgt:
+
+```java
+foreach(Karakter personage in OverwatchKarakters)
+{
+   Console.WriteLine(personage.Naam);
+}
+```
+
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
-* [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8ba39f71-889e-4e48-9f3b-ab750087d034)
+* [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9beea541-07b2-4854-b6c0-acb000c553f9)
 * [De foreach loop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e268b0f3-5226-4279-a69c-ab7500892031)
 <!---NOBOOKEND--->

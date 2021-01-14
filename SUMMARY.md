@@ -28,8 +28,8 @@
 <!---  * [OOPQuest Fase 3](oopquest/h3_basics.md)--->
 * H4: Arrays en klassen
   * [Arrays van objecten](11_arraysvanklassen/7_arraysvanobj.md)
-  * [Foreach en var](11_arraysvanklassen/3_foreach.md)
   * [List](11_arraysvanklassen/4_list.md)
+  * [Foreach en var](11_arraysvanklassen/3_foreach.md)
   * [Dictionary](11_arraysvanklassen/dict.md)
 <!---  * [OOPQuest Fase 4](oopquest/h4_basics.md)--->
 * H5: Overerving

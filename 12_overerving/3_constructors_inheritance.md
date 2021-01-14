@@ -162,5 +162,5 @@ Huis eenEigenHuis = new Huis(true,5);
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
-*[Constructors bij overerving](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a83a530e-11ff-47eb-b4cf-ab7c00b75401)
+*[Constructors bij overerving](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d5df664-3e85-4bee-95ef-acb000d34540)
 <!---NOBOOKEND--->

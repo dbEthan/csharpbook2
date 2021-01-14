@@ -99,18 +99,7 @@ Dit voegt de ``string`` toe op de tweede plek en schuift de rest naar achter.
 Lte op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt.
 {% endhint %}
 
-### Foreach loops
 
-Je kan met een eenvoudige ``for`` of ``while``-loop over een lijst itereren, maar het gebruik van een foreach-loop is toch handiger.
-
-Dit is dan ook de meestgebruikte operatie om eenvoudig en snel een bepaald stuk code toe te passen op ieder element van de lijst. Stel je voor dat we een lijst ``OverwatchKarakters`` hebben waarin objecten van het type ``Karakter`` in zitten. Als we van ieder karakter in de lijst de naam op het scherm willen tonen dan kan dan als volgt:
-
-```java
-foreach(Karakter personage in OverwatchKarakters)
-{
-   Console.WriteLine(personage.Naam);
-}
-```
 
 
 <!---NOBOOKSTART--->

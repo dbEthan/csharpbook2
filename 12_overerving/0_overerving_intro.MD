@@ -218,5 +218,5 @@ zal dit resulteren in een foutboodschap, namelijk ``Cannot derive from sealed ty
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
-* [Overerving overzicht](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c8b828c5-87c0-4339-a61c-ab7c00aef24d)
+* [Overerving overzicht](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=32d7827b-53b1-482a-b52f-acb000cf868d)
 <!---NOBOOKEND--->

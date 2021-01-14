@@ -103,5 +103,5 @@ Je , dankzij polymorfisme, gevulde lijst van objecten van allerhande typen wordt
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=aba3bca4-ed3a-4067-a611-ab7d00cc2178)
+* [Is en as keywords](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8b1974ff-7c0a-4da8-9bd5-acb000cb742c)
 <!---NOBOOKEND--->

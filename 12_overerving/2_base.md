@@ -131,3 +131,8 @@ Indien je ``override`` intypt in Visual Studio en met autocompletion vervolledig
 **Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
 {% endhint %}
 
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [base keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e2d99cbf-1c11-42fa-96c2-acb000d96cac)
+<!---NOBOOKEND--->

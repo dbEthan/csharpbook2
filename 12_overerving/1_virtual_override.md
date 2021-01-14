@@ -105,5 +105,5 @@ Ook properties kan je ``virtual`` instellen en ``override``'n. We gaan dit verde
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
-* [Virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d549422d-eb27-4dd5-8154-ab7c00ba0728)
+* [Virtual en override](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=95e49300-7818-4dfe-be2e-acb000d6add1)
 <!---NOBOOKEND--->

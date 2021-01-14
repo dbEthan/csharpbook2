@@ -55,6 +55,7 @@ class Student
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
+
 Voorgaande wil ik nog eenmaal herhalen. Herinner je m'n voorbeeld van die aannemers die soms wel en soms niet opruimden? Laten we nog eens samenvatten hoe het zit met constructors in C#:
 * Als je geen constructors schrijft krijg je een default constructor gratis. Die doet echter niets extra.
 * Van zodra je één constructor zelf schrijft, default of overloaded, krijg je niets meer gratis én zal je dus zelf die constructors moeten bijschrijven die jouw code vereist.
@@ -129,6 +130,7 @@ class Student
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
+
 Maar welke constructors moet ik nu eigenlijk allemaal voorzien? 
 
 Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is minimaal nodig om ervoor te zorgen dat alle variabele die essentieel zijn in je klasse een beginwaarde hebben.

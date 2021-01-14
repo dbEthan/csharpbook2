@@ -362,6 +362,7 @@ static void Main(string[] args)
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
+
 Je zal ``static`` minder vaak nodig hebben dan non-static zaken. Alhoewel: wanneer je werkt met een klasse waarin je een ``Random``-number generator gebruikt, dan is het een goede gewoonte deze generator ``static`` te maken zodat alle objecten deze ene generator gebruiken. Anders bestaat de kans dat je objecten dezelfde random getallen zullen aanmaken wanneer ze toevallig op quasi hetzelfde moment werden geïnstantieerd of methoden in aanroept.
 
 Test maar eens wat er gebeurt als je volgende klasse hebt:

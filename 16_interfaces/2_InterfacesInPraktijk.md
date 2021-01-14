@@ -122,3 +122,12 @@ return this.Naam.CompareTo(temp.Naam);
 ```
 {% endhint %}
 
+<!---NOBOOKSTART--->
+## Kennisclip
+![](../assets/infoclip.png)
+* [Interfaces in de praktijk](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ace92d8-27c8-4b3a-9a3d-abac014a15a9)
+* [Interfaces en polymorfisme in de praktijk: Vloekende mensen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01040bf2-b14d-407f-b186-abad00b66540) 
+* [Interfaces en polymorfisme in de praktijk: fuifsimulator (LESOPNAME 2017)](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1827a908-a435-4d89-ae7a-aa4c00911c87)
+
+<!---NOBOOKEND--->
+

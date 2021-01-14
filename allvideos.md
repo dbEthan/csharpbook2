@@ -64,11 +64,11 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 ### Hoofdstuk 9 - Interfaces
 
-* [Interfaces](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6c32cd08-980c-4fe1-9be8-aba40101be31)
+* [Interfaces introductie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45c9a641-7333-432b-8f67-acb00082080f)
 * [Interfaces in de praktijk met presidenten, deel 2](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1df92edd-ba85-42f4-bdd0-abac0149cc10)
 * [Interfaces in de praktijk- een meme-detective verhaal](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2ace92d8-27c8-4b3a-9a3d-abac014a15a9)
-* [Interfaces en polymorfisme in de praktijk: Vloekende mensen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01040bf2-b14d-407f-b186-abad00b66540)* 
-* [Interfaces en polymorfisme in de praktijk: fuifsimulator](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1827a908-a435-4d89-ae7a-aa4c00911c87)
+* [Interfaces en polymorfisme in de praktijk: Vloekende mensen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01040bf2-b14d-407f-b186-abad00b66540) 
+* [Interfaces en polymorfisme in de praktijk: fuifsimulator (LESOPNAME 2017)](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1827a908-a435-4d89-ae7a-aa4c00911c87)
 
 
 ### Appendix - Git

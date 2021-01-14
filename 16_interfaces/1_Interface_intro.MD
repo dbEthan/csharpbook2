@@ -316,5 +316,5 @@ Voor de geïnteresseerden, dit concept is een eerste stap naar *Dependency Injec
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Interfaces](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6c32cd08-980c-4fe1-9be8-aba40101be31)
+* [Interfaces](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45c9a641-7333-432b-8f67-acb00082080f)
 <!---NOBOOKEND--->

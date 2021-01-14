@@ -9,12 +9,14 @@ Je zult in je zoektocht naar online antwoorden mogelijk al een paar keer het ``t
 
 Wanneer je ``this`` gebruikt binnen een klasse, dan zal je zien dat bij het schrijven van de dot-operator je ogenblikkelijk de volledige interne structuur van de klasse kunt bereiken:
 
+<!--- {width:60%} --->
 ![](../assets/7_overerving/thisme.png)
 
 Enerzijds ben je vrij om altijd ``this`` te gebruiken wanneer je eender wat van de klasse zelf wilt bereiken. Vooral in oudere code-voorbeelden zal je dat nog vaak zien gebeuren.
 
 Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteert met een lokale variabele dat dezelfde naam heeft. Volgende voorbeeld toont waarom dit belangrijk kan zijn:
 
+<!--- {width:60%} --->
 ![](../assets/7_overerving/thisinst.png)
 
 De lijn ``Levens = 5;`` in de constructor zal de parameter zelf van waarde aanpassen (wat niet bepaald aan te raden valt). Terwijl door ``this`` te gebruiken geraak je aan de property met dezelfde naam.

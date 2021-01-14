@@ -97,6 +97,7 @@ class PC
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
+
 Het moge duidelijk zijn: compositie/aggregatie en referenties horen samen. Maar hoe zit dit er allemaal uit in het geheugen? Blij dat je het vraag! 
 
 Wanneer we van voorgaande klasse een object aanmaken als volgt:
@@ -308,21 +309,10 @@ myBook.InsertPage(new Page(), 5);
 
 {% endhint %}
 
-<!---NOBOOKSTART--->
-{% hint style='warning' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/attention.png)
 
 
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->
 
-
-## Compositie of overerving
+## Compositie of overerving?
 
 We vertelden in het begin van dit hoofdstuk dat compositie en aggregatie een "heeft een"-relatie aanduiden, terwijl overerving een "is een"-relatie behelst.  In de praktijk zal je véél vaker compositie en aggregatie moeten gebruiken dan overerving. 
 Compositie en aggregatie laat ons toe om 2 (of meer) totaal verschillende soorten zaken met elkaar te laten samenwerken, iets wat met oververing enkel kan indien beide zaken een "is een"-relatie hebben. Dit zien we ook in de echte wereld: de zaken rondom ons zullen vaker een compositie/aggregatie-relatie hebben dan een overervings-relatie.

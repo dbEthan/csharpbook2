@@ -12,6 +12,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
 * [Auto properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
+* [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
 
 ### Hoofdstuk 2 - Geheugenmanagement, uitzonderingen en namespaces
 

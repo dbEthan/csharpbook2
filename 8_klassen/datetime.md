@@ -157,3 +157,12 @@ Console.WriteLine($"{verschil.TotalDays} dagen sinds de geboorte van je dochter.
 ```
 
 <!---{sample: false}--->
+
+
+
+
+# Kennisclip
+![](../assets/infoclip.png)
+
+* [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
+<!---NOBOOKEND--->

@@ -1,5 +1,5 @@
 
-## Namespace en using
+## Namespaces en ``using``
 Als tussendoortje wil ik nu even de keywords ``using`` en  ``namespace`` met je bespreken. Je zal het keyword ``namespace`` al vele malen bovenaan je code hebben zien staan met vlak erboven meestal nog 1 vreemd zinnetje met het keyword ``using``.
 
 ```java
@@ -48,7 +48,7 @@ Nog een fijne dag!
 {% endhint %}
 <!---NOBOOKEND--->
 
-### Using in je code
+### ``using`` in je code
 
 Mogelijk heb je nu al een vermoeden waarom er ``using System;`` bovenaan je projecten staat. Deze lijn is verrassend eenvoudig en zegt letterlijk: *"Beste C#, als je een klasse zoekt en je vindt ze niet in dit project: kijk dan zeker in de System-bibliotheek."*
 
@@ -75,8 +75,10 @@ Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nod
 De optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 
 {% endhint %}
 
-<!---NOBOOKSTART--->
-<!---### De wereld van Nugets, dll's en class libraries--->
+# Kennisclip
+![](../assets/infoclip.png)
+
+* [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
 <!---NOBOOKEND--->
 
 

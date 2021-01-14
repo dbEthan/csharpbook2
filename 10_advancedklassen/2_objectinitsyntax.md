@@ -56,5 +56,5 @@ Je bent niet verplicht alle properties via deze syntax in te stellen, enkel de z
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Object initializer syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8f1ceebc-9f02-4593-84da-ab7a0099bf99)
+* [Object initializer syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3dabbb6a-850c-4796-babf-acb000b6a1db)
 <!---NOBOOKEND--->

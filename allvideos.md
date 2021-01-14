@@ -19,13 +19,14 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bf7ea9bc-7469-446b-b226-ab5e008085a8)
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=49247267-d9db-411a-8de6-ab5e0084792a)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
+* [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
 * [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
 
 ### Hoofdstuk 3 - Gevorderde klasseconcepten
 
 * [Constructors intro en default constructor](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8d9b4ad8-2732-47e7-8972-ab7a00935196)
 * [Overloaded constructors](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=24f83488-a058-4898-b34d-ab7a0097f165)
-* [Object initialize Syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8f1ceebc-9f02-4593-84da-ab7a0099bf99)
+* [Object initialize Syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3dabbb6a-850c-4796-babf-acb000b6a1db)
 * [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=04805e97-94e8-4593-b30c-ab750089ffa6)
 
 ### Hoofdstuk 4 - Arrays en klassen

@@ -334,3 +334,14 @@ donor = null //donor wordt begraven
 {% hint style='warning' %}
 Let er wel op dat je niet overal compositie begin toe te passen alsof je de Dokter Frankenstein van C# bent. Hoe meer compositie (of aggregatie) je toepast in een klasse, hoe specifieker die soms wordt, en daardoor mogelijk minder herbruikbaar. Het is om die reden dat we verderop interfaces gaan ontdekken om ervoor te zorgen dat 2 of meerdere klassen minder "op/in elkaar gelijmd" zitten ten gevolge van bijvoorbeeld een nogal hechte compositie.
 {% endhint %}
+
+
+
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+
+* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
+* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
+<!---NOBOOKEND--->

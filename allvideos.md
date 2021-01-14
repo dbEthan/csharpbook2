@@ -49,13 +49,12 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [System.Object en ToString](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00cad992-7714-4051-a992-ab7d0093864b)
 * [Equals - objecten vergelijken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c18b27c9-ad5a-444b-9695-ab7d00c2c3d9)
 * [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
-* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)
-
+<!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)--->
 ### Hoofdstuk 7 - Compositie en this
-* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=799210db-6683-49f1-afba-ab9d00cf6792)
-* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=26d08209-4de8-40b5-b5cc-ab9d00d33aa5)
+* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
+* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
 * [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=235d6b90-d246-4529-a911-ab9d00db6f56)
-* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81e976c8-d865-4cfa-9851-abad0107f367)
+<!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81e976c8-d865-4cfa-9851-abad0107f367)--->
 
 ### Hoofdstuk 8 - Polymorfisme
 * [Polymorfisme](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f159648-9bc0-4169-91b0-acb000c86dea)

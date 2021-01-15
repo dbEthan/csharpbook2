@@ -88,3 +88,10 @@ static public void TimsMethode()
 }
 ```
 
+
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [Zelf uitzonderingen maken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b68d611d-2022-4f0b-aa88-acb100b9ef5a)
+<!---NOBOOKEND--->

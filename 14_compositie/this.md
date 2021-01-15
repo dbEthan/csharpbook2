@@ -56,3 +56,11 @@ Op deze manier geeft het object waarop je ``VraagPromotie`` op aanroept zichzelf
 Werknemer francis = new Werknemer();
 francis.VraagPromotie();
 ```
+
+
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [this keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea597dce-a279-44bb-881d-acb100b55d85)
+<!---NOBOOKEND--->

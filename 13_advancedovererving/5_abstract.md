@@ -121,6 +121,6 @@ Wanneer je een abstracte property maakt dien je ogenblikkelijk aan te geven of h
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Abstract klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6f513b8-e299-4118-986d-ab7c00e47861)
+* [Abstract klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1b22106-87a6-4f6f-9437-acb100add8d5)
 * [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
 <!---NOBOOKEND--->

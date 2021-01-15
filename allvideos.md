@@ -17,7 +17,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 ### Hoofdstuk 2 - Geheugenmanagement, uitzonderingen en namespaces
 
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bf7ea9bc-7469-446b-b226-ab5e008085a8)
-* [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=49247267-d9db-411a-8de6-ab5e0084792a)
+* [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
 * [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
 * [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
@@ -45,11 +45,12 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 
 ### Hoofdstuk 6 - Gevorderde overervingsconcepten
-* [Abstracte klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6f513b8-e299-4118-986d-ab7c00e47861)
+* [Abstracte klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1b22106-87a6-4f6f-9437-acb100add8d5)
 * [System.Object en ToString](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00cad992-7714-4051-a992-ab7d0093864b)
 * [Equals - objecten vergelijken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c18b27c9-ad5a-444b-9695-ab7d00c2c3d9)
 * [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
 <!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)--->
+
 ### Hoofdstuk 7 - Compositie en this
 * [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
 * [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)

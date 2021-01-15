@@ -55,7 +55,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 ### Hoofdstuk 7 - Compositie en this
 * [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
 * [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
-* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=235d6b90-d246-4529-a911-ab9d00db6f56)
+* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
 * [this keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea597dce-a279-44bb-881d-acb100b55d85)
 <!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81e976c8-d865-4cfa-9851-abad0107f367)--->
 

@@ -163,3 +163,11 @@ catch (Exception e)
 {% hint style='warning' %}
 **Opgelet**: vanuit security standpunt is het zelden aangeraden om Exception informatie zomaar rechtstreeks naar de gebruiker te sturen. Mogelijk bevat de informatie gevoelige informatie en zou deze door kwaadwillige gebruikers kunnen misbruikt worden om bugs in je programma te vinden.
 {% endhint %}
+
+
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [Werken met exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f0d75032-e9bc-46e8-9a36-acb400b24318)
+<!---NOBOOKEND--->

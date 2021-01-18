@@ -18,7 +18,7 @@
   * [Null en NullReferenceException](9_meminoop/nullreference.md)
   * [Namespaces](9_meminoop/namespaces.md)
   * [Werken met exceptions](20_exceptions/0_exceptionhandling.md)
-  * [Waar exceptions plaatsen](20_exceptions/waarplaatsen.md)
+  * [Waar exception handling plaatsen](20_exceptions/waarplaatsen.md)
 <!---  * [OOPQuest Fase 2](oopquest/h2_basics.md)--->
 * H3: Gevorderde klasseconcepten
   * [Default Constructors](10_advancedklassen/1_constructors.md)

@@ -21,6 +21,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
 * [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
+* [Werken met exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f0d75032-e9bc-46e8-9a36-acb400b24318)
 * [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
 
 ### Hoofdstuk 3 - Gevorderde klasseconcepten

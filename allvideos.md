@@ -8,16 +8,17 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 ### Hoofdstuk 1 - Object Oriented Programming
 
-* [Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
-* [Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
-* [Auto properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
-* [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
+* [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
+* [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
+* [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
+* [Demo: Auto properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 * [De DateTime klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bab1597f-4907-40ae-8723-acb00095e421)
 
 ### Hoofdstuk 2 - Geheugenmanagement, uitzonderingen en namespaces
 
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bf7ea9bc-7469-446b-b226-ab5e008085a8)
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
+* [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
 * [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
 * [Hoe de pokemon klasse werkt](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=245f5d03-dbe4-49d9-b9e9-ab720084b984)
@@ -27,10 +28,11 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Constructors intro en default constructor](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8d9b4ad8-2732-47e7-8972-ab7a00935196)
 * [Overloaded constructors](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=24f83488-a058-4898-b34d-ab7a0097f165)
 * [Object initialize Syntax](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3dabbb6a-850c-4796-babf-acb000b6a1db)
-* [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=04805e97-94e8-4593-b30c-ab750089ffa6)
+* [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c9d6af4-3b7e-416c-b171-acb4009a874d)
 
 ### Hoofdstuk 4 - Arrays en klassen
 
+* [Arrays van objecten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=328b271a-f26e-44ed-8e03-acb400ac9b72)
 * [var keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9beea541-07b2-4854-b6c0-acb000c553f9)
 * [De foreach loop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e268b0f3-5226-4279-a69c-ab7500892031)
 * [List<> klasse](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ac1bfe58-b55b-4e7e-98f3-ab7a009085bc)

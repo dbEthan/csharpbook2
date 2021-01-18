@@ -129,3 +129,11 @@ Vervolgens kunnen we deze dan aanroepen en het resultaat (de referentie naar de 
 ```java
 Student[] resultaat = CreateEmptyStudentArray();
 ```
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [Arrays van objecten](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=328b271a-f26e-44ed-8e03-acb400ac9b72)
+<!---NOBOOKEND--->
+
+

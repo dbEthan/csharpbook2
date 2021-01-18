@@ -412,5 +412,5 @@ class Dobbelsteen
 <!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
-* [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=04805e97-94e8-4593-b30c-ab750089ffa6)
+* [static keyword](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5c9d6af4-3b7e-416c-b171-acb4009a874d)
 <!---NOBOOKEND--->

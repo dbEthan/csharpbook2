@@ -73,8 +73,8 @@ Quotient = 0,352941176470588
 
 Ontwerp een klasse ``Rekening`` die minstens instantievariabelen ``naamKlant``, ``balans`` en ``rekeningnummer`` bevat. Voorzie 3 methoden:
 
-1. ``HaalGeldAf``: bepaalt bedrag (als parameter) wordt van de ``balans`` verwijderd.
-2. ``StortGeld``: bepaalt bedrag (als parameter) wordt op de rekening gezet en aan ``balans`` toegevoegd.
+1. ``HaalGeldAf``: bepaald bedrag (als parameter) wordt van de ``balans`` verwijderd.
+2. ``StortGeld``: bepaald bedrag (als parameter) wordt op de rekening gezet en aan ``balans`` toegevoegd.
 3. ``ToonBalans``: het totale bedrag op de rekening wordt getoond, alsook de naam van de klant en het rekeningnummer.
 
 Pas de ``HaalGeldAf`` methode aan zodat als returntype het bedrag (``int``) wordt teruggegeven. Indien het gevraagde bedrag meer dan de ``balans`` is dan geef je al het geld terug dat nog op de rekening staat en toon je in de console dat niet al het geld kon worden gegeven.
@@ -86,7 +86,7 @@ BankRekening rekening1 = new BankRekening();
 BankRekening rekening2 = new BankRekening();
 ```
 
-Voeg aan de ``Rekening``-klasse een instantievariabele vanvan het type ``RekeningState`` toe, dat een enumeratie bevat. De Rekening kan in volgende states zijn ``Geldig``, ``Geblokkeerd``). 
+Voeg aan de ``Rekening``-klasse een instantievariabele van het type ``RekeningState`` toe, dat een enumeratie bevat. De Rekening kan in volgende states zijn ``Geldig`` en ``Geblokkeerd``. 
 
 Maak een bijhorende publieke Methode waarmee je de Rekening van state kunt veranderen. Deze methode (noem ze ``ChangeState``) vereist geen parameters. Telkens je ze aanroept wordt de staat omgewisseld. Als dus het object momenteel op ``Geldig`` stond, dan wordt ze nu ``Geblokkeerd`` en omgekeerd.
 

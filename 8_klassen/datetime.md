@@ -45,7 +45,7 @@ Console.WriteLine(currentTime);
 
 #### Met constructor
 
-De constructor van een klasse laat toe om bij het maken van een nieuw object, beginwaarden voor bepaalde instantievariabelen of properties mee te geven. De ``DateTime`` klasse heeft meerdere constructor gedefiniëerd zodat je bijvoorbeeld een object kan aanmaken dat bij de start reeds de geboortedatum van de auteur bevat:
+De constructor van een klasse laat toe om bij het maken van een nieuw object, beginwaarden voor bepaalde instantievariabelen of properties mee te geven. De ``DateTime`` klasse heeft meerdere constructors gedefiniëerd zodat je bijvoorbeeld een object kan aanmaken dat bij de start reeds de geboortedatum van de auteur bevat:
 
 
 
@@ -138,8 +138,7 @@ Deze nuttige methode geeft een ``bool`` terug om aan te geven of het meegegeven 
 
 ```java
 DateTime vandaag = DateTime.Now;
-bool isSchrikkel = DateTime.IsLeapYear(vandaag.Year);
-if(isSchrikkel)
+if(DateTime.IsLeapYear(vandaag.Year))
     Console.WriteLine("Dit jaar is een schrikkeljaar");
 ```
 
@@ -153,7 +152,7 @@ DateTime geboorteDochter = new DateTime(2009,6,17);
 
 TimeSpan verschil = vandaag - geboorteDochter;
 
-Console.WriteLine($"{verschil.TotalDays} dagen sinds de geboorte van je dochter.");
+Console.WriteLine($"{verschil.TotalDays} dagen sinds geboorte dochter.");
 ```
 
 <!---{sample: false}--->

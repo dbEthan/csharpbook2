@@ -41,4 +41,10 @@ Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatte
 
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!
 
+Ook deze keer wil echter een grote boeket bloemen klaarleggen voor collega Olga Coutrin die er mee voor heeft gezorgd dat ik dit boek binnen de deadlines "bij de drukker" heb gekregen en enkele belangrijke, inhoudelijke aanpassingen heeft teweeg gebracht. Duizendmaal dank! 
+```java
+for(int i = 0; i < 1000; i++)
+    Console.WriteLine("Bedankt, Olga!");
+```
+
 <!---{sample: false}--->

@@ -68,32 +68,32 @@ class Ball
    public int Y { get { return y; } }
    private int x = 0;
    private int y = 0;
-   protected int vx = 0;
-   protected int vy = 0;
+   protected int VectorX = 0;
+   protected int VectorY = 0;
    protected char drawChar = 'O';
    protected ConsoleColor drawColor = ConsoleColor.Red;
 
-   public Ball(int xin, int yin, int vxin, int vyin)
+   public Ball(int xin, int yin, int VectorXin, int VectorYin)
    {
       x = xin;
       y = yin;
-      vx = vxin;
-      vy = vyin;
+      VectorX = VectorXin;
+      VectorY = VectorYin;
    }
 
    public void Update()
    {
-      x += vx;
-      y += vy;
+      x += VectorX;
+      y += VectorY;
       if (x >= Console.WindowWidth || x < 0)
       {
-            vx *= -1;
-            x += vx;
+            VectorX *= -1;
+            x += VectorX;
       }
       if (y >= Console.WindowHeight || y < 0)
       {
-            vy *= -1;
-            y += vy;
+            VectorY *= -1;
+            y += VectorY;
       }
    }
    public void Draw()
@@ -118,12 +118,12 @@ class Ball
 
 ## Specialisatie klasse PlayerBall
 
-De overgeërfde klasse ``PlayerBall`` is een ``Ball`` maar zal z'n ``vx`` en ``vy`` updaten gebaseerd op input via de ``ChangeVelocity`` methode:
+De overgeërfde klasse ``PlayerBall`` is een ``Ball`` maar zal z'n ``VectorX`` en ``VectorY`` updaten gebaseerd op input via de ``ChangeVelocity`` methode:
 
 ```java
 class PlayerBall : Ball
 {
-   public PlayerBall(int xin, int yin, int vxin, int vyin) : base(xin, yin, vxin, vyin)
+   public PlayerBall(int xin, int yin, int VectorXin, int VectorYin) : base(xin, yin, VectorXin, VectorYin)
    {
       drawChar = 'X';
       drawColor = ConsoleColor.Green;
@@ -134,16 +134,16 @@ class PlayerBall : Ball
       switch (richting.Key)
       {
             case ConsoleKey.UpArrow:
-               vy--;
+               VectorY--;
                break;
             case ConsoleKey.DownArrow:
-               vy++;
+               VectorY++;
                break;
             case ConsoleKey.LeftArrow:
-               vx--;
+               VectorX--;
                break;
             case ConsoleKey.RightArrow:
-               vx++;
+               VectorX++;
                break;
             default:
                break;

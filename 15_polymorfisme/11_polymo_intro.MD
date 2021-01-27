@@ -1,6 +1,6 @@
 # Polymorfisme
 
-**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox of encapsulatie principe en overerving, is polymorfisme de derde grote peiler van object georiënteerd programmeren. 
+**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox of abstractie principe en overerving, is polymorfisme de derde grote peiler van object georiënteerd programmeren. 
 
 
 De latijnse naam polymorfisme bestaat uit 2 delen: *poly* en *morfisme*, letterlijk dus "meerdere vormen". En geloof het of niet, deze naam dekt de lading ongelooflijk goed. 

@@ -2,9 +2,21 @@
 
 Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een bekentenis te maken... Ben je er klaar voor?! Hier komt ie. Luister goed, maar zeg het niet door: we hebben al de hele tijd informatie voor je achter gehouden! Ja, sorry, het was sterker dan mezelf. Maar we deden het voor jou. Het was de enige manier om ervoor te zorgen dat je leerde programmeren zonder constant bugs in je code achter te laten. Dus ja, hopelijk neem je het ons niet kwalijk?! Het wordt tijd om **exception handling** er bij te halen! Een essentiële programmeertechniek die ervoor zorgt dat je programma minder snel zal crashen indien er zich **uitzonderingen** tijdens de uitvoer voordoen. 
 
-{% hint style='tip' %}
-Wat een dramatische start zeg. Waar was dat voor nodig?! De reden is eenvoudig: met exception handling kan je code schrijven die al jouw slecht geschreven als het ware verstopt met een zacht dekentje, waardoor het voor de eindgebruiker zal lijken dat jouw programma vlekkeloos werkt. Niets is echter waar, het dekentje verstopt een smeltkroes van stinkende, gure, code die om de haverklap faalt en meer bugs bevat dan Windows Millennium. Kortom, lees verder: maar besef dat exception handling een tweesnijdend zwaar is.
+
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+Wat een dramatische start zeg. Waar was dat voor nodig?! De reden is eenvoudig: exception handling is een tweesnijdend zwaard. Je zou exception handling kunnen gebruiken om al je bugs op te vangen, zodat de eindgebruiker niet ziet hoe vaak je programma zou crashen zonder exception handling. Maar uiteindelijk blijf je wel met slechte code zitten en een gouden regel in programmeren is dat slechte code je altijd zal achtervolgen en je ooit dubbel en hard straffen voor iedere bug waar je te lui voor bent om op te lossen. **Kortom, exception handling is de finale fase van goedgeschreven code, niét van slecht geschreven code.**
+<!---NOBOOKSTART--->
 {% endhint %}
+<!---NOBOOKEND--->
+
+
+
+
 
 ### Waarom exception handling?
 
@@ -142,7 +154,7 @@ Alle ``Exception``-objecten bevatten volgende informatie:
 |----|----|
 |`Message`|	Foutmelding in relatief eenvoudige taal|
 |`StackTrace`|	Lijst van methoden die de exception hebben doorgegeven|
-|`TargetSite`|	Methode die de exception heeft gegeneerde (staat bij StackTrace helemaal bovenaan)|
+|`TargetSite`|	Methode die de exception heeft gegenereerd (staat bij StackTrace helemaal bovenaan)|
 |`ToString()`	|Geeft het type van de exception, Message en StackTrace terug als string.|
 
 

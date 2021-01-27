@@ -2,7 +2,12 @@
 
 ### Objecten als actuele parameters
 
-Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden.
+Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden voor de meeste klassen 
+
+{% hint style='tip' %}
+Voorgaande zin verdient een lichte nuancering. Niet alle klassen zullen als *gewone datatypes* door het leven kunnen gaan: er zijn enkele uitzonderingen, denk maar aan de ``Console`` klasse, waar we later meer over zullen vertellen. Hint: *static types* volgen deze regels niet.
+{% endhint %}
+
 Het enige verschil is dat we objecten **by reference** meegeven aan een methode. Aanpassingen aan het object in de methode zal dus betekenen dat je het originele object aanpast dat aan de methode werd meegegeven. Hier moet je dus zeker rekening mee houden.
 
 Een voorbeeld. Stel dat we volgende klasse hebben waarin we metingen willen opslaan, alsook wie de meting heeft gedaan:
@@ -12,10 +17,23 @@ class Meting
 {
     public int Temperatuur { get; set; }
     public string OpgemetenDoor { get; set; }
+
+    
 }
 ```
 
-In ons hoofdprogramma schrijven we een methode ``ToonMetingInKleur`` die ons toelaat om deze meting op het scherm te tonen in een bepaalde kleur. Het gebruik en de methode zelf zouden er zo kunnen uitzien:
+We voegen vervolgens een methode aan de klasse toe die ons toelaat om deze meting op het scherm te tonen in een bepaalde kleur. 
+
+```java
+void ToonMetingInKleur (ConsoleColor kleur)
+{
+    Console.ForegroundColor = kleur;
+    Console.WriteLine($"{Temperatuur}°C gemeten door: {OpgemetenDoor}");
+    Console.ResetColor();
+}
+```
+
+Het gebruik van deze klasse zou er als volgt kunnen uitzien:
 
 ```java
 static void Main(string[] args)
@@ -27,16 +45,11 @@ static void Main(string[] args)
     m2.Temperatuur = 34; 
     m2.OpgemetenDoor = "Dennis Rodman";
 
-    ToonMetingInKleur(m1, ConsoleColor.Red);
-    ToonMetingInKleur(m2, ConsoleColor.Gray);
+    m1.ToonMetingInKleur(ConsoleColor.Red);
+    m2.ToonMetingInKleur(ConsoleColor.Gray);
 }
 
-static void ToonMetingInKleur (Meting inMeting, ConsoleColor kleur)
-{
-    Console.ForegroundColor = kleur;
-    Console.WriteLine($"{inMeting.Temperatuur}°C gemeten door: {inMeting.OpgemetenDoor}");
-    Console.ResetColor();
-}
+
 ```
 
 ### Objecten in methoden aanpassen

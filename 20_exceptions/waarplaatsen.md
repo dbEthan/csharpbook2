@@ -62,7 +62,7 @@ Met andere woorden, zolang de urls geldig zijn zal de download lukken. Bij de ee
 
 ### Rond afzonderlijke elementen in de loop
 
-Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. We plaatsen dan de try catch niet rond de methode ``DownloadAllUris`` , maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
+Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere urls niet werken. We plaatsen dan de try catch niet rond de methode ``DownloadAllUris``, maar net binnenin de methode zelf rond het gedeelte dat kan mislukken:
 
 ```java
  for(int i = 0; i < urls.Length;i++)

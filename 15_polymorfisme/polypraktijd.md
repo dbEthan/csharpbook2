@@ -61,7 +61,7 @@ class MinisterVanMilieu
 
 De ``MinisterVanEconomie``-klasse heeft dan weer heel andere publieke methoden. En de ``MinisterBZ`` ook weer totaal andere.
 
-Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het encapsulatie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. 
+Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het abstractie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. 
 
 **Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
 

@@ -58,6 +58,8 @@ void NiemandMagDitGebruiken()
     ...
 }
 ```
+
+**Het is een héél slechte gewoonte om géén access modifiers voor iedere methode te zetten. Maar er dus een gewoonte van dit steeds ogenblikkelijk te doen.**
 {% endhint %}
 
 
@@ -150,7 +152,7 @@ class Mens
 Enkele belangrijke concepten:
 * De instantievariabele ``leeftijd`` zetten we private: we willen niet dat de buitenwereld de leeftijd van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw leeftijd is nu 99! Ha.". Waarop Adil vloekend verandert in een oud mannetje.
 * We geven de variabele een beginwaarde ``12``. Alle objecten zullen dus 12 jaar oud zijn wanneer we deze met ``new`` aanmaken.
-* We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``leeftijd`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou de leeftijd van het object dat je aanroept mee op het scherm versschijnen.
+* We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``leeftijd`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou de leeftijd van het object dat je aanroept mee op het scherm verschijnen.
 
 {% hint style='warning' %}
 We moeten ook dringend enkele extra niet-officiële identifier regels in het leven roepen:
@@ -210,13 +212,13 @@ Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen i
 We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan laten verjaren. Kijk wat er gebeurt:
 
 ```java
-Mens Elvis = new Mens();
-Mens Bono = new Mens();
+Mens elvis = new Mens();
+Mens bono = new Mens();
 
-Elvis.VerjaardagVieren();
-Elvis.VerjaardagVieren();
-Elvis.VerjaardagVieren();
-Bono.VerjaardagVieren();
+elvis.VerjaardagVieren();
+elvis.VerjaardagVieren();
+elvis.VerjaardagVieren();
+bono.VerjaardagVieren();
 ```
 
 Als je deze code zou uitvoeren zal je zien dat de leeftijd van Elvis verhoogt en niet die van Bono wanneer we ``VerjaardagVieren`` aanroepen. Zoals het hoort!

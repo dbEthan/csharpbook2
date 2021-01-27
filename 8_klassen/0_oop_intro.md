@@ -42,7 +42,7 @@ Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben
 ### C# en OOP
 Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaal om "een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden" te worden. C# is van de grond af opgebouwd met het OOP programmeerparadigma als primaire drijfveer. 
 
-Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class`` reeds bovenaan onze staan telkens we een nieuw project aanmaakten:
+Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class``  bovenaan staan, telkens we een nieuw project aanmaakten:
 ```java
 using System;
 
@@ -61,7 +61,7 @@ De klasse ``Program`` zorgt ervoor dat ons programma voldoet aan de C# afspraken
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met alles wat C# me zou voorschotelen. Helaas, wolharige neushoorn-kaas, niet dus. Ik ga een voorspelling doen:  van alle hoofdstukken in dit boek, wordt dit hoofdstuk hetgene waar je hebt meest je tanden op gaat stuk bijten. Hou dus vol, geef niet te snel op en kom geregeld hier terug! Succes gewenst. 
+Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met alles wat C# me zou voorschotelen. Helaas, wolharige neushoorn-kaas, niet dus. Ik ga een voorspelling doen:  van alle hoofdstukken in dit boek, wordt dit hoofdstuk hetgene waar je het meest je tanden op gaat stuk bijten. Hou dus vol, geef niet te snel op en kom geregeld hier terug! Succes gewenst. 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -71,31 +71,31 @@ Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met a
 Om de kracht van OOP te demonstreren gaan we een applicatie van lang geleden (deels) herschrijven gebruik makende van de kennis van gestructureerd programmeren (zie het boek *Zie Scherp*). We gaan de arcadehal klassieker "Pong" namaken, waarbij we als doel hebben om een balletje alvast op het scherm te laten botsen. Een rudimentaire oplossing zou de volgende kunnen zijn:
 
 ```java
-int balx = 20;
-int baly = 20;
-int vx = 2;
-int vy = 1;
+int balX = 20;
+int balY = 20;
+int VectorX = 2;
+int VectorY = 1;
 
 while (true)
 {
     //Xvector van richting veranderen aan de randen
-    if (balx + vx >= Console.WindowWidth || balx+vx < 0)
+    if (balX + VectorX >= Console.WindowWidth || balX+VectorX < 0)
     {
-        vx = -vx;
+        VectorX = -VectorX;
     }
     //Xupdaten
-    balx = balx + vx;
+    balX = balX + VectorX;
 
     //Yvector van richting veranderen aan de randen
-    if (baly + vy >= Console.WindowHeight || baly+vy < 0)
+    if (balY + VectorY >= Console.WindowHeight || balY+VectorY < 0)
     {
-        vy = -vy;
+        VectorY = -VectorY;
     }
     //Yupdaten
-    baly = baly + vy;
+    balY = balY + VectorY;
 
     //Output naar scherm sturen
-    Console.SetCursorPosition(balx, baly);
+    Console.SetCursorPosition(balX, balY);
     Console.Write("O");
 
     //Einde output
@@ -104,37 +104,37 @@ while (true)
 }
 ```
 
-Hopelijk begrijp je deze code. Test ze maar eens in een programma. Zoals je zal zien krijgen we een balletje (``"O"``) dat over het scherm vliegt en telkens van richting verandert wanneer het aan de randen komt. De belangrijkste informatie zit natuurlijk in de variabelen ``balx``, ``baly`` die de huidige positie van het balletje bevatten. Voorts zijn ook ``vx`` en``vy`` belangrijk: hierin houden we bij in welke richting (en met welke snelheid) het balletje beweegt (een zogenaamde bewegingsvector).
+Hopelijk begrijp je deze code. Test ze maar eens in een programma. Zoals je zal zien krijgen we een balletje (``"O"``) dat over het scherm vliegt en telkens van richting verandert wanneer het aan de randen komt. De belangrijkste informatie zit natuurlijk in de variabelen ``balX``, ``balY`` die de huidige positie van het balletje bevatten. Voorts zijn ook ``VectorX`` en ``VectorY`` belangrijk: hierin houden we bij in welke richting (en met welke snelheid) het balletje beweegt (een zogenaamde bewegingsvector).
 
 ![Een artistieke benadering van hoe Pong er vroeger uitzag](../assets/pongtim.png)
 
 Dit soort applicatie in C# schrijven met behulp van gestructureerde programmeer-concepten is redelijk eenvoudig. Maar wat als we nu 2 balletjes nodig hebben? Laten we even arrays links laten liggen en het gewoon eens naïef oplossen. Al na enkele lijnen kopiëren merken we dat onze code ongelooflijk rommelachtig gaat worden:
 
 ```java
-int balx = 20;
-int baly = 20;
-int vx = 2;
-int vy = 1;
+int balX = 20;
+int balY = 20;
+int vectorX = 2;
+int vectorY = 1;
 
 int bal2x = 10;
 int bal2y = 8;
-int vx2 = 2;
-int vy2 = -1;
+int vectorX2 = 2;
+int vectorY2 = -1;
 
 while (true)
 {
     //Xvector van richting veranderen aan de randen
-    if (balx + vx >= Console.WindowWidth || balx+vx < 0)
+    if (balX + vectorX >= Console.WindowWidth || balX+ vectorX < 0)
     {
-        vx = -vx;
+        VectorX = -VectorX;
     }
-    if (bal2x + vx2 >= Console.WindowWidth || bal2x +vx2 < 0)
+    if (bal2x + vectorX2 >= Console.WindowWidth || bal2x + vectorX2 < 0)
     {
-        vx2 = -vx2;
+        VectorX2 = -VectorX2;
     }
     //Xupdaten
-    balx = balx + vx;
-    bal2x = bal2x + vx2;
+    balX = balX + vectorX;
+    bal2x = bal2x + vectorX2;
 
     //enzovoort
 ```
@@ -142,7 +142,7 @@ while (true)
 **Bijna iedere lijn code moeten we verdubbelen.** Arrays zouden dit probleem deels kunnen oplossen, maar we krijgen dan in de plaats de complexiteit van werken met arrays op ons bord, wat voor 2 balletjes misschien wat overdreven is én de code ook weer wat minder leesbaar maakt.
 
 ### Een wereld met OOP: Pong
-Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse truukje om je punt te maken, dus we gaan nog even verder. 
+Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse truckje om je punt te maken, dus we gaan nog even verder. 
 
 Wanneer we Pong vanuit een OOP paradigma willen aanpakken dan is het de bedoeling dat we werken met klassen en objecten. Net zoals in het vorige boek ga ik je ook nu even in het diepe gedeelte van het bad gooien. Wees niet bang, ik zal je er tijdig uithalen (en je zal versteld staan hoeveel code je eigenlijk zult herkennen).
 
@@ -154,28 +154,28 @@ class Balletje
     //Eigenschappen
     public int BalX { get; set; }
     public int BalY { get; set; }
-    public int VX { get; set; }
-    public int VY { get; set; }
+    public int VectorX { get; set; }
+    public int VectorY { get; set; }
 
     //Methoden
     public void Update()
     {
         //Xvector van richting veranderen aan de randen
-        if (BalX + VX >= Console.WindowWidth || BalX + VX < 0)
+        if (BalX + VectorX >= Console.WindowWidth || BalX + VectorX < 0)
         {
-            VX = -VX;
+            VectorX = -VectorX;
         }
 
         //Xupdaten
-        BalX = BalX + VX;
+        BalX = BalX + VectorX;
 
         //Yvector van richting veranderen aan de randen
-        if (BalY + VY >= Console.WindowHeight || BalY + VY < 0)
+        if (BalY + VectorY >= Console.WindowHeight || BalY + VectorY < 0)
         {
-            VY = -VY;
+            VectorY = -VectorY;
         }
         //Yupdaten
-        BalY = BalY + VY;
+        BalY = BalY + VectorY;
     }
 
     public void TekenOpScherm()
@@ -188,10 +188,10 @@ class Balletje
 ```
 
 {% hint style='tip' %}
-De code voor een nieuw klasse schrijf je best in een apart bestand in je project. Klik bovenaan in de menu balk op "Project" en kies dan "Add class...". Geef het bestand de naam "Balletje.cs".
+De code voor een nieuwe klasse schrijf je best in een apart bestand in je project. Klik bovenaan in de menu balk op "Project" en kies dan "Add class...". Geef het bestand de naam "Balletje.cs".
 {% endhint %}
 
-Bijna alle code van zonet hebben we hier geïntegreerd in een ``class Balletje``, maar er zit duidelijk een nieuw sausje over. Vooral aan het begin zien we onze 4 variabelen terugkomen in een nieuw kleedje, namelijk als eigenschappen oftewel properties (herkenbaar aan de ``get`` en ``set`` keyword, waarover later meer). Maar al bok al lijkt de code grotendeels op wat we al kenden. En dat is goed nieuws. OOP gooit het vorige boek niet in de vuilbak, het gaat als het ware een extra laag over het geheel leggen. Let ook op het essentiële woordje ``class`` bovenaan, daar draait alles natuurlijk om:  klassen en objecten. 
+Bijna alle code van zonet hebben we hier geïntegreerd in een ``class Balletje``, maar er zit duidelijk een nieuw sausje over. Vooral aan het begin zien we onze 4 variabelen terugkomen in een nieuw kleedje, namelijk als eigenschappen oftewel properties (herkenbaar aan de ``get`` en ``set`` keyword, waarover later meer). Maar al bij al lijkt de code grotendeels op wat we al kenden. En dat is goed nieuws. OOP gooit het vorige boek niet in de vuilbak, het gaat als het ware een extra laag over het geheel leggen. Let ook op het essentiële woordje ``class`` bovenaan, daar draait alles natuurlijk om:  **klassen en objecten**. 
 
 {% hint style='tip' %}
 Een klasse is een beschrijving van een groep 'dingen' of objecten.  Objecten zijn de "echte" dingen die werken volgens de beschrijving van de klasse. Ja ik heb zonet 2x hetzelfde verteld, maar het is essentiëel dat je het verschil tussen de termen **klasse** en **object** goed begrijpt. 
@@ -202,8 +202,8 @@ Laten we eens een **balletje-object** in het leven roepen. In de main schrijven 
 Balletje bal1 = new Balletje();
 bal1.BalX = 20;
 bal1.BalY = 20;
-bal1.VX = 2;
-bal1.VY = 1;
+bal1.VectorX = 2;
+bal1.VectorY = 1;
 ```
 
 Ok, interessant. Die ``new`` heb je al gezien wanneer je met ``Random`` ging werken en de code erna is ook nog begrijpbaar: we stellen eigenschappen van het nieuwe ``bal1`` object in. En nu komt het! Kijk hoe eenvoudig onze volledig ``main`` nu is geworden:
@@ -214,8 +214,8 @@ static void Main(string[] args)
     Balletje bal1 = new Balletje();
     bal1.BalX = 20;
     bal1.BalY = 20;
-    bal1.VX = 2;
-    bal1.VY = 1;
+    bal1.VectorX = 2;
+    bal1.VectorY = 1;
 
     while (true)
     {
@@ -239,14 +239,14 @@ En nu, abracadabra, kijk goed hoe eenvoudig onze code blijft als we 2 balletjes 
 Balletje bal1 = new Balletje();
 bal1.BalX = 20;
 bal1.BalY = 20;
-bal1.VX = 2;
-bal1.VY = 1;
+bal1.VectorX = 2;
+bal1.VectorY = 1;
 
 Balletje bal2 = new Balletje();
 bal2.BalX = 10;
 bal2.BalY = 8;
-bal2.VX = 2;
-bal2.VY = -1;
+bal2.VectorX = 2;
+bal2.VectorY = -1;
 
 while (true)
 {
@@ -265,29 +265,30 @@ Dit is de volledige code om 2 balletjes te hebben. Hoe mooi is dat?!
 **De kracht van OOP zit hem in het feit dat we de logica IN DE OBJECTEN ZELF plaatsen. De objecten zijn met andere woorden verantwoordelijk om hun eigen gedrag uit te voeren.** In onze main zeggen we aan beide balletjes "update je zelf eens" , gevolgd door "teken je zelf eens". 
 
 {% hint style='tip' %}
-Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudigerén krachtiger dan wanneer we voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diep zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurig in de balletjes zit):
+Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudiger én krachtiger dan wanneer we in het voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diep zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurig in de balletjes zit):
 
 ```java
+const int AANTAL_BALLETJES = 100;
 Random r = new Random();
-Balletje[] honderBalletjes = new Balletje[100];
-for (int i = 0; i < honderBalletjes.Length; i++) //balletjes aanmaken
+Balletje[] veelBalletjes = new Balletje[AANTAL_BALLETJES];
+for (int i = 0; i < veelBalletjes.Length; i++) //balletjes aanmaken
 {
-    honderBalletjes[i] = new Balletje();
-    honderBalletjes[i].BalX = r.Next(10,20);
-    honderBalletjes[i].BalY = r.Next(10, 20);
-    honderBalletjes[i].VX = r.Next(-2,3);
-    honderBalletjes[i].VY = r.Next(-2, 3);
+    veelBalletjes[i] = new Balletje();
+    veelBalletjes[i].BalX = r.Next(10,20);
+    veelBalletjes[i].BalY = r.Next(10, 20);
+    veelBalletjes[i].VectorX = r.Next(-2,3);
+    veelBalletjes[i].VectorY = r.Next(-2, 3);
 }
 
 while (true)
 {
-    for (int i = 0; i < honderBalletjes.Length; i++)
+    for (int i = 0; i < veelBalletjes.Length; i++)
     {
-        honderBalletjes[i].Update(); //update alle balletjes
+        veelBalletjes[i].Update(); //update alle balletjes
     }
-    for (int i = 0; i < honderBalletjes.Length; i++)
+    for (int i = 0; i < veelBalletjes.Length; i++)
     {
-        honderBalletjes[i].TekenOpScherm(); //teken alle balletjes
+        veelBalletjes[i].TekenOpScherm(); //teken alle balletjes
     }
     System.Threading.Thread.Sleep(50);
     Console.Clear();
@@ -303,7 +304,7 @@ Een elementair aspect binnen OOP is het verschil begrijpen tussen een klasse en 
 
 Wanneer we meerdere objecten gebruiken van dezelfde soort dan kunnen we zeggen dat deze objecten allemaal deel uitmaken van een zelfde klasse. **Het OOP paradigma houdt ook in dat we de echte wereld gaan proberen te modeleren in code**. OOP laat namelijk toe om onze code zo te structureren zoals we dat ook in het echte leven doen. Alles (objecten) om ons heen behoord tot bepaalde verzamelingen (klassen) die deze groepen beschrijven. 
 
-Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar zit in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
+Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar ziet in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
 * Alle mensen hebben gemeenschappelijke eigenschappen (binnen deze beperkte context van een kruispunt): ze bewegen of staan stil (gedrag), ze hebben een bepaalde kleur van jas (eigenschap). 
 * Alle auto's behoren tot een klasse Auto. Ze hebben gemeenschappelijke zaken zoals: ze hebben een bepaald bouwjaar (eigenschap), ze werken op een bepaalde vorm van energie (eigenschap) en ze staan stil of bewegen (gedrag).
 * Ieder verkeerslicht behoort tot de klasse VerkeersLicht
@@ -319,7 +320,7 @@ Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek o
 
 Volgende 2 definities druk je best af op een grote poster die je boven je bed hangt:
 
-* **Een klasse** is een beschrijving en verzameling van dingen (objecten) met soortgelijke eigenschappen.
+* **Een klasse** definieert de interne structuur van objecten.
 * Een individueel **object** is een **instantie** van een klasse.
 
 {% hint style='tip' %}
@@ -328,7 +329,7 @@ Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in e
 
 De klasse beschrijft het algemene **gedrag** van de individuele objecten. Dit gedrag wordt meestal bepaald door de interne staat van ieder object op zichzelf, de zogenaamde **eigenschappen**. Nemen we het voorbeeld van de klasse Auto: de huidige snelheid van een individueel auto-object is mogelijks gebaseerd op het merk (eigenschap) van die auto, alsook welke energiebron (eigenschap) die auto heeft. 
 
-Voorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de interne staat van ieder object, leven de objecten natuurlijk in een bepaalde context, zoals een druk kruispunt. Andere objecten in dat kruispunt kunnen invloed hebben op wat een auto-object doet. Met andere woorden: we kunnen 'van buiten uit' vaak ook het gedrag en de interne staat van een object aanpassen. We hebben dit reeds zien gebeuren in het Pong-voorbeeld: de interne staat van ieder individueel balletjes-object is z'n positie alsook z'n richtingsvector. De buitenwereld, in dit geval onze ``Main`` methode kon echter de objecten manipuleren:
+Voorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de interne staat van ieder object, leven de objecten natuurlijk in een bepaalde context, zoals een druk kruispunt. Andere objecten op dat kruispunt kunnen invloed hebben op wat een auto-object doet. Met andere woorden: we kunnen 'van buiten uit' vaak ook het gedrag en de interne staat van een object aanpassen. We hebben dit reeds zien gebeuren in het Pong-voorbeeld: de interne staat van ieder individueel balletjes-object is z'n positie alsook z'n richtingsvector. De buitenwereld, in dit geval onze ``Main`` methode kon echter de objecten manipuleren:
 * Het gedrag van een balletje konden we aanpassen met behulp van de ``Update`` en ``TekenOpScherm`` methode.
 * De interne staat via de eigenschappen die zichtbaar zijn aan de buitenwereld (dankzij het ``public`` keyword) .
 
@@ -336,16 +337,16 @@ Voorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de in
 Wanneer je later de specificaties voor een opdracht krijgt en snel wilt ontdekken wat potentiële klassen zijn, dan is het een goede tip om op zoek te gaan naar de zelfstandige naamwoorden (*substantieven*) in de tekst. Dit zijn meestal de objecten en/of klassen die jouw applicatie zal nodig hebben.
 {% endhint %}
 
-### Encapsulatie principe
+### Abstractue principe
 Een belangrijk concept bij OOP is het **Black-box** principe waarbij we de afzonderlijke objecten en hun werking als zwarte dozen gaan beschouwen. 
 
 Neem het voorbeeld van de auto: deze is in de echte wereld ontwikkeld volgens het blackbox-principe. De werking van de auto kennen tot in het kleinste detail is niet nodig om met een auto te kunnen rijden. De auto biedt een aantal zaken aan de buitenwereld aan (het stuur, pedalen, het dashboard), wat we de **"interface"** noemen, die je kan gebruiken om de interne staat van de auto uit te lezen of te manipuleren. Stel je voor dat je moest weten hoe een auto volledig werkte voor je ermee op de baan kon...
 
-Binnen OOP wordt dit blackbox-concept **encapsulatie** genoemd. Het doel van OOP is andere programmeurs (en jezelf) zoveel mogelijk af te schermen van de interne werking van je klasse code. Vergelijk het met de methoden uit het vorige boek: "if it works, it works" en dan hoef je niet in de code van de methode te gaan zien wat er juist gebeurt telkens je de methode wil gebruiken.
+Binnen OOP wordt dit blackbox-concept **abstractie** genoemd. Het doel van OOP is andere programmeurs (en jezelf) zoveel mogelijk af te schermen van de interne werking van je klasse code. Vergelijk het met de methoden uit het vorige boek: "if it works, it works" en dan hoef je niet in de code van de methode te gaan zien wat er juist gebeurt telkens je de methode wil gebruiken.
 
 Kortom, hoe minder de buitenwereld moet weten om met een object te werken, hoe beter. Beeld je in dat je 10 lijnen code nodig had om een random getal te genereren. Niemand zou de klasse ``Random`` nog gebruiken. Dankzij de ontwikkelaar van deze klasse hoeven we maar 2 zaken te kunnen:
-* Een Random-object aanmaken: ``Random ranGen = new Random();``
-* De Next methode aanroepen om een getal uit het object te krijgen: ``int getal = ranGen.Next();``. Wat er nu juist in die ``.Next`` gebeurt boeit ons niet. It just works! Met dank aan het encapsuleren en de kracht van OOP.
+* Een ``Random``-object aanmaken: ``Random ranGen = new Random();``
+* De ``Next``-methode aanroepen om een getal uit het object te krijgen: ``int getal = ranGen.Next();``. Wat er nu juist in die methode gebeurt boeit ons niet. It just works! Met dank aan abstractie en de kracht van OOP.
 
 
 ### Objecten in de woorden van Steve Jobs
@@ -377,4 +378,4 @@ Zet nu je helm maar op, want in de volgende sectie gaan we wel degelijk onze han
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-<!---{sample: false}--->
+<!---{sample: false}--->Fmuj

@@ -204,41 +204,41 @@ class Balletje
     {
         BalX = 5;
         BalY = 5;
-        VX = 1;
-        VY = 1;
+        VectorX = 1;
+        VectorY = 1;
     }
 
-    public Balletje(int startPosX, int startPosY, int startVX, int startVY)
+    public Balletje(int startPosX, int startPosY, int startVectorX, int startVectorY)
     {
         BalX = startPosX;
         BalY = startPosY;
-        VX = startVX;
-        VY = startVY;
+        VectorX = startVectorX;
+        VectorY = startVectorY;
     }
 
     public int BalX { get; set; }
     public int BalY { get; set; }
-    public int VX { get; set; }
-    public int VY { get; set; }
+    public int VectorX { get; set; }
+    public int VectorY { get; set; }
 
 
     public void Update()
     {
 
-        if (BalX + VX >= Console.WindowWidth || BalX + VX < 0)
+        if (BalX + VectorX >= Console.WindowWidth || BalX + VectorX < 0)
         {
-            VX = -VX;
+            VectorX = -VectorX;
         }
 
 
-        BalX = BalX + VX;
+        BalX = BalX + VectorX;
 
-        if (BalY + VY >= Console.WindowHeight || BalY + VY < 0)
+        if (BalY + VectorY >= Console.WindowHeight || BalY + VectorY < 0)
         {
-            VY = -VY;
+            VectorY = -VectorY;
         }
 
-        BalY = BalY + VY;
+        BalY = BalY + VectorY;
     }
 
     public void TekenOpScherm()

@@ -27,8 +27,8 @@ class SithLord
 **Het is uit den boze dat we eenvoudige instantievariabelen (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
 ```java
-SithLord Palpatine = new SithLord();
-Console.WriteLine(Palpatine.sithName); //dit zal niet werken!
+SithLord palpatine = new SithLord();
+Console.WriteLine(palpatine.sithName); //dit zal niet werken!
 ```
 
 We willen echter wel van buiten uit het energy-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energy-level op -1000 instellen? Terwijl energy nooit onder 0 mag gaan.
@@ -97,7 +97,7 @@ public int Energy
 
 
 #### Full property:  identifier en datatype
-De eerste lijn van een ful property beschrijft de naam (identifier) en datatype van de property: ``public int Energy``
+De eerste lijn van een full property beschrijft de naam (identifier) en datatype van de property: ``public int Energy``
 
 **Een property is altijd ``public``** daar dit de essentie van een property net is "de buitenwereld gecontroleerde toegang tot de interne staat van een object geven".
 
@@ -120,10 +120,10 @@ get
 Dit werkt dus identiek aan een methode met een returntype. **Het element dat je return't in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
 
 {% hint style='tip' %}
-We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop dieper op in, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
+We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop meer over vertellen, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
 {% endhint %}
 
-We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = Palpatine.Energy;``.
+We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energy;``.
 
 #### Full property: set gedeelte
 
@@ -135,12 +135,12 @@ De waarde die we van buitenuit krijgen (als een parameter zeg maar) zal altijd i
 Deze ``value`` parameter is een essentiëel onderdeel van de ``set`` syntax en kan je niet hernoemen. 
 {% endhint %}
 
-Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy = value;`` . Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in volgende deel zullen uitleggen.
+Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy = value;``. Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in het volgende deel zullen uitleggen.
 
-We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``Palpatine.Energy = 50;``.
+We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``palpatine.Energy = 50;``.
 
 {% hint style='warning' %}
-Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele. Dit mag dus ook:
+Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt ten stelligste afgeraden! NIET DOEN!**). Dit mag dus ook:
 
 ```java
 class Auto
@@ -186,7 +186,7 @@ public int Energy
 ```
 
 Volgende lijn zal dus geen effect hebben:
-`` Palpatine.Energy = -1;``
+`` palpatine.Energy = -1;``
 
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
@@ -266,10 +266,10 @@ Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only w
     }
 ```
 
-Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(Palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``Palpatine.Energy = 65``; ongeacht of deze geldig is of niet.
+Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``palpatine.Energy = 65``; ongeacht of deze geldig is of niet.
 
 {% hint style='warning' %}
-Het is een goede gewoonte om zo vaak mogelijk via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.
+Het is een goede gewoonte om **altijd** via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.
 {% endhint %}
 
 <!---{pagebreak} --->
@@ -285,7 +285,8 @@ Het is een goede gewoonte om zo vaak mogelijk via de properties je interne varia
 Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
 
 
-**Nu even goed opletten**: indien we IN het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden. Kijk zelf naar volgende **slechte** codevoorbeeld:
+**Nu even goed opletten**: indien we **IN** het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden. Kijk zelf naar volgende **slechte** codevoorbeeld:
+
 ```java
 class SithLord
 {
@@ -303,7 +304,8 @@ class SithLord
         }
         private set
         {
-            if(value >= 0) energy = value;
+            if(value >= 0) 
+                energy = value;
         }
     }
 }
@@ -366,35 +368,19 @@ class Persoon
 }
 ```
 
-Of nog eentje waarin zelfs geen achterliggende instantievariabele bestaat:
-```java
-class Aarde
-{
-    public double ZwaarteKracht
-    {
-        get
-        {
-            return 9.81;
-        }
-    }
-}
-```
-
-
 Nog een voorbeeldje:
 
 ```java
 class Persoon
 {
+    private const MAXAGE = 120;
     private int age;
 
     public bool IsWaarschijnlijkNogLevend
     {
         get
         {
-            if(age>120) 
-                return false;
-            return true;
+            return (age <= MAXAGE)
         }
     }
 }
@@ -509,7 +495,7 @@ public string FirstName { get; private set; }
 
 En uiteraard kunnen we dan de instantievariabele ``firstName`` uit de code verwijderen.
 
-En andere manier die ook kan is als volgt:
+Een andere manier die ook kan is als volgt:
 ```java
 public string FirstName { get; } = "Tim";
 ```

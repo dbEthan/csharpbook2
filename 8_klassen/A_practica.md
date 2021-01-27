@@ -2,7 +2,7 @@
 
 ## RapportModule
 
-Ontwerp een klasse ``Resultaat`` die je zal tonen wat je graad is gegeven een bepaald behaald percentage. Het enige dat je aan een ``Resultaat``-object moet kunnen geven is het behaalde percentage. Enkel het totaal behaalde % wordt bijgehouden via een auto-property. Via een methode PrintGraad kan de behaalde graad weergegeven worden. Dit zijn de mogelijkheden:
+Ontwerp een klasse ``Resultaat`` die je zal tonen wat je graad is, gegeven een bepaald behaald percentage. Het enige dat je aan een ``Resultaat``-object moet kunnen geven is het behaalde percentage. Enkel het totaal behaalde % wordt bijgehouden via een auto-property. Via een methode PrintGraad kan de behaalde graad weergegeven worden. Dit zijn de mogelijkheden:
 
 * < 50: niet geslaagd;
 * tussen 50 en 68: voldoende;

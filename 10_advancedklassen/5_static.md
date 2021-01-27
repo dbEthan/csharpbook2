@@ -311,20 +311,20 @@ De interne werking van de balletjes hoeft dus geen rekening meer te houden met d
 
 public void Update()
 {
-    if (BalX + VX >= Balletje.Breedte || BalX + VX < 0)
+    if (BalX + VectorX >= Balletje.Breedte || BalX + VectorX < 0)
     {
-        VX = -VX;
+        VectorX = -VectorX;
     }
 
 
-    BalX = BalX + VX;
+    BalX = BalX + VectorX;
 
-    if (BalY + VY >= Balletje.Hoogte || BalY + VY < 0)
+    if (BalY + VectorY >= Balletje.Hoogte || BalY + VectorY < 0)
     {
-        VY = -VY;
+        VectorY = -VectorY;
     }
 
-    BalY = BalY + VY;
+    BalY = BalY + VectorY;
 }
 
 }

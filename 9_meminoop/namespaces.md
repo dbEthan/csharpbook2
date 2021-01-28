@@ -75,6 +75,8 @@ Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nod
 De optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 
 {% endhint %}
 
+
+<!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
 

@@ -42,9 +42,9 @@ Merk op dat we het keyword ``virtual`` mee opnemen in de methodesignatuur op lij
 Stel dat we 2 objecten aanmaken en laten vliegen:
 
 ```java
-Vliegtuig f1 = new Vliegtuig();
+Vliegtuig topGun = new Vliegtuig();
 Raket spaceX1 = new Raket();
-f1.Vlieg();
+topGun.Vlieg();
 spaceX1.Vlieg();
 ```
 
@@ -78,9 +78,9 @@ class Raket:Vliegtuig
 
 De uitvoer van volgende code zal nu anders zijn:
 ```java
-Vliegtuig f1 = new Vliegtuig();
+Vliegtuig topGun = new Vliegtuig();
 Raket spaceX1 = new Raket();
-f1.Vlieg();
+topGun.Vlieg();
 spaceX1.Vlieg();
 ```
 Uitvoer:

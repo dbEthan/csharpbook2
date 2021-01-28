@@ -25,7 +25,7 @@ class Meting
 We voegen vervolgens een methode aan de klasse toe die ons toelaat om deze meting op het scherm te tonen in een bepaalde kleur. 
 
 ```java
-void ToonMetingInKleur (ConsoleColor kleur)
+public void ToonMetingInKleur (ConsoleColor kleur)
 {
     Console.ForegroundColor = kleur;
     Console.WriteLine($"{Temperatuur}°C gemeten door: {OpgemetenDoor}");
@@ -57,44 +57,45 @@ static void Main(string[] args)
 Je kan dus ook methoden schrijven die meegegeven objecten aanpassen daar we deze **by reference** doorsturen. Een voorbeeld:
 
 ```java
-static void ToonMetingEnVerhoog(Meting inMeting)
+public void VoegMetingToeEnVerwijder(Meting inMeting)
 {
-    ToonMetingInKleur(inMeting, ConsoleColor.Green);
-
-    inMeting.Temperatuur++;
+    Temperatuur += inMeting.Temperatuur;
+    inMeting = new Meting();
 }
 ```
 
 Als we deze methode als volgt aanroepen:
 ```java
 Meting m1 = new Meting();
-m1.Temperatuur = 26; m1.OpgemetenDoor = "Elon Musk";
-ToonMetingEnVerhoog(m1);
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Elon Musk";
+Meting m2 = new Meting();
+m2.Temperatuur = 5; 
+m2.OpgemetenDoor = "Elon Musk";
+m1.VoegMetingToeEnVerwijder(m2);
 Console.WriteLine(m1.Temperatuur);
+Console.WriteLine(m2.Temperatuur);
 ```
 
-Dan zullen we zien dat de temperatuur in ``m1`` effectief met 1 werd verhoogd.
+Dit zal resulteren in volgende output:
 
-Dit gedrag zouden we NIET zien bij volgende methode daar ``int`` **by value** wordt doorgegeven:
-
+<!---{line-numbers:false}--->
 ```java
-static void VerhoogGetal(int inMeting)
-{
-    inMeting++;
-}
+31
+0
 ```
+
 
 ### Objecten als resultaat
 
-Weer hetzelfde verhaal: ook klassen mogen het resultaat van een methoden zijn.
+Weer hetzelfde verhaal: ook klassen mogen het resultaat van een methoden zijn. Stel dat we een nieuw meting object willen maken dat de dubbele temperatuur bevat van het object waarop de methode wordt aangeroepen:
 
 ```java
-static Meting GenereerRandomMeting()
+public Meting GenereerRandomMeting()
 {
     Meting result = new Meting();
-    Random r = new Random();
-    result.Temperatuur = r.Next(-100, 200);
-    result.OpgemetenDoor = "Onbekend";
+    result.Temperatuur = Temperatuur * 2;
+    result.OpgemetenDoor = OpgemetenDoor + "Junior";
 
     return result;
 }
@@ -103,8 +104,14 @@ static Meting GenereerRandomMeting()
 Deze methode kan je dan als volgt gebruiken:
 
 ```java
-Meting m3 = GenereerRandomMeting();
+Meting m1 = new Meting();
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Elon Musk";
+Meting m3 = m1.GenereerRandomMeting();
 ```
+
+Het object ``m3`` zal een temperatuur van ``52`` bevatten en zijn opgemeten door ``Elon Musk Junior``.
+
 <!---NOBOOKSTART--->
 ### Kennisclip
 ![](../assets/infoclip.png)

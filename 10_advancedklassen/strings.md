@@ -162,17 +162,17 @@ Wil je CSV-bestand maken dan zal je eerst met ``String.Join`` een komma-separate
 
 ```java
 string[] namen = { "Tim", "Jos", "Mo" };
-int[] leeftijden = { 34, 76, 23 };
+int[] geboortejaren = { 1981, 1952, 2001 };
 
 string[] lines = new string[namen.Length];
 for (int i = 0; i < lines.Length; i++)
 {
-    lines[i] = $"{i},{namen[i]},{leeftijden[i]}";
+    lines[i] = $"{i},{namen[i]},{geboortejaren[i]}";
 
 }
 
-System.IO.File.WriteAllLines("ages.csv", lines);
-            ```
+System.IO.File.WriteAllLines("geboortejaren.csv", lines);
+```
 
 # Uitgewerkt met Pokémon
 

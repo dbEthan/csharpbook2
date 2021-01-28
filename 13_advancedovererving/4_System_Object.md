@@ -108,27 +108,25 @@ Merk twee zaken op:
  
  ####  De ``ToString()`` methode overriden
 
- Het zou natuurlijk fijner zijn dat de ``ToString()-``methode van onze student nuttigere info teruggeeft, zoals bijvoorbeeld de ``Voornaam`` die we als autoprop in de klassen hebben geplaatst, gevolgd door de ``Leeftijd`` (ook een autoprop). 
+ Het zou natuurlijk fijner zijn dat de ``ToString()-``methode van onze student nuttigere info teruggeeft, zoals bijvoorbeeld de ``Voornaam`` die we als autoprop in de klassen hebben geplaatst, gevolgd door de ``GeboorteJaar`` (ook een autoprop). 
  
  We kunnen dat eenvoudig verkrijgen door ``ToString()`` to overriden:
  ```java
  class Student
  {
-   public int Leeftijd {get;set;}
+   public int GeboorteJaar {get;set;}
    public string Voornaam {get;set;}
    
    public override string ToString()
    {
-       return $"Student genaamd {Voornaam} (Leeftijd:{Leeftijd})";
+       return $"Student genaamd {Voornaam} (Geboortejaar:{GeboorteJaar})";
    }
  }
  ```
- Wanneer je nu ``Console.WriteLine(stud1);`` (gelet dat hij de properties ``Voornaam`` en ``Leeftijd`` heeft) zou schrijven dan wordt je output: ``Student Tim Dams (Leeftijd:35)``.
+ Wanneer je nu ``Console.WriteLine(stud1);`` (gelet dat hij de properties ``Voornaam`` en ``GeboorteJaar`` heeft) zou schrijven dan wordt je output: ``Student Tim Dams (GeboorteJaar: 1981)``.
 
  {% hint style='tip' %}
- Een extra handigheidje van ``ToString`` is dat deze methode wordt gebruikt tijdens het debuggen om je objecten samen te vatten in het watch-venster:
-
- ![](../assets/7_overerving/tostringdebug.png)
+ Een extra handigheidje van ``ToString`` is dat deze methode wordt gebruikt tijdens het debuggen om je objecten samen te vatten in het watch-venster.
  {% endhint %}
  
  
@@ -157,16 +155,14 @@ stud2.Equals(stud1);
 #### ``Equals()`` overriden
 Het is echter aan de maker van de klasse om te beslissen wanneer 2 objecten van een zelfde type gelijk zijn. Het is dus niet zo dat iedere waarde van een instantievariabele bijvoorbeeld gelijk moet zijn opdat 2 objecten gelijk zijn. Alles hangt af van de wijze waarop de klasse dienst moet doen.
 
-Stel dat we vinden dat een student gelijk is aan een andere student indien z'n ``Voornaam`` en ``Leeftijd`` dezelfde is, we kunnen dan de Equals-methode overriden als volgt:
+Stel dat we vinden dat een student gelijk is aan een andere student indien z'n ``Voornaam`` en ``GeboorteJaar`` dezelfde is, we kunnen dan de Equals-methode overriden als volgt:
 
 ```java
 //In de Student class
 public override bool Equals(Object o)
 {  
     Student temp = (Student)o; //Zie opmerking na code!
-    if(Leeftijd == temp.Leeftijd && Voornaam == temp.Voornaam)
-        return true;
-    return false;
+    return (GeboorteJaar == temp.GeboorteJaar && Voornaam == temp.Voornaam)
 }
 ```
 

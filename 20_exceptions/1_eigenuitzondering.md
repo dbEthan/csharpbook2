@@ -1,6 +1,6 @@
 ## Eigen exceptions maken dankzij overerving
 
-We zijn ondertussen al gewend aan het opvangen van uitzonderingen met behulp van ``try`` en ``catch``. Ook bij Exception handling wordt overerving toegepast:  De uitzonderingen die we opvangen zijn steeds objecten van het type ``Exception`` of van een afgeleide klasse. Denk maar aan de ``NullReferenceException`` klasse die werd overgeërfd van ``Exception``. 
+We zijn ondertussen al gewend aan het opvangen van uitzonderingen met behulp van ``try`` en ``catch``. Ook bij exception handling wordt overerving toegepast. De uitzonderingen die we opvangen zijn steeds objecten van het type ``Exception`` of van een afgeleide klasse. Denk maar aan de ``NullReferenceException`` klasse die werd overgeërfd van ``Exception``. 
 
 {% hint style='tip' %}
 Dat wil dus zeggen dat ``Exception``s ook maar "gewone klassen" zijn en dus ook aan alle andere regels binnen C# moeten voldoen. Zo ondersteunen ze polymorfisme (later), kan je ze in arrays plaatsen, etc.
@@ -11,12 +11,12 @@ Het is dus ook logisch dat je in je code **(al dan niet zelfgemaakte) uitzonderi
 Een voorbeeld van een bestaand ``Exception`` type gebruiken:
 
 ```java
-static int DoeIets(int getal)
+static int ResultaatBerekening(int getal)
 {
-    if (getal == 0)
-        throw new DivideByZeroException("BOEM. ZWART GAT!");
-    else
+    if (getal != 0)
         return 100 / getal;
+    else
+        throw new DivideByZeroException("BOEM. ZWART GAT!");
 }
  
  
@@ -24,7 +24,7 @@ static void Main(string[] args)
 {
     try
     {
-        Console.WriteLine(DoeIets(0));
+        Console.WriteLine(ResultaatBerekening(0));
     }
     catch(DivideByZeroException e)
     {
@@ -80,11 +80,10 @@ static void Main(string[] args)
 }
 static public void TimsMethode()
 {
-    //do stuff
+    //doe dingen
     //...
-    //when suddenly: a wild exception appears
-    Timception exp = new Timception();
-    throw exp;
+    //"when suddenly: a wild exception appears"
+    throw new Timception();
 }
 ```
 

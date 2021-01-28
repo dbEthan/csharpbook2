@@ -47,7 +47,7 @@ In het niet-generieke geval zal deze code compileren maar **tijdens de uitvoer**
 ArrayList nietGeneriekeList = new ArrayList();
 string naam = "Tim";
 nietGeneriekeList.Add(naam);
-int leeftijd = (int)nietGeneriekeList[0];
+int geboortejaar = (int)nietGeneriekeList[0];
 ```
 
 Bij een generieke collection zal er bij soortgelijk code een compiler-error optreden (gedrag dat meestal wenselijk is) en de code zal dus niet gecompileerd kunnen worden:
@@ -56,7 +56,7 @@ Bij een generieke collection zal er bij soortgelijk code een compiler-error optr
 List<string> generiekeList = new List<string>();
 string naam = "Tim";
 generiekeList.Add(naam);
-int leeftijd = (int)nietGeneriekeList[0]; // compilererror: cannot convert type string to in
+int geboortejaar = (int)nietGeneriekeList[0]; // compilererror: cannot convert type string to in
 ```
 
 # Generic collections
@@ -169,15 +169,15 @@ De key werkt dus net als de index bij gewone arrays, alleen heeft de key nu geen
 
 ### Eender welk type voor key en value
 
-De key kan zelfs een string zijn en de waarde een ander type. In het volgende voorbeeld hebben we eerder een klasse Student aangemaakt. We maken nu een student aan en voegen deze toe aan de studentenLijst. Vervolgens willen we de leeftijd van een bepaalde student tonen op het scherm en vervolgens verwijderen we deze student:
+De key kan zelfs een string zijn en de waarde een ander type. In het volgende voorbeeld hebben we eerder een klasse Student aangemaakt. We maken nu een student aan en voegen deze toe aan de studentenLijst. Vervolgens willen we het geboortejaar van een bepaalde student tonen op het scherm en vervolgens verwijderen we deze student:
 
 ```java
 Dictionary<string, Student> studentenLijst = new Dictionary<string, Student>();
 Student stud = new Student();
 stud.Naam = "Tim";
-stud.Leeftijd = 24;
+stud.GeboorteJaar = 1999;
 studentenLijst.Add("AB12",stud);
-Console.WriteLine(studentenLijst["AB12"].Leeftijd);
+Console.WriteLine(studentenLijst["AB12"].GeboorteJaar);
 studentenLijst.Remove("AB12");
 ```
 

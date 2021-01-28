@@ -18,6 +18,7 @@ Deze introductie doet uitschijnen dat overerving enkel z'n nut heeft om *dubbele
 
 
 ## Wat is overerving
+
 Overerving (**inheritance**) laat ons toe om klassen te specialiseren vanuit een reeds bestaande parent- of basisklasse. Wanneer we een klasse van een andere klasse overerven dan zeggen we dat deze nieuwe klasse een child-klasse of sub-klasse is van de bestaande parent-klasse of super-klasse.
 
 De child-klasse kan alles wat de parent-klasse kan, maar de nieuwe klasse kan nu ook extra specialisatie-code krijgen. Dit is exact hetzelfde in de echte wereld waarin de evolutie van soorten ervoor zorgt dat een bepaalde soort, dankzij evolutie,  steeds meer specialisaties bijkrijgt tegenover z'n voorgangers.
@@ -25,11 +26,11 @@ De child-klasse kan alles wat de parent-klasse kan, maar de nieuwe klasse kan nu
 
 ### Is-een relatie
 
-Wanneer twee klassen met behulp van een "x is een y"-relatie kunnen beschreven worden dan weet je dat overerving mogelijk.
+Wanneer twee klassen met behulp van een "x is een y"-relatie kunnen beschreven worden dan weet je dat overerving mogelijk is.
 
 * Een paard **is een** dier (paard = child-klasse, dier= parent-klasse).
 * Een tulp **is een** plant.
-* Zowel een een dier als een plant zijn levende wezens.
+* Zowel een dier als een plant zijn levende wezens.
 
 {% hint style='warning' %}
 Opgelet: wanneer we "x **heeft een** y" zeggen gaat het **niet** over overerving, maar over compositie wat we in een later hoofdstuk zullen bekijken. 
@@ -82,36 +83,6 @@ bPaard.KanHinnikken = false;
 aDier.KanHinnikken = false; //!!! zal niet werken!
 ```
 
-<!---NOBOOKSTART--->
-{% hint style='tip' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/gotopolice.png)
-Ik heb weinig te doen. Dus nu begint de auteur mij al in te schakelen voor alternatieve uitleg. Ach ja, zolang ik voor brood op de plank zorg zal m'n partner niet klagen!
-
-Als we de "kennis" die in dit en het vorige boek zouden moeten programmeren, dan zou overerving ons ook kunnen helpen. Je kan dit boek onmogelijk begrijpen zonder de kennis van boek 1, Zie Scherp. Dus **eigenlijk is dit boek een specialisatie van boek 1**: de kennis van van boek 1 zit hierin vervat, maar wordt uitgebreid/gespecialiseerd met deze van boek 2.
-
-We zouden dus kunnen schrijven:
-
-```java
-class KennisZieScherp
-{
-
-}
-
-class KennisZieScherper: KennisZieScherp
-{
-
-}
-```
-
-Man, man, soms denk ik dat de auteur van beide boeken high wordt van z'n eigen code, wat een gezwam.
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->
-
 
 ### Transitief
 
@@ -124,7 +95,7 @@ Alhoewel overerving transitief is, wil dat niet zeggen dat ``private`` variabele
 
 ### Overerving en het geheugen
 
-Tijd om eens te kijken hoe voorgaande er uitziet in de heap en de stack, met een voorbeeld: een applicatie om aan gebouwbeheer te doen.
+Tijd om eens te kijken hoe het voorgaande er uitziet in de heap en de stack, met een voorbeeld: een applicatie om aan gebouwbeheer te doen.
 
 Beeld je in dat je volgende klassediagramma hebt vastgelegd:
 
@@ -162,13 +133,13 @@ class Paard: Dier
 {
    public void MaakOuder()
    {
-      leeftijd++; //  !!! dit zal error geven!
+      geboortejaar++; //  !!! dit zal error geven!
    }
 }
 
 class Dier
 {
-   private int leeftijd;
+   private int geboortejaar;
 }
 ```
 
@@ -179,13 +150,13 @@ class Paard: Dier
 {
    public void MaakOuder()
    {
-      leeftijd++; //  werkt nu wel
+      geboortejaar++; //  werkt nu wel
    }
 }
 
 class Dier
 {
-   protected int leeftijd;
+   protected int geboortejaar;
 }
 ```
 

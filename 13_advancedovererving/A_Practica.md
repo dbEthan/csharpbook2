@@ -40,7 +40,7 @@ Console.WriteLine(bm);
 ## Deel 1
 Maak een klasse ``Book``  en gebruik auto-properties voor de velden:
 
-* ISBN (int)
+* Isbn (int)
 * Title (string)
 * Author (string)
  
@@ -60,8 +60,8 @@ b)	Bij CoffeeTableBooks de prijs enkel tussen 35 en 100 kan liggen
 
 ## Deel 2
 
-* Zorg ervoor dat boeken de ToString overriden zodat je boekobjecten eenvoudig via Console.WriteLine(myBoek) hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Price"  (bv The Shining - Stephen King (05848152) _ 50)
-* (PRO) Zorg ervoor dat de equals methode werkt op alle boeken. Boeken zijn gelijk indien ze hetzelfde ISBN nummer hebben.
+* Zorg ervoor dat boeken de ToString overriden zodat je boekobjecten eenvoudig via Console.WriteLine(myBoek) hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (Isbn) _ Price"  (bv The Shining - Stephen King (05848152) _ 50)
+* (PRO) Zorg ervoor dat de equals methode werkt op alle boeken. Boeken zijn gelijk indien ze hetzelfde Isbn nummer hebben.
 
 **Toon de werking aan van je 3 klassen:**
 Maak boeken aan van de 3 klassen, toon dat de prijs niet altijd zomaar ingesteld kan worden en (PRO) toon aan dat je Equals –methode werkt (ook wanneer je bijvoorbeeld een Book en TextBook wil vergelijken).
@@ -78,32 +78,26 @@ Schrijf deze klassen en toon de werking ervan in je main.
 
 # Geometric figures
 
-Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak autoproperties voor van ``Hoogte`` en ``Breedte``. De ``Oppervlakte`` is een read-only property want deze wordt berekend gebaseerd op de hoogte en breedte. Deze berekening gebeurt in de methode ``BerekenOppervlakte``: deze roep je met andere woorden aan in de getter van ``Oppervlakte`` en dat resultaat geeft de getter terug 
-
-{% hint style='warning' %}
-Let er dus op dat ``Oppervlakte`` enkel een getter heeft. Een Setter schrijven zou vreemde bugs geven: wat als de gebruiker de Oppervlakte van de figuur zo aanpast, maar wel andere hoogte en breedte heeft ingesteld? Je zou dan een foute oppervlakte krijgen daar die niet berekend wordt.
-{% endhint %}
-
-Voorzie een abstracte methode ``BerekenOppervlakte`` die een int teruggeeft.
+Maak een abstracte klasse ``GeometricFigure``. Iedere figuur heeft een hoogte, breedte en oppervlakte. Maak autoproperties voor van ``Hoogte`` en ``Breedte``. Voorzie een abstracte methode ``Oppervlakte`` die een int teruggeeft. 
 
 Maak 3 klassen:
 
 * Rechthoek: erft over van GeometricFigure. Oppervlakte is gedefinieerd als ``breedte * hoogte``.
-* Vierkant: erft over van Rechthoek. Voorzie een constructor die lengte en breedte als parameter aanvaard: deze moeten gelijk zijn, indien niet zet je deze tijdens de constructie gelijk. Voorzie een 2e constructor die één parameter aanvaardt dat dan geldt als zowel de lengte als breedte. Deze klasse gebruikt de methode BerekenOppervlakte van de Rechthoek-klasse.
+* Vierkant: erft over van Rechthoek. Voorzie een constructor die lengte en breedte als parameter aanvaardt: deze moeten gelijk zijn, indien niet zet je deze tijdens de constructie gelijk. Voorzie een tweede constructor die één parameter aanvaardt dat dan geldt als zowel de lengte als breedte. Deze klasse gebruikt de methode ``Oppervlakte`` van de Rechthoek-klasse.
 * Driehoek: erft over van GeometricFigure. Oppervlakte is gedefinieerd als ``breedte*hoogte/2``.
 
-Maak een applicatie waarin je de werking van deze klassen aantoont
+Maak een applicatie waarin je de werking van deze klassen aantoont.
 
 
 # Dierentuin
-Maak een console-applicatie waarin je een zelfverzonnen abstract klasse Dier in een List<Dier> kunt plaatsen. Ieder dier heeft een gewicht en een methode ``Zegt`` (die abstract is) die het geluid van het dier in kwestie op het scherm zal tonen. Maak enkele childklassen die overerven van Dier en uiteraard de ``Zegt`` methode overriden.
+Maak een console-applicatie waarin je een zelfverzonnen abstracte klasse Dier in een List<Dier> kunt plaatsen. Ieder dier heeft een gewicht en een methode ``Zegt`` (die abstract is) die het geluid van het dier in kwestie op het scherm zal tonen. Maak enkele childklassen die overerven van Dier en uiteraard de ``Zegt`` methode overriden.
 
 Plaats enkele dieren in de nieuw aangemaakt lijst.
 Vervolgens verschijnt er een menu Wanneer de gebruiker 'q' kiest stopt het programma.Het keuze menu heeft volgende opties:
 
-1. Dier verwijderen , gevolgd door de gebruiker die invoert het hoeveelste dier weg moet uit de List.
-2. Diergewicht gemiddelde: het gemiddelde van alle dieren hun gewicht wordt getoond
-3. Dier praten: alle dieren hun Zegt() methode wordt aangeroepen en via WriteLine getoond
+1. Dier verwijderen, gevolgd door de gebruiker die invoert het hoeveelste dier weg moet uit de List.
+2. Diergewicht gemiddelde: het gemiddelde van alle dieren hun gewicht wordt getoond.
+3. Dier praten: alle dieren hun Zegt() methode wordt aangeroepen en via WriteLine getoond.
 4. Opnieuw beginnen: de List wordt leeggemaakt en het programma zal terug van voor af aan beginnen. Waarbij de lijst terug gevuld wordt met enkele start dieren.
 
 Probeer zo modulair mogelijk te werken.

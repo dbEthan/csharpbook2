@@ -1,6 +1,6 @@
 ## Object referenties en null
 
-Zoals nu duidelijk is bevatten variabelen steeds een referentie naar een object. Maar wat als we dit schrijven:
+Zoals nu duidelijk is bevatten referentievariabelen steeds een referentie naar een object. Maar wat als we dit schrijven:
 
 ```java
 Student stud1;

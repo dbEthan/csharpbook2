@@ -40,7 +40,7 @@ public override string ToString()
 ```java
 class Book
 {
-    public int ISBN { get; set; }
+    public int Isbn { get; set; }
     public string Title { get; set; }
     public string Author { get; set; }
 
@@ -100,7 +100,7 @@ Voeg dit toe aan de klasse ``Book``
 ```java
 public override string ToString()
 {
-    return $"{Title} - {Author}({ISBN}) {Price}";
+    return $"{Title} - {Author}({Isbn}) {Price}";
 }
 ```
 
@@ -110,7 +110,7 @@ public override string ToString()
 public override bool Equals(object obj)
 {
     Book tocomp = (Book)obj;
-    if (tocomp.ISBN == ISBN)
+    if (tocomp.Isbn == Isbn)
         return true;
     return false;
 }

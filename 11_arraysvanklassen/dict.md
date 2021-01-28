@@ -7,7 +7,7 @@ In een **dictionary** wordt ieder element voorgesteld door een sleutel (**key** 
 De sleutel moet een unieke waarde zijn zodat het element kan opgevraagd worden uit de dictionary aan de hand van deze sleutel zonder dat er duplicaten zijn.
 
 
-Bij de declaratie van de ``Dictionary`` dien je op te geven wat het datatype van de key zal zijn , alsook het type van de waarde (value). 
+Bij de declaratie van de ``Dictionary`` dien je op te geven wat het datatype van de key zal zijn, alsook het type van de waarde (value). 
 
 {% hint style='tip' %}
 De ``Dictionary``-klasse emuleert dus letterlijk de werking van een woordenboek waarbij ieder woord uniek is en een bijhorende uitleg heeft (het woord is de sleutel, de bijhorende uitleg de waarde). 
@@ -46,15 +46,13 @@ De key werkt dus net als de index bij gewone arrays, alleen heeft de key nu geen
 
 ### Eender welk type voor key en value
 
-De key kan zelfs een ``string`` zijn en de waarde een ander type. In het volgende voorbeeld hebben we eerder een klasse Student aangemaakt. We maken nu een student aan en voegen deze toe aan de studentenLijst. Vervolgens willen we de leeftijd van een bepaalde student tonen op het scherm en vervolgens verwijderen we deze student:
+De key kan zelfs een ``string`` zijn en de waarde een ander type. In het volgende voorbeeld hebben we eerder een klasse Student aangemaakt. We maken nu een student aan en voegen deze toe aan de studentenLijst. Vervolgens willen we het geboortejaar van een bepaalde student tonen op het scherm en vervolgens verwijderen we deze student:
 
 ```java
 Dictionary<string, Student> studentenLijst = new Dictionary<string, Student>();
-Student stud = new Student();
-stud.Naam = "Tim";
-stud.Leeftijd = 24;
+Student stud = new Student() {Naam = "Tim", Geboortjeaar = 2001 };
 studentenLijst.Add("AB12", stud);
-Console.WriteLine(studentenLijst["AB12"].Leeftijd);
+Console.WriteLine(studentenLijst["AB12"].Geboortjeaar);
 studentenLijst.Remove("AB12");
 ```
 

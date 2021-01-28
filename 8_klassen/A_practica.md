@@ -64,7 +64,7 @@ Maak een nieuwe klasse ``Student``.
 Deze klasse heeft 6 autoproperties:
 
 * ``Naam`` (``string``)
-* ``Leeftijd`` (``int``)
+* ``Geboortejaar`` (``int``)
 * ``Klas`` (maak dit van een ``enum``)
 * ``PuntenCommunicatie`` (``int``)
 * ``PuntenProgrammingPrinciples`` (``int``)
@@ -79,7 +79,7 @@ Test je programma door enkele studenten aan te maken en in te stellen. Volgende 
 ```java
     Student student1= new Student();
     student1.Klas = Klassen.EA2;
-    student1.Leeftijd = 21;
+    student1.Geboortejaar = 2000;
     student1.Naam = "Joske Vermeulen";
     student1.PuntenCommunicatie = 12;
     student1.PuntenProgrammingPrinciples = 15;
@@ -92,7 +92,7 @@ Output:
 
 {line-numbers:false}
 ```text
-Joske Vermeulen, 21 jaar
+Joske Vermeulen, 2000
 Klas: EA2
 
 Cijferrapport:

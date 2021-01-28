@@ -16,7 +16,7 @@ foreach (double singleKD in killDeathRates)
 }
 ```
 
-Het belangrijkste nieuwe concept is de **iteration variable** die we hier definiëren als ``singleKD``. Deze moet uiteraard van het type zijn van de individuele elementen in de array (de identifier mag je zelf kiezen). Vervolgens schrijven we het nieuwe keyword  **``in``** gevolgd door de array waar we over wensen te itereren. 
+Het belangrijkste nieuwe concept is de **iteration variable** die we hier definiëren als ``singleKD``. Deze moet van het type zijn van de individuele elementen in de array (of een compatibel type volgens de regels van polymorfisme, waar we later in het boek over zullen spreken). De naam die je aan de iteration variabele geeft mag je zelf kiezen. Vervolgens schrijven we het nieuwe keyword  **``in``** gevolgd door de array waar we over wensen te itereren. 
 
 De eerste keer dat we in de loop gaan zal het element ``killDeathRates[0]`` aan ``singleKD`` toegewezen worden voor gebruik in de loop-body, vervolgens wordt ``killDeathRates[1]`` toegewezen, enz. De output zal dan zijn:
 
@@ -42,9 +42,9 @@ foreach(Student eenStudent in deKlas)
 
 De foreach loop is weliswaar leesbaarder en eenvoudiger in gebruikt, er zijn ook 3 erg belangrijke nadelen aan:
 
-* De foreach iteration variabele is *read-only*: je kan dus geen waarden in de array aanpassen, enkel uitlezen. Dit ogenschijnlijk eenvoudige zinnetje heeft echter veel gevolgen. Je kan met een ``foreach``-loop dus **nooit de inhoud van de variabele aanpassen**. Wens je dat wel te doen, dan dien je de klassieke ``while``, ``do while`` of ``for`` loops te gebruiken.
+* De foreach iteration variabele is *read-only*: je kan dus geen waarden in de array aanpassen, enkel uitlezen. Dit ogenschijnlijk eenvoudige zinnetje heeft echter veel gevolgen. Je kan met een ``foreach``-loop dus **nooit de inhoud van de variabele aanpassen** (lees zeker de waarschuwing hieronder). Wens je dat wel te doen, dan dien je de klassieke ``while``, ``do while`` of ``for`` loops te gebruiken.
 * De foreach loop gebruik je enkel als je **alle elementen van een array wenst te benaderen**. In alle andere gevallen zal je een ander soort loop moeten gebruiken. 
-* Voorts heb je geen teller (die je gratis bij een ``for`` krijgt) om bij te houden hoeveel objecten je al hebt benaderd. Heb je dus een teller nodig dan zal je deze manueel moeten aanmaken zoals je ook bij een ```while`` en ``do while`` loop moet doen.
+* Voorts heb je geen teller (die je gratis bij een ``for`` krijgt) om bij te houden hoeveel objecten je al hebt benaderd. Heb je dus een teller nodig dan zal je deze manueel moeten aanmaken zoals je ook bij een ``while`` en ``do while`` loop moet doen.
 
 
 {% hint style='warning' %}

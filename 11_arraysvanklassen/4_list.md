@@ -1,6 +1,6 @@
 ## List collectie
 
-Tijd voor andere bekentenis: arrays zijn fijn, maar nogal omslachtig qua gebruik...Er zit echter in .NET een soort *array on steroids* datatype, de **List*collectie.
+Tijd voor een andere bekentenis: arrays zijn fijn, maar nogal omslachtig qua gebruik. Er zit echter in .NET een soort *array on steroids* datatype, de **List*collectie.
 
 Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Een ``List`` heeft alle eigenschappen die we al kennen van arrays, maar ze zijn wel krachtiger.  Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een vereenvoudigt maakt.
 
@@ -35,7 +35,7 @@ mijnPersonages.Add("Reinhardt");
 mijnPersonages.Add("Mercy");
 ``` 
 
-Ook objecten kan je dus toevoegen:
+Ook complexere datatypes kan je dus toevoegen:
 
 ```java
 List<Pokemon> pokedex = new List<Pokemon>();
@@ -96,7 +96,7 @@ Dit voegt de ``string`` toe op de tweede plek en schuift de rest naar achter.
 * ``RemoveAt()``: verwijdert een element op de index die je als parameter meegeeft.
 
 {% hint style='warning' %}
-Lte op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt.
+Let op met het gebruik van ``IndexOf`` en objecten. Deze methode zal controleren of de referentie dezelfde is van een bepaald object en daar de index van teruggeven. Je kan deze methode dus wel degelijk met arrays van objecten gebruiken, maar je zal enkel je gewenste object terugvinden indien je reeds een referentie naar het object hebt.
 {% endhint %}
 
 

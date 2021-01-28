@@ -1,26 +1,26 @@
 ### Overloaded constructors
 
-Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen bijvoorbeeld de leeftijd meegeven die het object moet hebben bij het aanmaken.
+Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen bijvoorbeeld de bijnaam meegeven die het object moet hebben bij het aanmaken.
 
 Met andere woorden, stel dat we dit willen schrijven:
 
 ```java
-Student jos = new Student(19);
+Student jos = new Student("Lord Oakenwood");
 ```
 
-Als we dit met voorgaande klasse uitvoeren , die enkel een default constructor heeft, zal de code een fout geven. C# vindt geen constructor die een ``int`` als actuele parameter aanvaardt.
+Als we dit met voorgaande klasse uitvoeren , die enkel een default constructor heeft, zal de code een fout geven. C# vindt geen constructor die een ``string`` als actuele parameter aanvaardt.
 
 Net zoals bij overloading van methoden kunnen we ook constructors overloaden. De code is verrassend gelijkaardig aan method overloading:
 
 ```java
 class Student
 {
-    public Student(int startgeboorteJaar)
+    public Student(string bijnaamIn)
     {
-        geboorteJaar = startgeboorteJaar;
+        bijNaam = bijnaamIn;
     }
 
-    private int geboorteJaar;
+    private string bijNaam;
 }
 
 ```
@@ -29,23 +29,26 @@ Dat was eenvoudig, hé?
 
 **Maar** denk eraan, je hebt een overloaded constructor geschreven en dus heeft C# gezegd: *"Ok, je schrijft zelf constructors? Trek je plan nu maar. De default zal je ook nu zelf moeten schrijven."*
 
-Je kan nu enkel je objecten nog via de overloaded constructor aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je die constructor, de default constructor, nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
+Je kan nu enkel je objecten nog via de overloaded constructors aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je die constructor, de default constructor, nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
 
 
 ```java
 class Student
 {
-    public Student(int startgeboorteJaar) //overloaded
+    private const string DEFBIJNAAM = "Geen";
+    //Default
+    public Student() 
     {
-        geboorteJaar = startgeboorteJaar;
-    }
-    
-    public Student() //default
-    {
-       geboorteJaar =  DateTime.Now.Year-18;
+       BijNaam =  DEFBIJNAAM;
     }
 
-    private int geboorteJaar;
+    //Overloaded
+    public Student(string bijnaamIn) 
+    {
+        BijNaam = bijnaamIn;
+    }
+
+    public string BijNaam { get; private set;}
 }
 ```
 
@@ -57,7 +60,7 @@ class Student
 ![](../assets/attention.png)
 
 Voorgaande wil ik nog eenmaal herhalen. Herinner je m'n voorbeeld van die aannemers die soms wel en soms niet opruimden? Laten we nog eens samenvatten hoe het zit met constructors in C#:
-* Als je geen constructors schrijft krijg je een default constructor gratis. Die doet echter niets extra.
+* Als je geen constructors schrijft krijg je een default constructor gratis. Die doet echter niets extra buiten alle instantievariabelen en properties default waarden geven.
 * Van zodra je één constructor zelf schrijft, default of overloaded, krijg je niets meer gratis én zal je dus zelf die constructors moeten bijschrijven die jouw code vereist.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
@@ -66,61 +69,153 @@ Voorgaande wil ik nog eenmaal herhalen. Herinner je m'n voorbeeld van die aannem
 
 
 #### Meerdere overloaded constructors
-Wil je meerdere overloaded constructors dan mag dat ook. Je wilt misschien een constructor die de leeftijd vraagt alsook een ``bool`` om mee te geven of het om een werkstudent gaat:
+Wil je meerdere overloaded constructors dan mag dat ook. Je wilt misschien een constructor die de bijnaam vraagt alsook een ``bool`` om mee te geven of het om een werkstudent gaat:
 
 ```java
 class Student
 {
-    public Student(int startgeboorteJaar) //overloaded
+     private const string DEFBIJNAAM = "Geen";
+    //Default
+    public Student() 
     {
-        geboorteJaar = startgeboorteJaar;
-    }
-    
-    public Student(int startgeboorteJaar, bool werkstart) //overloaded
-    {
-        geboorteJaar = startgeboorteJaar;
-        isWerkStudent = werkstart;
+       BijNaam =  DEFBIJNAAM;
     }
 
-    public Student() //default
+    //Overloaded 1
+    public Student(string bijnaamIn) 
     {
-        geboorteJaar = DateTime.Now.Year-18;
+        BijNaam = bijnaamIn;
     }
 
-    private int geboorteJaar;
-    private bool isWerkStudent;
+    //Overloaded 2
+    public Student(string bijnaamIn, bool isWerkStudentIn) 
+    {
+        BijNaam = bijnaamIn;
+        IsWerkStudent = isWerkStudentIn
+    }
+
+    public string BijNaam { get; private set;}
+    public string IsWerkStudent { get; private set;}
+
 }
 
 ```
 
 {% hint style='tip' %}
-Merk op dat je ook properties mag aanroepen in je constructor. Zo kan je ogenblikkelijk de typische controles in een ``set`` in gebruik nemen.
+Merk op dat je ook full properties **moet** aanroepen in je constructor en niet rechtstreeks de achterliggende instantievariabele. Zo kan je ogenblikkelijk de typische controles in een ``set`` in gebruik nemen.
 
-Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een geboortejaar heeft onder 1950. Wanneer dit gebeurt moet het geboortejaar altijd gewoon op 1950 gezet worden, ongeacht het effectieve geboortejaar van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de constructor aan zodat deze via de property werkt én niet rechtstreeks met de instantievariabele:
+Beeld je in dat het schoolsysteem crasht wanneer een nieuwe student een onbeleefde bijnaam. Wanneer dit gebeurt moet de bijnaam altijd gewoon op "Good boy" gezet worden, ongeacht de effectieve bijnaam van de student. Via een ``set``-controle kunnen we dit doen én vervolgens passen we de autoproperty aan naar een full property zodat er een ingebouwde controle kan plaatsvinden:
 ```java
 class Student
 {
-    public Student(int startgeboorteJaar) //overloaded
+    private const string DEFBIJNAAM = "Geen";
+    //Default
+    public Student() 
     {
-        GeboorteJaar = startgeboorteJaar; //let op GeboorteJaar i.p.v. geboorteJaar
+       bijNaam =  DEFBIJNAAM;
     }
 
-    private int geboorteJaar;
-    public int GeboorteJaar
+    //Overloaded
+    public Student(string bijnaamIn) 
     {
-        get { return geboorteJaar; }
-        set
+        bijNaam = bijnaamIn;
+    }
+
+    public string BijNaam
+    {
+        private set
         {
-            if (value < 1950)
-                geboorteJaar = 1950;
-            else 
-                geboorteJaar = value;
+            if(value == "stommerik") //pardon my french
+            {
+                bijNaam = "Geen";
+            }
+        }
+        get
+        {
+            return bijNaam;
         }
     }
+
+    private string bijNaam;
 }
 ```
 
+Deze manier voorkomt dat de constructors verantwoordelijk zijn opdat properties de juiste waarden krijgen. Leg steeds de verantwoordelijk bij het element zelf. Door dit te doen hoef je ook niet in iedere constructor te controleren doorgegeven parameters wel geldig zijn. Ook hier blijft de regel gelden: als je dubbele code dicht bij elkaar ziet staan dan is de kans groot dat je dit kan vereenvoudigen.
+
 {% endhint %}
+
+### Constructors hergebruiken
+
+Beeld je in dat je volgende klasse hebt:
+
+```java
+class Microfoon
+{
+    public Microfoon(string merkIn, bool isUitverkochtIn)
+    {
+        IsUitverkocht = isUitverkochtIn;
+        Merk = merkIn;
+    }
+
+    public Microfoon(string merkIn)
+    {
+        IsUitverkocht = false;
+        Merk = merkIn;
+    }
+
+    public Microfoon()
+    {
+        Merk = "Onbekend";
+        isUitverkocht = true;
+    }
+
+    public string Merk { get; set;}
+    public bool IsUitverkocht {get; set;}
+}
+```
+
+**Opgelet:** bij voorgaande code gaat er mogelijk bij sommige van jullie een alarmbelletje af vanwege de kans op quasi dezelfde code in de verschillende constructors. En dat is een terecht alarm! Om te voorkomen dat we steeds dezelfde toewijzingen moeten schrijven in constructors laat C# toe dat je een andere constructor kunt aanroepen bij een constructor call. We gebruiken hier een speciale methode aanroep ``this()`` bij de constructorsignatuur. Via deze aanroep kunnen we dan eventueel parameters meegeven, afhankelijk wat we nodig hebben. De compiler zal aan de hand van de parameters (of het ontbreken) er aan beslissen welke constructor nodig is met behulp van de klassieke *method overload resolution* regels en de **betterness** regel toepassen (zie vorige boek).
+
+Voorgaande klasse gaan we herschrijven zodat alle constructors de bovenste overloaded constructor gebruiken en zo voorkomen dat we te veel dubbele code hebben:
+
+```java
+class Microfoon
+{
+    public Microfoon(string merkIn, bool isUitverkochtIn)
+    {
+        IsUitverkocht = isUitverkochtIn;
+        Merk = merkIn;
+    }
+
+    public Microfoon(string merkIn): this(merkIn, false)
+    {
+    }
+
+    public Microfoon(): this ("Onbekend", true)
+    {
+    }
+
+    public string Merk { get; set;}
+    public bool IsUitverkocht {get; set;}
+}
+```
+
+Bij de tweede overloaded constructor geven we dus de binnenkomende parameter ``merkIn`` gewoon door naar de ``this()`` aanroep en voegen er nog een tweede literal, ``false``, aan toe. De compiler zal nu via **method overload resolution** op zoek gaan naar de best passende constructor, wat in dit geval de bovenste overloaded constructor zal zijn.
+
+Uiteraard ben je vrij om in de constructor zelf nog steeds code te plaatsen. Het is gewoon belangrijk dat je de volgorde begrijpt waarin de constructor-code wordt doorlopen. Stel dat we volgende constructor toevoegen:
+
+```java
+public Microfoon(bool isUitverkochtIn): this("Bovarc", isUitverkochtIn)
+{
+    Merk =  "Wit Product";
+}
+```
+
+Wanneer we een object aanmaken als volgt ``new Microfoon(true)`` dan zal uiteindelijk dit object van het merk ``Wit Product`` zijn. Er gebeurt namelijk het volgende:
+1. De overloaded constructor ``Microfoon(bool isUitverkochtIn)`` wordt aangeroepen.
+2. Ogenblikkelijk wordt de meegegeven actuele parameter isUitverkochtIn doorgegeven om de overloaded constructor ``Microfoon(string merkIn, bool isUitverkochtIn)`` te benaderen.
+3. Deze constructor zal het ``Merk`` op ``Bovarc`` zetten en ``IsUitverkocht`` op ``true`` (daar we die parameter doorgeven).
+4. We keren nu terug naar de contructor ``Microfoon(bool isUitverkochtIn)`` en voeren de code hiervan uit. Bijgevolg wordt de waarde in ``Merk`` overschreven met ``Wit Product`` 
 
 <!---{pagebreak} --->
 
@@ -140,20 +235,20 @@ Beeld je volgende klasse voor die een breuk voorstelt:
 ```java
 class  Breuk
 {
-    private int noemer;
-    private int teller;
-    public void PrintAlsDouble()
+    public  int Noemer {get; private set;}
+    private int Teller {get; private set;}
+    public int BerekenBreuk()
     {
-        Console.WriteLine((double)teller/noemer);
+        return (double)Teller/Noemer;
     }
 }
 ```
 
-De methode zal een ``DivideByZeroException`` opleveren als ik de methode zou aanroepen nog voor de ``noemer`` een waarde heeft gekregen:
+De methode zal een ``DivideByZeroException`` opleveren als ik de methode ``BerekenBreuk`` zou aanroepen nog voor de ``Noemer`` een waarde heeft gekregen (deling door nul, weet je wel):
 
 ```java
 Breuk eenBreuk = new Breuk();
-eenBreuk.PrintAlsDouble();  //BAM!Een exception! 
+int resultaat = eenBreuk.BerekenBreuk();  //BAM!Een exception! 
 ```
 
 Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken (en kunnen geen breuk-objecten met de default constructor aangemaakt worden):
@@ -162,21 +257,32 @@ Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwik
 class  Breuk
 {
     private int noemer;
-    private int teller;
+    public  int Noemer 
+    {
+        get 
+        { 
+            return noemer;
+        }
+        private set
+        {
+            if(value == 0)
+                noemer = 1 ; //of werp Exception op zoals eerder uitgelegd.
+            else
+                noemer = value;
+        }
+    }
+
+    private int Teller {get; private set;}
+
     public Breuk(int tellerIn, int noemerIn)
     {
-        teller = tellerIn;
-        if(noemerIn == 0)
-            noemer = 1 ; //of werp Exception op zoals eerder uitgelegd.
-        else
-            noemer = noemerIn;
+        Teller = tellerIn;
+        Noemer = noemerIn
     }
-    public void PrintAlsDouble()
-    {
-        Console.WriteLine((double)teller/noemer);
-    }
-}
+
+    //etc.
 ```
+
 Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:
 ```java
 Breuk eenBreuk = new Breuk();
@@ -200,20 +306,16 @@ We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerst
 ```java
 class Balletje
 {
-    public Balletje()
-    {
-        BalX = 5;
-        BalY = 5;
-        VectorX = 1;
-        VectorY = 1;
-    }
-
     public Balletje(int startPosX, int startPosY, int startVectorX, int startVectorY)
     {
         BalX = startPosX;
         BalY = startPosY;
         VectorX = startVectorX;
         VectorY = startVectorY;
+    }
+
+    public Balletje(): this(5,5,1,1)
+    {
     }
 
     public int BalX { get; set; }
@@ -229,7 +331,6 @@ class Balletje
         {
             VectorX = -VectorX;
         }
-
 
         BalX = BalX + VectorX;
 

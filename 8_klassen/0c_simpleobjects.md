@@ -133,26 +133,25 @@ Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verlie
 
 Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde. We weten echter dat objecten ook een interne staat hebben die per object individueel is (we zagen dit reeds toen we balletjes over het scherm lieten botsen: ieder balletje onthield z'n eigen richtingsvector en positie). Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd) oplossen. Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
 
-Stel je voor dat we onze mensen een leeftijd willen geven. Ieder object zal zelf in een instantievariabele bijhouden hoeveel jaren dit object al leeft (het vertellen van geheimen zullen we verderop behandelen):
+Stel je voor dat we onze mensen een geboortejaar willen geven. Ieder object zal zelf in een instantievariabele bijhouden wanneer ze geboren zijn(het vertellen van geheimen zullen we verderop behandelen):
 
 ```java
 class Mens
 {
-    private int leeftijd = 12;  //instantievariabele
+    private int geboorteJaar = 1970;  //instantievariabele
 
     public void Praat()
     {
         Console.WriteLine("Ik ben een mens! ");
-        Console.WriteLine($"Ik ben {leeftijd} jaar oud");
+        Console.WriteLine($"Ik ben geboren in {geboorteJaar}.");
     }
-
 }
 ```
 
 Enkele belangrijke concepten:
-* De instantievariabele ``leeftijd`` zetten we private: we willen niet dat de buitenwereld de leeftijd van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw leeftijd is nu 99! Ha.". Waarop Adil vloekend verandert in een oud mannetje.
-* We geven de variabele een beginwaarde ``12``. Alle objecten zullen dus 12 jaar oud zijn wanneer we deze met ``new`` aanmaken.
-* We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``leeftijd`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou de leeftijd van het object dat je aanroept mee op het scherm verschijnen.
+* De instantievariabele ``geboorteJaar`` zetten we private: we willen niet dat de buitenwereld het geboortejaar van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw geboortejaar is nu 1799! Ha.". Waarop Adil vloekend verandert in een steenoud mannetje.
+* We geven de variabele een beginwaarde ``1970``. Alle objecten zullen dus standaard in het jaar 1970 geboren zijn wanneer we deze met ``new`` aanmaken.
+* We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``geboorteJaar`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou het geboortejaar van het object dat je aanroept mee op het scherm verschijnen.
 
 {% hint style='warning' %}
 We moeten ook dringend enkele extra niet-officiële identifier regels in het leven roepen:
@@ -183,45 +182,44 @@ Zie dat ik hier niet te vaak tussenbeide moet komen. Dank!
 {% endhint %}
 <!---NOBOOKEND--->
 
-Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we objecten hun verjaardag willen kunnen vieren. We schrijven daarom een publieke methode ``VerjaardagVieren`` die telkens ``leeftijd`` met 1 zal verhogen:
+Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we een verjongingsstraal hebben waarmee we het geboortejaar van de mensen steeds met 1 jaar kunnen verhogen (en ze dus een jaar jonger maken!)
 
 ```java
 class Mens
 {
-    private int leeftijd = 1;
-
-    public void VerjaardagVieren()
-    {
-        Console.WriteLine("Hiphip hoera voor mezelf!");
-        leeftijd++;
-        Praat();
-    }
+    private int geboorteJaar = 1970;  
 
     public void Praat()
     {
         Console.WriteLine("Ik ben een mens! ");
-        Console.WriteLine($"Ik ben {leeftijd} jaar oud");
+        Console.WriteLine($"Ik ben geboren in {geboorteJaar}.");
     }
 
+    public void StartVerjongingskuur()
+    {
+        Console.WriteLine("Jeuj. Ik word jonger!");
+        geboorteJaar--;
+        Praat();
+    }
 }
 ```
-Zoals al gezegd: **Ieder object zal z'n eigen leeftijd hebben.**
+Zoals al gezegd: **Ieder object zal z'n eigen geboortejaar hebben.**
 
 Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen interne staat die kan aangepast worden individueel van de andere objecten van hetzelfde type.
 
-We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan laten verjaren. Kijk wat er gebeurt:
+We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan verjongen. Kijk wat er gebeurt:
 
 ```java
 Mens elvis = new Mens();
 Mens bono = new Mens();
 
-elvis.VerjaardagVieren();
-elvis.VerjaardagVieren();
-elvis.VerjaardagVieren();
-bono.VerjaardagVieren();
+elvis.StartVerjongingskuur();
+elvis.StartVerjongingskuur();
+elvis.StartVerjongingskuur();
+bono.Praat();
 ```
 
-Als je deze code zou uitvoeren zal je zien dat de leeftijd van Elvis verhoogt en niet die van Bono wanneer we ``VerjaardagVieren`` aanroepen. Zoals het hoort!
+Als je deze code zou uitvoeren zal je zien dat het geboortejaar van Elvis verhoogd en niet die van Bono wanneer we ``StartVerjongingskuur`` aanroepen. Zoals het hoort!
 
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
@@ -229,9 +227,9 @@ Als je deze code zou uitvoeren zal je zien dat de leeftijd van Elvis verhoogt en
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-"Ja maar, nu pas je toch de leeftijd van buitenuit aan, ook al gaf je aan dat dit niet de bedoeling was want dan zou je Adil ogenblikkelijk 99 jaar kunnen maken."
+"Ja maar, nu pas je toch het geboortejaar van buitenuit aan via een methode, ook al gaf je aan dat dit niet de bedoeling was want dan zou je Adil ogenblikkelijk erg jong kunnen maken."
 
-Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.leeftijd = -12000;``
+Correct. Maar dat was dus maar een voorbeeld. De hoofdreden dat we instantievariabelen niet zomaar ``public`` mogen maken is om te voorkomen dat de buitenwereld instantievariabelen waarden geeft die de werking van de klasse zouden stuk maken. Stel je voor dat je dit kon doen: ``adil.geboortejaar = -12000;``
 
 Dit kan nefaste gevolgen hebben voor de klasse.
 
@@ -240,12 +238,12 @@ Daarom gaan we de toegang tot instantievariabelen als het ware controleren door 
 ```csharp
 class Mens
 {
-    private int leeftijd = 1;
+    private int geboorteJaar = 1970;
 
-    public void VeranderLeeftijd(int nieuweLeeftijd)
+    public void VeranderGeboortejaar(int geboorteJaarIn)
     {
-        if(nieuweLeeftijd >= 0)
-            leeftijd = nieuweLeeftijd;
+        if(geboorteJaarIn >= 0)
+            geboorteJaar = geboorteJaarIn;
     }
 ```
 

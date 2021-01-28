@@ -1,6 +1,5 @@
 # Compositie en aggregatie 
 
-## Objecten in objecten
 {% hint style='tip' %}
 Dit hoofdstuk is kort maar krachtig. We gaan niets nieuws uitleggen, maar eerder zaken benoemen die je waarschijnlijk al toepaste zonder te weten dat er daar ook een naam voor was.
 {% endhint %}
@@ -14,17 +13,17 @@ We spreken over compositie (**composition**) en aggregatie (**aggregation**) wan
 Het lijdende voorwerp zal steeds het object zijn dat binnen het onderwerp zal geplaatst worden (*motor* in auto, *schijf* in computer).
 
 
-### Heeft een-relatie
+## Heeft een-relatie
 
 Overerving konden we detecteren door de "is een"-relatie. Compositie daarentegen detecteren we met behulp van de "heeft een"-relatie tussen 2 klassen. *Een mango heeft een pit. Een vliegtuig heeft een cockpit. Etc.*
 
 Je hoort ook ogenblikkelijk of het om een "heeft één" of "heeft meerdere"-relatie gaat. In het tweede geval, heeft meerdere, wil dit zeggen dat het moederobject **een array van het interne object** in zich heeft. Wederom het voorbeeld van het boek: een boek heeft meerdere pagina's. Dus in de klasse ``Boek`` zullen we vermoedelijk een object van het type ``Pagina[]`` of ``List<Pagina>`` tegenkomen.
 
 {% hint style='tip' %}
-Een klassieke fout is overerving gebruiken wanneer je de bijvoorbeeld de relatie tussen een boek en z'n pagina's wilt aanduiden. Een boek is géén pagina, ook niet omgekeerd. Een boek HEEFT een pagina (of meerdere).
+Een klassieke fout is overerving gebruiken wanneer je bijvoorbeeld de relatie tussen een boek en z'n pagina's wilt aanduiden. Een boek is géén pagina, ook niet omgekeerd. Een boek HEEFT een pagina (of meerdere).
 {% endhint %}
 
-#### Compositie en aggregatie beschrijven
+### Compositie en aggregatie beschrijven
 
 Compositie duiden we aan met een lijn die begint met een volle ruit aan de kant van de klasse die de objecten in zich heeft:
 
@@ -192,7 +191,7 @@ Op deze manier hebben we nog steeds een referentie naar ``myHardeSchijf`` en zal
 
 
 {% hint style='tip' %}
-Kortom, nog steeds niets nieuws onder de zon. Alle manieren die ja al kende om met bestaande types objecten aan te maken gelden nog steeds. Compositie deed je al de hele tijd wanneer je bijvoorbeeld zei "een student heeft een leeftijd" en dan een instantievariabele ``int age`` aanmaakte. Het grote verschil is echter dat objecten moeten geïnstantieerd worden, wat niet moest met value-types en je dus iets vaker op ``null`` zal moeten controleren.
+Kortom, nog steeds niets nieuws onder de zon. Alle manieren die ja al kende om met bestaande types objecten aan te maken gelden nog steeds. Compositie deed je al de hele tijd wanneer je bijvoorbeeld zei "een student heeft een geboortejaar" en dan een instantievariabele ``int geboortejaar`` aanmaakte. Het grote verschil is echter dat objecten moeten geïnstantieerd worden, wat niet moest met value-types en je dus iets vaker op ``null`` zal moeten controleren.
 {% endhint %}
 
 

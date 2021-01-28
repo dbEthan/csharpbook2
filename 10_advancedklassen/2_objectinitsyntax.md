@@ -2,7 +2,7 @@
 
 Het is niet altijd duidelijk hoeveel overloaded constructors je juist nodig hebt. Meestal beperken we het tot de default constructor en 1 of 2 heel veel gebruikte overloaded constructors. 
 
-Dankzij **object initializer syntax** kan je ook parameters tijdens de aanmaak van objecten meegeven zonder dat je hiervoor een specifieke constructor voor moet schrijven.
+Dankzij **object initializer syntax** kan je ook parameters tijdens de aanmaak van objecten meegeven zonder dat je hiervoor een specifieke constructor moet schrijven.
 
 **Object initializer syntax laat je toe om tijdens (eigenlijk direct er na) creatie van een object, properties beginwaarden te geven.**
 

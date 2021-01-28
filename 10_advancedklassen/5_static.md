@@ -1,6 +1,6 @@
 ## Static
 
-Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. En dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
+Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. In dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 
 Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**.
 
@@ -27,15 +27,15 @@ Gegeven volgende klasse:
 ```java
 class Mens
 {
-    private int leeftijd = 1;
+    private int geboorteJaar;
+    public int GeboorteJaar 
+    {
+        get{ return geboorteJaar; }
+        private set {geboorteJaar = value;}
+    }
     public void Jarig()
     {
-        leeftijd++;
-    }
-
-    public void ToonLeeftijd()
-    {
-        Console.WriteLine(leeftijd);
+        GeboorteJaar++;
     }
 }
 ```
@@ -45,14 +45,11 @@ Als we dit doen:
 ```java
 Mens m1 = new Mens();
 Mens m2 = new Mens();
-
 m1.Jarig();
 m1.Jarig();
-
 m2.Jarig();
-
-m1.ToonLeeftijd();
-m2.ToonLeeftijd();
+Console.WriteLine($"{m1.GeboorteJaar}");;
+Console.WriteLine($"{m2.GeboorteJaar}");;
 ```
 
 Dan zien we volgende uitvoer:
@@ -69,39 +66,36 @@ Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars inte
 
 Laten we eens kijken wat er gebeurt indien we een instantievariabele ``static`` maken. 
 
-We maken de variabele ``private int leeftijd`` static als volgt: ``private static int leeftijd = 1;``. We krijgen dan:
+We maken de variabele ``private int geboorteJaar`` static als volgt: ``private static int geboorteJaar = 1;``. We krijgen dan:
 
 ```java
 class Mens
 {
-    private static int leeftijd = 1;
+    private static int geboorteJaar;
+    public int GeboorteJaar 
+    {
+        get{ return geboorteJaar; }
+        private set {geboorteJaar = value;}
+    }
     public void Jarig()
     {
-        leeftijd++;
-    }
-
-    public void ToonLeeftijd()
-    {
-        Console.WriteLine(leeftijd);
+        GeboorteJaar++;
     }
 }
 ```
 
-**We hebben er nu voor gezorgd dat ALLE objecten de variabele ``leeftijd`` *delen*. Er wordt van deze variabele dus maar één "instantie" in het geheugen aangemaakt.**
+**We hebben er nu voor gezorgd dat ALLE objecten de variabele ``geboorteJaar`` *delen*. Er wordt van deze variabele dus maar één "instantie" in het geheugen aangemaakt.**
 
 Voeren we nu terug volgende code uit:
 
 ```java
 Mens m1 = new Mens();
 Mens m2 = new Mens();
-
 m1.Jarig();
 m1.Jarig();
-
 m2.Jarig();
-
-m1.ToonLeeftijd();
-m2.ToonLeeftijd();
+Console.WriteLine($"{m1.GeboorteJaar}");;
+Console.WriteLine($"{m2.GeboorteJaar}");;
 ```
 
 Dan wordt de uitvoer:
@@ -111,7 +105,7 @@ Dan wordt de uitvoer:
 4
 ```
 
-We zien dat de ``leeftijd`` dus niet meer per object individueel wordt bewaard, maar dat het één globale variabele als het ware is geworden.
+We zien dat de variabele ``geboorteJaar`` dus niet meer per object individueel wordt bewaard, maar dat het één globale variabele als het ware is geworden en géén instantievariabele meer is.
 ``static`` laat je dus toe om informatie over de objecten heen te delen. 
 
 {% hint style='warning' %}
@@ -182,7 +176,32 @@ Mooi toch.
 
 #### Nog een voorbeeld
 
-In het volgende voorbeeld gebruiken we een ``static`` variabele om bij te houden hoeveel objecten (via de constructor) er van de klasse reeds zijn aangemaakt:
+{% hint style='tip' %}
+De ``Debug`` klasse (die in de ``System.Diagnostics`` namespace staat) kan je gebruiken om eenvoudig zaken naar het "debug output venster" te sturen tijdens het debuggen. Dit is handig om te voorkomen dat je debug informatie steeds naar het console-scherm moet sturen. Het zou niet de eerste keer zijn dat iemand vergeet een bepaalde Console.WriteLine te verwijderen uit hte finale product met gevoelige debug-informatie. 
+
+Volgende code toont een voorbeeld (merk lijn 2 op die uiteraard vereist is):
+```java
+using System;
+using System.Diagnostics;
+
+namespace debugdemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World! Console");
+            Debug.WriteLine("Hello World! Debug");
+        }
+    }
+}
+```
+Als je deze code uitvoer in debugger modus, dan zal je enkel de tekst ``Hello World! Console`` in je console zien verschijnen. De andere lijn kan je terugvinden in het "Output" venster in Visual Studio:
+![](../assets/6_klassen/debugmode.png)
+
+{% endhint %}
+
+In het volgende voorbeeld gebruiken we een ``static`` variabele om bij te houden hoeveel objecten (via de constructor met behulp van ``Debug.WriteLine`` ) er van de klasse reeds zijn aangemaakt. :
 
 ```java
 class Fiets
@@ -191,35 +210,37 @@ class Fiets
     public Fiets()
     {
         aantalFietsen++;
-        Console.WriteLine($"Er zijn nu {aantalFietsen} gemaakt");
+        Debug.WriteLine($"Er zijn nu {aantalFietsen} gemaakt");
     }
 	
 	public static void VerminderFiets()
 	{
-		aantalFietsen--;
-        Console.WriteLine($"STATIC: Er zijn {aantalFietsen} fietsen");
+        aantalFietsen--;
+        Debug.WriteLine($"STATIC: Er zijn {aantalFietsen} fietsen");
 	}
 }
 ```
+
+
 
 Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt. We kunnen echter nog steeds instanties, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
 
 Laten we de uitvoer van volgende code eens bekijken:
 ```java
-Fiets Merckx = new Fiets();
-Fiets Steels = new Fiets();
-Fiets Evenepoel = new Fiets();
+Fiets merckx = new Fiets();
+Fiets steels = new Fiets();
+Fiets evenepoel = new Fiets();
 Fiets.VerminderFiets();
-Fiets Aert = new Fiets();
+Fiets aerts = new Fiets();
 Fiets.VerminderFiets();
 ```
 
-Dit zal volgende uitvoer geven:
+Dit zal debug uitvoer geven:
 
 ```text
 Er zijn nu 1 gemaakt  
-Er zijn nu 2 gemaakt
-Er zijn nu 3 gemaakt
+Er zijn nu 2 gemaakt  
+Er zijn nu 3 gemaakt  
 STATIC:Er zijn 2 fietsen
 Er zijn nu 3 gemaakt
 STATIC:Er zijn 2 fietsen
@@ -253,7 +274,7 @@ De error die verschijnt **An object reference is required for the non-static fie
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
 
-Een eenvoudige regel is te onthouden dat van zodra je in een ``static`` omgeving (meestal een methode of property) bent je niet meer naar de niet-static delen van je code zal geraken.
+Een eenvoudige regel is te onthouden dat van zodra je in een ``static`` omgeving bent (meestal een methode of property), je niet meer naar de niet-static delen van je code zal geraken.
 
 Dit verklaart ook waarom je bij console applicaties in Program.cs steeds alle methoden ``static`` moet maken. Een console-applicatie is als volgt beschreven wanneer je deze aanmaakt:
 
@@ -305,7 +326,7 @@ Balletje.Breedte = 10;
 
 ```
 
-De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm. We passen de ``Update``-methode aan rekening houdend met deze nieuwe kennis:
+De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm. We passen de ``Update``-methode aan, rekening houdend met deze nieuwe kennis:
 
 ```java
 
@@ -369,10 +390,10 @@ Test maar eens wat er gebeurt als je volgende klasse hebt:
 ```java
 class Dobbelsteen
 {
-    static void Werp()
+    public int Werp()
     {
         Random gen = new Random();
-        Console.WriteLine(gen.Next(1,7));
+        return gen.Next(1,7);
     }
 }
 ```
@@ -383,11 +404,11 @@ Wanneer je nu dezelfde dobbelsteen 10 maal rolt is de kans groot dat je geregeld
 Dobbelsteen testDobbel = new Dobbelsteen();
 for(int i = 0 ; i < 10; i++)
 {
-    testDobbel.Werp();
+    Console.WriteLine(testDobbel.Werp());
 }
 ```
 
-De reden? Een nieuw aangemaakt ``Random``-object gebruikt de tijd waarop het wordt aangemaakt als een zogenaamde *seed*. Een seed zorgt ervoor dat je dezelfde reeks getallen kan genereren wanneer de seed dezelfde is (een concept dat nuttig is cryptografie waarbij de seed dan de geheime sleutel tussen zender en ontvanger is en zij dus met een gedeelde sleutel dezelfde willekeurige reeks getallen kunnen maken). Uiteraard willen we dat niet bij een dobbelsteen. Het is niet omdat een dobbelsteen snel na elkaar wordt geworpen (of aangemaakt) dat die dobbelsteen dan regelmatig dezelfde getallen na elkaar gooit.
+De reden? Een nieuw aangemaakt ``Random``-object gebruikt de tijd waarop het wordt aangemaakt als een zogenaamde *seed*. Een seed zorgt ervoor dat je dezelfde reeks getallen kan genereren wanneer de seed dezelfde is (een concept dat nuttig is in cryptografie waarbij de seed dan de geheime sleutel tussen zender en ontvanger is en zij dus met een gedeelde sleutel dezelfde willekeurige reeks getallen kunnen maken). Uiteraard willen we dat niet bij een dobbelsteen. Het is niet omdat een dobbelsteen snel na elkaar wordt geworpen (of aangemaakt) dat die dobbelsteen dan regelmatig dezelfde getallen na elkaar gooit.
 
 **We lossen dit op door de generator ``static`` te maken zodat er maar één generator bestaat die alle dobbelstenen en hun methoden delen.** Dit is erg eenvoudig opgelost: je verhuist je generator naar buiten de methode en plaatst er ``static`` voor:
 
@@ -395,10 +416,9 @@ De reden? Een nieuw aangemaakt ``Random``-object gebruikt de tijd waarop het wor
 class Dobbelsteen
 {
     static Random gen = new Random();
-    static void Werp()
+    public int Werp()
     {
-        
-        Console.WriteLine(gen.Next(1,7));
+        return gen.Next(1,7);
     }
 }
 ```

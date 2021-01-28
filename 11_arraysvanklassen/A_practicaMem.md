@@ -46,7 +46,7 @@ enum Klassen { EA1, EA2, EA3, EA4}
 class Student
 {
     public string Naam { get; set; }
-    public int Leeftijd { get; set; }
+    public int Geboortejaar { get; set; }
     public Klassen Klas { get; set; }
 
     public int PuntenCommunicatie { get; set; }
@@ -60,7 +60,7 @@ class Student
 
     public void GeefOverzicht()
     {
-        Console.WriteLine($"{Naam}, {Leeftijd} jaar");
+        Console.WriteLine($"{Naam}, {Geboortejaar}");
         Console.WriteLine($"Klas: {Klas}");
         Console.WriteLine();
         Console.WriteLine("Cijferrapport");

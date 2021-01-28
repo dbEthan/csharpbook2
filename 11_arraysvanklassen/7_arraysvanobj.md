@@ -57,12 +57,12 @@ Van zodra een object in de array staat kan je deze vanuit de array aanspreken d.
 mijnKlas[3].Name = "Vincent Lagasse";
 ```
 
-Uiteraard mag je ook altijd de referentie naar een individueel object in de array kopiëren. Denk er aan dat we de hele tijd met referenties werken en de GC dus niet tussenbeide zal komen zolang er minstens 1 referentie naar het object is. Indien de student op plek 4 in de array aan de start een leeftijd van 20 had, dan zal deze op het einde van volgende code als leeftijd 22 hebben, daar we op hetzelfde objecten de leeftijd verhogen in zowel lijn 2 als 3:
+Uiteraard mag je ook altijd de referentie naar een individueel object in de array kopiëren. Denk er aan dat we de hele tijd met referenties werken en de GC dus niet tussenbeide zal komen zolang er minstens 1 referentie naar het object is. Indien de student op plek 4 in de array aan de start een geboortjejaar van 1981 had, dan zal deze op het einde van volgende code als geboortejaar 1983 hebben, daar we op hetzelfde objecten het geboortejaar verhogen in zowel lijn 2 als 3:
 
 ```java
 Student tijdelijkeStudent = mijnKlas[3];
-mijnKlas[3].Leeftijd++;
-tijdelijkeStudent.Leeftijd++;
+mijnKlas[3].Geboortejaar++;
+tijdelijkeStudent.Geboortejaar++;
 ```
 
 ### Array initializer syntax

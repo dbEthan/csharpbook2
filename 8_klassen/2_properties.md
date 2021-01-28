@@ -346,12 +346,13 @@ class Persoon
 }
 ```
 We willen echter ook soms de volledige naam of emailadres krijgen, beide gebaseerd op de inhoud van de instantievariabelen ``voornaam`` en ``achternaam``. Via een read-only property die transformeert kan dit:
+
 ```java
 class Persoon
 {
     private string voornaam;
     private string achternaam;
-    public string FullName
+    public string VolledigeNaam
     {
         get
         { 
@@ -368,39 +369,7 @@ class Persoon
 }
 ```
 
-Nog een voorbeeldje:
 
-```java
-class Persoon
-{
-    private const MAXAGE = 120;
-    private int age;
-
-    public bool IsWaarschijnlijkNogLevend
-    {
-        get
-        {
-            return (age <= MAXAGE)
-        }
-    }
-}
-```
-
-Vaak gebruiken we dit soort read-only properties om data te transformeren. Hoe minder code een klasse bevat hoe beter. Indien je de leeftijd van een persoon *in maanden* in de klasse bijhoudt, dan is het onnodig om dat ook te doen voor de *leeftijd in jaren*. We kunnen dan beter die informatie genereren gebaseerd op de data die we hebben **wanneer we ze nodig hebben** (letterlijk "on the fly"):
-```java
-class Persoon
-{
-    private int leeftijd; //in maanden
-
-    public double LeeftijdInJaren
-    {
-        get
-        {
-            return leeftijd / 12.0;
-        }
-    }
-}
-```
 
 ### Auto properties
 Automatische eigenschappen (**autoproperties** , soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
@@ -415,26 +384,26 @@ De originele klasse mét full properties (we hebben de layout wat compacter gema
 public class Person
 {
 
-    private string firstName;
-    private string lastName;
-    private int age;
+    private string voornaam;
+    private string achernaam;
+    private int geboorteJaar;
 
-    public string FirstName
+    public string Voornaam
     {
-        get { return firstName; }
-        set { firstName = value; }
+        get { return voornaam; }
+        set { voornaam = value; }
     }
 
-    public string LastName
+    public string Achternaam
     {
-        get { return lastName; }
-        set { lastName = value; }
+        get { return achernaam; }
+        set { achernaam = value; }
     }
 
-    public int Age
+    public int GeboorteJaar
     {
-        get { return age; }
-        set { age = value; }
+        get { return geboorteJaar; }
+        set { geboorteJaar = value; }
     }
 }
 ```
@@ -444,9 +413,9 @@ De herschreven klasse met autoproperties (autoprops) wordt:
 ```java
 public class Person
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
+    public string Voornaam { get; set; }
+    public string Achternaam { get; set; }
+    public int GeboorteJaar { get; set; }
 }
 ```
 
@@ -465,22 +434,22 @@ Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan
 Je mag autoproperties beginwaarden geven door de waarde achter de property te schrijven, als volgt:
 
 ```java
-public int Age {get;set;} = 45;
+public int GeboorteJaar {get;set;} = 2002;
 ```
 
-Al je objecten zullen nu als beginleeftijd 45 hebben (*arme objecten*).
+Al je objecten zullen nu als geboortejaar 2002 hebben .
 
 {% hint style='warning' %}
 ### Altijd auto-properties? 
 Merk op dat je dit enkel kan doen indien er geen extra logica in de property aanwezig moet zijn.
 
-Stel dat je bij de setter van age wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
+Stel dat je bij de setter van geboorteJaar wil controleren op een negatieve waarde, dan zal je dit zoals voorheen moeten schrijven en kan dit niet met een automatic property:
 
 ```java
 set
 {
     if( value > 0)
-        age = value;
+        geboorteJaar = value;
 }
 ```
 **Voorgaande property kan dus *NIET* herschreven worden met een automatic property.**
@@ -490,14 +459,14 @@ set
 Je kan autoproperties ook gebruiken om bijvoorbeeld een read-only property te definiëren. Als volgt:
 
 ```java
-public string FirstName { get; private set; }
+public string Voornaam { get; private set; }
 ```
 
-En uiteraard kunnen we dan de instantievariabele ``firstName`` uit de code verwijderen.
+En uiteraard kunnen we dan de instantievariabele ``voornaam`` uit de code verwijderen.
 
 Een andere manier die ook kan is als volgt:
 ```java
-public string FirstName { get; } = "Tim";
+public string Voornaam { get; } = "Tim";
 ```
 
 Hierbij zijn we dan wel verplicht om ogenblikkelijk deze property een beginwaarde te geven, daar we deze op geen enkele andere manier nog kunnen aanpassen. 
@@ -507,7 +476,6 @@ Hierbij zijn we dan wel verplicht om ogenblikkelijk deze property een beginwaard
 Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabtoets indrukt dan verschijnt al de nodige code voor een automatic property. 
 Via ``propg`` gevolgd door twee maal de tabtoets krijg je een autoproperty met private setter.
 {% endhint %}
-
 
 
 {% hint style='tip' %}

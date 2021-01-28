@@ -5,15 +5,15 @@ Sinds C# 9.0 (verschenen eind 2020) is het ook mogelijk om zogenaamde ``record``
 ```java
 public class Student
 {
-    public Student(string naam, int leeftijd, bool isIngeschreven)
+    public Student(string naam, int geboorteJaarIn, bool isIngeschreven)
     {
         Naam = naam;
-        Leeftijd = leeftijd;
+        GeboorteJaar = geboorteJaarIn;
         IsIngeschreven = isIngeschreven;
     }
 
     public string Naam {get;}
-    public int Leeftijd {get;}
+    public int GeboorteJaar {get;}
     public bool IsIngeschreven {get;}
 }
 ```
@@ -24,7 +24,7 @@ Wanneer je een dergelijke klasse nodig hebt kan dit in C# 9.0 vereenvoudigd gesc
 public record Student
 {
     public string Naam { get; init; }
-    public int Leeftijd { get; init; }
+    public int GeboorteJaar { get; init; }
     public bool IsIngeschreven { get; init; }
 }
 ```
@@ -34,7 +34,7 @@ Het ``init`` keyword geeft aan dat deze autoproperty eenmalig kunnen **ge-set** 
 ```java
 Student eenNieuweStudent = new Student 
             {   Naam = "Tim", 
-                Leeftijd = 18,   
+                GeboorteJaar = 1981,   
                 IsIngeschreven = false
             };
 ```

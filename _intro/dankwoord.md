@@ -16,8 +16,8 @@ De volledige in markdown geschreven broncode voor de cursus (en dus ook grotende
 Waarom deze korte historiek? Wel, de kans is bestaande dat er hier en daar in dit boek flarden tekst, code voorbeelden, of oefeningen niet origineel de mijne zijn. Ik heb getracht zo goed mogelijk aan te geven wat van waar komt, maar als ik toch iets vergeten ben, aarzel dan niet om me er op te wijzen. Voor de volledigheid hier enkele van de boeken, sites of andere bronnen waar doorheen de jaren "inspiratie" uit werd gehaald:
 
 * Volgenden boeken:
-  * Microsoft Visual C# 2010 - An Introduction To Object-Oriented Programming van Joyce Farrell (ISBN: 9781111529758)
-  * Programmeren in C# van Douglass Bell, Mike Parr en Kris Hermans (ISBN: 9789043036139)
+  * Microsoft Visual C# 2010 - An Introduction To Object-Oriented Programming van Joyce Farrell (Isbn: 9781111529758)
+  * Programmeren in C# van Douglass Bell, Mike Parr en Kris Hermans (Isbn: 9789043036139)
 * Oefeningen uit de voortreffelijke website [c-sharp.be](https://www.c-sharp.be/) waarvan ik geen flauw benul heb wie deze onderhoudt.
 * Sommige oefeningen en onderdelen komen uit  de cursus "Programmeren" van collega Olga Coutrin van de opleiding Toegepaste Informatica van de AP Hogeschool.
 

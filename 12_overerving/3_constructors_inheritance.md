@@ -11,95 +11,117 @@ Dit is logisch: de child-klasse heeft de "fundering" nodig van z'n parent-klasse
 Volgende voorbeeld toont dit in actie:
 
 ```java
-class Soldier
+class Soldaat
 {
-   public Soldier() {Console.WriteLine("Soldier reporting in");}
+   public Soldaat() 
+   {
+      Debug.WriteLine("Soldaat is aangemaakt.");
+   }
 }
 
-class Medic : Soldier
+class VeldArts : Soldaat
 {
-   public Medic(){Console.WriteLine("Who needs healing?");}
+   public VeldArts()
+   {
+      Debug.WriteLine("Veldarts is aangemaakt.");
+   }
 }
 ```
 
-Indien je vervolgens een object aanmaakt van het type ``Medic``:
+Indien je vervolgens een object aanmaakt van het type ``VeldArts``:
 
 ```java
-Medic RexGregor = new Medic();
+VeldArts RexGregor = new VeldArts();
 ```
 
 Dan zien we de volgorde van constructor-aanroep op het scherm:
 
 <!---{line-numbers:false}--->
 ```text
-Soldier reporting in
-Who needs healing?
+Soldaat is aangemaakt.
+Veldarts is aangemaakt.
 ```
 
 Er wordt dus verondersteld in dit geval dat er een default constructor in de basis-klasse aanwezig is.
 
 ### Overloaded constructors en ``base()``
 
-Indien je klasse ``Soldier`` een overloaded constructor heeft, dan wisten we al dat deze niet automatisch een default constructor heeft. Volgende code zou dus een probleem geven indien je een ``Medic`` wilt aanmaken via ``new Medic()``:
+Indien je klasse ``Soldaat`` een overloaded constructor heeft, dan wisten we al dat deze niet automatisch een default constructor heeft. Volgende code zou dus een probleem geven indien je een ``VeldArts`` wilt aanmaken via ``new VeldArts()``:
 ```java
-class Soldier
+class Soldaat
 {
-   public Soldier(bool canShoot) {//...Do stuff  }
+   public Soldaat(bool kanSchieten) 
+   {
+      //Doe soldaten dingen
+   }
 }
 
-class Medic:Soldier
+class VeldArts:Soldaat
 {
-   public Medic(){Console.WriteLine("Who needs healing?");}
+   public VeldArts()
+   {
+      Debug.WriteLine("Veldarts is aangemaakt.");
+   }
 }
 ```
 
 Wat je namelijk niet ziet bij child-klassen en hun constructors is dat er eigenlijk een impliciete aanroep naar de constructor van de parent-klasse wordt gedaan. Bij alle constructors staat er eigenlijk ``:base()`` achter, wat je ook zelf kunt schrijven:
 ```java
-class Medic:Soldier
+class VeldArts:Soldaat
 {
-   public Medic(): base()
-   {Console.WriteLine("Who needs healing?");}
+   public VeldArts(): base()
+   {
+      Debug.WriteLine("Veldarts is aangemaakt.");
+   }
 }
 ```
 
 ``base()`` achter de constructor zegt  eigenlijk *"roep de default constructor van de parent-klasse aan"*. Je mag hier echter ook parameters meegeven en de compiler zal dan zoeken naar een constructor in de basis-klasse die deze volgorde van parameters kan accepteren.
 
-We zien hier dus hoe we ervoor moeten zorgen dat we terug Medics via ``new Medic()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldier`` moeten aanpassen:
+We zien hier dus hoe we ervoor moeten zorgen dat we terug VeldArtss via ``new VeldArts()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
 ```java
-class Soldier
+class Soldaat
 {
-   public Soldier(bool canShoot) {//...Do stuff  }
+   public Soldaat(bool kanSchieten) 
+   {
+      //Doe soldaten dingen
+   }
 }
 
-class Medic:Soldier
+class VeldArts:Soldaat
 {
-   public Medic():base(true)
-    {Console.WriteLine("Who needs healing?");}
+   public VeldArts():base(true)
+   {
+      Debug.WriteLine("Veldarts is aangemaakt.");
+   }
 }
 ```
 
-De medics zullen de actuele parameter``canShoot`` dus steeds op ``true`` zetten.
+De VeldArtss zullen de actuele parameter``kanSchieten`` dus steeds op ``true`` zetten.
 
-Uiteraard wil je misschien kunnen meegeven bij het aanmaken van een ``Medic`` wat de startwaarde van ``canShoot`` moet zijn. Dit vereist dat je een overloaded constructor in ``Medic`` aanmaakt, die op zijn beurt de overloaded constructor van ``Soldier`` aanroept. 
+Uiteraard wil je misschien kunnen meegeven bij het aanmaken van een ``VeldArts`` wat de startwaarde van ``kanSchieten`` moet zijn. Dit vereist dat je een overloaded constructor in ``VeldArts`` aanmaakt, die op zijn beurt de overloaded constructor van ``Soldaat`` aanroept. 
 
-Je schrijft dan een overloaded constructor in ``Medic`` bij:
+Je schrijft dan een overloaded constructor in ``VeldArts`` bij:
 
 ```java
-class Soldier
+class Soldaat
 {
-   public Soldier(bool canShoot) {//...Do stuff  }
+   public Soldaat(bool kanSchieten) 
+   {
+      //...Doe soldaten dingen
+   }
 }
 
-class Medic:Soldier
+class VeldArts:Soldaat
 {
-   public Medic(bool canSh): base(canSh)
+   public VeldArts(bool canSh): base(canSh)
    {
 
    } 
 
-   public Medic():base(true)  //Default
+   public VeldArts():base(true)  //Default
    {
-      Console.WriteLine("Who needs healing?");
+      Debug.WriteLine("Veldarts is aangemaakt.");
    }
 }
 ```
@@ -113,19 +135,19 @@ Een hybride aanpak is ook mogelijk. Volgend voorbeeld toont 2 klassen, ``Huis`` 
 ```java
 class Gebouw
 {
-   private int aantalVerdiepingen;
+   public int AantalVerdiepingen { get; private set; }
    public Gebouw(int verdiepingenIn)
    {
-      aantalVerdiepingen = verdiepingenIn;
+      AantalVerdiepingen = verdiepingenIn;
    }
 }
 
 class Huis: Gebouw
 {
-   private bool heeftTuintje;
+   public bool HeeftTuintje { get; private set; };
    public Huis(bool tuintjeIn, int verdiepingenIn): base(verdiepingenIn)
    {
-      heeftTuintje = tuintjeIn;
+      HeeftTuintje = tuintjeIn;
    }
 }
 ```
@@ -147,7 +169,7 @@ Huis eenEigenHuis = new Huis(true,5);
 3. De overloaded constructor van ``Gebouw`` wordt dus aangeroepen.
 4. De code van deze constructor wordt uitgevoerd: het aantal verdiepingen van het gebouw/huis wordt ingesteld.
 5. Wanneer het einde van de constructor wordt bereikt, zal er teruggegaan worden naar de constructor van ``Huis``.
-6. Nu wordt de code van de``Huis`` constructor uitgevoerd: ``heeftTuintje`` krijgt de waarde ``true``.
+6. Nu wordt de code van de``Huis`` constructor uitgevoerd: ``HeeftTuintje`` krijgt de waarde ``true``.
 
 ![](../assets/7_overerving/constflow.png)
 {% endhint %}

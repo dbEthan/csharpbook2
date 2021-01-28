@@ -4,7 +4,7 @@
 
 Maak een klasse ``Boek``  en gebruik auto-properties voor de velden:
 
-* ISBN (``int``)
+* Isbn (``int``)
 * Title (``string``)
 * Auteur (``string``)
  
@@ -22,7 +22,7 @@ In beide child-klassen, override de ``Prijs``-setter zodat:
 a)	Bij ``TextBoek`` de prijs enkel tussen 20 en 80 kan liggen
 b)	Bij ``KoffietafelBoek`` de prijs enkel tussen 35 en 100 kan liggen
 
-Zorg ervoor dat boeken de ``ToString`` overriden zodat je boekobjecten eenvoudig via ``Console.WriteLine(myBoek)`` hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (ISBN) _ Prijs"  (bv The Shining - Stephen King (05848152) _ 50)
+Zorg ervoor dat boeken de ``ToString`` overriden zodat je boekobjecten eenvoudig via ``Console.WriteLine(myBoek)`` hun info op het scherm tonen. Ze tonen deze info als volgt: "Title - Auteur (Isbn) _ Prijs"  (bv The Shining - Stephen King (05848152) _ 50)
 
 
 Maak boeken aan van de 3 klassen, toon dat de prijs niet altijd zomaar ingesteld kan worden.

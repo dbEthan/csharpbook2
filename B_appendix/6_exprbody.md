@@ -16,16 +16,16 @@ We tonen telkens een voorbeeld hoe deze origineel is en hoe deze naar EBM syntax
 Origineel:
 
 ```java
-public void ToonLeeftijd(int age)
+public void ToonGeboorteJaar(int geboortejaarIn)
 {
-    Console.WriteLine(age);
+    Console.WriteLine(geboortejaarIn);
 }
 ```
 
 Met EBM:
 
 ```java
-public void ToonLeetijd(int age) => Console.WriteLine(age);
+public void ToonGeboorteJaar(int geboortejaarIn) => Console.WriteLine(geboortejaarIn);
 ```
 
 Nog een voorbeeld, nu met een return. Merk op dat we return niet moeten schrijven:
@@ -48,10 +48,10 @@ Origineel:
 ```java
 class Student
 {
-    private int age;
-    public Student(int inAge)
+    private int geboorteJaar;
+    public Student(int geboorteJaarIn)
     {
-        age = inAge;
+        geboorteJaar = geboorteJaarIn;
     }
 }
 ```
@@ -60,8 +60,8 @@ Met EBM:
 ```java
 class Student
 {
-    private int age;
-    public Student(int inAge) =>  age = inAge;
+    private int geboorteJaar;
+    public Student(int geboorteJaarIn) =>  geboorteJaar = geboorteJaarIn;
 }
 ```
 

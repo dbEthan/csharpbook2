@@ -72,14 +72,13 @@ Echter, er bestaan ook hipster die houden van de klassieke manier van voedsel ve
 ```java
 class ModerneMens: Oermens
 {
-      private bool IsHipster;
+      public bool IsHipster {get; private set;} = false ;
 
       public override int VoorzieVoedsel()
       {
             if (IsHipster)
                   return base.VoorzieVoedsel() + 20;
-            else
-                  return 100;
+            return 100;
       }
 }
 ```
@@ -87,49 +86,6 @@ class ModerneMens: Oermens
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-
-### Properties overriden
-Properties en methoden zijn van hetzelfde pak een laken. Het is dan ook niet meer dan logisch dat ook properties ``virtual`` kunnen zijn.
-
-
-
-Stel dat je volgende klasse hebt:
-
-```java
-class Auto
-{
-   virtual public int Fuel { get; set; }
-}
-```
-
-We maken nu een meer luxueuze auto die een lichtje heeft (als property genaamd ``HeeftVolleTank``) dat aangaat wanneer de benzine-tank vol genoeg is, dit kan via ``override``.
-
-
-```java
-class LuxeAuto : Auto
-{
-   public bool HeeftVolleTank { get; set; }
-
-   public override int Fuel
-   {
-      get { return base.Fuel; }
-      set
-      {
-            if (value > 100)
-            {
-               HeeftVolleTank = true;
-            }
-            base.Fuel = value;
-      }
-   }
-}
-```
-
-{% hint style='tip' %}
-Indien je ``override`` intypt in Visual Studio en met autocompletion vervolledig dan zal je zien dat VS zogenaamde Expression Body Member syntax (herkenbaar aan de `` =>``) gebruikt om properties te overriden. Deze syntax behandelen we kort in de appendix van dit boek. 
-
-**Je schrijft dus best manueel de override van properties** indien je niet bekend bent met deze syntax.
-{% endhint %}
 
 <!---NOBOOKSTART--->
 # Kennisclip

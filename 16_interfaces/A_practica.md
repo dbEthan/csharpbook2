@@ -12,11 +12,11 @@ Maak 4 klassen:
 * ``Auto``
 * ``Plant``
 
-Maak een interface ``ICarbonFootPrint`` die 
-* 1 methode ``BerekenFootprint`` heeft die een int teruggeeft en geen parameters nodig heeft
-* 1 methode ``VerlaagFootprint`` die niets teruggeeft en geen parameters nodig heeft
+Maak een interface ``ICarbonFootPrint`` die volgende zaken heeft:
+* 1 methode ``BerekenFootprint`` die een ``int`` teruggeeft en geen parameters nodig heeft.
+* 1 methode ``VerlaagFootprint`` die niets teruggeeft en geen parameters nodig heeft.
 
-Breidt de volgende klassen met de interface uit:
+Breid de volgende klassen met de interface uit:
 * De carbon footprint van een ``huis`` is gebaseerd op het volume van het huis in kubieke meter maal 10.
 * De carbon footprint van een ``fabriek`` is gebaseerd op het aantal werknemers maal 100. 
 * De carbon footprint van een ``auto`` is gebaseerd op het merk
@@ -27,9 +27,9 @@ Zorg ervoor dat van iedere klasse de footprint kan bevraagd worden (maak/verzin 
 
 Plaats van iedere klasse 2 objecten  in een gemeenschappelijke lijst en zorg ervoor dat:
 * de footprint van alle objecten getoond wordt (planten worden overgeslagen)
-* de gemiddelde footprint van alle objecten (ook planten worden meegeteld) berekend
-* toont welk object de hoogte footprint heeft
-* van alle objecten de footprint kan verlaagt worden
+* de gemiddelde footprint van alle objecten (ook planten worden meegeteld) berekend.
+* toont welk object de hoogte footprint heeft.
+* van alle objecten de footprint kan verlaagt worden.
 
 # Pokémon interfaces
 

@@ -1,16 +1,6 @@
 ## Spelen met strings
 
 In deze sectie duiken we dieper in de ``String`` klasse om aan te tonen dat er tal van nuttige zaken bestaan om met strings te werken.
-
-### Verbatim character
-
-Door een ``@`` (verbatim character) voor een string te plaatsen zeggen we concreet: "de hele string die nu volgt moet je beschouwen zoals hij er staat. Je mag alle escape karakters negeren.
-
-Dit wordt vaak gebruikt om een filepath iets leesbaarder te maken.
-
-* Zonder verbatim: ``string path = "c:\\Temp\\myfile.txt";``
-* Met verbatim: ``string path = @"c:\Temp\myfile.txt";``
-
 ### Splitsen en samenvoegen
 
 #### Split
@@ -27,11 +17,11 @@ for(int i = 0; i<gesplitst.Length;i++)
 }
 ```
 
-Uiteraard kan je dit dus gebruiken om op eender welk ``char`` te splitsen en dus nit enkel een ``','`` (komma).
+Uiteraard kan je dit dus gebruiken om op eender welk ``char`` te splitsen en dus niet enkel een ``','`` (komma).
 
 #### Join
 
-Via ``Join`` kunnen we array van string terug samenvoegen. Het resultaat is een nieuwe string.
+Via ``Join`` kunnen we een array van strings terug samenvoegen. Het resultaat is een nieuwe string.
 
 Volgende voorbeeld zal de eerder array van het vorige voorbeeld opnieuw samenvoegen maar nu met telkens een ``;`` tussen iedere string:
 
@@ -41,14 +31,6 @@ string joined = String.Join(";", gesplitst);
 
 Voorgaande methoden zijn ``static`` en moet je dus via de klasse ``String`` doen en niet via de objecten zelf.
 
-
-### Arrays vergelijken
-
-De correcte manier om strings te vergelijken is met de ``Compare(string s1, string s2)`` methode. Deze zal een ``int terug geven:
-
-* -1 : de string ``s1`` komt voor de string``s2`` indien je ze alfabetisch zou sorteren.
-* 0: beide strings zijn identiek
-* 1: de string ``s2`` komt voor ``s1``
 
 ### Tekst files uitlezen
 

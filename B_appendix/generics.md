@@ -20,7 +20,7 @@ public static void ToonArray(string[] array)
     }
 }
 ```
-Dankzij generics kunnen we nu het deel dat **generiek** moet zijn aanduiden (in dit geval met ``T``) en onze methode eenmalig definiëren. We gebruiken hierbij de ``< >`` aanduiding die aan de compiler verteld *"dit stuk is een generiek type"*:
+Dankzij generics kunnen we nu het deel dat **generiek** moet zijn aanduiden (in dit geval met ``T``) en onze methode eenmalig definiëren. We gebruiken hierbij de ``< >`` aanduiding die aan de compiler vertelt *"dit stuk is een generiek type"*:
 
 ```java
 public static void ToonArray<T>(T[] array)
@@ -33,13 +33,13 @@ public static void ToonArray<T>(T[] array)
 ```
 
 ### Generic types
-We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen definieren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T`` , deze geeft  weer aan dat hier een type (zoals ``int``, ``double``, ``Student``,etc.) zal worden ingevuld tijdens het compileren.
+We kunnen niet alleen generieke methoden schrijven, maar ook eigen klassen én interfaces definiëren die generiek zijn. In het volgende codevoorbeeld is te zien hoe een eigen generic class in C# gedefinieerd en gebruikt kan worden. Merk het gebruik van de aanduiding ``T`` , deze geeft  weer aan dat hier een type (zoals ``int``, ``double``, ``Student``,etc.) zal worden ingevuld tijdens het compileren.
 
 {% hint style='tip' %}
 ## ``<T>``
-De typeparameter T wordt pas voor de specifieke instantie van de generieke klass of type ingevuld bij het compileren. Hierdoor kan de compiler per instantie controleren of alle parameters en variabelen die in samenhang met het generieke type gebruikt worden wel kloppen.
+De typeparameter T wordt pas voor de specifieke instantie van de generieke klasse of type ingevuld bij het compileren. Hierdoor kan de compiler per instantie controleren of alle parameters en variabelen die in samenhang met het generieke type gebruikt worden wel kloppen.
 
-De afspraak is om .NET een ``T`` te gebruiken indien het type nog dient bepaald te worden (dit is niet verplicht).
+De afspraak is om .NET een ``T`` te gebruiken indien het type nog dient bepaald te worden (dit is niet verplicht maar wordt aanbevolen als je maar 1 generieke type nodig hebt).
 {% endhint %}
 
 
@@ -49,30 +49,33 @@ We wensen een klasse te maken die de locatie in X,Y,Z richting kan bewaren. We w
 ```java
 class Location<T>
 {
-    public T X;
-    public T Y;
-    public T Z;
+    public T X {get;set;}
+    public T Y {get;set;};
+    public T Z {get;set;};
 }
 ```
 We kunnen deze klasse nu als volgt gebruiken:
 
 ```java
-Location<int> plaats;
+var plaats = new Location<int>();
 plaats.X = 34;
 plaats.Y = 22;
 plaats.Z = 56;
 
-Location<double> plaats2;
+var plaats2 = new Location<double>();
 plaats2.X = 34.5;
 plaats2.Y = 22.2;
 plaats2.Z = 56.7;
 
-Location<string> plaats3;
+var plaats3 = new Location<string>();
 plaats3.X = "naast de kerk";
 plaats3.X = "links van de bakker";
 plaats3.Z = "onder het hotel";
 ```
 
+{% hint style='tip' %}
+Merk op dat het keyword ``var`` hier handig is: het verkort de ellenlange stukken code waarin we toch maar gewoon het type herhalen dat ook al rechts van de toekenningsoperator staat.
+{% endhint %}
 
 ### Een complexere generieke klassen
 Voorgaand voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorbeeld volgende klasse maken die we kunnen gebruiken met eender welk type om de meetwaarde van een meting in op te slaan. Merk op hoe we op verschillende plaatsen in de klasse ``T`` gebruiken:
@@ -80,27 +83,21 @@ Voorgaand voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorb
 ```java
 public class Meting<T>
 {
-    private T waarde;
+    public T Waarde {get;set;}
 
     public Meting(T waardein)
     {
-        waarde = waardein;
-    }
-
-    public T Waarde 
-    { 
-        get { return waarde; } 
-        set { waarde = value ;}  
+        Waarde = waardein;
     }
 }
 ```
 Een voorbeeldgebruik van dit nieuwe type kan zijn:
 
 ```java
-Meting<int> m1 = new Meting<int>(44);
+var m1 = new Meting<int>(44);
 Console.WriteLine(m1.Waarde);
 
-Meting<string> m2 = new Meting<string>("slechte meting");
+var m2 = new Meting<string>("slechte meting");
 Console.WriteLine(m2.Waarde);
 ```
 
@@ -111,17 +108,17 @@ Zoals reeds eerder vermeld is de ``T`` aanduiding enkel maar een afspraak. Je ka
 ```csharp
 class DataBewaarder<Type1, Type2>
 {
-    private Type1 waarde1;
-    private Type2 waarde2;
+    public Type1 Waarde1 {get;set;}
+    public Type2 Waarde2 {get;set;}
 
     public DataBewaarder(Type1 w1, Type2 w2)
     {
-        waarde1 = w1;
-        waarde2 = w2;
+        Waarde1 = w1;
+        Waarde2 = w2;
     }
     public string ToonInfo()
     {
-        return $"Waarde1: {waarde1}.\nWaarde2: {waarde2}";
+        return $"Waarde1: {Waarde1}.\nWaarde2: {Waarde2}";
     }
 }
 ```
@@ -139,19 +136,17 @@ We willen vaak voorkomen dat bepaalde types wel of niet gebruikt kunnen worden i
 ```csharp
 public class Wijziging<T> where T : IComparable
 {
-    public T vorigewaarde;
-    public T huidigewaarde;
+    public T VorigeWaarde {get;set;}
+    public T Huidigewaarde {get;set;}
     public Wijziging(T vorig, T huidig)
     {
-        vorigewaarde = vorig;
-        huidigewaarde = huidig;
+        VorigeWaarde = vorig;
+        Huidigewaarde = huidig;
     }
  
     public bool IsGestegen()
     {
-        if (huidigewaarde.CompareTo(vorigewaarde) > 0)
-            return true;
-        else return false;
+        return Huidigewaarde.CompareTo(VorigeWaarde) > 0;
     }
 }
 ```
@@ -162,6 +157,8 @@ Volgende gebruik van deze klasse zou dan ``True`` op het scherm tonen:
 Wijziging<double> w = new Wijziging<double>(3.4, 3.65);
 Console.WriteLine(w.IsGestegen());
 ```
+
+Merk op dat als ik dus een klasse wil gebruiken dat deze klasse de ``IComparable`` interface moet hebben, anders zal je code niet gecompileerd worden.
 
 ### Mogelijke constraints
 Verschillende zaken kunnen als constraint optreden. Naast de verplichting dat een bepaalde interface moet worden geïmplementeerd kunnen ook volgende constraints gelden (bekijk de online documentatie voor meer informatie hierover):

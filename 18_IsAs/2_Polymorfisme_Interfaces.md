@@ -11,7 +11,7 @@ De eigenschappen van polymorfisme en interfaces combineren kan tot zeer krachtig
 
 ### Vloekende mensen: Opstart
 
-De idee is de volgende: mensen kunnen spreken. Leraren, Studenten, Politieker, en ja zelfs Advocaten zijn mensen. Echter, enkel Politiekers en Advocaten hebben ook de interface ``IVloeker`` die hen toelaat eens goed te vloeken.  Brave leerkrachten en studenten doen dat niet (kuch). We willen een programma dat lijsten van mensen bevat waarbij we de vloekers kunnen doen vloeken zonder complexe code te moeten schrijven.
+Het idee is het volgende: mensen kunnen spreken. Leraren, Studenten, Politieker, en ja zelfs Advocaten zijn mensen. Echter, enkel Politiekers en Advocaten hebben ook de interface ``IVloeker`` die hen toelaat eens goed te vloeken.  Brave leerkrachten en studenten doen dat niet (kuch). We willen een programma dat lijsten van mensen bevat waarbij we de vloekers kunnen doen vloeken zonder complexe code te moeten schrijven.
 
 We hebben volgende klasse-structuur:
 
@@ -65,7 +65,7 @@ class Advocaat: Mens, IVloeker
 ```
 
 ### Vloekende mensen: Het probleem
-We maken een array van mensen aan waarin we van iedere type een vertegenwoordiger plaatsen (uiteraard hat dit ook in een ``List<Mens>`` kunnen gebeuren):
+We maken een array van mensen aan waarin we van iedere type een vertegenwoordiger plaatsen (uiteraard had dit ook in een ``List<Mens>`` kunnen gebeuren):
 
 ```java
 Mens[] mensjes = new Mens[4];

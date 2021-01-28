@@ -6,7 +6,7 @@ In dit boek bespraken we de ``List``-collectie al. Dit was niet meer dan een gea
 ### ``Queue<>`` collectie
 Een queue, uitgesproken als "kjioe" stelt een "first in, first out"-lijst (FIFO) voor. Een ``Queue`` stelt dus de rijen voor die we in het echte leven ook hebben wanneer we bijvoorbeeld aanschuiven aan een ticketverkoop of in de supermarkt. Met deze klasse kunnen we zo’n rij simuleren en ervoor zorgen dat steeds het eerste/oudste element in de rij als eerste wordt behandeld. Nieuwe elementen worden achteraan de rij toegevoegd.
 
-We gebruiken 2 methoden om met een ``Queue``-lijst te werken:
+We gebruiken onder andere volgende 2 methoden om met een ``Queue``-lijst te werken:
 
 * ``Enqueue(T item)``: Voeg een item achteraan de lijst toe.
 * ``Dequeue()``: geeft een referentie naar het eerste element in de queue terug en verwijdert dit element vervolgens uit de lijst.
@@ -36,7 +36,7 @@ Een andere interessante methode is de **Peek()** methode: hiermee kunnen we kijk
 ### ``Stack<>`` collectie
 Daar waar een queue "first in,first out" is, is een stack "last in,first out" (LIFO). Met andere woorden het recentst toegevoegde element zal steeds vooraan staan en als eerste verwerkt worden. Je kan dit vergelijken met een stapel papieren waar je steeds bovenop een nieuw papier legt.
 
-We gebruiken volgende 2 methoden om met een ``Stack`` te werken:
+Ook de klasse ``Stack`` heeft verschillende methoden, waarvan volgende 2 methoden het interessantst zijn:
 
 * ``Push(T item)``: plaats een nieuw element bovenop de stapel.
 * ``Pop()``: geeft het bovenste element in de stack terug en verwijdert vervolgens dit element van de stack.

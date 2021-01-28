@@ -48,10 +48,10 @@ Origineel:
 ```java
 class Student
 {
-    private int geboorteJaar;
+    public int GeboorteJaar {get;set;};
     public Student(int geboorteJaarIn)
     {
-        geboorteJaar = geboorteJaarIn;
+        GeboorteJaar = geboorteJaarIn;
     }
 }
 ```
@@ -60,8 +60,8 @@ Met EBM:
 ```java
 class Student
 {
-    private int geboorteJaar;
-    public Student(int geboorteJaarIn) =>  geboorteJaar = geboorteJaarIn;
+    public int GeboorteJaar {get;set;};
+    public Student(int geboorteJaarIn) =>  GeboorteJaar = geboorteJaarIn;
 }
 ```
 
@@ -115,3 +115,7 @@ Met EBM:
 private int name;
 public int Name => name;
 ```
+
+{% hint style='tip' %}
+Uiteraard had voorgaande zelfs nog korter geweest metbehulp van een autoproperty.
+{% endhint %}

@@ -1,6 +1,6 @@
 # Polymorfisme
 
-**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox of abstractie principe en overerving, is polymorfisme de derde grote peiler van object georiënteerd programmeren. 
+**Polymorfisme** (*polymorphism*) is het finale puzzelstukje in dit boek.  Naast het blackbox-, abstractie-  en overervingsprincipe, is polymorfisme de vierde grote peiler van object georiënteerd programmeren. 
 
 
 De latijnse naam polymorfisme bestaat uit 2 delen: *poly* en *morfisme*, letterlijk dus "meerdere vormen". En geloof het of niet, deze naam dekt de lading ongelooflijk goed. 
@@ -97,7 +97,7 @@ We hebben dus nu een manier gevonden om onze objecten op de juiste momenten even
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
 
-Polymorfisme is een heel krachtig concept. Door een referentie naar objecten te bewaren in een variabele van hun basistype en , wanneer nodig, ze als 'zichzelf' te gebruiken wordt je code een pak eenvoudiger.
+Polymorfisme is een heel krachtig concept. Door een referentie naar objecten te bewaren in een variabele van hun basistype en, wanneer nodig, ze als 'zichzelf' te gebruiken wordt je code een pak eenvoudiger.
 Vaak weet je niet op voorhand wat voor elementen je in je lijst wilt plaatsen. Via polymorfisme lossen we dit op. Stel bijvoorbeeld dat je een lijst van Personen hebt (``List<Person>``) waar echter elementen van subklassen in terecht kunnen komen (``Bakker``, ``Student``, etc) , dan laat polymorfisme dit gewoon toe om ook deze elementen in die lijst te plaatsen.
 
 <!---{/aside}--->

@@ -17,7 +17,7 @@ interface IMinister
 Vanaf nu kan eender *wie* die deze interface implementeert de ``EersteMinister`` advies geven. Hoera! En daarnaast kan die klasse echter ook nog tal van andere zaken doen. Beeld je in dat een CEO van een bedrijf ook minister bij de EersteMinister wilt zijn, zoals deze:
 
 ```java
-class MicrosoftCEO: CEO
+class Ceo
 {
     public void MaakJaarlijkseOmzet()
     { 
@@ -33,7 +33,7 @@ class MicrosoftCEO: CEO
 Nu we de interface ``IMinister`` hebben kunnen we deze klasse aanvullen met deze interface zonder dat de bestaande werking van de klasse moet aangepast worden:
 
 ```java
-class MicrosoftCEO: CEO, IMinister
+class Ceo: IMinister
 {
      
     public void Adviseer()
@@ -61,10 +61,10 @@ public class MisterEersteMinister
     public void Regeer()
     {
     
-        List<IMinister> alleMinisters = new List<IMinister>();
-        alleMinisters.Add(new MicrosoftCEO);
+        List<IMinister> AlleMinisters = new List<IMinister>();
+        AlleMinisters.Add(new Ceo);
         
-        foreach (IMinister minister in alleMinisters)
+        foreach (IMinister minister in AlleMinisters)
         {
             minister.Adviseer();
         }

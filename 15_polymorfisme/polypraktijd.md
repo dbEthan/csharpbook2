@@ -1,7 +1,6 @@
 ## Polymorfisme in de praktijk
 
-Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer"
-<!---[^stack]--->.
+Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer" <!---[^stack]--->.
 
 
 <!---NOBOOKSTART--->
@@ -16,9 +15,9 @@ De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen 
 ```java
 public class EersteMinister
 {
-    MinisterVanMilieu Jansens = new MinisterVanMilieu();
-    MinisterBZ Ganzeweel = new MinisterBZ();
-    MinisterVanEconomie VanCent = new MinisterVanEconomie();
+    public MinisterVanMilieu Jansens {get;set;} = new MinisterVanMilieu();
+    public MinisterBZ Ganzeweel {get;set;} = new MinisterBZ();
+    public MinisterVanEconomie VanCent {get;set;} = new MinisterVanEconomie();
 
     public void Regeer()
     {
@@ -102,17 +101,17 @@ class MinisterVanEconomie:Minister
 ```java
 public class EersteMinister
 {
-    Minister Jansens = new MinisterVanMilieu();
-    Minister Ganzeweel = new MinisterBZ();
-    Minister VanCent= new MinisterVanEconomie();
+  public MinisterVanMilieu Jansens {get;set;} = new MinisterVanMilieu();
+  public MinisterBZ Ganzeweel {get;set;} = new MinisterBZ();
+  public MinisterVanEconomie VanCent {get;set;} = new MinisterVanEconomie();
     
-    public void Regeer()
-    {
+  public void Regeer()
+  {
 
-        Jansens.Adviseer(); 
-        Ganzeweel.Adviseer(); 
-        VanCent.Adviseer();
-    }
+      Jansens.Adviseer(); 
+      Ganzeweel.Adviseer(); 
+      VanCent.Adviseer();
+  }
 }
 ```
 
@@ -121,17 +120,17 @@ public class EersteMinister
 ```java
 public class EersteMinister
 {
-   List<Minister> alleMinisters = new List<Minister>();
+   public List<Minister> AlleMinisters {get;set;}= new List<Minister>();
     public EersteMinister()
     {
-        alleMinisters.Add(new MinisterVanMilieu());
-        alleMinisters.Add(new MinisterBZ());
-        alleMinisters.Add(new MinisterVanEconomie());
+        AlleMinisters.Add(new MinisterVanMilieu());
+        AlleMinisters.Add(new MinisterBZ());
+        AlleMinisters.Add(new MinisterVanEconomie());
     }
 
     public void Regeer()
     {  
-        foreach (Minister minister in alleMinisters)
+        foreach (Minister minister in AlleMinisters)
         {
             minister.Adviseer();
         }

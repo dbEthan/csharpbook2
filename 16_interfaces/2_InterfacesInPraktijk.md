@@ -32,7 +32,7 @@ Wanneer we nu zouden proberen de landen te sorteren:
 ```java
 Array.Sort(eurolanden);
 ```
-Dan treedt er een uitzondering op:``InvalidOperationException: Failed to compare two elements in the array``. Dit is erg logisch: .NET heeft geen flauw benul hoe objecten van het type ``Land`` moeten gesorteerd worden. Moet dit alfabetisch volgens de ``Naam`` property, of van groot naar klein op aantan ``Inwoners``. Enkel jij als ontwikkelaar weet momenteel hoe er gesorteerd moet worden. 
+Dan treedt er een uitzondering op:``InvalidOperationException: Failed to compare two elements in the array``. Dit is erg logisch: .NET heeft geen flauw benul hoe objecten van het type ``Land`` moeten gesorteerd worden. Moet dit alfabetisch volgens de ``Naam`` property, of van groot naar klein op aantal ``Inwoners``? Enkel jij als ontwikkelaar weet momenteel hoe er gesorteerd moet worden. 
 
 #### Stap 2: IComparable onderzoeken
 We kunnen dit oplossen door de ``IComparable`` interface in de klasse ``Land`` te implementeren. We bekijken daarom eerst de documentatie van deze interface ([hier](https://msdn.microsoft.com/en-us/library/system.icomparable.aspx)).
@@ -55,9 +55,9 @@ Daarbij moet de methode een ``int`` teruggeven als volgt:
 
 | Waarde        | Betekenis           |
 |:------------- |:-------------|
-| Getal kleiner dan 0      | Huidig object komt **voor** het ``obj`` dat als parameter werd meegegeven. |
-|  0      | Huidig object komt op **dezelfde** positie als  ``obj``  werd meegegeven. |
-| Getal groter dan 0      | Huidig object komt **na** het ``obj`` dat als parameter werd meegegeven. |
+| Getal kleiner dan 0      | Huidig object komt **voor** het ``obj`` dat werd meegegeven. |
+|  0      | Huidig object komt op **dezelfde** positie als  ``obj``. |
+| Getal groter dan 0      | Huidig object komt **na** ``obj``  |
 
 De ``Array.Sort`` methode zal werken tegen deze ``IComparable`` interface om juist te kunnen sorteren. Het verwacht dat de klasse in kwestie een ``int`` teruggeeft volgens de afspraken van de tabel hierboven. 
 
@@ -67,8 +67,7 @@ We zorgen er nu voor dat ``Land`` deze interface implementeert. Daarbij willen w
 ```java
 class Land: IComparable
 {
-    //....
-
+    //...
     public int CompareTo(object obj)
     {
         Land temp =  obj as Land;
@@ -82,7 +81,7 @@ class Land: IComparable
             return 0;
         }
         else
-            throw new ArgumentException("Object is not a Land"); 
+            throw new NotImplementedException("Object is not a Land"); 
     }
 }
 ```
@@ -120,6 +119,13 @@ De bestaande datatypes in .NET hebben allemaal de ``IComparable`` interface inge
 ```java
 return this.Naam.CompareTo(temp.Naam);
 ```
+{% endhint %}
+
+{% hint style='tip' %}
+Wanneer je in VS een klasse schrijft die een bepaalde interface moet hebben, dan kan je die snel implementeren. Je schrijft de klasse-signatuur en klikt er dan op: links verschijnt het *lampje* waar je vervolgens op kunt klikken en kiezen voor "Implement interface". En presto!
+![](../assets/9_interfaces/implint.png)
+
+Merk op dat VS de nieuwere EDM syntax hier hanteert bij properties. Meer informatie hierover vind je in de appendix.
 {% endhint %}
 
 <!---NOBOOKSTART--->

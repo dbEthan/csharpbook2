@@ -18,9 +18,9 @@ Een President is een minister maar met 1 extra property met private setter: hij 
 
 **``Land``**
 
-* Een ``Land`` heeft 0 of 1 President (of koning, dictator kies zelf)
-* Een ``Land`` heeft 0 of 1 "eerste minister" (zie verder)
-* Een ``Land`` heeft 0 tot 4 ministers (via een ``List<Minister>``)
+* Een ``Land`` heeft 0 of 1 ``President`` (of koning, dictator kies zelf).
+* Een ``Land`` heeft 0 of 1 "eerste minister" (m.b.v. een ``eersteMinister`` instantievariabele).
+* Een ``Land`` heeft 0 tot 4 ministers (via een ``List<Minister>``).
 
 Al deze compositieobjecten zijn private.
 Een land heeft volgende publieke methoden:
@@ -29,9 +29,9 @@ Een land heeft volgende publieke methoden:
 
 Deze methode aanvaardt volgende parameters:
   
-1. 1 president object die aan de private president variabele wordt toegekend
+1. 1 president object die aan de private president variabele wordt toegekend.
   
-2. Een ``List<Minister>`` object waarin  tussen de 1 tot 5 ministers in staan: de " in de lijst wordt toegewezen aan de private eerste minister variabele. De overige ministers in de lijst worden aan de private lijst van ministers toegewezen.
+2. Een ``List<Minister>`` object waarin tussen de 1 tot 5 ministers in staan: de eerste minister in de lijst wordt toegewezen aan de ``eersteMinister`` instantievariabele. De overige ministers in de lijst worden aan de private lijst van ministers toegewezen.
 
 Deze methode zal enkel iets doen indien er geen president in het land is (``null``). Indien er reeds een regering is dan zal er een foutboodschap ,verschijnen.
 
@@ -46,11 +46,13 @@ Controleer je klasse Land door enkele ministers en een president te maken en dez
 
 ### Moederbord
 
-Maak een klasse ``Moederbord`` die een, je raadt het nooit, moederbord van een computer voorstelt. Kies een van de vele moederborden die je online vindt en bekijk uit welke delen een moederbord bestaat (*heeft een*).
+Maak een klasse ``Moederbord`` die een, je raadt het nooit, moederbord van één computer voorstelt. Kies een van de vele moederborden die je online vindt en bekijk uit welke delen een moederbord bestaat (*heeft een*).
 
 Maak voor ieder deel een aparte klasse. Voorzie vervolgens via compositie de nodige objecten in je moederbord. Denk er aan dat je bijvoorbeeld 2 (of 4) RAM-slots hebt en dus hier ofwel een array moet voorzien van het type ``List<RAM>``, oftewel twee aparte delen ``RAMSlot1`` en ``RAMSlot2``.
 
 Maak een methode ``TestMoederbord`` in de klasse ``Moederbord``. Wanneer je deze aanroept zal deze weergeven welke onderdelen nog leeg zijn (``==null``).
+
+Voorzie een default constructor die alle datamembers initialiseerd.
 
 Iedere module moet via een property langs buiten ingesteld worden. (beeld je in dat je effectief een moederbord ineenknutselt):
 

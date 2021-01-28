@@ -1,14 +1,20 @@
 ## Static
 
+Herinner je dat we bij de definitie van een klasse schreven dat een klasse  zich op 2 manieren zich gedragen:
+*   Als een fabriekje dat objecten creëert: hiervoor gebruikten we de constructors om instanties aan te maken
+*   Als een object zelf: dit is hetgeen we in dit hoofdstuk gaan aanpakken en gaan we kunnen doen dankzij het **``static``** keyword.
+
 Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. In dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 
-Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**.
+Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**. 
+
+
 
 ``static`` kan op verschillende plaatsen in een klasse gebruikt worden:
 
 1. Bij *instantievariabelen* om een gedeelde variabele aan te maken, over de objecten heen. We spreken dan niet meer over een instantievariabele maar over een *static field*.
 2. Bij *methoden* om zogenaamde methoden-bibliotheken of hulpmethoden aan te maken (denk maar aan ``DateTime.IsLeap()``) en spreken dan over een *static method*.
-3. Bij de klasse zelf om te voorkomen dat er objecten van de klasse aangemaakt kunnen worden (bijvoorbeeld de ``Console`` en ``Math`` klasse). Je raadt het nooit, maar dit noemt dan een *static class*.
+3. Bij de klasse zelf om te voorkomen dat er objecten van de klasse aangemaakt kunnen worden (bijvoorbeeld de ``Console`` en ``Math`` klasse). Je raadt het nooit, maar dit noemt dan een *static class*. **De klasse is dan een uniek object**.
 4. Bij *properties*. We hebben al met 1 *static property* gewerkt namelijk de readonly property ``Now`` van de ``DateTime`` klasse (``DateTime.Now``).
 
 {% hint style='tip' %}

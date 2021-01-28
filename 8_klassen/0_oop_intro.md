@@ -27,8 +27,6 @@ Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaa
 
 Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class``  bovenaan staan, telkens we een nieuw project aanmaakten:
 ```java
-using System;
-
 namespace WorldDominationTool
 {
     class Program
@@ -56,7 +54,6 @@ int balX = 20;
 int balY = 20;
 int VectorX = 2;
 int VectorY = 1;
-
 while (true)
 {
     //Xvector van richting veranderen aan de randen
@@ -71,21 +68,20 @@ while (true)
     {
         VectorY = -VectorY;
     }
-
     balY = balY + VectorY;  //Y positie updaten
 
     //Output naar scherm sturen
     Console.SetCursorPosition(balX, balY);
     Console.Write("O");
 
-    System.Threading.Thread.Sleep(50); //50 md wachten
+    System.Threading.Thread.Sleep(50); //50 ms wachten
     Console.Clear();
 }
 ```
 
 Hopelijk begrijp je deze code. Test ze maar eens in een programma. Zoals je zal zien krijgen we een balletje (``"O"``) dat over het scherm vliegt en telkens van richting verandert wanneer het aan de randen komt. De belangrijkste informatie zit natuurlijk in de variabelen ``balX``, ``balY`` die de huidige positie van het balletje bevatten. Voorts zijn ook ``VectorX`` en ``VectorY`` belangrijk: hierin houden we bij in welke richting (en met welke snelheid) het balletje beweegt (een zogenaamde bewegingsvector).
 
-![Een artistieke benadering van hoe Pong er vroeger uitzag](../assets/pongtim.png)
+#### Extra balletjes?
 
 Dit soort applicatie in C# schrijven met behulp van gestructureerde programmeer-concepten is redelijk eenvoudig. Maar wat als we nu 2 balletjes nodig hebben? Laten we even arrays links laten liggen en het gewoon eens naïef oplossen. Al na enkele lijnen kopiëren merken we dat onze code ongelooflijk rommelachtig gaat worden:
 
@@ -113,11 +109,12 @@ while (true)
 
     balX = balX + vectorX;
     bal2x = bal2x + vectorX2;
-
     //enzovoort
 ```
 
 **Bijna iedere lijn code moeten we verdubbelen.** Arrays zouden dit probleem deels kunnen oplossen, maar we krijgen dan in de plaats de complexiteit van werken met arrays op ons bord, wat voor 2 balletjes misschien wat overdreven is én de code ook weer wat minder leesbaar maakt.
+
+<!---{pagebreak} --->
 
 ### Een wereld met OOP: Pong
 Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse truckje om je punt te maken, dus we gaan nog even verder. 
@@ -206,6 +203,8 @@ De loopcode is herleid tot 2 aanroepen van **methoden op het ``bal1`` object**: 
 
 Run deze code maar eens. Yups, deze code doet exact hetzelfde als hiervoor. Ook nu krijgen we 1 balletje dat op het scherm rondbotst. 
 
+<!---{pagebreak} --->
+
 En nu, abracadabra, kijk goed hoe eenvoudig onze code blijft als we 2 balletjes nodig hebben:
 
 ```csharp
@@ -235,6 +234,9 @@ while (true)
 Dit is de volledige code om 2 balletjes te hebben. Hoe mooi is dat?!
 
 **De kracht van OOP zit hem in het feit dat we de logica IN DE OBJECTEN ZELF plaatsen. De objecten zijn met andere woorden verantwoordelijk om hun eigen gedrag uit te voeren.** In onze main zeggen we aan beide balletjes "update je zelf eens" , gevolgd door "teken je zelf eens". 
+
+![Een artistieke benadering van hoe Pong er vroeger uitzag.](../assets/pongtim.png)
+
 
 {% hint style='tip' %}
 Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudiger én krachtiger dan wanneer we in het voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diep zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurig in de balletjes zit):
@@ -279,7 +281,7 @@ Wanneer we meerdere objecten gebruiken van dezelfde soort dan kunnen we zeggen d
 Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar ziet in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
 * Alle mensen hebben gemeenschappelijke eigenschappen (binnen deze beperkte context van een kruispunt): ze bewegen of staan stil (gedrag), ze hebben een bepaalde kleur van jas (eigenschap). 
 * Alle auto's behoren tot een klasse Auto. Ze hebben gemeenschappelijke zaken zoals: ze hebben een bepaald bouwjaar (eigenschap), ze werken op een bepaalde vorm van energie (eigenschap) en ze staan stil of bewegen (gedrag).
-* Ieder verkeerslicht behoort tot de klasse VerkeersLicht
+* Ieder verkeerslicht behoort tot de klasse VerkeersLicht.
 * Fietsers tot de klasse Fietser.
 
 <!---[^jan]:Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)--->
@@ -292,11 +294,20 @@ Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek o
 
 Volgende 2 definities druk je best af op een grote poster die je boven je bed hangt:
 
-* **Een klasse** definieert de interne structuur van objecten.
-* Een individueel **object** is een **instantie** van een klasse.
+* **Een klasse** kan je definiëren als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van de objecten van deze klasse.
+* Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
+
+Daarnaast kan een klasse op 2 manieren zich gedragen:
+*   Als een fabriekje dat objecten creëert.
+*   Als een object zelf (zie ``static`` later).
+
+Objecten zijn instanties met een eigen levenscyclus die wordt gekenmerkt door:
+*   Een begintoestand en identiteit: deze wordt verkregen bij het creëren van een object.
+*   Gedrag: deze wordt beschreven door de **methoden** in de klasse.
+*   Een toestand: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datamembers** die beschreven staan in de klasse.
 
 {% hint style='tip' %}
-Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan met alle soortgelijke eigenschappen van ieder huis is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse.
+Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse en hebben elk een eigen toestand (ander type bakstenen, wel of geen zonnepannelen) en gedrag (rolluiken gaan open als de zon opkomt).
 {% endhint %}
 
 De klasse beschrijft het algemene **gedrag** van de individuele objecten. Dit gedrag wordt meestal bepaald door de interne staat van ieder object op zichzelf, de zogenaamde **eigenschappen**. Nemen we het voorbeeld van de klasse Auto: de huidige snelheid van een individueel auto-object is mogelijks gebaseerd op het merk (eigenschap) van die auto, alsook welke energiebron (eigenschap) die auto heeft. 

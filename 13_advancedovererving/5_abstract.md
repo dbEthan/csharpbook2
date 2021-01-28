@@ -1,8 +1,8 @@
 ## Abstracte klassen
 
 Aan de start van dit boek beschreven we volgende 2 duidelijke definities:
-* **Een klasse** definieert de interne structuur van objecten.
-* Een individueel **object** is een **instantie** van een klasse.
+* **Een klasse** kan je definiëren als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van de objecten van deze klasse.
+* Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
 
 Niemand die zich hier vragen bij stelde? Als ik in het echte leven zeg: "Geef mij eens de beschrijving van een object van het type meubel." Wat voor soort meubel zie je voor je bij het lezen van deze zin? Een tafel? Een kast? Een zetel? Een bed? 
 

@@ -174,9 +174,9 @@ int opgeteld = EpicLibrary.TelOp(3,5);
 
 Mooi toch.
 
-#### Nog een voorbeeld
-
 {% hint style='tip' %}
+Even een kort intermezzo dat we in de volgende sectie gaan gebruiken, namelijk de werking van de ``Debug``.
+
 De ``Debug`` klasse (die in de ``System.Diagnostics`` namespace staat) kan je gebruiken om eenvoudig zaken naar het "debug output venster" te sturen tijdens het debuggen. Dit is handig om te voorkomen dat je debug informatie steeds naar het console-scherm moet sturen. Het zou niet de eerste keer zijn dat iemand vergeet een bepaalde Console.WriteLine te verwijderen uit hte finale product met gevoelige debug-informatie. 
 
 Volgende code toont een voorbeeld (merk lijn 2 op die uiteraard vereist is):
@@ -197,9 +197,13 @@ namespace debugdemo
 }
 ```
 Als je deze code uitvoer in debugger modus, dan zal je enkel de tekst ``Hello World! Console`` in je console zien verschijnen. De andere lijn kan je terugvinden in het "Output" venster in Visual Studio:
+
+<!--- {width:60%} --->
 ![](../assets/6_klassen/debugmode.png)
 
 {% endhint %}
+
+#### Nog een voorbeeld
 
 In het volgende voorbeeld gebruiken we een ``static`` variabele om bij te houden hoeveel objecten (via de constructor met behulp van ``Debug.WriteLine`` ) er van de klasse reeds zijn aangemaakt. :
 

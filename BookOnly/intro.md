@@ -18,21 +18,18 @@ Tim Dams
 ![](../assets/oopquesttitel.png)
 
 
+
+
+
 ## Over de bronnen
 
-{% hint style='tip' %}
-Deze cursus wordt onder de Creative Commons 4.0 licentie uitgebracht. Dat wil zeggen dat u gerust deze cursus mag 'plunderen' voor eigen gebruik in bijvoorbeeld eigen lessen. Uiteraard mag dit onder de voorwaarde dat u duidelijk de originele bron vermeld én er niets aan verdiend. 
-De volledige in markdown geschreven broncode voor de cursus (en dus ook grotendeels dit boek) kan u forken op [github](https://github.com/timdams/csharpbook2).
-{% endhint %}
-
+Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatten, aarzel dan niet om me te contacteren. Normaal gezien zijn alle tekst en afbeeldingen de mijne, tenzij ik anders vermeld. Uiteraard maak ik soms fouten, als je dus een niet geattribueerde tekst of afbeelding ontdekt, aarzel dan niet om me te contacteren. 
 
 ### Benodigdheden
 
 Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis  **Visual Studio 2019 Community** editie die je kan downloaden op [visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)
 
-## Over de bronnen
 
-Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatten, aarzel dan niet om me te contacteren. Normaal gezien zijn alle tekst en afbeeldingen de mijne, tenzij ik anders vermeld. Uiteraard maak ik soms fouten, als je dus een niet geattribueerde tekst of afbeelding ontdekt, aarzel dan niet om me te contacteren. 
 
 
 <!---{pagebreak}--->
@@ -41,10 +38,14 @@ Indien bepaalde hoofdstukken of onderdelen niet duidelijk zijn of fouten bevatte
 
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!
 
-Ook deze keer wil echter een grote boeket bloemen klaarleggen voor collega Olga Coutrin die er mee voor heeft gezorgd dat ik dit boek binnen de deadlines "bij de drukker" heb gekregen en enkele belangrijke, inhoudelijke aanpassingen heeft teweeg gebracht. Duizendmaal dank! 
+Ook deze keer wil echter een grote boeket bloemen klaarleggen voor collega Olga Coutrin die er mee voor heeft gezorgd dat ik dit boek binnen de deadlines "bij de drukker" heb gekregen en enkele belangrijke, inhoudelijke aanpassingen heeft teweeg gebracht. 
+
+<!---{line-numbers:false}--->
 ```java
 for(int i = 0; i < 1000; i++)
     Console.WriteLine("Bedankt, Olga!");
 ```
+
+Duizendmaal dank, Olga!
 
 <!---{sample: false}--->

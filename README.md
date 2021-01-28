@@ -16,7 +16,7 @@ Tim Dams
 ![](../assets/oopquesttitel.png)
 
 
- <!---NOBOOKSTART--->
+
 ### Digitale of papieren versie nodig?
 Deze cursus wordt ook aangeboden voor de "buitenwereld". Deze online cursus zal ten allen tijde gratis voor de studenten beschikbaar zijn. 
 
@@ -27,7 +27,7 @@ Wil je toch een andere versie dan deze online versie dan kan dat via volgende ka
 * Amazon.de (Weldra: Lente 2021) : fullcolor paperback versie, in groter formaat om aantekeningen bij de tekst te plaatsen. Ook kindle versie beschikbaar.
 * Kobo en bol.com (Weldra: Lente 2021) : ebook versie voor op je e-reader (gratis op kobo plus).
 * [Leanpub](http://leanpub.com/ziescherper/): hoge-kwaliteits pdf. 
-<!---NOBOOKEND--->
+
 
 ### Benodigdheden
 
@@ -43,12 +43,9 @@ Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus 
 
 Ook deze keer wil echter een grote boeket bloemen klaarleggen voor collega Olga Coutrin die er mee voor heeft gezorgd dat ik dit boek binnen de deadlines "bij de drukker" heb gekregen en enkele belangrijke, inhoudelijke aanpassingen heeft teweeg gebracht. Duizendmaal dank! 
 
-```java
-for(int i = 0; i < 1000; i++)
-    Consol
 
 
-<!---NOBOOKSTART--->
+
 ### Licensed under Creative Commmons Attribution-NonCommercial 4.0 International \(CC BY-NC 4.0\)
 
 ![Licenicon](/assets/ccicon.png)![Licenicon](/assets/ccat.png)![Licenicon](/assets/ccnc.png)
@@ -71,5 +68,3 @@ The licensor cannot revoke these freedoms as long as you follow the license term
 **NonCommercial** : You may not use the material for commercial purposes.
 
 **No additional restrictions** : You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-
- <!---NOBOOKEND--->

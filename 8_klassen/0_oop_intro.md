@@ -1,26 +1,11 @@
 <!---{sample: true}--->
 # Object Oriented Programming
 
-<!---NOBOOKSTART--->
-<!---Object Oriented Programming of korter OOP is een techniek afkomstig van higher level programmeertalen zoals Java, C#, VB.NET, ... en vindt zijn oorsprong bij Smalltalk die het eerst de term Object Oriented Programming introduceerde.
-
-In recentere jaren heeft deze techniek echter ook zijn weg gevonden naar webscripting talen zoals Python, Ruby, Perl en zelfs PHP.
-
-OOP streeft ernaar om een project zo structureel mogelijk op te bouwen in objecten. Dit heeft voor de programmeur het grote voordeel dat code vanaf nu in logische componenten wordt opgedeeld en veel makkelijker te hergebruiken is.
-
-Om het concept van objecten te illustreren wordt meestal een voorwerp uit het dagelijks leven als voorbeeld gebruikt. Neem bijvoorbeeld een auto. De auto is het object en dit object heeft bepaalde properties of eigenschappen. Een eigenschap van de auto kan een band, een deur, een spiegel, de uitlaat of eender welk ander onderdeel van de auto zijn. Maar een auto heeft ook methoden. Een methode kan starten of remmen zijn.
-
-Dus hebben we nu eigenlijk een object met properties en methoden. Zo zit een object in programmeertalen er ook uit. Een mail object heeft bijvoorbeeld als property de ontvanger, de verzender en het bericht en als methode versturen. Dit zijn natuurlijk erg vereenvoudigde voorbeelden en in de praktijk zal het er een stuk ingewikkelder aan toe gaan maar de basisprincipes zijn steeds hetzelfde. [Bron van deze introductie](https://www.inventis.be/blog/webdevelopment/de-voordelen-van-object-georienteerd-programmeren/145/).--->
-
-<!---NOBOOKEND--->
-## OOP?!
-
- In het vorige boek leerden we eigenlijk *gestructureerd programmeren* wat een zogenaamd programmeerparadigma is uit de jaren zestig. Hierbij schrijven we code gebruik makend van methoden, loops en beslissingsstructuren. Op zich blijft dit een erg nuttige manier van programmeren, wanneer we echter bij complexere applicaties komen dan merken we dat met gestructureerd programmeren we redelijk snel tot minder intuïtieve en soms heel complexe code aanbelanden. 
+In het vorige boek leerden we eigenlijk *gestructureerd programmeren* wat een zogenaamd programmeerparadigma is uit de jaren zestig. Hierbij schrijven we code gebruik makend van methoden, loops en beslissingsstructuren. Op zich blijft dit een erg nuttige manier van programmeren, wanneer we echter bij complexere applicaties komen dan merken we dat met gestructureerd programmeren we redelijk snel tot minder intuïtieve en soms heel complexe code aanbelanden. 
  
- Dat moet dus anders kunnen. Komt u binnen, **Object georiënteerd programmeren** (**OOP**). OOP is een manier van programmeren (*programmeerparadigma*) die voortbouwt op gestructureerd programmeren, maar die toelaat veel krachtigere applicaties te ontwikkelen.
+Dat moet dus anders kunnen. Komt u binnen, **Object georiënteerd programmeren** (**OOP**). OOP is een manier van programmeren (*programmeerparadigma*) die voortbouwt op gestructureerd programmeren, maar die toelaat veel krachtigere applicaties te ontwikkelen.
 
- 
- Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructureerde code zullen bevatten (loops, methoden en beslissingsstructuren), maar die onze code (hopelijk) een pak overzichtelijker en minder complex gaan maken. Dankzij OOP gaan we onze code meer modulair, leesbaarder en onderhoudsvriendelijker maken én tegelijkertijd zal onze code veel krachtiger worden en daardoor complexere zaken eenvoudiger kunnen "oplossen".
+Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructureerde code zullen bevatten (loops, methoden en beslissingsstructuren), maar die onze code (hopelijk) een pak overzichtelijker en minder complex gaan maken. Dankzij OOP gaan we onze code meer modulair, leesbaarder en onderhoudsvriendelijker maken én tegelijkertijd zal onze code veel krachtiger worden en daardoor complexere zaken eenvoudiger kunnen "oplossen".
 
 
 <!---NOBOOKSTART--->
@@ -38,8 +23,6 @@ Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben
 {% endhint %}
 <!---NOBOOKEND--->
 
-
-### C# en OOP
 Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaal om "een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden" te worden. C# is van de grond af opgebouwd met het OOP programmeerparadigma als primaire drijfveer. 
 
 Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class``  bovenaan staan, telkens we een nieuw project aanmaakten:
@@ -48,10 +31,8 @@ using System;
 
 namespace WorldDominationTool
 {
-
     class Program
     {
-
 ```
 
 De klasse ``Program`` zorgt ervoor dat ons programma voldoet aan de C# afspraken die zeggen dat bijna alle C# code in klassen moet staan. 
@@ -61,7 +42,7 @@ De klasse ``Program`` zorgt ervoor dat ons programma voldoet aan de C# afspraken
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
-Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met alles wat C# me zou voorschotelen. Helaas, wolharige neushoorn-kaas, niet dus. Ik ga een voorspelling doen:  van alle hoofdstukken in dit boek, wordt dit hoofdstuk hetgene waar je het meest je tanden op gaat stuk bijten. Hou dus vol, geef niet te snel op en kom geregeld hier terug! Succes gewenst. 
+Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met alles wat C# me zou voorschotelen. Helaas, wolharige neushoorn-kaas, niet dus. Ik ga een voorspelling doen:  van alle hoofdstukken in dit boek, wordt dit hoofdstuk hetgene waar je het meest je tanden op gaat stuk bijten. Hou dus vol, geef niet te snel op en kom geregeld hier terug. Succes gewenst!
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -83,23 +64,21 @@ while (true)
     {
         VectorX = -VectorX;
     }
-    //Xupdaten
-    balX = balX + VectorX;
+    balX = balX + VectorX;  //X positie updaten
 
     //Yvector van richting veranderen aan de randen
     if (balY + VectorY >= Console.WindowHeight || balY+VectorY < 0)
     {
         VectorY = -VectorY;
     }
-    //Yupdaten
-    balY = balY + VectorY;
+
+    balY = balY + VectorY;  //Y positie updaten
 
     //Output naar scherm sturen
     Console.SetCursorPosition(balX, balY);
     Console.Write("O");
 
-    //Einde output
-    System.Threading.Thread.Sleep(50);
+    System.Threading.Thread.Sleep(50); //50 md wachten
     Console.Clear();
 }
 ```
@@ -123,7 +102,6 @@ int vectorY2 = -1;
 
 while (true)
 {
-    //Xvector van richting veranderen aan de randen
     if (balX + vectorX >= Console.WindowWidth || balX+ vectorX < 0)
     {
         VectorX = -VectorX;
@@ -132,7 +110,7 @@ while (true)
     {
         VectorX2 = -VectorX2;
     }
-    //Xupdaten
+
     balX = balX + vectorX;
     bal2x = bal2x + vectorX2;
 
@@ -160,27 +138,22 @@ class Balletje
     //Methoden
     public void Update()
     {
-        //Xvector van richting veranderen aan de randen
         if (BalX + VectorX >= Console.WindowWidth || BalX + VectorX < 0)
         {
             VectorX = -VectorX;
         }
-
-        //Xupdaten
         BalX = BalX + VectorX;
 
-        //Yvector van richting veranderen aan de randen
+
         if (BalY + VectorY >= Console.WindowHeight || BalY + VectorY < 0)
         {
             VectorY = -VectorY;
         }
-        //Yupdaten
         BalY = BalY + VectorY;
     }
 
     public void TekenOpScherm()
     {
-        //Output naar scherm sturen
         Console.SetCursorPosition(BalX, BalY);
         Console.Write("O");      
     }
@@ -198,6 +171,7 @@ Een klasse is een beschrijving van een groep 'dingen' of objecten.  Objecten zij
 {% endhint %}
 
 Laten we eens een **balletje-object** in het leven roepen. In de main schrijven we daarom dit:
+
 ```csharp
 Balletje bal1 = new Balletje();
 bal1.BalX = 20;
@@ -222,7 +196,6 @@ static void Main(string[] args)
         bal1.Update();
         bal1.TekenOpScherm();
 
-        //Einde output
         System.Threading.Thread.Sleep(50);
         Console.Clear();
     }
@@ -254,7 +227,6 @@ while (true)
     bal2.Update(); //zo simpel!
     bal1.TekenOpScherm();
     bal2.TekenOpScherm(); //wow, zooo simpel :)
-    //Einde output
     System.Threading.Thread.Sleep(50);
     Console.Clear();
 }
@@ -337,7 +309,7 @@ Voorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de in
 Wanneer je later de specificaties voor een opdracht krijgt en snel wilt ontdekken wat potentiële klassen zijn, dan is het een goede tip om op zoek te gaan naar de zelfstandige naamwoorden (*substantieven*) in de tekst. Dit zijn meestal de objecten en/of klassen die jouw applicatie zal nodig hebben.
 {% endhint %}
 
-### Abstractue principe
+### Abstractie principe
 Een belangrijk concept bij OOP is het **Black-box** principe waarbij we de afzonderlijke objecten en hun werking als zwarte dozen gaan beschouwen. 
 
 Neem het voorbeeld van de auto: deze is in de echte wereld ontwikkeld volgens het blackbox-principe. De werking van de auto kennen tot in het kleinste detail is niet nodig om met een auto te kunnen rijden. De auto biedt een aantal zaken aan de buitenwereld aan (het stuur, pedalen, het dashboard), wat we de **"interface"** noemen, die je kan gebruiken om de interne staat van de auto uit te lezen of te manipuleren. Stel je voor dat je moest weten hoe een auto volledig werkte voor je ermee op de baan kon...
@@ -355,7 +327,7 @@ Steve Jobs, de oprichter van Apple, was een fervent fan van OOP. In een intervie
 
 > "Objects are like people. They’re living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we’re doing right here.
 >
-> Here’s an example: If I’m your laundry object, you can give me your dirty clothes and send me a message that says, “Can you get my clothes laundered, please.” I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, “Here are your clean clothes.”
+> Here’s an example: If I’m your laundry object, you can give me your dirty clothes and send me a message that says, "Can you get my clothes laundered, please." I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and say, "Here are your clean clothes."
 >
 > You have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can’t even hail a taxi. You can’t pay for one, you don’t have dollars in your pocket. Yet, I knew how to do all of that. And you didn’t have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction. That’s what objects are. **They encapsulate complexity, and the interfaces to that complexity are high level.**"
 
@@ -378,4 +350,4 @@ Zet nu je helm maar op, want in de volgende sectie gaan we wel degelijk onze han
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-<!---{sample: false}--->Fmuj
+<!---{sample: false}--->

@@ -159,7 +159,7 @@ Console.WriteLine($"{verschil.TotalDays} dagen sinds geboorte dochter.");
 
 
 
-
+<!---NOBOOKSTART--->
 # Kennisclip
 ![](../assets/infoclip.png)
 

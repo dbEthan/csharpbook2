@@ -8,13 +8,12 @@ Het wordt tijd om de olifant in de kamer te benoemen. Het wordt tijd om een beke
 <!---NOBOOKEND--->
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
-![](../assets/attention.png)
 Wat een dramatische start zeg. Waar was dat voor nodig?! De reden is eenvoudig: exception handling is een tweesnijdend zwaard. Je zou exception handling kunnen gebruiken om al je bugs op te vangen, zodat de eindgebruiker niet ziet hoe vaak je programma zou crashen zonder exception handling. Maar uiteindelijk blijf je wel met slechte code zitten en een gouden regel in programmeren is dat slechte code je altijd zal achtervolgen en je ooit dubbel en hard straffen voor iedere bug waar je te lui voor bent om op te lossen. **Kortom, exception handling is de finale fase van goedgeschreven code, niét van slecht geschreven code.**
+
+<!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-
-
 
 
 

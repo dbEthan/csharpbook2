@@ -91,24 +91,24 @@ int balY = 20;
 int vectorX = 2;
 int vectorY = 1;
 
-int bal2x = 10;
+int bal2X = 10;
 int bal2y = 8;
-int vectorX2 = 2;
-int vectorY2 = -1;
+int vector2X = 2;
+int vector2Y = -1;
 
 while (true)
 {
     if (balX + vectorX >= Console.WindowWidth || balX+ vectorX < 0)
     {
-        VectorX = -VectorX;
+        vectorX = -vectorX;
     }
-    if (bal2x + vectorX2 >= Console.WindowWidth || bal2x + vectorX2 < 0)
+    if (bal2X + vector2X >= Console.WindowWidth || bal2X + vector2X < 0)
     {
-        VectorX2 = -VectorX2;
+        vectorX2 = -vectorX2;
     }
 
     balX = balX + vectorX;
-    bal2x = bal2x + vectorX2;
+    bal2X = bal2X + vector2X;
     //enzovoort
 ```
 
@@ -127,31 +127,31 @@ Om Pong in OOP te maken hebben we eerst een klasse nodig waarin we ons balletje 
 class Balletje
 {
     //Eigenschappen
-    public int BalX { get; set; }
-    public int BalY { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
     public int VectorX { get; set; }
     public int VectorY { get; set; }
 
     //Methoden
     public void Update()
     {
-        if (BalX + VectorX >= Console.WindowWidth || BalX + VectorX < 0)
+        if (X + VectorX >= Console.WindowWidth || X + VectorX < 0)
         {
             VectorX = -VectorX;
         }
-        BalX = BalX + VectorX;
+        X = X + VectorX;
 
 
-        if (BalY + VectorY >= Console.WindowHeight || BalY + VectorY < 0)
+        if (Y + VectorY >= Console.WindowHeight || Y + VectorY < 0)
         {
             VectorY = -VectorY;
         }
-        BalY = BalY + VectorY;
+        Y = Y + VectorY;
     }
 
     public void TekenOpScherm()
     {
-        Console.SetCursorPosition(BalX, BalY);
+        Console.SetCursorPosition(X, Y);
         Console.Write("O");      
     }
 }
@@ -171,8 +171,8 @@ Laten we eens een **balletje-object** in het leven roepen. In de main schrijven 
 
 ```csharp
 Balletje bal1 = new Balletje();
-bal1.BalX = 20;
-bal1.BalY = 20;
+bal1.X = 20;
+bal1.Y = 20;
 bal1.VectorX = 2;
 bal1.VectorY = 1;
 ```
@@ -183,8 +183,8 @@ Ok, interessant. Die ``new`` heb je al gezien wanneer je met ``Random`` ging wer
 static void Main(string[] args)
 {
     Balletje bal1 = new Balletje();
-    bal1.BalX = 20;
-    bal1.BalY = 20;
+    bal1.X = 20;
+    bal1.Y = 20;
     bal1.VectorX = 2;
     bal1.VectorY = 1;
 
@@ -209,14 +209,14 @@ En nu, abracadabra, kijk goed hoe eenvoudig onze code blijft als we 2 balletjes 
 
 ```csharp
 Balletje bal1 = new Balletje();
-bal1.BalX = 20;
-bal1.BalY = 20;
+bal1.X = 20;
+bal1.Y = 20;
 bal1.VectorX = 2;
 bal1.VectorY = 1;
 
 Balletje bal2 = new Balletje();
-bal2.BalX = 10;
-bal2.BalY = 8;
+bal2.X = 10;
+bal2.Y = 8;
 bal2.VectorX = 2;
 bal2.VectorY = -1;
 
@@ -248,8 +248,8 @@ Balletje[] veelBalletjes = new Balletje[AANTAL_BALLETJES];
 for (int i = 0; i < veelBalletjes.Length; i++) //balletjes aanmaken
 {
     veelBalletjes[i] = new Balletje();
-    veelBalletjes[i].BalX = r.Next(10,20);
-    veelBalletjes[i].BalY = r.Next(10, 20);
+    veelBalletjes[i].X = r.Next(10,20);
+    veelBalletjes[i].Y = r.Next(10, 20);
     veelBalletjes[i].VectorX = r.Next(-2,3);
     veelBalletjes[i].VectorY = r.Next(-2, 3);
 }

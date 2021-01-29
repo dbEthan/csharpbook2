@@ -47,7 +47,7 @@ Console.WriteLine(someAnimal.MaakGeluid()); //Oinkoink
 Console.WriteLine(anotherAnimal.MaakGeluid()); //Hinnikhinnik
 ```
 
-Alhoewel er een volledig ``Varken`` en ``Paard`` object in de heap wordt aangemaakt (en blijft bestaan), zullen variabelen van het type ``Dier`` enkel die dingen kunnen aanroepen die in de klasse ``Dier`` gekent zijn. Dankzij ``override`` zorgen we er echter voor dat ``MaakGeluid`` wel die code uitvoert die specifiek bij het child-type hoort:
+Alhoewel er een volledig ``Varken`` en ``Paard`` object in de heap wordt aangemaakt (en blijft bestaan), zullen variabelen van het type ``Dier`` enkel die dingen kunnen aanroepen die in de klasse ``Dier`` gekent zijn. Dankzij ``override`` zorgen we er echter voor dat ``MaakGeluid`` wel die code uitvoert die specifiek bij het child-type hoort.
 
 ![Het gearceerde deel is dus niet bereikbaar voor de 2 variabelen in de stack daar deze van het type ``Dier`` zijn.](../assets/7_overerving/varkenpaard.png)
 
@@ -58,12 +58,13 @@ Het is belangrijk te beseffen dat  ``someAnimal`` en ``anotherAnimal`` van het t
 
 
 {% hint style='tip' %}
-## Objecten en polymorfisme
+**Objecten en polymorfisme**
 
 Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-type, toe te wijzen aan een variabele van het parent-type.
 
 Dit wil dus ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
 
+<!---{line-numbers:false}--->
 ```java
 System.Object mijnObject = new Varken();
 ```

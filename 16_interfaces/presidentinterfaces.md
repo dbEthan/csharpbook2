@@ -34,22 +34,12 @@ Nu we de interface ``IMinister`` hebben kunnen we deze klasse aanvullen met deze
 
 ```java
 class Ceo: IMinister
-{
-     
+{ 
     public void Adviseer()
     { 
         Console.WriteLine("Vrijhandel is essentieel!");
     }
-    
-    public void MaakJaarlijkseOmzet()
-    { 
-       Console.WriteLine("Geld!!!");       
-    }
-    public void OntslaDepartement()
-     { 
-       Console.WriteLine("You're all fired!");       
-    }
-}
+    //gevolgd door de reeds bestaande methoden
 ```
 De CEO kan dus z'n bestaande job blijven uitoefenen maar ook als Minister optreden. 
 
@@ -60,10 +50,8 @@ public class MisterEersteMinister
 {
     public void Regeer()
     {
-    
         List<IMinister> AlleMinisters = new List<IMinister>();
-        AlleMinisters.Add(new Ceo);
-        
+        AlleMinisters.Add(new Ceo); 
         foreach (IMinister minister in AlleMinisters)
         {
             minister.Adviseer();

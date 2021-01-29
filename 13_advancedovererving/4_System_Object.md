@@ -18,26 +18,19 @@ Indien je de ``System`` namespace in je project gebruikt door bovenaan ``using S
 Maar om de klasse ``Object`` niet te verwarren met het concept "object" zullen we hier steeds praten over ``System.Object`` (en zo tonen we nogmaals aan waarom namespaces nuttig zijn: ze halen dubbelzinnigheden uit onze code).
 {% endhint %}
 
+<!---{pagebreak} --->
+
+
 ### Impliciete overerving
 
-Wanneer je dus een klasse ``Student`` aanmaakt als volgt:
-
-```java
-class Student
-{
-
-}
-```
-
-Dan gebeurt er een zogenaamde impliciete overerving van ``System.Object``. Er staat dus eigenlijk:
+Wanneer je dus een klasse ``Student`` aanmaakt als volgt:``class Student{ }``. Dan gebeurt er een zogenaamde impliciete overerving van ``System.Object``. Er staat dus eigenlijk:
 
 ```java
 class Student: System.Object
-{
-
-}
+{}
 ```
-Wat je trouwens ook expliciet zelf mag schrijven, dat maakt niet uit. Maar van zodra je een klasse schrijft die nergens expliciet van overerft, dan zal deze dus automatisch van ``System.Object`` overerven.
+
+Wat je trouwens ook expliciet zelf mag schrijven, dat maakt niet uit. **Maar van zodra je een klasse schrijft die nergens expliciet van overerft, dan zal deze dus automatisch van ``System.Object`` overerven.**
 
 
 ### Hoe ziet ``System.Object`` er uit?
@@ -46,7 +39,7 @@ Wanneer je een lege klasse maakt dan zal je misschien al gezien hebben dat insta
 |Methode| Beschrijving|
 |-------| ------------|
 |``Equals()``| Gebruikt om te ontdekken of twee instanties gelijk zijn. |
-|``GetHashCode()``| Geeft een unieke code (*hash*) terug van het object; nuttig om o.a. te sorteren.|
+|``GetHashCode()``| Geeft een unieke *hash* terug van het object; nuttig om o.a. te sorteren.|
 |``GetType()``| Geeft het datatype (de klasse) van het object terug.|
 |``ToString()``| Geeft een ``string`` terug die het object voorstelt.|
 
@@ -77,7 +70,7 @@ Je kan in de .NET documentatie altijd opzoeken waar een klasse van overerft. De 
 
 {% endhint %}
 
-### ``ToString()``
+### ``ToString()``: het werkpaardje van System.Object
 Deze methode is de nuttigste waar je al direct leuke dingen mee kan doen die je programmeursleven, hopelijk, wat gaat vereenvoudigen. 
 
 Wanneer je schrijft:
@@ -95,7 +88,7 @@ public virtual string ToString()
 { 
     return GetType(); 
 }
- ```
+```
 
 Merk twee zaken op:
 
@@ -106,7 +99,7 @@ Merk twee zaken op:
 
  Nu komen we tot het hart van deze methoden. Aangezien ze alle 4 ``virtual`` zijn, kunnen we de werking ervan naar onze hand zetten in onze eigen klassen. Aardig wat .NET bibliotheken rekenen er namelijk op dat je deze methoden op de juiste manier hebt aangepast, zodat ook jouw nieuwe klassen perfect kunnen samenwerken met deze bibliotheken. Een eerste voorbeeld hiervan toonden we net: de ``Console.WriteLine`` methode gebruikt van iedere parameter dat je er aan meegeeft de ``ToString``-methode om de parameter op het scherm als ``string`` te tonen.
  
- ####  De ``ToString()`` methode overriden
+ #### ``ToString()`` overriden
 
  Het zou natuurlijk fijner zijn dat de ``ToString()-``methode van onze student nuttigere info teruggeeft, zoals bijvoorbeeld de ``Voornaam`` die we als autoprop in de klassen hebben geplaatst, gevolgd door de ``GeboorteJaar`` (ook een autoprop). 
  
@@ -130,13 +123,12 @@ Merk twee zaken op:
  {% endhint %}
  
  
- ### De ``Equals()`` methode
+### De ``Equals()`` methode
 
- Ook deze methode kan je dus overriden om twee objecten met elkaar te vergelijken:
+Ook deze methode kan je dus overriden om twee objecten met elkaar te vergelijken:
 
  ```java
 if(stud1.Equals(stud2))
-   //...
 ```
 
 De ``Equals()``-methode heeft  als signatuur: ``public virtual bool Equals(Object o)``
@@ -144,21 +136,16 @@ Twee objecten zijn gelijk voor .NET als aan volgende afspraken wordt voldaan:
 
 * Het moet ``false`` teruggeven indien de parameter ``o`` ``null`` is.
 * Het moet ``true`` teruggeven indien je het object met zichzelf vergelijkt (bv ``stud1.Equals(stud1)``).
-* Het mag enkel ``true`` teruggeven als volgende statements beide waar zijn:
-```java
-stud1.Equals(stud2);
-stud2.Equals(stud1);
-```
+* Het mag enkel ``true`` teruggeven als zowel ``stud1.Equals(stud2);`` als ``stud2.Equals(stud1);`` waar zijn:
 * Indien ``stud1.Equals(stud2)`` true teruggeeft en ``stud1.Equals(stud3)`` ook true is, dan moet ``stud2.Equals(stud3)`` ook true zijn.
 
 
 #### ``Equals()`` overriden
 Het is echter aan de maker van de klasse om te beslissen wanneer 2 objecten van een zelfde type gelijk zijn. Het is dus niet zo dat iedere waarde van een instantievariabele bijvoorbeeld gelijk moet zijn opdat 2 objecten gelijk zijn. Alles hangt af van de wijze waarop de klasse dienst moet doen.
 
-Stel dat we vinden dat een student gelijk is aan een andere student indien z'n ``Voornaam`` en ``GeboorteJaar`` dezelfde is, we kunnen dan de Equals-methode overriden als volgt:
+Stel dat we vinden dat een student gelijk is aan een andere student indien z'n ``Voornaam`` en ``GeboorteJaar`` dezelfde is, we kunnen dan de Equals-methode overriden als volgt in de ``Student`` klasse:
 
 ```java
-//In de Student class
 public override bool Equals(Object o)
 {  
     Student temp = (Student)o; //Zie opmerking na code!
@@ -171,11 +158,8 @@ De lijn ``Student temp = (Student)o;`` zal het ``object o`` casten naar een ``St
 {% endhint %}
 
 
-### ``GetHashcode()``
-Indien je ``Equals`` override dan moet je eigenlijk ook ``GetHashCode`` overriden, daar er wordt verondersteld dat twee gelijke objecten ook dezelfde unieke hashcode teruggeven. Wil je dit dus implementeren dan zal je dus een (bestaand) algoritme moeten schrijven dat een uniek nummer genereert voor ieder niet-gelijke object. 
-Algoritmes bespreken om zelf een hash te genereren ligt niet in de scope van dit boek. 
-
-
+### ``GetHashcode()`` overriden
+Indien je ``Equals`` override dan moet je eigenlijk ook ``GetHashCode`` overriden, daar er wordt verondersteld dat twee gelijke objecten ook dezelfde unieke hashcode teruggeven. Wil je dit dus implementeren dan zal je dus een (bestaand) algoritme moeten schrijven dat een uniek nummer genereert voor ieder niet-gelijke object. Algoritmes bespreken om zelf een hash te genereren liggen niet in de scope van dit boek. 
 
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
@@ -184,9 +168,7 @@ Algoritmes bespreken om zelf een hash te genereren ligt niet in de scope van dit
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
 "Ik ben nog niet helemaal mee..."
-
-Niet getreurd, je bent niet de enige. Overerving,``System.Object``, ``Equals``,...het is allemaal een hoop nieuwe kennis om te verwerken. En ik vermoed dat je nu niet bepaald overweldigd bent van de nieuwe kennis. Vermoedelijk heb je nu zoiets van? "Ok..wow?! Wat krijg ik nu juist extra wetende dat al mijn klassen overerven van een oer-klasse? 4 methoden en wat beloofde compatibiliteit met andere .NET bibliotheken? Call me ...unimpressed".
-Begrijpelijke reactie. Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what we did there?) waarin polymorfisme onze sterspeler zal worden en zal toelaten erg krachtige code te schrijven. Polymorfisme wordt onze doelpuntenmaker, maar ``System.Object`` zal steeds de perfecte voorzet  geven!
+Niet getreurd, je bent niet de enige. Overerving,``System.Object``, ``Equals``,...het is allemaal een hoop nieuwe kennis om te verwerken. En ik vermoed dat je nu niet bepaald overweldigd bent van de nieuwe kennis. Vermoedelijk heb je nu zoiets van? "Ok..wow?! Wat krijg ik nu juist extra wetende dat al mijn klassen overerven van een oer-klasse? 4 methoden en wat beloofde compatibiliteit met andere .NET bibliotheken? Call me ...unimpressed".Begrijpelijke reactie. Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what we did there?) waarin polymorfisme onze sterspeler zal worden en zal toelaten erg krachtige code te schrijven. Polymorfisme wordt onze doelpuntenmaker, maar ``System.Object`` zal steeds de perfecte voorzet  geven!
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

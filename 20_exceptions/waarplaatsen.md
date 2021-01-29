@@ -77,7 +77,6 @@ Mogelijk wil je echter dat je programma blijft werken indien er 1 of meerdere ur
     {
         Console.WriteLine(ex.Message);
     }
- 
 }
 ```
 
@@ -91,6 +90,8 @@ Ongeldige URI: de indeling van de URI kan niet worden bepaald.
 ```
 
 Met andere woorden, indien een bepaalde url niet geldig is dan zal deze overgeslagen worden en gaat de methode verder naar de volgende. Op deze manier kunnen we alsnog alle urls trachten te downloaden.
+
+<!---{pagebreak} --->
 
 ### finaly 
 Soms zal je na een try-catch-blok ook nog een ``finally`` blok zien staan. Dit blok laat je toe om code uit te voeren die ALTIJD moet uitgevoerd worden, ongeacht of er een exception is opgetreden of niet. Je kan dit gebruiken om bijvoorbeeld er zeker van te zijn dat het bestand dat je wou uitlezen terug afgesloten wordt.

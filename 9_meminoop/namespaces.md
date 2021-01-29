@@ -1,10 +1,9 @@
 
 ## Namespaces en ``using``
-Als tussendoortje wil ik nu even de keywords ``using`` en  ``namespace`` met je bespreken. Je zal het keyword ``namespace`` al vele malen bovenaan je code hebben zien staan met vlak erboven meestal nog 1 vreemd zinnetje met het keyword ``using``.
+Je zal het keyword ``namespace`` al vele malen bovenaan je code hebben zien staan met vlak erboven meestal nog 1 vreemd zinnetje met het keyword ``using``.
 
 ```java
 using System;
-
 namespace MyEpicGame
 {
     class Monster
@@ -13,9 +12,7 @@ namespace MyEpicGame
 De naam die achter de ``namespace`` staat is altijd die van je project, maar waarom is dit eigenlijk?
 
 ### Wat zijn namespaces
-Een ``namespace`` wordt gebruikt om te voorkomen dat 2 projecten die toevallig dezelfde klassenamen hebben in conflict komen. 
-
-Beeld je in dat je een project van iemand anders toevoegt aan jouw project en je ontdekt dat in dat project reeds een klasse ``Student`` aanwezig is. Hoe weet C# nu welke klasse moet gebruikt worden? Want mogelijk wens je beide te gebruiken!
+Een ``namespace`` wordt gebruikt om te voorkomen dat 2 projecten die toevallig dezelfde klassenamen hebben in conflict komen. Beeld je in dat je een project van iemand anders toevoegt aan jouw project en je ontdekt dat in dat project reeds een klasse ``Student`` aanwezig is. Hoe weet C# nu welke klasse moet gebruikt worden? Want mogelijk wens je beide te gebruiken!
 
 De namespace rondom een klasse is als het ware een extra stukje naamgeving waarmee je kan aangeven welke klasse je juist nodig hebt. In bovenstaand stukje code heb ik een project ``MyEpicGame`` gemaakt en zoals je ziet bevat het een klasse ``Monster``. De volledige naam (of *path*) van deze klasse is ``MyEpicGame.Monster``. 
 
@@ -23,12 +20,11 @@ Als ik dus even later een project met volgende namespace, en zelfde klassenaam, 
 
 ```java
 using System;
-
 namespace NietZoEpicGame
 {
     class Monster
 ```
-Dan kan ik deze klasse aanroepen als ``NietZoEpicGame``.
+Dan kan ik deze klasse aanroepen als ``NietZoEpicGame.Monster``.
 
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
@@ -36,13 +32,7 @@ Dan kan ik deze klasse aanroepen als ``NietZoEpicGame``.
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/gotopolice.png)
-De politie uw vriend! Inderdaad. De auteur van dit boek heeft klachten gekregen over het feit dat hij het edele beroep van politie-agent ietwat besmeurd. We willen daarom even u attenderen en, zoals een goed agent, betaamd, u de weg doorheen de stad wijzen.
-
-Als u ons  tegenkomt en vraagt "Waar is de Kerkstraat." Dan zullen wij u meer informatie moeten vragen. Zonder er bij te zeggen in welke gemeente u die straat zoekt, is de kans bestaande dat we u naar de verkeerde Kerkstraat sturen (er zijn er namelijk best veel in België en Nederland).
-
-Wel, namespaces zijn exact dat. Een soort stadsnaam (of postcode) die essentiëel is bij een straatnaam om zonder verwarring een straat te kunnen identificeren, in dit geval dus de klassenaam.
-
-Nog een fijne dag!
+De politie uw vriend! Inderdaad. De auteur van dit boek heeft klachten gekregen over het feit dat hij het edele beroep van politie-agent ietwat besmeurd. We willen daarom even u attenderen en, zoals een goed agent, betaamd, u de weg doorheen de stad wijzen.Als u ons  tegenkomt en vraagt "Waar is de Kerkstraat." Dan zullen wij u meer informatie moeten vragen. Zonder er bij te zeggen in welke gemeente u die straat zoekt, is de kans bestaande dat we u naar de verkeerde Kerkstraat sturen (er zijn er namelijk best veel in België en Nederland). Wel, namespaces zijn exact dat. Een soort stadsnaam (of postcode) die essentiëel is bij een straatnaam om zonder verwarring een straat te kunnen identificeren, in dit geval dus de klassenaam. Nog een fijne dag!
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}

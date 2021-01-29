@@ -1,8 +1,7 @@
 ﻿# Interfaces
 
-## Wat zijn interfaces?
+**Interfaces in de echte wereld**
 
-### Interfaces in de echte wereld
 De naam interface kan je letterlijk vertalen als "tussen vlakken". Een interface is de verbinding tussen 2 systemen, van welke vorm ook. In de echte wereld gebruik je constant interfaces. Telkens je met de auto rijdt gebruik je een interface: namelijk een handvol handelingen om de auto te laten rijden (pedalen, stuur, etc.). Bijna alle auto's hanteren deze zelfde interface. Van zodra je de interface kent en begrijpt kan je die overal gebruiken, zonder dat je moet weten wat er in het systeem intern juist gebeurt (als ik de gaspedaal induw boeit het niet of ik op gas of elektrisch rijd, zolang de auto maar voortbeweegt). 
 
 Aan de achterkant van je computer (en ook in de pc zelf) zijn tal van hardware-interfaces. Afgesproken manieren om 2 systemen met elkaar te laten communiceren. Zo heb je de USB-aansluiting die toelaat dat een extern systeem met een usb-aansluiting met de computer kan communiceren. Maar ook de HDMI, audio, en andere aansluitingen hanteren interfaces. Zouden er rond deze zaken geen wereldwijde interfaces zijn afgesproken, dan zou je mogelijk telkens op een andere manier je externe harde schijf aan een computer moeten hangen.
@@ -12,7 +11,7 @@ Voor je dolenthousiast wordt, denkende dat je eindelijke grafische applicaties (
 {% endhint %}
 
 
-### Interfaces in OOP
+**Interfaces in OOP**
 
 Dit concept van interfaces uit de echte wereld heeft dus ook een OOP variant. Namelijk de interface tussen 2 (of meer) klassen. Door te beloven dat een klasse aan een bepaalde interface voldoet kunnen alle klassen die deze interface "kennen" met elkaar praten. **Een interface in OOP is een beschrijving van publieke methoden en properties die de klasse belooft te hebben.** Net zoals je een fotocamera kunt kopen die de HDMI en USB-interface heeft, zo ook kan je nu een klasse maken die zegt interface , bijvoorbeeld de interfaces ``ISecure`` en ``IStreamable`` te hebben.
 
@@ -68,11 +67,6 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen, wil he
 * Je kan nieuwe types (bv ``enum``) in een interface declareren.
 * Een interface kan niet overerven van een klasse, wel van één of meerdere  interfaces.
 
-#### Interface UML notatie
-
-Een "lolly" op een klasse geeft aan dat deze klasse een bepaalde interface heeft. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
-
-![Interface uml notatie](../assets/9_interfaces/uml.png)
 
 ## Interfaces en klassen
 
@@ -99,11 +93,24 @@ class Zorro: ISuperHeld
 ```
 Zolang de klasse ``Zorro`` niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
 
+
+{% hint style='tip' %}
+Een "lolly" op een klasse geeft aan dat deze klasse een bepaalde interface heeft in UML notatie. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
+
+![Interface UML notatie](../assets/9_interfaces/uml.png)
+{% endhint %}
+
+<!---{pagebreak} --->
+
 Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is een interface als het ware een blad papier dat je bovenop je klasse kunt houden. Op het blad staan de methoden en properties beschreven die de interface moet hebben. Als je het blad mooi bovenop een klasse plaatst die de interface belooft te doen, dan zouden de gaten in het blad mooi bovenop de respectievelijke methoden en properties van de klasse passen.
 
+<!--- {width:60%} --->
 ![Het UML "lolly'tje" kan je als een haakje beschouwen waaraan de interface bengelt.](../assets/9_interfaces/intzorro.png)
 
+<!--- {width:60%} --->
 ![Vervolgens kunnen we de interface met het haakje aan de klasse hangen](../assets/9_interfaces/intzorro2.png)
+
+<!---{pagebreak} --->
 
 
 <!---NOBOOKSTART--->
@@ -125,6 +132,12 @@ Merk wel op dat de interface NIET de implementatie bevat van wat een superheld j
 {% endhint %}
 <!---NOBOOKEND--->
 
+{% hint style='tip' %}
+Wanneer je in VS een klasse schrijft die een bepaalde interface moet hebben, dan kan je die snel implementeren. Je schrijft de klasse-signatuur en klikt er dan op: links verschijnt het *lampje* waar je vervolgens op kunt klikken en kiezen voor "Implement interface". En presto!
+![](../assets/9_interfaces/implint.png)
+
+Merk op dat VS de nieuwere EDM syntax hier hanteert bij properties. Meer informatie hierover vind je in de appendix.
+{% endhint %}
 
 
 ## Het ``is`` keyword met interfaces
@@ -133,11 +146,10 @@ We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface he
 
 Stel dat we volgende klassen hebben waarbij de ``Book`` klasse de ``IDeletable`` interface implementeert:
 
+<!---{line-numbers:false}--->
 ```java
-interface IDeletable{ ...};
-
+interface IDeletable{ ... };
 class Book: IDeletable { ... };
-
 class Person { ... };
 ```
 
@@ -170,7 +182,7 @@ foreach(var persoon in WerkNemers)
 }
 ```
 
-
+<!---{pagebreak} --->
 
 ### Meerder interfaces
 Een nadeel van overerving is dat een klasse maar van 1 klasse kan overerven. Een klasse mag echter wel meerdere interfaces met zich meedragen:
@@ -222,6 +234,7 @@ Met interfaces kunnen we volgens de SOLID principes programmeren: het boeit ons 
 
 Een object aanmaken van een interface is natuurlijk onmogelijk. Je object zou flinterdun zijn zonder inhoud. Maar, dankzij polymorfisme kunnen we wel variabelen aanmaken van een interfacetype die een referentie hebben naar een object dat die interface heeft:
 
+<!---{line-numbers:false}--->
 ```java
 IManager deBaas = new Werknemer();
 ```
@@ -232,14 +245,10 @@ Op dat moment kunnen we via ``deBaas`` aan het gedeelte van het ``Werknemer`` ob
 
 Beeld je in dat je een complexe klasse ``DiskWriter`` hebt die je programma gebruikt om data van en naar de harde schijf te schrijven. De klasse implementeert een interface ``IData`` die twee methoden heeft (``ReadData()`` en ``WriteData``).
 
-Als je later beslist om je data naar een online server te schrijven en niet naar de harde schijf, dan kan je gewoon die klasse schrijven (bv. ``InternetWriter``) en vervolgens ook de ``IData`` interface laten implementeren. 
-
-Al je andere code moet dan niet aangepast worden! Ze (je andere klassen) kunnen gewoon blijven zeggen ``ReadData`` en ``WriteData`` en weten misschien zelfs niet dat hun  data niet meer naar de HD maar naar het internet wordt gestuurd.
+Als je later beslist om je data naar een online server te schrijven en niet naar de harde schijf, dan kan je gewoon die klasse schrijven (bv. ``InternetWriter``) en vervolgens ook de ``IData`` interface laten implementeren. Al je andere code moet dan niet aangepast worden! Ze (je andere klassen) kunnen gewoon blijven zeggen ``ReadData`` en ``WriteData`` en weten misschien zelfs niet dat hun  data niet meer naar de HD maar naar het internet wordt gestuurd.
 Mooi toch!
 
-Volgende code toont dit.
-
-Dit is de interface die we gaan beschrijven:
+Volgende code toont dit.Dit is de interface die we gaan beschrijven:
 
 ```java
 interface IData
@@ -263,10 +272,11 @@ class DiskWriter : IData
     {
         //Schrijf naar harde schijf
     }
-
     //Allerlei andere zaken
 }
+```
 
+```java
 class InternetWriter: IData
 {
     public void ReadData()
@@ -281,9 +291,7 @@ class InternetWriter: IData
 }
 ```
 
-Nu maken we een klasse die effectief die writer gebruikt. De truc zit hem er in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. Beter zelfs: de klasse weet het niet, en hoeft dat ook niet te weten.
-
-Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. In volgend voorbeeld stellen we dit in via de constructor, maar je zou ook van ``datadoel`` een property kunnen maken:
+Nu maken we een klasse die effectief die writer gebruikt. De truc zit hem er in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. Beter zelfs: de klasse weet het niet, en hoeft dat ook niet te weten. Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. In volgend voorbeeld stellen we dit in via de constructor, maar je zou ook van ``datadoel`` een property kunnen maken:
 
 ```java
 class Logbook
@@ -293,12 +301,10 @@ class Logbook
     { 
         datadoel = doel; 
     }
-
     public void Schrijf()
     {
         datadoel.WriteData();
     }
-
     //etc.
 }
 ```
@@ -306,11 +312,10 @@ class Logbook
 Vanaf nu kan je ``Logbook``-objecten aanmaken die naar verschillende plekken schrijven/lezen zonder dat je IN  ``logbook`` moet weten naar waar dat gebeurt:
 
 ```java
-    Logbook naarlokalefile = new Logbook(new DiskWriter());
-    naarlokalefile.Schrijf();
-
-    Logbook naarInternet = new Logbook(new InternetWriter());
-    naarInternet.Schrijf();
+Logbook naarlokalefile = new Logbook(new DiskWriter());
+naarlokalefile.Schrijf();
+Logbook naarInternet = new Logbook(new InternetWriter());
+naarInternet.Schrijf();
 ```
 
 {% hint style='tip' %}

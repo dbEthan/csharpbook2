@@ -29,6 +29,8 @@ abstract class Dier
 
 We kunnen nu geen objecten meer van het type ``Dier`` aanmaken. Volgende code zal een foutboodschap geven: ``Dier hetDier = new Dier();``
 
+<!---{pagebreak} --->
+
 Maar, we mogen dus wel klassen overerven van deze klasse en instanties van deze nieuwe klasse aanmaken:
 ```java
 class Paard: Dier
@@ -66,6 +68,8 @@ Door het keyword ``abstract`` **zijn child-klassen verplicht deze abstracte meth
 Merk op dat er geen codeblock-accolades na de signatuur van abstracte methodes komt.
 {% endhint %}
 
+<!---{pagebreak} --->
+
 
 De Paard-klasse wordt dan:
 ```java
@@ -91,6 +95,9 @@ Van zodra een klasse een abstracte methode of property heeft dan ben je, logisch
 
 Het zou heel vreemd zijn om objecten in het leven te kunnen roepen die letterlijk stukken ontbrekende code hebben...
 {% endhint %}
+
+<!---{pagebreak} --->
+
 
 ### Abstracte properties
 

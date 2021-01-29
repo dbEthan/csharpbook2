@@ -36,6 +36,8 @@ foreach (var item in klanten)
 }
 ```
 
+<!---{pagebreak} --->
+
 We kunnen echter ook een specifiek element opvragen aan de hand van de key. Stel dat we de waarde (naam) van de klant met key (``id``) gelijk aan ``123`` willen tonen:
 
 ```java

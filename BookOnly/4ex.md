@@ -26,10 +26,10 @@ Je opdracht:
 2. Vul de applicatie aan zodat de gebruiker een bestaand bookmark kan verwijderen en een bestaand bookmark kan aanpassen.
 3. De gebruiker kan een bookmark selecteren (door de index ervan in te geven) en vervolgens zal deze site getoond worden op het scherm.
 
-Enkele zaken die je nodig hebt :
+Hierna volgen enkele zaken die je zal nodig hebben.
 
+<!---{pagebreak} --->
 
-**BookMark klasse:**
 ```java
 class BookMark
 {
@@ -39,31 +39,31 @@ class BookMark
         URL = urlIn;
     }
 
-
     public string Naam { get; set; }
     public string URL { get; set; }
     public string DownloadSite()
     {
-        WebClient wc = new WebClient();
+        var wc = new WebClient();
         string result = wc.DownloadString(URL);
         return GetPlainTextFromHtml(result);
     }
     
-    private string GetPlainTextFromHtml(string htmlString)
+    private string GetPlainTextFromHtml(string html)
     {
         string htmlTagPattern = "<.*?>";
-        string regPattern = "(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)";
-        var regexCss = 
-            new Regex( regPattern, RegexOptions.Singleline | RegexOptions.IgnoreCase);
-        htmlString = regexCss.Replace(htmlString, string.Empty);
-        htmlString = Regex.Replace(htmlString, htmlTagPattern, string.Empty);
-        htmlString = Regex.Replace(htmlString, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
-        htmlString = htmlString.Replace("&nbsp;", " ");
-        return htmlString;
+        string reg = "(\\<script(.+?)\\</script\\>)|(\\<style(.+?)\\</style\\>)";
+        var regCss = 
+            new Regex(reg, RegexOptions.Singleline|RegexOptions.IgnoreCase);
+        html = regCss.Replace(html, string.Empty);
+        html = Regex.Replace(html, htmlTagPattern, string.Empty);
+        html = Regex.Replace(html, @"^\s+$[\r\n]*", "", RegexOptions.Multiline);
+        html = html.Replace("&nbsp;", " ");
+        return html;
     }
 }
 ```
-([bron van de ``GetPlanTextFromHtml()`` methode](https://www.mercator.eu/mercator/std/info_aruba/reporting-hoe-gegevens-afdrukken-met-html-tags.html))
+
+[De ``GetPlanTextFromHtml()`` methode komt van volgende post.](https://www.mercator.eu/mercator/std/info_aruba/reporting-hoe-gegevens-afdrukken-met-html-tags.html))
 
 
 Voorbeeld van hoe de ``Bookmark`` klasse zal werken:

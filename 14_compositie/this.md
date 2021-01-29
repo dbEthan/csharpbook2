@@ -15,7 +15,7 @@ Wanneer je ``this`` gebruikt binnen een klasse, dan zal je zien dat bij het schr
 
 Enerzijds ben je vrij om altijd ``this`` te gebruiken wanneer je eender wat van de klasse zelf wilt bereiken. Vooral in oudere code-voorbeelden zal je dat nog vaak zien gebeuren.
 
-Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteert met een lokale variabele dat dezelfde naam heeft. Volgend voorbeeld toont waarom dit belangrijk kan zijn:
+Anderzijds laat ``this`` ook toe om properties, methoden en instantievariabelen aan te roepen wanneer die mogelijk op de huidige plek niet aanroepbaar zijn omdat hun naam conflicteert met een lokale variabele dat dezelfde naam heeft. Het voorbeeld op de volgende pagina toont waarom dit belangrijk zijn.
 
 <!--- {width:60%} --->
 ![](../assets/7_overerving/thisinst.png)
@@ -25,6 +25,9 @@ De lijn ``Levens = 5;`` in de constructor zal de parameter zelf van waarde aanpa
 {% hint style='warning' %}
 Merk op dat qua naamgeving de keuze van de formele parameter ``Levens`` in de constructor sowieso een ongelukkige keuze is in dit voorbeeld. 
 {% endhint %}
+
+<!---{pagebreak} --->
+
 
 ### Object geeft zichzelf mee als parameter
 

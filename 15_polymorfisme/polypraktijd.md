@@ -1,16 +1,9 @@
 ## Polymorfisme in de praktijk
 
-Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer" <!---[^stack]--->.
+Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer"(dit voorbeeld is gebaseerd op een [StackOverflow](https://stackoverflow.com/questions/1031273) post).
 
-
-<!---NOBOOKSTART--->
-(Dit voorbeeld is gebaseerd op een [StackOverflow](https://stackoverflow.com/questions/1031273 ) post).
-<!---NOBOOKEND--->
 
 De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zake en economie). Zonder de voordelen van polymorfisme zou de klasse ``EersteMinister`` er zo kunnen uitzien (**slechte manier**!):
-
-<!---[^stack]Dit voorbeeld is gebaseerd op een oplossing op StackOverflow: https://stackoverflow.com/questions/1031273 ).--->
-
 
 ```java
 public class EersteMinister
@@ -29,40 +22,32 @@ public class EersteMinister
         Jansens.ContacteerGreenpeace();
 
         // Ganzeweel advies omtrent rel aan grens met Nederland
-
         Ganzeweel.VervangAmbassadeur();
         Ganzeweel.RoepTroepenmachtTerug();
         Ganzeweel.VerhoogRisicoZoneAanGrens();
 
         // Van Cent geeft advies omtrent nakende beurscrash
-
         VanCent.InjecteerGeldInMarkt();
         VanCent.VerlaagWerkloosheidsPremie();
     }
 }
 ```
 
-De ``MinisterVanMilieu`` zou er zo kunnen uitzien:
+<!---{pagebreak} --->
+
+
+De ``MinisterVanMilieu`` zou er zo kunnen uitzien (de methodenimplementatie mag je zelf verzinnen):
 ```java
 class MinisterVanMilieu
 {
-  public void VerhoogBosSubsidies()
-  {
-    //..
-  }
-  public void OpenOnderzoek()
-  {
-    //..
-  }
-  etc
+  public void VerhoogBosSubsidies(){}
+  public void OpenOnderzoek(){}
 }
 ```
 
 De ``MinisterVanEconomie``-klasse heeft dan weer heel andere publieke methoden. En de ``MinisterBZ`` ook weer totaal andere.
 
-Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het abstractie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. 
-
-**Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
+Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het abstractie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. **Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
 
 **Ten eerste:** We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
 
@@ -86,15 +71,12 @@ class MinisterVanMilieu:Minister
   }
 }
 
-class MinisterBZ:Minister
-{
-  //...
-}
-class MinisterVanEconomie:Minister
-{
-  //...
-}
+class MinisterBZ:Minister {}
+class MinisterVanEconomie:Minister {}
 ```
+
+<!---{pagebreak} --->
+
 
 **Ten tweede:**  Het leven van de EersteMinister wordt plots véél makkelijker. Hij kan gewoon de ``Adviseer`` methode aanroepen van iedere minister:
 
@@ -107,7 +89,6 @@ public class EersteMinister
     
   public void Regeer()
   {
-
       Jansens.Adviseer(); 
       Ganzeweel.Adviseer(); 
       VanCent.Adviseer();
@@ -120,21 +101,20 @@ public class EersteMinister
 ```java
 public class EersteMinister
 {
-   public List<Minister> AlleMinisters {get;set;}= new List<Minister>();
-    public EersteMinister()
-    {
-        AlleMinisters.Add(new MinisterVanMilieu());
-        AlleMinisters.Add(new MinisterBZ());
-        AlleMinisters.Add(new MinisterVanEconomie());
-    }
-
-    public void Regeer()
-    {  
-        foreach (Minister minister in AlleMinisters)
-        {
-            minister.Adviseer();
-        }
-    }
+  public List<Minister> AlleMinisters {get;set;}= new List<Minister>();
+  public EersteMinister()
+  {
+      AlleMinisters.Add(new MinisterVanMilieu());
+      AlleMinisters.Add(new MinisterBZ());
+      AlleMinisters.Add(new MinisterVanEconomie());
+  }
+  public void Regeer()
+  {  
+      foreach (Minister minister in AlleMinisters)
+      {
+          minister.Adviseer();
+      }
+  }
 }
 ```
 

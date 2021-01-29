@@ -45,6 +45,9 @@ class Kassa
 }
 ```
 
+<!---{pagebreak} --->
+
+
 Laten we deze syntax even bekijken:
 
 * Operator overloading methoden zijn altijd ``static``.

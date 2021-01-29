@@ -77,14 +77,16 @@ plaats3.Z = "onder het hotel";
 Merk op dat het keyword ``var`` hier handig is: het verkort de ellenlange stukken code waarin we toch maar gewoon het type herhalen dat ook al rechts van de toekenningsoperator staat.
 {% endhint %}
 
-### Een complexere generieke klassen
+<!---{pagebreak} --->
+
+
+### Een complexere generieke klasse
 Voorgaand voorbeeld is natuurlijk maar de tip van de ijsberg. We kunnen bijvoorbeeld volgende klasse maken die we kunnen gebruiken met eender welk type om de meetwaarde van een meting in op te slaan. Merk op hoe we op verschillende plaatsen in de klasse ``T`` gebruiken:
 
 ```java
 public class Meting<T>
 {
     public T Waarde {get;set;}
-
     public Meting(T waardein)
     {
         Waarde = waardein;
@@ -96,7 +98,6 @@ Een voorbeeldgebruik van dit nieuwe type kan zijn:
 ```java
 var m1 = new Meting<int>(44);
 Console.WriteLine(m1.Waarde);
-
 var m2 = new Meting<string>("slechte meting");
 Console.WriteLine(m2.Waarde);
 ```
@@ -110,20 +111,18 @@ class DataBewaarder<Type1, Type2>
 {
     public Type1 Waarde1 {get;set;}
     public Type2 Waarde2 {get;set;}
-
     public DataBewaarder(Type1 w1, Type2 w2)
     {
         Waarde1 = w1;
         Waarde2 = w2;
     }
-    public string ToonInfo()
-    {
-        return $"Waarde1: {Waarde1}.\nWaarde2: {Waarde2}";
-    }
 }
 ```
+
+
 Een object aanmaken zal nu als volgt gaan:
 
+<!---{line-numbers:false}--->
 ```csharp
 DataBewaarder<int, string> d1 = new DataBewaarder<int, string>(4, "Ok");
 ```

@@ -1,6 +1,7 @@
 ## Spelen met strings
 
 In deze sectie duiken we dieper in de ``String`` klasse om aan te tonen dat er tal van nuttige zaken bestaan om met strings te werken.
+
 ### Splitsen en samenvoegen
 
 #### Split
@@ -31,6 +32,7 @@ string joined = String.Join(";", gesplitst);
 
 Voorgaande methoden zijn ``static`` en moet je dus via de klasse ``String`` doen en niet via de objecten zelf.
 
+<!---{pagebreak} --->
 
 ### Tekst files uitlezen
 
@@ -77,6 +79,9 @@ for (int i = 0; i < lines.Length; i++)
     Console.WriteLine($"Geboortejaar speler {i}= {splitted[2]}");
 }
 ```
+
+<!---{pagebreak} --->
+
 
 #### CSV downloaden
 

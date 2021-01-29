@@ -29,13 +29,11 @@ class Vliegtuig
       Console.WriteLine("Het vliegtuig vliegt rustig door de wolken.");
    }
 }
-
 class Raket: Vliegtuig
-{
-}
+{}
 
 ```
-{% hint style='tip' %}
+{% hint style='warning' %}
 Merk op dat we het keyword ``virtual`` mee opnemen in de methodesignatuur op lijn 3, en dat deze dus niets te maken heeft met het returntype en de zichtbaarheid van de methode.
 {% endhint %}
 
@@ -48,12 +46,8 @@ topGun.Vlieg();
 spaceX1.Vlieg();
 ```
 
-De uitvoer zal dan zijn:
+De uitvoer zal dan zijn 2x dezelfde zin ``Het vliegtuig vliegt rustig door de wolken.`` zijn.
 
-```
-Het vliegtuig vliegt rustig door de wolken.
-Het vliegtuig vliegt rustig door de wolken.
-```
 
 {% hint style='warning' %}
 Enkel ``public`` methoden (en properties) kan je ``virtual`` instellen!
@@ -74,8 +68,6 @@ class Raket:Vliegtuig
 }
 ```
 
-
-
 De uitvoer van volgende code zal nu anders zijn:
 ```java
 Vliegtuig topGun = new Vliegtuig();
@@ -93,13 +85,6 @@ De raket verdwijnt in de ruimte.
 Indien je iets ``override`` moet de signatuur van je methode (of property) uiteraard identiek zijn aan deze van de parent-klasse. Het enige verschil is dat je het keyword ``virtual`` vervangt door ``override``.
 {% endhint %}
 
-
-
-
-
-{% hint style='tip' %}
-Ook properties kan je ``virtual`` instellen en ``override``'n. We gaan dit verderop tonen nadat we het ``base`` keyword uit de doeken hebben gedaan.
-{% endhint %}
 
 
 <!---NOBOOKSTART--->

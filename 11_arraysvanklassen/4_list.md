@@ -23,6 +23,7 @@ Zoals je ziet hoeven we bij het aanmaken van een ``List`` geen begingrootte mee 
 In dit boek behandelen we het concept generieke klassen niet (zie appendix). Generieke klassen oftewel **generic classes** zijn een handig concept om je klassen nog multifunctioneler te maken doordat we zullen toelaten dat bepaalde datatypes niet hardcoded in onze klasse moet gezet worden. ``List<>`` is zo'n eerste voorbeeld, maar er zijn er tal van anderen én je kan ook zelf dergelijke klassen schrijven. Bekijk zeker de appendix indien je dit interesseert!
 {% endhint %}
 
+
 ### Elementen toevoegen
 
 Via de ``Add()``-methode kan je elementen toevoegen aan de lijst. Je dient als parameter aan de methode mee te geven wat je aan de lijst wenst toe te voegen. **Deze parameter moet uiteraard van het type zijn dat de ``List`` verwacht.** 
@@ -34,6 +35,8 @@ List<string> mijnPersonages = new List<string>();
 mijnPersonages.Add("Reinhardt");
 mijnPersonages.Add("Mercy");
 ``` 
+
+<!---{pagebreak} --->
 
 Ook complexere datatypes kan je dus toevoegen:
 
@@ -81,6 +84,8 @@ for(int i = 0 ; i < mijnPersonages.Count; i++)
     Console.WriteLine(mijnPersonages[i])
 }
 ```
+
+<!---{pagebreak} --->
 
 ### Wat kan een List nog?
 

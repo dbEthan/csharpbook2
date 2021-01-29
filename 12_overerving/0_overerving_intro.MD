@@ -32,16 +32,20 @@ Wanneer twee klassen met behulp van een "x is een y"-relatie kunnen beschreven w
 * Een tulp **is een** plant.
 * Zowel een dier als een plant zijn levende wezens.
 
+Als je dus in een programmeeropdracht het werkwoord *zijn* tegenkomt, in eender welke vorm (was, is, zijn, zal zijn, zijnde, etc. ), dan is de kans groot dat overerving mogelijk is. We gaan echter dit idee verderop in het boek uitbreiden met interfaces en polymorfisme. Deze twee begrippen hangen nauw samen met overerving en zullen soms een "betere oplossing" zijn dan pure overerving.
+
 {% hint style='warning' %}
 Opgelet: wanneer we "x **heeft een** y" zeggen gaat het **niet** over overerving, maar over compositie wat we in een later hoofdstuk zullen bekijken. 
 {% endhint %}
-
 
 {% hint style='warning' %}
 Het is niet omdat 2 klassen delen gelijkaardige (of dezelfde) code hebben dat hier dus automatisch overerving van toepassing is. Enkel indien er een realistische "is een"-relatie bestaat kan overerving toegepast worden.
 
 Uiteraard is de kans wel groot dat er "een oplossing" voor je dubbele code is, zelfs wanneer er geen "is een"-relatie bestaat. Meestal beland je dan bij generics (zie appendix) of compositie (zie verder) als mogelijke oplossing van je probleem.
 {% endhint %}
+
+<!---{pagebreak} --->
+
 
 ### Overerving beschrijven
 In UML-notatie duiden we een overervings-relatie aan met een pijl van van de child- naar de parentklasse:
@@ -92,6 +96,7 @@ Dit kleine, korte zinnetje herbergt aardig wat kracht. Dankzij overerving kunnen
 
 Alhoewel overerving transitief is, wil dat niet zeggen dat ``private`` variabelen plots zichtbaar zijn in de child-klasse. De child-klasse erft ALLES over, ook de ``private`` instantievariabelen, maar C# houdt zich wel aan de regels en zal voorkomen dat de child-code aan de parent instantievariabelen kan.
 
+<!---{pagebreak} --->
 
 ### Overerving en het geheugen
 
@@ -99,7 +104,7 @@ Tijd om eens te kijken hoe het voorgaande er uitziet in de heap en de stack, met
 
 Beeld je in dat je volgende klassediagramma hebt vastgelegd:
 
-<!--- {width:60%} --->
+<!--- {width:40%} --->
 ![](../assets/7_overerving/klasgebouwen.png)
 
 De objecten in het geheugen zullen er dan als volgt uitzien:
@@ -111,6 +116,9 @@ Indien we nu 2 objecten aanmaken
 Huis eenHuis = new Huis();
 Villa groteVilla = new Villa();
 ```
+
+<!---{pagebreak} --->
+
 En vervolgens kijken we hoe dit er in het geheugen uitziet:
 
 <!--- {width:60%} --->
@@ -120,9 +128,10 @@ Ook hier zien we duidelijk dat dus een ``Villa`` object alle "code" in zich heef
 
 Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de variabele of methode origineel toe hoort. Als er dus in de klasse ``Huis`` een variabele ``private bool heeftDeurbel`` was, dan zal de code in de klasse ``Villa`` daar niet aan geraken:
 
-<!--- {width:60%} --->
+<!--- {width:70%} --->
 ![](../assets/7_overerving/privscope.png)
 
+<!---{pagebreak} --->
 
 ### ``protected``
 
@@ -136,7 +145,6 @@ class Paard: Dier
       geboortejaar++; //  !!! dit zal error geven!
    }
 }
-
 class Dier
 {
    private int geboortejaar;
@@ -153,7 +161,6 @@ class Paard: Dier
       geboortejaar++; //  werkt nu wel
    }
 }
-
 class Dier
 {
    protected int geboortejaar;
@@ -163,6 +170,9 @@ class Dier
 ### Multiple inheritance
 
 In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen. Het is in C# dus niet mogelijk om een klasse ``Mens`` te maken die tegelijkertijd overerft van de klasse ``Aap`` en van de klasse ``Tekening``(om maar iets te zeggen). 
+
+<!---{pagebreak} --->
+
 
 ### ``sealed``
 

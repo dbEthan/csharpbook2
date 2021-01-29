@@ -60,8 +60,10 @@ class Student
 ![](../assets/attention.png)
 
 Voorgaande wil ik nog eenmaal herhalen. Herinner je m'n voorbeeld van die aannemers die soms wel en soms niet opruimden? Laten we nog eens samenvatten hoe het zit met constructors in C#:
-* Als je geen constructors schrijft krijg je een default constructor gratis. Die doet echter niets extra buiten alle instantievariabelen en properties default waarden geven.
-* Van zodra je één constructor zelf schrijft, default of overloaded, krijg je niets meer gratis én zal je dus zelf die constructors moeten bijschrijven die jouw code vereist.
+
+Als je geen constructors schrijft krijg je een default constructor gratis. Die doet echter niets extra buiten alle instantievariabelen en properties default waarden geven.
+
+Van zodra je één constructor zelf schrijft, default of overloaded, krijg je niets meer gratis én zal je dus zelf die constructors moeten bijschrijven die jouw code vereist.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -308,8 +310,8 @@ class Balletje
 {
     public Balletje(int startPosX, int startPosY, int startVectorX, int startVectorY)
     {
-        BalX = startPosX;
-        BalY = startPosY;
+        X = startPosX;
+        Y = startPosY;
         VectorX = startVectorX;
         VectorY = startVectorY;
     }
@@ -318,8 +320,8 @@ class Balletje
     {
     }
 
-    public int BalX { get; set; }
-    public int BalY { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
     public int VectorX { get; set; }
     public int VectorY { get; set; }
 
@@ -327,24 +329,24 @@ class Balletje
     public void Update()
     {
 
-        if (BalX + VectorX >= Console.WindowWidth || BalX + VectorX < 0)
+        if (X + VectorX >= Console.WindowWidth || X + VectorX < 0)
         {
             VectorX = -VectorX;
         }
 
-        BalX = BalX + VectorX;
+        X = X + VectorX;
 
-        if (BalY + VectorY >= Console.WindowHeight || BalY + VectorY < 0)
+        if (Y + VectorY >= Console.WindowHeight || Y + VectorY < 0)
         {
             VectorY = -VectorY;
         }
 
-        BalY = BalY + VectorY;
+        Y = Y + VectorY;
     }
 
     public void TekenOpScherm()
     {
-        Console.SetCursorPosition(BalX, BalY);
+        Console.SetCursorPosition(X, Y);
         Console.Write("O");      
     }
 }

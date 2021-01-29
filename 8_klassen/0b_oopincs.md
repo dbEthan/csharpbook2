@@ -36,14 +36,14 @@ Binnen het codeblock dat bij deze klasse hoort zullen we verderop dan de werking
 Je kan "eender waar" een klasse aanmaken in een project, maar het is een goede gewoonte om per klasse **een apart bestand** te gebruiken. Dit kan op 2 manieren.
 
 Manier 1:
-* In de Solution Explorer, rechterklik op je project
-* Kies "Add"
-* Kies "Class.."
-* Geef een goede naam voor je klasse
+* In de Solution Explorer, rechterklik op je project.
+* Kies "Add".
+* Kies "Class..".
+* Geef een goede naam voor je klasse.
 
 Manier 2:
-* Klik in de menubalk bovenaan op "Project"
-* Kies "Add class..."
+* Klik in de menubalk bovenaan op "Project".
+* Kies "Add class..." .
 
 ![Manier 2 is de snelste](../assets/6_klassen/addclass.png)
 
@@ -80,6 +80,10 @@ Het grote verschil dat deze objecten zullen hebben is dat ze dus vaak veel compl
 * Ze zullen meerdere "waarden" tegelijk kunnen bewaren (een ``int`` variabele kan maar één waarde tegelijkertijd in zich hebben).
 * Ze zullen methoden hebben die we kunnen aanroepen om de variabele "voor ons te laten werken".
 
+
+<!---{pagebreak} --->
+
+
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
 <!---NOBOOKEND--->
@@ -91,13 +95,11 @@ Het blijft ingewikkeld hoor. Heel boeiend om de theorie van een speer te leren, 
 Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datatypes"** dan diegene die ik in het vorige boek heb geleerd? Ok?
 
 **Correct. Er verandert dus niet veel. Enkel je variabelen worden krachtiger!**
-
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
 
-<!---{pagebreak} --->
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}

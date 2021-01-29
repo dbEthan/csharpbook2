@@ -74,7 +74,10 @@ Het vraagteken direct na het object geeft aan: *"Gelieve de code na dit vraagtek
 
 Bovenstaande code zal dus gewoon een lege lijn op scherm plaatsen indien ``stud1`` effectief ``null`` is, anders komt de naam op het scherm.
 
-### Return null
+<!---{pagebreak} --->
+
+
+### Return ``null``
 
 Uiteraard mag je dus ook expliciet soms ``null`` teruggeven als resultaat van een methode. Stel dat je een methode hebt die in een array een bepaald object moet zoeken. Wat moet de methode teruggeven als deze niet gevonden wordt? Inderdaad, we geven dan ``null`` terug.
 

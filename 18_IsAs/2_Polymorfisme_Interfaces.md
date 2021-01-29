@@ -29,6 +29,9 @@ public class Mens
     }
 }
 ```
+
+<!---{pagebreak} --->
+
 Voorts definiëren we de interface ``IVloeker``  als volgt:
 
 ```java
@@ -44,9 +47,7 @@ We kunnen nu de nodige child-klassen maken.
 
 ```java
 class Leraar:Mens {} //moet niets speciaal doen
-
 class Student:Mens{} //ook studenten doen niets speciaal
-
 class Politieker: Mens, IVloeker
 {
     public void Vloek()
@@ -54,7 +55,6 @@ class Politieker: Mens, IVloeker
         Console.WriteLine("Godvermiljaardedeju, zei de politieker");
     }
 }
-
 class Advocaat: Mens, IVloeker
 {
     public void Vloek()
@@ -69,16 +69,13 @@ We maken een array van mensen aan waarin we van iedere type een vertegenwoordige
 
 ```java
 Mens[] mensjes = new Mens[4];
-
 mensjes[0] = new Leraar();
 mensjes[1] = new Politieker();
 mensjes[2] = new Student();
 mensjes[3] = new Advocaat();
-
 for(int i = 0; i < mensjes.Length; i++)
 {
     //NOW WHAT?
-}
 ```
 
 **Het probleem:** hoe kan ik in de array van mensen (bestaande uit een mix van studenten, leraren, advocaten en politiekers) **enkel de vloekende mensen laten vloeken?**

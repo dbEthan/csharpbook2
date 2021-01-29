@@ -60,6 +60,9 @@ catch ()
 }
 ```
 
+<!---{pagebreak} --->
+
+
 ### Een try catch voorbeeld
 
 In volgend stukje code kunnen uitzonderingen optreden zoals we zonet zagen:
@@ -91,6 +94,9 @@ Indien er nu een uitzondering optreedt dan zal de tekst "Verkeerde invoer" getoo
 Merk op dat voorgaande code eleganter kan opgelost worden met ``TryParse`` wat we in het appendix van het vorige boek hebben uitgelegd.
 {% endhint %}
 
+<!---{pagebreak} --->
+
+
 ### Meerdere catchblokken
 
 `Exception` is een klasse van het .NET framework. Er zijn van deze basis-klasse meerdere Exception-klassen afgeleid die een specifieke uitzondering behelzen. Enkele veelvoorkomende zijn:
@@ -101,6 +107,7 @@ Merk op dat voorgaande code eleganter kan opgelost worden met ``TryParse`` wat w
 |`SystemException`|	Klasse voor uitzonderingen die niet al te belangrijk zijn en die mogelijk verholpen kunnen worden.|
 |`IndexOutOfRangeException`|	De index is te groot of te klein voor de benadering van een array|
 |`NullReferenceException`|	Benadering van een niet-geïnitialiseerd object |
+
 
 Je kan in het catch blok aangeven welke soort exceptions je wil vangen in dat blok. Als je bijvoorbeeld alle Exceptions wil opvangen schrijf je:
 
@@ -133,13 +140,19 @@ catch (Exception e)
 
 Indien een ``FormatException`` optreedt dan zal het eerste catch-blok uitgevoerd worden, in alle andere gevallen het tweede. Het tweede blok zal niet uitgevoerd worden indien een ``FormatException`` optreedt.
 
+<!---{pagebreak} --->
+
+
 ### Welke exceptions worden gegooid?
 
 De online .NET documentatie is de manier om te weten te komen welke exceptions een methode mogelijk kan gooien. Gaan we bijvoorbeeld naar de documentatie op MSDN van de ``int32.Parse`` methode dan zien we daar een sectie "Exceptions" waar klaar en duidelijk wordt beschreven wanneer welke exception wanneer wordt opgeworpen.
 
 
-<!--- {width:60%} --->
+<!--- {width:80%} --->
 ![Bron: https://docs.microsoft.com/en-us/dotnet/api/system.int32.parse](../assets/20_exceptions/msdn.png)
+
+<!---{pagebreak} --->
+
 
 ### Werken met de exception parameter
 

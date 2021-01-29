@@ -34,6 +34,8 @@ Aggregatie duiden we op exact dezelfde manier aan, maar de ruiten zijn niet gevu
 
 ![Een computer heeft minstens 1 processor nodig, maar kan er tot 8 hebben. Ieder element kan echter ook op zichzelf bestaan.](../assets/6_klassen/multipplecompuml.png)
 
+<!---{pagebreak} --->
+
 Uiteraard zijn ook combinaties mogelijk. Stel je voor dat je een applicatie moet ontwerpen waarin je een reeks huizen moet bouwen, waarbij er in de slaapkamer steeds een computer moet gezet worden:
 
 ![](../assets/6_klassen/compagg.png)
@@ -116,6 +118,7 @@ Compositie wil dus niet zeggen dat je in het geheugen grote *monolitische* stukk
 {% endhint %}
 <!---NOBOOKEND--->
 
+<!---{pagebreak} --->
 
 
 
@@ -243,12 +246,11 @@ Indien je nu een pagina wenst toe te voegen dan moet je ook deze individuele arr
 ```java
 class Book
 {
-   public void InsertPage(Page toAdd, int position)
-   {
-       AllPages[position] = toAdd;
-   }
-
-      public Page[] AllPages {get;set;} = new Page[100];
+    public Page[] AllPages {get;set;} = new Page[100];
+    public void InsertPage(Page toAdd, int position)
+    {
+        AllPages[position] = toAdd;
+    }
 }
 ```
 

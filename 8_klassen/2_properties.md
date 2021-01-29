@@ -33,14 +33,17 @@ Console.WriteLine(palpatine.sithName); //dit zal niet werken!
 
 We willen echter wel van buiten uit het energy-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energy-level op -1000 instellen? Terwijl energy nooit onder 0 mag gaan.
 
+<!---{pagebreak} --->
+
+
 ### 2 soorten properties
 **Properties** lossen dit probleem dus op. Er zijn 2 soorten properties in C#:
 
-* **Full Properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
-* **Auto properties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle.
+* **Full properties**: deze stijl van properties verplicht ons véél code te schrijven, maar we hebben ook volledige controle over wat er gebeurt.
+* **Autoproperties** zijn exact het omgekeerde van full properties: weinig code, maar ook weinig controle.
 
 
-We behandelen eerst full properties, daar auto properties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij auto properties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
+We behandelen eerst full properties, daar autoproperties een soort afgeleide van full properties zijn (bepaalde aspecten van full properties worden bij autoproperties achter de scherm verstopt zodat jij als programmeur er geen last van hebt).
 
 
 ### Full properties
@@ -76,24 +79,11 @@ Vader.Energy = 20; //set
 Console.WriteLine($"Vaders energy is {Vader.Energy}"); //get
 ```
 
-Laten we eens inzoomen op de full property code:
+<!---{pagebreak} --->
 
-<!---{line-numbers:true}--->
-```java
-public int Energy
-{
-    get
-    {
-        return energy;
-    }
-    set
-    {
-        energy = value;
-    }
-}
-```
+Laten we eens inzoomen op de full property code.
 
-![Visuele voorstelling van de property](../assets/6_klassen/propdia.png)
+![Visuele voorstelling van een full property](../assets/6_klassen/propdia.png)
 
 
 #### Full property:  identifier en datatype
@@ -119,11 +109,11 @@ get
 
 Dit werkt dus identiek aan een methode met een returntype. **Het element dat je return't in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
 
+We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energy;``.
+
 {% hint style='tip' %}
 We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop meer over vertellen, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
 {% endhint %}
-
-We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energy;``.
 
 #### Full property: set gedeelte
 
@@ -191,7 +181,12 @@ Volgende lijn zal dus geen effect hebben:
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
 <!---{sample: true}--->
+
+<!---{pagebreak} --->
+
+
 ### Property variaties
+
 We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property te schrijven. Dit laat ons toe om een aantal variaties te schrijven:
 * **Write-only property**: heeft geen ``get``.
 * **Read-only property**: heeft geen  ``set``.
@@ -203,9 +198,8 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 
 Dit soort properties zijn handig indien je informatie naar een object wenst te sturen dat niet mag of moet uitgelezen kunnen worden. Het meest typische voorbeeld is een property ``Pincode`` van een klasse ``BankRekening``. 
 
-<!--- {width:60%} --->
+<!--- {width:70%} --->
 ![](../assets/6_klassen/writeonlyprop.png)
-
 
 
 ```java
@@ -220,10 +214,13 @@ Dit soort properties zijn handig indien je informatie naar een object wenst te s
 ```
 We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitlezen.
 
+<!---{pagebreak} --->
+
+
 #### Read-only property
 Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wanneer je informatie uit een object wil kunnen uitlezen uit een instantievariabele dat NIET door de buitenwereld mag aangepast worden.
 
-<!--- {width:60%} --->
+<!--- {width:80%} --->
 ![](../assets/6_klassen/readonlyprop.png)
 
 ```java
@@ -243,10 +240,12 @@ We kunnen  enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
 {% endhint %}
 
 
+<!---{pagebreak} --->
+
 
 #### Read-only property met private set
 
-<!--- {width:60%} --->
+<!--- {width:80%} --->
 ![](../assets/6_klassen/readonlypriv.png)
 
 Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
@@ -332,12 +331,10 @@ public void ResetLord()
 
 #### Read-only properties die transformeren
 
-<!--- {width:60%} --->
+<!--- {width:50%} --->
 ![](../assets/6_klassen/proptrans.png)
 
-Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt.
-
-Stel dat we volgende klasse hebben:
+Je bent uiteraard niet verplicht om voor iedere instantievariabele een bijhorende property te schrijven. Omgekeerd ook: mogelijk wil je extra properties hebben voor data die je 'on-the-fly' kan genereren dat niet noodzakelijk uit een instantievariabele komt. Stel dat we volgende klasse hebben:
 ```java
 class Persoon
 {
@@ -363,41 +360,30 @@ class Persoon
     {
         get
         {
-            return $"{voornaam}.{achternaam}@ziescherp.be";
+            return $"{voornaam}@ziescherp.be";
         }
     }
 }
 ```
 
-
-
-### Auto properties
+### Autoproperties
 Automatische eigenschappen (**autoproperties** , soms ook *autoprops* genoemd) laten toe om snel properties te schrijven zonder dat we de achterliggende instantievariabele moeten beschrijven.
 
 Heel vaak wil je heel eenvoudige variabelen aan de buitenwereld van je klasse beschikbaar stellen. Omdat je instantievariabelen echter niet ``public`` mag maken, moeten we dus properties gebruiken die niets anders doen dan als doorgeefluik fungeren. Autoproperties doen dit voor ons: het zijn vereenvoudige full properties waarbij de achterliggende instantievariabele onzichtbaar voor ons is.
 
-Zo kan je eenvoudige de volgende klasse ``Persoon`` herschrijven met behulp van autoproperties. 
-
-De originele klasse mét full properties (we hebben de layout wat compacter gemaakt om een extra blad te besparen in dit boek):
+Zo kan je eenvoudige de volgende klasse ``Persoon`` herschrijven met behulp van autoproperties. De originele klasse mét full properties (we hebben de layout wat compacter gemaakt om een extra blad te besparen in dit boek):
 
 ```java
 public class Person
 {
 
     private string voornaam;
-    private string achernaam;
     private int geboorteJaar;
 
     public string Voornaam
     {
         get { return voornaam; }
         set { voornaam = value; }
-    }
-
-    public string Achternaam
-    {
-        get { return achernaam; }
-        set { achernaam = value; }
     }
 
     public int GeboorteJaar
@@ -414,7 +400,6 @@ De herschreven klasse met autoproperties (autoprops) wordt:
 public class Person
 {
     public string Voornaam { get; set; }
-    public string Achternaam { get; set; }
     public int GeboorteJaar { get; set; }
 }
 ```
@@ -471,8 +456,6 @@ public string Voornaam { get; } = "Tim";
 
 Hierbij zijn we dan wel verplicht om ogenblikkelijk deze property een beginwaarde te geven, daar we deze op geen enkele andere manier nog kunnen aanpassen. 
 {% hint style='tip' %}
-
-### Snel autoproperties typen in Visual Studio:
 Als je in Visual Studio in je code ``prop`` typt en vervolgens twee keer de tabtoets indrukt dan verschijnt al de nodige code voor een automatic property. 
 Via ``propg`` gevolgd door twee maal de tabtoets krijg je een autoproperty met private setter.
 {% endhint %}
@@ -501,6 +484,6 @@ De regels zijn niet in steen gebeiteld, maar ruwweg kan je stellen dat:
 * [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
 * [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
 * [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
-* [Demo: Auto properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
+* [Demo: autoproperties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9eb70ee5-402d-4c6d-b880-ab6100c5291d)
 
 <!---NOBOOKEND--->

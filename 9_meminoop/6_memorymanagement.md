@@ -1,11 +1,18 @@
 # Geheugenmanagement, uitzonderingen en namespaces
 
+Dit hoofdstuk gaat een beetje overal over. In de eerste, en belangrijkste, plaats gaan we eens kijken wat er allemaal achter de schermen gebeurt wanneer we met objecten programmeren. We zullen namelijk ontdekken dat er een fundamenteel verschil is in het werken met bijvoorbeeld een object van het type ``Student`` tegenover werken met een eenvoudige variabele van het type ``int``. 
+
+Vervolgens gaan we kort de keywords ``using`` en ``namespace`` bekijken. Twee keywords die je al ieder project bovenaan hebt zien staan, maar die je zelden hebt moet gebruiken of aanpassen. Nu we echter met klassen leren werken en meer en meer bestaande .NET bibliotheken in onze projecten gaan integreren, wordt het tijd deze mysterieuze keywords te duiden.
+
+Finaal lijkt het ons een goed moment om je robuustere, minder crashende, code te leren schrijven. Exception handling, de naam zegt het al, gaat ons helpen om die typische uitzonderingen (zoals deling door 0) in algoritmes op een elegante manier op te vangen (en dus niet door een nest van van ``if`` structuren te schrijven in de hoop dat je iedere mogelijke uitzondering kunt opvangen).
+
+
 ## Geheugenmanagement in C#
 
 In het vorige boekdeel deden we reeds uit de doeken dat variabelen op 2 manieren in het geheugen kunnen leven:
 
 * **Value types**: waren variabelen wiens waarde rechtstreeks op de geheugenplek stonden waar de variabele naar verwees. Dit gold voor alle bestaande, ingebakken datatypes zoals ``int``, ``bool``, ``char`` etc. alsook voor ``enum`` types.
-* **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waarde effectieve waar de van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde
+* **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waarde effectieve waar de van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde.
 
 **Ook objecten zijn reference types.** Alhoewel het vorige boek liet uitschijnen dat vooral value type variabelen veelvuldig in programma's voorkwamen, zal je nu ontdekken dat reference types véél meer voorkomen, **simpelweg omdat alles in C# een object is** (en dus ook arrays van objecten én zelfs valuetypes!).
 
@@ -43,17 +50,14 @@ Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid 
 
 De heap laat ons toe om geheugen op een wat minder gestructureerde manier in te palmen. Tijdens de uitvoer van het programma zal de heap als het ware dienst doen als een grote zandbak waar eender welke plek kan ingepalmd worden om zaken te bewaren (op voorwaarde dat die vrij is natuurlijk) De stack daarentegen is het kleine bankje naast de zandbak: handig, snel, en perfect geweten hoe groot.
 
+<!---{pagebreak} --->
+
+
 ### Value types in de stack
 
 **Value** type variabelen worden in de stack bewaard. **De effectieve waarde van de variabele wordt in de stack bewaard.**
 Dit zijn alle gekende, 'eenvoudige' datatypes die we totnogtoe gezien hebben, inclusief enums en structs:
-* ``sbyte``, ``byte``
-* ``short``, ``ushort``
-* ``int``, ``uint``
-* ``long``, ``ulong``
-* ``char``
-* ``float``, ``double``, ``decimal``
-* ``bool``
+* ``sbyte``, ``byte``, ``short``, ``ushort``, ``int``, ``uint``, ``long``, ``ulong``, ``char``, ``float``, ``double``, ``decimal``, ``bool``
 * structs (niet besproken in dit boek)
 * enums (zie het vorige boek)
 
@@ -123,24 +127,27 @@ stud = new Student();
 
 Het geheugen na lijn 1 ziet er zo uit:
 
-<!--- {width:60%} --->
-![](../assets/6_klassen/memzoom1.png)
+<!--- {width:90%} --->
+![Na de lijn: Student stud;](../assets/6_klassen/memzoom1.png)
 
+<!---{pagebreak} --->
 Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
 
 
-<!--- {width:60%} --->
-![](../assets/6_klassen/memzoom2.png)
+<!--- {width:75%} --->
+![Na: new Student();](../assets/6_klassen/memzoom2.png)
 
 Vervolgens wordt de toekenning toegepast en wordt het geheugenadres van het object in de variabele ``stud`` geplaatst:
 
-
-<!--- {width:60%} --->
-![](../assets/6_klassen/memzoom3.png)
+<!--- {width:75%} --->
+![Na: stud = new Student();](../assets/6_klassen/memzoom3.png)
 
 {% hint style='warning' %}
 We gaan nogal licht over het ``new``-keyword. Maar zoals je merkt is dit een ongelooflijk belangrijk mechanisme in de wereld van de objecten. Het brengt letterlijk objecten tot leven (in de heap) en zal als resultaat laten weten op welke plek in het geheugen het object staat.
 {% endhint %}
+
+<!---{pagebreak} --->
+
 
 #### Bij arrays
 
@@ -182,6 +189,8 @@ We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``
 {% hint style='warning' %}
 De meeste klassen zullen met value type-properties en instantievariabelen werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
 {% endhint %}
+
+<!---{pagebreak} --->
 
 ### Methoden en reference parameters
 
@@ -229,12 +238,14 @@ In methode 6
 Na methode 5
 ```
 
+<!---{pagebreak} --->
+
 ### De Garbage Collector 
 Een essentiëel onderdeel van .NET is de zogenaamde GC, de **Garbage Collector**. Dit is een geautomatiseerd onderdeel van ieder C# programma dat ervoor zorgt dat we geen geheugen nodeloos gereserveerd houden.
 De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat waar geen referenties naar verwijzen. Indien er geen referenties naar wijzen zal dit stuk data verwijderd worden.
 
 
-<!--- {width:60%} --->
+<!--- {width:70%} --->
 ![Data in de heap waar geen referenties naar wijzen zullen ten gepaste tijde verwijderd worden](../assets/5_arrays/gc2.png)
 
 In dit voorbeeld zien we dit in actie:

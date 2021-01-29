@@ -41,6 +41,12 @@ public override bool Equals(Object o)
 ```
 Beide zijn geldige oplossingen.
 
+{% hint style='warning' %}
+De ``is`` en ``as`` keywords laten toe om meer dynamische code te schrijven. Mogelijk weet je niet op voorhand wat voor datatype je code zal moeten verwerken en wordt polymorfisme je oplossing. Maar dan? Dan komen ``is`` en ``as`` to the rescue!
+
+Je met polymorfisme gevulde lijst van objecten van allerhande typen wordt nu beheersbaarder. Je kan nu met ``is`` een element bevragen of het van een bepaald type is. Vervolgens kan je met ``as`` het element even 'omzetten' naar z'n effectieve type (en dus meer doen dan wat hij kan in de vermomming van z'n eigen basistype).
+{% endhint %}
+
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}

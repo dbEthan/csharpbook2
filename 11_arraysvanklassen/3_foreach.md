@@ -33,10 +33,11 @@ Stel dat we een array van Studenten hebben, ``deKlas``, en wensen van deze stude
 ```java
 foreach(Student eenStudent in deKlas)
 {
-   Console.WriteLine($"{eenStudent.Naam}, Geboortejaar: {eenStudent.GeboorteJaar}");
+   Console.WriteLine($"{eenStudent.Naam} , {eenStudent.GeboorteJaar}");
 }
-
 ```
+
+<!---{pagebreak} --->
 
 ### Opgelet bij het gebruik van foreach loops
 
@@ -76,6 +77,7 @@ C# heeft een **``var``** keyword. Je mag dit keyword gebruiken ter vervanging va
 var getal = 5; //var zal int zijn
 var myArray = new double[20]; //var zal double[] zijn
 var tekst = "Hi there handsome"; //var zal string zijn
+var ikke = new Leerkracht(); //var zal Leerkracht zijn
 ```
 
 {% hint style='warning' %}
@@ -100,6 +102,8 @@ foreach (var singleKD in killDeathRates)
 ```
 
 Merk op dat dit hoegenaamd geen invloed heeft op je applicatie. Wanneer je code gaat compileren die het keyword ``var`` bevatten dan zal de compiler eerst alle *vars* vervangen door het juiste type, én dan pas beginnen compileren.
+
+<!---{pagebreak} --->
 
 ### Foreach met List
 

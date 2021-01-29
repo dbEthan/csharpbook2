@@ -44,6 +44,8 @@ Veldarts is aangemaakt.
 
 Er wordt dus verondersteld in dit geval dat er een default constructor in de basis-klasse aanwezig is.
 
+<!---{pagebreak} --->
+
 ### Overloaded constructors en ``base()``
 
 Indien je klasse ``Soldaat`` een overloaded constructor heeft, dan wisten we al dat deze niet automatisch een default constructor heeft. Volgende code zou dus een probleem geven indien je een ``VeldArts`` wilt aanmaken via ``new VeldArts()``:
@@ -78,6 +80,9 @@ class VeldArts:Soldaat
 
 ``base()`` achter de constructor zegt  eigenlijk *"roep de default constructor van de parent-klasse aan"*. Je mag hier echter ook parameters meegeven en de compiler zal dan zoeken naar een constructor in de basis-klasse die deze volgorde van parameters kan accepteren.
 
+<!---{pagebreak} --->
+
+
 We zien hier dus hoe we ervoor moeten zorgen dat we terug VeldArtss via ``new VeldArts()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
 ```java
 class Soldaat
@@ -87,7 +92,6 @@ class Soldaat
       //Doe soldaten dingen
    }
 }
-
 class VeldArts:Soldaat
 {
    public VeldArts():base(true)
@@ -115,9 +119,7 @@ class Soldaat
 class VeldArts:Soldaat
 {
    public VeldArts(bool canSh): base(canSh)
-   {
-
-   } 
+   {} 
 
    public VeldArts():base(true)  //Default
    {
@@ -130,6 +132,8 @@ Merk op hoe we de formele parameter ``canSh`` doorgeven als actuele parameter aa
 
 Uiteraard mag je ook de default constructor aanroepen vanuit de child-constructor, alle combinaties zijn mogelijk (zolang de constructor in kwestie maar bestaat in de parent-klasse).
 
+<!---{pagebreak} --->
+
 Een hybride aanpak is ook mogelijk. Volgend voorbeeld toont 2 klassen, ``Huis`` en ``Gebouw`` waarbij we de constructor van ``Huis`` zodanig beschrijven dat deze bepaalde parameters "voor zich houdt" en andere als het ware doorsluist naar de aanroep van z'n parent-klasse:
 
 ```java
@@ -141,7 +145,6 @@ class Gebouw
       AantalVerdiepingen = verdiepingenIn;
    }
 }
-
 class Huis: Gebouw
 {
    public bool HeeftTuintje { get; private set; };
@@ -156,10 +159,11 @@ Vanaf nu kan ik een huis als volgt bouwen:
 Huis peperKoekenHuis = new Huis(true, 1);
 ```
 
-{% hint style='tip' %}
+### Volgorde van constructors
 
 De volgorde waarin alles gebeurt in voorgaande voorbeeld is belangrijk om te begrijpen. Er wordt een hele machine in gang gezet wanneer we volgende korte stukje code schrijven:
 
+<!---{line-numbers:false}--->
 ```java
 Huis eenEigenHuis = new Huis(true,5);
 ```
@@ -171,8 +175,9 @@ Huis eenEigenHuis = new Huis(true,5);
 5. Wanneer het einde van de constructor wordt bereikt, zal er teruggegaan worden naar de constructor van ``Huis``.
 6. Nu wordt de code van de``Huis`` constructor uitgevoerd: ``HeeftTuintje`` krijgt de waarde ``true``.
 
-![](../assets/7_overerving/constflow.png)
-{% endhint %}
+
+![Achter de schermen gebeurt er aardig wat bij overerving wanneer we een object aanmaken](../assets/7_overerving/constflow.png)
+
 
 
 <!---{/aside}--->

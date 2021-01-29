@@ -42,9 +42,10 @@ Met EBM:
 public int GeefGewicht() => 4*34;
 ```
 
+<!---{pagebreak} --->
+
 ### Constructors en EBM
-Ook constructors die maar 1 expressie bevatten kunnen korter nu.
-Origineel:
+Ook constructors die maar 1 expressie bevatten kunnen korter nu. Origineel:
 ```java
 class Student
 {
@@ -56,7 +57,7 @@ class Student
 }
 ```
 
-Met EBM:
+Met EBM wordt dit:
 ```java
 class Student
 {
@@ -66,25 +67,8 @@ class Student
 ```
 
 ### Full Properties met EBM
-Properties worden een een soort mengeling tussen full en autoproperties.
-Originele full property:
-```java
-private int name;
-public int Name
-{
-    get
-    {
-        return name;
-    }
-    set
-    {
-        name = value;
-    }
+Properties worden een een soort mengeling tussen full en autoproperties:
 
-}
-```
-
-Met EBM:
 ```java
 private int name;
 public int Name
@@ -94,23 +78,10 @@ public int Name
 }
 ```
 
+
 ### Read-only properties met EBM
-Bij read-only properties hoeft het ``get`` keyword zelfs niet meer getypt te worden bij EBM.
+Bij read-only properties hoeft het ``get`` keyword zelfs niet meer getypt te worden bij EBM:
 
-Origineel:
-
-```java
-private int name;
-public int Name
-{
-    get
-    {
-        return name;
-    }
-}
-```
-
-Met EBM:
 ```java
 private int name;
 public int Name => name;

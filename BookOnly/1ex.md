@@ -42,6 +42,8 @@ Maak een klasse ``Nummers``. Deze klasse bevat 2 getallen (type ``int``) die via
 
 Toon in je ``main`` aan dat je code werkt.
 
+<!---{pagebreak} --->
+
 Volgende code zou bijvoorbeeld onderstaande output moeten geven:
 
 ```java
@@ -91,13 +93,3 @@ Voeg aan de ``Rekening``-klasse een instantievariabele van het type ``RekeningSt
 Maak een bijhorende publieke Methode waarmee je de Rekening van state kunt veranderen. Deze methode (noem ze ``ChangeState``) vereist geen parameters. Telkens je ze aanroept wordt de staat omgewisseld. Als dus het object momenteel op ``Geldig`` stond, dan wordt ze nu ``Geblokkeerd`` en omgekeerd.
 
 Indien een persoon geld van of naar een Geblokkeerde rekening wil sturen dan zal er een error op het scherm verschijnen.
-
-Test je klasse.
-
-1. Nieuwe klant aanmaken (max 10) 
-2. Status van bestaande klant tonen 
-3. Geld op een bepaald Rekening zetten 
-4. Geld van een bepaald Rekening afhalen
-5. Geld tussen 2 Rekeningen overschrijven
-
-Voorzie extra functionaliteit naar keuze.

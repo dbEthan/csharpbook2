@@ -81,14 +81,16 @@ class Mens
 }
 ```
 
+<!---{pagebreak} --->
+
+
 #### Reden van private
 
 Waarom zou je bepaalde zaken ``private`` maken? 
 
 De code binnenin een klasse kan overal aan binnen de klasse zelf. Stel dat je dus een erg complexe publieke methode hebt, en je wil deze opsplitsen in meerdere delen, dan ga je die andere delen ``private`` maken. Dit voorkomt dat programmeurs die je klasse later gebruiken, stukken code aanroepen die helemaal niet bedoeld zijn om rechtstreeks aan te roepen.
 
-Volgende voorbeeld toont hoe je binnenin een klasse andere zaken van de klasse kunt aanroepen: we roepen in de methode ``Praat`` de methode ``VertelGeheim`` aan (die ``private`` is voor de buitenwereld, maar niet voor de code binnen de ``Praat``-methode)
-
+Volgende voorbeeld toont hoe je binnenin een klasse andere zaken van de klasse kunt aanroepen: we roepen in de methode ``Praat`` de methode ``VertelGeheim`` aan (die ``private`` is voor de buitenwereld, maar niet voor de code binnen de ``Praat``-methode).
 
 ```java
 class Mens
@@ -168,15 +170,9 @@ Dit zijn geen officiële regels, maar afspraken die veel programmeurs onderling 
 <!---{aside}--->
 <!--- {float:right, width:50%} --->
 ![](../assets/gotopolice.png)
-Wat?! Ik ben hier niet voor jou? Omdat je geen ``goto`` hebt gebruikt?! Flink hoor. Maar daarvoor ben ik hier niet.
+Wat?! Ik ben hier niet voor jou? Omdat je geen ``goto`` hebt gebruikt?! Flink hoor. Maar daarvoor ben ik hier niet. Ik zag je wel denken: "Als ik nu die instantievariabele ook eens ``public`` maak."
 
-Ik zag je wel denken: "Als ik nu die instantievariabele ook eens ``public`` maak."
-
-Niet doen. Simpel! **Instantievariabele mogen NOOIT ``public`` gezet worden.** De C# standaard laat dit weliswaar toe, maar dit is één van de slechtste programmeerdingen die je kan doen. 
-
-Wil je toch de interne staat van een object kunnen aanpassen dan gaan we dat via **properties** en **methoden** kunnen doen, wat we zo meteen gaan uitleggen.
-
-Zie dat ik hier niet te vaak tussenbeide moet komen. Dank!
+Niet doen. Simpel! **Instantievariabele mogen NOOIT ``public`` gezet worden.** De C# standaard laat dit weliswaar toe, maar dit is één van de slechtste programmeerdingen die je kan doen. Wil je toch de interne staat van een object kunnen aanpassen dan gaan we dat via **properties** en **methoden** kunnen doen, wat we zo meteen gaan uitleggen. Zie dat ik hier niet te vaak tussenbeide moet komen. Dank!
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -188,13 +184,11 @@ Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we een verjonging
 class Mens
 {
     private int geboorteJaar = 1970;  
-
     public void Praat()
     {
         Console.WriteLine("Ik ben een mens! ");
         Console.WriteLine($"Ik ben geboren in {geboorteJaar}.");
     }
-
     public void StartVerjongingskuur()
     {
         Console.WriteLine("Jeuj. Ik word jonger!");
@@ -205,17 +199,13 @@ class Mens
 ```
 Zoals al gezegd: **Ieder object zal z'n eigen geboortejaar hebben.**
 
-Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen interne staat die kan aangepast worden individueel van de andere objecten van hetzelfde type.
-
-We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan verjongen. Kijk wat er gebeurt:
+Die laatste opmerking is een kernconcept van OOP: ieder object heeft z'n eigen interne staat die kan aangepast worden individueel van de andere objecten van hetzelfde type. We zullen dit testen in volgende voorbeeld waarin we 2 objecten maken en enkel 1 ervan verjongen. Kijk wat er gebeurt:
 
 ```java
 Mens elvis = new Mens();
 Mens bono = new Mens();
-
 elvis.StartVerjongingskuur();
-elvis.StartVerjongingskuur();
-elvis.StartVerjongingskuur();
+elvis.Praat();
 bono.Praat();
 ```
 
@@ -255,6 +245,7 @@ Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variab
 <!---NOBOOKEND--->
 
 <!---{pagebreak} --->
+
 
 #### Andere lieven
 

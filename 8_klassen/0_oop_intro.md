@@ -276,9 +276,9 @@ Ok, zwem maar snel naar de kant. We gaan al het voorgaande van begin tot einde u
 
 Een elementair aspect binnen OOP is het verschil begrijpen tussen een klasse en een object.
 
-Wanneer we meerdere objecten gebruiken van dezelfde soort dan kunnen we zeggen dat deze objecten allemaal deel uitmaken van een zelfde klasse. **Het OOP paradigma houdt ook in dat we de echte wereld gaan proberen te modeleren in code**. OOP laat namelijk toe om onze code zo te structureren zoals we dat ook in het echte leven doen. Alles (objecten) om ons heen behoord tot bepaalde verzamelingen (klassen) die deze groepen beschrijven. 
+Wanneer we meerdere objecten gebruiken van dezelfde soort dan kunnen we zeggen dat deze objecten allemaal deel uitmaken van een zelfde klasse. **Het OOP paradigma houdt ook in dat we de echte wereld gaan proberen te modeleren in code**. OOP laat namelijk toe om onze code zo te structureren zoals we dat ook in het echte leven doen. Alles (objecten) om ons heen behoort tot een bepaalde klasse die alle objecten van dat type beschrijven. 
 
-Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar ziet in groepjes *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
+Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's en allerlei andere zaken samenkomen<!---[^jan]--->. Het is een erg hectisch geheel, toch kan je alles dat je daar ziet *classificeren*. We zien allemaal mens-objecten die tot de klasse van de Mens behoren. 
 * Alle mensen hebben gemeenschappelijke eigenschappen (binnen deze beperkte context van een kruispunt): ze bewegen of staan stil (gedrag), ze hebben een bepaalde kleur van jas (eigenschap). 
 * Alle auto's behoren tot een klasse Auto. Ze hebben gemeenschappelijke zaken zoals: ze hebben een bepaald bouwjaar (eigenschap), ze werken op een bepaalde vorm van energie (eigenschap) en ze staan stil of bewegen (gedrag).
 * Ieder verkeerslicht behoort tot de klasse VerkeersLicht.
@@ -294,17 +294,14 @@ Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek o
 
 Volgende 2 definities druk je best af op een grote poster die je boven je bed hangt:
 
-* **Een klasse** kan je definiëren als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van de objecten van deze klasse.
+* **Een klasse** is als een **blauwdruk** (of prototype) dat het gedrag en toestand beschrijft van alle objecten van deze klasse.
 * Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
 
-Daarnaast kan een klasse op 2 manieren zich gedragen:
-*   Als een fabriekje dat objecten creëert.
-*   Als een object zelf (zie ``static`` later).
-
 Objecten zijn instanties met een eigen levenscyclus die wordt gekenmerkt door:
-*   Een begintoestand en identiteit: deze wordt verkregen bij het creëren van een object.
+*   Een begintoestand: deze wordt verkregen bij het creëren van een object.
 *   Gedrag: deze wordt beschreven door de **methoden** in de klasse.
-*   Een toestand: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datamembers** die beschreven staan in de klasse.
+*   Een toestand: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datamembers** die beschreven staan in de klasse (properties en instantievariabelen).
+*   Een identiteit : een unieke naam van object zodat andere object ermee kunnen interageren.
 
 {% hint style='tip' %}
 Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse en hebben elk een eigen toestand (ander type bakstenen, wel of geen zonnepannelen) en gedrag (rolluiken gaan open als de zon opkomt).
@@ -318,6 +315,11 @@ Voorts kunnen objecten ook beïnvloed worden door 'de buitenwereld': naast de in
 
 {% hint style='tip' %}
 Wanneer je later de specificaties voor een opdracht krijgt en snel wilt ontdekken wat potentiële klassen zijn, dan is het een goede tip om op zoek te gaan naar de zelfstandige naamwoorden (*substantieven*) in de tekst. Dit zijn meestal de objecten en/of klassen die jouw applicatie zal nodig hebben.
+{% endhint %}
+
+{% hint style='tip' %}
+95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken.
+Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan. Heel vreemd allemaal!
 {% endhint %}
 
 ### Abstractie principe

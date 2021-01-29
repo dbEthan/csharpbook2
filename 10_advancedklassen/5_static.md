@@ -1,14 +1,11 @@
 ## Static
 
-Herinner je dat we bij de definitie van een klasse schreven dat een klasse  zich op 2 manieren zich gedragen:
-*   Als een fabriekje dat objecten creëert: hiervoor gebruikten we de constructors om instanties aan te maken
-*   Als een object zelf: dit is hetgeen we in dit hoofdstuk gaan aanpakken en gaan we kunnen doen dankzij het **``static``** keyword.
+Herinner je dat we bij de definitie van een klasse het volgende schreven: "95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken.
+Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan." Laten we hier eens dieper op ingaan.
 
 Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. In dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 
 Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedeeld" wordt over alle objecten van die klasse. Wanneer je het keyword ergens voor plaatst (voor een methode, variabele, property, etc) dan kan je dit element aanroepen **zonder dat je een instantie van die klasse nodig hebt**. 
-
-
 
 ``static`` kan op verschillende plaatsen in een klasse gebruikt worden:
 

@@ -114,7 +114,7 @@ Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wa
 
 Het is altijd belangrijk te begrijpen dat een klasse weliswaar beschrijft hoe alle objecten van dat type werken, maar op zich gaat die beschrijving steeds over 1 object uit de verzameling.
 
-Say what now?!
+*Say what now?!*
 
 Als je een klasse ``Student`` hebt, dan zal deze eigenschappen hebben zoals ``Punten``, ``Naam`` en ``DatumVanInschrijven``. 
 

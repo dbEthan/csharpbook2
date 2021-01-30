@@ -83,7 +83,7 @@ class VeldArts:Soldaat
 <!---{pagebreak} --->
 
 
-We zien hier dus hoe we ervoor moeten zorgen dat we terug VeldArtss via ``new VeldArts()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
+We zien hier dus hoe we ervoor moeten zorgen dat we terug VeldArts via ``new VeldArts()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
 ```java
 class Soldaat
 {
@@ -101,7 +101,7 @@ class VeldArts:Soldaat
 }
 ```
 
-De VeldArtss zullen de actuele parameter``kanSchieten`` dus steeds op ``true`` zetten.
+De VeldArts zullen de actuele parameter``kanSchieten`` dus steeds op ``true`` zetten.
 
 Uiteraard wil je misschien kunnen meegeven bij het aanmaken van een ``VeldArts`` wat de startwaarde van ``kanSchieten`` moet zijn. Dit vereist dat je een overloaded constructor in ``VeldArts`` aanmaakt, die op zijn beurt de overloaded constructor van ``Soldaat`` aanroept. 
 

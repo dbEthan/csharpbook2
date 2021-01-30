@@ -29,9 +29,9 @@ Test door volgende code in een eenvoudig programma uit te voeren:
 
 ```java
 HiddenBookmark hbm = new HiddenBookmark();
-//extra props invullen
+//extra properties invullen
 Bookmark bm = new Bookmark();
-//extra props invullen
+//extra properties invullen
 Console.WriteLine(hbm);
 Console.WriteLine(bm);
 ```

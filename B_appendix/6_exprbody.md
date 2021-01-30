@@ -33,13 +33,13 @@ Nog een voorbeeld, nu met een return. Merk op dat we return niet moeten schrijve
 ```java
 public int GeefGewicht()
 {
-    return 4* 34;
+    return 4 * 34;
 }
 ```
 
 Met EBM:
 ```java
-public int GeefGewicht() => 4*34;
+public int GeefGewicht() => 4 * 34;
 ```
 
 <!---{pagebreak} --->

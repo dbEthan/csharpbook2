@@ -102,7 +102,7 @@ Alhoewel overerving transitief is, wil dat niet zeggen dat ``private`` variabele
 
 Tijd om eens te kijken hoe het voorgaande er uitziet in de heap en de stack, met een voorbeeld: een applicatie om aan gebouwbeheer te doen.
 
-Beeld je in dat je volgende klassediagramma hebt vastgelegd:
+Beeld je in dat je volgende klassehiërarchie hebt vastgelegd:
 
 <!--- {width:40%} --->
 ![](../assets/7_overerving/klasgebouwen.png)

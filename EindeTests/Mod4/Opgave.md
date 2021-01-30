@@ -2,7 +2,7 @@
 Volgende opgave kwam uit de vaardigheidsproef module 4 van dit vak juni 2019.
 {% endhint %}
 
-# Hammertje Tik
+# Hamertje Tik
 Maak een digitale console-versie van het klassieke kinderspel hamertje Tik
  
 In dit spel heeft het kind een hele hoop kleurige blokjes ter beschikking waarmee hij op een kurken bord eender welke ‘tekening’ kan maken door de blokjes in de kurk met een nagel te kloppen.

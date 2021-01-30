@@ -1,6 +1,6 @@
 ## Properties
 
-We zagen zonet dat instantievariabelen nooit ``public`` mogen zijn om te voorkomen dat de buitenwereld onze objecten 'vult' met slechte zaken. Het voorbeeld waarbij we vervolgens een methode ``VeranderLeefijd`` gebruikten om op gecontroleerde manier toch aan de interne staat van objecten te komen is één oplossing, maar een nogal *oldschool* oplossing. 
+We zagen zonet dat instantievariabelen nooit ``public`` mogen zijn om te voorkomen dat de buitenwereld onze objecten 'vult' met slechte zaken. Het voorbeeld waarbij we vervolgens een methode ``StartVerjongingskuur`` gebruikten om op gecontroleerde manier toch aan de interne staat van objecten te komen is één oplossing, maar een nogal *oldschool* oplossing. 
 
 Deze manier van werken - methoden gebruiken om instantievariabelen aan te passen of uit te lezen- is wat voorbijegestreefd binnen C#. Onze programmeertaal heeft namelijk het concept **properties** (*eigenschappen*) in het leven geroepen die toelaten op een veel eenvoudigere manier aan de interne staat van objecten te komen.
 
@@ -107,7 +107,7 @@ get
 }
 ```
 
-Dit werkt dus identiek aan een methode met een returntype. **Het element dat je return't in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
+Dit werkt dus identiek aan een methode met een returntype. **Het element dat je met ``return`` teruggeeft in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
 
 We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energy;``.
 
@@ -394,7 +394,7 @@ public class Person
 }
 ```
 
-De herschreven klasse met autoproperties (autoprops) wordt: 
+De herschreven klasse met autoproperties  wordt: 
 
 ```java
 public class Person
@@ -407,14 +407,14 @@ public class Person
 Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk koter eenvoudiger om te lezen. De private instantievariabelen zijn niét meer aanwezig. C# gaat dit voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
 
 {% hint style='tip' %}
-Vaak zal je klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoprops vervangen door full props.
+Vaak zal je klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoproperties vervangen door full properties.
 
 Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schroevendraaier en kies "Convert to full property".
 
 **Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat we hier uitleggen. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is zogenaamde **Expression Bodied Member Syntax (EBM)**. We behandelen deze (nuttige) syntax kort in de appendix van dit boek.
 {% endhint %}
 
-### Beginwaarden van autoprops
+### Beginwaarden van autoproperties
 
 Je mag autoproperties beginwaarden geven door de waarde achter de property te schrijven, als volgt:
 

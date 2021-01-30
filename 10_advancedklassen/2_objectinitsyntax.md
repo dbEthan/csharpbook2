@@ -16,7 +16,6 @@ Stel dat we volgende klasse hebben waarin we enkele autoproperties gebruiken (me
 class Meting
 {
     public double Temperatuur {get;set;}
-    public string GemetenDoor {get;set;}
     public bool IsGeconfirmeerd {get;set;}
 }
 ```
@@ -39,6 +38,9 @@ Meting meting = new Meting { Temperatuur = 3.4, IsGeconfirmeerd = true};
 
 Zie je het verschil? De ronde haakjes van de default constructor mag je dus achterwege laten.
 {% endhint %}
+
+<!---{pagebreak} --->
+
 
 De volgorde waarin je code wordt uitgevoerd is wel belangrijk. Je ziet het niet duidelijk, maar sowieso wordt eerst nu de  default constructor aangeroepen. Pas wanneer die klaar is zullen de properties de waarden krijgen die je meegeeft tussen de accolades. Als je dus zelf een default constructor in ``Meting`` had geschreven dan had eerst die code uitgevoerd zijn geweest. Voorgaande voorbeeld zal intern eigenlijk als volgt plaatsvinden:
 

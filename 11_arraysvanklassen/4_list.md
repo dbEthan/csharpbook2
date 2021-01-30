@@ -1,6 +1,6 @@
 ## List collectie
 
-Tijd voor een andere bekentenis: arrays zijn fijn, maar nogal omslachtig qua gebruik. Er zit echter in .NET een soort *array on steroids* datatype, de **List*collectie.
+Tijd voor een andere bekentenis: arrays zijn fijn, maar nogal omslachtig qua gebruik. Er zit echter in .NET een soort *array on steroids* datatype, de **List** collectie.
 
 Een ``List<>``-collectie is de meest standaard collectie die je kan beschouwen als een veiligere variant op een doodnormale array. Een ``List`` heeft alle eigenschappen die we al kennen van arrays, maar ze zijn wel krachtiger.  Het voegt een klasse "rond" het concept van de array, waardoor je toegang krijgt tot een hoop nuttige methoden die het werken met arrays een vereenvoudigt maakt.
 

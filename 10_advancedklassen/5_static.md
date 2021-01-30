@@ -18,6 +18,7 @@ Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedee
 Ook een constructor kan ``static`` gemaakt worden, maar dat gaan we in dit boek niet bespreken. Samengevat kan je een *static constructor* gebruiken indien je een soort *oer-constructor* wilt hebben die eenmalige wordt aangeroepen wanneer het allereerste object van een klasse wordt aangemaakt. Wanneer een tweede (of derde, etc.) instantie wordt aangemaakt zal de *static constructor* niet meer aangeroepen worden.
 {% endhint %}
 
+<!---{pagebreak} --->
 
 ### static fields
 
@@ -64,6 +65,8 @@ Dan zien we volgende uitvoer:
 ```
 
 Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars interne (zowel publieke als private) staat niet rechtstreeks veranderen.
+
+<!---{pagebreak} --->
 
 #### En nu, mét static fields
 
@@ -167,6 +170,9 @@ static class EpicLibray
 }
 ```
 
+<!---{pagebreak} --->
+
+
 We kunnen deze methoden nu als volgt aanroepen:
 
 ```java
@@ -177,7 +183,7 @@ int opgeteld = EpicLibrary.TelOp(3,5);
 
 Mooi toch.
 
-{% hint style='tip' %}
+## Intermezzo: Debug.WriteLine
 Even een kort intermezzo dat we in de volgende sectie gaan gebruiken, namelijk de werking van de ``Debug``.
 
 De ``Debug`` klasse (die in de ``System.Diagnostics`` namespace staat) kan je gebruiken om eenvoudig zaken naar het "debug output venster" te sturen tijdens het debuggen. Dit is handig om te voorkomen dat je debug informatie steeds naar het console-scherm moet sturen. Het zou niet de eerste keer zijn dat iemand vergeet een bepaalde Console.WriteLine te verwijderen uit hte finale product met gevoelige debug-informatie. 
@@ -204,7 +210,7 @@ Als je deze code uitvoer in debugger modus, dan zal je enkel de tekst ``Hello Wo
 <!--- {width:60%} --->
 ![](../assets/6_klassen/debugmode.png)
 
-{% endhint %}
+
 
 #### Nog een voorbeeld
 
@@ -252,6 +258,9 @@ STATIC:Er zijn 2 fietsen
 Er zijn nu 3 gemaakt
 STATIC:Er zijn 2 fietsen
 ```
+
+<!---{pagebreak} --->
+
 
 ### Static vs non-static
 
@@ -336,7 +345,6 @@ Balletje.Breedte = 10;
 De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm. We passen de ``Update``-methode aan, rekening houdend met deze nieuwe kennis:
 
 ```java
-
 public void Update()
 {
     if (X + VectorX >= Balletje.Breedte || X + VectorX < 0)
@@ -351,9 +359,10 @@ public void Update()
     }
     Y = Y + VectorY;
 }
-
-}
 ```
+
+<!---{pagebreak} --->
+
 
 En nu kunnen we vlot balletjes laten rondbewegen op bijvoorbeeld een klein deeltje maar van het scherm:
 
@@ -380,6 +389,9 @@ static void Main(string[] args)
     }
 }
 ```
+
+<!---{pagebreak} --->
+
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}

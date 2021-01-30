@@ -128,7 +128,7 @@ Met behulp van de **dot-operator** (``.``) kunnen we aan alle informatie die ons
 {% endhint %}
 
 
-Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verliefd zijn op Anneke. Dit is niet het smurfendorp met maar 1 meisje! Dit gaan we verderop oplossen. Stay tuned!
+Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verliefd zijn op Anneke. Dit is niet het smurfendorp met maar 1 meisje! Dit gaan we verderop oplossen. *Stay tuned!*
 
 
 #### Instantievariabelen

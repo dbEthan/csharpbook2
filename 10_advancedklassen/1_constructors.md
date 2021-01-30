@@ -53,11 +53,7 @@ Als programmeur van eigen klassen zijn er 3 opties voor je:
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
 
-**Constructors zijn soms gratis, soms niet.**
-
-Een lege default constructor voor je klasse krijg je standaard wanneer je een nieuwe klasse aanmaakt. Je ziet deze niet en kan deze niet aanpassen. Je kan echter daarom altijd objecten met ``new myClass()`` aanmaken.
-
-**Van zodra je echter beslist om zelf één of meerdere constructors te schrijven zal C# zeggen "Ok, jij je zin, nu doe je alles zelf". De default constructor die je gratis kreeg zal ook niet meer bestaan en heb je die dus nodig dan zal je die dus zelf moeten schrijven!**
+**Constructors zijn soms gratis, soms niet.** Een lege default constructor voor je klasse krijg je standaard wanneer je een nieuwe klasse aanmaakt. Je ziet deze niet en kan deze niet aanpassen. Je kan echter daarom altijd objecten met ``new myClass()`` aanmaken.**Van zodra je echter beslist om zelf één of meerdere constructors te schrijven zal C# zeggen "Ok, jij je zin, nu doe je alles zelf". De default constructor die je gratis kreeg zal ook niet meer bestaan en heb je die dus nodig dan zal je die dus zelf moeten schrijven!**
 
 *Een nadeel van C# is dat het soms dingen voor ons achter de schermen doet, en soms niet.* Het is mijn taak je dan ook duidelijk te maken wanneer dat wél en wanneer dat net niét gebeurt. Ik vergelijk het altijd met het werken met aannemers: soms ruimen ze hun eigen rommel op nadien, maar soms ook niet. Alles hangt er van af hoe ik die aannemer heb opgetrommeld.
 
@@ -65,7 +61,6 @@ Een lege default constructor voor je klasse krijg je standaard wanneer je een ni
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-
 
 ### Default constructors
 
@@ -81,14 +76,12 @@ Stel dat we een klasse ``Student`` hebben:
 ```java
 class Student
 {
-        public int UurVanInschrijven {private set, get};
+    public int UurVanInschrijven {private set, get};
 }
 
 ```
 
-We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond (zodat we bijvoorbeeld kunnen weten welke student eerder was ingeschreven).
-
-Eerst schrijven de default constructor, deze ziet er als volgt uit:
+We willen telkens een Student-object wordt aangemaakt bijhouden op welk uur van de dag dit plaatsvond. Eerst schrijven de default constructor, deze ziet er als volgt uit:
 
 ```java
 class Student
@@ -97,10 +90,8 @@ class Student
     {
         // zet hier de code die bij initialisatie moet gebeuren
     }
-
     public int UurVanInschrijven {private set, get};
 }
-
 ```
 
 Zoals verteld moet de constructor de naam van de klasse hebben, ``public`` zijn en geen returntype definiëren.
@@ -130,7 +121,7 @@ Dan zal de property  ``UurVanInschrijven`` van ``eenStudent`` op ``11`` worden i
 
 
 {% hint style='tip' %}
-Constructors zijn soms nogal zwaarwichtig indien je enkel een eenvoudige autopropery een startwaarde wenst te geven. Wanneer dat het geval is mag je dit ook als volgt doen:
+Constructors zijn soms nogal zwaarwichtig indien je enkel een eenvoudige autoproperty een startwaarde wenst te geven. Wanneer dat het geval is mag je dit ook als volgt doen:
 
 ```java
 class Student

@@ -16,7 +16,7 @@ Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructur
 ![](../assets/attention.png)
 Hier zijn we weer!
 
-Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben jij als programmeur uiteindelijk degene die het boeltje moet oplossen. Code, programmeerparadigmas en bibliotheken zijn niet meer dan nuttig gereedschap in jouw arsenaal van programmeertools. Als jij beslist om een hamer als zaag te gebruiken, tja, dan houd ik m'n hart vast voor het resultaat. Dit geldt ook voor de technieken die je in dit boek gaat leren: ze zijn "een" tool, niet meer. Jij zal ze nog steeds zo optimaal mogelijk moeten leren gebruiken. Uiteraard is het doel van dit boek je zo duidelijk mogelijk het verschil én de bruikbaarheid van de verschillende nieuwe technieken aan te leren.
+Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben jij als programmeur uiteindelijk degene die het boeltje moet oplossen. Code, programmeerparadigma's en bibliotheken zijn niet meer dan nuttig gereedschap in jouw arsenaal van programmeertools. Als jij beslist om een hamer als zaag te gebruiken, tja, dan houd ik m'n hart vast voor het resultaat. Dit geldt ook voor de technieken die je in dit boek gaat leren: ze zijn "een" tool, niet meer. Jij zal ze nog steeds zo optimaal mogelijk moeten leren gebruiken. Uiteraard is het doel van dit boek je zo duidelijk mogelijk het verschil én de bruikbaarheid van de verschillende nieuwe technieken aan te leren.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
@@ -117,7 +117,7 @@ while (true)
 <!---{pagebreak} --->
 
 ### Een wereld met OOP: Pong
-Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse truckje om je punt te maken, dus we gaan nog even verder. 
+Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse trucje om je punt te maken, dus we gaan nog even verder. 
 
 Wanneer we Pong vanuit een OOP paradigma willen aanpakken dan is het de bedoeling dat we werken met klassen en objecten. Net zoals in het vorige boek ga ik je ook nu even in het diepe gedeelte van het bad gooien. Wees niet bang, ik zal je er tijdig uithalen (en je zal versteld staan hoeveel code je eigenlijk zult herkennen).
 
@@ -201,7 +201,7 @@ static void Main(string[] args)
 
 De loopcode is herleid tot 2 aanroepen van **methoden op het ``bal1`` object**: ``.Update()`` en ``.TekenOpScherm``. 
 
-Run deze code maar eens. Yups, deze code doet exact hetzelfde als hiervoor. Ook nu krijgen we 1 balletje dat op het scherm rondbotst. 
+Run deze code maar eens. Inderdaad, deze code doet exact hetzelfde als hiervoor. Ook nu krijgen we 1 balletje dat op het scherm rondbotst. 
 
 <!---{pagebreak} --->
 
@@ -298,10 +298,9 @@ Volgende 2 definities druk je best af op een grote poster die je boven je bed ha
 * Een individueel **object** is een **instantie** van een klasse en heeft een eigen *toestand*, *gedrag* en *identiteit*.
 
 Objecten zijn instanties met een eigen levenscyclus die wordt gekenmerkt door:
-*   Een begintoestand: deze wordt verkregen bij het creëren van een object.
-*   Gedrag: deze wordt beschreven door de **methoden** in de klasse.
-*   Een toestand: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datamembers** die beschreven staan in de klasse (properties en instantievariabelen).
-*   Een identiteit : een unieke naam van object zodat andere object ermee kunnen interageren.
+* **Gedrag**: deze wordt beschreven door de **methoden** in de klasse.
+* **Toestand**: deze kan wijzigen door zijn eigen gedrag, of het gedrag van externe impulsen en wordt bepaald door **datamembers** die beschreven staan in de klasse (properties en instantievariabelen). 
+* **Identiteit** : een unieke naam van object zodat andere object ermee kunnen interageren.
 
 {% hint style='tip' %}
 Je zou dit kunnen vergelijken met het grondplan voor een huis dat tien keer in een straat zal gebouwd worden. Het plan is de *klasse*. De effectieve huizen die we, gebaseerd op dat grondplan, bouwen zijn de instanties of objecten van deze klasse en hebben elk een eigen toestand (ander type bakstenen, wel of geen zonnepannelen) en gedrag (rolluiken gaan open als de zon opkomt).

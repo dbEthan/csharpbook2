@@ -1,3 +1,5 @@
+<!---{pagebreak} --->
+
 ### Overloaded constructors
 
 Soms wil je parameters aan een object meegeven bij de creatie ervan. We willen bijvoorbeeld de bijnaam meegeven die het object moet hebben bij het aanmaken.
@@ -19,10 +21,8 @@ class Student
     {
         bijNaam = bijnaamIn;
     }
-
     private string bijNaam;
 }
-
 ```
 
 Dat was eenvoudig, hé?
@@ -41,13 +41,11 @@ class Student
     {
        BijNaam =  DEFBIJNAAM;
     }
-
     //Overloaded
     public Student(string bijnaamIn) 
     {
         BijNaam = bijnaamIn;
     }
-
     public string BijNaam { get; private set;}
 }
 ```
@@ -178,6 +176,9 @@ class Microfoon
 
 **Opgelet:** bij voorgaande code gaat er mogelijk bij sommige van jullie een alarmbelletje af vanwege de kans op quasi dezelfde code in de verschillende constructors. En dat is een terecht alarm! Om te voorkomen dat we steeds dezelfde toewijzingen moeten schrijven in constructors laat C# toe dat je een andere constructor kunt aanroepen bij een constructor call. We gebruiken hier een speciale methode aanroep ``this()`` bij de constructorsignatuur. Via deze aanroep kunnen we dan eventueel parameters meegeven, afhankelijk wat we nodig hebben. De compiler zal aan de hand van de parameters (of het ontbreken) er aan beslissen welke constructor nodig is met behulp van de klassieke *method overload resolution* regels en de **betterness** regel toepassen (zie vorige boek).
 
+<!---{pagebreak} --->
+
+
 Voorgaande klasse gaan we herschrijven zodat alle constructors de bovenste overloaded constructor gebruiken en zo voorkomen dat we te veel dubbele code hebben:
 
 ```java
@@ -190,12 +191,10 @@ class Microfoon
     }
 
     public Microfoon(string merkIn): this(merkIn, false)
-    {
-    }
+    { ...  }
 
     public Microfoon(): this ("Onbekend", true)
-    {
-    }
+    { ...  }
 
     public string Merk { get; set;}
     public bool IsUitverkocht {get; set;}
@@ -221,25 +220,19 @@ Wanneer we een object aanmaken als volgt ``new Microfoon(true)`` dan zal uiteind
 
 <!---{pagebreak} --->
 
-<!---NOBOOKSTART--->
-{% hint style='tip' %}
-<!---NOBOOKEND--->
-<!---{aside}--->
-<!--- {float:right, width:50%} --->
-![](../assets/attention.png)
 
-Maar welke constructors moet ik nu eigenlijk allemaal voorzien? 
 
-Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is minimaal nodig om ervoor te zorgen dat alle variabele die essentieel zijn in je klasse een beginwaarde hebben.
 
-Beeld je volgende klasse voor die een breuk voorstelt:
+#### Welke constructors moet ik nu eigenlijk allemaal voorzien? 
+
+Dit hangt natuurlijk af van de soort klasse dat je maakt. Een constructor is minimaal nodig om ervoor te zorgen dat alle variabele die essentieel zijn in je klasse een beginwaarde hebben. Beeld je volgende klasse voor die een breuk voorstelt:
 
 ```java
 class  Breuk
 {
     public  int Noemer {get; private set;}
     private int Teller {get; private set;}
-    public int BerekenBreuk()
+    public double BerekenBreuk()
     {
         return (double)Teller/Noemer;
     }
@@ -253,8 +246,41 @@ Breuk eenBreuk = new Breuk();
 int resultaat = eenBreuk.BerekenBreuk();  //BAM!Een exception! 
 ```
 
-Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken (en kunnen geen breuk-objecten met de default constructor aangemaakt worden):
+Via een constructor kunnen we dus dit soort bugs voorkomen. We beschermen ontwikkelaars hiermee dat ze jouw klasse foutief gebruiken. Door een overloaded constructor te schrijven die een noemer en teller vereist verplichten we de ontwikkelaar jouw klasse correct te gebruiken (en kunnen geen breuk-objecten met de default constructor aangemaakt worden). 
 
+Eerst veranderen we de autoproperty ``Noemer`` naar een full property:
+
+```java
+private int noemer;
+public  int Noemer 
+{
+    get 
+    { 
+        return noemer;
+    }
+    private set
+    {
+        if(value != 0)
+            noemer = value; 
+        else
+            noemer = value; //of werp Exception op zoals eerder uitgelegd.
+    }
+}
+```
+
+<!---{pagebreak} --->
+
+En vervolgens voegen we een overloaded constructor toe:
+
+```java
+public Breuk(int tellerIn, int noemerIn)
+{
+    Teller = tellerIn;
+    Noemer = noemerIn
+}
+```
+
+Finaal wordt dan onze klasse:
 ```java
 class  Breuk
 {
@@ -267,13 +293,12 @@ class  Breuk
         }
         private set
         {
-            if(value == 0)
-                noemer = 1 ; //of werp Exception op zoals eerder uitgelegd.
+            if(value != 0)
+                noemer = value; 
             else
-                noemer = value;
+                noemer = value; //of werp Exception op zoals eerder uitgelegd.
         }
     }
-
     private int Teller {get; private set;}
 
     public Breuk(int tellerIn, int noemerIn)
@@ -281,23 +306,12 @@ class  Breuk
         Teller = tellerIn;
         Noemer = noemerIn
     }
-
-    //etc.
+}
 ```
 
-Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:
-```java
-Breuk eenBreuk = new Breuk();
-```
+Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:``Breuk eenBreuk = new Breuk();`` Maar ben ik verplicht deze als volgt aan te maken:``Breuk eenBreuk = new Breuk(21,8);``.
 
-Maar ben ik verplicht deze als volgt aan te maken:
-```java
-Breuk eenBreuk = new Breuk(21,8);
-```
-<!---{/aside}--->
-<!---NOBOOKSTART--->
-{% endhint %}
-<!---NOBOOKEND--->
+
 
 <!---{pagebreak} --->
 
@@ -308,48 +322,20 @@ We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerst
 ```java
 class Balletje
 {
-    public Balletje(int startPosX, int startPosY, int startVectorX, int startVectorY)
+    public Balletje(int xin, int yin, int vxIn, int vyIn)
     {
-        X = startPosX;
-        Y = startPosY;
-        VectorX = startVectorX;
-        VectorY = startVectorY;
+        X = xin;
+        Y = yin;
+        VectorX = vxIn;
+        VectorY = vyIn;
     }
 
     public Balletje(): this(5,5,1,1)
     {
+
     }
 
-    public int X { get; set; }
-    public int Y { get; set; }
-    public int VectorX { get; set; }
-    public int VectorY { get; set; }
-
-
-    public void Update()
-    {
-
-        if (X + VectorX >= Console.WindowWidth || X + VectorX < 0)
-        {
-            VectorX = -VectorX;
-        }
-
-        X = X + VectorX;
-
-        if (Y + VectorY >= Console.WindowHeight || Y + VectorY < 0)
-        {
-            VectorY = -VectorY;
-        }
-
-        Y = Y + VectorY;
-    }
-
-    public void TekenOpScherm()
-    {
-        Console.SetCursorPosition(X, Y);
-        Console.Write("O");      
-    }
-}
+    //...
 ```
 
 We kunnen nu op 2 manieren balletjes aanmaken:

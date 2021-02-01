@@ -208,9 +208,7 @@ Held batmand = new Held();
 batmand = supermand;
 ```
 
-Vanaf de laatste lijn zal er geen referentie meer naar het originele object zijn waar ``batmand`` naar verwees in de heap, daar we deze hebben overschreven met een referentie naar het eerste ``Held`` object in ``supermand``. De GC zal dus dat tweede aangemaakte ``Held`` object verwijderen.
-
-Wil je dat niet dan zal je dus minstens 1 variabele moeten hebben die naar de data verwijst. Volgend voorbeeld toont dit:
+Vanaf de laatste lijn zal er geen referentie meer naar het originele object zijn waar ``batmand`` naar verwees in de heap, daar we deze hebben overschreven met een referentie naar het eerste ``Held`` object in ``supermand``. De GC zal dus dat tweede aangemaakte ``Held`` object verwijderen. Wil je dat niet dan zal je dus minstens 1 variabele moeten hebben die naar de data verwijst. Volgend voorbeeld toont dit:
 
 ```java
 Held supermand = new Held();

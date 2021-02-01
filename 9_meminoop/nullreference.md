@@ -79,10 +79,9 @@ Bovenstaande code zal dus gewoon een lege lijn op scherm plaatsen indien ``stud1
 
 ### Return ``null``
 
-Uiteraard mag je dus ook expliciet soms ``null`` teruggeven als resultaat van een methode. Stel dat je een methode hebt die in een array een bepaald object moet zoeken. Wat moet de methode teruggeven als deze niet gevonden wordt? Inderdaad, we geven dan ``null`` terug.
+Uiteraard mag je dus ook expliciet ``null`` teruggeven als resultaat van een methode. Stel dat je een methode hebt die in een array een bepaald object moet zoeken. Wat moet de methode teruggeven als deze niet gevonden wordt? Inderdaad, we geven dan ``null`` terug.
 
-Volgende methode zoekt in een array van studenten naar een student met een specifieke naam en geeft deze terug als resultaat. Enkel als de hele array werd doorlopen en er geen match is wordt er ``null`` teruggegeven. 
-(de werking van arrays van objecten wordt later besproken): 
+Volgende methode zoekt in een array van studenten naar een student met een specifieke naam en geeft deze terug als resultaat. Enkel als de hele array werd doorlopen en er geen match is wordt er ``null`` teruggegeven (de werking van arrays van objecten wordt later besproken): 
 
 ```java
 static Student ZoekStudent(Student[] array, string naam)
@@ -97,6 +96,7 @@ static Student ZoekStudent(Student[] array, string naam)
     return gevonden;
 }
 ```
+
 
 <!---NOBOOKSTART--->
 # Kennisclip

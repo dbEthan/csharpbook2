@@ -7,7 +7,7 @@ We zullen nu enkele basisconcepten van klassen en objecten toelichten aan de han
 
 Stel dat we een klasse willen maken die ons toelaat om objecten te maken die verschillende mensen voorstellen. We willen aan iedere mens kunnen zeggen "Praat eens".
 
-We maken een nieuwe klasse ``Mens`` en maken een plaatsen in de klasse een methode ``Praat``:
+We maken een nieuwe klasse ``Mens`` en plaatsen in de klasse een methode ``Praat``:
 
 ```java
 class Mens
@@ -34,7 +34,7 @@ joske.Praat();
 alfons.Praat();
 ```
 
-Er zal 2x ``Ik ben een mens!`` op het scherm verschijnen. Waarbij telkens ieder object (``joske`` en ``alfons``) zelf verantwoordelijk was dat dit gebeurde.
+Er zal twee maal ``Ik ben een mens!`` op het scherm verschijnen. Waarbij telkens ieder object (``joske`` en ``alfons``) zelf verantwoordelijk was dat dit gebeurde.
 
 #### Public en private access modifiers
 
@@ -80,6 +80,11 @@ class Mens
     }
 }
 ```
+
+{% hint style='tip' %}
+Naast ``private`` (het meest beschermd) en ``public`` (het meest open) zijn er nog een aantal access modifiers die allemaal de toegang tot een klasse meer of minder kunnen inperken. Verderop in het boek zullen we nog ``protected`` (enkel zichtbaar voor overgeërfde klassen) bekijken. Maar weet dat ook nog ``internal`` (enkel binnen dezelfde *assembly*) , ``protected internal`` en ``private protected`` bestaan. 
+In dit boek gaan we ons beperken tot ``private``, ``protected`` en ``public``.
+{% endhint %}
 
 <!---{pagebreak} --->
 
@@ -135,7 +140,7 @@ Het is natuurlijk een beetje vreemd dat nu al onze objecten zeggen dat ze verlie
 
 Voorlopig doen alle objecten van het type ``Mens`` hetzelfde. Ze kunnen praten en zeggen hetzelfde. We weten echter dat objecten ook een interne staat hebben die per object individueel is (we zagen dit reeds toen we balletjes over het scherm lieten botsen: ieder balletje onthield z'n eigen richtingsvector en positie). Dit kunnen we dankzij **instantievariabelen** (ook wel **datavelden** of **datafields** genoemd) oplossen. Dit zullen variabelen zijn waarin zaken kunnen bewaard worden die verschillen per object.
 
-Stel je voor dat we onze mensen een geboortejaar willen geven. Ieder object zal zelf in een instantievariabele bijhouden wanneer ze geboren zijn(het vertellen van geheimen zullen we verderop behandelen):
+Stel je voor dat we onze mensen een geboortejaar willen geven. Ieder object zal zelf in een instantievariabele bijhouden wanneer ze geboren zijn (het vertellen van geheimen zullen we verderop behandelen):
 
 ```java
 class Mens
@@ -151,7 +156,7 @@ class Mens
 ```
 
 Enkele belangrijke concepten:
-* De instantievariabele ``geboorteJaar`` zetten we private: we willen niet dat de buitenwereld het geboortejaar van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw geboortejaar is nu 1799! Ha.". Waarop Adil vloekend verandert in een steenoud mannetje.
+* De instantievariabele ``geboorteJaar`` zetten we private: we willen niet dat de buitenwereld het geboortejaar van een object kan aanpassen. Beeld je in dat dat in de echte wereld ook kon. Dan zou je naar je kameraad kunnen roepen "Hey Adil, jouw geboortejaar is nu 1799! Ha!" Waarop Adil vloekend verandert in een steenoud mannetje.
 * We geven de variabele een beginwaarde ``1970``. Alle objecten zullen dus standaard in het jaar 1970 geboren zijn wanneer we deze met ``new`` aanmaken.
 * We kunnen de inhoud van de instantievariabelen lezen (en veranderen) vanuit andere delen in de code. Zo gebruiken we ``geboorteJaar`` in de tweede lijn van de ``Praat`` methode. Als je die methode nu zou aanroepen dan zou het geboortejaar van het object dat je aanroept mee op het scherm verschijnen.
 
@@ -159,7 +164,7 @@ Enkele belangrijke concepten:
 We moeten ook dringend enkele extra niet-officiële identifier regels in het leven roepen:
 * Klassenamen en methoden in klassen beginnen altijd met een hoofdletter.
 * Alles dat ``public`` is in een klasse begint ook met een hoofdletter.
-* Alles dat ``private`` is begint met een kleine letter (of liggend streepje), tenzij het om eem methode gaat, die begint altijd met een hoofdletter.
+* Alles dat ``private`` is begint met een kleine letter (of liggend streepje), tenzij het om een methode gaat, die begint altijd met een hoofdletter.
 
 Dit zijn geen officiële regels, maar afspraken die veel programmeurs onderling hebben gemaakt. Het maakt de code leesbaarder.
 {% endhint %}
@@ -178,7 +183,7 @@ Niet doen. Simpel! **Instantievariabele mogen NOOIT ``public`` gezet worden.** D
 {% endhint %}
 <!---NOBOOKEND--->
 
-Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we een verjongingsstraal hebben waarmee we het geboortejaar van de mensen steeds met 1 jaar kunnen verhogen (en ze dus een jaar jonger maken!)
+Ok, we zullen maar luisteren naar meneer de agent. Stel nu dat we een verjongingsstraal hebben waarmee we het geboortejaar van de mensen steeds met 1 jaar kunnen verhogen (en ze dus een jaar jonger maken).
 
 ```java
 class Mens
@@ -232,12 +237,12 @@ class Mens
 
     public void VeranderGeboortejaar(int geboorteJaarIn)
     {
-        if(geboorteJaarIn >= 0)
+        if(geboorteJaarIn >= 1900)
             geboorteJaar = geboorteJaarIn;
     }
 ```
 
-Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variabele kan geven. **Objecten zijn verantwoordelijk voor zichzelf** en moeten zichzelf dus ook beschermen zodat de buitenwereld niets met hen doet dat hun eigen werking om zeep helpt.
+Mooi he. Zo voorkomen we dus dat de buitenwereld illegale waarden aan een variabele kan geven (in dit geval kan dus niet voor 1900 geboren zijn). **Objecten zijn verantwoordelijk voor zichzelf** en moeten zichzelf dus ook beschermen zodat de buitenwereld niets met hen doet dat hun eigen werking om zeep helpt.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
@@ -292,5 +297,46 @@ deelnemer1.VeranderLief("camilla");
 deelnemer1.Praat();
 deelnemer2.Praat();
 ```
+<!---{pagebreak} --->
+
+
+<!---NOBOOKSTART--->
+{% hint style='warning' %}
+<!---NOBOOKEND--->
+<!---{aside}--->
+<!--- {float:right, width:50%} --->
+![](../assets/attention.png)
+
+**Klasse "``Studenten``" of "``Student``"?**
+
+Veel beginnende programmeurs maken fouten op het correct kunnen onderscheiden wat de klassen en wat de objecten in hun opgave juist zijn.
+
+Het is altijd belangrijk te begrijpen dat een klasse weliswaar beschrijft hoe alle objecten van dat type werken, maar op zich gaat die beschrijving steeds over 1 object uit de verzameling.
+
+*Say what now?!*
+
+Als je een klasse ``Student`` hebt, dan zal deze eigenschappen hebben zoals ``Punten``, ``Naam`` en ``Geboortejaar``. 
+
+Als je een klasse ``Studenten`` daarentegen hebt, dan is dit vermoedelijk een klasse die beschrijft hoe een groep studenten moet werken in je applicatie. Mogelijk zal je dan properties hebben zoals ``KlasNaam``, ``AantalAfwezigen``, etc. Kortom, eigenschappen over de groep, niet over 1 student.
+
+**"``Level``" of "``Level1``"?**
+
+Een andere veelgemaakte fout is klassen te schrijven, die maar exact één object kan en moet creëren (dit heet een *singleton*). Stel je voor dat je een spel maakt waarin verschillende levels zijn. Een logische keuze zou dan zijn om een klasse ``Level`` te maken (niét ``Levels``) die properties  heeft zoals ``MoeilijkheidsGraad``, ``HeeftGeheimeGrotten``, ``AantalVijanden``, etc.
+
+Vervolgens kunnen we dan instanties maken: *1 object stelt 1 level in het spel voor*. De speler kan dan van level naar level gaan en de code start dan bijvoorbeeld telkens de ``BeginLevel`` methode:
+
+```java
+Level level1 = new Level();
+
+level1.BeginLevel();
+```
+
+Wat dus niet mag zijn **klassen** met namen zoals ``level1``, ``level2``, etc. Vermoedelijk hebben deze klasse 90% gelijkaardige code en is er dus een probleem met wat we de *architectuur* van je code zouden kunnen noemen. Of duidelijker: je snapt niet wat het verschil is tussen klassen en objecten!
+Objecten met namen zoals ``level1`` en ``level2`` zijn wél dus toegestaan, daar ze dan vermoedelijk allemaal van het type ``Level`` zijn. Maar opgelet: als je variabelen hebt die een genummerd zijn (bv ``bal1``, ``bal2``, etc.) dan is de kans groot dat je vervolgens een array van objecten nodig hebt! 
+
+<!---{/aside}--->
+<!---NOBOOKSTART--->
+{% endhint %}
+<!---NOBOOKEND--->
 
 <!---{sample: false}--->

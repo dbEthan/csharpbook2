@@ -12,26 +12,26 @@ Ze zorgen voor een gecontroleerde toegang tot de interne structuur van je object
 
 ### Star Wars en de nood aan properties 
 
-In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de mysterieuze klasse van de Sith Lords. Deze lords lopen met een geheim rond: ze hebben een zogenaamde Sithnaam, een naam die ze enkel mogen bekend maken aan andere Sith Lords, maar niet anders. Voorts heeft een Sith Lord ook een hoeveelheid energie (*The Force*) waarmee hij kattekwaad kan uithangen. Deze energie mag natuurlijk nooit onder nul gezet worden.
+In het Star Wars universum heb je goede oude "Darth Vader". Hij behoort tot de mysterieuze klasse van de Sith Lords. Deze lords lopen met een geheim rond: ze hebben een zogenaamde Sithnaam, een naam die ze enkel mogen bekend maken aan andere Sith Lords, maar aan niemand anders. Voorts heeft een Sith Lord ook een hoeveelheid energie (*The Force*) waarmee hij kattekwaad kan uithangen. Deze energie mag natuurlijk nooit onder nul gezet worden.
 
 
 We kunnen voorgaande als volgt schrijven:
 ```java
 class SithLord
 {
-    private int energy;
+    private int energie;
     private string sithName;
 }
 ```
 
-**Het is uit den boze dat we eenvoudige instantievariabelen (``energy`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
+**Het is uit den boze dat we eenvoudige instantievariabelen (``energie`` en ``name``) ``public`` maken.** Zouden we dat wel doen dan kunnen externe objecten deze geheime informatie uitlezen!
 
 ```java
 SithLord palpatine = new SithLord();
 Console.WriteLine(palpatine.sithName); //dit zal niet werken!
 ```
 
-We willen echter wel van buiten uit het energy-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energy-level op -1000 instellen? Terwijl energy nooit onder 0 mag gaan.
+We willen echter wel van buiten uit het energie-level van een sithLord kunnen instellen. Maar ook hier hetzelfde probleem: wat als we de energie-level op -1000 instellen? Terwijl energie nooit onder 0 mag gaan.
 
 <!---{pagebreak} --->
 
@@ -50,33 +50,33 @@ We behandelen eerst full properties, daar autoproperties een soort afgeleide van
 
 Properties herken je aan de ``get`` en ``set`` keywords in een klasse. Een property is een beschrijving van wat er moet gebeuren indien je informatie uit (**``get``**) een object wilt halen of informatie net in (**``set``**) een object wilt plaatsen.
 
-In volgende voorbeeld maken we een property, genaamd ``Energy`` aan. Deze doet niets anders dan rechtstreeks toegang tot de instantievariabele ``energy`` te geven:
+In volgende voorbeeld maken we een property, genaamd ``Energie`` aan. Deze doet niets anders dan rechtstreeks toegang tot de instantievariabele ``energie`` te geven:
 
 ```java
 class SithLord
 {
-    private int energy;
+    private int energie;
 
-    public int Energy
+    public int Energie
     {
         get
         {
-            return energy;
+            return energie;
         }
         set
         {
-            energy = value;
+            energie = value;
         }
     }
 }
 ```
 
-Dankzij deze code kunnen we nu buiten het object de property ``Energy`` gebruiken als volgt:
+Dankzij deze code kunnen we nu buiten het object de property ``Energie`` gebruiken als volgt:
 
 ```java
 SithLord Vader = new SithLord();
-Vader.Energy = 20; //set
-Console.WriteLine($"Vaders energy is {Vader.Energy}"); //get
+Vader.Energie = 20; //set
+Console.WriteLine($"Vaders energie is {Vader.Energie}"); //get
 ```
 
 <!---{pagebreak} --->
@@ -87,14 +87,14 @@ Laten we eens inzoomen op de full property code.
 
 
 #### Full property:  identifier en datatype
-De eerste lijn van een full property beschrijft de naam (identifier) en datatype van de property: ``public int Energy``
+De eerste lijn van een full property beschrijft de naam (identifier) en datatype van de property: ``public int Energie``
 
 **Een property is altijd ``public``** daar dit de essentie van een property net is "de buitenwereld gecontroleerde toegang tot de interne staat van een object geven".
 
-Vervolgens zeggen we wat voor **datatype** de property moet zijn en geven we het een naam die moet voldoen aan de identifier regels van weleer. Voor de buitenwereld zal een property zich gedragen als een gewone variabele, met de naam ``Energy`` van het type ``int``.
+Vervolgens zeggen we wat voor **datatype** de property moet zijn en geven we het een naam die moet voldoen aan de identifier regels van weleer. Voor de buitenwereld zal een property zich gedragen als een gewone variabele, met de naam ``Energie`` van het type ``int``.
 
 
-Indien je de property gaat gebruiken om een instantievariabele naar buiten beschikbaar te stellen, dan is het een goede gewoonte om dezelfde naam als dat veld te nemen maar nu met een hoofdletter. (dus ``Energy`` i.p.v. ``energy``).
+Indien je de property gaat gebruiken om een instantievariabele naar buiten beschikbaar te stellen, dan is het een goede gewoonte om dezelfde naam als dat veld te nemen maar nu met een hoofdletter (dus ``Energie`` i.p.v. ``energie``).
 
 #### Full property: get gedeelte
 
@@ -103,13 +103,13 @@ Indien je wenst dat de property data **naar buiten** moet sturen, dan schrijven 
 ```java
 get
 {
-    return energy;
+    return energie;
 }
 ```
 
 Dit werkt dus identiek aan een methode met een returntype. **Het element dat je met ``return`` teruggeeft in de get code moet uiteraard van hetzelfde type zijn als waarmee je de property hebt gedefinieerd (``int`` in dit geval).**
 
-We kunnen nu van buitenaf toch de waarde van ``energy`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energy;``.
+We kunnen nu van buitenaf toch de waarde van ``energie`` uitlezen via de property en het get-gedeelte, bijvoorbeeld  ``int uitgelezen = palpatine.Energie;``.
 
 {% hint style='tip' %}
 We mogen eender wat doen in het get-gedeelte (net zoals bij methoden) zolang er finaal maar iets uitgestuurd wordt m.b.v. ``return``. We gaan hier verderop meer over vertellen, want soms is het handig om *getters* te schrijven die de data transformeren voor ze uitgestuurd wordt.
@@ -125,12 +125,12 @@ De waarde die we van buitenuit krijgen (als een parameter zeg maar) zal altijd i
 Deze ``value`` parameter is een essentiëel onderdeel van de ``set`` syntax en kan je niet hernoemen. 
 {% endhint %}
 
-Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energy = value;``. Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in het volgende deel zullen uitleggen.
+Vervolgens kunnen we ``value`` toewijzen aan de interne variabele indien gewenst: ``energie = value;``. Uiteraard kunnen we die toewijzing dus ook gecontroleerd laten gebeuren, wat we in het volgende deel zullen uitleggen.
 
-We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energy`` toch bereiken: ``palpatine.Energy = 50;``.
+We kunnen vanaf nu van buitenaf waarden toewijzen aan de property en zo ``energie`` toch bereiken: ``palpatine.Energie = 50;``.
 
 {% hint style='warning' %}
-Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt ten stelligste afgeraden! NIET DOEN!**). Dit mag dus ook:
+Je bent dus niet verplicht om een property te maken wiens naam overeen komt met een bestaande instantievariabele (**maar dit wordt ten stelligste afgeraden**). Dit mag dus ook:
 
 ```java
 class Auto
@@ -147,36 +147,36 @@ class Auto
 {% endhint %}
 
 {% hint style='tip' %}
-**Snel properties schrijven**
-
-Visual Studio heeft een ingebouwde snippet om snel een full property, inclusief een bijhorende private instantievariabele, te schrijven. **Typ ``propfull`` gevolgd door twee tabs**
+Visual Studio heeft een ingebouwde snippet om snel een full property, inclusief een bijhorende private instantievariabele, te schrijven. **Typ ``propfull`` gevolgd door twee maal op de tab-toets te duwen.**
 {% endhint %}
+
+<!---{pagebreak} --->
 
 
 ### Full property met toegangscontrole
-De full property ``Energy`` heeft nog steeds het probleem dat we negatieve waarden kunnen toewijzen (via de ``set``) die dan vervolgens zal toegewezen worden aan ``energy``.
+De full property ``Energie`` heeft nog steeds het probleem dat we negatieve waarden kunnen toewijzen (via de ``set``) die dan vervolgens zal toegewezen worden aan ``energie``.
 
 **Properties hebben echter de mogelijkheid om op te treden als wachters van en naar de interne staat van objecten.**
 
 We kunnen in de ``set`` code extra controles inbouwen. Daar de ``value`` variabele de waarde krijgt die we aan de property van buiten af geven, kunnen we deze dus controleren en , indien nodig, bijvoorbeeld niet toewijzen. Volgende voorbeeld zal enkel de waarde toewijzen indien deze groter of gelijk aan 0 is:
 
 ```java
-public int Energy
+public int Energie
 {
     get
     {
-        return energy;
+        return energie;
     }
     set
     {
         if(value >= 0)
-            energy = value;
+            energie = value;
     }
 }
 ```
 
 Volgende lijn zal dus geen effect hebben:
-`` palpatine.Energy = -1;``
+`` palpatine.Energie = -1;``
 
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
@@ -195,7 +195,7 @@ We zijn niet verplicht om zowel de ``get`` en de ``set`` code van een property t
 * **Write-only property**: heeft geen ``get``.
 * **Read-only property**: heeft geen  ``set``.
 * **Read-only property met private ``set``** (het omgekeerde , een private ``get``, zal je zelden tegenkomen).
-* **Read-only property die data transformeert**: deze ga je véél kunnen gebruiken.
+* **Read-only property die data transformeert**: om interne data in een andere vorm uit je object te krijgen.
 
 
 #### Write-only property
@@ -207,16 +207,16 @@ Dit soort properties zijn handig indien je informatie naar een object wenst te s
 
 
 ```java
-   public int Energy
+   public int Energie
     {
         set
         {
             if(value >= 0)
-                energy = value;
+                energie = value;
         }
     }
 ```
-We kunnen dus enkel ``energy`` een waarde geven, maar niet van buitenuit uitlezen.
+We kunnen dus enkel ``energie`` een waarde geven, maar niet van buitenuit uitlezen.
 
 <!---{pagebreak} --->
 
@@ -228,15 +228,15 @@ Letterlijk het omgekeerde van een write-only property. Deze gebruik je vaak wann
 ![](../assets/6_klassen/readonlyprop.png)
 
 ```java
-   public int Energy
+   public int Energie
     {
         get
         {
-            return energy;
+            return energie;
         }
     }
 ```
-We kunnen  enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
+We kunnen  enkel ``energie`` van buitenuit uitlezen, maar niet aanpassen.
 
 
 {% hint style='warning' %}
@@ -255,21 +255,21 @@ We kunnen  enkel ``energy`` van buitenuit uitlezen, maar niet aanpassen.
 Soms gebeurt het dat we van buitenuit enkel de gebruiker de property read-only willen maken. We willen echter intern (in de klasse zelf) nog steeds controleren dat er geen illegale waarden aan private instantievariabelen worden gegeven. Op dat moment definiëren we een read-only property met een private setter:
 
 ```java
-   public int Energy
+   public int Energie
     {
         get
         {
-            return energy;
+            return energie;
         }
         private set
         {
             if(value >= 0)
-                energy = value;
+                energie = value;
         }
     }
 ```
 
-Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(palpatine.Energy);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``palpatine.Energy = 65``; ongeacht of deze geldig is of niet.
+Van buitenuit zal enkel code werken die de ``get`` van deze property aanroept: ``Console.WriteLine(palpatine.Energie);``. Code die de ``set`` van buitenuit nodig heeft zal een fout geven zoals: ``palpatine.Energie = 65``; ongeacht of deze geldig is of niet.
 
 {% hint style='warning' %}
 Het is een goede gewoonte om **altijd** via de properties je interne variabele aan te passen en niet rechtstreeks via de instantievariabele zelf.
@@ -288,40 +288,40 @@ Het is een goede gewoonte om **altijd** via de properties je interne variabele a
 Lukt het een beetje? Properties zijn in het begin wat overweldigend, maar geloof me: ze zijn zowat dé belangrijkste bewoners in de .NET/C# wereld.
 
 
-**Nu even goed opletten**: indien we **IN** het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet omzeilt worden. Kijk zelf naar volgende **slechte** codevoorbeeld:
+**Nu even goed opletten**: indien we **IN** het object de instantievariabelen willen aanpassen  dan is het een goede gewoonte om dat **via de property** te doen (ook al zit je in het object zelf en heb dus eigenlijk de property niet nodig). Zo zorgen we ervoor dat de bestaande controle in de property niet wordt omzeilt. Kijk zelf naar volgende **slechte** codevoorbeeld:
 
 ```java
 class SithLord
 {
-    private int energy;
+    private int energie;
     private string sithName;
     public void ResetLord()
     {
-        energy = -1;
+        energie = -1;
     }
-    public int Energy
+    public int Energie
     {
         get
         {
-            return energy;
+            return energie;
         }
         private set
         {
             if(value >= 0) 
-                energy = value;
+                energie = value;
         }
     }
 }
 ```
 
-De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energy terug te verlagen. Door echter ``energy = -1;`` te schrijven geven we dus -1 rechtstreeks aan ``energy``. Nochtans is dit een illegale waarde volgens de set-code van de property.
+De nieuw toegevoegde methode ``ResetLord`` willen we gebruiken om de lord z'n energie terug te verlagen. Door echter ``energie = -1;`` te schrijven geven we dus -1 rechtstreeks aan ``energie``. Nochtans is dit een illegale waarde volgens de set-code van de property.
 
-**We moeten dus in de methode ook expliciet via de property gaan** om bugs te voorkomen en dus gaan we in ``ResetLord``schrijven naar de property ``Energy``  én niet rechtstreeks naar de instantievariabele ``energy``:
+**We moeten dus in de methode ook expliciet via de property gaan** om bugs te voorkomen en dus gaan we in ``ResetLord``schrijven naar de property ``Energie``  én niet rechtstreeks naar de instantievariabele ``energie``:
 
 ```java
 public void ResetLord()
 {
-    Energy = -1; // Energy i.p.v. energy
+    Energie = -1; // Energie i.p.v. energie
 }
 ```
 <!---{/aside}--->
@@ -380,7 +380,6 @@ Zo kan je eenvoudige de volgende klasse ``Persoon`` herschrijven met behulp van 
 ```java
 public class Person
 {
-
     private string voornaam;
     private int geboorteJaar;
 
@@ -408,14 +407,14 @@ public class Person
 }
 ```
 
-Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk koter eenvoudiger om te lezen. De private instantievariabelen zijn niét meer aanwezig. C# gaat dit voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
+Beide klassen hebben exact dezelfde functionaliteit, echter is de laatste klasse aanzienlijk korter en dus eenvoudiger om te lezen. De private instantievariabelen zijn niét meer aanwezig. C# gaat die voor z'n rekening nemen. Alle code zal dus via de properties moeten gaan.
 
 {% hint style='tip' %}
-Vaak zal je klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoproperties vervangen door full properties.
+Vaak zal je nieuwe klassen eerst met autoproperties beschrijven. Naarmate de specificaties dan vereisen dat er bepaalde controles of transformaties moeten gebeuren, zal je stelselmatig autoproperties vervangen door full properties.
 
 Dit kan trouwens automatisch in VS: selecteer de autoprop in kwestie en klik dan vooraan op de schroevendraaier en kies "Convert to full property".
 
-**Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat we hier uitleggen. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is zogenaamde **Expression Bodied Member Syntax (EBM)**. We behandelen deze (nuttige) syntax kort in de appendix van dit boek.
+**Opgelet**: Merk op dat de syntax die VS gebruikt om een full property te schrijven anders is dan wat we hier uitleggen. Wanneer je VS laat doen krijg je een oplossing met allerlei ``=>`` tekens. Dit is zogenaamde **Expression Bodied Member syntax (EBM)**. We behandelen deze (nieuwere) C# syntax in de appendix.
 {% endhint %}
 
 ### Beginwaarden van autoproperties
@@ -426,7 +425,7 @@ Je mag autoproperties beginwaarden geven door de waarde achter de property te sc
 public int GeboorteJaar {get;set;} = 2002;
 ```
 
-Al je objecten zullen nu als geboortejaar 2002 hebben .
+Al je objecten zullen nu als geboortejaar 2002 hebben  wanneer ze geïnstantieerd worden.
 
 {% hint style='warning' %}
 ### Altijd auto-properties? 
@@ -452,6 +451,8 @@ public string Voornaam { get; private set; }
 ```
 
 En uiteraard kunnen we dan de instantievariabele ``voornaam`` uit de code verwijderen.
+
+<!---{pagebreak} --->
 
 Een andere manier die ook kan is als volgt:
 ```java

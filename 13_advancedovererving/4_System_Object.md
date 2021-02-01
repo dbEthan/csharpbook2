@@ -149,7 +149,7 @@ Stel dat we vinden dat een student gelijk is aan een andere student indien z'n `
 public override bool Equals(Object o)
 {  
     Student temp = (Student)o; //Zie opmerking na code!
-    return (GeboorteJaar == temp.GeboorteJaar && Voornaam == temp.Voornaam)
+    return (GeboorteJaar == temp.GeboorteJaar && Voornaam == temp.Voornaam);
 }
 ```
 

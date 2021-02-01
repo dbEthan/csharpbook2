@@ -44,11 +44,11 @@ Volgende tabel vat samen welke type in welk geheugen wordt bewaard:
 
 Waarom plaatsen we niet alles in de stack? De reden hiervoor is dat bij het compileren van je applicatie er reeds zal berekend worden hoeveel geheugen de stack zal nodig hebben. Wanneer je programma dus later wordt uitgevoerd weet het OS perfect hoeveel geheugen het minstens moet reserveren bij het besturingssysteem.
 
-Er is echter een probleem: de compiler kan niet alles perfect berekenen of voorspellen. Een variabele van het type ``int`` is perfect geweten hoe groot die zal zijn (32 bit). Maar wat met een string die je aan de gebruiker vraagt? Of wat met een array waarvan we pas tijdens de uitvoer de lengte gaan berekenen gebaseerd op *runtime* informatie?
+Er is echter een probleem: de compiler kan niet alles perfect berekenen of voorspellen. Va een variabele van het type ``int`` is perfect geweten hoe groot die zal zijn (32 bit). Maar wat met een ``string`` die je aan de gebruiker vraagt? Of wat met een array waarvan we pas tijdens de uitvoer de lengte gaan berekenen gebaseerd op *runtime* informatie?
 
-Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid stackgeheugen voor een array te reserveren als we niet weten hoe groot die zal worden. Beeld je in dat alle applicaties op je computer *voor alle zekerheid* een halve gigabyte aan geheugen zouden vragen: "just in case". Je computer zou enkele terrabyte aan geheugen nodig hebben. Het is dus veel realistischer om enkel het geheugen te reserveren waar de compiler 100% zeker van is dat deze zal nodig zijn.
+Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid stackgeheugen voor een array te reserveren als we niet weten hoe groot die zal worden. Beeld je in dat alle applicaties op je computer *voor alle zekerheid* een halve gigabyte aan geheugen zouden vragen. Je computer zou enkele terrabyte aan geheugen nodig hebben. Het is dus veel realistischer om enkel het geheugen te reserveren waar de compiler 100% zeker van is dat deze zal nodig zijn.
 
-De heap laat ons toe om geheugen op een wat minder gestructureerde manier in te palmen. Tijdens de uitvoer van het programma zal de heap als het ware dienst doen als een grote zandbak waar eender welke plek kan ingepalmd worden om zaken te bewaren (op voorwaarde dat die vrij is natuurlijk) De stack daarentegen is het kleine bankje naast de zandbak: handig, snel, en perfect geweten hoe groot.
+De heap laat ons toe om geheugen op een wat minder gestructureerde manier in te palmen. Tijdens de uitvoer van het programma zal de heap als het ware dienst doen als een grote zandbak waar eender welke plek kan ingepalmd worden om zaken te bewaren (op voorwaarde dat die vrij is natuurlijk). De stack daarentegen is het kleine bankje naast de zandbak: handig, snel, en perfect geweten hoe groot.
 
 <!---{pagebreak} --->
 
@@ -57,9 +57,9 @@ De heap laat ons toe om geheugen op een wat minder gestructureerde manier in te 
 
 **Value** type variabelen worden in de stack bewaard. **De effectieve waarde van de variabele wordt in de stack bewaard.**
 Dit zijn alle gekende, 'eenvoudige' datatypes die we totnogtoe gezien hebben, inclusief enums en structs:
-* ``sbyte``, ``byte``, ``short``, ``ushort``, ``int``, ``uint``, ``long``, ``ulong``, ``char``, ``float``, ``double``, ``decimal``, ``bool``
-* structs (niet besproken in dit boek)
-* enums (zie het vorige boek)
+* ``sbyte``, ``byte``, ``short``, ``ushort``, ``int``, ``uint``, ``long``, ``ulong``, ``char``, ``float``, ``double``, ``decimal``, ``bool``.
+* structs (niet besproken in dit boek).
+* enums (zie het vorige boek).
 
 ### = operator bij value types
 
@@ -114,8 +114,8 @@ Student stud = new Student();
 
 Wat gebeurt er hier?
 
-1. ``new Student()``  : ``new`` roept de constructor van ``Student`` aan. Deze zal een constructor in de **heap** aanmaken en vervolgens de geheugenlocatie teruggeven.
-2. Een variabele ``stud`` wordt in de **stack** aangemaakt.
+1. ``new Student()``  : ``new`` roept de constructor van ``Student`` aan. Deze zal met behulp van een constructor een object in de **heap** aanmaken en vervolgens de geheugenlocatie ervan teruggeven.
+2. Een variabele ``stud`` wordt in de **stack** aangemaakt en mag enkel referentie naar objecten van het type ``Student`` bewaren.
 3. De geheugenlocatie uit de eerste stap wordt vervolgens in ``stud`` opgeslagen in de stack.
 
 Laten we eens inzoomen op voorgaande door de code even in 2 delen op te splitsen:
@@ -128,7 +128,7 @@ stud = new Student();
 Het geheugen na lijn 1 ziet er zo uit:
 
 <!--- {width:90%} --->
-![Na de lijn: Student stud;](../assets/6_klassen/memzoom1.png)
+![Na de lijn: Student stud; Merk op dat er eigenlijk de waarde ``null`` in ``stud`` zal staan, niet *leeg. ](../assets/6_klassen/memzoom1.png)
 
 <!---{pagebreak} --->
 Lijn 2 gaan we nog trager bekijken. Eerst zal het gedeelte rechts van de ``=``-operator uitgevoerd worden. Er wordt dus **in de heap** een nieuw ``Student``-object aangemaakt:
@@ -143,7 +143,7 @@ Vervolgens wordt de toekenning toegepast en wordt het geheugenadres van het obje
 ![Na: stud = new Student();](../assets/6_klassen/memzoom3.png)
 
 {% hint style='warning' %}
-We gaan nogal licht over het ``new``-keyword. Maar zoals je merkt is dit een ongelooflijk belangrijk mechanisme in de wereld van de objecten. Het brengt letterlijk objecten tot leven (in de heap) en zal als resultaat laten weten op welke plek in het geheugen het object staat.
+We gaan nogal licht over het ``new``-keyword en de constructor. Maar zoals je merkt is dit een ongelooflijk belangrijk mechanisme in de wereld van de objecten. Het brengt letterlijk objecten tot leven (in de heap) en zal als resultaat laten weten op welke plek in het geheugen het object staat.
 {% endhint %}
 
 <!---{pagebreak} --->
@@ -187,56 +187,8 @@ Console.WriteLine(a.Naam);
 We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``a`` naar het zelfde object in de heap verwijzen. Het originele "abba"-object zijn we kwijt en zal verdwijnen (zie Garbage collector verderop).
 
 {% hint style='warning' %}
-De meeste klassen zullen met value type-properties en instantievariabelen werken in zich, toch worden ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm van z'n inhoud wordt in de heap bewaard.
+De meeste klassen zullen met value type-properties en instantievariabelen werken in zich, toch worden deze ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm (*datatypes*) van z'n inhoud wordt in de heap bewaard.
 {% endhint %}
-
-<!---{pagebreak} --->
-
-### Methoden en reference parameters
-
-Ook bij methoden geven we de dus de referentie naar de waarde mee. In de methode kunnen we dus zaken aanpassen van de parameter en dan passen we eigenlijk de originele variabele aan:
-```java
-void VerhoogEersteElementInArray(int[] a)
-{
-   a[0]++;
-   Console.WriteLine($"In methode {a[0]}");
-}
-
-//Elders:
-int[] getallen = {5,3,2};
-VerhoogEersteElementInArray(getallen);
-Console.WriteLine($"Na methode {getallen[0]}");
-```
-
-We krijgen als uitvoer:
-```
-In methode 6
-Na methode 6
-```
-
-{% hint style='warning' %}
-**Opgelet:** Wanneer we een methode hebben die een value type aanvaardt en we geven één element van de array mee dan geven we dus een kopie van de actuele waarde mee!
-{% endhint %}
-
-```java
-void VerhoogParameter(int a)
-{
-    a++;
-    Console.WriteLine($"In methode {a}");
-}
-
-//Elders:
-int[] getallen = {5,3,2};
-VerhoogParameter(getallen[0]); //<= VALUE TYPE!
-Console.WriteLine($"Na methode {getallen[0]}");
-```
-
-De output bewijst dit:
-
-```
-In methode 6
-Na methode 5
-```
 
 <!---{pagebreak} --->
 
@@ -246,31 +198,31 @@ De GC zal geregeld het geheugen doorlopen en kijken of er in de heap data staat 
 
 
 <!--- {width:70%} --->
-![Data in de heap waar geen referenties naar wijzen zullen ten gepaste tijde verwijderd worden](../assets/5_arrays/gc2.png)
+![Objecten in de heap waar geen referenties naar wijzen zullen ten gepaste tijde verwijderd worden.](../assets/5_arrays/gc2.png)
 
 In dit voorbeeld zien we dit in actie:
 
 ```java
-int[] array1 = {1,2,3};
-int[] array2 = {3,4,5};
-array2 = array1;
+Held supermand = new Held();
+Held batmand = new Held();
+batmand = supermand;
 ```
 
-Vanaf de laatste lijn zal er geen referentie meer naar ``{3,4,5}`` zijn in de heap, daar we deze hebben overschreven met een referentie naar ``{1,2,3}``. De GC zal dus deze data verwijderen.
+Vanaf de laatste lijn zal er geen referentie meer naar het originele object zijn waar ``batmand`` naar verwees in de heap, daar we deze hebben overschreven met een referentie naar het eerste ``Held`` object in ``supermand``. De GC zal dus dat tweede aangemaakte ``Held`` object verwijderen.
 
 Wil je dat niet dan zal je dus minstens 1 variabele moeten hebben die naar de data verwijst. Volgend voorbeeld toont dit:
 
 ```java
-int[] array1 = {1,2,3};
-int[] array2 = {3,4,5};
-int[] bewaarArray = array2;
-array2 = array;
+Held supermand = new Held();
+Held batmand = new Held();
+Held bewaarEersteHeld = batmand;
+batmand = supermand;
 ```
-De variabele ``bewaarArray`` houdt dus een referentie naar ``{3,4,5}`` bij en we kunnen dus later via deze variabele alsnog aan de originele data.
+De variabele ``bewaarEersteHeld`` houdt dus een referentie naar die in ``batmand`` bij en we kunnen dus later via deze variabele alsnog aan de originele data.
 
 {% hint style='warning' %}
 De GC werkt niet continue daar dit te veel overhead van je computer zou vereisen. De GC zal gewoon om de zoveel tijd alle gereserveerde geheugenplekken van de applicatie controleren en die delen verwijderen die niet meer nodig zijn.  
-Je kan de GC manueel de opdracht geven om een opkuisbeurt te starten (``GC.Collect()``) maar dit is ten stelligste af te raden! De GC weet meestal beter dan ons wanneer er gekuist moet worden.
+Je kan de GC manueel de opdracht geven om een opkuisbeurt te starten met ``GC.Collect()`` maar dit is ten stelligste af te raden! De GC weet meestal beter dan ons wanneer er gekuist moet worden.
 {% endhint %}
 
 <!---NOBOOKSTART--->

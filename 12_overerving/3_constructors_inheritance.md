@@ -118,7 +118,7 @@ class Soldaat
 
 class VeldArts:Soldaat
 {
-   public VeldArts(bool canSh): base(canSh)
+   public VeldArts(bool kanSchieten): base(kanSchieten)
    {} 
 
    public VeldArts():base(true)  //Default
@@ -128,7 +128,7 @@ class VeldArts:Soldaat
 }
 ```
 
-Merk op hoe we de formele parameter ``canSh`` doorgeven als actuele parameter aan ``base``-aanroep.
+Merk op hoe we de formele parameter ``kanSchieten`` doorgeven als actuele parameter aan ``base``-aanroep.
 
 Uiteraard mag je ook de default constructor aanroepen vanuit de child-constructor, alle combinaties zijn mogelijk (zolang de constructor in kwestie maar bestaat in de parent-klasse).
 

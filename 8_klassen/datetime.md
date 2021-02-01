@@ -14,7 +14,7 @@ Zoals je vermoedelijk al doorhebt hebben we met properties en methoden nog maar 
 
 Om je toch al een voorsmaakje van de kracht van klassen en objecten te geven, gaan we eens kijken naar één van de vele klassen die je tot je beschikking hebt in C#. Je hebt al leren werken met bijvoorbeeld de ``Random`` klasse, maar ook al met wat speciale *static klassen* zoals de ``Math``- en ``Console``-bibliotheek die je kan gebruiken ZONDER dat je er objecten van moet aanmaken (het keyword ``static`` is daar de oorzaak van).
 
-Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse, die, je raadt het nooit, toelaat om de tijd en/of datum in een variabele te gebruiken.
+Nog zo'n handige ingebouwde klasse is de ``DateTime`` klasse, die, je raadt het nooit, toelaat om de tijd en/of datum in een object voor te stellen.
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
@@ -28,7 +28,7 @@ De .NET klasse ``DateTime`` is de ideale manier om te leren werken met objecten.
 Er zijn 2 manieren om ``DateTime`` objecten aan te maken:
 
 1. Door aan de klasse de huidige datum en tijd te vragen via ``DateTime.Now``. 
-2. Door manueel de datum en tijd in te stellen via de **constructor** (een concept dat we binnen 2 hoofdstukken uit de doeken gaan doen)
+2. Door manueel de datum en tijd in te stellen met het ``new`` keyword en de **klasseconstructor** (een concept dat we binnen 2 hoofdstukken uit de doeken gaan doen)
 
 #### DateTime.Now
 
@@ -43,7 +43,7 @@ Console.WriteLine(currentTime);
 ``DateTime.Now`` is een zogenaamde **static property** wat verderop in het boek zal uitgelegd worden. 
 {% endhint %}
 
-#### Met constructor
+#### Met constructor en ``new``
 
 De constructor van een klasse laat toe om bij het maken van een nieuw object, beginwaarden voor bepaalde instantievariabelen of properties mee te geven. De ``DateTime`` klasse heeft meerdere constructors gedefiniëerd zodat je bijvoorbeeld een object kan aanmaken dat bij de start reeds de geboortedatum van de auteur bevat:
 
@@ -64,7 +64,7 @@ DateTime trouwMoment = new DateTime(2017, 4, 21, 10, 00,34 );
 
 Van zodra je een ``DateTime`` object hebt gemaakt zijn er tal van nuttige methoden die je er op kan aanroepen. Visual Studio is zo vriendelijk om dit te visualiseren wanneer we de dot-operator typen achter een object:
 
-![Iedere kubus stelt een methode voor. Iedere engelse sleutel een property.](../assets/6_klassen/datemethods.png)
+![Iedere kubus stelt een methode voor. Iedere Engelse sleutel een property.](../assets/6_klassen/datemethods.png)
 
 
 #### Add-methoden
@@ -79,11 +79,11 @@ Deze methoden kan je gebruiken om een bepaalde aantal dagen, uren, minuten op te
 
 Het object zal voor ons de "berekening" hiervan doen en vervolgens een **nieuw DateTime object** teruggeven dat je moet bewaren wil je er iets mee doen.
 
-In volgende voorbeeld wil ik ontdekken op welke datum de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag)
+In volgende voorbeeld wil ik ontdekken op welke datum de wittebroodsweken van m'n huwelijk eindigen (pakweg 5 weken na de trouwdag).
 
 ```java
 DateTime eindeWitteBroodsweken = trouwMoment.AddDays(35);
-Console.WriteLine(eindeWitteBroodsweken)
+Console.WriteLine(eindeWitteBroodsweken);
 ```
 
 ### DateTime properties
@@ -98,15 +98,15 @@ Enkele nuttige properties van ``DateTime`` zijn: ``Date``, ``Day``, ``DayOfWeek`
 Een voorbeeld:
 
 ```java
-Console.WriteLine($"Einde in maand nr: {eindeWitteBroodsweken.Month}");
-Console.WriteLine($"Dat is een {eindeWitteBroodsweken.DayOfWeek}");
+Console.WriteLine($"Einde in maand nr: {eindeWitteBroodsweken.Month}.");
+Console.WriteLine($"Dat is een {eindeWitteBroodsweken.DayOfWeek}.");
 ```
 
 Dit geeft op het scherm: 
 
 ```text
-Je wittebroodsweken eindigen in maand nummer: 5
-Dat is een Friday
+Je wittebroodsweken eindigen in maand nummer: 5.
+Dat is een Friday.
 ```
 
 ### Static methoden
@@ -121,12 +121,12 @@ We behandelen ``static`` uitgebreid verderop in het boek.
 Parsen laat toe dat je strings omzet naar een ``DateTime`` object. Dit is handig als je bijvoorbeeld de gebruiker via ``Console.ReadLine()`` tijd en datum wilt laten invoeren:
 
 ```java
-string date_string = Console.ReadLine(); 
-DateTime dt = DateTime.Parse(date_string);
-Console.WriteLine(dt);
+string datumInvoer = Console.ReadLine(); 
+DateTime datumVerwerkt = DateTime.Parse(datumInvoer);
+Console.WriteLine(datumVerwerkt);
 ```
 
-Indien je nu dit programma'tje zou uitvoeren en als gebruiker "8/11/2016" zou intypen, dan zal deze datum geparsed worden en in het object ``dt`` komen.
+Indien je nu dit programma'tje zou uitvoeren en als gebruiker "8/11/2016" zou intypen, dan zal deze datum geparsed worden en in het object ``datumVerwerkt`` komen.
 
 {% hint style='tip' %}
 Zoals je ziet roepen we ``Parse`` aan op ``DateTime`` en dus niet op een specifiek object. Dat was ook zo reeds bijvoorbeeld bij ``int.Parse`` wat dus doet vermoeden dat zelfs het ``int`` datatype eigenlijk een klasse is!
@@ -134,12 +134,12 @@ Zoals je ziet roepen we ``Parse`` aan op ``DateTime`` en dus niet op een specifi
 
 #### IsLeapYear
 
-Deze nuttige methode geeft een ``bool`` terug om aan te geven of het meegegeven object een schrikkeljaar is of niet:
+Deze nuttige methode geeft een ``bool`` terug om aan te geven of de actuele parameter (type ``int``) een schrikkeljaar voorstelt of niet:
 
 ```java
 DateTime vandaag = DateTime.Now;
 if(DateTime.IsLeapYear(vandaag.Year))
-    Console.WriteLine("Dit jaar is een schrikkeljaar");
+    Console.WriteLine("Dit jaar is een schrikkeljaar.");
 ```
 
 ### TimeSpan 
@@ -154,6 +154,14 @@ TimeSpan verschil = vandaag - geboorteDochter;
 
 Console.WriteLine($"{verschil.TotalDays} dagen sinds geboorte dochter.");
 ```
+
+{% hint style='tip' %}
+Je zal de ``DateTime`` klasse in véél van je projecten kunnen gebruiken waar je iets met tijd, tijdsverschillen of datums wilt doen. We hebben de klasse in deze sectie echter geen eer aangedaan. De klasse is veel krachtiger dan we hier hebben doen uitschijnen. Het is een goede gewoonte als beginnende programmeur om steeds de documentatie van nieuwe klasse er op na te slaan. Wanneer je in je browser zoekt op "C#" gevolgd door de naam van de klasse dan zal je zo goed als zeker als eerste *hit* de officiële .NET documentatie krijgen op **docs.microsoft.com**.
+{% endhint %}
+
+
+
+
 
 <!---{sample: false}--->
 

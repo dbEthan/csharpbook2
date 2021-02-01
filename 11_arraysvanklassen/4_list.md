@@ -73,7 +73,7 @@ List<Pokemon> pokedex = new List<Pokemon>()
 
 ```java
 Console.WriteLine(mijnPersonages[3]);
-mijnPersonages[2] = "Torbjorn";`
+mijnPersonages[2] = "Torbjorn";
 ```
 
 Ook de klassieke werking met loops blijft gelden. De enige aanpassing is dat ``List<>`` niet met ``Length`` werkt maar met **``Count``**:

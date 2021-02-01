@@ -1,11 +1,11 @@
 <!---{sample: true}--->
 # Object Oriented Programming
 
-In het vorige boek leerden we eigenlijk *gestructureerd programmeren* wat een zogenaamd programmeerparadigma is uit de jaren zestig. Hierbij schrijven we code gebruik makend van methoden, loops en beslissingsstructuren. Op zich blijft dit een erg nuttige manier van programmeren, wanneer we echter bij complexere applicaties komen dan merken we dat met gestructureerd programmeren we redelijk snel tot minder intuïtieve en soms heel complexe code aanbelanden. 
+In het vorige boek leerden we eigenlijk *gestructureerd programmeren* wat een programmeerparadigma is uit de jaren zestig. Hierbij schrijven we code gebruik makend van methoden, loops en beslissingsstructuren. Op zich blijft dit een erg nuttige manier van programmeren. Wanneer we echter bij complexere applicaties komen dan merken we dat met gestructureerd programmeren we redelijk snel tot minder intuïtieve en soms nodeloos complexe code aanbelanden. 
  
-Dat moet dus anders kunnen. Komt u binnen, **Object georiënteerd programmeren** (**OOP**). OOP is een manier van programmeren (*programmeerparadigma*) die voortbouwt op gestructureerd programmeren, maar die toelaat veel krachtigere applicaties te ontwikkelen.
+Dat moet dus anders kunnen. Komt u binnen, **Object georiënteerd programmeren** (**OOP**). OOP is een manier van programmeren die voortbouwt op gestructureerd programmeren, maar die toelaat veel krachtigere applicaties te ontwikkelen.
 
-Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructureerde code zullen bevatten (loops, methoden en beslissingsstructuren), maar die onze code (hopelijk) een pak overzichtelijker en minder complex gaan maken. Dankzij OOP gaan we onze code meer modulair, leesbaarder en onderhoudsvriendelijker maken én tegelijkertijd zal onze code veel krachtiger worden en daardoor complexere zaken eenvoudiger kunnen "oplossen".
+Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructureerde code zullen bevatten (loops, methoden en beslissingsstructuren), maar die onze code (hopelijk) een pak overzichtelijker en minder complex gaan maken. Dankzij OOP gaan we onze code meer modulair, leesbaarder en onderhoudsvriendelijker maken én tegelijkertijd zal ze veel krachtiger worden en daardoor complexere zaken eenvoudiger kunnen "oplossen".
 
 
 <!---NOBOOKSTART--->
@@ -16,16 +16,16 @@ Bij OOP draait alles rond *klassen en objecten* die intern nog steeds gestructur
 ![](../assets/attention.png)
 Hier zijn we weer!
 
-Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben jij als programmeur uiteindelijk degene die het boeltje moet oplossen. Code, programmeerparadigma's en bibliotheken zijn niet meer dan nuttig gereedschap in jouw arsenaal van programmeertools. Als jij beslist om een hamer als zaag te gebruiken, tja, dan houd ik m'n hart vast voor het resultaat. Dit geldt ook voor de technieken die je in dit boek gaat leren: ze zijn "een" tool, niet meer. Jij zal ze nog steeds zo optimaal mogelijk moeten leren gebruiken. Uiteraard is het doel van dit boek je zo duidelijk mogelijk het verschil én de bruikbaarheid van de verschillende nieuwe technieken aan te leren.
+Ik zet "oplossen" tussen aanhalingstekens. Net zoals alles binnen dit domein ben jij als programmeur uiteindelijk degene die het boeltje moet oplossen. Code, programmeerparadigma's en bibliotheken zijn niet meer dan nuttig gereedschap in jouw arsenaal van programmeertools. Als jij beslist om een hamer als zaag te gebruiken, tja, dan houd ik m'n hart vast voor het resultaat. Dit geldt ook voor de technieken die je in dit boek gaat leren: ze zijn "een tool", niets meer. Jij zal ze nog steeds zo optimaal mogelijk moeten leren gebruiken. Uiteraard is het doel van dit boek je zo duidelijk mogelijk het verschil én de bruikbaarheid van de verschillende nieuwe technieken aan te leren.
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
 
-Toen C# werd ontwikkeld in 2001 was een van de hoofddoelen van de programmeertaal om "een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden" te worden. C# is van de grond af opgebouwd met het OOP programmeerparadigma als primaire drijfveer. 
+Toen C# werd ontwikkeld in 2001 was één van de hoofddoelen van de programmeertaal om *"een eenvoudige, moderne, objectgeoriënteerde programmeertaal voor algemene doeleinden"* te worden. **C# is van de grond af opgebouwd met het OOP programmeerparadigma als primaire drijfveer.**
 
-Wanneer we nieuwe programma's in C# ontwikkelen dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class``  bovenaan staan, telkens we een nieuw project aanmaakten:
+Wanneer we nieuwe programma's in C# ontwikkelden dan zagen we hier reeds bewijzen van. Zo zagen we steeds het keyword ``class``  bovenaan staan, telkens we een nieuw project aanmaakten:
 ```java
 namespace WorldDominationTool
 {
@@ -33,7 +33,7 @@ namespace WorldDominationTool
     {
 ```
 
-De klasse ``Program`` zorgt ervoor dat ons programma voldoet aan de C# afspraken die zeggen dat bijna alle C# code in klassen moet staan. 
+De klasse ``Program`` zorgt ervoor dat ons programma voldoet aan de C# afspraken die zeggen dat alle C# code in klassen moet staan. 
 <!---NOBOOKSTART--->
 {% hint style='tip' %}
 <!---NOBOOKEND--->
@@ -47,7 +47,7 @@ Duizend mammoeten en sabeltandtijgers! Ik dacht dat ik nu wel mee zou zijn met a
 <!---NOBOOKEND--->
 
 ### Een wereld zonder OOP: Pong
-Om de kracht van OOP te demonstreren gaan we een applicatie van lang geleden (deels) herschrijven gebruik makende van de kennis van gestructureerd programmeren (zie het boek *Zie Scherp*). We gaan de arcadehal klassieker "Pong" namaken, waarbij we als doel hebben om een balletje alvast op het scherm te laten botsen. Een rudimentaire oplossing zou de volgende kunnen zijn:
+Om de kracht van OOP te demonstreren gaan we een applicatie van lang geleden (deels) herschrijven gebruik makende van de kennis van gestructureerd programmeren. We gaan de arcadehal klassieker "Pong" namaken, waarbij we als doel hebben om een balletje alvast op het scherm te laten botsen. Een rudimentaire oplossing zou de volgende kunnen zijn:
 
 ```java
 int balX = 20;
@@ -79,11 +79,11 @@ while (true)
 }
 ```
 
-Hopelijk begrijp je deze code. Test ze maar eens in een programma. Zoals je zal zien krijgen we een balletje (``"O"``) dat over het scherm vliegt en telkens van richting verandert wanneer het aan de randen komt. De belangrijkste informatie zit natuurlijk in de variabelen ``balX``, ``balY`` die de huidige positie van het balletje bevatten. Voorts zijn ook ``VectorX`` en ``VectorY`` belangrijk: hierin houden we bij in welke richting (en met welke snelheid) het balletje beweegt (een zogenaamde bewegingsvector).
+Hopelijk begrijp je deze code. Test ze maar eens in een programma. Zoals je zal zien krijgen we een balletje (``"O"``) dat over het scherm vliegt en telkens van richting verandert wanneer het aan de randen van het applicatievenster komt. De belangrijkste informatie zit natuurlijk in de variabelen ``balX``, ``balY`` die de huidige positie van het balletje bevatten. Voorts zijn ook ``VectorX`` en ``VectorY`` belangrijk: hierin houden we bij in welke richting (en met welke snelheid) het balletje beweegt (een zogenaamde bewegingsvector).
 
 #### Extra balletjes?
 
-Dit soort applicatie in C# schrijven met behulp van gestructureerde programmeer-concepten is redelijk eenvoudig. Maar wat als we nu 2 balletjes nodig hebben? Laten we even arrays links laten liggen en het gewoon eens naïef oplossen. Al na enkele lijnen kopiëren merken we dat onze code ongelooflijk rommelachtig gaat worden:
+Dit soort applicatie in C# schrijven met behulp van gestructureerde programmeer-concepten is redelijk eenvoudig. Maar wat als we nu 2 balletjes nodig hebben? Laten we even arrays links laten liggen en het gewoon eens naïef oplossen. Al na enkele lijnen kopiëren merken we dat onze code ongelooflijk rommelachtig gaat worden en we bijna iedere lijn moeten dupliceren:
 
 ```java
 int balX = 20;
@@ -117,7 +117,7 @@ while (true)
 <!---{pagebreak} --->
 
 ### Een wereld met OOP: Pong
-Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekende 21e eeuwse trucje om je punt te maken, dus we gaan nog even verder. 
+Uiteraard zijn we nu eventjes gestructureerd programmeren aan het demoniseren, dit is echter een bekend 21e eeuws trucje om je punt te maken. 
 
 Wanneer we Pong vanuit een OOP paradigma willen aanpakken dan is het de bedoeling dat we werken met klassen en objecten. Net zoals in het vorige boek ga ik je ook nu even in het diepe gedeelte van het bad gooien. Wees niet bang, ik zal je er tijdig uithalen (en je zal versteld staan hoeveel code je eigenlijk zult herkennen).
 
@@ -164,7 +164,7 @@ De code voor een nieuwe klasse schrijf je best in een apart bestand in je projec
 Bijna alle code van zonet hebben we hier geïntegreerd in een ``class Balletje``, maar er zit duidelijk een nieuw sausje over. Vooral aan het begin zien we onze 4 variabelen terugkomen in een nieuw kleedje, namelijk als eigenschappen oftewel properties (herkenbaar aan de ``get`` en ``set`` keyword, waarover later meer). Maar al bij al lijkt de code grotendeels op wat we al kenden. En dat is goed nieuws. OOP gooit het vorige boek niet in de vuilbak, het gaat als het ware een extra laag over het geheel leggen. Let ook op het essentiële woordje ``class`` bovenaan, daar draait alles natuurlijk om:  **klassen en objecten**. 
 
 {% hint style='tip' %}
-Een klasse is een beschrijving van een groep 'dingen' of objecten.  Objecten zijn de "echte" dingen die werken volgens de beschrijving van de klasse. Ja ik heb zonet 2x hetzelfde verteld, maar het is essentiëel dat je het verschil tussen de termen **klasse** en **object** goed begrijpt. 
+Een klasse is een blauwdruk van een bepaalde soort 'dingen' of objecten.  Objecten zijn de "echte" dingen die werken volgens de beschrijving van de klasse. Ja ik heb zonet 2x hetzelfde verteld, maar het is essentiëel dat je het verschil tussen de termen **klasse** en **object** goed begrijpt. 
 {% endhint %}
 
 Laten we eens een **balletje-object** in het leven roepen. In de main schrijven we daarom dit:
@@ -233,13 +233,13 @@ while (true)
 
 Dit is de volledige code om 2 balletjes te hebben. Hoe mooi is dat?!
 
-**De kracht van OOP zit hem in het feit dat we de logica IN DE OBJECTEN ZELF plaatsen. De objecten zijn met andere woorden verantwoordelijk om hun eigen gedrag uit te voeren.** In onze main zeggen we aan beide balletjes "update je zelf eens" , gevolgd door "teken je zelf eens". 
+**De kracht van OOP zit hem in het feit dat we de logica IN DE OBJECTEN ZELF plaatsen. De objecten zijn met andere woorden verantwoordelijk om hun eigen gedrag uit te voeren gebaseerd op externe impulsen en hun eigen interne toestand.** In onze main zeggen we aan beide balletjes "update je zelf eens" , gevolgd door "teken je zelf eens". 
 
 ![Een artistieke benadering van hoe Pong er vroeger uitzag.](../assets/pongtim.png)
 
 
 {% hint style='tip' %}
-Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudiger én krachtiger dan wanneer we in het voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diep zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurig in de balletjes zit):
+Wanneer we 3 of meer balletjes zouden nodig hebben dan zullen we best arrays in de mix moeten gooien. Onze code blijft echter véél eenvoudiger én krachtiger dan wanneer we in het voorgaande met enkel kennis uit het vorige boek zouden maken. Omdat we toch al in het diepe zitten, zal ik hier toch al eens tonen hoe we 100 balletjes op het scherm kunnen laten botsen (we gaan ``Random`` gebruiken zodat er wat willekeurigheid in de balletjes zit):
 
 ```java
 const int AANTAL_BALLETJES = 100;
@@ -248,9 +248,9 @@ Balletje[] veelBalletjes = new Balletje[AANTAL_BALLETJES];
 for (int i = 0; i < veelBalletjes.Length; i++) //balletjes aanmaken
 {
     veelBalletjes[i] = new Balletje();
-    veelBalletjes[i].X = r.Next(10,20);
+    veelBalletjes[i].X = r.Next(10, 20);
     veelBalletjes[i].Y = r.Next(10, 20);
-    veelBalletjes[i].VectorX = r.Next(-2,3);
+    veelBalletjes[i].VectorX = r.Next(-2, 3);
     veelBalletjes[i].VectorY = r.Next(-2, 3);
 }
 
@@ -282,7 +282,7 @@ Neem eens een kijkje aan een druk kruispunt waar fietsers, voetgangers, auto's e
 * Alle mensen hebben gemeenschappelijke eigenschappen (binnen deze beperkte context van een kruispunt): ze bewegen of staan stil (gedrag), ze hebben een bepaalde kleur van jas (eigenschap). 
 * Alle auto's behoren tot een klasse Auto. Ze hebben gemeenschappelijke zaken zoals: ze hebben een bepaald bouwjaar (eigenschap), ze werken op een bepaalde vorm van energie (eigenschap) en ze staan stil of bewegen (gedrag).
 * Ieder verkeerslicht behoort tot de klasse VerkeersLicht.
-* Fietsers tot de klasse Fietser.
+* Fietsers behoren tot de klasse Fietser.
 
 <!---[^jan]:Dit voorbeeld is gebaseerd op de inleiding van het inzichtvolle boek "Handboek objectgeoriënteerd programmeren" door Jan Beurghs (EAN: 9789059406476)--->
 

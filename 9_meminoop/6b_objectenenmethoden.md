@@ -2,11 +2,11 @@
 
 ### Objecten als actuele parameters
 
-Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden voor de meeste klassen (voorgaande zin verdient een lichte nuancering: niet alle klassen zullen als *gewone datatypes* door het leven kunnen gaan. Er zijn enkele uitzonderingen, denk maar aan de ``Console`` klasse, waar we later meer over zullen vertellen. Hint: *static types* volgen deze regels niet).
+Klassen zijn "gewoon" nieuwe datatypes. Alle regels die we dus al kenden in verband met het doorgeven van variabelen als parameters in een methoden blijven gelden voor de meeste klassen (behalve ``static`` klassen die we in volgend hoofdstuk zullen aanpakken).
 
 Het enige verschil is dat we objecten **by reference** meegeven aan een methode. Aanpassingen aan het object in de methode zal dus betekenen dat je het originele object aanpast dat aan de methode werd meegegeven. Hier moet je dus zeker rekening mee houden. 
 
-Stel dat we volgende klasse hebben waarin we metingen willen opslaan, alsook wie de meting heeft gedaan:
+Stel dat we volgende klasse hebben waarin we temperatuurmetingen willen opslaan, alsook wie de meting heeft gedaan:
 
 ```java
 class Meting
@@ -30,21 +30,18 @@ public void ToonMetingInKleur (ConsoleColor kleur)
 Het gebruik van deze klasse zou er als volgt kunnen uitzien:
 
 ```java
-static void Main(string[] args)
-{
-    Meting m1 = new Meting();
-    m1.Temperatuur = 26; 
-    m1.OpgemetenDoor = "Elon Musk";
-    Meting m2 = new Meting();
-    m2.Temperatuur = 34; 
-    m2.OpgemetenDoor = "Dennis Rodman";
+Meting m1 = new Meting();
+m1.Temperatuur = 26; 
+m1.OpgemetenDoor = "Elon Musk";
+Meting m2 = new Meting();
+m2.Temperatuur = 34; 
+m2.OpgemetenDoor = "Dennis Rodman";
 
-    m1.ToonMetingInKleur(ConsoleColor.Red);
-    m2.ToonMetingInKleur(ConsoleColor.Gray);
-}
-
-
+m1.ToonMetingInKleur(ConsoleColor.Red);
+m2.ToonMetingInKleur(ConsoleColor.Pink);
 ```
+
+<!---{pagebreak} --->
 
 ### Objecten in methoden aanpassen
 
@@ -58,7 +55,7 @@ public void VoegMetingToeEnVerwijder(Meting inMeting)
 }
 ```
 
-Als we deze methode als volgt aanroepen (ervan uitgaande dat we 2 objecten ``m1`` en ``m2`` van het type ``Meting`` hebben):
+We zouden deze methode als volgt kunnen gebruiken (ervan uitgaande dat we 2 objecten ``m1`` en ``m2`` van het type ``Meting`` hebben):
 ```java
 m1.Temperatuur = 26; 
 m1.OpgemetenDoor = "Elon Musk";

@@ -40,7 +40,7 @@ class Paard: Dier
 
 class Wolf: Dier
 {
-    //..
+    //...
 }
 ```
 En dan zal dit wel werken: ``Wolf wolfje = new Wolf();``

@@ -44,7 +44,7 @@ Mogelijk heb je nu al een vermoeden waarom er ``using System;`` bovenaan je proj
 
 Alle basisklassen die we al hebben leren gebruiken zoals ``Math``, ``Console`` en ``Random`` staan in deze ``System``-namespace. 
 
-Indien je de lijn ``using System;`` zou weghalen dan zou je de volledige naam van ```Console`` moeten schrijven:
+Indien je de lijn ``using System;`` zou weghalen dan zou je de volledige *naam* van ``Console`` moeten schrijven:
 
 ```java
 System.Console.WriteLine("Dit is wel veel meer typwerk");
@@ -62,7 +62,7 @@ Je doet dit door de naam van de klasse te schrijven (op de plek waar je deze nod
 <!--- {width:80%} --->
 ![Handig toch](../assets/6_klassen/usinghelp.png)
 
-De optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 
+Trouwens: de optie ``Generate type ..`` zal je ook vaak kunnen gebruiken. Wanneer de klasse in kwestie (``Fiets`` hier) nog niet bestaat en je wilt deze automatische laten genereren (in een apart bestand) dan zal deze optie dat voor je doen. 
 {% endhint %}
 
 

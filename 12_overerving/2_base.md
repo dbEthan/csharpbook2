@@ -30,7 +30,7 @@ class Frituur:Restaurant
      public override void PoetsAlles()
      {
            base.PoetsAlles(); //eerste basiskost wordt opgeteld
-           kosten += 500;  //kosten eigen aan frituur worden bijgeteld.
+           kosten += 500;  //kosten eigen aan frituur worden bijgeteld
      }
 }
 ```

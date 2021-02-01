@@ -363,3 +363,12 @@ Zet nu je helm maar op, want in de volgende sectie gaan we wel degelijk onze han
 {% endhint %}
 <!---NOBOOKEND--->
 <!---{sample: false}--->
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+* [OOP in actie - de intro voor de intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f71ee5ef-5e80-4c34-afda-acc200a986b9)
+* [OOP, klassen en objecten...what's it all about?!](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=628acdda-bcc3-4de5-8b0e-acc200a98688)
+* [Podcast: Klassen en objecten](https://anchor.fm/tim-dams/episodes/Klassen-en-objecten-enis61)
+
+<!---NOBOOKEND--->

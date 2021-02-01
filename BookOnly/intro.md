@@ -31,9 +31,6 @@ Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis  **Visua
 
 
 
-
-<!---{pagebreak}--->
-
 ## Dankwoord
 
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in deel 1. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!

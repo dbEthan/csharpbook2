@@ -180,6 +180,10 @@ Volgende lijn zal dus geen effect hebben:
 
 We kunnen de code binnen ``set`` (en ``get``) zo complex maken als we willen. 
 
+{% hint style='tip' %}
+Probeer wel steeds de OOP-principes te hanteren wanneer je met properties werkt: in de ``get`` en ``set`` van een property mogen enkel die dingen gebeuren die de verantwoordelijkheid van de property zelf zijn. Je gaat dus bijvoorbeeld niet controleren of een andere property geen illegale waarden krijgt, daar is die andere property voor verantwoordelijk.
+{% endhint %}
+
 <!---{sample: true}--->
 
 <!---{pagebreak} --->

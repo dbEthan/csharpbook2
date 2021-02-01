@@ -8,6 +8,9 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 ### Hoofdstuk 1 - Object Oriented Programming
 
+* [OOP in actie - de intro voor de intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f71ee5ef-5e80-4c34-afda-acc200a986b9)
+* [OOP, klassen en objecten...what's it all about?!](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=628acdda-bcc3-4de5-8b0e-acc200a98688)
+* [Podcast: Klassen en objecten](https://anchor.fm/tim-dams/episodes/Klassen-en-objecten-enis61)
 * [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
 * [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
 * [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)
@@ -18,6 +21,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 
 * [Stack vs heap](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bf7ea9bc-7469-446b-b226-ab5e008085a8)
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
+* [Podcast: Achter de schermen bij de "new" operator](https://anchor.fm/tim-dams/episodes/Achter-de-schermen-bij-de-new-operator-enndm3)
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
 * [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)

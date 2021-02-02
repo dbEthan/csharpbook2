@@ -1,9 +1,9 @@
 ## Polymorfisme in de praktijk
 
-Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode "Regeer"(dit voorbeeld is gebaseerd op een [StackOverflow](https://stackoverflow.com/questions/1031273) post).
+Beeld je in dat je een klasse ``EersteMinister`` hebt met een methode ``Regeer`` (dit voorbeeld is gebaseerd op een [StackOverflow](https://stackoverflow.com/questions/1031273) post).
 
 
-De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zake en economie). Zonder de voordelen van polymorfisme zou de klasse ``EersteMinister`` er zo kunnen uitzien (**slechte manier**!):
+De ``EersteMinister`` heeft toegang tot tal van ministers die hem kunnen helpen (inzake milieu, binnenlandse zaken (BZ) en economie). Zonder de voordelen van polymorfisme zou de klasse ``EersteMinister`` er zo kunnen uitzien (**slechte manier**!):
 
 ```java
 public class EersteMinister
@@ -47,7 +47,7 @@ class MinisterVanMilieu
 
 De ``MinisterVanEconomie``-klasse heeft dan weer heel andere publieke methoden. En de ``MinisterBZ`` ook weer totaal andere.
 
-Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt een beetje tegen het abstractie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat niet altijd gewenst is. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. **Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
+Je merkt dat de ``EersteMinister`` (of de programmeur van deze klasse) aardig wat specifieke kennis moet hebben van de vele verschillende departementen van het land. Bovenstaande code is dus zeer slecht en vloekt tegen het abstractie-principe van OOP: onze klasse moeten veel te veel weten van andere klassen, wat vermeden moet worden. Telkens er zaken binnen een specifieke ministerklasse wijzigen moet dit ook in de ``EersteMinister`` aangepast worden. **Dankzij polymorfisme en overerving kunnen we dit alles veel mooier oplossen:**
 
 **Ten eerste:** We verplichten alle ministers dat ze overerven van de abstracte klasse ``Minister`` die maar 1 abstracte methode heeft ``Adviseer``:
 
@@ -96,7 +96,7 @@ public class EersteMinister
 }
 ```
 
-**En ten derde:** En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen:
+**En ten derde:** En we kunnen hem nog helpen door met een array of ``List<Minister>`` te werken zodat hij ook niet steeds de "namen" van z'n ministers moet kennen. Dankzij polymorfisme mag dit:
 
 ```java
 public class EersteMinister

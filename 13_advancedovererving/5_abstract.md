@@ -8,12 +8,12 @@ Niemand die zich hier vragen bij stelde? Als ik in het echte leven zeg: "Geef mi
 
 En wat zie je voor je als ik vraag om een "geometrische figuur" in te beelden. Een cirkel? Een rechthoek? Een kubus? Een buckyball? Kortom, er zijn in het leven ook soms eerder abstracte dingen die niet op zich in objecten kunnen gegoten worden zonder meer informatie. Toch is het concept "geometrische figuur" een belangrijk concept: we weten dat alle geometrische figuren een gemeenschappelijke definitie hebben, namelijk (met dank aan Encyclo.nl) dat het *twee- of meerdimensionale grafische elementen zijn waarvan de vorm wiskundig te berekenen valt.* **En dus is er ook een bestaansreden voor een klasse ``GeometrischeFiguur``. Objecten van deze, abstracte, klasse maken daarentegen lijkt ons uit ten boze.**
 
-Het is dit concept, **abstracte klasse** dat we in dit hoofdstuk uit te doeken gaan doen. Het laat ons toe klassen te definiëren die niet niet kunnen geïnstantieerd worden, maar die dus wel dienst kunnen doen als parentklasse voor andere klassen.
+Het is dit concept, **abstracte klasse** dat we in dit hoofdstuk uit te doeken gaan doen. Het laat ons toe klassen te definiëren die niet niet kunnen geïnstantieerd worden, maar die wel dienst kunnen doen als parentklasse voor andere klassen.
 
 
 ### Abstracte klassen in C#
 
-Laten we voorgaande eens praktisch binnen C# bekijken. Soms maken we dus een parent-klasse waarvan geen instanties kunnen gemaakt worden: denk aan de parent-klasse ``Dier``. Subklassen van Dier kunnen ``Paard``, ``Wolf``, etc zijn. Van ``Paard`` en ``Wolf`` is het logisch dat je instanties kan maken (echte paardjes en wolfjes) maar van 'een dier'? Hoe zou dat er uit zien.
+Laten we voorgaande eens praktisch binnen C# bekijken. Soms maken we een parent-klasse waarvan geen instanties kunnen gemaakt worden: denk aan de parent-klasse ``Dier``. Subklassen van Dier kunnen ``Paard``, ``Wolf``, etc zijn. Van ``Paard`` en ``Wolf`` is het logisch dat je instanties kan maken (echte paardjes en wolfjes) maar van 'een dier'? Hoe zou dat er uit zien.
 
 Met behulp van het keyword **``abstract``** kunnen we aangeven dat een klasse abstract is: **je kan overerven van deze klasse, maar je kan er geen instanties van aanmaken.**
 
@@ -56,9 +56,9 @@ Het is logisch dat we mogelijk ook bepaalde zaken in de abstracte klasse als ``a
 
 Via abstracte methoden geven we dit aan: we hoeven enkel de methode signatuur te geven, met ervoor ``abstract``:
 ```java
-abstract class  Dier
+abstract class Dier
 {
-   public abstract string MaakGeluid();
+    public abstract string MaakGeluid();
 }
 ```
 
@@ -83,9 +83,9 @@ class Paard: Dier
   }
 }
 ```
-(en idem voor de wolf-klasse uiteraard)
+(en idem voor de ``Wolf``-klasse uiteraard, maar hopelijk met een dreigender geluid)
 
-Dit is dus niet hetzelfde als ``virtual`` waar een ``override`` MAG. Bij ``abstract`` MOET je ``override``. We komen dan ook bij het hart van het abstracte klasse concept: ze laten ons toe om, als het ware, klasen te maken waar nog gaten in zitten qua implementatie. Een soort klasse-template die de child-klassen nog verder moeten inkleuren.
+Dit is dus niet hetzelfde als ``virtual`` waar een ``override`` MAG. Bij ``abstract`` MOET je ``override``'n. We komen dan ook bij het hart van het abstracte klasse concept: ze laten ons toe om, als het ware, klassen te maken waar nog gaten in zitten qua implementatie. Een soort klasse-template die de child-klassen nog verder moeten inkleuren.
 
 ![](../assets/7_overerving/abstracttemplate.png)
 
@@ -101,24 +101,26 @@ Het zou heel vreemd zijn om objecten in het leven te kunnen roepen die letterlij
 
 ### Abstracte properties
 
-Properties kunnen ``virtual`` gemaakt, en dus ook ``abstract``. Net zoals bij abstracte methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. Volgend voorbeeld toont hoe dit werkt:
+Properties kunnen ``virtual`` gemaakt worden , en dus ook ``abstract``. Net zoals bij abstracte methoden, kunnen we met abstracte properties de overgeërfde klassen verplichten een eigen implementatie van de property te schrijven. 
+
+Volgend voorbeeld toont hoe dit werkt:
 
 ```java
-    abstract class Dier
-    {
-        abstract public int MaxLeeftijd { get;}
-    }
+abstract class Dier
+{
+    abstract public int MaxLeeftijd { get;}
+}
 
-    class Olifant : Dier
+class Olifant : Dier
+{
+    public override int MaxLeeftijd 
     {
-        public override int MaxLeeftijd 
-        {
-            get 
-            { 
-                return 100; 
-            }
+        get 
+        { 
+            return 100; 
         }
     }
+}
 ```
 
 Wanneer je een abstracte property maakt dien je ogenblikkelijk aan te geven of het om een readonly, writeonly, of property met get én set gaat:

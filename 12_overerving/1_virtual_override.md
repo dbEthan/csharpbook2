@@ -34,7 +34,7 @@ class Raket: Vliegtuig
 
 ```
 {% hint style='warning' %}
-Merk op dat we het keyword ``virtual`` mee opnemen in de methodesignatuur op lijn 3, en dat deze dus niets te maken heeft met het returntype en de zichtbaarheid van de methode.
+Merk op dat we het keyword ``virtual`` mee opnemen in de methodesignatuur op lijn 3, en dat deze dus niets te maken heeft met het returntype en de zichtbaarheid van de methode. Dit zou bijvoorbeeld een perfect legale methodesignatuur kunnen zijn: ``protected virtual  int SayWhatNow()``. Terzijde: ``static`` methoden kunnen niet ``virtual gezet worden.
 {% endhint %}
 
 Stel dat we 2 objecten aanmaken en laten vliegen:
@@ -56,7 +56,6 @@ Enkel ``public`` methoden (en properties) kan je ``virtual`` instellen!
 Momenteel doet het ``virtual`` keyword niets. Het is enkel een signaal aan mede-programmeurs: *"hey, als je wilt mag je de werking van deze methode aanpassen als je van deze klasse overerft."*
 
 Een raket is een vliegtuig, toch vliegt het anders. We willen dus de methode ``Vlieg`` anders uitvoeren voor een raket. Daar hebben we **override** voor nodig. Door override voor een methode in de child-klasse te plaatsen zeggen we "gebruik deze implementatie en niet die van de parent klasse."
-**Je kan enkel overriden indien de respectievelijke methode of property in de parent-klasse als virtual werd aangeduid.**
 
 ```java
 class Raket:Vliegtuig

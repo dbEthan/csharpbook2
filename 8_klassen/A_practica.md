@@ -185,7 +185,7 @@ Ontwerp een klasse Account die minstens een ``naamveld``, ``balans`` en ``rekeni
 
 1. ``WithdrawFunds``: bepaalt bedrag wordt van de ``balans`` verwijderd
 2. ``PayInFunds``: bepaalt bedrag (als parameter) wordt op de rekening gezet en aan ``balans`` toegevoegd
-3. ``GetBalance``: het totale bedrag op de rekening wordt teruggegeven, m.a.w. ``balans`` wordt teruggegeven
+3. ``GetBalance``: het totale bedrag op de rekening wordt teruggegeven, met andere woorden ``balans`` wordt teruggegeven
 
 Pas de ``WithdrawFunds`` methode aan zodat als returntype het bedrag (int) wordt teruggegeven. Indien het gevraagde bedrag meer dan de balans is dan geef je al het geld terug dat nog op de rekening staat en toon je in de console dat niet al het geld kon worden gegeven.
 

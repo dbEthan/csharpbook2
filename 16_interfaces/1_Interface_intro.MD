@@ -72,7 +72,7 @@ Interfaces zijn als het ware standaarden waaraan een klasse moet voldoen, wil he
 
 We kunnen nu aan klassen de stempel ``ISuperHeld`` geven zodat programmeurs weten dat die klasse gegarandeerd de methoden ``SchietLasers``, ``VerlaagKracht`` en de property ``Power`` zal hebben.
 
-Volgende code toont dit:
+Volgende code toont dit. We plaatsen de interface (of interfaces) die de klasse beloofd te hebben achter het dubbele punt bovenaan. 
 ```java
 class Zorro: ISuperHeld
 {
@@ -93,15 +93,23 @@ class Zorro: ISuperHeld
 ```
 Zolang de klasse ``Zorro`` niet exact de interface inhoud implementeert zal deze klasse niet gecompileerd kunnen worden.
 
+De klasse in dit voorbeeld blijft wel overerven van ``System.Object``. Het is ook perfect mogelijk om een klasse te hebben die én overerft van een specifieke klasse én meerdere interfaces heeft:
+
+```java
+class DarthVader: StarWarsCharacter, IForceUser, IPilot
+```
 
 {% hint style='tip' %}
 Een "lolly" op een klasse geeft aan dat deze klasse een bepaalde interface heeft in UML notatie. In volgende tekening hebben we een klasse ``Student`` en een interface ``IIndividueelTraject``. We gebruiken de UML notatie voor een interface om aan te geven dat de ``Student`` klasse de ``IIndividueelTraject`` heeft:
 
-![Interface UML notatie](../assets/9_interfaces/uml.png)
+<!--- {width:60%} --->
+![Interface UML notatie.](../assets/9_interfaces/uml.png)
 {% endhint %}
 
 <!---{pagebreak} --->
 
+
+{% hint style='tip' %}
 Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is een interface als het ware een blad papier dat je bovenop je klasse kunt houden. Op het blad staan de methoden en properties beschreven die de interface moet hebben. Als je het blad mooi bovenop een klasse plaatst die de interface belooft te doen, dan zouden de gaten in het blad mooi bovenop de respectievelijke methoden en properties van de klasse passen.
 
 <!--- {width:60%} --->
@@ -109,6 +117,11 @@ Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is ee
 
 <!--- {width:60%} --->
 ![Vervolgens kunnen we de interface met het haakje aan de klasse hangen](../assets/9_interfaces/intzorro2.png)
+{% endhint %}
+
+
+
+
 
 <!---{pagebreak} --->
 
@@ -121,7 +134,7 @@ Een visuele manier om interfaces voor te stellen is de volgende. Eigenlijk is ee
 ![](../assets/care.png)
 Je zei net: *"Volgende interface kunnen we gebruiken in een spel waarin sommige klassen superhelden zijn."* Die zin impliceert toch overerving "sommige klassen **zijn** superhelden"? 
 
-Dat klopt, maar zoals we weten kan je maar van 1 klasse overerven. Beeld je in dat je een uitgebreide klasse-hiërarchie hebt gemaakt bestaande uit monsters, mensen, huizen en voertuigen. Deze 4 groepen hebben mogelijk geen gemeenschappelijke parent, maar toch willen we dat sommige monster-klasse superhelden kunnen worden, net zoals sommige mensen EN zelfs enkele voertuigen (Transformers!). 
+Dat klopt, maar zoals we weten kan je maar van 1 klasse overerven. Beeld je in dat je een uitgebreide klasse-hiërarchie hebt gemaakt bestaande uit monsters, mensen, huizen en voertuigen. Deze 4 groepen hebben mogelijk geen gemeenschappelijke parent, maar toch willen we dat sommige monsters superhelden kunnen worden, net zoals sommige mensen EN zelfs enkele voertuigen (Transformers!). 
 
 Dankzij interface kunnen we als het ware een stukje de beperking dat je maar van 1 klasse kunt overerven opvangen. Sommige klassen ZIJN een voertuig MAAR OOK een Superheld. Met andere woorden, klassen kunnen meerdere interfaces implementeren.
 
@@ -144,31 +157,31 @@ Merk op dat VS de nieuwere EDM syntax hier hanteert bij properties. Meer informa
 
 We kunnen ``is`` gebruiken om te weten of een klasse een specifieke interface heeft. Dit laat ons toe om code te schrijven die weer een beetje meer polyvalent wordt. 
 
-Stel dat we volgende klassen hebben waarbij de ``Book`` klasse de ``IDeletable`` interface implementeert:
+Stel dat we volgende klassen hebben waarbij de ``Boek`` klasse de ``IVerwijderbaar`` interface implementeert:
 
 <!---{line-numbers:false}--->
 ```java
-interface IDeletable{ ... };
-class Book: IDeletable { ... };
-class Person { ... };
+interface IVerwijderbaar{ ... };
+class Boek: IVerwijderbaar { ... };
+class Persoon { ... };
 ```
 
 We kunnen nu met ``is`` objecten bevragen of ze de interface in kwestie hebben:
 ```java
-Person tim = new Person();
-Book gameOfThrones = new Book();
+Persoon tim = new Persoon();
+Boek gameOfThrones = new Boek();
 
-if(gameOfThrones is IDeletable)
+if(gameOfThrones is IVerwijderbaar)
 {
-    Console.WriteLine("I can delete game of thrones");
+    Console.WriteLine("Ik kan Game of Thrones verwijderen");
 }
-if(tim is IDeletable)
+if(tim is IVerwijderbaar)
 {
-    Console.WriteLine("I can delete tim");
+    Console.WriteLine("Ik kan Tim verwijderen");
 }
 ```
 
-De output zal worden: ``I can delete game of thrones``.
+De output zal worden: ``Ik kan Game of Thrones verwijderen``.
 
 Net zoals bij onze voorbeelden over polymorfisme en ``is`` zal de kracht van interfaces pas zichtbaar worden wanneer we met arrays of lijsten van objecten werken. Indien deze lijst een bont allegaartje objecten bevat, allemaal met specifieke parents én interfaces, dan kunnen we weer met ``is`` bijvoorbeeld alle objecten benaderen die een bepaalde interface hebben:
 
@@ -218,7 +231,7 @@ interface IGod:ISuperHeld
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
 
-In kleine projecten lijken interfaces wat overkill, en dat zijn ze vaak wel. Van zodra je een iets complexer project krijgt met meerdere klasse die onderling met elkaar allerlei zaken moeten doen, dan zijn interfaces je dikke vrienden!
+In kleine projecten lijken interfaces wat overkill, en dat zijn ze vaak wel. Van zodra je een iets complexer project krijgt met meerdere klassen die onderling met elkaar allerlei zaken moeten doen, dan zijn interfaces je dikke vrienden!
 Je hebt misschien al over de *SOLID programmeerprincipes* gehoord? 
 
 And if not, niet erg. Samengevat zegt SOLID dat we een bepaalde hoeveelheid abstractie inbouwen enerzijds (zodat we niet de gore details van klassen moeten kennen om er mee te programmeren) anderzijds dat er een zogenaamde 'separation of concerns' (SoC) moet zijn (ieder deel/klasse/module van je code heeft een specifieke opdracht). 
@@ -229,98 +242,6 @@ Met interfaces kunnen we volgens de SOLID principes programmeren: het boeit ons 
 <!---NOBOOKSTART--->
 {% endhint %}
 <!---NOBOOKEND--->
-
-## Polymorfisme en interfaces
-
-Een object aanmaken van een interface is natuurlijk onmogelijk. Je object zou flinterdun zijn zonder inhoud. Maar, dankzij polymorfisme kunnen we wel variabelen aanmaken van een interfacetype die een referentie hebben naar een object dat die interface heeft:
-
-<!---{line-numbers:false}--->
-```java
-IManager deBaas = new Werknemer();
-```
-
-Op dat moment kunnen we via ``deBaas`` aan het gedeelte van het ``Werknemer`` object dat in de ``IManager`` interface beschreven staat. Krachtig toch! 
-
-### Interfaces en polymorfisme in de praktijk
-
-Beeld je in dat je een complexe klasse ``DiskWriter`` hebt die je programma gebruikt om data van en naar de harde schijf te schrijven. De klasse implementeert een interface ``IData`` die twee methoden heeft (``ReadData()`` en ``WriteData``).
-
-Als je later beslist om je data naar een online server te schrijven en niet naar de harde schijf, dan kan je gewoon die klasse schrijven (bv. ``InternetWriter``) en vervolgens ook de ``IData`` interface laten implementeren. Al je andere code moet dan niet aangepast worden! Ze (je andere klassen) kunnen gewoon blijven zeggen ``ReadData`` en ``WriteData`` en weten misschien zelfs niet dat hun  data niet meer naar de HD maar naar het internet wordt gestuurd.
-Mooi toch!
-
-Volgende code toont dit.Dit is de interface die we gaan beschrijven:
-
-```java
-interface IData
-{
-    void ReadData();
-    void WriteData();
-}
-```
-
-Vervolgens maken we enkele writers die deze interface gebruiken:
-
-```java
-class DiskWriter : IData
-{
-    public void ReadData()
-    {
-        //Lees van harde schijf
-    }
-
-    public void WriteData()
-    {
-        //Schrijf naar harde schijf
-    }
-    //Allerlei andere zaken
-}
-```
-
-```java
-class InternetWriter: IData
-{
-    public void ReadData()
-    {
-        //Lees van internet
-    }
-
-    public void WriteData()
-    {
-        //Schrijf naar internet
-    }
-}
-```
-
-Nu maken we een klasse die effectief die writer gebruikt. De truc zit hem er in dat deze klasse met ``IData`` werkt via compositie en dus niet weet naar waar alles zal geschreven worden. Beter zelfs: de klasse weet het niet, en hoeft dat ook niet te weten. Je kan vervolgens volgens de compositie regels instellen welk object ``IData`` krijgt. In volgend voorbeeld stellen we dit in via de constructor, maar je zou ook van ``datadoel`` een property kunnen maken:
-
-```java
-class Logbook
-{
-    private IData datadoel;
-    public Logbook(IData doel)
-    { 
-        datadoel = doel; 
-    }
-    public void Schrijf()
-    {
-        datadoel.WriteData();
-    }
-    //etc.
-}
-```
-
-Vanaf nu kan je ``Logbook``-objecten aanmaken die naar verschillende plekken schrijven/lezen zonder dat je IN  ``logbook`` moet weten naar waar dat gebeurt:
-
-```java
-Logbook naarlokalefile = new Logbook(new DiskWriter());
-naarlokalefile.Schrijf();
-Logbook naarInternet = new Logbook(new InternetWriter());
-naarInternet.Schrijf();
-```
-
-{% hint style='tip' %}
-Voor de geïnteresseerden, dit concept is een eerste stap naar *Dependency Injection*, een erg krachtig concept dat je nog veel zal tegenkomen in je verdere programmeercarrière, maar wat we niet in dit boek gaan behandelen.
-{% endhint %}
 
 
 <!---NOBOOKSTART--->

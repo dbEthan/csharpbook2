@@ -4,7 +4,7 @@ Programmeurs zijn luie wezens. Ieder concept dat hen toelaat minder code te schr
 
 Indien 2 of meer klassen een aantal gelijkaardige stukken code hebben is er mogelijk een verband tussen die twee klassen. Denk maar aan de klassen ``Monster`` en ``Held`` in een avonturenspel. Beide klassen hebben vermoedelijk bepaalde properties en methoden die identiek, of bijna identiek zijn qua implementatie.
 
-Wat we hier zien is het concept **overerving**. Beide klassen hebben duidelijk een soort gemeenschappelijke "voorouder". Net zoals in de natuur waar apen en mensen afstammen van een gemeenschappelijke voorouder, kan je dit concept ook in OO hebben. 
+Wat we hier zien is het concept **overerving**. Beide klassen hebben duidelijk een soort gemeenschappelijke "voorouder". Net zoals in de natuur waar apen en mensen afstammen van een gemeenschappelijke voorouder, kan je dit concept ook in OOP hebben. 
 
 De zogenaamde "child-klasse" is de klasse die overerft van een "parent-klasse". Deze child-klasse zal een specialisatie zijn: het zal meer kunnen dan z'n parent. Ook in de natuur zien we dit: de homo sapiens sapiens (wij!) is evolutionair gezien een verbetering tegenover de homo erectus (kleinere hersenen) , die op zijn beurt een verbetering is van zijn voorouder, de homo habilis (kon nog niet op 2 ledematen rondwandelen).
 
@@ -107,19 +107,19 @@ Beeld je in dat je volgende klassehiërarchie hebt vastgelegd:
 <!--- {width:40%} --->
 ![](../assets/7_overerving/klasgebouwen.png)
 
-De objecten in het geheugen zullen er dan als volgt uitzien:
+Vervolgens maken we van iedere klasse 1 object aan. De objecten in het geheugen zullen er dan als volgt uitzien:
 
 ![We zien duidelijk dat een Appartement-object dus bestaat uit 2 delen: het Gebouw en de specialisatie Appartement.](../assets/7_overerving/gebouwobjecten.png)
 
-Indien we nu 2 objecten aanmaken
+<!---{pagebreak} --->
+
+Laten we eens 2 objecten aanmaken en kijken wat er in de heap en stack gebeurt:
 ```java
 Huis eenHuis = new Huis();
 Villa groteVilla = new Villa();
 ```
 
-<!---{pagebreak} --->
-
-En vervolgens kijken we hoe dit er in het geheugen uitziet:
+Dat ziet er dan als volgt uit
 
 <!--- {width:60%} --->
 ![](../assets/7_overerving/overervinggeheugen.png)
@@ -135,7 +135,7 @@ Echter, de ``private`` delen van een klasse blijven beperkt tot dat stuk waar de
 
 ### ``protected``
 
-Ook al is overerving transitief, hou er rekening mee dat private variabelen en methoden van de parent-klasse NIET rechtstreeks aanroepbaar zijn in de child-klasse. Private geeft aan dat het element enkel in de klasse zichtbaar is:
+Ook al is overerving transitief, hou er rekening mee dat private variabelen en methoden van de parent-klasse NIET rechtstreeks aanroepbaar zijn in de child-klasse. ``private`` geeft aan dat het element enkel in de klasse zichtbaar is:
 
 ```java
 class Paard: Dier
@@ -151,7 +151,7 @@ class Dier
 }
 ```
 
-Je kan dit oplossen door de **``protected``** access modifier ipv ``private`` te gebruiken. Met ``protected`` geef je aan dat het element enkel zichtbaar is binnen de klasse **én** binnen child-klassen:
+Je kan dit oplossen door de **``protected``** access modifier te gebruiken in de plaats van ``private``. Met ``protected`` geef je aan dat het element enkel zichtbaar is binnen de klasse **én** binnen child-klassen:
 
 ```java
 class Paard: Dier
@@ -169,7 +169,7 @@ class Dier
 
 ### Multiple inheritance
 
-In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen. Het is in C# dus niet mogelijk om een klasse ``Mens`` te maken die tegelijkertijd overerft van de klasse ``Aap`` en van de klasse ``Tekening``(om maar iets te zeggen). 
+In C# is het niet mogelijk om een klasse van meer dan één parent-klasse te laten overerven (zogenaamde *multiple inheritance*), wat wel mogelijk is in sommige andere object georiënteerde talen. Het is in C# dus niet mogelijk om een klasse ``Mens`` te maken die tegelijkertijd overerft van de klasse ``Aap`` en van de klasse ``Tekening`` (om maar iets te zeggen). 
 
 <!---{pagebreak} --->
 

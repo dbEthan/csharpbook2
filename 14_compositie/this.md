@@ -31,7 +31,7 @@ Merk op dat qua naamgeving de keuze van de formele parameter ``Levens`` in de co
 
 ### Object geeft zichzelf mee als parameter
 
-Beeld je in dat je volgende ``Management`` klasse hebt die toelaat om ``Werknemer`` objecten te controleren of ze promoveerbaar zijn of niet. Het management van de firma heeft beslist dat werknemers enkel kunnen promoveren als hun huidige rand lager is dan 10:
+Beeld je in dat je volgende ``Management`` klasse hebt die toelaat om ``Werknemer`` objecten te controleren of ze promoveerbaar zijn of niet. Het management van de firma heeft beslist dat werknemers enkel kunnen promoveren als hun huidige ``Rang`` lager is dan 10:
 
 ```java
 class Management
@@ -61,9 +61,9 @@ Op deze manier geeft het object waarop je ``IsPromoveerbaar`` op aanroept zichze
 
 ```java
 Werknemer francis = new Werknemer();
-if( francis.VraagPromotie())
+if(francis.VraagPromotie())
 {
-    Console.WriLine("Jeuj!");
+    Console.WriteLine("Jeuj!");
 }
 ```
 

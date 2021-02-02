@@ -1,16 +1,16 @@
 # Gevorderde klasseconcepten
 
-Nu we weten wat er allemaal achter de schermen gebeurt met onze objecten, wordt het tijd om wat meer geavanceerde concepten te bekijken. 
+Nu we weten wat er allemaal achter de schermen gebeurt met onze objecten, wordt het tijd om wat meer geavanceerde concepten van klassen en objecten te bekijken. 
 
 We hebben al ontdekt dat een klasse kan bestaan uit:
-* **Instantievariabelen**: variabelen die de toestand van het individuele object weergeeft.
+* **Instantievariabelen**: variabelen die de toestand van het individuele object bijhouden.
 * **Methoden**: om objecten voor ons te laten werken (gedrag).
 * **Properties**: om op een gecontroleerde manier toegang tot de interne staat van de objecten te verkrijgen.
 
 Uiteraard is dit niet alles. In dit hoofdstuk bekijken we:
-* **Constructor**: een gecontroleerde manier om de beginstaat van een object in te stellen.
-* **``static``**: een speciaal concept waar je in het begin wat last mee zal hebben...
-* **Object initializer syntax**: een recente C# aanvulling die het werken met constructors wat eenvoudiger maakt.
+* **Constructors**: een gecontroleerde manier om de beginstaat van een object in te stellen.
+* **``static``**: die je de mogelijkheid geeft een (deel van je) klasse te laten werken als een object.
+* **Object initializer syntax**: een recente C# aanvulling die het aanmaken van nieuwe objecten vereenvoudigd.
 
 ## Constructors
 
@@ -42,9 +42,9 @@ De naam "constructor" zegt duidelijk waarvoor het concept dient: *het construere
 
 Als programmeur van eigen klassen zijn er 3 opties voor je:
 
-* Je gebruikt geen zelfgeschreven constructors: het leven gaat voort zoals het is. Je kunt objecten aanmaken zoals eerder getoond en de *onzichtbare* default constructor wordt uitgevoerd.
+* Je gebruikt geen zelfgeschreven constructors: het leven gaat voort zoals het is. Je kunt objecten aanmaken zoals eerder getoond en een *onzichtbare* standaard (default) constructor wordt voor je uitgevoerd.
 * Je hebt enkel een **default constructor** nodig. Je kan nog steeds objecten met ``new Student()`` aanmaken, maar je gaat zelf beschrijven wat er moet gebeuren bij de default constructor. De default constructor herken je aan het feit dat je geen parameters meegeeft aan de constructor tijdens de ``new`` aanroep.
-* Je wenst gebruik te maken van één of meerdere **overloaded constructoren**, hierbij zal je dan actuele parameters kunnen meegeven bij de creatie van een object, bijvoorbeeld: ``new Student(24, "Jos")``.
+* Je wenst gebruik te maken van één of meerdere **overloaded constructors**, hierbij zal je dan actuele parameters kunnen meegeven bij de creatie van een object, bijvoorbeeld: ``new Student(24, "Jos")``.
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}
@@ -64,7 +64,7 @@ Als programmeur van eigen klassen zijn er 3 opties voor je:
 
 ### Default constructors
 
-De default constructor is een constructor die geen extra parameters aanvaardt. Een constructor bestaat ALTIJD uit volgende vorm:
+De default constructor is een constructor die geen extra parameters aanvaardt. Een default constructor bestaat ALTIJD uit volgende vorm:
 
 * Iedere constructor is altijd ``public`` .
 * Heeft geen returntype, ook niet ``void``.

@@ -8,8 +8,9 @@ Het ``is`` keyword is een operator die je kan gebruiken om te weten te komen of:
 
 De ``is`` operator heeft twee operanden nodig en geeft een bool terug als resultaat. De linkse operator moet een variabele zijn, de rechtse een datatype. Bijvoorbeeld:
 
+<!---{line-numbers:false}--->
 ```java
-if( mijnStudent is Student)
+bool ditIsEenStudent = mijnStudent is Student;
 ```
 
 #### ``is`` voorbeeld 1
@@ -42,7 +43,7 @@ if(rambo is Voertuig)
 }
 ```
 
-De uitvoer zal worden:``mijnAuto is een Voertuig``. 
+De uitvoer zal worden: ``mijnAuto is een Voertuig``. 
 
 <!---{pagebreak} --->
 
@@ -73,7 +74,7 @@ Mens jos = (Mens)fritz;
 
 Het probleem bij casting is dat dit niet altijd lukt. Indien de conversie niet mogelijk is zal een uitzondering gegenereerd worden en je programma zal  crashen als  je niet aan exception handling doet.
 
-Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit object te converteren. Als het niet lukt, zet het dan op ``null`` in plaats van een Exception te werpen."**
+Het ``as`` keyword lost dit op. Het keyword zegt aan de compiler **"probeer dit object te converteren. Als het niet lukt, zet het dan op ``null`` in plaats van een uitzondering op te werpen."**
  
 De code van daarnet herschrijven we dan naar:
 
@@ -84,7 +85,7 @@ Mens jos = fritz as Mens;
 
 Indien nu de casting niet lukt (omdat ``Student`` misschien geen childklasse van ``Mens`` blijkt te zijn) dan zal ``jos`` de waarde ``null`` hebben gekregen.
 
-We kunnen dan vervolgens bijvoorbeeld schrijven:
+We kunnen dan vervolgens schrijven:
  ```java
 Student fritz = new Student();
 Mens jos = fritz as Mens;

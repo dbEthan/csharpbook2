@@ -1,12 +1,15 @@
 # Gevorderde overervingsconcepten
 
-C# houdt van objecten. De hele taal is letterlijk opgebouwd om maximaal het object georiënteerd programmeren te omarmen. Van zodra je een nieuw project aanmaakt kan je niet naast de ``class Program`` zien. Hoe meer je C# en de bestaande bibliotheken bekijkt, hoe duidelijker dit wordt. Alles is een klasse. Maar dan stel zich natuurlijk de vraag: *staat er nog iets boven alle klassen die wij aan het maken zijn? Is er misschien een soort oer-klasse waar alle klassen van overerven?* 
+C# houdt van objecten. De hele taal is letterlijk opgebouwd om maximaal het object georiënteerd programmeren te omarmen. Van zodra je een nieuw project aanmaakt kan je niet naast de ``class Program`` zien. Hoe meer je C# en de bestaande bibliotheken bekijkt, hoe duidelijker dit wordt. Alles is een klasse. 
+
+Maar dan stel zich natuurlijk de vraag: *staat er nog iets boven alle klassen die wij aan het maken zijn? Is er misschien een soort oer-klasse waar alle klassen van overerven?* 
+
 De vraag stellen is ze beantwoorden! Er is effectief een oer-klasse, genaamd de ``System.Object``-klasse, waar alles en iedereen in C# van moet overerven.
 
 
 
 ## `System.Object`
-**Alle** klassen C# zijn afstammelingen van de **``System.Object``** klasse. Zowel de bestaande, ingebouwde klassen zoals ``Random`` en ``Console`` alsook klassen die je zelf maakt. En ja, zelfs de bestaande valuetype datypes zoals ``int`` en ``bool`` zijn afstammelingen van ``System.Object`` (er zit wel nog één klasse tussen in hun geval, de ``ValueType`` klasse).
+**Alle** klassen in C# zijn afstammelingen van de **``System.Object``** klasse. Zowel de bestaande, ingebouwde klassen zoals ``Random`` en ``Console``, alsook klassen die je zelf maakt. En ja, zelfs de bestaande valuetype datatypes zoals ``int`` en ``bool`` zijn afstammelingen van ``System.Object`` (er zit wel nog één klasse tussen in hun geval, de ``ValueType`` klasse).
 
 ![Enkele voorbeelden. Merk op dat er véél meer ingebouwde klassen in .NET zitten dan degene die we hier tonen.](../assets/7_overerving/systemroot.png)
 
@@ -23,7 +26,7 @@ Maar om de klasse ``Object`` niet te verwarren met het concept "object" zullen w
 
 ### Impliciete overerving
 
-Wanneer je dus een klasse ``Student`` aanmaakt als volgt:``class Student{ }``. Dan gebeurt er een zogenaamde impliciete overerving van ``System.Object``. Er staat dus eigenlijk:
+Wanneer je dus een klasse ``Student`` aanmaakt als volgt: ``class Student{ }``. Dan gebeurt er een zogenaamde impliciete overerving van ``System.Object``. Er staat dus eigenlijk:
 
 ```java
 class Student: System.Object
@@ -66,7 +69,7 @@ Console.WriteLine(stud1.GetType().Name);
 {% hint style='tip' %}
 Je kan in de .NET documentatie altijd opzoeken waar een klasse van overerft. De ``Type`` klasse bijvoorbeeld erft, je raadt het nooit, finaal ook van ``System.Object`` over. Eerst erft ``Type`` over van de ``MemberInfo`` klasse, die op zijn beurt overerft van de oer-klasse.
 
-![](../assets/7_overerving/typeclass.png)
+![Merk op dat de pijltjes hier wijzen van parent naar child-klasse, wat omgekeerd is aan de UML-notatie die we in dit boek prefereren.](../assets/7_overerving/typeclass.png)
 
 {% endhint %}
 
@@ -99,7 +102,7 @@ Merk twee zaken op:
 
  Nu komen we tot het hart van deze methoden. Aangezien ze alle 4 ``virtual`` zijn, kunnen we de werking ervan naar onze hand zetten in onze eigen klassen. Aardig wat .NET bibliotheken rekenen er namelijk op dat je deze methoden op de juiste manier hebt aangepast, zodat ook jouw nieuwe klassen perfect kunnen samenwerken met deze bibliotheken. Een eerste voorbeeld hiervan toonden we net: de ``Console.WriteLine`` methode gebruikt van iedere parameter dat je er aan meegeeft de ``ToString``-methode om de parameter op het scherm als ``string`` te tonen.
  
- #### ``ToString()`` overriden
+#### ``ToString()`` overriden
 
  Het zou natuurlijk fijner zijn dat de ``ToString()-``methode van onze student nuttigere info teruggeeft, zoals bijvoorbeeld de ``Voornaam`` die we als autoprop in de klassen hebben geplaatst, gevolgd door de ``GeboorteJaar`` (ook een autoprop). 
  
@@ -109,7 +112,6 @@ Merk twee zaken op:
  {
    public int GeboorteJaar {get;set;}
    public string Voornaam {get;set;}
-   
    public override string ToString()
    {
        return $"Student genaamd {Voornaam} (Geboortejaar:{GeboorteJaar})";
@@ -168,7 +170,8 @@ Indien je ``Equals`` override dan moet je eigenlijk ook ``GetHashCode`` override
 <!--- {float:right, width:50%} --->
 ![](../assets/care.png)
 "Ik ben nog niet helemaal mee..."
-Niet getreurd, je bent niet de enige. Overerving,``System.Object``, ``Equals``,...het is allemaal een hoop nieuwe kennis om te verwerken. En ik vermoed dat je nu niet bepaald overweldigd bent van de nieuwe kennis. Vermoedelijk heb je nu zoiets van? "Ok..wow?! Wat krijg ik nu juist extra wetende dat al mijn klassen overerven van een oer-klasse? 4 methoden en wat beloofde compatibiliteit met andere .NET bibliotheken? Call me ...unimpressed".Begrijpelijke reactie. Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what we did there?) waarin polymorfisme onze sterspeler zal worden en zal toelaten erg krachtige code te schrijven. Polymorfisme wordt onze doelpuntenmaker, maar ``System.Object`` zal steeds de perfecte voorzet  geven!
+
+Niet getreurd, je bent niet de enige: het is allemaal een hoop nieuwe kennis om te verwerken. En ik vermoed dat je nu niet bepaald overweldigd bent van de nieuwe kennis. Mogelijk heb je nu zoiets van? *"Ok..wow?! Wat krijg ik nu juist extra wetende dat al mijn klassen overerven van een oer-klasse? 4 methoden en wat beloofde compatibiliteit met andere .NET bibliotheken? Call me ...unimpressed"*.Begrijpelijke reactie. Hou vol, we zijn een hoop puzzelstukjes aan het opnemen die finaal zullen samenkomen om een gigantisch knappe OOPuzzel te maken (see what I did there?) waarin polymorfisme onze sterspeler zal worden en zal toelaten erg krachtige code te schrijven. Polymorfisme wordt onze doelpuntenmaker, maar ``System.Object`` zal steeds de perfecte voorzet geven!
 
 <!---{/aside}--->
 <!---NOBOOKSTART--->

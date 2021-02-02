@@ -11,7 +11,7 @@ Polymorfisme laat ons toe dat objecten kunnen behandeld worden als objecten van 
 
 ## De "is een"-relatie in actie
 
-Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we alle child-objecten als allemaal als hetzelfde type, dat van hun parent, kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat bijvoorbeeld alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem. 
+Dankzij overerving kunnen we "is een"-relaties beschrijven. Soms is het echter handig dat we alle child-objecten als hetzelfde type, dat van hun parent, kunnen beschouwen. Beeld je in dat je een gigantische klasse-hiërarchie hebt gemaakt, maar finaal wil je wel dat alle objecten een bepaalde property aanpassen die ze gemeenschappelijk hebben. Zonder polymorfisme is dat een probleem. 
 
 Stel dat we een een aantal van ``Dier`` afgeleide klassen hebben die allemaal op hun eigen manier een geluid voortbrengen:
 ```java
@@ -19,9 +19,6 @@ abstract class  Dier
 {
    public abstract string MaakGeluid();
 }
-```
-Twee child-klassen:
-```java
 class Paard: Dier
 {
   public override string MaakGeluid()
@@ -29,7 +26,6 @@ class Paard: Dier
       return "Hinnikhinnik";
   }
 }
-
 class Varken: Dier
 {
   public override string MaakGeluid()
@@ -62,14 +58,14 @@ Het is belangrijk te beseffen dat  ``someAnimal`` en ``anotherAnimal`` van het t
 
 Kortom, polymorfisme laat ons toe om referenties naar objecten van een child-type, toe te wijzen aan een variabele van het parent-type.
 
-Dit wil dus ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
+Dit wil  ook zeggen dat dit mag (daar alles overerft van ``System.Object``):
 
 <!---{line-numbers:false}--->
 ```java
 System.Object mijnObject = new Varken();
 ```
 
-Alhoewel dus ``mijnObject`` effectief een ``Varken`` is, kunnen we enkel aan dat gedeelte dat in de klasse ``System.Object`` staat beschreven, zijnde de klassieke 4 methoden (``ToString``, ``Equals`` etc.). Als we het varken toch geluid willen laten maken, dan zal dat niet werken!
+Alhoewel ``mijnObject`` effectief een ``Varken`` is, kunnen we enkel aan dat gedeelte dat in de klasse ``System.Object`` staat beschreven, zijnde de klassieke 4 methoden (``ToString``, ``Equals`` etc.). Als we het varken toch geluid willen laten maken, dan zal dat niet werken!
 {% endhint %}
 
 
@@ -89,7 +85,7 @@ foreach(var dier in zoo)
 }
 ```
 
-We hebben dus nu een manier gevonden om onze objecten op de juiste momenten even als één geheel te gebruiken, zonder dat we verplicht zijn dat ze allemaal van hetzelfde type zijn!
+We hebben nu een manier gevonden om onze objecten op de juiste momenten even als één geheel te gebruiken, zonder dat we verplicht zijn dat ze allemaal van hetzelfde type zijn!
 
 <!---NOBOOKSTART--->
 {% hint style='warning' %}

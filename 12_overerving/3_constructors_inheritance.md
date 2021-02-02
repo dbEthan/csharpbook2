@@ -34,7 +34,7 @@ Indien je vervolgens een object aanmaakt van het type ``VeldArts``:
 VeldArts RexGregor = new VeldArts();
 ```
 
-Dan zien we de volgorde van constructor-aanroep op het scherm:
+Dan zien we de volgorde van constructor-aanroep in het debug output venster:
 
 <!---{line-numbers:false}--->
 ```text
@@ -68,6 +68,7 @@ class VeldArts:Soldaat
 ```
 
 Wat je namelijk niet ziet bij child-klassen en hun constructors is dat er eigenlijk een impliciete aanroep naar de constructor van de parent-klasse wordt gedaan. Bij alle constructors staat er eigenlijk ``:base()`` achter, wat je ook zelf kunt schrijven:
+
 ```java
 class VeldArts:Soldaat
 {
@@ -83,7 +84,7 @@ class VeldArts:Soldaat
 <!---{pagebreak} --->
 
 
-We zien hier dus hoe we ervoor moeten zorgen dat we terug VeldArts via ``new VeldArts()`` kunnen aanroepen zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
+We zien hier dus hoe we ervoor moeten zorgen dat we terug via ``new VeldArts()`` objecten kunnen aanmaken zonder dat we de constructor(s) van ``Soldaat`` moeten aanpassen:
 ```java
 class Soldaat
 {
@@ -101,7 +102,7 @@ class VeldArts:Soldaat
 }
 ```
 
-De VeldArts zullen de actuele parameter``kanSchieten`` dus steeds op ``true`` zetten.
+De default constructor van ``VeldArts``  zal de actuele parameter ``kanSchieten`` dus steeds op ``true`` zetten.
 
 Uiteraard wil je misschien kunnen meegeven bij het aanmaken van een ``VeldArts`` wat de startwaarde van ``kanSchieten`` moet zijn. Dit vereist dat je een overloaded constructor in ``VeldArts`` aanmaakt, die op zijn beurt de overloaded constructor van ``Soldaat`` aanroept. 
 
@@ -173,7 +174,7 @@ Huis eenEigenHuis = new Huis(true,5);
 3. De overloaded constructor van ``Gebouw`` wordt dus aangeroepen.
 4. De code van deze constructor wordt uitgevoerd: het aantal verdiepingen van het gebouw/huis wordt ingesteld.
 5. Wanneer het einde van de constructor wordt bereikt, zal er teruggegaan worden naar de constructor van ``Huis``.
-6. Nu wordt de code van de``Huis`` constructor uitgevoerd: ``HeeftTuintje`` krijgt de waarde ``true``.
+6. Nu wordt de code van de ``Huis`` constructor uitgevoerd: ``HeeftTuintje`` krijgt de waarde ``true``.
 
 
 ![Achter de schermen gebeurt er aardig wat bij overerving wanneer we een object aanmaken](../assets/7_overerving/constflow.png)

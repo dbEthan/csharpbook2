@@ -11,7 +11,7 @@ public override bool Equals(Object o)
 }
 ```
 
-De eerste lijn waarin we casten ``o`` casten naar een student kan natuurlijk mislukken. Het is dan ook veiliger om eerst te controleren of we wel mogen casten, voor we het effectief doen. Hierdoor schrijven we een minder foutgevoelige methode:
+De eerste lijn waarin we ``o`` casten naar een student kan natuurlijk mislukken. Het is dan ook veiliger om eerst te controleren of we wel mogen casten, voor we het effectief doen. Hierdoor schrijven we een minder foutgevoelige methode:
 
 ```java
 //In de Student class

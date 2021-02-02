@@ -1,7 +1,6 @@
 ## Static
 
-Herinner je dat we bij de definitie van een klasse het volgende schreven: "95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken.
-Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan." Laten we hier eens dieper op ingaan.
+Herinner je dat we bij de definitie van een klasse het volgende schreven: *"95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken. Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan."* Laten we hier eens dieper op ingaan.
 
 Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. In dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 
@@ -18,11 +17,15 @@ Bij klassen en objecten duidt ``static`` aan dat een methode of variabele "gedee
 Ook een constructor kan ``static`` gemaakt worden, maar dat gaan we in dit boek niet bespreken. Samengevat kan je een *static constructor* gebruiken indien je een soort *oer-constructor* wilt hebben die eenmalige wordt aangeroepen wanneer het allereerste object van een klasse wordt aangemaakt. Wanneer een tweede (of derde, etc.) instantie wordt aangemaakt zal de *static constructor* niet meer aangeroepen worden.
 {% endhint %}
 
+{% hint style='tip' %}
+We vereenvoudigen bewust het keyword ``static`` wat om verwarring te voorkomen. Het "delen van informatie dankzij ``static``" is een gevolg, niet de reden. Met ``static`` geven we eigenlijk aan dat het element (methode, variabele, property, etc.) bij de klasse behoort én niet bij instanties van die klasse.
+{% endhint %}
+
 <!---{pagebreak} --->
 
 ### static fields
 
-Zonder het keyword ``static`` heeft ieder object z'n eigen instantievariabelen.  Aanpassingen binnen het object aan die variabelen heeft geen invloed op andere objecten van hetzelfde type. We tonen eerst de werking zoals we gewend zijn en vervolgens hoe ``static`` werkt.
+Zonder het keyword ``static`` heeft ieder object z'n eigen instantievariabelen.  Aanpassingen binnen het object aan die variabelen hebben geen invloed op andere objecten van hetzelfde type. We tonen eerst de werking zoals we gewend zijn en vervolgens hoe ``static`` werkt.
 
 #### Zonder static fields
 
@@ -34,8 +37,8 @@ class Mens
     private int geboorteJaar;
     public int GeboorteJaar 
     {
-        get{ return geboorteJaar; }
-        private set {geboorteJaar = value;}
+        get { return geboorteJaar; }
+        private set { geboorteJaar = value; }
     }
     public void Jarig()
     {
@@ -80,8 +83,8 @@ class Mens
     private static int geboorteJaar;
     public int GeboorteJaar 
     {
-        get{ return geboorteJaar; }
-        private set {geboorteJaar = value;}
+        get { return geboorteJaar; }
+        private set { geboorteJaar = value; }
     }
     public void Jarig()
     {
@@ -135,7 +138,7 @@ Math myMath = new Math(); //dit mag niet!
 myMath.Pow(3,2)
 ```
 
-De reden dat je de ``Math``-bibliotheek kan aanroepen rechtstreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefineerd staan.
+De reden dat je de ``Math``-bibliotheek kan aanroepen rechtstreeks **op de klasse** en niet op objecten van die klasse is omdat de methoden in die klasse als ``static`` gedefinieerd staan.
 
 {% hint style='tip' %}
 De klasse is op de koop toe ook zelf ``static`` gemaakt. Zo kan er zeker geen twijfel bestaan: deze klasse kan niét in een object gegoten worden.
@@ -183,10 +186,22 @@ int opgeteld = EpicLibrary.TelOp(3,5);
 
 Mooi toch.
 
-## Intermezzo: Debug.WriteLine
-Even een kort intermezzo dat we in de volgende sectie gaan gebruiken, namelijk de werking van de ``Debug``.
+Dankzij ``static`` kunnen we dus eigen bibliotheken van methoden (én properties) aanmaken die we kunnen aanroepen rechtstreeks op de klasse zonder dat we er een object van moeten aanmaken.
 
-De ``Debug`` klasse (die in de ``System.Diagnostics`` namespace staat) kan je gebruiken om eenvoudig zaken naar het "debug output venster" te sturen tijdens het debuggen. Dit is handig om te voorkomen dat je debug informatie steeds naar het console-scherm moet sturen. Het zou niet de eerste keer zijn dat iemand vergeet een bepaalde Console.WriteLine te verwijderen uit hte finale product met gevoelige debug-informatie. 
+{% hint style='tip' %}
+Je mag ook hybride klassen maken waarin sommige delen ``static`` zijn en andere niet. De ``DateTime`` klasse uit het eerste hoofdstuk bijvoorbeeld is zo'n klasse. De meeste dingen gebeurden *non-static* toch was er ook bijvoorbeeld de ``static`` property ``Now`` om de huidige tijd terug te krijgen, alsook de ``IsLeapYear`` hulpmethode die we rechtstreeks op de klasse ``DateTime`` moesten aanroepen:
+
+<!---{line-numbers:false}--->
+```java
+bool gaIkOpPensioenInEenSchrikkeljaar = DateTime.IsLeapYear(2048);
+```
+
+{% endhint %}
+
+## Intermezzo: Debug.WriteLine
+Even een kort intermezzo dat we in de volgende sectie gaan gebruiken, namelijk de werking van de ``Debug`` klasse.
+
+De ``Debug`` klasse (die in de ``System.Diagnostics`` namespace staat) kan je gebruiken om eenvoudig zaken naar het *debug output venster* te sturen tijdens het debuggen. Dit is handig om te voorkomen dat je debug informatie steeds naar het console-scherm moet sturen . Het zou niet de eerste keer zijn dat iemand vergeet een bepaalde ``Console.WriteLine`` te verwijderen uit het finale product en zo mogelijk gevoelige debug-informatie naar de eindgebruikers lekt.
 
 Volgende code toont een voorbeeld (merk lijn 2 op die uiteraard vereist is):
 ```java
@@ -205,14 +220,14 @@ namespace debugdemo
     }
 }
 ```
-Als je deze code uitvoer in debugger modus, dan zal je enkel de tekst ``Hello World! Console`` in je console zien verschijnen. De andere lijn kan je terugvinden in het "Output" venster in Visual Studio:
+Als je deze code uitvoert in debugger modus, dan zal je enkel de tekst ``Hello World! Console`` in je console zien verschijnen. De andere lijn kan je terugvinden in het "Output" venster in Visual Studio:
 
 <!--- {width:60%} --->
 ![](../assets/6_klassen/debugmode.png)
 
 
 
-#### Nog een voorbeeld
+#### Nog een voorbeeld van het gebruik van ``static``
 
 In het volgende voorbeeld gebruiken we een ``static`` variabele om bij te houden hoeveel objecten (via de constructor met behulp van ``Debug.WriteLine`` ) er van de klasse reeds zijn aangemaakt. :
 
@@ -225,18 +240,17 @@ class Fiets
         aantalFietsen++;
         Debug.WriteLine($"Er zijn nu {aantalFietsen} gemaakt");
     }
-	
-	public static void VerminderFiets()
-	{
+    public static void VerminderFiets()
+    {
         aantalFietsen--;
         Debug.WriteLine($"STATIC: Er zijn {aantalFietsen} fietsen");
-	}
+    }
 }
 ```
 
 
 
-Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt. We kunnen echter nog steeds instanties, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
+Merk op dat we de methoden ``VerminderFiets`` enkel via de klasse kunnen aanroepen daar deze ``static`` werd gemaakt (zie verder). We kunnen echter nog steeds instanties, ``Fiets``-objecten, aanmaken aangezien de klasse zelf niet ``static`` werd gemaakt.
 
 Laten we de uitvoer van volgende code eens bekijken:
 ```java
@@ -264,19 +278,19 @@ STATIC:Er zijn 2 fietsen
 
 ### Static vs non-static
 
-Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere ``static` methoden en variabelen kunnen aanspreken. Dat is logisch: een ``static`` methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten benaderen? Het omgekeerde kan nog wel natuurlijk.
+Van zodra je een methode hebt die ``static`` is dan zal deze methode enkel andere ``static`` methoden en variabelen kunnen aanspreken. Dat is logisch: een ``static`` methode heeft geen toegang tot de gewone niet-statische variabelen van een individueel object, want welk object zou hij dan moeten benaderen? Het omgekeerde kan nog wel natuurlijk.
 
 Volgende code zal dus een fout geven:
 
 ```java
 class Mens
 {
-	private int gewicht = 50;
-	
-	private static void VerminderGewicht()
-	{
-		gewicht--;
-	}
+    private int gewicht = 50;
+
+    private static void VerminderGewicht()
+    {
+        gewicht--;
+    }
 }
 ```
 
@@ -317,17 +331,15 @@ Uiteraard kan je wel niet-static zaken gebruiken en daarom kan je dus gewone obj
 
 Beeld je in dat je (weer) een pong-variant moet maken waarbij meerdere balletjes over het scherm moeten botsen. Je wilt echter niet dat de balletjes zelf allemaal apart moeten weten wat de grenzen van het scherm zijn. Mogelijk wil je bijvoorbeeld dat je code ook werkt als het speelveld kleiner is dan het eigenlijke Console-scherm.
 
-We gaan dit oplossen met een static property waarin we de grenzen voor alle balletjes bijhouden. Onze basis-klasse wordt dan al vast:
+We gaan dit oplossen met een static property waarin we de grenzen voor alle balletjes bijhouden. Aan onze klasse ``Balletje`` voegen we dan alvast het volgende toe:
 
 ```java
-class Balletje
-{
-    static public int Breedte { get; set; }
-    static public int Hoogte { get; set; }
+static public int Breedte { get; set; }
+static public int Hoogte { get; set; }
 
 ```
 
-In ons hoofdprogramma (``Main``) kunnen we nu de grenzen voor alle balletjes vastleggen:
+In ons hoofdprogramma (``Main``) kunnen we nu de grenzen voor alle balletjes tegelijk vastleggen:
 
 ```java
 Balletje.Hoogte = Console.WindowHeight;
@@ -339,8 +351,11 @@ Maar even goed maken we de grenzen voor alle balletjes gebaseerd op zelf gekozen
 ```java
 Balletje.Hoogte = 20;
 Balletje.Breedte = 10;
-
 ```
+
+{% hint style='tip' %}
+We zouden zelfs de grenzen van het veld dynamisch kunnen maken en laten afhangen van het huidige level.
+{% endhint %}
 
 De interne werking van de balletjes hoeft dus geen rekening meer te houden met de grenzen van het scherm. We passen de ``Update``-methode aan, rekening houdend met deze nieuwe kennis:
 
@@ -369,7 +384,7 @@ En nu kunnen we vlot balletjes laten rondbewegen op bijvoorbeeld een klein deelt
 ```java
 static void Main(string[] args)
 {
-    Console.CursorVisible = false; //handig dit hoor
+    Console.CursorVisible = false;
     Balletje.Hoogte = 15;
     Balletje.Breedte = 15;
 
@@ -414,7 +429,7 @@ class Dobbelsteen
 }
 ```
 
-Wanneer je nu dezelfde dobbelsteen 10 maal rolt is de kans groot dat je geregeld dezelfde getallen gooit:
+Wanneer je nu dezelfde dobbelsteen 10 maal snel na elkaar rolt is de kans groot dat je geregeld dezelfde getallen gooit:
 
 ```java
 Dobbelsteen testDobbel = new Dobbelsteen();

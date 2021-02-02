@@ -1,6 +1,8 @@
 # Arrays en klassen
 
-In het vorige boekdeel bespraken we reeds arrays. In dit hoofdstuk tonen we dat ook arrays van objecten perfect mogelijk zijn. We weten reeds dat klassen niet meer dan zijn dan nieuwe datatypes, en dus is het ook logisch dat wat we reeds met arrays konden, we dit gewoon kunnen blijven doen, maar met objecten. **Maar**, er is één grote maar: omdat we met objecten werken moeten we rekening houden met het feit dat de individuele objecten in je array **reference** values hebben en dus mogelijk ``null`` zijn. Met andere woorden: het is van essentiëel belang dat je het hoofdstuk rond geheugenmanagement in C# goed begrijpt, want we gaan het geregeld nodig hebben.
+In het vorige boekdeel bespraken we reeds arrays. In dit hoofdstuk tonen we dat ook arrays van objecten perfect mogelijk zijn. We weten reeds dat klassen niets meer dan zijn dan nieuwe datatypes, en dus is het ook logisch dat wat we reeds met arrays konden, we dit gewoon kunnen blijven doen, maar met objecten. 
+
+**Maar**, er is één grote maar: omdat we met objecten werken moeten we rekening houden met het feit dat de individuele objecten in je array **reference** values hebben en dus mogelijk ``null`` zijn. Met andere woorden: het is van essentiëel belang dat je het hoofdstuk rond geheugenmanagement in C# goed begrijpt, want we gaan het geregeld nodig hebben.
 
 *Let's go!*
 
@@ -15,7 +17,7 @@ Student[] mijnKlas = new Student[20];
 De ``new`` zorgt er echter enkel voor dat er een referentie naar een nieuwe array wordt teruggegeven, waar ooit 20 studenten-objecten in kunnen komen. **Maar: er staan nog géén objecten in deze array. Alle elementen in deze array zijn nu nog ``null``.**
 
 <!--- {width:60%} --->
-![De referentie naar een , nu nog, lege array is aangemaakt.](../assets/6_klassen/beginarraysit.png)
+![De referentie naar een, nu nog, lege array is aangemaakt.](../assets/6_klassen/beginarraysit.png)
 
 Willen we nu elementen in deze array plaatsen dan moeten dit ook expliciet doen en moeten we dus objecten aanmaken en hun referentie in de array bewaren:
 
@@ -39,7 +41,7 @@ for(int i = 0; i < mijnKlas.Length; i++)
 
 ### Individueel object benaderen
 
-Van zodra een object in de array staat kan je deze vanuit de array aanspreken d.m.v. de index en de *dot*-operator om de de juiste methode of property op het object aan te roepen:
+Van zodra een object in de array staat kan je deze vanuit de array aanspreken door middel van de index en de *dot*-operator om de de juiste methode of property op het object aan te roepen:
 
 ```java
 mijnKlas[3].Name = "Vincent Lagasse";
@@ -119,6 +121,7 @@ static Student[] CreateEmptyStudentArray()
 ```
 Vervolgens kunnen we deze dan aanroepen en het resultaat (de referentie naar de lege array) toewijzen aan een nieuwe variabele (van hetzelfde datatype, namelijk ``Student[]``):
 
+<!---{line-numbers:false}--->
 ```java
 Student[] resultaat = CreateEmptyStudentArray();
 ```

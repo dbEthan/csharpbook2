@@ -55,8 +55,9 @@
 <!---  * [OOPQuest Fase 9](oopquest/h9_basics.md)--->
 * H9: Interfaces
   * [Interface intro](16_interfaces/1_Interface_intro.MD)
-  * [Interfaces voorbeeld met president](16_interfaces/presidentinterfaces.md)
   * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)
+  * [Interfaces en polymorfisme](16_interfaces/2_interfaceenpoly.md)
+  * [Interfaces voorbeeld met president](16_interfaces/presidentinterfaces.md)
   * [Final chapter: we brengen alles samen](18_IsAs/2_Polymorfisme_Interfaces.md)
 <!---  * [OOPQuest Finale Fase](oopquest/h10_basics.md)--->
 * Conclusie

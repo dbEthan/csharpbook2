@@ -2,7 +2,7 @@
 
 In het vorige boekdeel bespraken we reeds de ``while``, ``do while`` en `` for``-loops. Er is echter een vierde soort loop in C# die vooral zijn nut zal bewijzen wanneer we met arrays van objecten werken: de ``foreach`` loop.
 
-Wanneer je geen indexering nodig hebt, maar toch snel over alle elementen in een array wenst te gaan, dan is het **foreach** statement een zeer nuttig is.
+Wanneer je geen indexering nodig hebt, maar toch snel over alle elementen in een array wenst te gaan, dan is het **foreach** statement zeer nuttig.
 Een ``foreach`` loop zal ieder element in de array één voor één in een tijdelijke variabele plaatsen (de **iteration variable**) zodat binnenin de loop met dit ene element kan gewerkt worden. Het voordeel hierbij is dat je geen teller/index nodig hebt en dat loop zelf de lengte van de array zal bepalen: *je code wordt net iets leesbaarder* als we dit bijvoorbeeld vergelijken met hoe een ``for`` loop geschreven is.
 
 Volgende code toont de werking waarbij we een ``double``-array hebben en alle elementen ervan op het scherm willen tonen:
@@ -69,6 +69,10 @@ foreach(Student eenStudent in deKlas)
 
 {% endhint %}
 
+{% hint style='tip' %}
+Met de VS snippet ``foreach`` gevolgd door twee maal op de tab-toets te duwen krijg je een kant-en-klare ``foreach`` loop.
+{% endhint %}
+
 ## Het ``var`` keyword
 
 C# heeft een **``var``** keyword. Je mag dit keyword gebruiken ter vervanging van het datatype (bv ``int``) op voorwaarde dat de compiler kan achterhalen wat het type (*implicit type*) moet zijn aan de hand van de expressie rechts van de toekenningsoperator.
@@ -84,7 +88,7 @@ var ikke = new Leerkracht(); //var zal Leerkracht zijn
 **Opgelet**: het ``var`` keyword is gewoon een *lazy programmer syntax toevoeging* om te voorkomen dat je als programmeur niet constant het type moet schrijven.
 
 
-Bij JavaScript heeft ``var`` een totaal andere functie, daar zegt het eigenlijk: "het type dat je in deze variabele kan steken is...variabel". M.a.w. het kan de ene  keer een ``string`` zijn, dan een int. Bij C# gaat dit niet: eens je een variabele aanmaakt dan zal dat type onveranderbaar zijn en kan je er alleen waarden aan toekennen van dat type. JavaScript is namelijk een *dynamically typed language* terwijl C# een *statically typed language* is (er is één uitzondering bij C# hieromtrent: wanneer je met ``dynamic`` leert werken kan je C# ook tijdelijk als een dynamically typed taal gebruiken, maar dat wordt niet besproken in dit boek).
+Bij JavaScript heeft ``var`` een totaal andere functie, daar zegt het eigenlijk: "het type dat je in deze variabele kan steken is...variabel". Met andere woorden het kan de ene  keer een ``string`` zijn, dan een int. Bij C# gaat dit niet: eens je een variabele aanmaakt dan zal dat type onveranderbaar zijn en kan je er alleen waarden aan toekennen van dat type. JavaScript is namelijk een *dynamically typed language* terwijl C# een *statically typed language* is (er is één uitzondering bij C# hieromtrent: wanneer je met ``dynamic`` leert werken kan je C# ook tijdelijk als een dynamically typed taal gebruiken, maar dat wordt niet besproken in dit boek).
 
 {% endhint %}
 
@@ -103,20 +107,6 @@ foreach (var singleKD in killDeathRates)
 
 Merk op dat dit hoegenaamd geen invloed heeft op je applicatie. Wanneer je code gaat compileren die het keyword ``var`` bevatten dan zal de compiler eerst alle *vars* vervangen door het juiste type, én dan pas beginnen compileren.
 
-<!---{pagebreak} --->
-
-### Foreach met List
-
-Je kan met een eenvoudige ``for`` of ``while``-loop over een ``List`` itereren, maar het gebruik van een foreach-loop is toch handiger.
-
-Dit is dan ook de meestgebruikte operatie om eenvoudig en snel een bepaald stuk code toe te passen op ieder element van de lijst. Stel je voor dat we een lijst ``OverwatchKarakters`` hebben waarin objecten van het type ``Karakter`` in zitten. Als we van ieder karakter in de lijst de naam op het scherm willen tonen dan kan dan als volgt:
-
-```java
-foreach(Karakter personage in OverwatchKarakters)
-{
-   Console.WriteLine(personage.Naam);
-}
-```
 
 <!---NOBOOKSTART--->
 # Kennisclip

@@ -22,7 +22,7 @@ class Frituur:Restaurant
 
 Het poetsen van een ``Frituur`` is duurder (1000 basis + 500 voor ontsmetting) dan een gewoon ``Restaurant``. Als we echter later beslissen dat de basisprijs (in ``Restaurant``) moet veranderen dan moet je ook in alle child-klassen doen, wat natuurlijk geen goede programmeerstijl is.
 
-``base`` lost dit voor ons. De ``Frituur``-klasse herschrijven we naar:
+``base`` lost dit voor ons op. De ``Frituur``-klasse herschrijven we naar:
 
 ```java
 class Frituur:Restaurant
@@ -58,7 +58,7 @@ class Oermens
 {
       public virtual int VoorzieVoedsel()
       {
-      
+
       }
 }
 ```
@@ -67,7 +67,7 @@ Wanneer 1 van mijn dorpsgenoten voedsel zoekt (door te jagen) zal hij of zij erg
 
 De moderne mens, die overerft van de oermens, is natuurlijk al iets beter in het maken van voedsel en kan dagelijks standaard 100kg voedsel maken. 
 
-Echter, er bestaan ook hipster die houden van de klassieke manier van voedsel verzamelen. Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden:
+Echter, er bestaan ook hipsters die houden van de klassieke manier van voedsel verzamelen (maar ze zijn wel gewoon moderne mensen, dus geen klasse apart hier). Uiteraard hebben zij de technieken van de oermens verbeterd en zullen sowieso toch iets meer voedsel nog kunnen verzamelen met de traditionele methoden:
 
 ```java
 class ModerneMens: Oermens

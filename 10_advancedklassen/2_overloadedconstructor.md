@@ -27,9 +27,9 @@ class Student
 
 Dat was eenvoudig, hé?
 
-**Maar** denk eraan, je hebt een overloaded constructor geschreven en dus heeft C# gezegd: *"Ok, je schrijft zelf constructors? Trek je plan nu maar. De default zal je ook nu zelf moeten schrijven."*
+**Maar** denk eraan, je hebt een overloaded constructor geschreven en dus heeft C# gezegd: *"Ok, je schrijft zelf constructors? Trek je plan nu maar. De default constructor zal je ook nu zelf moeten schrijven."*
 
-Je kan nu enkel je objecten nog via de overloaded constructors aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je die constructor, de default constructor, nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
+Je kan nu enkel je objecten nog via de overloaded constructors aanmaken. Schrijf je ``new Student()`` dan zal je een error krijgen. Wil je de default constructor toch nog hebben dan zal je die dus ook expliciet moeten schrijven, bijvoorbeeld:
 
 
 ```java
@@ -129,6 +129,8 @@ class Student
             {
                 bijNaam = "Geen";
             }
+            else 
+                bijNaam = value;
         }
         get
         {
@@ -144,7 +146,7 @@ Deze manier voorkomt dat de constructors verantwoordelijk zijn opdat properties 
 
 {% endhint %}
 
-### Constructors hergebruiken
+### Constructors hergebruiken met ``this()``
 
 Beeld je in dat je volgende klasse hebt:
 
@@ -174,7 +176,7 @@ class Microfoon
 }
 ```
 
-**Opgelet:** bij voorgaande code gaat er mogelijk bij sommige van jullie een alarmbelletje af vanwege de kans op quasi dezelfde code in de verschillende constructors. En dat is een terecht alarm! Om te voorkomen dat we steeds dezelfde toewijzingen moeten schrijven in constructors laat C# toe dat je een andere constructor kunt aanroepen bij een constructor call. We gebruiken hier een speciale methode aanroep ``this()`` bij de constructorsignatuur. Via deze aanroep kunnen we dan eventueel parameters meegeven, afhankelijk wat we nodig hebben. De compiler zal aan de hand van de parameters (of het ontbreken) er aan beslissen welke constructor nodig is met behulp van de klassieke *method overload resolution* regels en de **betterness** regel toepassen (zie vorige boek).
+Bij voorgaande code gaat er mogelijk bij sommige van jullie een alarmbelletje af vanwege de kans op quasi dezelfde code in de verschillende constructors. En dat is een terecht alarm! Om te voorkomen dat we steeds dezelfde toewijzingen moeten schrijven in constructors laat C# toe dat je een andere constructor kunt aanroepen bij een constructor call. We gebruiken hier een speciale methode aanroep ``this()`` bij de constructorsignatuur. Via deze aanroep kunnen we dan eventueel parameters meegeven, afhankelijk wat we nodig hebben. De compiler zal aan de hand van de parameters (of het ontbreken) er aan beslissen welke constructor nodig is met behulp van de klassieke *method overload resolution* regels en de **betterness** regel toepassen (zie vorige boek).
 
 <!---{pagebreak} --->
 
@@ -214,9 +216,9 @@ public Microfoon(bool isUitverkochtIn): this("Bovarc", isUitverkochtIn)
 
 Wanneer we een object aanmaken als volgt ``new Microfoon(true)`` dan zal uiteindelijk dit object van het merk ``Wit Product`` zijn. Er gebeurt namelijk het volgende:
 1. De overloaded constructor ``Microfoon(bool isUitverkochtIn)`` wordt aangeroepen.
-2. Ogenblikkelijk wordt de meegegeven actuele parameter isUitverkochtIn doorgegeven om de overloaded constructor ``Microfoon(string merkIn, bool isUitverkochtIn)`` te benaderen.
+2. Ogenblikkelijk wordt de meegegeven actuele parameter ``isUitverkochtIn`` doorgegeven om de overloaded constructor ``Microfoon(string merkIn, bool isUitverkochtIn)`` te benaderen.
 3. Deze constructor zal het ``Merk`` op ``Bovarc`` zetten en ``IsUitverkocht`` op ``true`` (daar we die parameter doorgeven).
-4. We keren nu terug naar de contructor ``Microfoon(bool isUitverkochtIn)`` en voeren de code hiervan uit. Bijgevolg wordt de waarde in ``Merk`` overschreven met ``Wit Product`` 
+4. We keren nu terug naar de contructor ``Microfoon(bool isUitverkochtIn)`` en voeren de code hiervan uit. Bijgevolg wordt de waarde in ``Merk`` overschreven met ``Wit Product``. 
 
 <!---{pagebreak} --->
 
@@ -263,7 +265,7 @@ public  int Noemer
         if(value != 0)
             noemer = value; 
         else
-            noemer = value; //of werp Exception op zoals eerder uitgelegd.
+            noemer = 1; //of werp Exception op zoals eerder uitgelegd.
     }
 }
 ```
@@ -296,7 +298,7 @@ class  Breuk
             if(value != 0)
                 noemer = value; 
             else
-                noemer = value; //of werp Exception op zoals eerder uitgelegd.
+                noemer = true; //of werp Exception op zoals eerder uitgelegd.
         }
     }
     private int Teller {get; private set;}
@@ -317,7 +319,7 @@ Hierdoor kan ik geen ``Breuk`` objecten meer als volgt aanmaken:``Breuk eenBreuk
 
 
 ### Pong met constructors
-We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded constructor:
+We zullen deze nieuwe informatie gebruiken om onze ``Pong``-klasse uit het eerste hoofdstuk te verbeteren door deze de nodige constructors te geven. Namelijk een default die een balletje aanmaakt dat naar rechtsonder beweegt, en één overloaded constructor die toelaat dat we zelf kunnen kiezen wat de beginwaarden van ``X``, ``Y``, ``VectorX`` en ``VectorY`` zullen zijn:
 
 ```java
 class Balletje
@@ -343,6 +345,10 @@ We kunnen nu op 2 manieren balletjes aanmaken:
 Balletje bal1 = new Balletje();
 Balletje bal2 = new Balletje(10,8,-2,1);
 ```
+
+{% hint style='tip' %}
+Je zou ook kunnen overwegen om in de default constructor het balletje een willekeurige locatie en snelheid te geven.
+{% endhint %}
 
 
 <!---NOBOOKSTART--->

@@ -5,7 +5,7 @@ Dit hoofdstuk is kort maar krachtig. We gaan niets nieuws uitleggen, maar eerder
 {% endhint %}
 
 
-We spreken over compositie (**composition**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type ``Motor`` dat je gebruikt in een object van het type ``Auto``. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaalt of het gaat om aggregatie of compositie:
+We spreken over compositie (**compositie**) en aggregatie (**aggregation**) wanneer we een object in een ander object gebruiken. Denk bijvoorbeeld aan een object van het type ``Motor`` dat je gebruikt in een object van het type ``Auto``. Afhankelijk of het 'interne' object kan bestaan zonder het ouder-object bepaalt of het gaat om aggregatie of compositie:
 
 * **Compositie**: Het interne object heeft geen bestaansreden zonder het moederobject. Denk bijvoorbeeld aan een kamer in een huis. Als het huis verdwijnt, verdwijnt ook de kamer.
 * **Aggregatie**: Beide objecten kunnen onafhankelijk van elkaar bestaan. Denk hierbij aan de motor in een auto. Wanneer de auto vernietigd wordt kan de motor gered worden en elders gebruikt worden. Een ander voorbeeld zijn de harde schijven in een computer.
@@ -55,7 +55,6 @@ We bekijken het voorbeeld van de computer en de harde schijf. We hebben twee kla
 class PC
 {
 }
-
 class HardeSchijf
 {
 }
@@ -70,7 +69,7 @@ class PC
 }
 ```
 
-In principe kunnen we nu zeggen dat we aggregatie hebben toegepast. Uiteraard moeten we nu deze HardeSchijf nog instantiëren anders zal deze de hele levensduur van ieder PC-object ``null`` zijn. 
+In principe kunnen we nu zeggen dat we aggregatie hebben toegepast. Uiteraard moeten we nu deze ``HardeSchijf`` nog instantiëren anders zal deze de hele levensduur van ieder ``PC``-object ``null`` zijn. 
 
 De instantie van een geaggregeerd object kan op verschillende manieren en is afhankelijk van wat je nodig hebt in je applicatie.
 
@@ -99,7 +98,7 @@ class PC
 <!--- {float:right, width:50%} --->
 ![](../assets/attention.png)
 
-Het moge duidelijk zijn: compositie/aggregatie en referenties horen samen. Maar hoe zit dit er allemaal uit in het geheugen? Blij dat je het vraag! 
+Het moge duidelijk zijn: compositie/aggregatie en referenties horen samen. Maar hoe zit dit er allemaal uit in het geheugen? Blij dat je het vraagt! 
 
 Wanneer we van voorgaande klasse een object aanmaken als volgt:
 
@@ -163,22 +162,23 @@ Het is een goede OOP oefening om af en toe in je omgeving eens rond te kijken, e
 ### Manier 3: Properties
 De vorige 2 voorbeelden waren eigenlijk voorbeelden van *compositie*. Wanneer de PC-objecten vernietigd worden (door de GC) zullen ook de interne harde schijven verdwijnen. 
 
-Willen we echter via *aggregatie* de pc's bouwen, dan is het logischer dat we op een andere, externe plaats de ``HardeSchijf`` objecten aanmaken en deze vervolgens, nadat de PC werd aangemaakt, in de PC plaatsen. We gebruiken hierbij Properties om toegang tot het interne (geaggregeerde) object te verschaffen:
+Willen we echter via *aggregatie* de pc's bouwen, dan is het logischer dat we op een andere, externe plaats de ``HardeSchijf`` objecten aanmaken en deze vervolgens, nadat de PC werd aangemaakt, in de PC plaatsen. We gebruiken hierbij properties om toegang tot het interne (geaggregeerde) object te verschaffen:
 
 ```java
 class PC
 {
     public HardeSchijf CHardeSchijf {get;set;}
 }
-
 ```
 
 Vervolgens kunnen we nu van buitenuit het object benaderen en er , als het ware, een nieuwe harde schijf in steken. 
 ```java
-HardeSchijf myHardeSchijf = new HardeSchijf() {CHardeSchijf = myHardeSchijf} ;
+HardeSchijf mijnHardeSchijf = new HardeSchijf() 
+PC mijnPC = new PC();
+mijnPC.CHardeSchijf = mijnHardeSchijf ;
 ```
 
-Op deze manier hebben we nog steeds een referentie naar ``myHardeSchijf`` en zal de GC dit object dus niet verwijderen wanneer , om welke reden ook, ``myPC`` wordt opgekuist.
+Op deze manier hebben we nog steeds een referentie naar ``mijnHardeSchijf`` en zal de GC dit object dus niet verwijderen wanneer , om welke reden ook, ``mijnPC`` wordt opgekuist.
 
 
 {% hint style='tip' %}
@@ -194,7 +194,6 @@ Stel je voor dat de klasse ``HardeSchijf`` ook een autoproperty ``MaxCapacity`` 
 class PC
 {
     private HardeSchijf cHardeSchijf = new HardeSchijf();
-
     public override string ToString()
     {
         return $"Intel i9 Capaciteit HD: {cHardeSchijf.MaxCapacity} Gb";
@@ -228,28 +227,28 @@ En uiteraard kan het ook nooit kwaad om alles in ``try-catch`` blokken te zetten
 
 ## "Heeft meerdere"- relatie
 
-Wanneer een object meerdere objecten van een specifiek type heeft (denk maar aan "een boek heeft meerdere pagina's" of "een boom heeft bladeren") dan zullen we een array of een list als compositie-object gebruiken. 
+Wanneer een object meerdere objecten van een specifiek type heeft (denk maar aan "een boek heeft meerdere pagina's" of "een boom heeft bladeren") dan zullen we een array of een ``List`` als compositie-object gebruiken. 
 
-Voorbeeld:
+Een voorbeeld:
 
 ```java
-class Page{}
+class Pagina{}
 
 class Boek
 {
-   public Page[] AllPages {get;set;} = new Page[100];
+   public Pagina[] AllePaginas {get;set;} = new Pagina[100];
 }
 ```
 
 Indien je nu een pagina wenst toe te voegen dan moet je ook deze individuele array-elementen nog instantieren.
 
 ```java
-class Book
+class Boek
 {
-    public Page[] AllPages {get;set;} = new Page[100];
-    public void InsertPage(Page toAdd, int position)
+    public Pagina[] AllePaginas {get;set;} = new Pagina[100];
+    public void InsertPagina(Pagina paginaIn, int positie)
     {
-        AllPages[position] = toAdd;
+        AllePaginas[positie] = paginaIn;
     }
 }
 ```
@@ -257,38 +256,38 @@ class Book
 Een voorbeeld waarbij men vervolgens van buitenuit het object bestaande pagina's kan toevoegen:
 
 ```java
-Book myBook = new Book();
-Page myThirdPage = new Page();
-myBook.InsertPage(myThirdPage, 2);
+Boek zieScherper = new Boek();
+Pagina mijnDerdePagina = new Pagina();
+zieScherper.InsertPagina(mijnDerdePagina, 2);
 ```
 
 Of een voorbeeld met ``List``:
 
 ```java
-class Book
+class Boek
 {
-    public List<Page> AllPages {get;set;} = new List<Page>();
+    public List<Pagina> AllePaginas {get;set;} = new List<Pagina>();
 }
 
 ```
 Dit heeft als voordeel dat we de ``Insert`` methode van de ``List``-klasse kunnen gebruiken en niet zelf nog moeten schrijven:
 ```java
-myBook.AllPages.Insert(new Page(), 5); 
+zieScherper.AllePaginas.Insert(new Pagina(), 5); 
 ```
 
 {% hint style='warning' %}
-Dit voorbeeld met ``List`` is vanuit OOP-standpunt **geen goede oplossing**. Het vereist namelijk dat programmeurs die jouw klasse ``Book`` gebruiken, weten dat intern met een ``List`` wordt gewerkt. 
+Dit voorbeeld met ``List`` is vanuit OOP-standpunt **geen goede oplossing**. Het vereist namelijk dat programmeurs, die jouw klasse ``Boek`` gebruiken, weten dat intern met een ``List`` wordt gewerkt. 
 
-We willen echter zo goed mogelijk een **blackbox** creëren, conform het abstractie-principe, die van buitenuit duidelijk en eenvoudig in gebruik is. Het is daarom beter om alsnog aan je ``Book`` klasse een ``Insert`` methode toe te voegen. Dit geeft als extra verbetering dat we daarmee de ``set`` van onze lijst van pagina's ``private`` kunnen houden:
+We willen echter zo goed mogelijk een **blackbox** creëren, conform het abstractie-principe, die van buitenuit duidelijk en eenvoudig in gebruik is. Het is daarom beter om alsnog aan je ``Boek`` klasse een ``Insert`` methode toe te voegen. Dit geeft als extra verbetering dat we daarmee de ``set`` van onze lijst van pagina's ``private`` kunnen houden:
 
 ```java
-class Book
+class Boek
 {
-    public List<Page> AllPages {get; private set;} = new List<Page>();
+    public List<Pagina> AllePaginas {get; private set;} = new List<Pagina>();
     
-    public void InsertPage(Page toAdd, int position)
+    public void InsertPagina(Pagina paginaIn, int positie)
     {
-        allPages.Insert(toAdd, position)
+        allPaginas.Insert(paginaIn, positie)
     }
 }
 ```
@@ -296,7 +295,7 @@ class Book
 Pagina's voegen we nu als volgt toe:
 
 ```java
-myBook.InsertPage(new Page(), 5); 
+zieScherper.InsertPagina(new Pagina(), 5); 
 ```
 {% endhint %}
 
@@ -330,7 +329,7 @@ Let er wel op dat je niet overal compositie begin toe te passen alsof je de Dokt
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
-* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
-* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
+* [Compositie](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
+* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
+* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
 <!---NOBOOKEND--->

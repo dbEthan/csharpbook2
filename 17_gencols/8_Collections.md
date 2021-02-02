@@ -108,7 +108,7 @@ I arrived here second.
 Een andere interessante methode is de **Peek()** methode; hiermee kunnen we kijken in de queue wat het eerste element is, zonder het te verwijderen.
 
 ### Stack collectie
-Daar waar een queue first-in-first-out is, is een stack last-in first out. M.a.w. het recentst toegevoegde element zal steeds vooraan staan en als eerste verwerkt worden. Je kan dit vergelijken met een stapel waar je steeds bovenop een nieuw object legt.
+Daar waar een queue first-in-first-out is, is een stack last-in first out. Met andere woorden het recentst toegevoegde element zal steeds vooraan staan en als eerste verwerkt worden. Je kan dit vergelijken met een stapel waar je steeds bovenop een nieuw object legt.
 
 ![Stack vs queue (Bron helaas onbekend)](../assets/10_generics/generics3.png)
 

@@ -11,6 +11,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [OOP in actie - de intro voor de intro](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f71ee5ef-5e80-4c34-afda-acc200a986b9)
 * [OOP, klassen en objecten...what's it all about?!](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=628acdda-bcc3-4de5-8b0e-acc200a98688)
 * [Podcast: Klassen en objecten](https://anchor.fm/tim-dams/episodes/Klassen-en-objecten-enis61)
+* [Klassen in C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=95509e9e-5a60-47f3-b14d-acc400a48eef)
 * [Properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=45cc8607-0fdd-4928-965d-acb40097fbe4)
 * [Demo: Overzicht properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34e326ab-5ee3-4e36-8880-ab6100c13715)
 * [Demo: Full properties](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a9c712ba-5788-4121-aff9-ab6100c3d1ed)

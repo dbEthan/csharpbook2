@@ -125,3 +125,13 @@ Ik onthoud nu alvast **"klassen zijn gewoon een nieuwe vorm van complexere datat
 <!---{sample: false}--->
 
 <!---{pagebreak} --->
+
+
+
+
+<!---NOBOOKSTART--->
+# Kennisclip
+![](../assets/infoclip.png)
+
+* [Klassen in C#](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=95509e9e-5a60-47f3-b14d-acc400a48eef)
+<!---NOBOOKEND--->

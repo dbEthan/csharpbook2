@@ -55,7 +55,6 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 ### Hoofdstuk 6 - Gevorderde overervingsconcepten
 * [Abstracte klassen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1b22106-87a6-4f6f-9437-acb100add8d5)
 * [System.Object en ToString](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=00cad992-7714-4051-a992-ab7d0093864b)
-* [Equals - objecten vergelijken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c18b27c9-ad5a-444b-9695-ab7d00c2c3d9)
 * [Zelf uitzonderingen maken](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b68d611d-2022-4f0b-aa88-acb100b9ef5a)
 * [Uitgewerkt voorbeeld Abstract en System.Object mbv Zoo-dieren](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e0c0f796-de77-4930-bcb6-ab8d00ce0c24) (compilatie uit hoorcollege 18-19)
 <!---* [Bespreking oplossing CoronaMissie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=736abb9f-5971-4920-a031-abad00ca02bc)--->
@@ -81,7 +80,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Interfaces en polymorfisme in de praktijk: Vloekende mensen](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=01040bf2-b14d-407f-b186-abad00b66540) 
 * [Interfaces en polymorfisme in de praktijk: fuifsimulator (LESOPNAME 2017)](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1827a908-a435-4d89-ae7a-aa4c00911c87)
 
-
+<!---
 ### Appendix - Git
 
 * [Git hoorcollege/Workshop](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e792a44a-98ee-43d4-a466-ab5d00900024)
@@ -92,4 +91,4 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Bespreking "corona training"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ca8a4561-20f1-429b-9787-ab8400fca88c)
 
 * [Compositie in praktijk demo met kaartspel deel 1](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9c2280d-7b1d-4a83-8851-ab9d00e13cca)
-* [Polymorfisme in praktijk "demo met kaartspel deel 2"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1009330-272d-4978-a078-aba2012ab2b8)
+* [Polymorfisme in praktijk "demo met kaartspel deel 2"](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a1009330-272d-4978-a078-aba2012ab2b8)--->

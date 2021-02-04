@@ -355,5 +355,5 @@ Je zou ook kunnen overwegen om in de default constructor het balletje een willek
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Overloaded constructors](https://ap.cloud.panopto.eu/Panopto/PgeboorteJaars/Viewer.aspx?id=24f83488-a058-4898-b34d-ab7a0097f165)
+* [Overloaded constructors](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=24f83488-a058-4898-b34d-ab7a0097f165)
 <!---NOBOOKEND--->

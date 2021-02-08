@@ -3,9 +3,9 @@
 <!---NOBOOKSTART--->
 <!---
 1. Basis klassen monster, schat en helden met nodige properties
-2. Random monster generator
-3. Constructor om helden in te stellen + static kaartgenerator
-4. Lijst van monsters, dictionary van schatten
+2. Random monster generator + rondbewegen
+3. Constructor om helden in te stellen + static hulpmethoden  
+4. kaartgenerator, Lijst van monsters, dictionary van schatten
 5. overerving van monsters en kamers
 6. exception handling voor user input
 7. abstracte gameelement klasse

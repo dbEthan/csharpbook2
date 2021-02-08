@@ -37,29 +37,29 @@
   * [Constructors bij overerving](12_overerving/3_constructors_inheritance.md)
   * [Virtual en override](12_overerving/1_virtual_override.md)
   * [Base keyword](12_overerving/2_base.md)
-<!---  * [OOPQuest Fase 5](oopquest/h4_basics.md)--->
+<!---  * [OOPQuest Fase 5](oopquest/h5_basics.md)--->
 * H6: Gevorderde overervingsconcepten
   * [System.Object](13_advancedovererving/4_System_Object.md)
   * [Abstract](13_advancedovererving/5_abstract.md)
   * [Zelf uitzonderingen maken](20_exceptions/1_eigenuitzondering.md)
-<!---  * [OOPQuest Fase 7](oopquest/h7_basics.md)--->
+<!---  * [OOPQuest Fase 7](oopquest/h6_basics.md)--->
 * H7: Compositie en this
   * [Compositie](14_compositie/0_compositie_intro.MD)
   * [this keyword](14_compositie/this.md)
-<!---  * [OOPQuest Fase 8](oopquest/h8_basics.md)--->
+<!---  * [OOPQuest Fase 8](oopquest/h7_basics.md)--->
 * H8: Polymorfisme
   * [Polymorfisme](15_polymorfisme/11_polymo_intro.MD)
   * [Polymorfisme in de praktijk](15_polymorfisme/polypraktijd.md)
   * [Is en As keywords](18_IsAs/1_IsAs.md)
   * [is, as en Polymorfisme: een krachtige bende](18_IsAs/6_equals.md)
-<!---  * [OOPQuest Fase 9](oopquest/h9_basics.md)--->
+<!---  * [OOPQuest Fase 9](oopquest/h8_basics.md)--->
 * H9: Interfaces
   * [Interface intro](16_interfaces/1_Interface_intro.MD)
   * [Interfaces in de praktijk](16_interfaces/2_InterfacesInPraktijk.md)
   * [Interfaces en polymorfisme](16_interfaces/2_interfaceenpoly.md)
   * [Interfaces voorbeeld met president](16_interfaces/presidentinterfaces.md)
   * [Final chapter: we brengen alles samen](18_IsAs/2_Polymorfisme_Interfaces.md)
-<!---  * [OOPQuest Finale Fase](oopquest/h10_basics.md)--->
+<!---  * [OOPQuest Finale Fase](oopquest/h9_basics.md)--->
 * Conclusie
   * [Het zit er op](BookOnly/conclusie.md)
   * [En nu?](ennu.md)

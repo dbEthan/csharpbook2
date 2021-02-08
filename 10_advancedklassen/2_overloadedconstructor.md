@@ -298,7 +298,7 @@ class  Breuk
             if(value != 0)
                 noemer = value; 
             else
-                noemer = true; //of werp Exception op zoals eerder uitgelegd.
+                noemer = 1; //of werp Exception op zoals eerder uitgelegd.
         }
     }
     private int Teller {get; private set;}

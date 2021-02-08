@@ -101,4 +101,5 @@ Het object ``m3`` zal een temperatuur van ``52`` bevatten en zijn opgemeten door
 ### Kennisclip
 ![](../assets/infoclip.png)
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc) (opname uit hoorcollege 4/3/20)
+* [Extra toelichting "Bevallingsvoorbeeld" voorgaande les](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b804bb0-c81b-4596-a4e9-acc900919722)
 <!---NOBOOKEND--->

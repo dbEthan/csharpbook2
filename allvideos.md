@@ -24,6 +24,7 @@ Op volgende pagina vind je alle kennisclips en andere opnames samen die doorheen
 * [Referenties en null](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d9117b52-7306-4e92-bf24-acb100b10697)
 * [Podcast: Achter de schermen bij de "new" operator](https://anchor.fm/tim-dams/episodes/Achter-de-schermen-bij-de-new-operator-enndm3)
 * [Objecten als parameter of returnwaarde](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8dbbc3f8-56ed-4657-82a7-ab7400e422bc)
+* [Extra toelichting "Bevallingsvoorbeeld" voorgaande les](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9b804bb0-c81b-4596-a4e9-acc900919722)
 * [Stack Overflow Exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=640a52f0-9ea0-42fc-b1f6-ab7a0093eda6)
 * [Namespaces en using](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2acbe0e2-4850-442c-a002-acb000a923b1)
 * [Werken met exception](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f0d75032-e9bc-46e8-9a36-acb400b24318)

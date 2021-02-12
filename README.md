@@ -24,9 +24,10 @@ De gepubliceerde versies zijn identiek aan deze cursus.
 
 Wil je toch een andere versie dan deze online versie dan kan dat via volgende kanalen:
 
-* Amazon.de (Weldra: Lente 2021) : fullcolor paperback versie, in groter formaat om aantekeningen bij de tekst te plaatsen. Ook kindle versie beschikbaar.
-* Kobo en bol.com (Weldra: Lente 2021) : ebook versie voor op je e-reader (gratis op kobo plus).
+* Paperback, kleur (ISBN: 9789464187472): [Bravenewbooks](https://www.bravenewbooks.nl/shop/index.php/catalog/product/view/id/549818/s/zie-scherper-object-georienteerd-programmeren-met-c-voor-gevorderden-enthousiastelingen-en-geeks-251354-www-bravenewbooks-nl/), [bol.com](https://www.bol.com/nl/p/zie-scherper/9300000026086462/?bltgh=nsseNOugjId3hmjW9QNGgQ.2_5.10.ProductTitle), [Standaard boekhandel](https://www.standaardboekhandel.be/p/zie-scherper-9789464187472), [Amazon.nl](https://www.amazon.nl/Zie-Scherper-geori%C3%ABnteerd-programmeren-enthousiastelingen/dp/9464187476/ref=sr_1_2?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=zie+scherper&qid=1613116194&sr=8-2) en vele andere boekenwinkels.
+* Paperback, zwartwit (ISBN: 9789464189025): [Bravenewbooks](https://www.bravenewbooks.nl/shop/index.php/catalog/product/view/id/549822/s/zie-scherper-object-georienteerd-programmeren-met-c-voor-gevorderden-enthousiastelingen-en-geeks-zwartwit-editie-253612-www-bravenewbooks-nl/), [bol.com](https://www.bol.com/nl/p/zie-scherper/9300000026086473/?bltgh=nsseNOugjId3hmjW9QNGgQ.2_5.8.ProductTitle), [Standaard boekhandel](https://www.standaardboekhandel.be/p/zie-scherper-9789464189025), [Amazon.nl](https://www.amazon.nl/Zie-Scherper-geori%C3%ABnteerd-programmeren-enthousiastelingen/dp/9464189029/ref=sr_1_1?__mk_nl_NL=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=zie+scherper&qid=1613116194&sr=8-1) en vele andere boekenwinkels.
 * [Leanpub](http://leanpub.com/ziescherper/): hoge-kwaliteits pdf. 
+* [Kobo ebook](https://www.kobo.com/be/nl/ebook/zie-scherper)
 
 
 ### Benodigdheden

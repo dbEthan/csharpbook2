@@ -59,7 +59,7 @@ void NiemandMagDitGebruiken()
 }
 ```
 
-**Het is een héél slechte gewoonte om géén access modifiers voor iedere methode te zetten. Maar er dus een gewoonte van dit steeds ogenblikkelijk te doen.**
+**Het is een héél slechte gewoonte om géén access modifiers voor iedere methode te zetten. Maak er dus een gewoonte van dit steeds ogenblikkelijk te doen.**
 {% endhint %}
 
 

@@ -197,7 +197,7 @@ class Mens
     public void StartVerjongingskuur()
     {
         Console.WriteLine("Jeuj. Ik word jonger!");
-        geboorteJaar--;
+        geboorteJaar++;
         Praat();
     }
 }

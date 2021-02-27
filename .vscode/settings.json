@@ -18,5 +18,8 @@
         "deletable",
         "i",
         "zorro"
-    ]
+    ],
+    "[markdown]": {
+        "editor.cursorSurroundingLines": 0
+    }
 }

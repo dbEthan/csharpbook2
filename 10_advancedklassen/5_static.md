@@ -55,16 +55,16 @@ Mens m2 = new Mens();
 m1.Jarig();
 m1.Jarig();
 m2.Jarig();
-Console.WriteLine($"{m1.GeboorteJaar}");;
-Console.WriteLine($"{m2.GeboorteJaar}");;
+Console.WriteLine($"{m1.GeboorteJaar}");
+Console.WriteLine($"{m2.GeboorteJaar}");
 ```
 
 Dan zien we volgende uitvoer:
 
 <!---{line-numbers:false}--->
 ```text
-3
 2
+1
 ```
 
 Ieder object houdt de stand van z'n eigen variabelen bij. Ze kunnen elkaars interne (zowel publieke als private) staat niet rechtstreeks veranderen.

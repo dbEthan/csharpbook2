@@ -12,7 +12,7 @@ Finaal lijkt het ons een goed moment om je robuustere, minder crashende, code te
 In het vorige boekdeel deden we reeds uit de doeken dat variabelen op 2 manieren in het geheugen kunnen leven:
 
 * **Value types**: waren variabelen wiens waarde rechtstreeks op de geheugenplek stonden waar de variabele naar verwees. Dit gold voor alle bestaande, ingebakken datatypes zoals ``int``, ``bool``, ``char`` etc. alsook voor ``enum`` types.
-* **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waarde effectieve waar de van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde.
+* **Reference types**: deze variabelen bevatten als inhoud een geheugenadres naar een andere plek in het geheugen waar de effectieve waarde van deze variabele stond. We zagen dat dit voorlopig enkel bij arrays gebeurde.
 
 **Ook objecten zijn reference types.** Alhoewel het vorige boek liet uitschijnen dat vooral value type variabelen veelvuldig in programma's voorkwamen, zal je nu ontdekken dat reference types véél meer voorkomen, **simpelweg omdat alles in C# een object is** (en dus ook arrays van objecten én zelfs valuetypes!).
 
@@ -46,7 +46,7 @@ Waarom plaatsen we niet alles in de stack? De reden hiervoor is dat bij het comp
 
 Er is echter een probleem: de compiler kan niet alles perfect berekenen of voorspellen. Va een variabele van het type ``int`` is perfect geweten hoe groot die zal zijn (32 bit). Maar wat met een ``string`` die je aan de gebruiker vraagt? Of wat met een array waarvan we pas tijdens de uitvoer de lengte gaan berekenen gebaseerd op *runtime* informatie?
 
-Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid stackgeheugen voor een array te reserveren als we niet weten hoe groot die zal worden. Beeld je in dat alle applicaties op je computer *voor alle zekerheid* een halve gigabyte aan geheugen zouden vragen. Je computer zou enkele terrabyte aan geheugen nodig hebben. Het is dus veel realistischer om enkel het geheugen te reserveren waar de compiler 100% zeker van is dat deze zal nodig zijn.
+Het zou nutteloos (en zonde) zijn om reeds bij aanvang een bepaalde hoeveelheid stackgeheugen voor een array te reserveren als we niet weten hoe groot die zal worden. Beeld je in dat alle applicaties op je computer *voor alle zekerheid* een halve gigabyte aan geheugen zouden vragen. Je computer zou enkele terabyte aan geheugen nodig hebben. Het is dus veel realistischer om enkel het geheugen te reserveren waar de compiler 100% zeker van is dat deze zal nodig zijn.
 
 De heap laat ons toe om geheugen op een wat minder gestructureerde manier in te palmen. Tijdens de uitvoer van het programma zal de heap als het ware dienst doen als een grote zandbak waar eender welke plek kan ingepalmd worden om zaken te bewaren (op voorwaarde dat die vrij is natuurlijk). De stack daarentegen is het kleine bankje naast de zandbak: handig, snel, en perfect geweten hoe groot.
 
@@ -184,7 +184,7 @@ a = b;
 Console.WriteLine(a.Naam);
 ```
 
-We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``a`` naar het zelfde object in de heap verwijzen. Het originele "abba"-object zijn we kwijt en zal verdwijnen (zie Garbage collector verderop).
+We zullen in dit geval dus ``Queen`` op het scherm zien omdat zowel ``b`` als ``a`` naar hetzelfde object in de heap verwijzen. Het originele "abba"-object zijn we kwijt en zal verdwijnen (zie Garbage collector verderop).
 
 {% hint style='warning' %}
 De meeste klassen zullen met value type-properties en instantievariabelen werken in zich, toch worden deze ook samen met het gehele object in de heap bewaard en niet in de stack. Kortom **het hele object** ongeacht de vorm (*datatypes*) van z'n inhoud wordt in de heap bewaard.

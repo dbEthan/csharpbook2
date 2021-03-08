@@ -9,7 +9,7 @@ Fijn dat je interesse toont om aan dit boek te helpen. Dit kan op meerdere manie
 # Helpen via een fork en merge requests?
 
 1. Maak een github account
-2. [Fork het boek naar je eigen account](https://github.com/timdams/csharpbook) : klik linksboven op fork.
+2. [Fork het boek naar je eigen account](https://github.com/timdams/csharpbook2) : klik linksboven op fork.
 En volg de uitleg [hier](https://help.github.com/articles/fork-a-repo/) om in sync te blijven en een lokale copy te maken.
 3. Zorg ervoor dat je telkens in de nieuwste versie werkt zoals [hier](https://help.github.com/articles/syncing-a-fork ) uitgelegd staat.
 4. Aanpassen maar

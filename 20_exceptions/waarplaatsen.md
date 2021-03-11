@@ -93,7 +93,7 @@ Met andere woorden, indien een bepaalde url niet geldig is dan zal deze overgesl
 
 <!---{pagebreak} --->
 
-### finaly 
+### finally 
 Soms zal je na een try-catch-blok ook nog een ``finally`` blok zien staan. Dit blok laat je toe om code uit te voeren die ALTIJD moet uitgevoerd worden, ongeacht of er een exception is opgetreden of niet. Je kan dit gebruiken om bijvoorbeeld er zeker van te zijn dat het bestand dat je wou uitlezen terug afgesloten wordt.
 
 ```java

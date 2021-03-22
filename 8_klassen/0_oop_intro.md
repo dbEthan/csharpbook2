@@ -317,7 +317,7 @@ Wanneer je later de specificaties voor een opdracht krijgt en snel wilt ontdekke
 {% endhint %}
 
 {% hint style='tip' %}
-95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken.
+95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschrijven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken.
 Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan. Heel vreemd allemaal!
 {% endhint %}
 

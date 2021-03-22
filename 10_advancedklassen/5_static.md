@@ -159,7 +159,7 @@ static class Math
 Stel dat we enkele veelgebruikte methoden willen groeperen en deze gebruiken zonder telkens een object te moeten aanmaken dan doen we dit als volgt:
 
 ```java
-static class EpicLibray
+static class EpicLibrary
 {
     static public void ToonInfo()
     {

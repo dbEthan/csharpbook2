@@ -1,6 +1,6 @@
 ## Static
 
-Herinner je dat we bij de definitie van een klasse het volgende schreven: *"95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschreven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken. Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan."* Laten we hier eens dieper op ingaan.
+Herinner je dat we bij de definitie van een klasse het volgende schreven: *"95% van de tijd zullen we in dit boek de voorgaande definitie van een klasse beschrijven, namelijk de blauwdruk voor de objecten die er op gebaseerd zijn. Je zou kunnen zeggen dat de klasse een fabriekje is dat objecten kan maken. Echter, wanneer we het ``static`` keyword zullen bespreken gaan we ontdekken dat heel af en toe een klasse ook als een soort object door het leven kan gaan."* Laten we hier eens dieper op ingaan.
 
 Je hebt het keyword ``static`` al een paar keer zien staan aan de start van methodesignaturen. In dit boek werd er dan weer nadrukkelijk verteld géén ``static`` voor methoden in klassen te plaatsen. Wat is het nu?
 

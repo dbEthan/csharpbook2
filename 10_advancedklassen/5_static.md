@@ -80,7 +80,7 @@ We maken de variabele ``private int geboorteJaar`` static als volgt: ``private s
 ```java
 class Mens
 {
-    private static int geboorteJaar;
+    private static int geboorteJaar = 1;
     public int GeboorteJaar 
     {
         get { return geboorteJaar; }

@@ -72,11 +72,11 @@ Student jos = new Student();
 //...
 
 Student[] mijnKlas = new Student[]
-    {
-        new Student(),
-        new Student(),
-        jos
-    };
+{
+    new Student(),
+    new Student(),
+    jos
+};
 ```
 
 Let op de puntkomma helemaal achteraan. Die wordt als eens vergeten.

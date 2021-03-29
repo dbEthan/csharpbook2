@@ -80,7 +80,7 @@ We maken de variabele ``private int geboorteJaar`` static als volgt: ``private s
 ```java
 class Mens
 {
-    private static int geboorteJaar;
+    private static int geboorteJaar = 1;
     public int GeboorteJaar 
     {
         get { return geboorteJaar; }
@@ -159,7 +159,7 @@ static class Math
 Stel dat we enkele veelgebruikte methoden willen groeperen en deze gebruiken zonder telkens een object te moeten aanmaken dan doen we dit als volgt:
 
 ```java
-static class EpicLibray
+static class EpicLibrary
 {
     static public void ToonInfo()
     {
@@ -294,7 +294,7 @@ class Mens
 }
 ```
 
-De error die verschijnt **An object reference is required for the non-static field, method, or property 'Program.Fiets.gewicht'** zal bij lijn 7 staan.
+De error die verschijnt **An object reference is required for the non-static field, method, or property 'Program.Mens.gewicht'** zal bij lijn 7 staan.
 
 
 <!---NOBOOKSTART--->

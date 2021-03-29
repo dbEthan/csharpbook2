@@ -75,7 +75,7 @@ Student[] mijnKlas = new Student[]
     {
         new Student(),
         new Student(),
-        jos,
+        jos
     };
 ```
 

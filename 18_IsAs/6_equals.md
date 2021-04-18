@@ -32,7 +32,7 @@ Of we kunnen ook het volgende doen:
 public override bool Equals(Object o)
 {  
     Student temp = o as Student; 
-    if(o != null)
+    if(temp != null)
     { 
         return (GeboorteJaar == temp.GeboorteJaar && Voornaam == temp.Voornaam);
     }

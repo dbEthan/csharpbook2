@@ -54,7 +54,7 @@ De key kan zelfs een ``string`` zijn en de waarde een ander type. In het volgend
 Dictionary<string, Student> studentenLijst = new Dictionary<string, Student>();
 Student stud = new Student() { Naam = "Tim", Geboortejaar = 2001 };
 studentenLijst.Add("AB12", stud);
-Console.WriteLine(studentenLijst["AB12"].Geboortjeaar);
+Console.WriteLine(studentenLijst["AB12"].Geboortejaar);
 studentenLijst.Remove("AB12");
 ```
 

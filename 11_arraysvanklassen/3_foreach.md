@@ -31,7 +31,7 @@ Kill/Death ratio is 0.1
 Stel dat we een array van Studenten hebben, ``deKlas``, en wensen van deze studenten de naam en geboortejaar op het scherm te tonen, dan kan dat met een ``foreach`` erg eenvoudig:
 
 ```java
-foreach(Student eenStudent in deKlas)
+foreach (Student eenStudent in deKlas)
 {
    Console.WriteLine($"{eenStudent.Naam} , {eenStudent.GeboorteJaar}");
 }
@@ -53,7 +53,7 @@ Het feit dat de foreach iteration variabele read-only is wil niet zeggen dat we 
 
 Dit mag dus niét:
 ```java
-foreach(Student eenStudent in deKlas)
+foreach (Student eenStudent in deKlas)
 {
    eenStudent = new Student();
 }
@@ -61,7 +61,7 @@ foreach(Student eenStudent in deKlas)
 
 Maar dit mag wél:
 ```java
-foreach(Student eenStudent in deKlas)
+foreach (Student eenStudent in deKlas)
 {
    eenStudent.Geboortejaar++;
 }

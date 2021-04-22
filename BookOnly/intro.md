@@ -36,6 +36,8 @@ Alle codevoorbeelden in deze cursus kan je zelf (na)maken met de gratis  **Visua
 
 Eigenlijk moet ik quasi dezelfde mensen bedanken zoals in *Zie Scherp*. Dat ga ik dus niet doen. Iedereen die hier aan heeft meegewerkt is al meerdere keren uitgebreid door mij persoonlijk bedankt. Maar toch voor alle zekerheid: bedankt aan alle studenten, collega's, vrienden en familie die allemaal op hun manier een steentje hebben bijgedragen aan dit boek. Bedankt!
 
+Toch wil ik volgende mensen expliciet een dank toewerpen om de vele feedback die ze me hebben gegeven op de eerste versie van dit boek: Nathan De Bois en Nick Bauters, bedankt!
+
 Ook deze keer wil echter een grote boeket bloemen klaarleggen voor collega Olga Coutrin die er mee voor heeft gezorgd dat ik dit boek binnen de deadline "bij de drukker" heb gekregen en enkele belangrijke, inhoudelijke aanpassingen heeft teweeg gebracht. 
 
 <!---{line-numbers:false}--->

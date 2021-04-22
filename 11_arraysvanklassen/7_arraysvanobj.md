@@ -72,11 +72,11 @@ Student jos = new Student();
 //...
 
 Student[] mijnKlas = new Student[]
-    {
-        new Student(),
-        new Student(),
-        jos,
-    };
+{
+    new Student(),
+    new Student(),
+    jos
+};
 ```
 
 Let op de puntkomma helemaal achteraan. Die wordt als eens vergeten.
@@ -89,7 +89,7 @@ Het kan niet genoeg benadrukt worden dat een goede kennis van de heap, stack en 
 <!--- {width:40%} --->
 ![](../assets/6_klassen/objeeindsit.png)
 
-Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op gegeven moment schrijven ``jos == null`` daar het object nog steeds bestaat via de array.
+Zoals je merkt zal nu de student ``jos`` niet verwijderd worden indien we op gegeven moment schrijven ``jos = null`` daar het object nog steeds bestaat via de array.
 We kunnen met andere woorden op 2 manieren de student ``jos`` momenteel bereiken, via de array of via ``jos``:
 
 ```java

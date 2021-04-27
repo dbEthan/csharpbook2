@@ -329,7 +329,9 @@ Let er wel op dat je niet overal compositie begin toe te passen alsof je de Dokt
 # Kennisclip
 ![](../assets/infoclip.png)
 
-* [Compositie](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
-* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
-* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Paginas/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
+* [Compositie](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=35c61e32-7e2a-41de-9488-acb000dce2a8)
+* [Compositie in praktijk basics](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c27b6387-8b84-41e6-821e-acb000e3141b)
+* [Compositie in praktijk demo met helden](https://ap.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=86c5c33e-eac6-4467-9522-acb100bdc094)
 <!---NOBOOKEND--->
+
+

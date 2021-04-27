@@ -36,7 +36,7 @@ static void Main(string[] args)
 De uitvoer zal zijn:
 
 ```text
-Tried dividing by 0. You shouldn't do that.
+BOEM. ZWART GAT!
 ```
 
 

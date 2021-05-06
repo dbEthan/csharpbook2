@@ -61,7 +61,7 @@ Op deze manier geeft het object waarop je ``IsPromoveerbaar`` op aanroept zichze
 
 ```java
 Werknemer francis = new Werknemer();
-if(francis.VraagPromotie())
+if(francis.IsPromoveerbaar())
 {
     Console.WriteLine("Jeuj!");
 }

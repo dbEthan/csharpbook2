@@ -31,7 +31,7 @@ class VeldArts : Soldaat
 Indien je vervolgens een object aanmaakt van het type ``VeldArts``:
 
 ```java
-VeldArts RexGregor = new VeldArts();
+VeldArts rexGregor = new VeldArts();
 ```
 
 Dan zien we de volgorde van constructor-aanroep in het debug output venster:

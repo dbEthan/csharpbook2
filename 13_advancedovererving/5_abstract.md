@@ -126,7 +126,7 @@ class Olifant : Dier
 Wanneer je een abstracte property maakt dien je ogenblikkelijk aan te geven of het om een readonly, writeonly, of property met get én set gaat:
 * ``public abstract int Oppervlakte {get;}``
 * ``public abstract int GeheimeCode {set;}``
-* ``public abstract int GeboorteDatum {get;set}``
+* ``public abstract int GeboorteDatum {get;set;}``
 
 <!---NOBOOKSTART--->
 # Kennisclip
